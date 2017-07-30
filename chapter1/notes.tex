@@ -1,0 +1,73 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Author: Sibi <sibi@psibi.in>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{mathtools}
+\usepackage{braket}
+\newcommand{\BigO}[1]{\ensuremath{\operatorname{O}\bigl(#1\bigr)}}
+\setlength\parskip{\baselineskip}
+\begin{document}
+\title{Numbers and Sets}
+\author{Sibi}
+\date{\today}
+\maketitle
+
+% See here: http://tex.stackexchange.com/a/43009/69223
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+% 
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+\newpage
+
+\section{Intervals}
+
+\begin{align*}
+  (a,b) = \set{ x: a < x < b}  \\
+  [a,b] = \set{x : a <= x <= b } \\
+  (a,b] = \set{x : a < x <= b } \\
+  [a,b) = \set{x : a <= x < b } \\
+\end{align*}
+
+$(a,b)$ : open interval
+
+$[a,b]$ : closed interval
+
+$(a,b], [a,b)$ : Half open interval
+
+\section{Absolute value}
+
+% Ref: https://tex.stackexchange.com/a/47171/69223
+\[
+  \abs{x} = \begin{cases}
+    x , & \text{if } x \geq 0 \\
+    -x , & \text{if } x < 0 \\
+  \end{cases}
+\]
+
+For any numbers x and y, the following statements are true:
+\begin{itemize}
+\item $\abs{x} < y$ iff $-y < x < y$
+\item $\abs{x} \leq y$ iff $-y \leq x \leq y$
+\item $\abs{x} < y$ iff either $x \leq -y$ or $x \geq y$
+\item $\abs{x} < y$ iff either $x \leq -y$ or $x > y$
+\end{itemize}
+
+\section{Triangle Inequality}
+
+For all numbers $x$ and $y$, $\abs{x + y} \leq \abs{x} + \abs{y}$.
+\end{document}
