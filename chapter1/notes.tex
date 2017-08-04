@@ -65,9 +65,54 @@ For any numbers x and y, the following statements are true:
 \item $\abs{x} \leq y$ iff $-y \leq x \leq y$
 \item $\abs{x} < y$ iff either $x \leq -y$ or $x \geq y$
 \item $\abs{x} < y$ iff either $x \leq -y$ or $x > y$
+\item $\abs{xy} = \abs{x}\abs{y}$
+\item $\text{If } y \neq 0 \text{ then } \abs{\frac{x}{y}} = \frac{\abs{x}}{\abs{y}}$
 \end{itemize}
 
 \section{Triangle Inequality}
 
 For all numbers $x$ and $y$, $\abs{x + y} \leq \abs{x} + \abs{y}$.
+
+\section{Exercise 1.1.6}
+
+This already has a solution in the book but I would solve it in a slightly different way which IMO is more readable!
+
+Solve $2\abs{x} - 3 >= \abs{x-1}$
+
+There are two cases to consider:
+
+% Todo: Add infinity symbol
+
+\begin{itemize}
+\item Case 1: $x >= 0$
+  Now let us consider the sub-cases:
+  \begin{enumerate}
+  \item $x - 1 >= 0$
+
+    From the original equality, we get $2x - 3 >= x - 1$. Solving it, we get $x >= 2$ which is equivalent to $[2, \inf)$
+  \item $x - 1 < 0$
+
+    From the original equality, we get $2x - 3 >= 1 - x$. Solving it, we get $x >= 4/3$. But this inequality is false for $[0, 1)$.
+  \end{enumerate}
+
+\item  Case 2: $x < 0$
+  Again, let us consider the sub-cases:
+  \begin{enumerate}
+  \item $x - 1 >= 0$
+
+    From the original equality, we get $-2x - 3 >= x - 1$. Solving it, we get $x <= -2/3$ which is equivalent to ($(\-inf, -2/3]$).
+
+  \item $x - 1 < 0$
+
+    From the original equality, we get $-2x - 3 >= 1 - x$. Solving it, we get $x <= -4$ which is equivalent to ($(\-inf, -4]$).
+  \end{enumerate}
+\end{itemize}
+
+Combining them, we get:
+
+$[2, \inf] \cup (\-inf, -\frac{2}{3}] \cup (\-inf, -4]$
+which reduces to
+
+$[2, \inf] \cup (\-inf, -4]$
 \end{document}
+
