@@ -354,5 +354,49 @@ Combining them, the solution set is
 $[0, 1) \cup (1, \infty) \cup (-\infty, 0)$ which reduces to
 $(-\infty, 1) \cup [1, \infty)$.
 
+\section{Solution 13}
+
+Let $x$ be an arbitrary number. Let us consider the cases:
+
+\begin{itemize}
+\item Case 1: $3x - 6 >= 0$
+
+  Solving $3x - 6 >= 0$, we get $x >= 2$.
+  
+  \begin{enumerate}
+  \item $3 - 6x >= 0$
+
+    Solving $3 - 6x >= 0$, we get $x <= 0.5$. But this is false for
+    $x >= 2$.
+    
+  \item $3 - 6x < 0$
+
+    Solving $3 - 6x < 0$, we get $x > 0.5$. Solving for the original
+    inequality, we get $x >= -1$. The solution set is $[2, \infty)$.
+  \end{enumerate}
+
+\item Case 2: $3x - 6 < 0$
+
+  Solving $3x - 6 < 0$, we get $x < 2$.
+
+  \begin{enumerate}
+  \item $3 - 6x >= 0$
+
+    Solving $3 - 6x >= 0$, we get $x <= 0.5$. Solving for the original
+    inequality, we get $x <= -1$. The solution set is $(-\infty, -1]$.
+    
+  \item $3 - 6x < 0$
+
+    Solving $3 - 6x < 0$, we get $x > 0.5$. Solving for the original
+    inequality, we get $6 -3x <= 6x - 3$ which reduces to $x >= 1$.
+    The solution set is $[1, 2)$.
+  \end{enumerate}
+
+\end{itemize}
+
+Combining them, the solution set is
+$[2, \infty) \cup (-\infty, -1] \cup [1, 2)$ which reduces to
+$[1, \infty) \cup (-\infty, -1]$.
+
 \end{document}
 
