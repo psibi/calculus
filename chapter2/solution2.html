@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-04-18 Sat 13:21 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Sibi Prabakaran" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgaac15e1">1. What does Limit mean ?</a></li>
+<li><a href="#org43cffaf">2. Solution 1</a>
+<ul>
+<li><a href="#org389531e">2.1. Solution (a)</a></li>
+<li><a href="#org5f4f311">2.2. Soluion (b)</a></li>
+</ul>
+</li>
+<li><a href="#org04c3942">3. Solution 2</a>
+<ul>
+<li><a href="#org0e33a74">3.1. Solution (a)</a></li>
+<li><a href="#orgb249cda">3.2. Solution (b)</a></li>
+</ul>
+</li>
+<li><a href="#org446d810">4. Solution 3</a>
+<ul>
+<li><a href="#org9cf64ca">4.1. Solution (a)</a></li>
+<li><a href="#orgeeac558">4.2. Solution (b)</a></li>
+</ul>
+</li>
+<li><a href="#org14abe8a">5. Solution 4</a></li>
+<li><a href="#org8eccff0">6. Solution 5</a></li>
+<li><a href="#orge2eaf0e">7. Solution 6</a></li>
+<li><a href="#org4ba64c5">8. Solution 7</a></li>
+<li><a href="#org704f294">9. Solution 8</a></li>
+<li><a href="#org24685e8">10. Solution 11</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaac15e1" class="outline-2">
+<h2 id="orgaac15e1"><span class="section-number-2">1</span> What does Limit mean ?</h2>
+</div>
+
+<div id="outline-container-org43cffaf" class="outline-2">
+<h2 id="org43cffaf"><span class="section-number-2">2</span> Solution 1</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+\(f(x) = 3x - 2\)
+</p>
+</div>
+
+<div id="outline-container-org389531e" class="outline-3">
+<h3 id="org389531e"><span class="section-number-3">2.1</span> Solution (a)</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Suppose \(0 < | x - 2 | < \dfrac{1}{6}\)
+</p>
+
+<p>
+\(f(x) - 4 = | 3x - 6 | = | 3| |x - 2|\)
+</p>
+
+<p>
+We know that \(| x - 2| < \dfrac{1}{6}\)
+</p>
+
+<p>
+\(| 3|| x - 2| < \dfrac{1}{6} * 3\)
+</p>
+
+<p>
+\(| 3|| x - 2| < \dfrac{1}{2}\)
+</p>
+
+<p>
+So, \(f(x) - 4 < \dfrac{1}{2}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5f4f311" class="outline-3">
+<h3 id="org5f4f311"><span class="section-number-3">2.2</span> Soluion (b)</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Suppose \(0 < |x-2| < y\)
+</p>
+
+<p>
+\(f(x) - 4 = |3||x - 2|\)
+</p>
+
+<p>
+We need to prove,
+</p>
+
+<p>
+\(f(x-4) < \dfrac{1}{10}\)
+</p>
+
+<p>
+\(|3||x-2| < \dfrac{1}{10}\)
+</p>
+
+<p>
+Let's assume \(y\) to be \(\dfrac{1}{30}\).
+</p>
+
+<p>
+We know that \(|x - 2| < \dfrac{1}{30}\)
+</p>
+
+<p>
+\(|3||x - 2| < \dfrac{1}{10}\)
+</p>
+
+<p>
+\(f(x) - 4 < \dfrac{1}{10}\)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org04c3942" class="outline-2">
+<h2 id="org04c3942"><span class="section-number-2">3</span> Solution 2</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+\(g(x) = 5 - 2x\)  
+</p>
+</div>
+
+<div id="outline-container-org0e33a74" class="outline-3">
+<h3 id="org0e33a74"><span class="section-number-3">3.1</span> Solution (a)</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Suppose \(0 < |x - 1| < \dfrac{1}{2}\)
+</p>
+
+<p>
+\(|g(x) - 3| = |5 - 2x - 3| = |2 - 2x| = |2||1 - x| = |2||x - 1|\)
+</p>
+
+<p>
+We know that \(|x - 1| < \dfrac{1}{2}\)
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x-2</td>
+<td class="org-left">&lt; 1</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">g(x) - 3</td>
+<td class="org-left">&lt; 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgb249cda" class="outline-3">
+<h3 id="orgb249cda"><span class="section-number-3">3.2</span> Solution (b)</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Suppose \(0 < |x - 1|< \dfrac{\epsilon}{2}\)
+</p>
+
+<p>
+g(x) - 3 = |2}|1 - x}
+</p>
+
+<p>
+We know that \(|x - 1|< \dfrac{\epsilon}{2}\)
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">2}</td>
+<td class="org-left">x - 1</td>
+<td class="org-left">&lt; &epsilon;</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">g(x) - 3</td>
+<td class="org-left">&lt; &epsilon;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org446d810" class="outline-2">
+<h2 id="org446d810"><span class="section-number-2">4</span> Solution 3</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+h(x) = \dfrac{3x^2 + 8x + 5}{x + 1}
+</p>
+
+<p>
+= \dfrac{3x^2 + 3x + 5x + 5}{x + 1}
+</p>
+
+<p>
+= \dfrac{3x(x + 1) + 5(x + 1)}{x + 1}
+</p>
+
+<p>
+= 3x + 5
+</p>
+</div>
+
+<div id="outline-container-org9cf64ca" class="outline-3">
+<h3 id="org9cf64ca"><span class="section-number-3">4.1</span> Solution (a)</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Suppose \(0 < |x - (-1)|< \dfrac{1}{30}\)
+</p>
+
+<p>
+Since \(x - (-1) > 0\), \(x \neq -1\). So \(h(x)\) is defined.
+</p>
+
+<p>
+\(h(x) - 2 = |3x + 5 - 2|= |3x + 3|= |3||x + 1|\)
+</p>
+
+<p>
+Since \(|x + 1|< \dfrac{1}{30}\)
+</p>
+
+<p>
+\(|3| |x + 1|< \dfrac{1}{10}\)
+</p>
+
+<p>
+\(|h(x) - 2|< \dfrac{1}{10}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeeac558" class="outline-3">
+<h3 id="orgeeac558"><span class="section-number-3">4.2</span> Solution (b)</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Suppose \(0 < |x + 1|< \dfrac{\epsilon}{3}\)
+</p>
+
+<p>
+Since \(|x - (-1)|> 0\), \(x \neq -1\). So \(h(x)\) is defined.
+</p>
+
+<p>
+\(h(x) - 2 = |3||x + 1|\)
+</p>
+
+<p>
+Since \(|x + 1|< \dfrac{\epsilon}{3}\)
+</p>
+
+<p>
+\(|3||x + 1|< \epsilon\)
+</p>
+
+<p>
+\(|h(x) - 2|< \epsilon\)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org14abe8a" class="outline-2">
+<h2 id="org14abe8a"><span class="section-number-2">5</span> Solution 4</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+f(x) = x.cos x
+</p>
+
+<p>
+Suppose \(0 < |x - 0|< \epsilon\)
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">f(x) - 0</td>
+<td class="org-left">=</td>
+<td class="org-left">x.cos x</td>
+<td class="org-left">=</td>
+<td class="org-left">x}</td>
+<td class="org-left">cos x}</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Since \(|x|< \epsilon\)
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">x}</td>
+<td class="org-left">cos x</td>
+<td class="org-left">&lt; &epsilon;.cos x</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+We know that the maximum value of \(|cos x|\leq 1\). So,
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">x}</td>
+<td class="org-left">cos x</td>
+<td class="org-left">&lt; &epsilon;.</td>
+<td class="org-left">cos x</td>
+<td class="org-left">&le; &epsilon;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+By <a href="https://en.wikipedia.org/wiki/Inequality_(mathematics)#Transitivity">Transitivity</a>, we infer that \(|x||cos x|< \epsilon\)
+</p>
+
+<p>
+\(|f(x) - 0|< \epsilon\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8eccff0" class="outline-2">
+<h2 id="org8eccff0"><span class="section-number-2">6</span> Solution 5</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+For graph (b) the \(\epsilon - \delta\) criterion is true.
+</p>
+
+<p>
+For graph (c) the \(\epsilon - \delta\) criterion is true. Note that
+even though the \(f(a)\) in that graph lies in the forbidden region -
+we can ignore that point because for computing limits \(x \neq a\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge2eaf0e" class="outline-2">
+<h2 id="orge2eaf0e"><span class="section-number-2">7</span> Solution 6</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+For graph (a). We certainly have <b>a</b> number \(\delta\) such that the
+criterion is true.
+</p>
+
+<p>
+For graph (b), it's touching \(L - \epsilon\) and hence the criterion
+is false.
+</p>
+
+<p>
+For graph (c), even for a slight \(\epsilon\) - it goes into the
+forbidden region.
+</p>
+
+<p>
+For graph (d), we can ignore the f(x) value in the graph as by limit
+definition \(x \neq a\). Now we can certainly find \(\delta\) such that
+the criterion is true.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4ba64c5" class="outline-2">
+<h2 id="org4ba64c5"><span class="section-number-2">8</span> Solution 7</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+For graph (a) and (b) - From the definition of graph we know that \(x
+  \neq a\). So the value of the graph at \(x = a\) need not be considered
+to see if they fall into the forbidden region. In graph (a) - we can
+see that as x -&gt; a, f(x) -&gt; L. But in graph (b), that's not the
+case. Hence for graph (a), \(\lim_{x \to a} f(x) = L\)
+</p>
+
+<p>
+For graph (c), we can chose a \(\epsilon\) and also a very minimal
+\(\delta\) such that it is true.
+</p>
+
+<p>
+For graph (d), we can chose a \(\epsilon\) such that it goes into the
+forbidden region for the second part of the curve.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org704f294" class="outline-2">
+<h2 id="org704f294"><span class="section-number-2">9</span> Solution 8</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+For no graph, it seems to be true as with a chosen \(\epsilon\), it
+seems to go into the forbidden region.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org24685e8" class="outline-2">
+<h2 id="org24685e8"><span class="section-number-2">10</span> Solution 11</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+(a) Yes. By the definition of limits, \(\epsilon\) can be any
+arbitrary number greater than zero.
+</p>
+
+<p>
+(b) No. By decreasing \(\delta\), the graph can go into the forbidden
+region.
+</p>
+
+<p>
+(c) No. By increase the \(\delta\) and hence the x-coordinate - it can
+go into the forbidden region.
+</p>
+
+<p>
+(c) Yes. By decreasing the \(\delta\) and hence the x-coordinate - it
+cannot go into the forbidden region if the criterion is already true.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Sibi Prabakaran</p>
+<p class="date">Created: 2020-04-18 Sat 13:21</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
