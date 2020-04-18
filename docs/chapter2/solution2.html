@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2020-04-18 Sat 18:23 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Sibi Prabakaran">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-9"><h1 class="title"></h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> What does Limit mean ?</h2>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution 1</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+\(f(x) = 3x - 2\)
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Solution (a)</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Suppose \(0 < | x - 2 | < \dfrac{1}{6}\)
+</p>
+
+<p>
+\(f(x) - 4 = | 3x - 6 | = | 3| |x - 2|\)
+</p>
+
+<p>
+We know that \(| x - 2| < \dfrac{1}{6}\)
+</p>
+
+<p>
+\(| 3|| x - 2| < \dfrac{1}{6} * 3\)
+</p>
+
+<p>
+\(| 3|| x - 2| < \dfrac{1}{2}\)
+</p>
+
+<p>
+So, \(f(x) - 4 < \dfrac{1}{2}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Soluion (b)</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Suppose \(0 < |x-2| < y\)
+</p>
+
+<p>
+\(f(x) - 4 = |3||x - 2|\)
+</p>
+
+<p>
+We need to prove,
+</p>
+
+<p>
+\(f(x-4) < \dfrac{1}{10}\)
+</p>
+
+<p>
+\(|3||x-2| < \dfrac{1}{10}\)
+</p>
+
+<p>
+Let's assume \(y\) to be \(\dfrac{1}{30}\).
+</p>
+
+<p>
+We know that \(|x - 2| < \dfrac{1}{30}\)
+</p>
+
+<p>
+\(|3||x - 2| < \dfrac{1}{10}\)
+</p>
+
+<p>
+\(f(x) - 4 < \dfrac{1}{10}\)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Solution 2</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+\(g(x) = 5 - 2x\)  
+</p>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Solution (a)</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Suppose \(0 < |x - 1| < \dfrac{1}{2}\)
+</p>
+
+<p>
+\(|g(x) - 3| = |5 - 2x - 3| = |2 - 2x| = |2||1 - x| = |2||x - 1|\)
+</p>
+
+<p>
+We know that \(|x - 1| < \dfrac{1}{2}\)
+</p>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="left">
+
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">2</td>
+<td class="text-left">&#xa0;</td>
+<td class="text-left">x-2</td>
+<td class="text-left">&lt; 1</td>
+</tr>
+</tbody>
+</table>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-left">g(x) - 3</td>
+<td class="text-left">&lt; 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Solution (b)</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Suppose \(0 < |x - 1|< \dfrac{\epsilon}{2}\)
+</p>
+
+<p>
+g(x) - 3 = |2}|1 - x}
+</p>
+
+<p>
+We know that \(|x - 1|< \dfrac{\epsilon}{2}\)
+</p>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-left">2}</td>
+<td class="text-left">x - 1</td>
+<td class="text-left">&lt; &epsilon;</td>
+</tr>
+</tbody>
+</table>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-left">g(x) - 3</td>
+<td class="text-left">&lt; &epsilon;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Solution 3</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+h(x) = \dfrac{3x^2 + 8x + 5}{x + 1}
+</p>
+
+<p>
+= \dfrac{3x^2 + 3x + 5x + 5}{x + 1}
+</p>
+
+<p>
+= \dfrac{3x(x + 1) + 5(x + 1)}{x + 1}
+</p>
+
+<p>
+= 3x + 5
+</p>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Solution (a)</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Suppose \(0 < |x - (-1)|< \dfrac{1}{30}\)
+</p>
+
+<p>
+Since \(x - (-1) > 0\), \(x \neq -1\). So \(h(x)\) is defined.
+</p>
+
+<p>
+\(h(x) - 2 = |3x + 5 - 2|= |3x + 3|= |3||x + 1|\)
+</p>
+
+<p>
+Since \(|x + 1|< \dfrac{1}{30}\)
+</p>
+
+<p>
+\(|3| |x + 1|< \dfrac{1}{10}\)
+</p>
+
+<p>
+\(|h(x) - 2|< \dfrac{1}{10}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Solution (b)</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Suppose \(0 < |x + 1|< \dfrac{\epsilon}{3}\)
+</p>
+
+<p>
+Since \(|x - (-1)|> 0\), \(x \neq -1\). So \(h(x)\) is defined.
+</p>
+
+<p>
+\(h(x) - 2 = |3||x + 1|\)
+</p>
+
+<p>
+Since \(|x + 1|< \dfrac{\epsilon}{3}\)
+</p>
+
+<p>
+\(|3||x + 1|< \epsilon\)
+</p>
+
+<p>
+\(|h(x) - 2|< \epsilon\)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Solution 4</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+f(x) = x.cos x
+</p>
+
+<p>
+Suppose \(0 < |x - 0|< \epsilon\)
+</p>
+
+<p>
+\(|f(x) - 0|= |x.cos x|= |x||cos x|\)
+</p>
+
+<p>
+Since \(|x|< \epsilon\)
+</p>
+
+<p>
+\(|x||cos x|< \epsilon.cos x\)
+</p>
+
+<p>
+We know that the maximum value of \(|cos x|\leq 1\). So,
+</p>
+
+<p>
+\(|x||cos x|< \epsilon.|cos x|\leq \epsilon\)
+</p>
+
+<p>
+By <a href="https://en.wikipedia.org/wiki/Inequality_(mathematics)#Transitivity">Transitivity</a>, we infer that \(|x||cos x|< \epsilon\)
+</p>
+
+<p>
+\(|f(x) - 0|< \epsilon\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Solution 5</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+For graph (b) the \(\epsilon - \delta\) criterion is true.
+</p>
+
+<p>
+For graph (c) the \(\epsilon - \delta\) criterion is true. Note that
+even though the \(f(a)\) in that graph lies in the forbidden region -
+we can ignore that point because for computing limits \(x \neq a\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Solution 6</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+For graph (a). We certainly have <b>a</b> number \(\delta\) such that the
+criterion is true.
+</p>
+
+<p>
+For graph (b), it's touching \(L - \epsilon\) and hence the criterion
+is false.
+</p>
+
+<p>
+For graph (c), even for a slight \(\epsilon\) - it goes into the
+forbidden region.
+</p>
+
+<p>
+For graph (d), we can ignore the f(x) value in the graph as by limit
+definition \(x \neq a\). Now we can certainly find \(\delta\) such that
+the criterion is true.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Solution 7</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+For graph (a) and (b) - From the definition of graph we know that \(x
+  \neq a\). So the value of the graph at \(x = a\) need not be considered
+to see if they fall into the forbidden region. In graph (a) - we can
+see that as x -&gt; a, f(x) -&gt; L. But in graph (b), that's not the
+case. Hence for graph (a), \(\lim_{x \to a} f(x) = L\)
+</p>
+
+<p>
+For graph (c), we can chose a \(\epsilon\) and also a very minimal
+\(\delta\) such that it is true.
+</p>
+
+<p>
+For graph (d), we can chose a \(\epsilon\) such that it goes into the
+forbidden region for the second part of the curve.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Solution 8</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+For no graph, it seems to be true as with a chosen \(\epsilon\), it
+seems to go into the forbidden region.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Solution 11</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+(a) Yes. By the definition of limits, \(\epsilon\) can be any
+arbitrary number greater than zero.
+</p>
+
+<p>
+(b) No. By decreasing \(\delta\), the graph can go into the forbidden
+region.
+</p>
+
+<p>
+(c) No. By increase the \(\delta\) and hence the x-coordinate - it can
+go into the forbidden region.
+</p>
+
+<p>
+(c) Yes. By decreasing the \(\delta\) and hence the x-coordinate - it
+cannot go into the forbidden region if the criterion is already true.
+</p>
+</div>
+</div>
+</div><div class="col-md-3"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. What does Limit mean ?</a></li>
+<li><a href="#sec-2">2. Solution 1</a>
+<ul class="nav">
+<li><a href="#sec-2-1">2.1. Solution (a)</a></li>
+<li><a href="#sec-2-2">2.2. Soluion (b)</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Solution 2</a>
+<ul class="nav">
+<li><a href="#sec-3-1">3.1. Solution (a)</a></li>
+<li><a href="#sec-3-2">3.2. Solution (b)</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Solution 3</a>
+<ul class="nav">
+<li><a href="#sec-4-1">4.1. Solution (a)</a></li>
+<li><a href="#sec-4-2">4.2. Solution (b)</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Solution 4</a></li>
+<li><a href="#sec-6">6. Solution 5</a></li>
+<li><a href="#sec-7">7. Solution 6</a></li>
+<li><a href="#sec-8">8. Solution 7</a></li>
+<li><a href="#sec-9">9. Solution 8</a></li>
+<li><a href="#sec-10">10. Solution 11</a></li>
+</ul>
+</div>
+</nav>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Sibi Prabakaran</p>
+<p class="date">Created: 2020-04-18 Sat 18:23</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="http://orgmode.org">Org-mode</a> 9.1.9)</p>
+</div>
+</footer>
+</body>
+</html>

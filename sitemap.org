@@ -1,0 +1,6 @@
+#+TITLE: Sitemap for project velleman-calculus
+
+- [[file:index.org][index]]
+- chapter2
+  - [[file:chapter2/solution1.org][solution1]]
+  - [[file:chapter2/solution2.org][solution2]]

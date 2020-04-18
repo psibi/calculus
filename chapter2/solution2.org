@@ -115,15 +115,15 @@ f(x) = x.cos x
 
 Suppose $0 < |x - 0|< \epsilon$
 
-|f(x) - 0|= |x.cos x|= |x}|cos x}
+$|f(x) - 0|= |x.cos x|= |x||cos x|$
 
 Since $|x|< \epsilon$
 
-|x}|cos x|< \epsilon.cos x
+$|x||cos x|< \epsilon.cos x$
 
 We know that the maximum value of $|cos x|\leq 1$. So,
 
-|x}|cos x|< \epsilon.|cos x|\leq \epsilon
+$|x||cos x|< \epsilon.|cos x|\leq \epsilon$
 
 By [[https://en.wikipedia.org/wiki/Inequality_(mathematics)#Transitivity][Transitivity]], we infer that $|x||cos x|< \epsilon$
 
