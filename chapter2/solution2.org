@@ -55,9 +55,9 @@ $g(x) = 5 - 2x$
 
    We know that $|x - 1| < \dfrac{1}{2}$
 
-   |2|  |x-2| < 1
+   $|2|  |x-2| < 1$
 
-   |g(x) - 3| < 1
+   $|g(x) - 3| < 1$
 
 ** Solution (b)
 
@@ -67,19 +67,19 @@ $g(x) = 5 - 2x$
 
    We know that $|x - 1|< \dfrac{\epsilon}{2}$
 
-   |2}|x - 1|< \epsilon
+   $|2||x - 1|< \epsilon$
 
-   |g(x) - 3|< \epsilon
+   $|g(x) - 3|< \epsilon$
 
 * Solution 3
 
-  h(x) = \dfrac{3x^2 + 8x + 5}{x + 1}
+  $h(x) = \dfrac{3x^2 + 8x + 5}{x + 1}$
 
-  = \dfrac{3x^2 + 3x + 5x + 5}{x + 1}
+  $= \dfrac{3x^2 + 3x + 5x + 5}{x + 1}$
 
-  = \dfrac{3x(x + 1) + 5(x + 1)}{x + 1}
+  $= \dfrac{3x(x + 1) + 5(x + 1)}{x + 1}$
 
-  = 3x + 5
+  $= 3x + 5$
 
 ** Solution (a)
 
