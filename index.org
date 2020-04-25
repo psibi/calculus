@@ -4,3 +4,4 @@
   
 ** [[file:chapter2/solution1.html][What is Calculus About]]
 ** [[file:./chapter2/solution2.html][What does "Limit" mean ?]]
+** [[file:chapter2/solution3.org][Limits by the Definition]]
