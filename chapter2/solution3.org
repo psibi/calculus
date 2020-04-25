@@ -40,7 +40,7 @@
 
 * Solution 3
 
-  $lim_{x \to -2}$ \dfrac{x^2 - 4}{x + 2} = -4$
+  $\lim_{x \to -2}$ \dfrac{x^2 - 4}{x + 2} = -4$
 
   Suppose $\epsilon > 0$. Let $\delta = \epsilon > 0$
 
@@ -49,3 +49,275 @@
   $|\dfrac{x^2 - 4}{x + 2} + 4| = |x + 2| = |x - (-2)| < \delta$
 
   Hence, $f(x) - L < \epsilon$
+
+* Solution 4
+
+  $\lim_{x \to 2} \dfrac{x^2 - x - 2}{x - 2} = 3$
+  
+  Suppose $\epsilon > 0$. Let $\delta = \epsilon > 0$
+
+  Suppose  $0 < |x-2| < \delta$
+
+  Since $|x - 2| > 0$, $x \neq 2$ and hence the function is defined.
+
+  $| \dfrac{x^2 - x - 2}{x - 2} - 3| = |x - 2|$
+
+  We know that $|x - 2| < \delta$, So, $|x - 2| < \epsilon $
+
+* Solution 5
+
+  $\lim_{r \to 3} \dfrac{3r^2 - 8r - 3}{2r - 6} = 5$
+
+  Suppose $\epsilon > 0$. Let $\delta = \dfrac{2}{3}\epsilon > 0$  
+
+  Suppose  $0 < |r-3| < \delta$
+
+  Since $0 < |r-3|$, $r \neq 3$ and hence the function is defined.
+
+  $|\dfrac{3r^2 - 8r - 3}{2r - 6} - 5| = |\dfrac{3}{2}(r - 3)|$
+
+  We know that $| r - 3 | < \delta$
+
+  $|\dfrac{3}{2}(r - 3) | < \dfrac{3}{2}\delta < \epsilon$
+
+* Solution 6
+
+  $\lim_{x \to 2} \dfrac{x^2 + 2x - 8}{3x - 6} = 2$
+
+  Suppose $\epsilon > 0$. Let $\delta = 2\epsilon > 0$  
+  
+  Suppose  $0 < |x-2| < \delta$
+
+  Since $0 < |x-2|$, $x \neq 2$ and hence the function is defined.
+
+  $|\dfrac{x^2 + 2x - 8}{3x - 6} - 2| = \dfrac{1}{2}(x - 2)$
+
+  We know that $|x - 2| < \sigma$
+
+  $\dfrac{1}{2}(x - 2) < 2.\dfrac{\epsilon}{2}$
+
+  $\dfrac{1}{2}(x - 2) < \epsilon$
+
+* Solution 7
+
+  $\lim_{u \to -1} \dfrac{u^2 + 4u + 3}{u + 1} + u = 1$
+
+  Suppose $\epsilon > 0$. Let $\delta = \dfrac{\epsilon}{2} > 0$  
+  
+  Suppose  $0 < |u-(-1)| < \delta$
+
+  Since $|u-(-1)| > 0$, $u \neq -1$ and hence the function is defined.
+
+  $\dfrac{u^2 + 4u + 3}{u + 1} + u - 1| = |2||u+1|$
+
+  We know that $|u - (-1)| < \delta$
+
+  $2 |u + 1| < 2\delta$
+
+  $2 |u + 1| < \epsilon$
+
+* Solution 8
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, \dfrac{\epsilon}{2})$
+
+  Notice that we have $\delta > 0, \delta \leq 1 and \delta \leq \dfrac{\epsilon}{2}$.
+
+  Now suppose $0 < |x-2| < \delta$. Then,
+
+  $|x - 2| < \delta \leq 1$. So, $0 < x - 1 < 2$.
+
+  Thus, $|x^2 - 3x + 5 - 3| = |(x - 1)(x-2)| < 2|(x - 2)| < 2\delta < 2\dfrac{\epsilon}{2} = \epsilon$
+
+* Solution 9
+
+  Suppose $\epsilon > 0$. Let $\delta = min(\dfrac{1}{2}, \dfrac{\epsilon}{12})$
+
+  Notice that we have $\delta > 0, \delta \leq \dfrac{1}{2} and \delta \leq \dfrac{\epsilon}{12}$.
+
+  Now suppose $0 < |v-1| < \delta$. Then,
+
+  $|v - 1| < \delta \leq \dfrac{1}{2}$. So, $1 < 2v < 3$.
+
+  From $1 < 2v$, we infer $\dfrac{1}{3v - 1} < 2$.
+
+  Thus, $|\dfrac{4}{3v - 1} - 2| = |\dfrac{6(v-1)}{1 - 3v}| = |\dfrac{6(v-1)}{3v - 1}| < 6(v-1)*2 <= 12\sigma <= 12\dfrac{\epsilon}{2} = \epsilon$
+
+* Solution 10
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, \epsilon)$
+
+  Notice that we have $\delta > 0, \delta \leq 1 and \delta \leq \epsilon$.
+
+  Now suppose $0 < |t-1| < \delta$. Then,
+
+  $|t - 1| < \delta \leq 1$. So, $0 < t < 2$.
+
+  From $0 < t$, we know that $\dfrac{1}{t + 1} < 1$
+
+  Thus, $|\dfrac{2 - 2t}{t^2 - 1} + 1| = |\dfrac{t - 1)}{t + 1}| < |t-1| < \delta \leq \epsilon$
+
+* Solution 11
+
+  Suppose $\epsilon > 0$. Let $\delta = 1$
+
+  Now suppose $0 < |x -3| < 1$. Solving it, we get $1 < \dfrac{x}{2} < 2$
+
+  Since $\lfloor \dfrac{x}{2} \rfloor$ is always an integer from its
+  range of $1 < \dfrac{x}{2} < 2$, we can determinte that $\lfloor
+  \dfrac{x}{2} \rfloor$ will be $1$.
+
+  So, $|\lfloor \dfrac{x}{2} \rfloor - 1| = 0 < \epsilon$
+
+* Solution 12
+
+  Suppose $\epsilon > 0$. Let $\delta = min(2, \dfrac{\epsilon}{28})$. 
+
+  Notice that we have $\delta > 0, \delta \leq 2 and \delta \leq \dfrac{\epsilon}{28}$.
+
+  Now suppose $0 < |x-2| < \delta$. Then,
+
+  $|x - 2| < \delta \leq 2$. So, $x^2 < 16$ and $2x < 8$.
+
+  From $x^2 < 16$ and $2x < 8$, $x^2 + 2x < 24$. So, $x^2 + 2x + 4< 28$
+
+  Thus, $|x^3 - 8| = |(x-2)(x^2 + 4 + 2x)| < |(x - 2)|28 < ||(x-2).28| < 28.\delta <= 28\dfrac{\epsilon}{28} = \epsilon$
+
+* Solution 13
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, \dfrac{3\epsilon}{2})$.
+
+  Notice that we have $\delta > 0, \delta \leq 1 and \delta \leq \dfrac{3\epsilon}{2}$.
+
+  Now suppose $0 < |w-2| < \delta$. Then,
+
+  $|w-2| < \delta \leq 1$. So, From $1 < w$, we can infer that $\dfrac{1}{\sqrt{2w + 5} + 3} < \dfrac{1}{\sqrt{7} + 3}$
+
+  We know that $\dfrac{1}{\sqrt{7} + 3} < \dfrac{1}{3}$
+
+  So by using transitive property,
+
+  $\dfrac{1}{\sqrt{2w + 5} + 3} < \dfrac{1}{3}$
+
+  $|\sqrt{2w + 5} - 3| = |\dfrac{2(w - 2)}{\sqrt{2w + 5} + 3}|$
+
+  ( Note that the trick in the above reduction is to multiply by $\dfrac{{\sqrt{2w + 5} + 3}}{{\sqrt{2w + 5} + 3}}$)
+
+  $|\dfrac{2(w - 2)}{\sqrt{2w + 5} + 3}| < \dfrac{2(w-2)}{3} < \dfrac{2\delta}{3} \leq \dfrac{2.3\delta}{3.2} = \epsilon$
+
+* Solution 14
+
+  Suppose $\epsilon > 0$. Let $\delta = min(2, \dfrac{\epsilon}{8})$.
+
+  Notice that we have $\delta > 0, \delta \leq 2 and \delta \leq \dfrac{\epsilon}{8}$.
+
+  Now suppose $0 < |t-3| < \delta$. Then,
+
+  $|t^2 - 9| = |(t+3)(t-3)|$
+
+  Since $|t-3| < \delta \leq 2$, we have $1 < t < 5$. Thus, $4 < t + 3 < 8$
+
+  $(t+3)(t-3) = |t-3|(t+3) < 8|t-3| < 8\delta \leq \dfrac{8\epsilon}{8} = \epsilon$
+
+* Solution 15
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, \dfrac{\epsilon}{4})$.
+
+  Notice that we have $\delta > 0, \delta \leq 1 and \delta \leq \dfrac{\epsilon}{4}$.
+
+  Now suppose $0 < |x-1| < \delta$. Then,  $0 < x < 2$. So, $x + 2 < 4$.
+
+  $|x^2 + x - 2| = |(x + 2)(x - 1)| < 4|x-1| < 4\delta \leq \dfrac{4\epsilon}{4} = \epsilon$
+
+* Solution 16
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, \dfrac{\epsilon}{9})$.
+
+  Notice that we have $\delta > 0, \delta \leq 1 and \delta \leq \dfrac{\epsilon}{9}$.
+
+  Now suppose $0 < |x-2| < \delta$. Then,  $1 < x < 3$. So, $3x < 9$.
+
+  $|3x^2 - 6x - 0| = |3x(x-2)| < |x-2|9 < 9\delta <= \dfrac{9\epsilon}{9} = \epsilon$
+
+* Solution 17
+
+  Suppose $\epsilon > 0$. Let $\delta = min(3, \epsilon)$.  
+
+  Notice that we have $\delta > 0, \delta \leq 3 and \delta \leq \epsilon$.
+
+  Now suppose $0 < |x-(-1)| < \delta$. Then,  $\delta \leq 3$. So, $|x-(-1)| < 3$ and therefore $x-1<1$.
+
+  $|\dfrac{x^3 + x^2 -3x - 3}{x+1} + 2| = |x^2 - 1| = |(x-1)(x+1)| < |x+1| < |x - (-1)| < \delta = \epsilon$
+
+* Solution 18
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, \dfrac{\epsilon}{2})$.
+
+  Notice that we have $\delta > 0, \delta \leq 1 and \delta \leq \dfrac{\epsilon}{2}$.
+
+  Now suppose $0 < |u-3| < \delta$. Then since,  $\delta \leq 1$. we have $2 < u <4$ and therefore $\dfrac{1}{u-1} < 1$.
+
+  $|\dfrac{4}{u-1} - 2| = $\dfrac{2(u-3)}{u-1}| < |2(u-3)| < 2\delta < \dfrac{2\epsilon}{2} = \* 
+
+* Solution 19
+
+  Suppose $\epsilon > 0$. Let $\delta = min(4, \dfrac{\epsilon}{2})$.
+
+  Notice that we have $\delta > 0, \delta \leq 4 and \delta \leq \dfrac{\epsilon}{2}$.
+
+  Now suppose $0 < |t-5| < \delta$. Then since,  $\delta \leq 4$. we have $1 < t <9$ and therefore $\dfrac{1}{t} < 1$.
+
+  $|\dfrac{3t - 10}{t} - 1| = |\dfrac{2(t-5)}{t}| < 2(t-5) < 2\delta \leq \dfrac{2\epsilon}{2} = \epsilon$
+
+* Solution 20
+
+  Suppose $\epsilon > 0$. Let $\delta = min(3, \sqrt{\dfrac{15\epsilon}{2}})$.
+
+  Notice that we have $\delta > 0, \delta \leq 2 and \delta \leq \dfrac{15\epsilon}{2}$.
+  
+  Now suppose $0 < |z-1| < \delta$. Then since,  $\delta \leq 3$. we have $-3 < z-1 <3$ and therefore $9 < (z-1)^2, 1 < (z + 1)^2 and -7 < z - 5$
+
+  $|\dfrac{z-1}{2z^2 + z - 3} - \dfrac{1}{5}| = |\dfrac{-2(z-1)^2}{5((z+1)^2 + (z-1)^2 + (z - 5))}|$
+
+  We know that, $\dfrac{1}{(z-1)^2+(z+1)^2 + (z-5)} < \dfrac{1}{3}$
+
+  $|\dfrac{-2(z-1)^2}{5((z+1)^2 + (z-1)^2 + (z - 5))}| < \dfrac{-2(z-1)^2}{5}\dfrac{1}{3} < \dfrac{2\delta^2}{16} \leq \epsilon$
+
+* Solution 21
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, \dfrac{\epsilon}{4})$.
+
+  Notice that we have $\delta > 0, \delta \leq 1 and \delta \leq \dfrac{\epsilon}{4}$.
+
+  Now suppose $0 < |y-1| < \delta$. Then since,  $\delta \leq 1$. we have $0 < y <2$ and therefore $y^2 < 4$
+
+  $|y^3 - y^2 + 7 = 7| = |y^2(y-1)| < 4|y-1| < 4\delta \leq 4\dfrac{\epsilon}{4} = \epsilon$
+
+* Solution 22
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, \sqrt{\dfrac{\epsilon}{2}})$.
+
+  Notice that we have $\delta > 0, \delta \leq 1 and \delta \leq \sqrt{\dfrac{\epsilon}{2}}$.
+
+  Now suppose $0 < |y-0| < \delta$. Then since,  $\delta \leq 1$. we have $-1 < y <1$ and therefore $1-y < 2$
+
+  $|y^3 - y^2 + 7 - 7| = |y^2(1-y)| < 2y^2 < 2\delta^2 \leq \epsilon$
+
+* Solution 23
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, 2(3 + \sqrt[2]{3})\epsilon)$.  
+
+  Notice that we have $\delta > 0, \delta \leq 1$ and $\delta \leq 2(3 + \sqrt[2]{3})\epsilon$.
+
+  Suppose $0 < |x-4| < \epsilon$. Then since, $\delta \leq 1$, we have $3 < x < 5$ and therefore $\dfrac{1}{x + 2\sqrt{x} < \dfrac{1}{3 + 2\sqrt{3}}}$
+
+  $|\dfrac{1}{\sqrt{x}} - \dfrac{1}{2}| = \dfrac{-1(4-x)}{2(x + 2\sqrt{x})} < \dfrac{|-1(4-x)|}{2(3+2\sqrt{3})} < \dfrac{|4-x|}{2(x+2\sqrt{3})} < \dfrac{\epsilon}{2(3 + 2\sqrt{3})} \leq \epsilon$
+
+* Solution 24
+
+  Suppose $\epsilon > 0$. Let $\delta = min(1, \sqrt{\epsilon})$.
+
+  Notice that we have $\delta > 0, \delta \leq 1$ and $\delta \leq \sqrt{\epsilon}$.
+
+  Suppose $0 < |x-0| < \epsilon$. Then since, $\delta \leq 1$, we have $-1 < x < 1$ and therefore $\dfrac{1}{\sqrt{x^2 + 1}-1} < \dfrac{1}{\sqrt{2}-1} < 1$
+
+  $|\sqrt{x^2 + 1} - 1| = |\dfrac{x^2}{\sqrt{x^2 + 1} + 1}| < |x^2| < \delta^2 \leq \epsilon$
