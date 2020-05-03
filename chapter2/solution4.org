@@ -2,8 +2,6 @@
 #+LATEX_HEADER_EXTRA: \usepackage{amsmath}
 #+LATEX_HEADER_EXTRA: \usepackage{mathmode}
 
-* Limit Theorems
-
 * Solution 1
 
 Suppose $\epsilon > 0$. Let $\delta = \epsilon$. Suppose $0 < |x - 0| < \delta$.
@@ -167,3 +165,284 @@ $||x| - 0| = |x| < \delta < \epsilon$
   $\lim_{x \to -2} (x+2)(x^2 - 4) = 0$
 
   From theorem 2.4.8, we can conclude that the limit is undefined.
+
+* Solution 15
+
+  $\lim_{x \to 7} \dfrac{x-8}{x-7} + \dfrac{7}{x^2 - 7x}$
+
+  $= \lim_{x-1}{x}$
+
+  $= \dfrac{6}{7}$
+
+* Solution 16
+
+  $\lim_{z \to 0} \dfrac{1}{z} - \dfrac{1}{z^2}$
+
+  $= \lim_{z \to 0} \dfrac{z-1}{z^2}$
+
+  $= \lim_{z \to 0} z^2 = 0$
+
+  $= \lim_{z \to 0} z - 1 = -1$
+
+  From theorem 2.4.8, we can conclude that the limit is undefined.
+
+* Solution 17
+
+  $\lim_{x \to 0} \dfrac{1}{x} + \dfrac{1}{x^2 - x}$
+
+  $= \lim_{x \to 0} \dfrac{1}{x-1} = -1$
+
+* Soltion 18
+
+  $\lim_{u \to -3}[\dfrac{1}{u+3}(\dfrac{3}{u} + 1)]$
+
+  $= \lim_{u \to -3}\dfrac{1}{u} = \dfrac{-1}{3}$
+
+* Solution 19
+
+  $\lim_{x \to 2}(\dfrac{1}{x-2}(\dfrac{1}{x} - \dfrac{1}{2}))$
+
+  $\lim_{x \to 2}\dfrac{-1}{2x} = \dfrac{-1}{4}$
+
+* Solution 20
+
+  $\lim_{x \to 0}(\dfrac{1}{x}(\dfrac{1}{x+1} + \dfrac{1}{x-1}))$
+
+  $= \lim_{x \to 0}\dfrac{2}{(x+1)(x-1)}$
+
+  $= \dfrac{2}{-1} = -2$
+
+* Solution 21
+
+  $\lim_{x \to 2} \dfrac{x^2 + |x| - 6}{x-2}$
+
+  $|x|$ can be either $x$ or $-x$. As $x$ approaches 2, $x$ will be
+  positive. So, $|x| = x$.
+
+  $= \lim_{x \to 2} \dfrac{(x-2)(x+3)}{x-2} = \lim_{x \to 2}x+3 = 5$
+
+* Solution 22
+
+  $\lim_{x \to -2} \dfrac{x^2 + |x| - 6}{x+2}$
+
+  $|x|$ can be either $x$ or $-x$. As $x$ approaches -2, $x$ will be
+  negative. So, $|x| = - x$.
+
+  $= lim_{x \to -2}x-3 = -5$
+
+* Solution 23
+
+  $\lim_{x \to 2}\dfrac{x^2 + |x|-6}{x^2 + |x-4|-6}$
+
+  $x$ can be either $x$ or $-x$. As x approaches 2, $|x|$ will b
+  positive. So, $|x|=x$, Similarly, $|x-4|$ can be either $x-4$ or
+  $-(x-4)$. As $x$ approaches $2$, $|x-4|$ will be negative. So,
+  $|x-4| = -(x-4)$.
+
+  $= \lim_{x \to 2}\dfrac{x+3}{x+1} = \dfrac{5}{3}$
+
+* Solution 24
+
+  $\lim_{x \to 0} \lfloor 2 - x^2 \rfloor$
+
+  $= \lfloor 2 - 0^2 \rfloor = \lfloor 2 \rfloor = 2$
+
+* Solution 25
+
+  $\lim_{x \to \dfrac{1}{2}} cos \lfloor x \rfloor$
+
+  $= cos \lfloor \dfrac{1}{2} \rfloor = cos \lfloor 0.5 \rfloor = cos 0 = 1$
+
+* Solution 26
+
+  $\lim_{x \to 0} x^2(sin \dfrac{1}{x})$
+
+  We know that $|sin(x)| \leq 1$ for all $x \in R$. It is also true
+  for $sin \dfrac{1}{x}$ for $x \neq 0$. So,
+
+  $|sin(\dfrac{1}{x})| <= 1$
+
+  Since absolute values are non negative,
+
+  $0 \leq |sin(\dfrac{x}{x})| \leq 1$
+
+  $0 \leq |x^2sin(\dfrac{x}{x})| \leq |x^2|$  
+
+  $\lim_{x \to 0}0 = 0$
+
+  $\lim_{x \to 0}|x^2| = 0
+
+  From squeeze theorem we can conclude that that,
+
+  $\lim_{x \to 0}|sin(\dfrac{1}{x}) x^2| = 0$
+
+  From theorem 2.4.1, we can conclude that $\lim_{x \to 0}sin(\dfrac{1}{x}) x^2 = 0$
+
+* Solution 27
+
+  You might want to [[https://www.mathsisfun.com/algebra/inequality-properties.html][refresh the inequality properties for this question.]]
+
+  We know that $0 \leq cos^2 \dfrac{\pi}{x} \leq 1$ for all $x \neq 0$
+
+  $= 1 \leq cos^2 \dfrac{\pi}{x} + 1 \leq 2$
+
+  $= 1 \geq \dfrac{1}{cos^2 \dfrac{\pi}{x} + 1} \geq \dfrac{1}{2}$
+
+  $= \dfrac{1}{2} \leq \dfrac{1}{cos^2 \dfrac{\pi}{x} + 1} \leq 1$
+
+  $= \dfrac{|x|}{2} \leq \dfrac{|x|}{cos^2 \dfrac{\pi}{x} + 1} \leq |x|$
+
+  Now we know that $\lim_{x \to 0}\dfrac{|x|}{2} = 0$
+
+  Similarly, $\lim_{x \to 0}|x| = 0$
+
+  Using the squeeze theorem, we can conclude that $\lim_{x \to 0} \dfrac{|x|}{cos^2(\dfrac{\pi}{x}) + 1} = 0$
+
+* Solution 28
+
+** Solution a
+
+   We have to prove that $\lim_{x \to a} \dfrac{1}{h(x)} = 1$.
+
+   Suppose $\epsilon > 0$.
+
+   From $lim_{x \to a} h(x) = 1$, we know that $\forall \epsilon_1 > 0 \; \exists \delta_1 > 0 \; \forall x \; 0 < |x-a| < \delta_1 \implies |h(x)-1| < \epsilon_1$
+
+   Suppose $\epsilon_1 = \dfrac{1}{2} > 0$
+
+   Suppose $\epsilon_1 = \epsilon > 0$. Then we know that $\exists \delta_2 > 0 \; \forall x \; 0 < |x-a| < \delta_2 \implies |h(x)-1| < \epsilon$
+
+   Suppose $\delta = min(\delta_1, \delta_2)$. So, $\delta > 0$, $\delta \leq \delta_1$ and $\delta \leq \delta_2$
+
+   Suppose $0 < |x-a| < \delta$. Since $\delta \leq \delta_1$ and
+   $\delta \leq \delta_2 $, we can infer that
+
+   $0 < |x-a| < \delta_1$ and $0 < |x-a| < \delta_2$
+
+   From the earlier definition, we infer that $\dfrac{1}{2} < h(x) < \dfrac{3}{2}$ and $|h(x) - 1| < \dfrac{\epsilon}{2}$
+
+   We need to prove
+
+   $|\dfrac{1}{h(x)} - 1| < \epsilon$
+
+   $= |\dfrac{1-h(x)}{h(x)}|$
+
+   $= |\dfrac{h(x) - 1}{h(x)}| < \dfrac{\epsilon}{2}\dfrac{1}{|h(x)|} < \dfrac{\epsilon}{2}2 < \epsilon$
+
+** Solution b
+
+   Suppose $\lim_{x \to a} g(x) = M$
+
+   Suppose $M \neq 0$
+
+   $\lim_{x \to a} \dfrac{g(x)}{M} = 1$
+
+   Let $h(x) = \dfrac{g(x)}{M}$. So, $\lim_{x \to a}h(x) = 1$. We know from part (a) that $\lim_{x \to a} \dfrac{1}{h(x)} = 1$
+
+   $\lim_{x \to a} \dfrac{M}{g(x)} = 1$
+
+   $\lim_{x \to a} \dfrac{1}{g(x)} = \dfrac{1}{M}$
+
+* Solution 29
+
+  We know that $f(c) \neq g(c)$
+
+  $\forall x \neq c f(x) = g(x)$
+
+  We need to prove $\forall a \lim_{x \to a} f(x) = \lim_{x \to a} g(x)$
+
+  Suppose $a$ be an arbitrary element. Let us consider the cases:
+
+  Case 1: $a \neq c$
+
+  $\lim_{x \to a}f(x) = f(a)$
+
+  $\lim_{x \to a}g(x) = g(a)$
+
+  Since $a \neq c$, $f(a) = f(a)$ and hence $\lim_{x \to a} f(x) = \lim_{x \to a} g(x)$
+
+  Case 2: $a = c$
+
+  $\lim_{x \to a}f(x)$
+
+  Nowte that in the above limit $x \neq a$ but close to the value of
+  a. So, $\lim_{x \to a} f(x)$ is some value $L$. Similarly, since
+  $\forall x \neq c f(x) = g(x)$ we can conclude that $\lim_{x \to
+  a} f(x) = \lim_{x \to a} g(x)$.
+
+* Solution 30
+
+  Suppose $\epsilon > 0$. We need to find $\delta > 0$ such that $0 < |x-a| < \delta \implies |f(x) -L | < \epsilon$
+
+  Since $\lim_{x \to a} g(x) = L$, by definition of limits there
+  exists some $\delta_1 > 0$ such that
+
+  $0 < |x - a| < \delta_1 \implies |g(x) - L | < \epsilon$
+
+  $0 < |x - a| < \delta_1 \implies L - \epsilon < g(x) < L + \epsilon$
+
+  Similarly, since $\lim_{x \to a} h(x) = L$, we know that
+
+  $0 < |x - a| < \delta_2 \implies L - \epsilon < h(x) < L + \epsilon$
+
+  Additionally, since $g(x) \leq f(x) \leq h(x)$ in $forall x \in
+  (b,c)$ and $x \neq a$. So,
+
+  $0 < |x - a| < \delta_3 \implies g(x) \leq f(x) \leq h(x)$
+
+  Suppose $\delta = min(\delta_1, \delta_2, \delta_3)$. Then since
+  $\delta \leq \delta_1$, $\delta \leq \delta_2$ and $\delta \leq
+  \delta_2$, we can infer that
+
+  $L - \epsilon < g(x) < L + \epsilon$
+
+  $L - \epsilon < h(x) < L + \epsilon$
+
+  $g(x) \leq f(x) \leq h(x)$
+
+  Combining them we get,
+
+  $L - \epsilon < g(x) \leq f(x) \leq h(x) <  L + \epsilon$
+
+  Therefore, $-\epsilon < f(x) - L < \epsilon$ which is $|f(x) - L| < \epsilon$
+
+  You can find a similar [[http://educ.jmu.edu/~ohmx/squeeze_proof.pdf][proof here]].
+
+* Solution 31
+
+  Let $L = \lim_{x \to a}g(x)$ Suppose $\lim_{x \to a} f(x) + g(x)$ is
+  defined and the limit is $M$. Let's assume $\epsilon =
+  \dfrac{\epsilon}{2}$ for both the cases. So,
+
+  $0 < |x -a| < \delta_1 \implies |f(x) + g(x) -M| < \dfrac{\epsilon}{2}$
+
+  $0 < |x -a| < \delta_2 \implies |g(x) - L| < \dfrac{\epsilon}{2}$
+
+  Suppose $\epsilon > 0$
+
+  Let $\delta = min(\delta_1, \delta_2)$. So, $\delta > 0$, $\delta \leq \delta_1$ and $\delta \leq \delta_2$
+
+  We can infer from the above equation,
+
+  $|f(x) + g(x) -M| < \dfrac{\delta}{2}$
+
+  $|g(x) - L| < \dfrac{\delta}{2}$
+
+  From the inequality laws we know that, if $a < b$ and $c < b$, then $a + c < 2b$.
+
+  So, $|f(x) + g(x) -M| + |g(x) - L| < \epsilon$
+
+  $|f(x) -M + L| = |f(x) + g(x) -M - (g(x) - L)|$
+
+  $<= |f(x) + g(x) -M| + |g(x)-L|$ (From triangle inequality)
+
+  $< \dfrac{\epsilon}{2} + \dfrac{\epsilon}{2} < \epsilon$
+
+  The above conclusion means,
+
+  $\forall \epsilon > 0 \; \exists \delta = min(\delta_1, \delta_2) \; \forall x 0 < |x-a| < \delta \implies |f(x) + L - M| < \epsilon$
+
+  So, the limit of $f(x)$ is defined. But we know that $f(x)$ is
+  undefined which is a contradiction. Hence, $\lim_{x \to a} f(x) +
+  g(x)$ is undefined.
+  
