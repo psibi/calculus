@@ -6,3 +6,4 @@
   - [[file:chapter2/solution2.org][solution2]]
   - [[file:chapter2/solution3.org][solution3]]
   - [[file:chapter2/solution4.org][solution4]]
+  - [[file:chapter2/solution5.org][solution5]]
