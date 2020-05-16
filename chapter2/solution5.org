@@ -191,7 +191,7 @@
 
   $\lim_{x \to -\infty} x^5 + 100x^4$
 
-  $= -\infinity + 100 \infty$
+  $= -\infty + 100 \infty$
 
   So, the above limits are undefined.
 
