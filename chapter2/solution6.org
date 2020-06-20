@@ -90,3 +90,49 @@ $\lim_{v \to 1}\dfrac{v^2 - 3v + 1}{v^2 - 2v + 1} = -\infty$
 * Solution 7
 
 $\lim_{v \to 1}\dfrac{v^2 - 3v + 2}{v^2 - 2v + 1}$  
+
+The numerator approaches 0 and the denominator also approaches 0.
+
+As $v \to 1$, $v^2 - 2v + 1 \to 0^+$.
+
+From theorem $2.6.2$, as $v \to 1$, $\dfrac{1}{v^2 - 2v + 1} \to
+\infty$.
+
+As $v \to 1^-$, $v^2 - 3v + 2 \to 0^+$
+As $v \to 1^+$, $v^2 - 3v + 2 \to 0^-$
+
+So, the two sides limits does not exists.
+
+$\lim_{v \to 1^-}\dfrac{v^2 - 3v + 2}{v^2 - 2v + 1} = \infty$
+
+$\lim_{v \to 1^+}\dfrac{v^2 - 3v + 2}{v^2 - 2v + 1} = -\infty$
+
+* Solution 8
+
+$\lim_{x \to -1^+} \dfrac{x^2 + 2x - 3}{x^2 + 2|x| - 3}$
+
+The numerator approaches -4 and the denominator approaches 0, so the
+limit is undefined. (From Theorem 2.4.8)
+
+As $x \to -1^+$, $x^2 + 2|x| - 3 \to 0^-$. From theorem 2.6.2 as $x
+\to 1^+$, $\dfrac{1}{x^2 + 2|x| - 3} \to -\infty$
+
+But the numerator is also negative. So,
+
+$\lim_{x \to -1^+} \dfrac{x^2 + 2x - 3}{x^2 + 2|x| - 3} = \infty$
+
+* Solution 9
+
+$\lim_{x \to 2^-} \lfloor 4 + 3x \rfloor$
+
+Rewriting the above equation as $\lim_{x \to 2^-} f(g(x))$
+
+where $f(x) = \lfloor x \rfloor$, $g(x) = 4 + 3x$
+
+Let $u = g(x) = 4 + 3x$ and $y = f(y) = \lfloor u \rfloor = \lfloor 4 + 3x \rfloor$
+
+$\lim_{x \to 2^-} g(x) = 10$
+
+So, $x \to 2^-$, $u \to 10^-$
+
+$\lim_{u \to 10^-} f(u) = \lim_{u \to 10^-} \lfloor u \rfloor = 9$
