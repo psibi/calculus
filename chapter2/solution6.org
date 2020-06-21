@@ -136,3 +136,286 @@ $\lim_{x \to 2^-} g(x) = 10$
 So, $x \to 2^-$, $u \to 10^-$
 
 $\lim_{u \to 10^-} f(u) = \lim_{u \to 10^-} \lfloor u \rfloor = 9$
+
+* Solution 10
+
+$\lim_{x \to 2^-} 4 + \lfloor 3x \rfloor$
+
+Rewriting the above equation as $\lim_{x \to 2^-} f(g(x))$
+
+where $f(x) = 4 + x$, $g(x) = \lfloor 3x \rfloor$
+
+Let $u = g(x) = \lfloor 3x \rfloor$ and $y = f(y) = 4 + u$
+
+$\lim_{x \to 2^-} g(x) = 5$
+
+$\lim_{u \to 5} f(u) = 9$
+
+* Solution 11
+
+$\lim_{x \to 2^-} 4 +  3\lfloor x \rfloor$
+
+Rewriting the above equation as $\lim_{x \to 2^-} f(g(x))$
+
+where $f(x) = 4 + 3x$, $g(x) = \lfloor x \rfloor$
+
+Let $u = g(x) = \lfloor x \rfloor$ and $y = f(y) = 4 + 3 \lfloor u \rfloor$
+
+$\lim_{x \to 2^-} g(x) = 1$
+
+$\lim_{u \to 1} f(u) = 7$
+
+* Solution 12
+
+$\lim_{x \to 0} \lfloor 1 - x^2 \rfloor$
+
+Rewriting the above equation as $\lim_{x \to 0} f(g(x))$
+
+where $g(x) = 1 - x^2$, $f(x) = \lfloor x \rfloor$
+
+Let $u = g(x) = 1-x^2$ and $y = f(y) = \lfloor u \rfloor$
+
+$\lim_{x \to 0} g(x) = 1-x^2 = 1$
+
+As $x \to 0$, $u \to 1^-$.
+
+$\lim_{u \to 1^-} f(u) = 0$
+
+* Solution 13
+
+$\lim_{x \to 0} \lfloor 1 - x^2 + x^3 \rfloor $
+
+Rewriting the above equation as $\lim_{x \to 0} f(g(x))$
+
+where $g(x) = 1 - x^2 + x^3$, $f(x) = \lfloor x \rfloor$
+
+Let $u = g(x)$ and $y = f(y)$
+
+$\lim_{x \to 0} g(x) = 1-x^2 + x^3 = 1$
+
+As $x \to 0$, $u \to 1^-$
+
+$\lim_{u \to 1^-} f(u) = 0$
+
+* Solution 14
+
+$\lim_{x \to 0} \lfloor 1 - x^2 + x \rfloor $
+
+Rewriting the above equation as $\lim_{x \to 0} f(g(x))$
+
+where $g(x) = 1 - x^2 + x$, $f(x) = \lfloor x \rfloor$
+
+Let $u = g(x)$ and $y = f(y)$
+
+$\lim_{x \to 0} g(x) = 1$
+
+As $x \to 0^-$, $u \to 1^-$
+
+As $x \to 0^+$, $u \to 1^+$
+
+$\lim_{u \to 1^-} f(u) = 0$
+
+$\lim_{u \to 1^+} f(u) = 1$
+
+Hence the limit does not exist.
+
+* Solution 15
+
+$\lim_{x \to 0} \lfloor 1 - x^2 \rfloor + x$
+
+$= \lim_{x \to 0} \lfloor 1 - x^2 \rfloor + \lim_{x \to 0} x$
+
+$= \lim_{x \to 0} \lfloor 1 - x^2 \rfloor$
+
+$= 0$ (From solution 12)
+
+* Solution 16
+
+$\lim_{x \to 0} \dfrac{1}{x} - \dfrac{1}{x^2}$
+
+$= \lim_{x \to 0} \dfrac{x-1}{x^2}$
+
+From theorem $2.6.2$, the limit is $- \infty$
+
+* Solution 17
+
+$\lim_{v \to \infty} \dfrac{v^3 + 5}{v^2 + v}$
+
+Both the numerator and the denominator tend to $\infty$. So the limit
+is $\infty$.
+
+* Solution 18
+
+$\lim_{v \to -\infty} \dfrac{v^3 + 5}{v^2 + v}$
+
+$= \lim_{v \to -\infty} \dfrac{v^3(1 + \dfrac{5}{v^3})}{v^2(1 + \dfrac{1}{v})}$
+
+$= \lim_{v \to -\infty}  \dfrac{v(1 + \dfrac{5}{v^3})}{(1 + \dfrac{1}{v})}$
+
+$= -\infty$
+
+* Solution 19
+
+** Solution a
+
+$\lim_{x \to 0} f(g(x))$
+
+$\lim_{x \to 0} 2 - x^2 = 2$
+
+As $x \to 0$, $g(x) \to 2^-$
+
+Let $u = g(x)$
+
+As $u \to 2^-$, $f(u) \to 1$
+
+So, $\lim_{x \to 0} f(g(x)) = 1$
+
+** Solution b
+
+$\lim_{x \to 1} g(f(x))$
+
+$\lim_{x \to 1} f(x) = 2$
+
+Let $u = f(x)$
+
+As $x \to 1$, $f(x) \to 2^-$
+As $u \to 2^-$, $g(u) \to -2$
+
+$\lim_{x \to 1} g(f(x)) = -2$
+
+** Solution c
+
+$\lim_{x \to 2^+} f(g(x))$
+
+$\lim_{x \to 2^+} g(x) = 5$
+
+As $x \to 2^+$, $g(x) \to 5^-$
+
+Let $u = g(x)$
+
+As $u \to 5^-$, $f(u) \to 3$
+
+$\lim_{x \to 2^+} f(g(x)) = 3$
+
+** Solution d
+
+$\lim_{x \to 2^+} g(f(x))$
+
+$\lim_{x \to 2^+} f(x) = -1$
+
+As $x \to 2^+$, $f(x) \to -1^+$
+
+Let $u = f(x)$
+
+As $u \to -1^+$, $g(u) \to 1$
+
+$\lim_{x \to 2^+} g(f(x)) = 1$
+
+* Solution 20
+
+** Solution a
+
+$\lim_{x \to 3^+} h(x) = 0$
+
+** Solution b
+
+$\lim_{x \to 3^+} h( \lfloor x \rfloor )$
+
+$\lim_{x \to 3^+} \lfloor x \rfloor = 3$
+
+As $x \to 3^+$, $\lfloor x \rfloor \to 3$
+
+Let $u = \lfloor x \rfloor$
+
+As $u \to 3$, $h(u) \to undefined$ as the left and right limit doesn't
+match.
+
+** Solution c
+
+$\lim_{x \to 3^-} h(x) = 3$
+
+** Solution d
+
+$\lim_{x \to 3^-} h( \lfloor x \rfloor )$
+
+$\lim_{x \to 3^-} \lfloor x \rfloor = 2$
+
+As $x \to 3^-$, $\lfloor x \rfloor \to 2$
+
+Let $u = \lfloor x \rfloor$
+
+As $u \to 2$, $h(u) \to 4$
+
+** Solution e
+
+$\lim_{x \to 3^-} h( h(x) )$
+
+$\lim_{x \to 3^-} h(x) = 3$
+
+As $x \to 3^-$, $h(x) \to 3^+$
+
+Let $u = h(x)$
+
+As $u \to 3^+$, $h(x) \to 0$
+
+So, $\lim_{x \to 3^-} h( h(x) ) = 0$
+
+** Solution f
+
+$\lim_{x \to 4} h( h(x) )$
+
+$\lim_{x \to 4} h(x) = 3$
+
+As $x \to 4$, $h(x) \to 3^-$
+
+Let $y = h(x)$
+
+As $x \to 4$, $y \to 3^-$
+
+As $y \to 3^-$, $h(y) \to 3$.
+
+$\lim_{x \to 4} h( h(x) ) = 3$
+
+** Solution g
+
+$\lim_{x \to 4} h( h(h(x)) )$
+
+We know that $\lim_{x \to 4} h( h(x) ) = 3$
+
+Let $u = h(h(x))$
+
+As $x \to 4$, $u \to 3^-$
+
+As $u \to 3^-$, $h(u) \to 3$
+
+So, $\lim_{x \to 4} h( h(h(x)) ) = 3$
+
+* Solution 21
+
+Suppose $\lim_{x \to a} f(x) = L$
+
+Suppose $\lim_{x \to a} g(x) = \infty$ or $\lim_{x \to a} g(x) = -\infty$
+
+Case 1:
+
+Suppose $\lim_{x \to a} g(x) = \infty$
+
+From theorem 2.6.2, we know that
+
+If $x \to a^{\neq}$, $g(x) \to \infty$ then as $x \to a^{\neq}$, $\dfrac{1}{g(x)} \to 0^+$
+
+So, $\lim_{x \to a} \dfrac{1}{g(x)} = 0$
+
+So, $\lim_{x \to a} \dfrac{f(x)}{g(x)} = \lim_{x \to a}f(x). \lim_{x \to a}\dfrac{1}{g(x)} = 0$
+
+Case 2:
+
+Suppose $\lim_{x \to a} g(x) = -\infty$
+
+From theorem 2.6.2, we know that
+
+If $x \to a^-$, $g(x) \to -\infty$ then as $x \to a^{\neq}$, $\dfrac{1}{g(x)} \to 0^-$
+
+So, $\lim_{x \to a} \dfrac{1}{g(x)} = 0$
+
+So, $\lim_{x \to a} \dfrac{f(x)}{g(x)} = \lim_{x \to a}f(x). \lim_{x \to a}\dfrac{1}{g(x)} = 0$
