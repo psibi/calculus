@@ -1,0 +1,78 @@
+* Continuity
+
+** Definition
+
+Suppose that $f$ is a function and $a$ is a number. We say that $f$ is
+continous at $a$ if $f(a)$ is defined, $\lim_{x \to a} f(x)$ is
+defined and $\lim_{x \to a} f(x) = f(a)$.
+
+** Continuity on Open Interval
+
+We say that a function $f$ is continous on open interval $I$ if for
+every $a \in I$, $f$ is continous at a.
+
+** Theorem on compositions of functions
+
+Suppose $f$ and $g$ are continous at $a$. Then so are $f + g$, $f -
+g$, and $f.g$. If $g(a) \neq 0$, then $f/g$ is also continous at a.
+
+** One sided version of continuity
+
+We say that $f$ is continous from the right at $a$ if $f(a)$ is
+defined, $\lim_{x \to a^+} f(x)$ is defined, and $\lim_{x \to a^+}
+f(x) = f(a)$. We say that $f$ is continous from the left at $a$ if
+$f(a)$ is defined, $\lim_{x \to a^-} f(x)$ is defined, and $\lim_{x
+\to a^-} f(x) = f(a)$.
+
+** Continuity on Closed Interval
+
+We say that a function $f$ is continous on a closed interval $[a,b]$
+if it is continous on $(a,b)$, continous fom the right at $a$, and
+continous from the left at $b$.
+
+** Intermediate Value Theorem
+
+Suppose that $f$ is continous on the interval $[a,b]$ and either $f(a)
+< r < f(b)$ or $f(a) > r > f(b)$. Then there is some number $c$ such
+that $a < c < b$ and $f(c) = r$.
+
+** Theorem 2.7.8
+
+Let $n$ be any positive integer and let $f(x) = \sqrt[n]{x}$
+
+- If $n$ is even, then $f$ is continous on $[0, \infty)$
+- If $n$ is odd, then $f$ is continous on $(-\infty, \infty)$
+
+** Lemma 2.7.9
+
+For any numbers $\alpha$ and $\beta$,
+
+$|cos \beta - cos \alpha| \leq | \beta - \alpha|$, $|sin \beta - sin \alpha| \leq | \beta - \alpha|$
+
+** Trignometric theorem
+
+All of the trignometric functions are continous everywhere they are
+defined.
+
+** Theorem 2.7.11
+
+Suppose that $f$ is continous at $a$. Then as $x \to a$, $f(x) \to
+f(a)$. In other words, for every $\epsilon > 0$ there is some $\delta
+> 0$ such that if $|x - a| < \delta$ then $|f(x) - f(a)| < \epsilon$
+
+** Theorem 2.7.12
+
+- If $f$ is continous from the left at $a$, then as $x \to a^{\leq}$,
+  $f(x) \to f(a)$
+- If $f$ is continous from the right at $a$, then as $x \to a^{\geq}$,
+  $f(x) \to f(a)$
+
+** Theorem 2.7.13
+
+1. Suppose that $\lim_{x \to a} g(x) = L$ and $f$ is continous at
+   $L$. Then $\lim_{x \to a} f(g(x)) = f(L)$.
+2. Supppose that $g$ is continous at $a$ and $f$ is continous at
+   $g(a)$. Then $f \circ g$ is continous at $a$.
+3. Suppose that $g$ is continous on an interval $J$, $f$ is continous
+   on an interval $I$, and for every $x \in J$, $g(x) \in I$. Then $f
+   \circ g$ is continous on $J$.
