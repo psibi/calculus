@@ -419,3 +419,54 @@ If $x \to a^-$, $g(x) \to -\infty$ then as $x \to a^{\neq}$, $\dfrac{1}{g(x)} \t
 So, $\lim_{x \to a} \dfrac{1}{g(x)} = 0$
 
 So, $\lim_{x \to a} \dfrac{f(x)}{g(x)} = \lim_{x \to a}f(x). \lim_{x \to a}\dfrac{1}{g(x)} = 0$
+
+* Solution 22
+
+** Solution a
+
+As $x \to a^{\neq}$, $f(x) \to L > 0$
+As $x \to a^{\neq}$, $g(x) \to 0^+$
+
+$\lim_{x \to a}f(x) = L$
+
+$\lim_{x \to a}g(x) = 0$
+
+From theorem 2.6.2,
+
+$\lim_{x \to a} \dfrac{1}{g(x)} = \infty$
+
+So $\lim_{x \to a} \dfrac{f(x)}{g(x)} = \infty$
+
+** Solution b
+
+Suppose $\lim_{x \to a} f(x) = L$
+
+We also know that $L < 0>$
+
+$\lim_{x \to a} g(x) = 0$
+
+From theorem 2.6.2,
+
+$\lim_{x \to a} \dfrac{1}{g(x)} = -\infty$
+
+So $\lim_{x \to a} \dfrac{f(x)}{g(x)} = -L * -\infty = \infty$
+
+* Solution 23
+
+We need to find $c, f$ and $g$ such that
+
+$\lim_{x \to 0} f(x) = \infty$
+
+$\lim_{x \to 0} g(x) = \infty$
+
+$\lim_{x \to 0} \dfrac{f(x)}{g(x)} = c$
+
+$f(x) = \dfrac{c}{x}$
+
+$g(x) = \dfrac{1}{x}$
+
+$\lim_{x \to 0} f(x) = \infty$
+
+$\lim_{x \to 0} g(x) = \infty$
+
+$\lim_{x \to 0} \dfrac{f(x)}{g(x)} = \dfrac{c * x}{x * 1} = c$

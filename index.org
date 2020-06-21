@@ -7,3 +7,4 @@
 ** [[file:chapter2/solution3.org][Limits by the Definition]]
 ** [[file:chapter2/solution4.org][Limit theorems]]
 ** [[file:chapter2/solution5.org][Variation of Limits]]
+** [[file:chapter2/solution6.org][Limits of Compositions]]
