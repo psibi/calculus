@@ -1,0 +1,5 @@
+* What does Limit mean
+
+- [[https://en.wikipedia.org/wiki/(%CE%B5,_%CE%B4)-definition_of_limit#Precise_statement_for_real_valued_functions][Precise definition of Limits]]  
+- [[https://www.reddit.com/r/math/comments/53bdd0/can_someone_eli5_the_formal_definition_of_a_limit/d7rpcmy/][Nice explanation of limit definition on Reddit]]
+

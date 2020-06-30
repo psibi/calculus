@@ -1,0 +1,165 @@
+#+LATEX_HEADER_EXTRA: \usepackage{indentfirst}
+#+LATEX_HEADER_EXTRA: \usepackage{amsmath}
+
+* Solution 1
+
+$\lim_{x \to \dfrac{1}{2}} tan (\pi x^2)$
+
+By the continuity of the $tan$ function,
+
+$\lim_{x \to \dfrac{1}{2}} tan (\pi x^2) = tan \dfrac{\pi}{4} = 1$
+
+* Solution 2
+
+$\lim_{x \to 6} \dfrac{\sqrt{x+3} - 2}{x-1}$
+
+Since $x - 1 \neq 0$, $\dfrac{\sqrt{x+3} - 2}{x-1}$ is continous at $6$.
+
+So, $\lim_{x \to 6} \dfrac{\sqrt{x+3} - 2}{x-1}$
+
+$= \dfrac{\sqrt{9} - 2}{5}$
+
+$= \dfrac{3-2}{5} = \dfrac{1}{5}$
+
+* Solution 3
+
+$\lim_{x \to 1} \dfrac{\sqrt{x+3} - 2}{x-1}$
+
+Both the numerator and denominator approach $0$ as $x$ approaches $1$.
+
+$\lim_{x \to 1} \dfrac{\sqrt{x+3} - 2}{x-1} * \dfrac{\sqrt{x+3} + 2}{\sqrt{x+3} + 2}$
+
+$= \lim_{x \to 1} \dfrac{x + 3 - 4}{(x-1)(\sqrt{x+3} + 2)}$
+
+$= \lim_{x \to 1} \dfrac{1}{\sqrt{x+3} + 2}$
+
+Since the rational function is continous,
+
+$= \dfrac{1}{\sqrt{4} + 2} = \dfrac{1}{4}$
+
+* Solution 4
+
+$\lim_{x \to 0} \dfrac{\sqrt{4+x} - \sqrt{4-x}}{x}$
+
+Both the numerator and denominator approach $0$ as $x$ approaches $0$.  
+
+$\lim_{x \to 0} \dfrac{\sqrt{4+x} - \sqrt{4-x}}{x} * \dfrac{\sqrt{4+x} + \sqrt{4-x}}{\sqrt{4+x} + \sqrt{4-x}}$
+
+$= \lim_{x \to 0} \dfrac{2}{\sqrt{4+x} + \sqrt{4-x}}$
+
+Since the rational function is continous,
+
+$\dfrac{2}{\sqrt{4} + \sqrt{4}} = \dfrac{2}{2+2} = \dfrac{2}{4} = \dfrac{1}{2}$
+
+* Solution 5
+
+$\lim_{t \to 1} \dfrac{\sqrt{t^2+3t} - 2}{t-1}$
+
+Both the numerator and denominator approach $0$ as $t$ approaches $1$.  
+
+$\lim_{t \to 1} \dfrac{\sqrt{t^2+3t} - 2}{t-1} * \dfrac{\sqrt{t^2+3t} + 2}{\sqrt{t^2+3t} + 2}$
+
+$= \lim_{t \to 1} \dfrac{(t-1)(t+4)}{(t-1)(\sqrt{t^2 + 3t} + 2)}$
+
+$= \lim_{t \to 1} \dfrac{t+4}{\sqrt{t^2 + 3t} + 2}$
+
+Since the above rational function is continous,
+
+$\dfrac{1+4}{\sqrt{1+3} + 2} = \dfrac{5}{2+2} = \dfrac{5}{4}$
+
+* Solution 6
+
+$\lim_{x \to 4} \dfrac{x-2-\sqrt{x}}{x-4}$
+
+Both the numerator and denominator approach $0$ as $x$ approaches $4$.
+
+$\lim_{x \to 4} \dfrac{x-2-\sqrt{x}}{x-4} * \dfrac{x-2+\sqrt{x}}{x-2+\sqrt{x}}$
+
+$= \lim_{x \to 4} \dfrac{x-1}{(x-2) + \sqrt{x}}$
+
+Since the above rational function is continous,
+
+$= \dfrac{3}{x+ \sqrt{4}} = \dfrac{3}{4}$
+
+* Solution 7
+
+$\lim_{z \to 1^+} \dfrac{z-1}{\sqrt{z^2 - 1}}$
+
+Both the numberator and denominator approach $0$ as z approaches $1^+$.
+
+$\lim_{z \to 1^+} \dfrac{z-1}{\sqrt{z - 1} \sqrt{z+1}}$
+
+$= \lim_{z \to 1^+} \dfrac{\sqrt{z-1}}{\sqrt{z+1}}$
+
+Since the above rational function is continous,
+
+$= \dfrac{0}{\sqrt{2}} = 0$
+
+* Solution 8
+
+$\lim_{x \to 4} \dfrac{1}{\sqrt{x} - 2} - \dfrac{4}{x-4}$
+
+Let's simplify the function,
+
+$\dfrac{1}{\sqrt{x} - 2} - \dfrac{4}{x-4}$
+
+$= \dfrac{x-4-4(\sqrt{x} - 2)}{(x-4)(\sqrt{x}-2)}$
+
+$= \dfrac{x-4-4\sqrt{x}+8}{(x-4)(\sqrt{x}-2)}$
+
+$= \dfrac{x+4-4\sqrt{x}}{(x-4)(\sqrt{x}-2)}$
+
+$= \dfrac{x+4-4\sqrt{x}}{(x-4)(\sqrt{x}-2)} * \dfrac{x+4+4\sqrt{x}}{x+4+4\sqrt{x}}$
+
+$= \dfrac{(x-4)^2}{(x-4)(\sqrt{x}-2)(x+4+4\sqrt{x})}$
+
+$= \dfrac{x-4}{(\sqrt{x}-2)(x+4+4\sqrt{x})}$
+
+$= \dfrac{x-4}{(\sqrt{x}-2)(x+4+4\sqrt{x})} * \dfrac{\sqrt{x} + 2}{\sqrt{x} + 2}$
+
+$= \dfrac{\sqrt{x} + 2}{x+4+4\sqrt{x}}$
+
+Since the above rational function is continous,
+
+$= \dfrac{2+2}{4+4+4.2} = \dfrac{4}{4(1+1+2)} = \dfrac{1}{4}$
+
+* Solution 9
+
+$\lim_{x \to 8} \dfrac{\sqrt[3]{x}-2}{x-8}$
+
+Both the numberator and denominator approach $0$ as x approaches $8$.
+
+$x-8 = (\sqrt[3]{x})^3 - 2^3$
+$= (\sqrt[3]{x} - 2)(x^{\dfrac{2}{3}} + 2.\sqrt[3]{x} + 4)$
+
+Simplifying the above limits, we get
+
+$= \lim_{x \to 8} \dfrac{1}{x^{\dfrac{2}{3}} + + 2.\sqrt[3]{x} + 4}$
+
+Since the above rational function is continous,
+
+$= \dfrac{1}{2^2 + 2.2 + 4} = \dfrac{1}{4+4+4} = \dfrac{1}{12}$
+
+* Solution 10
+
+$\lim_{x \to 0^+} \dfrac{1}{\sqrt[3]{x}} - \dfrac{1}{\sqrt{x}}$
+
+Let's simplify the function,
+
+$= x^{-\dfrac{1}{3}} - x^{-\dfrac{1}{2}}$
+
+$= x^{-\dfrac{1}{2}}(\dfrac{x^{-\dfrac{1}{3}}}{x^{-\dfrac{1}{2}}} - 1)$
+
+$= x^{-\dfrac{1}{2}}(x^{-\dfrac{1}{6}} - 1)$
+
+Let $f(x) = \sqrt{x}$
+
+$\lim_{x \to 0^+} f(x) = 0$
+
+$\lim_{x \to 0^+} \dfrac{1}{f(x)} = \infty$
+
+$\lim_{x \to 0^+} x^{\dfrac{1}{6}} - 1 = -1$
+
+From theorems 2.5.4,
+
+$\lim_{x \to 0^+} \dfrac{1}{\sqrt[3]{x}} - \dfrac{1}{\sqrt{x}} = -\infty$

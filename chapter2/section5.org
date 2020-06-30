@@ -1,0 +1,23 @@
+#+LATEX_HEADER_EXTRA: \usepackage{indentfirst}
+#+LATEX_HEADER_EXTRA: \usepackage{amsmath}
+
+* Variations on Limits
+
+** Definition 2.5.7
+
+To say that as $x \to \infty$, $f(x) \to L$ means that for every
+$\epsilon > 0$ there is some N such that if $x > N$ then $|f(x) - L| <
+\epsilon$. We defined $\lim_{x \to \infty} f(x)$ to be the unique
+number $L$ such that as $x \to \infty$, $f(x) \to L$, if there is such
+a number L.
+
+(Here we can think $\epsilon$ as challenge and $N$ as the reponse for
+it)
+
+** Definition 2.5.8
+
+To say that as $x \to -\infty$, $f(x) \to L$ means that for every
+$\epsilon > 0$ there is some N such that if $x < N$ then $|f(x) - L| <
+\epsilon$. We defined $\lim_{x \to -\infty} f(x)$ to be the unique
+number $L$ such that as $x \to -\infty$, $f(x) \to L$, if there is such
+a number L.
