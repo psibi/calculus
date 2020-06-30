@@ -2,10 +2,14 @@
 
 * Chapter 2
   
-** [[file:chapter2/solution1.html][What is Calculus About]]
-** [[file:./chapter2/solution2.html][What does "Limit" mean ?]]
-** [[file:chapter2/solution3.org][Limits by the Definition]]
-** [[file:chapter2/solution4.org][Limit theorems]]
-** [[file:chapter2/solution5.org][Variation of Limits]]
-** [[file:chapter2/solution6.org][Limits of Compositions]]
-** [[file:chapter2/section7.org][Continuity]]
+- [[file:chapter2/solution1.org][What is Calculus About]]
+- [[file:chapter2/section2.org][What does "Limit" mean ?]]
+  - [[file:chapter2/section2.org][Solutions]]
+- [[file:chapter2/solution3.org][Limits by the Definition]]
+- [[file:chapter2/solution4.org][Limit theorems]]
+- [[file:chapter2/section5.org][Variation of Limits]]
+  - [[file:chapter2/solution5.org][Solutions]]
+- [[file:chapter2/solution6.org][Limits of Compositions]]
+- [[file:chapter2/section7.org][Continuity]]
+  - [[file:chapter2/solution7.org][Solutions]]
+- [[file:chapter2/section8.org][Sequences and the Nested Interval Theorem]]
