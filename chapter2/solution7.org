@@ -1,3 +1,4 @@
+#+HTML_LINK_UP: https://psibi.in/velleman-calculus
 #+LATEX_HEADER_EXTRA: \usepackage{indentfirst}
 #+LATEX_HEADER_EXTRA: \usepackage{amsmath}
 
@@ -351,3 +352,328 @@ $= \lim_{x \to 0} \dfrac{sin 5x * 5}{cos 5x * 5x * 3}$
 $= \lim_{x \to 0} \dfrac{sin 5x}{5x} * \lim_{x \to 0} \dfrac{5}{3 cos 5x}$
 
 $= 1.\dfrac{5}{3cos 0} = \dfrac{5}{3}$
+
+* Solution 25
+
+$\lim_{x \to 0} \dfrac{tan 5x}{x^2 - 3x}$
+
+$= \lim_{x \to 0} \dfrac{tan 5x}{x(x-3)}$  
+
+$= \lim_{x \to 0} \dfrac{tan 5x}{x(x-3)} * \dfrac{3}{x-3}$
+
+$= \lim_{x \to 0} \dfrac{tan 5x}{3x} * \lim_{x \to 0} \dfrac{3}{x-3}$
+
+$= \dfrac{5}{3} * \dfrac{3}{-3}$
+
+$= \dfrac{-5}{3}$
+
+* Solution 26
+
+$f(x) = \dfrac{x^2 - 2x + 7}{x^3 - 3x^2}$
+
+$f(x) = \dfrac{(x-1)^2 + 6}{x^2(x-3)}$
+
+$f(x) = \dfrac{(1-\dfrac{1}{x})^2 + \dfrac{6}{x^2}}{x(1-\dfrac{3}{x})}$
+
+** Solution a
+
+As $x \to 0$, the numerator tends to $7$.
+
+As $x \to 0^-$, the denominator tends to $0^-$.
+
+As $x \to 0^+$, the denominator tends to $0^-$.
+
+We know that as $x \to 0^-$, $\dfrac{1}{x} \to -\infty$
+
+So, $\lim_{x \to 0} f(x) = -\infty$
+
+** Solution b
+
+As $x \to 3^-$, the numerator tends to $10$.
+
+As $x \to 3^-$, the denominator tends to $0^-$.
+
+$\lim_{x \to 3^-} f(x) = \lim_{x \to 3^-} \dfrac{(1-\dfrac{1}{x})^2 + \dfrac{6}{x^2}}{x(1-\dfrac{3}{x})}$
+
+$= -\infty$
+
+** Solution c
+
+$\lim_{x \to 3^+} f(x)$
+
+As $x \to 3^+$, the numerator tends to $10$.
+
+As $x \to 3^+$, the denominator tends to $0^+$.
+
+$\lim_{x \to 3^+} f(x) = \infty$
+
+** Solution d
+
+$\lim_{x \to \infty} f(x)$   
+
+$= \lim_{x \to \infty} \dfrac{(1-\dfrac{1}{x})^2 + \dfrac{6}{x^2}}{x(1-\dfrac{3}{x})}$
+
+$= 0$
+
+** Solution e
+
+$\lim_{x \to -\infty} f(x)$
+
+$= \lim_{x \to -\infty} \dfrac{(1-\dfrac{1}{x})^2 + \dfrac{6}{x^2}}{x(1-\dfrac{3}{x})}$
+
+$= 0$
+
+* Solution 27
+
+** Solution a
+
+We need to prove $0 \leq a < b \implies a^2 < b^2$
+
+Suppose $0 \leq a < b$
+
+So, $a < b$
+
+$a - b < 0$
+
+$(a-b)(a+b) < 0$
+
+$a^2 - b^2 < 0$
+
+$a^2 < b^2$
+
+So, $0 \leq a < b \implies a^2 < b^2 \blacksquare$ 
+
+** Solution b
+
+Suppose $r \geq 0$
+
+Let us assume that there exists two numbers $c_1$ and $c_2$ such that
+
+$c_1 \neq c_2$
+
+$c_1 \geq 0$
+
+$c_2 \geq 0$
+
+$c_1^2 = r$
+
+$c_2^2 = r$
+
+Since $c_1^2 = r$ and $c_2^2 = r$.
+
+So, $c_1^2 = c_2^r$
+
+Taking square root on both sides, $c_1 = c_2$ since both $c_1 \geq 0$ and $c_2 \geq 0$.
+
+But this contradicts with our initial assumption that $c_1 \neq c_2$.
+
+So, there is exactly one number $c \geq 0$ such that $c^2 = r$.
+
+** Solution c
+
+We need to prove $0 \leq a < b \implies \sqrt{a} < \sqrt{b}$
+
+Suppose $0 \leq a < b$
+
+So, $a < b$
+
+Since $a \geq 0$ and $b > 0$
+
+$\sqrt{a} < \sqrt{b}$
+
+So, $0 \leq a < b \implies \sqrt{a} < \sqrt{b} \blacksquare$
+
+* Solution 28  
+
+We need to prove that $\lim_{x \to a^-} \sqrt{x} = \sqrt{a}$
+
+Suppose $a > 0$
+
+We will use the $\epsilon - \delta$ method.
+
+Suppose $\epsilon > 0$. Let $b = (\sqrt{a} - \epsilon)^2$ and $\delta = a - b$
+
+Since $b = (\sqrt{a} - \epsilon)^2$
+
+$\sqrt{b} = \sqrt{a} - \epsilon$
+
+Since $0 < a$, $0 < \sqrt{a}$
+
+So, $0 < \sqrt{a} - \epsilon < \sqrt{a}$
+
+$0 < \sqrt{b} < \sqrt{a}$
+
+Suppose $a - \delta < x < a$
+
+We need to prove that $|\sqrt{x} - \sqrt{a}| < \epsilon$
+
+From $\delta = a - b$, $b = a - \delta$
+
+So, $b < x < a$
+
+From $0 < \sqrt{b}$, $0 < b$. So, $b > 0$
+
+Since $a > 0$ and $b > 0$
+
+So, $\sqrt{b} < \sqrt{x} < \sqrt{a}$
+
+$\sqrt{a} - \epsilon < \sqrt{x} < \sqrt{a}$
+
+and therefore $|\sqrt{x} - \sqrt{a}| < \epsilon$ as required.
+
+* Solution 29
+
+Let $f(x) = sin x$
+
+where $x$ is in degrees.
+
+We need to find $\lim_{x \to 0} \dfrac{f(x)}{x}$
+
+Let $g(x)$ be the number of radians in  angle of $x$ degree.
+
+So, $\lim_{x \to 0} \dfrac{sin(g(x))}{x}$
+
+$360$ degree = $2\pi$ radians
+
+$1$ degree = $\dfrac{\pi}{180}$ radians
+
+$\lim_{x \to 0} \dfrac{sin(\dfrac{\pi*x}{180})}{x}$
+
+$= \lim_{x \to 0} \dfrac{sin(\dfrac{\pi*x}{180})}{(\pi * \dfrac{x}{180}) * \dfrac{180}{\pi}}$
+
+$= \dfrac{\pi}{180} \lim_{x \to 0} \dfrac{ sin(\dfrac{\pi * x}{180})}{\dfrac{\pi * x}{180}}$
+
+$Let y = \dfrac{\pi * x}{180}$
+
+As $x \to 0$, $y \to 0$
+
+So, $\lim_{y \to 0} \dfrac{\pi}{180} * \dfrac{sin(y)}{y} = \dfrac{\pi}{180}$
+
+* Solution 30
+
+** Solution a
+
+Suppose as $x \to a^{\neq}$, $g(x) \to L^{\leq}$
+
+$f$ is continous from left at $a$.
+
+From theorem 2.7.12, as $x \to a^{\leq}$, $f(x) \to f(a)$
+
+We need to prove $\lim_{x \to a} f(g(x)) = f(L)$
+
+Let $u = g(x)$
+
+Since $\lim_{x \to a} g(x) = L$, we can say that as $x \to a^{\neq}$, $u \to L^{\leq}$
+
+Applying theorem 2.7.12,
+
+As $u \to L^{\leq}$, $f(u) \to f(L)$
+
+So, $\lim_{x \to a} f(g(x)) = f(L)$.
+
+** Solution b
+
+Suppose as $x \to a^{\neq}$, $g(x) \to L^{\geq}$   
+
+We need to prove $\lim_{x \to a} f(g(x)) = f(L)$
+
+Let $u = g(x)$
+
+As $x \to a^{\neq}$, $g(x) \to L^{\geq}$
+
+Since $f$ is continous from the right at $L$, from theorem 2.7.12,
+
+As $u \to L^{\geq}$, $f(u) \to f(L)$
+
+So, $\lim_{x \to a} f(g(x)) = f(L)$
+
+* Solution 31
+
+$f$ is a function
+
+$I$ is an interval contained in the domain of $f$.
+
+$a \in I$
+
+** Solution a
+
+Suppose $f$ is continous on an interval $I$.
+
+Suppose $a \in I$.
+
+Since $f$ is continous, $\lim_{x \to a} f(x) = f(a)$
+
+From above, $\forall \epsilon > 0 \exists \delta > 0 |x - a | < \delta \implies |f(x) - L| < \epsilon$
+
+Now let's prove $x \to a^{\in I}$, $f(x) \to f(a)$
+
+Suppose $\epsilon_1 > 0$. Suppose $\delta_1 > 0$
+
+Suppose $|x-a| < \delta_1$ and $x \in I$
+
+From above, we can conclude $|f(x) - L| < \epsilon_1$
+
+Hence $x \in a^{\in I}$, $f(x) -> f(a)$
+
+Now we have to prove the other side of the equivalence.
+
+$\forall \epsilon > 0 \exists \delta > 0 |x-a| < \delta \land x \in I \implies |f(x) - L| < \epsilon$
+
+Suppose $\epsilon_1 > 0$. Suppose $\delta_1 > 0$
+
+Suppose $|x-a| < \delta_1$
+
+Since $f$ is continous on an interval $I$, we know that $x \in I$.
+
+So, $|f(x)-L| < \epsilon_1$
+
+** Solution b
+
+$g$ is continous on an interval $J$.
+
+$f$ is continous on an interval $I$.
+
+We need to prove
+
+$\forall a \in J x \to a^{\in J}, g(x) \to g(a)^{\in I}$
+
+$\forall \epsilon > 0 \exists \delta > 0 |x-a| < \delta \land x \in J \implies |g(x) - g(a)| < \epsilon \land g(x) \in I$
+
+Suppose $\epsilon > 0, \delta > 0$ and $|x-a| < \delta \land x \in J$
+
+Since $g$ is continous on $J$,
+
+$\lim_{x \to a} g(x) = g(a)$
+
+So, $|g(x) - g(a)| < \epsilon$
+
+The only remaining thing to prove is $g(x) \in I$. We know that $x \in J$.
+
+Also from theorem 2.7.13,
+
+$\forall x \in J, g(x) \in I$.
+
+So, $g(x) \in I \blacksquare$ 
+
+** Solution c
+
+Suppose $a \in J$. Then by the second part of the qeustion, we know
+that $g(a) \in I$. Now we know that $f$ is continous on an interval
+$I$. So, $f(g(a))$ is continous on interval $I$. So, $f \circ g$ is
+continous on $J$.
+
+* Solution 32
+
+** Solution b
+
+Suppose $-\dfrac{\pi}{2} < \theta < 0$
+
+So, $0 < -\theta < \dfrac{\pi}{2}$
+
+Suppose $cos (-\theta) \leq \dfrac{sin(-\theta)}{-\theta} \leq 1$
+
+Since $cos (-\theta) = cos(\theta)$
+
+$sin(-\theta) = -sin(\theta)$
+
+So, $cos(\theta) \leq \dfrac{sin(\theta)}{\theta} \leq 1$

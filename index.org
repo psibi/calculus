@@ -1,3 +1,5 @@
+#+HTML_LINK_HOME: https://psibi.in
+
 * Calculus: A Rigorous First Course
 
 * Chapter 2
