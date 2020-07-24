@@ -1,0 +1,52 @@
+* Sequences and the Nested Interval Theorem
+
+** Definition 2.8.1
+
+If $f$ is a sequence, then to say that as $n \to \infty$, $f(n) \to L$
+means that for every $\epsilon > 0$ there is some number $N$ such that
+if $n$ is a positive integer and $n > N$, then $|f(n) - L| <
+\epsilon$. We defined $\lim_{n \to \infty} f(n)$ to be the unique $L$
+such that as $n \to \infty$, $f(n) \to L$, if there is such an L.
+
+** Theorem 2.8.2
+
+If $\lim_{x \to \infty} = L$, then $\lim_{n \to \infty} = L$, where in
+the second limit $n$ stands for an integer.
+
+** Converge and Diverge
+
+If $\lim_{n \to \infty} f(n) = L$, then as we go through the list
+f(1), f(2), f(3), ...., the numbers in the list eventually get close
+to $L$. In this situation, we say that the sequence
+$(f(n))^{\infty}_{n=1}$ converges to $L$.
+
+If $\lim_{n \to \infty} f(n)$ is undefined, then we say that the
+sequence $(f(n))^{\infty}_{n=1}$ diverges.
+
+** Nested Interval Theorem (Theorem 2.8.7)
+
+Suppose that $(u_n)^{\infty}_{n=1}$ and $(v_n)^{\infty}_{n=1}$ are two
+sequences of numbers such that $u_1 \leq u_2 \leq u_3 \leq ...\cdot$
+and $v_1 \geq v_2 \geq v_3 \geq ...\cdot$ Suppose also that for every
+$n$, $u_n \leq v_n$, and $\lim_{n \to \infty} (v_n - u_n) = 0$. Then
+there is a unique number $c$ such that for every $n$, $u_n \leq c \leq
+v_n$. Furthermore, $\lim_{n \to \infty} u_n = \lim_{n \to \infty} v_n
+= c$; in fact, since for every $n$ we have $u_n \leq c \leq v_n$, we
+can say that as $n \to \infty$, $u_n \to c^{\leq}$ and $v_n \to
+c^{\geq}$.
+
+** Theorem 2.8.8
+
+Suppose that $\lim_{x \to a}f(x) = L$ and $r$ is any real number.
+
+- If $L > r$, then there is some number $\delta > 0$ such that if $0
+  < |x-a| < \delta$ then $f(x) > r$
+- If $L <> r$, then there is some number $\delta > 0$ such that if $0
+  < |x-a| < \delta$ then $f(x) < r$
+
+** Corollary 2.8.9  
+
+Suppose that $\lim_{x \to a}f(x) = L$ and $r$ is any real number and $d > 0$.
+
+- Suppose that for all $x$, if $0 < |x-a| < d$ then $f(x) \leq r$. Then, $L \leq r$
+- Suppose that for all $x$, if $0 < |x-a| < d$ then $f(x) \geq r$. Then, $L \geq r$  

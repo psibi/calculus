@@ -1,0 +1,55 @@
+#+HTML_LINK_UP: https://psibi.in/velleman-calculus
+
+* Monotone Sequences and the Completeness of the Real Numbers
+
+** Monotone Sequence (Definition 2.9.1)
+
+Let $(a_n)_{n=1}^\infty$ be a sequence.
+
+1. We say that $(a_n)_{n=1}^\infty$ is strictly increasing if $a_1 < a_2 < a_3 < ...\cdot$
+
+2. We say that $(a_n)_{n=1}^\infty$ is weakly increasing if $a_1 \leq a_2 \leq a_3 \leq ...\cdot$
+
+3. We say that $(a_n)_{n=1}^\infty$ is strictly decreasing if $a_1 > a_2 > a_3 > ...\cdot$
+
+4. We say that $(a_n)_{n=1}^\infty$ is weakly decreasing if $a_1 \geq a_2 \geq a_3 \geq ...\cdot$
+
+If a sequence has any of these four properties, then we say that it is *monotone*   
+
+** Upper and Lower bound (Definition 2.9.3)
+
+Suppose $A$ is a set of numbers. We say that a number $b$ is an
+*upper* bound for $A$ if for every $x \in A, x \leq b$. Similarly, b
+is a *lower* bound for $A$ if for every $x \in A, x \geq b$.
+
+** Completeness of the Real Numbers (Theorem 2.9.4)
+
+Suppose that $A$ is a nonempty set of real numbers. That is, $A$ is a
+set of numbers that has at least one element.
+
+1. If $A$ has an upper bound, then it has a least lower bound.
+2. If $A$ has an lower bound, then it has a geratest lower bound.
+
+** Theorem 2.9.5
+
+Suppose $(a_n)_{n=1}^\infty$ is a sequence, and let $A$ be a set whose
+elements are the terms of the sequence.
+
+1. If $(a_n)_{n=1}^\infty$ is weakly increasing and $A$ has an upper
+   bound, then $(a_n)_{n=1}^\infty$ converges to the least upper bound
+   of $A$.
+2. If $(a_n)_{n=1}^\infty$ is weakly increasing and $A$ does not have
+   an upper bound, then $lim_{n \to \infty} a_n = \infty$
+3. If $(a_n)_{n=1}^\infty$ is weakly decreasing and $A$ has a lower
+   bound, then $(a_n)_{n=1}^\infty$ converges to the greatest lower
+   bound of $A$.
+4. If $(a_n)_{n=1}^\infty$ is weakly decreasing and $A$ does not have
+   a lower bound, then $\lim_{n \to \infty} a_n = -\infty$
+
+** Lemma 2.9.8
+
+Suppose $u < v$, $u$ is not an upper bound for $A$, and $v$ is an
+upper bound for $A$. Then there are numbers $u'$ and $v'$ such that $u
+\leq u' < v' \leq v$, $v' - u' = (v-u)/2$, $u'$ is not an upper bound
+for $A$, and $v'$ is an upper bound for $A$.
+
