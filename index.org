@@ -15,4 +15,5 @@
 - [[file:chapter2/section7.org][Continuity]]
   - [[file:chapter2/solution7.org][Solutions]]
 - [[file:chapter2/section8.org][Sequences and the Nested Interval Theorem]]
+  - [[file:chapter2/solution8.org][Solutions]]
 - [[file:chapter2/section9.org][Monotone Sequences and the Completeness of the Real Numbers]]

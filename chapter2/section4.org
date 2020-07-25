@@ -1,0 +1,54 @@
+* Limit Theorems
+
+** Theorem 2.4.1
+
+Let $a$ be any number.
+
+1. For any number $c$, $\lim_{x \to a} c = c$
+2. $\lim_{x \to a}x = a$
+
+** Theorem 2.4.2
+
+Suppose $\lim_{x \to a}f(x) = L$ and $\lim_{x \to a}g(x) = M$. Then:
+
+1. $\lim_{x \to a}(f(x) + g(x)) = L + M$
+2. For any number $c$, $\lim_{x \to a}cf(x) = cL$
+3. $\lim_{x \to a}(f(x) - g(x)) = L - M$
+4. $\lim_{x \to a}(f(x) . g(x)) = L . M$
+5. If $M \neq 0$ then $\lim_{x \to a}(f(x) / g(x)) = L / M$
+
+** Theorem 2.4.3
+
+If $f$ is a polynomial, then for any number $a$
+
+$\lim_{x \to a} f(x) = f(a)$
+
+** Theorem 2.4.5
+
+   Suppose that $d > 0$, and $f_1$ and $f_2$ are functions such that
+   for all $x$, if $0 < |x-a| < d$ then $f_1(x) = f_2(x)$. Then
+   $\lim_{x \to a} f_1(x) = \lim_{x \to a} f_2(x)$, where we interpret
+   this equation to mean that either both limits are defined and they
+   are equal, or both limits are undefined.
+
+** Theorem 2.4.8
+
+   If $\lim_{x \to a}(f(x)/g(x))$ is defined and $\lim_{x \to a}g(x) =
+   0$, then $\lim_{x \to a}f(x) = 0$ as well. Thus, if $\lim_{x \to
+   a}g(x) = 0$ but $\lim_{x \to a}f(x) \neq 0$, then $\lim_{x \to
+   a}(f(x)/g(x))$ must be undefined.
+
+** Squeeze theorem (Theorem 2.4.10)
+
+   Suppose that $d > 0$, and for all $x$, if $0 < |x-a| < d$ then
+   $g(x) \leq f(x) \leq h(x)$. Suppose also that $\lim_{x \to a} g(x)
+   = \lim_{x \to a}h(x) = L$. Then $\lim_{x \to a}f(x) = L$.
+
+** Theorem 2.4.11
+
+   If $\lim_{x \to a}|f(x)| = 0$, then $\lim_{x \to a}f(x) = 0$.
+
+** Theorem 2.2.4
+
+There cannot be more than one number $L$ such that as $x \to a^{\neq},
+f(x) \to L$.
