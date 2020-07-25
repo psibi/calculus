@@ -28,7 +28,7 @@ Suppose that $A$ is a nonempty set of real numbers. That is, $A$ is a
 set of numbers that has at least one element.
 
 1. If $A$ has an upper bound, then it has a least lower bound.
-2. If $A$ has an lower bound, then it has a geratest lower bound.
+2. If $A$ has an lower bound, then it has a greatest lower bound.
 
 ** Theorem 2.9.5
 

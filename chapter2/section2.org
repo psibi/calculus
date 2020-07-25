@@ -2,4 +2,24 @@
 
 - [[https://en.wikipedia.org/wiki/(%CE%B5,_%CE%B4)-definition_of_limit#Precise_statement_for_real_valued_functions][Precise definition of Limits]]  
 - [[https://www.reddit.com/r/math/comments/53bdd0/can_someone_eli5_the_formal_definition_of_a_limit/d7rpcmy/][Nice explanation of limit definition on Reddit]]
+- [[https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfLimit.aspx][Paul Lamar's notes]]
+
+** Definition 2.2.3
+
+For any function $f$ and numbers $a$ and $L$, we write "as $x \to
+a^{\neq}, f(x) \to L$" to mean that for every number $\epsilon > 0$,
+there is some corresponding number $\delta > 0$ such that if $0 < |x -
+a| < \delta$ then $|f(x) - L| < \epsilon$
+
+** Theorem 2.2.4
+
+There cannot be more than one number $L$ such that as "x \to a^{\neq},
+f(x) \to L".
+
+** Definition 2.2.5
+
+If there is a number $L$ such that as $x \to a^{\neq}, f(x) \to L$,
+then we defined $\lim_{x \to a} f(x)$ to be the unique such number
+$L$. If there is no such number $L$, then $\lim_{x \to a} f(x)$ is
+undefined.
 

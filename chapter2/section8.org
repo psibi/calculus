@@ -41,7 +41,7 @@ Suppose that $\lim_{x \to a}f(x) = L$ and $r$ is any real number.
 
 - If $L > r$, then there is some number $\delta > 0$ such that if $0
   < |x-a| < \delta$ then $f(x) > r$
-- If $L <> r$, then there is some number $\delta > 0$ such that if $0
+- If $L < r$, then there is some number $\delta > 0$ such that if $0
   < |x-a| < \delta$ then $f(x) < r$
 
 ** Corollary 2.8.9  
@@ -49,4 +49,8 @@ Suppose that $\lim_{x \to a}f(x) = L$ and $r$ is any real number.
 Suppose that $\lim_{x \to a}f(x) = L$ and $r$ is any real number and $d > 0$.
 
 - Suppose that for all $x$, if $0 < |x-a| < d$ then $f(x) \leq r$. Then, $L \leq r$
-- Suppose that for all $x$, if $0 < |x-a| < d$ then $f(x) \geq r$. Then, $L \geq r$  
+- Suppose that for all $x$, if $0 < |x-a| < d$ then $f(x) \geq r$. Then, $L \geq r$
+
+This corollary states that weak inequality are presevered by
+limits. i.e If $f(x) \leq r$ for $x$ close to $a$ but not equal to
+$a$, then $\lim_{x \to a}f(x) \leq r$.
