@@ -2,6 +2,8 @@
 ;;; For more information see (info "(emacs) Directory Variables")
 
 ((org-mode
+  (org-twbs-link-up . "https://psibi.in/velleman-calculus/")
+  (org-twbs-link-home . "https://psibi.in/")
   (org-publish-project-alist . '("velleman-calculus" 
                                   :base-directory "~/github/velleman-calculus/"
                                   :recursive t

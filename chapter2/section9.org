@@ -1,5 +1,3 @@
-#+HTML_LINK_UP: https://psibi.in/velleman-calculus
-
 * Monotone Sequences and the Completeness of the Real Numbers
 
 ** Monotone Sequence (Definition 2.9.1)
