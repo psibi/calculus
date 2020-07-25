@@ -15,7 +15,11 @@ For converting org files to PDF, use `org-latex-export-to-pdf`.
 ## Static images
 
 * Have images under `docs/assets`
-* Create symbolic of it in the main directory.
+* Create symbolic of it in the main directory:
+
+```
+$ ln -s $PWD/docs/assets/ $PWD/assets
+```
 
 ## References
 
