@@ -21,3 +21,7 @@ $\epsilon > 0$ there is some N such that if $x < N$ then $|f(x) - L| <
 \epsilon$. We defined $\lim_{x \to -\infty} f(x)$ to be the unique
 number $L$ such that as $x \to -\infty$, $f(x) \to L$, if there is such
 a number L.
+
+** Example limit statements
+
+[[file:../assets/limits_example.png]]

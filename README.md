@@ -12,6 +12,11 @@ For converting org files to PDF, use `org-latex-export-to-pdf`.
 * Go to [./index.org](./index.org) file.
 * `org-publish`
 
+## Static images
+
+* Have images under `docs/assets`
+* Create symbolic of it in the main directory.
+
 ## References
 
 * https://orgmode.org/mathjax/docs/html/tex.html#supported-latex-commands
