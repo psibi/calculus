@@ -3,6 +3,35 @@
 
 * Variations on Limits
 
+** Definition 2.5.1
+
+To say that as $x \to a^{<}, f(x) \to L$ means that for every
+$\epsilon > 0$ there is some $\delta > 0$ such that if $a-\delta < x <
+a$ then $|f(x)-L| < \epsilon$. To say that as $x \to a^{>}, f(x) \to
+L$ means that for every $\epsilon > 0$ there is some $\delta > 0$ such
+that if $a < x < a+\delta$ then $|f(x)-L| < \epsilon$.
+
+** Definition 2.5.2
+
+   If there is a number $L$ such that as $x \to a^{-}, f(x) \to L$,
+   then we defined $\lim_{x \to a^{-}} f(x)$ to be the unique such
+   number $L$. If there is no such number $L$, then $\lim_{x \to a^-}
+   f(x)$ is undefined. Similarly, $\lim_{x \to a^+} f(x)$ is the
+   unique number $L$ such that as $x \to a^+, f(x) \to L$, if there is
+   such a number $L$.
+
+** Theorem 2.5.3
+
+   Suppose that $d > 0$, and $f_1$ and $f_2$ are functions such that
+   for all $x$, if $a-d < x < a$ then $f_1(x) = f_2(x)$. Then $\lim_{x
+   \to a^-} f_1(x) = \lim_{x \to a^-}f_2(x)$.
+
+** Theorem 2.5.5
+
+   For any function $f$ and numbers $a$ and $L$, $\lim_{x \to a}
+   f(x)=L$ if and only if both $\lim_{x \to a^-}f(x)=L$ and $\lim_{x
+   \to a^+}f(x) = L$.
+
 ** Definition 2.5.7
 
 To say that as $x \to \infty$, $f(x) \to L$ means that for every
@@ -26,3 +55,30 @@ a number L.
 
 [[file:../assets/limits_example.png]]
 
+
+** Theorem 2.5.13
+
+   Suppose that $d>0$, and for all $x$, if $0 < |x-a| < d$ then $f(x)
+   \geq g(x)$. Suppose also that $\lim_{x \to a}g(x) = \infty$. Then
+   $\lim_{x \to a}f(x) = \infty$.
+
+** Theorem 2.5.14
+
+1. If $\lim_{x \to a}f(x) = \infty$ and either $\lim_{x \to a}g(x) =
+   L$ or $\lim_{x \to a}g(x) = \infty$, then $\lim_{x \to a} f(x) +
+   g(x) = \infty$
+2. If $\lim_{x \to a}f(x) = -\infty$ and either $\lim_{x \to a}g(x) =
+   L$ or $\lim_{x \to a}g(x) = -\infty$, then $\lim_{x \to a} f(x) +
+   g(x) = -\infty$
+3. If $\lim_{x \to a}f(x) = \infty$ and either $\lim_{x \to a}g(x) =
+   L > 0$ or $\lim_{x \to a}g(x) = \infty$, then $\lim_{x \to a} f(x) .
+   g(x) = \infty$
+4. If $\lim_{x \to a}f(x) = \infty$ and either $\lim_{x \to a}g(x) =
+   L < 0$ or $\lim_{x \to a}g(x) = -\infty$, then $\lim_{x \to a} f(x) .
+   g(x) = -\infty$
+5. If $\lim_{x \to a}f(x) = -\infty$ and either $\lim_{x \to a}g(x) =
+   L > 0$ or $\lim_{x \to a}g(x) = \infty$, then $\lim_{x \to a} f(x) .
+   g(x) = -\infty$
+6. If $\lim_{x \to a}f(x) = -\infty$ and either $\lim_{x \to a}g(x) =
+   L < 0$ or $\lim_{x \to a}g(x) = -\infty$, then $\lim_{x \to a} f(x)
+   .  g(x) = \infty$

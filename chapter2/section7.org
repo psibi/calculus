@@ -1,22 +1,22 @@
 * Continuity
 
-** Definition
+** Definition 2.7.1
 
 Suppose that $f$ is a function and $a$ is a number. We say that $f$ is
 continous at $a$ if $f(a)$ is defined, $\lim_{x \to a} f(x)$ is
 defined and $\lim_{x \to a} f(x) = f(a)$.
 
-** Continuity on Open Interval
+** Continuity on Open Interval (Definition 2.7.2)
 
 We say that a function $f$ is continous on open interval $I$ if for
 every $a \in I$, $f$ is continous at a.
 
-** Theorem on compositions of functions
+** Theorem on compositions of functions (Definition 2.7.3)
 
 Suppose $f$ and $g$ are continous at $a$. Then so are $f + g$, $f -
 g$, and $f.g$. If $g(a) \neq 0$, then $f/g$ is also continous at a.
 
-** One sided version of continuity
+** One sided version of continuity (Definition 2.7.4)
 
 We say that $f$ is continous from the right at $a$ if $f(a)$ is
 defined, $\lim_{x \to a^+} f(x)$ is defined, and $\lim_{x \to a^+}
@@ -24,13 +24,13 @@ f(x) = f(a)$. We say that $f$ is continous from the left at $a$ if
 $f(a)$ is defined, $\lim_{x \to a^-} f(x)$ is defined, and $\lim_{x
 \to a^-} f(x) = f(a)$.
 
-** Continuity on Closed Interval
+** Continuity on Closed Interval (Definition 2.7.5)
 
 We say that a function $f$ is continous on a closed interval $[a,b]$
 if it is continous on $(a,b)$, continous fom the right at $a$, and
 continous from the left at $b$.
 
-** Intermediate Value Theorem
+** Intermediate Value Theorem (Theorem 2.7.6)
 
 Suppose that $f$ is continous on the interval $[a,b]$ and either $f(a)
 < r < f(b)$ or $f(a) > r > f(b)$. Then there is some number $c$ such
@@ -49,7 +49,7 @@ For any numbers $\alpha$ and $\beta$,
 
 $|cos \beta - cos \alpha| \leq | \beta - \alpha|$, $|sin \beta - sin \alpha| \leq | \beta - \alpha|$
 
-** Trignometric theorem
+** Trignometric theorem (Theorem 2.7.10)
 
 All of the trignometric functions are continous everywhere they are
 defined.
