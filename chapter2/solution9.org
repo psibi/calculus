@@ -197,22 +197,79 @@ Hence we conclude that the sequence is strictly increasing.
 
 * Solution 9
 
-  $(sin(\dfrac{n\pi}{4}))_{n=1}^\infty$
+  $(\sin(\dfrac{n\pi}{4}))_{n=1}^\infty$
 
   $a_n = \sin(\dfrac{n\pi}{4})$
 
   $a_{n+1} = \sin(\dfrac{(n+1)\pi}{4}) = \sin (\dfrac{n\pi}{4} + \dfrac{\pi}{4})$
 
-  $a_1 = sin (\dfrac{\pi}{4})$
+  $a_1 = \sin (\dfrac{\pi}{4})$
 
-  $a_2 = sin (\dfrac{2\pi}{4})$
+  $a_2 = \sin (\dfrac{2\pi}{4})$
 
-  $a_3 = sin (\dfrac{3\pi}{4})$
+  $a_3 = \sin (\dfrac{3\pi}{4})$
 
-  $a_4 = sin (\dfrac{4\pi}{4})$
+  $a_4 = \sin (\dfrac{4\pi}{4})$
 
   Since the $\sin$ function oscillates up and down between $-1$ and
   $1$ as $n \to \infty$, we can say that the sequence diverges.
 
+* Solution 10
+
+  $(\sin (\dfrac{\pi}{4n}))_{n=1}^\infty$
+
+  $a_n = \sin (\dfrac{\pi}{4n})$
+
+  $\lim_{x \to \infty} \dfrac{\pi}{4x} = 0$
+
+  $\lim_{x \to \infty} \sin (\dfrac{\pi}{4x}) = 0$
+
+  From theorem 2.8.2, $\lim_{x \to \infty} \sin (\dfrac{\pi}{4x}) = 0$
+
+  From theorem 2.9.5, we can deduce that the sequence is monotone.
+
+* Solution 11
+
+  $(a_n)_{n=1}^\infty$
+
+  $(a_n) = (\dfrac{9}{10})^n$
+
+** Solution a
+
+   To prove $a_{n+1} = \dfrac{9}{10}a_n$
+
+   We will use mathematical induction.
+
+   Base case: $n=1$
+
+   $a_{1+1} = a_2 = (9/10)^2 = (9/10).a_1$
+
+   Induction step: Suppose $n$ is a positive integer and $a_{n+1} =
+   \dfrac{9}{10}a_n$
+
+   $a_{n+2} = \dfrac{9}{10}^{n+2}$
+
+   $= (\dfrac{9}{10})^n (\dfrac{9}{10})^2$
+
+   $= (\dfrac{9}{10}(\dfrac{9}{10})^{n+1})$
+
+   $= (\dfrac{9}{10}).a_{n+1}$
+
+   This concludes the proof.
+
+** Solution b
+
+   $a_{n+1} = \dfrac{9}{10}.a^n$
+
+   $\dfrac{a_{n+1}}{a_n} = \dfrac{9}{10}$
+
+   $\dfrac{a_n}{a_{n+1}} = \dfrac{10}{9}$
+
+   Since $\dfrac{10}{9} > 1, \dfrac{a_n}{a_{n+1}} > 1$. So, $a_n >
+   a_{n+1}$.
+
+   Hence we conclude that the sequence is strictly decreasing.
+
+   
   
   
