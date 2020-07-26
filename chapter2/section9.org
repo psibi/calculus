@@ -20,6 +20,8 @@ Suppose $A$ is a set of numbers. We say that a number $b$ is an
 *upper* bound for $A$ if for every $x \in A, x \leq b$. Similarly, b
 is a *lower* bound for $A$ if for every $x \in A, x \geq b$.
 
+- [[https://en.wikipedia.org/wiki/Infimum_and_supremum#Formal_definition][Precise defintion of greatest lower bound and least upper bound]]
+
 ** Completeness of the Real Numbers (Theorem 2.9.4)
 
 Suppose that $A$ is a nonempty set of real numbers. That is, $A$ is a
@@ -50,4 +52,3 @@ Suppose $u < v$, $u$ is not an upper bound for $A$, and $v$ is an
 upper bound for $A$. Then there are numbers $u'$ and $v'$ such that $u
 \leq u' < v' \leq v$, $v' - u' = (v-u)/2$, $u'$ is not an upper bound
 for $A$, and $v'$ is an upper bound for $A$.
-
