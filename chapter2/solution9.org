@@ -270,6 +270,147 @@ Hence we conclude that the sequence is strictly increasing.
 
    Hence we conclude that the sequence is strictly decreasing.
 
+** Solution c
+
+   Since the sequence is strictly decreasing, then from theorem 2.9.5,
+   eitehr the sequence converges or diverges.
+
+   The first few terms of the sequence are
+
+   $a_1 = 9/10, a_2 = (9/10^2) = 0.81, a_3 = (9/10)^3 = 0.729$
+
+   Let's try to prove for every integer $n$,
+
+   $1 > a_n > a_{n+1} > 0$
+
+   Proving this we can conclude that $0$ is a lower bound for the
+   sequence.
+
+   We will use mathematical induction to prove it.
+
+   Base case. Since $a_1 = 9/10$ and $a_2 = (9/10)^2$, we have $1 > 9/10 > (9/10)^2 > 0$
+
+   Induction step: Suppose $n$ is a positive integer and $1 > a_n >
+   a_{n+1} > 0$.
+
+   $\dfrac{9}{10} > \dfrac{9}{10}a_n > \dfrac{9}{10}a_{n+1} > 0$
+
+   $1 > \dfrac{9}{10} > a_{n+1} > a_{n+2} > 0$
+
+   $1 > a_{n+1} > a_{n+2} > 0$
+
+   This completes the mathematical induction proof.
+
+** Solution d
+
+   Since the sequence converges, there is some number $L$ such that as
+   $n \to \infty, a_n \to L$.
+
+   The number $L$ is the least upper bound for the set of terms of the
+   sequence.
+
+   We know that $\lim_{n \to \infty} a_{n+1} = L$.
+
+   So, $\lim_{n \to \infty} a_{n+1} = \lim_{n \to \infty} \dfrac{9}{10}a_n$
+
+   $L = \dfrac{9}{10}L$
+
+   $10L-9L = 0$
+
+   $L = 0$
+
+* Solution 12
+
+  $(a_n)_{n=1}^\infty$
+
+  $a_n = (11/10)^n$
+
+** Solution a
+
+   $a_{n+1} = (\dfrac{11}{10}).a_n$
+
+   We will use mathematical induction to prove it.
+
+   Base case: $n=1$
+
+   $a_2 = (11/10)^2 = (11/10).a_1$
+
+   Induction step: Suppose $n$ is a positive integer and $a_{n+1} = (\dfrac{11}{10}).a_n$
+
+   $a_{n+2} = (11/10)^{n+2} = (11/10).(11/10)^{n+1}$
+
+   $= (11/10).a_{n+1}$
+
+   This completes the mathematical induction proof.
+
+** Solution b
+
+   $a_{n+1} = (11/10)a_n$
+
+   $\dfrac{a_{n+1}}{a_n} = \dfrac{11}{10}$
+
+   Since $11/10 > 1, a_{n+1}/a_n > 1$.
+
+   So, $a_{n+1} > a_n$
+
+   Hence we conclude that the sequence is strictly increasing.
+
+** Solution c
+
+   From theorem 2.9.5, we know that the sequence either converges or
+   $\lim_{n \to \infty} a_n = \infty$
+
+   Suppose that the sequence converges - So, $\lim_{n \to \infty} a_n
+   = L$. Then $L$ is the least upper bound for the set of terms of the
+   sequence. Since we know that $a_4 = (11/10)^4$, we must have $L
+   \geq (11/10)^4$.
+
+   Now we can compute $\lim_{n \to \infty} a_{n+1}$ in two ways. As $n
+   \to \infty$, we have $n+1 \to \infty$ and therefore $\lim_{n \to
+   \infty} = L$. Also,
+
+   $a_{n+1} = (11/10)a_n$
+
+   $\lim_{n \to \infty} a_{n+1} = \lim_{n \to \infty} (11/10)a_n = \dfrac{11}{100}L$
+
+   So, $L = 11/10 . L$
+
+   Dividiving by L, we get $1 = 11/10$ which is obviously false. We
+   conclude that our assumption that the sequence convertes must be
+   wrong.
+
+   Thus, the sequence does not converge. By theorem 2.9.5, the only
+   remaining possibility is that $\lim_{n \to \infty} a_n = \infty$
+
+* Solution 13
+
+  $(a_n)_{n=1}^\infty$
+
+  $a_n = \dfrac{3^n}{(n+2)!}$
+
+** Solution a
+
+   We will prove using mathematical induction.
+
+   Base case: $n = 1$
+
+   $a_2 = \dfrac{3^2}{4!} = \dfrac{3.3}{4.3!} = \dfrac{3.3}{(1+3)3!}$
+
+   $= \dfrac{3.3!}{(1+3)(1+2)!} = \dfrac{3.a_1}{(1+3)}$
+
+   Induction step: Suppose $n$ is a positive integer and $a_{n+1} =
+   (\dfrac{3}{n+3}).a_n$
+
+   $a_{n+2} = \dfrac{3^{n+2}}{(n+4)!} = \dfrac{3^n.3^2}{(n+4)(n+4)(n+2)!}$
+
+   $= \dfrac{a^n.3^2}{(n+4)(n+3)}$
+
+   $= \dfrac{a_{n+1}.3}{n+4}$
+
+   $= \dfrac{3.a_{n+1}}{((n+1)+3)}$
+
+   This completes the mathematical induction proof.
+
    
   
   
