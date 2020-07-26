@@ -17,3 +17,4 @@
   - [[file:chapter2/solution6.org][solution6]]
   - [[file:chapter2/solution7.org][solution7]]
   - [[file:chapter2/solution8.org][solution8]]
+  - [[file:chapter2/solution9.org][solution9]]
