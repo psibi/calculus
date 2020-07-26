@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2020-07-26 Sun 14:41 -->
+<!-- 2020-07-26 Sun 19:04 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -250,6 +250,22 @@ MathJax.Hub.Config({
 </li>
 <li><a href="#sec-19">19. Solution 19</a></li>
 <li><a href="#sec-20">20. Solution 20</a></li>
+<li><a href="#sec-21">21. Solution 21</a>
+<ul class="nav">
+<li><a href="#sec-21-1">21.1. Solution a</a></li>
+<li><a href="#sec-21-2">21.2. Solution b</a></li>
+<li><a href="#sec-21-3">21.3. Solution c</a></li>
+</ul>
+</li>
+<li><a href="#sec-22">22. Solution 22</a></li>
+<li><a href="#sec-23">23. Solution 23</a></li>
+<li><a href="#sec-24">24. Solution 24</a></li>
+<li><a href="#sec-25">25. Solution 25</a>
+<ul class="nav">
+<li><a href="#sec-25-1">25.1. Solution a</a></li>
+<li><a href="#sec-25-2">25.2. Solution b</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -1020,7 +1036,7 @@ Let's see how the sequence goes.
 </p>
 
 <p>
-$a<sub>1</sub> = 1, a<sub>2</sub> = 4, a<sub>3</sub> = 9, a<sub>4</sub> = 16, a<sub>5</sub> = 25 &#x2026;$
+\(a_1 = 1, a_2 = 4, a_3 = 9, a_4 = 16, a_5 = 25 ...\cdot\)
 </p>
 
 <p>
@@ -1052,10 +1068,399 @@ Induction step: Suppose \(n\) is a postive integer and \(a_n = n^2\).
 </p>
 </div>
 </div>
+
+<div id="outline-container-sec-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Solution 21</h2>
+<div class="outline-text-2" id="text-21">
+</div><div id="outline-container-sec-21-1" class="outline-3">
+<h3 id="sec-21-1"><span class="section-number-3">21.1</span> Solution a</h3>
+<div class="outline-text-3" id="text-21-1">
+<p>
+\(\forall m > 0 \forall n > 0 (m+n)! > m^n\)
+</p>
+
+<p>
+Suppose \(m > 0\)
+</p>
+
+<p>
+Suppose \(n > 0\)
+</p>
+
+<p>
+We will use mathematical induction on \(n\).
+</p>
+
+<p>
+Base case: \(n=1\)
+</p>
+
+<p>
+\((m+1)! = (m +1)m!\)
+</p>
+
+<p>
+\((m+1)m! > m\)
+</p>
+
+<p>
+So, \((m+1)! > m^n\)
+</p>
+
+<p>
+Induction step: Suppose \(n\) is a postive integer and \((m+n)! = m^n\).
+</p>
+
+<p>
+\((m+n+1)! = (m+n)!(m+n+1) > (m+n+1)m^n\)
+</p>
+
+<p>
+Since \(m>0\) and \(n>0\),
+</p>
+
+<p>
+\(m + n + 1 > m\)
+</p>
+
+<p>
+So, \((m+n+1)m^n > m.m^n\)
+</p>
+
+<p>
+\((m+n+1)m^n > m^{n+1}\)
+</p>
+
+<p>
+So, \((m+n+1)! > m^{n+1}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-21-2" class="outline-3">
+<h3 id="sec-21-2"><span class="section-number-3">21.2</span> Solution b</h3>
+<div class="outline-text-3" id="text-21-2">
+<p>
+\(\forall k > 0 (2k^2)! > k^{2k^2}\)
+</p>
+
+<p>
+Suppose \(a = k^2\)
+</p>
+
+<p>
+\(k^{2k^2} = (k^2)^{k^2} = a^a\)
+</p>
+
+<p>
+So we will try to prove \((2a)! > a^a\)
+</p>
+
+<p>
+It can be re-written as \((a + a)! > a^a\)
+</p>
+
+<p>
+From (a), with \(m = a\) and \(n=a\), we can conclude that \((a+a)! > a^a\)
+</p>
+
+<p>
+Hence \(\forall k > 0 (2k^2)! > k^{2k^2}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-21-3" class="outline-3">
+<h3 id="sec-21-3"><span class="section-number-3">21.3</span> Solution c</h3>
+<div class="outline-text-3" id="text-21-3">
+<p>
+\(\forall k > 0\; \exists N > 0\; \forall n \geq N\; n! > k^n\)
+</p>
+
+<p>
+Suppose \(k > 0\)
+</p>
+
+<p>
+Let \(N = 2k^2\)
+</p>
+
+<p>
+Suppose \(n \geq N\)
+</p>
+
+<p>
+We will use mathematical induction.
+</p>
+
+<p>
+Base case: \(n = 2k^2\)
+</p>
+
+<p>
+\(n! = (2k^2)! > k^{2k^2}\)  (From (b))
+</p>
+
+<p>
+Induction step: Suppose \(n! > k^n\)
+</p>
+
+<p>
+\((n+1)! = (n+1)n! > (n+1)k^n\)
+</p>
+
+<p>
+We know that \(2k^2 + 1 > k\)
+</p>
+
+<p>
+Since \(n \geq N\), \(n \geq 2k^2\)
+</p>
+
+<p>
+\(n + 1 \geq 2k^2 + 1 > k\)
+</p>
+
+<p>
+So, \(n + 1 > k\)
+</p>
+
+<p>
+\((n+1)k^n > k^{n+1}\)
+</p>
+
+<p>
+So, \((n+1)! > k^{n+1}\)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-22" class="outline-2">
+<h2 id="sec-22"><span class="section-number-2">22</span> Solution 22</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+Suppose \(\lim_{x \to \infty} f(x) = L\)
+</p>
+
+<p>
+So, \(\forall \epsilon > 0 \; \exists N \; x > N \implies |f(x)-L| < \epsilon\)
+</p>
+
+<p>
+Now let's prove \(\lim_{n \to \infty} f(n) = L\)
+</p>
+
+<p>
+Suppose \(\epsilon > 0\). There exists some \(N\) such that \(n > N\) as
+\(n\) belongs to the domain of the function \(f\). From our earlier
+assumption, we can conclude that \(|f(n) - L| < \epsilon\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-23" class="outline-2">
+<h2 id="sec-23"><span class="section-number-2">23</span> Solution 23</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+We need to find \(f\) and a nuber \(a\) such that for all \(x \neq a,
+  f(x) > 0\), but \(\lim_{x \to a}f(x) = 0\).
+</p>
+
+<p>
+\(a = 0\)
+</p>
+
+<p>
+\(f(x) = x^2\)
+</p>
+
+<p>
+To see why we strict inequalities aren't preserved by limits:
+</p>
+
+<p>
+Let \(r=2\)
+</p>
+
+<p>
+\(0 < |x-a| < d\)
+</p>
+
+<p>
+Since \(|x-a| > 0\) and \(a = 0\), let's assume \(x = 2\)
+</p>
+
+<p>
+\(f(x) = 4 > r\).
+</p>
+
+<p>
+But \(L = \lim_{x \to a}f(x) = 0 > r\) is not true since \(r\) is \(2\).
+</p>
+
+<p>
+So we can see that strict inequalities aren't preserved by limits.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-24" class="outline-2">
+<h2 id="sec-24"><span class="section-number-2">24</span> Solution 24</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+Let \(\lim_{n \to \infty} a_n = L\)
+</p>
+
+<p>
+We need to prove \(\exists M \; \forall n > 0 \; |a_n| \leq M\)
+</p>
+
+<p>
+Suppose \(\epsilon < 1\)
+</p>
+
+<p>
+Suppose \(n\) is a positive integer.
+</p>
+
+<p>
+We know that \(|f(n) - L| < 1\)
+</p>
+
+<p>
+Since \(f(n) = a_n\)
+</p>
+
+<p>
+\(|a_n - L| < 1\)
+</p>
+
+<p>
+We know that \(|x-y| \geq |x| - |y|\)
+</p>
+
+<p>
+So, \(|a_n - L| \geq |a_n| - |L|\)
+</p>
+
+<p>
+\(|a_n| - |L| \leq |a_n -L|\)
+</p>
+
+<p>
+\(|a_n| - |L| \leq |a_n -L| < 1\)
+</p>
+
+<p>
+\(|a_n| - |L| \leq 1\)
+</p>
+
+<p>
+\(|a_n| \leq |L| + 1\)
+</p>
+
+<p>
+So, there exists \(M\) such that \(|a_n| \leq M\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-25" class="outline-2">
+<h2 id="sec-25"><span class="section-number-2">25</span> Solution 25</h2>
+<div class="outline-text-2" id="text-25">
+</div><div id="outline-container-sec-25-1" class="outline-3">
+<h3 id="sec-25-1"><span class="section-number-3">25.1</span> Solution a</h3>
+<div class="outline-text-3" id="text-25-1">
+<p>
+Let us prove by contradiction.
+</p>
+
+<p>
+So, let's assume that in the nested interval theorem we can
+strengthen the conclusion.
+</p>
+
+<p>
+So, \(\forall n \; u_n < c < v_n\)
+</p>
+
+<p>
+Let's consider two sequences \((u_n)_{n=1}^\infty\) and
+\((v_n)_{n=1}^\infty\) such that \(u_n = 0\) and \(v_n = 1/n\).
+</p>
+
+<p>
+\(\lim_{n \to \infty} u_n = c\) and \(\lim_{n \to \infty} v_n = c\)
+</p>
+
+<p>
+But \(c < c < c\) isn't true. Hence our initial assumptions isn't
+right.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-25-2" class="outline-3">
+<h3 id="sec-25-2"><span class="section-number-3">25.2</span> Solution b</h3>
+<div class="outline-text-3" id="text-25-2">
+<p>
+Suppose \(u_1 < u_2 < u_3 < ...\cdot\)
+</p>
+
+<p>
+Suppose \(v_1 < v_2 < v_3 < ...\cdot\)
+</p>
+
+<p>
+Suppose \(\forall n \; u_n < v_n\)
+</p>
+
+<p>
+Suppose \(\lim_{n \to \infty} u_n - v_n = 0\)
+</p>
+
+<p>
+From nested interval theorem, we know that \(\forall n \; u_n \leq c
+   \leq v_n\) and \(\lim_{n \to \infty} u_n = c\), \(\lim_{n \to
+   \infty} v_n = c\).
+</p>
+
+<p>
+We know that \(u_n < v_n\)
+</p>
+
+<p>
+That means either \(u_n \leq c < v_n\) or \(u_n < c \leq v_n\)
+</p>
+
+<p>
+Let's take the first case \(u_n \leq c < v_n\)
+</p>
+
+<p>
+Let's try to prove \(u_n < c\) by contradiction.
+</p>
+
+<p>
+If there is a \(k \in \mathbb{N}\) such that \(u_k = c\), then \(c = u_k < u_{k+1}\).
+</p>
+
+<p>
+This contradicts the assumption that \(\forall n \; u_n \leq c \leq
+   v_n\). Similar argument holds for \(u_n < c \leq v_n\).
+</p>
+
+<p>
+Hence \(u_n < c < v_n\).
+</p>
+</div>
+</div>
+</div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2020-07-26 Sun 14:41</p>
+<p class="date">Created: 2020-07-26 Sun 19:04</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="http://orgmode.org">Org-mode</a> 9.3.6)</p>
 </div>
 </footer>
