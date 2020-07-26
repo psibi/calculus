@@ -26,8 +26,8 @@ sequence $(f(n))^{\infty}_{n=1}$ diverges.
 ** Nested Interval Theorem (Theorem 2.8.7)
 
 Suppose that $(u_n)^{\infty}_{n=1}$ and $(v_n)^{\infty}_{n=1}$ are two
-sequences of numbers such that $u_1 \leq u_2 \leq u_3 \leq ...\cdot$
-and $v_1 \geq v_2 \geq v_3 \geq ...\cdot$ Suppose also that for every
+sequences of numbers such that $u_1 \leq u_2 \leq u_3 \leq ....\cdot$
+and $v_1 \geq v_2 \geq v_3 \geq ....\cdot$ Suppose also that for every
 $n$, $u_n \leq v_n$, and $\lim_{n \to \infty} (v_n - u_n) = 0$. Then
 there is a unique number $c$ such that for every $n$, $u_n \leq c \leq
 v_n$. Furthermore, $\lim_{n \to \infty} u_n = \lim_{n \to \infty} v_n
