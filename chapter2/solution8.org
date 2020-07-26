@@ -376,7 +376,7 @@ $\lim_{n \to \infty} \dfrac{1}{2^{2n}} = 0$
 
   Let's see how the sequence goes.
 
-  $a_1 = 1, a_2 = 4, a_3 = 9, a_4 = 16, a_5 = 25 ...$
+  $a_1 = 1, a_2 = 4, a_3 = 9, a_4 = 16, a_5 = 25 ...\cdot$
 
   Looking at the series, I can guess that $a_n = n^2$
 
@@ -392,3 +392,197 @@ $\lim_{n \to \infty} \dfrac{1}{2^{2n}} = 0$
 
   $= (\dfrac{n^2}{n} + 1) = (n+1)^2$
   
+* Solution 21
+
+** Solution a
+
+   $\forall m > 0 \forall n > 0 (m+n)! > m^n$
+
+   Suppose $m > 0$
+
+   Suppose $n > 0$
+
+   We will use mathematical induction on $n$.
+
+   Base case: $n=1$
+
+   $(m+1)! = (m +1)m!$
+
+   $(m+1)m! > m$
+
+   So, $(m+1)! > m^n$
+
+   Induction step: Suppose $n$ is a postive integer and $(m+n)! = m^n$.
+
+   $(m+n+1)! = (m+n)!(m+n+1) > (m+n+1)m^n$
+
+   Since $m>0$ and $n>0$,
+
+   $m + n + 1 > m$
+
+   So, $(m+n+1)m^n > m.m^n$
+
+   $(m+n+1)m^n > m^{n+1}$
+
+   So, $(m+n+1)! > m^{n+1}$
+
+** Solution b
+
+   $\forall k > 0 (2k^2)! > k^{2k^2}$
+
+   Suppose $a = k^2$
+
+   $k^{2k^2} = (k^2)^{k^2} = a^a$
+
+   So we will try to prove $(2a)! > a^a$
+
+   It can be re-written as $(a + a)! > a^a$
+
+   From (a), with $m = a$ and $n=a$, we can conclude that $(a+a)! > a^a$
+
+   Hence $\forall k > 0 (2k^2)! > k^{2k^2}$
+
+** Solution c
+
+   $\forall k > 0\; \exists N > 0\; \forall n \geq N\; n! > k^n$
+
+   Suppose $k > 0$
+
+   Let $N = 2k^2$
+
+   Suppose $n \geq N$
+
+   We will use mathematical induction.
+
+   Base case: $n = 2k^2$
+
+   $n! = (2k^2)! > k^{2k^2}$  (From (b))
+
+   Induction step: Suppose $n! > k^n$
+
+   $(n+1)! = (n+1)n! > (n+1)k^n$
+
+   We know that $2k^2 + 1 > k$
+
+   Since $n \geq N$, $n \geq 2k^2$
+
+   $n + 1 \geq 2k^2 + 1 > k$
+
+   So, $n + 1 > k$
+
+   $(n+1)k^n > k^{n+1}$
+
+   So, $(n+1)! > k^{n+1}$
+
+* Solution 22
+
+  Suppose $\lim_{x \to \infty} f(x) = L$
+
+  So, $\forall \epsilon > 0 \; \exists N \; x > N \implies |f(x)-L| < \epsilon$
+
+  Now let's prove $\lim_{n \to \infty} f(n) = L$
+
+  Suppose $\epsilon > 0$. There exists some $N$ such that $n > N$ as
+  $n$ belongs to the domain of the function $f$. From our earlier
+  assumption, we can conclude that $|f(n) - L| < \epsilon$
+
+* Solution 23
+
+  We need to find $f$ and a nuber $a$ such that for all $x \neq a,
+  f(x) > 0$, but $\lim_{x \to a}f(x) = 0$.
+
+  $a = 0$
+
+  $f(x) = x^2$
+
+  To see why we strict inequalities aren't preserved by limits:
+
+  Let $r=2$
+
+  $0 < |x-a| < d$
+
+  Since $|x-a| > 0$ and $a = 0$, let's assume $x = 2$
+
+  $f(x) = 4 > r$.
+
+  But $L = \lim_{x \to a}f(x) = 0 > r$ is not true since $r$ is $2$.
+
+  So we can see that strict inequalities aren't preserved by limits.
+
+* Solution 24
+
+  Let $\lim_{n \to \infty} a_n = L$
+
+  We need to prove $\exists M \; \forall n > 0 \; |a_n| \leq M$
+
+  Suppose $\epsilon < 1$
+
+  Suppose $n$ is a positive integer.
+
+  We know that $|f(n) - L| < 1$
+
+  Since $f(n) = a_n$
+
+  $|a_n - L| < 1$
+
+  We know that $|x-y| \geq |x| - |y|$
+
+  So, $|a_n - L| \geq |a_n| - |L|$
+
+  $|a_n| - |L| \leq |a_n -L|$
+
+  $|a_n| - |L| \leq |a_n -L| < 1$
+
+  $|a_n| - |L| \leq 1$
+
+  $|a_n| \leq |L| + 1$
+
+  So, there exists $M$ such that $|a_n| \leq M$
+
+* Solution 25
+
+** Solution a
+
+  Let us prove by contradiction.
+
+  So, let's assume that in the nested interval theorem we can
+  strengthen the conclusion.
+
+  So, $\forall n \; u_n < c < v_n$
+
+  Let's consider two sequences $(u_n)_{n=1}^\infty$ and
+  $(v_n)_{n=1}^\infty$ such that $u_n = 0$ and $v_n = 1/n$.
+  
+  $\lim_{n \to \infty} u_n = c$ and $\lim_{n \to \infty} v_n = c$
+
+  But $c < c < c$ isn't true. Hence our initial assumptions isn't
+  right.
+
+** Solution b
+
+   Suppose $u_1 < u_2 < u_3 < ...\cdot$
+
+   Suppose $v_1 < v_2 < v_3 < ...\cdot$
+
+   Suppose $\forall n \; u_n < v_n$
+
+   Suppose $\lim_{n \to \infty} u_n - v_n = 0$
+
+   From nested interval theorem, we know that $\forall n \; u_n \leq c
+   \leq v_n$ and $\lim_{n \to \infty} u_n = c$, $\lim_{n \to
+   \infty} v_n = c$.
+
+   We know that $u_n < v_n$
+
+   That means either $u_n \leq c < v_n$ or $u_n < c \leq v_n$
+
+   Let's take the first case $u_n \leq c < v_n$
+
+   Let's try to prove $u_n < c$ by contradiction.
+
+   If there is a $k \in \mathbb{N}$ such that $u_k = c$, then $c = u_k < u_{k+1}$.
+
+   This contradicts the assumption that $\forall n \; u_n \leq c \leq
+   v_n$. Similar argument holds for $u_n < c \leq v_n$.
+
+   Hence $u_n < c < v_n$.
