@@ -6,7 +6,7 @@ Suppose two quantities $x$ and $y$ are related by the equation $y =
 f(x)$. We say that the /average rate of change of y with respect to x
 over the interval $[a,b]$/ is
 
-$\drac{f(b)-f(a)}{b-a}$
+$\dfrac{f(b)-f(a)}{b-a}$
 
 ** Definition 3.1.2
 
