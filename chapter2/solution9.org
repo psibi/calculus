@@ -909,3 +909,68 @@ This completes the mathematical induction proof.
    $b - \epsilon < a_n < b + \epsilon$
 
    Thus for every $n > N$ we have $|a_n - b|$ as required.
+
+** Solution b
+
+   Suppose $A$ does not have lower bound. Let us consider a number $M$.
+
+   Since $M$ is not a lower bound there must be some positive integer
+   $N$ such that $a_N < M$.
+
+   Since the sequence is weakly decreasing for any integer $n < N, a_n
+   \leq a_N < M$, so for every number $M$, there is some number $N$
+   such taht $n > N$ then $a_n < M$.
+
+   So, $\lim_{n \to \infty} a_n = -\infty$
+
+* Solution 21
+
+  Suppose that $A$ has an lower bound. Let $u_1$ be an lower bound for
+  $A$. The assumption that $A$ is non empty means that there is at
+  least one number in $A$, so we can let $a$ be some element of
+  $A$. Then if we let $v_1$ be any number greater than $a$, then $v_1$
+  is not an lower bound for $A$.Note that $u_1 \leq a < v_1$. We ill
+  look for the greatest lower bound between $u_1$ and $v_1$. We will
+  be using the following lemma to narrow down the search.
+
+  Lemma: Suppose $u < v$. $u$ is an lower bound for $A$ and $v$ is not
+  an lower bound for $A$. Then there are numbers $u'$ and $v'$ such
+  that $u \leq u' < v' \leq v, v'-u'=\dfrac{v-u}{2}$, $u'$ is an lower
+  bound for $A$ and $v'$ is not an lower bound for $A$.
+
+  Proof of lemma: Let $m = (u+v)/2$, the midpoint of the interval
+  $[u,v]$. If $m$ is the lower bound for $A$, then we can let $u'=m,
+  v'=v$. If not, $u'=u$ and $v'=m$.
+
+  By the above lemma, there must be number $u_2$ and $v_2$ such that
+  $u_1 \leq u_2 < v_2 \leq v_1, v_2 - v_1 = \dfrac{v_1 - u_1}{2}$,
+  $v_2$ is not the lower bound and $u_2$ is an lower bound.
+
+  Applying the lemma again, we see that there are numbers $u_3$ and
+  $v_3$ such that $u_2 \leq u_3 < v_3 \leq v_2, v_3 - u_3 =
+  \dfrac{(v_2 - u_2)}{2} = \dfrac{(v_1 - u_1)}{4}$, $u_3$ is an lower
+  bound for $A$ and $v_3$ is not an lower bound.
+
+  Continuing in this way, we get sequence $(u_n)_{n=1}^\infty$ and
+  $(v_n)_{n=1}^\infty$ such that $u_1 \leq u_2 \leq \leq u_3 <
+  ...\cdot$, $v_1 \geq v_2 \geq v_3 \geq ...$ and for every $n$, $u_n
+  \leq v_n, v_n - u_n = \dfrac{v_1 - u_1}2^{n-1}$, $u_n$ is an lower
+  bound of $A$ and $v_n$ is not an lower bound for $A$. Since $\lim_{n
+  \to \infty} v_n - u_n = \lim_{n \to \infty} \dfrac{v_1 - u_1}{2^n -
+  1} = 0$, the nested interval theorem implies that there is a number
+  $b$ such that for every $n, u_n \leq b \leq v_n$ and $\lim_{n \to
+  \infty} u_n = \lim_{n \to \infty} v_n = b$. We will show that $b$ is
+  the greatest lower bound for $A$.
+
+  To see that $b$ is an lower bound for $A$. Let $x$ be any element of
+  $A$. For every $n$, $u_n$ is a lower bound for $A$, so $x \geq
+  u_n$. Since weak inequalities are presereved by limits, it follows
+  that $b = \lim_{n \to \infty} u_n \leq x$. So, $b$ is an lower
+  bound. To see that $b$ is the greatest lower bound, consider any
+  number $c>b$. Since $\lim_{n \to \infty} v_n = b$, by the sequence
+  version of theorem 2.8.8, for sufficiently large $n$, $c >
+  v_n$. Since $v_n$ is not an lower bound for $A$, there is some $x
+  \in A$ such that $x < v_n$. Combininig with $v_n < c$, we have $x <
+  c$, so $c$ is not an lower bound for $A$. Thus, we see that no
+  number greater than $b$ can be a lower bound for $A$. So, $b$ is the
+  greatest lower bound of $A$.
