@@ -1,11 +1,13 @@
 * Calculus: A Rigorous First Course
 
-* Chapter 2
+* Limits (Chapter 2)
   
-- [[file:chapter2/solution1.org][What is Calculus About]]
+- What is Calculus About
+  - [[file:chapter2/solution1.org][Solutions]]
 - [[file:chapter2/section2.org][What does "Limit" mean ?]]
   - [[file:chapter2/section2.org][Solutions]]
-- [[file:chapter2/solution3.org][Limits by the Definition]]
+- Limits by the Definition
+  - [[file:chapter2/solution3.org][Solutions]]
 - [[file:chapter2/section4.org][Limit theorems]]
   - [[file:chapter2/solution4.org][Solutions]]
 - [[file:chapter2/section5.org][Variation of Limits]]
@@ -18,3 +20,7 @@
   - [[file:chapter2/solution8.org][Solutions]]
 - [[file:chapter2/section9.org][Monotone Sequences and the Completeness of the Real Numbers]]
   - [[file:chapter2/solution9.org][Solutions]]
+
+* Derivatives (Chapter 3)
+
+- [[file:chapter3/section1.org][Rates of Change and Slopes]]  

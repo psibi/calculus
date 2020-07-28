@@ -18,3 +18,5 @@
   - [[file:chapter2/solution7.org][solution7]]
   - [[file:chapter2/solution8.org][solution8]]
   - [[file:chapter2/solution9.org][solution9]]
+- chapter3
+  - [[file:chapter3/section1.org][section1]]
