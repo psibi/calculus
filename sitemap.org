@@ -20,3 +20,4 @@
   - [[file:chapter2/solution9.org][solution9]]
 - chapter3
   - [[file:chapter3/section1.org][section1]]
+  - [[file:chapter3/section2.org][section2]]
