@@ -23,3 +23,6 @@ y with respect to x at $x=a$/.
 - If rate of change of y is not explicitly specified to be an average
   rate of change, then it is understood to be an instantaneous rate of
   change.
+- The instantaneous rate of change of $y$ with respect to $x$ at $x=a$
+  could also be though of as slope of the line tangent to the graph of
+  $f$ at the point $P= (a,f(a))$
