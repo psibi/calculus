@@ -1,0 +1,46 @@
+* Derivative Rules
+
+** Theorem 3.3.1
+
+Constant functions and the identity functions are differentiable at
+all numbers, and their derivatives are given by the following
+formulas:
+
+- Suppose $f$ is a constant function; that is, there is some number
+  $c$ such that $f(x)=c$. Then $f'(x)=0$. In other words,
+  $\dfrac{d}{dx}(c) = 0$.
+- Suppose $f$ is the identity function; that is, $f(x)=x$. Then
+  $f'(x)=1$. In other words, $\dfrac{d}{dx}(x) = 1$.
+
+** Theorem 3.3.2
+
+Suppose that $f$ and $g$ are functions and $c$ is a number.
+
+- If $f$ and $g$ are differentiable at a number $x$, then so is $f +
+  g$, and
+
+  $(f+g)'(x) = f'(x) + g'(x)$
+
+  In other words,
+
+  $\dfrac{d}{dx}(f(x)+g(x)) = \dfrac{d}{dx}(f(x)) + \dfrac{d}{dx}(g(x))$
+
+- If $f$ is differentiable at $x$, then so is $cf$, and
+
+  $(cf)'(x) = c(f'(x))$
+
+  In other words,
+
+  $\dfrac{d}{dx}(cf(x)) = c.\dfrac{d}{dx}(f(x))$
+
+- If $f$ and $g$ are differentiable at a number $x$, then so is $f -
+  g$, and
+
+  $(f-g)'(x) = f'(x)-g'(x)$
+
+  In other words,
+
+  $\dfrac{d}{dx}(f(x)-g(x)) = \dfrac{d}{dx}(f(x)) - \dfrac{d}{dx}(g(x))$
+  
+
+

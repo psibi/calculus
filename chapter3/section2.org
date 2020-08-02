@@ -23,6 +23,11 @@ $f'(x) = \lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$
   differentiation.
 - If $I$ is an [[https://en.wikipedia.org/wiki/Interval_(mathematics)#Terminology][open interval]], we say that $f$ is differentiable on $I$
   if it is differentiable at $a$ for every number $a \in I$.
+- The formula that defines $f'(x)$ contains both $f(x)$ and $f(x+h)$,
+  in order for $f'(x)$ to be defined, not only must $f(x)$ be defined,
+  but also $f(x+h)$ mus be defined for $h$ close to $0$. In other
+  words, there must be some number $d>0$ such that the interval $(x-d,
+  x+d)$ is contained in the domain of $f$.
 
 * Theorem 3.2.3
 
