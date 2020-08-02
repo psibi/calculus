@@ -15,7 +15,7 @@ $f'(x) = \lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$
 - The domain of $f'$ is the set of all values of $x$ for which this
   limit is defined.
 - If $a$ is in the domain of $f'$, then we say that $f$ is
-  /differentiable$ at $a$.
+  differentiable at $a$.
 - $f'(a)$ is the rate of change of $f(x)$ with respect to $x$ at
   $x=a$, which is also the slope of the line tangent to the graph of
   $f$ at the point $(a,f(a))$.
@@ -32,4 +32,4 @@ $f'(a) = \lim_{x \to a} \dfrac{f(x)-f(a)}{x-a}$
 
 * Theorem 3.2.4
 
-If $f$ is differentiable at $a$, then $f$ is continous at $a$.
+If $f$ is differentiable at $a$, then $f$ is continuous at $a$.
