@@ -21,3 +21,4 @@
 - chapter3
   - [[file:chapter3/section1.org][section1]]
   - [[file:chapter3/section2.org][section2]]
+  - [[file:chapter3/section3.org][section3]]
