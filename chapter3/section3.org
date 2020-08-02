@@ -41,6 +41,59 @@ Suppose that $f$ and $g$ are functions and $c$ is a number.
   In other words,
 
   $\dfrac{d}{dx}(f(x)-g(x)) = \dfrac{d}{dx}(f(x)) - \dfrac{d}{dx}(g(x))$
-  
 
+** Theorem 3.3.3 (Product Rule)
+
+If $f$ and $g$ are differentiable at $x$, then so is $fg$, and
+
+$(fg)'(x) = f(x)g'(x) + g(x)f'(x)$
+
+In other words,
+
+$\dfrac{d}{dx}(f(x)g(x)) = f(x)\dfrac{d}{dx}(g(x)) + g(x)\dfrac{d}{dx}(f(x))$
+
+** Theorem 3.3.4 (Power Rule)
+
+Suppose $n$ is a positive integer, and $f(x) = x^n$. Then $f$ is
+differentiable at all numbers, and $f'(x) = nx^{n-1}$. In other words,
+$\dfrac{d}{dx} (x^n) = nx^{n-1}$.
+
+** Theorem 3.3.5 (Quotient Rule)
+
+If $f$ and $g$ are differentiable at $x$ and $g(x) \neq 0$, then $f/g$
+is differentiable at $x$, and
+
+$(f/g)'(x) = \dfrac{g(x)f'(x) - f(x)g'(x)}{(g(x))^2}$
+
+In other words,
+
+$\dfrac{d}{dx}(\dfrac{f(x)}{g(x)}) = \dfrac{g(x)\dfrac{d}{dx}(f(x)) - f(x)\dfrac{d}{dx}(g(x))}{(g(x))^2}$
+  
+** Theorem 3.3.6
+
+   Suppose $n$ is a negative integer, and for all $x \neq 0, f(x) =
+   x^n$. Then $f$ is differentiable at all $x \neq 0$, and $f'(x) =
+   nx^{n-1}$. In other words, $\dfrac{d}{dx}x^n = nx^{n-1}$.
+
+** Theorem 3.3.7
+
+   Suppose $n$ is an integer, $n \geq 2$, and $f(x) =
+   x^{\dfrac{1}{n}}$. Then $f'(x) = \dfrac{1}{n}x^{\dfrac{1}{n} -
+   1}$. If $n$ is even then the domain of $f'$ is $(0, \infty)$, and
+   if $n$ is odd then it is $(-\infty,0) \cup (0, \infty)$.
+
+** Derivatives of trignometric functions
+
+   $\dfrac{d}{dx}(\sin x) = \cos x$
+
+   $\dfrac{d}{dx}(\cos x) = -\sin x$
+
+   $\dfrac{d}{dx}(\tan x) = \sec^2 x$
+
+   $\dfrac{d}{dx}(\cot x) = -\csc^2 x$
+
+   $\dfrac{d}{dx}(\sec x) = \sec x \tan x$
+
+   $\dfrac{d}{dx}(\csc x) = -\csc x \cot x$   
+   
 
