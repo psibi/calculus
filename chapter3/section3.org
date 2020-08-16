@@ -82,6 +82,11 @@ $\dfrac{d}{dx}(\dfrac{f(x)}{g(x)}) = \dfrac{g(x)\dfrac{d}{dx}(f(x)) - f(x)\dfrac
    1}$. If $n$ is even then the domain of $f'$ is $(0, \infty)$, and
    if $n$ is odd then it is $(-\infty,0) \cup (0, \infty)$.
 
+   [[http://www.mesacc.edu/~scotz47781/mat120/notes/exponents/rational/rational_exponents.html][Ref 1: Definition of Radicals]]   
+   
+   [[http://www.mesacc.edu/~scotz47781/mat120/notes/radicals/domain/any_index/any_radical.html][Ref 2: Domain of Radical Functions]]
+
+
 ** Derivatives of trignometric functions
 
    $\dfrac{d}{dx}(\sin x) = \cos x$
