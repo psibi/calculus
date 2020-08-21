@@ -1,0 +1,40 @@
+* Derivatives
+
+* Paradox of Generalization
+
+In calculus, sometimes generalization makes a problem easier instead
+of harder. This is called as /paradox of generalization/.
+
+* Definition 3.2.1
+
+For any function $f$, the derivative of $f$ is the function $f'(x)$
+defined by the formula
+
+$f'(x) = \lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$
+
+- The domain of $f'$ is the set of all values of $x$ for which this
+  limit is defined.
+- If $a$ is in the domain of $f'$, then we say that $f$ is
+  differentiable at $a$.
+- $f'(a)$ is the rate of change of $f(x)$ with respect to $x$ at
+  $x=a$, which is also the slope of the line tangent to the graph of
+  $f$ at the point $(a,f(a))$.
+- The process of finding the derivative of a function is called
+  differentiation.
+- If $I$ is an [[https://en.wikipedia.org/wiki/Interval_(mathematics)#Terminology][open interval]], we say that $f$ is differentiable on $I$
+  if it is differentiable at $a$ for every number $a \in I$.
+- The formula that defines $f'(x)$ contains both $f(x)$ and $f(x+h)$,
+  in order for $f'(x)$ to be defined, not only must $f(x)$ be defined,
+  but also $f(x+h)$ mus be defined for $h$ close to $0$. In other
+  words, there must be some number $d>0$ such that the interval $(x-d,
+  x+d)$ is contained in the domain of $f$.
+
+* Theorem 3.2.3
+
+Suppose $f$ is differentiable at $a$. Then
+
+$f'(a) = \lim_{x \to a} \dfrac{f(x)-f(a)}{x-a}$
+
+* Theorem 3.2.4
+
+If $f$ is differentiable at $a$, then $f$ is continuous at $a$.

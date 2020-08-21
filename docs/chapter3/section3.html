@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2020-07-31 Fri 21:56 -->
+<!-- 2020-08-16 Sun 23:04 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -224,110 +224,198 @@ MathJax.Hub.Config({
 </div><div id="content" class="container">
 <div class="row"><div class="col-md-9"><h1 class="title"></h1>
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Limit Theorems</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Derivative Rules</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Theorem 2.4.1</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Theorem 3.3.1</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-Let \(a\) be any number.
+Constant functions and the identity functions are differentiable at
+all numbers, and their derivatives are given by the following
+formulas:
 </p>
 
-<ol class="org-ol">
-<li>For any number \(c\), \(\lim_{x \to a} c = c\)
+<ul class="org-ul">
+<li>Suppose \(f\) is a constant function; that is, there is some number
+\(c\) such that \(f(x)=c\). Then \(f'(x)=0\). In other words,
+\(\dfrac{d}{dx}(c) = 0\).
 </li>
-<li>\(\lim_{x \to a}x = a\)
+<li>Suppose \(f\) is the identity function; that is, \(f(x)=x\). Then
+\(f'(x)=1\). In other words, \(\dfrac{d}{dx}(x) = 1\).
 </li>
-</ol>
+</ul>
 </div>
 </div>
 
 <div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Theorem 2.4.2</h3>
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Theorem 3.3.2</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
-Suppose \(\lim_{x \to a}f(x) = L\) and \(\lim_{x \to a}g(x) = M\). Then:
+Suppose that \(f\) and \(g\) are functions and \(c\) is a number.
 </p>
 
-<ol class="org-ol">
-<li>\(\lim_{x \to a}(f(x) + g(x)) = L + M\)
+<ul class="org-ul">
+<li>If \(f\) and \(g\) are differentiable at a number \(x\), then so is \(f +
+  g\), and
+
+<p>
+\((f+g)'(x) = f'(x) + g'(x)\)
+</p>
+
+<p>
+In other words,
+</p>
+
+<p>
+\(\dfrac{d}{dx}(f(x)+g(x)) = \dfrac{d}{dx}(f(x)) + \dfrac{d}{dx}(g(x))\)
+</p>
 </li>
-<li>For any number \(c\), \(\lim_{x \to a}cf(x) = cL\)
+
+<li>If \(f\) is differentiable at \(x\), then so is \(cf\), and
+
+<p>
+\((cf)'(x) = c(f'(x))\)
+</p>
+
+<p>
+In other words,
+</p>
+
+<p>
+\(\dfrac{d}{dx}(cf(x)) = c.\dfrac{d}{dx}(f(x))\)
+</p>
 </li>
-<li>\(\lim_{x \to a}(f(x) - g(x)) = L - M\)
+
+<li>If \(f\) and \(g\) are differentiable at a number \(x\), then so is \(f -
+  g\), and
+
+<p>
+\((f-g)'(x) = f'(x)-g'(x)\)
+</p>
+
+<p>
+In other words,
+</p>
+
+<p>
+\(\dfrac{d}{dx}(f(x)-g(x)) = \dfrac{d}{dx}(f(x)) - \dfrac{d}{dx}(g(x))\)
+</p>
 </li>
-<li>\(\lim_{x \to a}(f(x) . g(x)) = L . M\)
-</li>
-<li>If \(M \neq 0\) then \(\lim_{x \to a}(f(x) / g(x)) = L / M\)
-</li>
-</ol>
+</ul>
 </div>
 </div>
 
 <div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Theorem 2.4.3</h3>
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Theorem 3.3.3 (Product Rule)</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
-If \(f\) is a polynomial, then for any number \(a\)
+If \(f\) and \(g\) are differentiable at \(x\), then so is \(fg\), and
 </p>
 
 <p>
-\(\lim_{x \to a} f(x) = f(a)\)
+\((fg)'(x) = f(x)g'(x) + g(x)f'(x)\)
+</p>
+
+<p>
+In other words,
+</p>
+
+<p>
+\(\dfrac{d}{dx}(f(x)g(x)) = f(x)\dfrac{d}{dx}(g(x)) + g(x)\dfrac{d}{dx}(f(x))\)
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Theorem 2.4.5</h3>
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Theorem 3.3.4 (Power Rule)</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
-Suppose that \(d > 0\), and \(f_1\) and \(f_2\) are functions such that
-for all \(x\), if \(0 < |x-a| < d\) then \(f_1(x) = f_2(x)\). Then
-\(\lim_{x \to a} f_1(x) = \lim_{x \to a} f_2(x)\), where we interpret
-this equation to mean that either both limits are defined and they
-are equal, or both limits are undefined.
+Suppose \(n\) is a positive integer, and \(f(x) = x^n\). Then \(f\) is
+differentiable at all numbers, and \(f'(x) = nx^{n-1}\). In other words,
+\(\dfrac{d}{dx} (x^n) = nx^{n-1}\).
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Theorem 2.4.8</h3>
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Theorem 3.3.5 (Quotient Rule)</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
-If \(\lim_{x \to a}(f(x)/g(x))\) is defined and \(\lim_{x \to a}g(x) =
-   0\), then \(\lim_{x \to a}f(x) = 0\) as well. Thus, if \(\lim_{x \to
-   a}g(x) = 0\) but \(\lim_{x \to a}f(x) \neq 0\), then \(\lim_{x \to
-   a}(f(x)/g(x))\) must be undefined.
+If \(f\) and \(g\) are differentiable at \(x\) and \(g(x) \neq 0\), then \(f/g\)
+is differentiable at \(x\), and
+</p>
+
+<p>
+\((f/g)'(x) = \dfrac{g(x)f'(x) - f(x)g'(x)}{(g(x))^2}\)
+</p>
+
+<p>
+In other words,
+</p>
+
+<p>
+\(\dfrac{d}{dx}(\dfrac{f(x)}{g(x)}) = \dfrac{g(x)\dfrac{d}{dx}(f(x)) - f(x)\dfrac{d}{dx}(g(x))}{(g(x))^2}\)
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Squeeze theorem (Theorem 2.4.10)</h3>
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Theorem 3.3.6</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
-Suppose that \(d > 0\), and for all \(x\), if \(0 < |x-a| < d\) then
-\(g(x) \leq f(x) \leq h(x)\). Suppose also that \(\lim_{x \to a} g(x)
-   = \lim_{x \to a}h(x) = L\). Then \(\lim_{x \to a}f(x) = L\).
+Suppose \(n\) is a negative integer, and for all \(x \neq 0, f(x) =
+   x^n\). Then \(f\) is differentiable at all \(x \neq 0\), and \(f'(x) =
+   nx^{n-1}\). In other words, \(\dfrac{d}{dx}x^n = nx^{n-1}\).
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Theorem 2.4.11</h3>
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Theorem 3.3.7</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
-If \(\lim_{x \to a}|f(x)| = 0\), then \(\lim_{x \to a}f(x) = 0\).
+Suppose \(n\) is an integer, \(n \geq 2\), and \(f(x) =
+   x^{\dfrac{1}{n}}\). Then \(f'(x) = \dfrac{1}{n}x^{\dfrac{1}{n} -
+   1}\). If \(n\) is even then the domain of \(f'\) is \((0, \infty)\), and
+if \(n\) is odd then it is \((-\infty,0) \cup (0, \infty)\).
+</p>
+
+<p>
+<a href="http://www.mesacc.edu/~scotz47781/mat120/notes/exponents/rational/rational_exponents.html">Ref 1: Definition of Radicals</a>   
+</p>
+
+<p>
+<a href="http://www.mesacc.edu/~scotz47781/mat120/notes/radicals/domain/any_index/any_radical.html">Ref 2: Domain of Radical Functions</a>
 </p>
 </div>
 </div>
 
+
 <div id="outline-container-sec-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Theorem 2.2.4</h3>
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Derivatives of trignometric functions</h3>
 <div class="outline-text-3" id="text-1-8">
 <p>
-There cannot be more than one number \(L\) such that as \(x \to a^{\neq},
-f(x) \to L\).
+\(\dfrac{d}{dx}(\sin x) = \cos x\)
+</p>
+
+<p>
+\(\dfrac{d}{dx}(\cos x) = -\sin x\)
+</p>
+
+<p>
+\(\dfrac{d}{dx}(\tan x) = \sec^2 x\)
+</p>
+
+<p>
+\(\dfrac{d}{dx}(\cot x) = -\csc^2 x\)
+</p>
+
+<p>
+\(\dfrac{d}{dx}(\sec x) = \sec x \tan x\)
+</p>
+
+<p>
+\(\dfrac{d}{dx}(\csc x) = -\csc x \cot x\)   
 </p>
 </div>
 </div>
@@ -335,16 +423,16 @@ f(x) \to L\).
 </div><div class="col-md-3"><nav id="table-of-contents">
 <div id="text-table-of-contents" class="bs-docs-sidebar">
 <ul class="nav">
-<li><a href="#sec-1">1. Limit Theorems</a>
+<li><a href="#sec-1">1. Derivative Rules</a>
 <ul class="nav">
-<li><a href="#sec-1-1">1.1. Theorem 2.4.1</a></li>
-<li><a href="#sec-1-2">1.2. Theorem 2.4.2</a></li>
-<li><a href="#sec-1-3">1.3. Theorem 2.4.3</a></li>
-<li><a href="#sec-1-4">1.4. Theorem 2.4.5</a></li>
-<li><a href="#sec-1-5">1.5. Theorem 2.4.8</a></li>
-<li><a href="#sec-1-6">1.6. Squeeze theorem (Theorem 2.4.10)</a></li>
-<li><a href="#sec-1-7">1.7. Theorem 2.4.11</a></li>
-<li><a href="#sec-1-8">1.8. Theorem 2.2.4</a></li>
+<li><a href="#sec-1-1">1.1. Theorem 3.3.1</a></li>
+<li><a href="#sec-1-2">1.2. Theorem 3.3.2</a></li>
+<li><a href="#sec-1-3">1.3. Theorem 3.3.3 (Product Rule)</a></li>
+<li><a href="#sec-1-4">1.4. Theorem 3.3.4 (Power Rule)</a></li>
+<li><a href="#sec-1-5">1.5. Theorem 3.3.5 (Quotient Rule)</a></li>
+<li><a href="#sec-1-6">1.6. Theorem 3.3.6</a></li>
+<li><a href="#sec-1-7">1.7. Theorem 3.3.7</a></li>
+<li><a href="#sec-1-8">1.8. Derivatives of trignometric functions</a></li>
 </ul>
 </li>
 </ul>
@@ -353,7 +441,7 @@ f(x) \to L\).
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2020-07-31 Fri 21:56</p>
+<p class="date">Created: 2020-08-16 Sun 23:04</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="http://orgmode.org">Org-mode</a> 9.3.6)</p>
 </div>
 </footer>

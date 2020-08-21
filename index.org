@@ -23,4 +23,6 @@
 
 * Derivatives (Chapter 3)
 
-- [[file:chapter3/section1.org][Rates of Change and Slopes]]  
+- [[file:chapter3/section1.org][Rates of Change and Slopes]]
+- [[file:chapter3/section2.org][Derivatives]]
+- [[file:chapter3/section3.org][Derivative Rules]]
