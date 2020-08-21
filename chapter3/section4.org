@@ -1,0 +1,26 @@
+* The Chain Rule
+
+** Theorem 3.4.1 (Chain Rule)
+
+If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$,
+then $f \circ g$ is differentiable at $x$, and
+
+$(f \circ g)'(x) = f'(g(x))g'(x)$
+
+In other words,
+
+$\dfrac{d}{dx} (f(g(x))) = f'(g(x))\dfrac{d}{dx}(g(x))$
+
+We can streamline our use of the chain rule by noticing the
+relationship between the following two equations:
+
+$\dfrac{d}{dx}(f(x)) = f'(x)$
+
+$\dfrac{d}{dx} (f(g(x))) = f'(g(x))\dfrac{d}{dx}(g(x))$
+
+The first equations says that the derivation of $f(x)$ is
+$f'(x)$. Replacing $x$ with the expression $g(x)$ on both sides, you
+might expect that the derivative of $f(g(x))$ would be $f'(g(x))$. The
+chain rule says that this is part of the answer, but it's not the
+whole thing. To get the correct answer you need to multiply by the
+derivative of $g(x)$
