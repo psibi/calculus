@@ -26,3 +26,4 @@
 - [[file:chapter3/section1.org][Rates of Change and Slopes]]
 - [[file:chapter3/section2.org][Derivatives]]
 - [[file:chapter3/section3.org][Derivative Rules]]
+- [[file:chapter3/section4.org][The Chain Rule]]
