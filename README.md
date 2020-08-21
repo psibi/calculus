@@ -1,11 +1,9 @@
 # Rigorous Calculus
 
-This contains my notes and solutions for Daniel Velleman's Calculus book.
-
-* [Chapter 1](./chapter1/)
-* [Chapter 2](./chapter2/)
-
-For converting org files to PDF, use `org-latex-export-to-pdf`.
+This contains my notes and solutions for Daniel Velleman's Calculus
+book. You can access it on
+[https://psibi.in/velleman-calculus](https://psibi.in/velleman-calculus
+"https://psibi.in/velleman-calculus").
 
 ## Publishing
 
@@ -20,6 +18,12 @@ For converting org files to PDF, use `org-latex-export-to-pdf`.
 ```
 $ ln -s $PWD/docs/assets/ $PWD/assets
 ```
+
+## Contributing
+
+Contributions welcome. You would have to edit the [org
+files](https://en.wikipedia.org/wiki/Org-mode "org files") inside the
+chapters directory.
 
 ## References
 
