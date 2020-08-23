@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2020-08-23 Sun 22:13 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Sibi Prabakaran">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script>
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="https://psibi.in/velleman-calculus/"> UP </a>
+ |
+ <a accesskey="H" href="https://psibi.in/"> HOME </a>
+</div><div id="content" class="container">
+<div class="row"><div class="col-md-3 col-md-push-9"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Rates of Change and Slopes</a>
+<ul class="nav">
+<li><a href="#sec-1-1">1.1. Solution 1</a></li>
+<li><a href="#sec-1-2">1.2. Solution 2</a></li>
+<li><a href="#sec-1-3">1.3. Solution 3</a></li>
+<li><a href="#sec-1-4">1.4. Solution 4</a></li>
+<li><a href="#sec-1-5">1.5. Solution 5</a></li>
+<li><a href="#sec-1-6">1.6. Solution 6</a></li>
+<li><a href="#sec-1-7">1.7. Solution 7</a></li>
+<li><a href="#sec-1-8">1.8. Solution 8</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div><div class="col-md-9 col-md-pull-3"><h1 class="title"></h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Rates of Change and Slopes</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Solution 1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+\(y = x^2 - 3x + 4; x = 7\)
+</p>
+
+<p>
+\(f(x) = x^2 - 3x + 4\)
+</p>
+
+<p>
+\(f(7+h) = (7+h)^2 - 3(7+h) + 4\)
+</p>
+
+<p>
+\(= 49 + h^2 + 14h - 21 - 3h + 4\)
+</p>
+
+<p>
+\(= h^2 + 11h + 32\)
+</p>
+
+<p>
+\(f(7) = 7^2 - 3.7 + 4\)
+</p>
+
+<p>
+\(= 49 - 21 + 4 = 32\)
+</p>
+
+<p>
+\(f(7+h) - f(7) = h^2 + 11h + 32 - 32\)
+</p>
+
+<p>
+\(= h^2 + 11h\)
+</p>
+
+<p>
+\(\lim_{h \to 0} \dfrac{f(7+h) - f(7)}{h} = \lim_{h \to 0} \dfrac{h^2+11h}{h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} h + 11 = 11\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Solution 2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+\(y = \dfrac{1}{2x+3}; x=-1\)
+</p>
+
+<p>
+\(f(x) = \dfrac{1}{2x+3}\)
+</p>
+
+<p>
+\(f(-1 + h) = \dfrac{1}{2(h-1)+3} = \dfrac{1}{2h-2+3}=\dfrac{1}{2h+1}\)
+</p>
+
+<p>
+\(f(-1) = \dfrac{1}{-2+3} = 1\)
+</p>
+
+<p>
+\(\lim_{h \to 0} \dfrac{f(-1+h)-f(-1)}{h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{\dfrac{1}{2h+1}-1}{h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{1-2h-1}{h(1+2h)}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{-2h}{h(1+2h)}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{-2}{1+2h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{-2}{1+0} = -2\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Solution 3</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+\(y = x^3\)
+</p>
+
+<p>
+\(f(x) = x^3\)
+</p>
+
+<p>
+\(f(2+h) = (2+h)^3 = 2^3 + h^3 + 12h + 6h^2\)
+</p>
+
+<p>
+\(f(2) = 2^3 = 8\)
+</p>
+
+<p>
+\(f(2+h) - f(2) = h^3 + 12h + 6h^2\)
+</p>
+
+<p>
+\(\lim_{h \to 0} \dfrac{f(2+h)-f(2)}{h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} h^2 + 12 + 6h\)
+</p>
+
+<p>
+\(= 0 + 12 + 0\)
+</p>
+
+<p>
+\(12\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Solution 4</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+\(y = \sqrt{5-2x}\)
+</p>
+
+<p>
+\(f(x) = \sqrt{5-2x}\)
+</p>
+
+<p>
+\(f(-2+h) = \sqrt{5-2(-2+h)}\)
+</p>
+
+<p>
+\(= \sqrt{5+4-2h} = \sqrt{9-2h}\)
+</p>
+
+<p>
+\(f(-2) = \sqrt{5+4} = \sqrt{9} = 3\)
+</p>
+
+<p>
+\(f(-2+h)-f(-2)=\sqrt{9-2h}+3\)
+</p>
+
+<p>
+\(\lim_{h \to 0} \dfrac{f(-2+h)-f(-2)}{h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{\sqrt{9-2h}+3}{h} * \dfrac{\sqrt{9-2h}-3}{\sqrt{9-2h}-3}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{9-2h-9}{h(\sqrt{9-2h}-3)}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{-2}{\sqrt{9-2h}-3}\)
+</p>
+
+<p>
+\(= \dfrac{-2}{-3-3}\)
+</p>
+
+<p>
+\(= \dfrac{-2}{-6} = \dfrac{1}{3}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Solution 5</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+\(y = \dfrac{1}{x^2}\)
+</p>
+
+<p>
+\(f(x) = \dfrac{1}{x^2}\)
+</p>
+
+<p>
+\(f(4+h) = \dfrac{1}{(4+h)^2}\)
+</p>
+
+<p>
+\(f(4) = \dfrac{1}{16}\)
+</p>
+
+<p>
+\(f(4+h) - f(4) = \dfrac{1}{(4+h)^2} - \dfrac{1}{16}\)
+</p>
+
+<p>
+\(= \dfrac{16 - (16 + h^2 + 8h)}{16(4+h)^2}\)
+</p>
+
+<p>
+\(= \dfrac{-h^2 - 8h}{16(4+h)^2} = \dfrac{-h(h+8)}{16(4+h)^2}\)
+</p>
+
+<p>
+\(\lim_{h \to 0} \dfrac{f(4+h)-f(4)}{h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{-(h+8)}{16(4+h)^2}\)
+</p>
+
+<p>
+\(= \dfrac{-8}{16.4^2} = \dfrac{-1}{32}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Solution 6</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+\(y = \sin x\)
+</p>
+
+<p>
+\(f(x) = \sin x\)
+</p>
+
+<p>
+\(f(0 + h) = \sin (0 + h) = \sin h\)
+</p>
+
+<p>
+\(f(0) = \sin 0 = 0\)
+</p>
+
+<p>
+\(\lim_{h \to 0} \dfrac{f(0+h)-f(0)}{h} = \lim_{h \to 0} \dfrac{\sin h}{h} = 1\) (Exercise 23, 2.7 section)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Solution 7</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+\(y = \sin x; x = \dfrac{\pi}{3}\)
+</p>
+
+<p>
+\(f(x)=\sin x\)
+</p>
+
+<p>
+\(f(\dfrac{\pi}{3}+h) = \sin(\dfrac{\pi}{3}+h)\)
+</p>
+
+<p>
+\(f(\dfrac{\pi}{3}) = \sin(\dfrac{\pi}{3})\)
+</p>
+
+<p>
+\(\sin(\dfrac{\pi}{3}+h) = \sin (\dfrac{\pi}{3}) \cos h + \cos (\dfrac{\pi}{3}) \sin h\)
+</p>
+
+<p>
+\(\sin(\dfrac{\pi}{3}+h) - \sin (\dfrac{\pi}{3}) = \cos(\dfrac{\pi}{3})\sin h + \sin (\dfrac{\pi}{3})(\cos h - 1)\)
+</p>
+
+<p>
+\(= \cos(\dfrac{\pi}{3})\sin h + \sin (\dfrac{\pi}{3}) \dfrac{(\cos h - 1)}{(\cos h + 1)} (\cos h + 1)\)
+</p>
+
+<p>
+\(= \cos(\dfrac{\pi}{3})\sin h + \sin (\dfrac{\pi}{3}) \dfrac{\cos^2 h - 1}{\cos h + 1}\)
+</p>
+
+<p>
+\(= \cos(\dfrac{\pi}{3})\sin h + \sin (\dfrac{\pi}{3}) \dfrac{\sin^2 h}{\cos h + 1}\)
+</p>
+
+<p>
+\(= \sin h (\cos (\dfrac{\pi}{3}) - \sin (\dfrac{\pi}{3}) \dfrac{\sin h}{\cos h + 1})\)
+</p>
+
+<p>
+\(\lim_{h \to 0} \dfrac{\sin h}{h} (\cos (\dfrac{\pi}{3}) - \sin (\dfrac{\pi}{3}) \dfrac{\sin h}{\cos h + 1})\)
+</p>
+
+<p>
+\(= \cos (\dfrac{\pi}{3}) - 0 = \cos (\dfrac{\pi}{3}) = \dfrac{1}{2}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Solution 8</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+\(y = \tan 3x\)
+</p>
+
+<p>
+\(f(x) = \tan 3x\)
+</p>
+
+<p>
+\(f(0+h) = \tan 3(0+h) = \tan 3h\)
+</p>
+
+<p>
+\(f(0) = \tan 0 = 0\)
+</p>
+
+<p>
+\(\lim_{h \to 0} \dfrac{\tan 3h}{h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{3 \tan 3h}{3h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{3 \sin 3h}{3h(\cos 3h)}\)
+</p>
+
+<p>
+\(= 3 . \dfrac{1}{\cos 0} = 3\)
+</p>
+</div>
+</div>
+</div>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Sibi Prabakaran</p>
+<p class="date">Created: 2020-08-23 Sun 22:13</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="http://orgmode.org">Org-mode</a> 9.3.6)</p>
+</div>
+</footer>
+</body>
+</html>
