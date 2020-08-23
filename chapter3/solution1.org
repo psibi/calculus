@@ -1,0 +1,171 @@
+* Rates of Change and Slopes
+
+** Solution 1
+
+$y = x^2 - 3x + 4; x = 7$
+
+$f(x) = x^2 - 3x + 4$
+
+$f(7+h) = (7+h)^2 - 3(7+h) + 4$
+
+$= 49 + h^2 + 14h - 21 - 3h + 4$
+
+$= h^2 + 11h + 32$
+
+$f(7) = 7^2 - 3.7 + 4$
+
+$= 49 - 21 + 4 = 32$
+
+$f(7+h) - f(7) = h^2 + 11h + 32 - 32$
+
+$= h^2 + 11h$
+
+$\lim_{h \to 0} \dfrac{f(7+h) - f(7)}{h} = \lim_{h \to 0} \dfrac{h^2+11h}{h}$
+
+$= \lim_{h \to 0} h + 11 = 11$
+
+** Solution 2
+
+$y = \dfrac{1}{2x+3}; x=-1$
+
+$f(x) = \dfrac{1}{2x+3}$
+
+$f(-1 + h) = \dfrac{1}{2(h-1)+3} = \dfrac{1}{2h-2+3}=\dfrac{1}{2h+1}$
+
+$f(-1) = \dfrac{1}{-2+3} = 1$
+
+$\lim_{h \to 0} \dfrac{f(-1+h)-f(-1)}{h}$
+
+$= \lim_{h \to 0} \dfrac{\dfrac{1}{2h+1}-1}{h}$
+
+$= \lim_{h \to 0} \dfrac{1-2h-1}{h(1+2h)}$
+
+$= \lim_{h \to 0} \dfrac{-2h}{h(1+2h)}$
+
+$= \lim_{h \to 0} \dfrac{-2}{1+2h}$
+
+$= \lim_{h \to 0} \dfrac{-2}{1+0} = -2$
+
+** Solution 3
+
+   $y = x^3$
+
+   $f(x) = x^3$
+
+   $f(2+h) = (2+h)^3 = 2^3 + h^3 + 12h + 6h^2$
+
+   $f(2) = 2^3 = 8$
+
+   $f(2+h) - f(2) = h^3 + 12h + 6h^2$
+
+   $\lim_{h \to 0} \dfrac{f(2+h)-f(2)}{h}$
+
+   $= \lim_{h \to 0} h^2 + 12 + 6h$
+
+   $= 0 + 12 + 0$
+
+   $12$
+
+** Solution 4
+
+   $y = \sqrt{5-2x}$
+
+   $f(x) = \sqrt{5-2x}$
+
+   $f(-2+h) = \sqrt{5-2(-2+h)}$
+
+   $= \sqrt{5+4-2h} = \sqrt{9-2h}$
+
+   $f(-2) = \sqrt{5+4} = \sqrt{9} = 3$
+
+   $f(-2+h)-f(-2)=\sqrt{9-2h}+3$
+
+   $\lim_{h \to 0} \dfrac{f(-2+h)-f(-2)}{h}$
+
+   $= \lim_{h \to 0} \dfrac{\sqrt{9-2h}+3}{h} * \dfrac{\sqrt{9-2h}-3}{\sqrt{9-2h}-3}$
+
+   $= \lim_{h \to 0} \dfrac{9-2h-9}{h(\sqrt{9-2h}-3)}$
+
+   $= \lim_{h \to 0} \dfrac{-2}{\sqrt{9-2h}-3}$
+
+   $= \dfrac{-2}{-3-3}$
+
+   $= \dfrac{-2}{-6} = \dfrac{1}{3}$
+
+** Solution 5
+
+   $y = \dfrac{1}{x^2}$
+
+   $f(x) = \dfrac{1}{x^2}$
+
+   $f(4+h) = \dfrac{1}{(4+h)^2}$
+
+   $f(4) = \dfrac{1}{16}$
+
+   $f(4+h) - f(4) = \dfrac{1}{(4+h)^2} - \dfrac{1}{16}$
+
+   $= \dfrac{16 - (16 + h^2 + 8h)}{16(4+h)^2}$
+
+   $= \dfrac{-h^2 - 8h}{16(4+h)^2} = \dfrac{-h(h+8)}{16(4+h)^2}$
+
+   $\lim_{h \to 0} \dfrac{f(4+h)-f(4)}{h}$
+
+   $= \lim_{h \to 0} \dfrac{-(h+8)}{16(4+h)^2}$
+
+   $= \dfrac{-8}{16.4^2} = \dfrac{-1}{32}$
+
+** Solution 6
+
+   $y = \sin x$
+
+   $f(x) = \sin x$
+
+   $f(0 + h) = \sin (0 + h) = \sin h$
+
+   $f(0) = \sin 0 = 0$
+
+   $\lim_{h \to 0} \dfrac{f(0+h)-f(0)}{h} = \lim_{h \to 0} \dfrac{\sin h}{h} = 1$ (Exercise 23, 2.7 section)
+
+** Solution 7
+
+   $y = \sin x; x = \dfrac{\pi}{3}$
+
+   $f(x)=\sin x$
+
+   $f(\dfrac{\pi}{3}+h) = \sin(\dfrac{\pi}{3}+h)$
+
+   $f(\dfrac{\pi}{3}) = \sin(\dfrac{\pi}{3})$
+
+   $\sin(\dfrac{\pi}{3}+h) = \sin (\dfrac{\pi}{3}) \cos h + \cos (\dfrac{\pi}{3}) \sin h$
+
+   $\sin(\dfrac{\pi}{3}+h) - \sin (\dfrac{\pi}{3}) = \cos(\dfrac{\pi}{3})\sin h + \sin (\dfrac{\pi}{3})(\cos h - 1)$
+
+   $= \cos(\dfrac{\pi}{3})\sin h + \sin (\dfrac{\pi}{3}) \dfrac{(\cos h - 1)}{(\cos h + 1)} (\cos h + 1)$
+
+   $= \cos(\dfrac{\pi}{3})\sin h + \sin (\dfrac{\pi}{3}) \dfrac{\cos^2 h - 1}{\cos h + 1}$
+
+   $= \cos(\dfrac{\pi}{3})\sin h + \sin (\dfrac{\pi}{3}) \dfrac{\sin^2 h}{\cos h + 1}$
+
+   $= \sin h (\cos (\dfrac{\pi}{3}) - \sin (\dfrac{\pi}{3}) \dfrac{\sin h}{\cos h + 1})$
+
+   $\lim_{h \to 0} \dfrac{\sin h}{h} (\cos (\dfrac{\pi}{3}) - \sin (\dfrac{\pi}{3}) \dfrac{\sin h}{\cos h + 1})$
+
+   $= \cos (\dfrac{\pi}{3}) - 0 = \cos (\dfrac{\pi}{3}) = \dfrac{1}{2}$
+
+** Solution 8
+
+   $y = \tan 3x$
+
+   $f(x) = \tan 3x$
+
+   $f(0+h) = \tan 3(0+h) = \tan 3h$
+
+   $f(0) = \tan 0 = 0$
+
+   $\lim_{h \to 0} \dfrac{\tan 3h}{h}$
+
+   $= \lim_{h \to 0} \dfrac{3 \tan 3h}{3h}$
+
+   $= \lim_{h \to 0} \dfrac{3 \sin 3h}{3h(\cos 3h)}$
+
+   $= 3 . \dfrac{1}{\cos 0} = 3$
