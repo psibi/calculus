@@ -24,3 +24,33 @@ might expect that the derivative of $f(g(x))$ would be $f'(g(x))$. The
 chain rule says that this is part of the answer, but it's not the
 whole thing. To get the correct answer you need to multiply by the
 derivative of $g(x)$
+
+** Theorem 3.4.4
+
+Suppose $f(x) = x^r$, where $r$ is a nonzero rational number. Then
+$f'(x) = rx^{r-1}$.
+
+Since $r$ is rational and $r \neq 0$, we can write $r=m/n$, where $n$
+is a positive integer, $m$ is a nonzero integer, and the fraction
+$m/n$ is reducted to lowest terms. If $n$ is even, then the domain of
+$f'$ is $(0,\infty)$. If $n$ is odd and $r<1$, then the domain of $f'$
+is $(-\infty,0) \cup (0,\infty)$. And if $n$ is odd and $r \geq 1$
+then the domain of $f'$ is $(-\infty,\infty)$
+
+** Higher order derivatives
+
+If $f$ is a function, then its derivative $f'$ is also a function. The
+derivative of $f'$ is written as $f''$; it's called the second
+derivative of $f$. If we differentiate $f$ $n$ times, then we get the
+$n$ th derivative of $f$, which is denoted $f^{(n)}$. These are called
+*higher-order derivatives$ of $f$.
+
+*** Leibniz notation for higher order derivatives
+
+If $y = f(x)$, then $dy/dx = f'(x)$. Therefore,
+
+$f''(x) = \dfrac{d}{dx}(f'(x)) = \dfrac{d}{dx}(\dfrac{dy}{dx})$
+
+$f^{(n)}(x) = \dfrac{d^ny}{dx^n} = \dfrac{d^n}{dx^n}(f(x))$
+
+

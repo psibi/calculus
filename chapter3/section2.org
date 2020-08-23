@@ -38,3 +38,15 @@ $f'(a) = \lim_{x \to a} \dfrac{f(x)-f(a)}{x-a}$
 * Theorem 3.2.4
 
 If $f$ is differentiable at $a$, then $f$ is continuous at $a$.
+
+* Other notations
+
+$\dfrac{dy}{dx} = \lim_{\Delta x \to 0} \dfrac{\Delta y}{\Delta x} = \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}=f'(x)$
+
+- The notation $dy/dx$ was introduced by Leibniz, so it is sometimes called *Leibniz notation* for the derivative.
+- The $f'$ notation was introduced by Joseph Louis Lagrange.
+
+$\dfrac{dy}{dx}\Bigr|_{x=a}$
+
+- The above notation is used to denote the derivative of $y$ with
+  respect to $x$, with the number $a$ substituted for $x$.
