@@ -169,3 +169,381 @@ $= \lim_{h \to 0} \dfrac{-2}{1+0} = -2$
    $= \lim_{h \to 0} \dfrac{3 \sin 3h}{3h(\cos 3h)}$
 
    $= 3 . \dfrac{1}{\cos 0} = 3$
+
+** Solution 9
+
+   $y = \dfrac{1}{\sqrt{x}}$
+
+   $f(2+h) = \dfrac{1}{\sqrt{2+h}}$
+
+   $f(2) = \dfrac{1}{\sqrt{2}}$
+
+   $f(2+h)-f(2) = \dfrac{1}{\sqrt{2+h}} - \dfrac{1}{\sqrt{2}}$
+
+   $= \dfrac{\sqrt{2}-\sqrt{2+h}}{\sqrt{2+h}\sqrt{2}} * \dfrac{\sqrt{2}+\sqrt{2+h}}{\sqrt{2}+\sqrt{2+h}}$
+
+   $= \dfrac{2-(2+h)}{(\sqrt{2+h}\sqrt{2})(\sqrt{2}+\sqrt{2+h})}$
+
+   $= \dfrac{-h}{(\sqrt{2+h}\sqrt{2})(\sqrt{2}+\sqrt{2+h})}$
+
+   $\lim_{h \to 0} \dfrac{-h}{h(\sqrt{2+h}\sqrt{2})(\sqrt{2}+\sqrt{2+h})}$
+
+   $= \dfrac{-1}{\sqrt{2}\sqrt{2}(\sqrt{2} + \sqrt{2})}$
+
+   $= \dfrac{-1}{2(2\sqrt{2})} = \dfrac{-1}{4\sqrt{2}} = -\dfrac{\sqrt{2}}{8}$
+
+** Solution 10
+
+   $y = 3x^2 - 5x + 1$
+
+   $(x,y) = (2,3)$
+
+   Let's find the slope of the line tangent to the graph $x=3$.
+
+   We know that the instantaneous rate of change of $y$ with respect
+   to $x$ is that tangent at $x=2$.
+
+   $f(2+h) = 3(2+h)^2 - 5(2+h) + 1$
+
+   $= 3(4+h^2 + 4h) - 10 - 5h + 1$
+
+   $= 12 + 3h^2 + 12h - 10 - 5h + 1$
+
+   $= 3 + 3h^2 + 7h$
+
+   $f(2) = 3.2^2 - 5.2 + 1$
+
+   $= 12 - 10 + 1 = 3$
+
+   $f(2+h) - f(2) = 3 + 3h^2 + 7h - 3$
+
+   $= 3h^2 + 7h$
+
+   $\lim_{h \to 0} \dfrac{f(2+h)-f(2)}{h} = \lim_{h \to 0} 3h + 7 = 7$
+
+   So, the slope is 7.
+
+   Using the equation of line $y = mx + c$
+
+   $3 = 7.2 + c$
+
+   $c = 3 - 14 = 11$
+
+   $y = mx + c$
+
+   $y = 7x - 11$
+
+** Solution 11
+
+   We know that the instantaneous rate of change of $y$ with respect
+   to $x$ at $x=a$ is the tangent at $x=a$.
+
+   $y = \dfrac{1}{x^2}$
+
+   $(-1,1)$
+
+   $f(x) = \dfrac{1}{x^2}$
+
+   $f(-1 + h) = \dfrac{1}{(h-1)^2} = \dfrac{1}{h^2 + 1 - 2h}$
+
+   $f(-1) = 1$
+
+   $f(-1 + h) - f(-1) = \dfrac{1}{h^2+1-2h} - 1 = \dfrac{1-(h^2+1-2h)}{h^2+1-2h}$
+
+   $= \dfrac{-h^2 + 2h}{h^2+1-2h}$
+
+   $\lim_{h \to 0} \dfrac{f(-1+h)-f(-1)}{h} = \lim_{h \to 0} \dfrac{-h+2}{h^2 + 1 -2h}$
+
+   $= \dfrac{2}{1} = 2$
+
+   So, $m = 2$
+
+   $y = mx + c$
+
+   $1 = 2.-1 + c$
+
+   $c = 1 + 2 = 3$
+
+   $y = mx + c$
+
+   $y = 2x + 5$
+
+** Solution 12
+
+   $y = t + \sqrt{t}$
+
+   $t = time in seconds$
+
+   $y = distance in inches$
+
+*** Solution a
+
+   Average rate of change over $[a,b]$  is $\dfrac{f(b)-f(a)}{b-a}$
+
+   $f(4) = 4 + 2 = 6$
+
+   $f(1) = 1 + \sqrt{1} = 2$
+
+   Average rate of velocity = $\dfrac{6-2}{4-1} = \dfrac{4}{3}$ inches per second.
+
+*** Solution b
+
+    Average rate of change over $[1,1.1]$
+
+    $f(1.1) = 1.1 + \sqrt{1.1}$
+
+    $f(1) = 1 + \sqrt{1} = 2$
+
+    Average rate of velocity = $\dfrac{\sqrt{1.1} + 1.1 - 2}{1.1 - 1} = \dfrac{\sqrt{1.1}-0.9}{0.1} = 1.488$ inches per second.
+
+*** Solution c
+
+    $f(1+h) = 1 + h + \sqrt{1+h}$
+
+    $f(1) = 2$
+
+    $f(1+h) - f(1) = h - 1 + \sqrt{1+h} * \dfrac{h-1-\sqrt{1+h}}{h-1-\sqrt{1+h}}$
+
+    $= \dfrac{(h-1)^2 - (1+h)}{h-1-\sqrt{1+h}}$
+
+    $= \dfrac{h^2-3h}{h-1-\sqrt{1+h}}$
+
+    $\lim_{h \to 0} \dfrac{f(1+h)-f(1)}{h}$
+
+    $= \lim_{h \to 0} \dfrac{h-3}{h-1-\sqrt{1+h}}$
+
+    $= \dfrac{-3}{-1-\sqrt{1}}$
+
+    $= \dfrac{-3}{-1-1}$
+
+    $= \dfrac{-3}{-2}$
+
+    $= \dfrac{3}{2}$
+
+** Solution 13
+
+   $I = \dfrac{10}{R}$
+
+   $R$ = Resistance in Ohms.
+
+   $I$ = Current in ampere.
+
+   Rate of change of $I$ with respect to $R$ when $R = 5 ohms$.
+
+   $f(R) = \dfrac{10}{R}$
+
+   $f(5+h) = \dfrac{10}{5+h}$
+
+   $f(5) = \dfrac{10}{5} = 2$
+
+   $f(5+h) - f(5) = \dfrac{10}{5+h} - 2 = \dfrac{10-10-2h}{5+h}$
+
+   $= \dfrac{-2h}{5+h}$
+
+   $\lim_{h \to 0} \dfrac{f(5+h)-f(5)}{h} = \lim_{h \to 0} \dfrac{-2}{5+h}$
+
+   $= \dfrac{-2}{5}$
+
+   So, the instantaneous rate of change of $I$ with respect to $R$ is
+   $-\dfrac{2}{5}$ ampere per ohm.
+
+   Since it's negative, it's decreasing. So as the resistance
+   increases, current decreases.
+
+** Solution 14
+
+   $F = \dfrac{k}{r^2}$
+
+   $k \approx 23.07$
+
+   $F =$ force in degrees.
+
+   $r =$ Distance in picometers.
+
+   Rate of change of $F$ with respect to $r$ when $r= 30$ pm.
+
+   $f(r) = \dfrac{k}{r^w}$
+
+   $f(30+h) = \dfrac{k}{(30+h)^2} = \dfrac{k}{30^2+h^2+60h}$
+
+   $f(30) = \dfrac{k}{30^2}$
+
+   $f(30+h)-f(30) = k(\dfrac{1}{30^2+h^2+60h} - \dfrac{1}{30^2})$
+
+   $= k(\dfrac{30^2-30^2-h^2-60h}{(30^2)(30^2+h^2+60h)})$
+
+   $= k(\dfrac{-h^2-60h}{(30^2)(30^2+h^2+60h)})$
+
+   $\lim_{h \to 0} \dfrac{f(30+h)-f(30)}{h}$
+
+   $= \lim_{h \to 0} \dfrac{k(-h-60)}{30^2(30^2+h^2+60h)}$
+
+   $= \dfrac{k(-60)}{30^2(30^2 + 0 + 6)}$
+
+   $= \dfrac{-60k}{30^2(30^2)}$
+
+   $= - 0.0017$  dynes per pm
+
+   A negative rate of change indicates that as distance increases, the
+   force decreases.
+
+** Solution 15
+
+   $P = r^{\dfrac{3}{2}}$
+
+   P = Time to complete one orbit in years.
+
+   r = Circular orbit of radius r in astronomical units.
+
+   Rate of change of $P$ with respect to $r$ at $r=4 au$
+
+   $f(r) = r^{3/2}$
+
+   $f(4+h) = (4+h)^{3/2}$
+
+   $f(4) = (4)^{3/2} = (2^2)^{3/2} = 2^3 = 8$
+
+   $f(4+h) - f(4) = \sqrt{(4+h)^3} - 8$
+
+   $= \sqrt{(4+h)^3} - 8 * \dfrac{\sqrt{(4+h)^3} + 8}{\sqrt{(4+h)^3} + 8}$
+
+   $= \dfrac{(4+h)^3 - 64}{\sqrt{(4+h)^3}+8}$
+
+   $= \dfrac{64+h^3+3.4^2h+3.4.h^2-64}{\sqrt{(4+h)^3}+8}$
+
+   $= \dfrac{h^3+3.4^2.h+3.4.h^2}{\sqrt{(4+h)^3}+8}$
+
+   $\lim_{h \to 0} \dfrac{f(4+h)-f(4)}{h}$
+
+   $= \lim_{h \to 0} \dfrac{h^2+3.4^2+34.h}{\sqrt{(4+h)^3}+8}$
+
+   $= \dfrac{0+3.4^2 + 0}{\sqrt{4^3}+8}$
+
+   $= \dfrac{3.4^2}{2^3+8}$
+
+   $= \dfrac{3.4.4}{8+8}$
+
+   $= \dfrac{3.2}{1+1}$
+
+   $= 3$
+
+   So, the rate of change of $P$ with respect to $r$ when $r=4$ au is
+   3 years per au.
+
+   Since it is positive, $P$ increases as $r$ increases.
+
+** Solution 16
+
+   $L = kT^4$
+
+   $k \approx 3.45 * 10^{11}$
+
+   T = Surface temperature in Kelvin
+
+   L = Luminosity measured in watts
+
+   Rate of change of $L$ with respect to $T$ when $T=2000 K$.
+   
+   $f(T) = kT^4$
+
+   $f(2000+h) = k(2000+h)^4$
+
+   $= k(2000^2+h^2+4000h)(2000+h)^2$
+
+   $= k(2000^2+h^2+4000h)(2000^2+h^2+4000h)$
+
+   $= k(2000^4 + 2000^2h^2 + 2000^2.4000.h+2000^2h^2 + h^4 + 4000h^3 + 2000^2.4000h + 4000h^3 + 4000^2.h^2)$
+
+   $f(2000) = k(2000)^4$
+
+   $f(2000+h)-f(2000) = k(2000^2h^2 + 2000^2.4000.h+2000^2h^2 + h^4 + 4000h^3 + 2000^2.4000h + 4000h^3 + 4000^2.h^2)$
+
+   $= k(h^2(2000^2 + 2000^2 + 4000^2) + h(2000^2.4000 + 2000^2.4000) + h^4 + h^3(4000 + 4000))$
+
+   $\lim_{h \to 0} \dfrac{f(2000+h)-f(2000)}{h}$
+
+   $= \lim_{h \to 0} k(h(2000^2 + 2000^2 + 4000^2) + (2000^2.4000 + 2000^2.4000) + h^3 + h^2(4000 + 4000))$
+
+   $= k(2*2000^2.4000)$
+
+   $= 8000(2000)^2.k$
+
+   $= 30 * 10^9$ K
+
+   So, the rate of change of $L$ with respect to $T$ when $T=2000$ K
+   is $32*10^9$ watts per kelvin.
+
+** Solution 17
+
+*** Solution a
+
+    $\forall h \neq 0$
+
+    Average rate of change over $[a-h, a+h]$ is $\dfrac{f(a+h)-f(a-h)}{2h}$
+
+    Let us consider two cases:
+
+    Case 1: $h$ is positive.
+
+    Interval is $[a-h,a+h]$
+
+    Average rate of change = $\dfrac{f(a+h)-f(a-h)}{a+h-(a-h)}$
+
+    $= \dfrac{f(a+h)-f(a-h)}{2h}$
+
+    Case 1: $h$ is negative.
+
+    $a + h < a$
+
+    Also, $a- h > a$
+
+    $a < a - h$
+
+    Combininig them, $a+h < a -h$
+
+    Interval is $[a+h,a-h]$
+
+    Average rate of change = $\dfrac{f(a+h)-f(a-h)}{a-h-(a+h)}$
+
+    $= \dfrac{f(a-h)-f(a+h)}{-2h}$
+
+    $= \dfrac{f(a+h)-f(a-h)}{2h}$
+
+    So, the average rate of change of $y$ with respect to $x$ over the
+    interval with endpoints $a-h$ and $a+h$ is
+
+    $\dfrac{f(a+h)-f(a-h)}{2h}$
+
+*** Solution b
+
+    Suppose the instantaneous rate of change of $y$ with respect to
+    $x$ at $x=a$ is $L$.
+
+    In this example we know that the intervals is centered at $a$.
+
+    So, $a-h < a < a +h $
+
+    From our initial assumption, for the interval $[a-h,a]$, we can
+    find the instantaneous rate of change of $y$ with respect to $x$
+    at $x=a$ by,
+
+    $\lim_{h \to 0} \dfrac{f(a)-f(a-h)}{a-(a-h)} = L$
+
+    $\lim_{h \to 0} \dfrac{f(a)-f(a-h)}{h} = L$
+
+    Similarly, we can find the instantaneous rate of change of $y$
+    with respect to $x$ at $x=a$ between the interals $[a,a+h]$.
+
+    $\lim_{h \to 0} \dfrac{f(a+h)-f(a)}{a+h-a} = L$
+
+    $\lim_{h \to 0} \dfrac{f(a+h)-f(a)}{h} = L$
+
+    Combininig both,
+
+    $\lim_{h \to 0} \dfrac{f(a)-f(a-h)}{h} + \lim_{h \to 0} \dfrac{f(a+h)-f(a)}{h} = 2L$
+
+    $\lim_{h \to 0} \dfrac{f(a)-f(a-h) + f(a+h)-f(a)}{h} = 2L$
+
+    $\lim_{h \to 0} \dfrac{-f(a-h) + f(a+h)}{h} = 2L$
+
+    $\lim_{h \to 0} \dfrac{f(a+h) - f(a-h)}{2h} = L$
