@@ -189,6 +189,32 @@ $(function() {
     $('.bs-docs-sidebar').affix();
 });
 </script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -199,98 +225,37 @@ $(function() {
 <div class="row"><div class="col-md-3 col-md-push-9"><nav id="table-of-contents">
 <div id="text-table-of-contents" class="bs-docs-sidebar">
 <ul class="nav">
-<li><a href="#sec-1">1. Calculus: A Rigorous First Course</a></li>
-<li><a href="#sec-2">2. Limits (Chapter 2)</a></li>
-<li><a href="#sec-3">3. Derivatives (Chapter 3)</a></li>
+<li><a href="#sec-1">1. Implicit Differentitation</a>
+<ul class="nav">
+<li><a href="#sec-1-1">1.1. Theorem 3.5.1</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
 </div><div class="col-md-9 col-md-pull-3"><h1 class="title"></h1>
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Calculus: A Rigorous First Course</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Implicit Differentitation</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The technique of implicit differentiation allows you to find the
+derivative of y with respect to x without having to solve the given
+equation for y. The chain rule must be used whenever the function y is
+being differentiated because of our assumption that y may be expressed
+as a function of x.
+</p>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Limits (Chapter 2)</h2>
-<div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>What is Calculus About
-<ul class="org-ul">
-<li><a href="chapter2/solution1.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section2.html">What does "Limit" mean ?</a>
-<ul class="org-ul">
-<li><a href="chapter2/section2.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li>Limits by the Definition
-<ul class="org-ul">
-<li><a href="chapter2/solution3.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section4.html">Limit theorems</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution4.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section5.html">Variation of Limits</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution5.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section6.html">Limits of Compositions</a>    
-<ul class="org-ul">
-<li><a href="chapter2/solution6.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section7.html">Continuity</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution7.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section8.html">Sequences and the Nested Interval Theorem</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution8.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section9.html">Monotone Sequences and the Completeness of the Real Numbers</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution9.html">Solutions</a>
-</li>
-</ul>
-</li>
-</ul>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Theorem 3.5.1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Suppose that \(I\) is an open interval, and for every number \(x\) in the
+interval \(I\), \(f(x) = g(x)\). Then for every number \(x\) in \(I\), \(f'(x)
+= g'(x)\), where we interepret this equation to mean that either both
+derivatives are defined and they are equal, or both are undefined.
+</p>
 </div>
-</div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Derivatives (Chapter 3)</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li><a href="chapter3/section1.html">Rates of Change and Slopes</a>
-<ul class="org-ul">
-<li><a href="chapter3/solution1.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter3/section2.html">Derivatives</a>
-</li>
-<li><a href="chapter3/section3.html">Derivative Rules</a>
-</li>
-<li><a href="chapter3/section4.html">The Chain Rule</a>
-</li>
-<li><a href="chapter3/section5.html">Implicit Differentiation</a>
-</li>
-</ul>
 </div>
 </div>
 </div></div></div>

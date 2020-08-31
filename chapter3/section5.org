@@ -1,0 +1,14 @@
+* Implicit Differentitation
+
+The technique of implicit differentiation allows you to find the
+derivative of y with respect to x without having to solve the given
+equation for y. The chain rule must be used whenever the function y is
+being differentiated because of our assumption that y may be expressed
+as a function of x.
+
+** Theorem 3.5.1
+
+Suppose that $I$ is an open interval, and for every number $x$ in the
+interval $I$, $f(x) = g(x)$. Then for every number $x$ in $I$, $f'(x)
+= g'(x)$, where we interepret this equation to mean that either both
+derivatives are defined and they are equal, or both are undefined.

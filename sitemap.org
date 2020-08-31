@@ -23,4 +23,5 @@
   - [[file:chapter3/section2.org][section2]]
   - [[file:chapter3/section3.org][section3]]
   - [[file:chapter3/section4.org][section4]]
+  - [[file:chapter3/section5.org][section5]]
   - [[file:chapter3/solution1.org][solution1]]

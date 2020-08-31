@@ -52,5 +52,3 @@ If $y = f(x)$, then $dy/dx = f'(x)$. Therefore,
 $f''(x) = \dfrac{d}{dx}(f'(x)) = \dfrac{d}{dx}(\dfrac{dy}{dx})$
 
 $f^{(n)}(x) = \dfrac{d^ny}{dx^n} = \dfrac{d^n}{dx^n}(f(x))$
-
-
