@@ -521,7 +521,7 @@ $= \lim_{h \to 0} \dfrac{-2}{1+0} = -2$
 
     In this example we know that the intervals is centered at $a$.
 
-    So, $a-h < a < a +h $
+    So, $a-h < a < a +h$
 
     From our initial assumption, for the interval $[a-h,a]$, we can
     find the instantaneous rate of change of $y$ with respect to $x$
