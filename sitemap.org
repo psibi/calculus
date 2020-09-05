@@ -25,3 +25,4 @@
   - [[file:chapter3/section4.org][section4]]
   - [[file:chapter3/section5.org][section5]]
   - [[file:chapter3/solution1.org][solution1]]
+  - [[file:chapter3/solution2.org][solution2]]

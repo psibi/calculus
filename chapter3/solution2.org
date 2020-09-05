@@ -1,0 +1,145 @@
+* Derivatives
+
+** Solution 1
+
+   $f(x) = 3-x^2$
+
+   $f'(x) = \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}$
+
+   $f(x+h) = 3-(x+h)^2 = 3-(x^2+h^2+2xh)$
+
+   $f(x) = 3-x^2$
+
+   $f(x+h)-f(x) = 3-x^2-h^2-2xh-3+x^2$
+
+   $= -h^2 - 2xh$
+
+   $\lim_{h \to 0} \dfrac{-h^2-2xh}{h} = \lim_{h \to 0} -h - 2x$
+
+   $= -2x$
+
+** Solution 2
+
+   $g(x) = x^2 - 3x + 2$
+
+   $g'(x) = \lim_{h \to 0} \dfrac{g(x+h)-g(x)}{h}$
+
+   $g(x+h) = (x+h)^2 - 3(x+h) + 2$
+
+   $= x^2 + h^2 +2xh -3x -3h + 2$
+
+   $g(x) = x^2-3x+2$
+
+   $g(x+h)-g(x)=x^2+h^2+2xh-3x-3h+2-x^2+3x-2$
+
+   $=h^2 + 2xh - 3h$
+
+   $\lim_{h \to 0} \dfrac{h^2+2xh-3h}{h}$
+
+   $= \lim_{h \to 0} h+2x-3$
+
+   $= 2x-3$
+
+** Solution 3
+
+   $f(x) = \dfrac{1}{\sqrt{x}}$
+
+   $f'(x) = \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}$
+
+   $f(x+h) = \dfrac{1}{\sqrt{x+h}}$
+
+   $f(x) = \dfrac{1}{\sqrt{x}}$
+
+   $f(x+h) - f(x) = \dfrac{1}{\sqrt{x+h}} - \dfrac{1}{\sqrt{x}}$
+
+   $= \dfrac{\sqrt{x}-\sqrt{x+h}}{\sqrt{x+h}\sqrt{x}}$
+
+   $= \dfrac{\sqrt{x}-\sqrt{x+h}}{\sqrt{x+h}\sqrt{x}} * \dfrac{\sqrt{x}+\sqrt{x+h}}{\sqrt{x}+\sqrt{x+h}}$
+
+   $= \dfrac{x-(x+h)}{\sqrt{x+h}\sqrt{x}(\sqrt{x}+\sqrt{x+h})}$
+
+   $= \dfrac{-h}{\sqrt{x+h}\sqrt{x}(\sqrt{x}+\sqrt{x+h})}$
+
+   $\lim_{h \to 0} \dfrac{-1}{\sqrt{x+h}\sqrt{x}(\sqrt{x}+\sqrt{x+h})}$
+
+   $= \dfrac{-1}{\sqrt{x}\sqrt{x}(\sqrt{x} + \sqrt{x})}$
+
+   $= \dfrac{-1}{x(2\sqrt{x})}$
+
+   $= \dfrac{-1}{2x\sqrt{x}}$
+
+** Solution 4
+
+   $g(x) = \sqrt{x^2 + 1}$
+
+   $g'(x) = \lim_{h \to 0} \dfrac{g(x+h)-g(x)}{h}$
+
+   $g(x+h) = \sqrt{(x+h)^2 + 1}$
+
+   $g(x) = \sqrt{x^2 + 1}$
+
+   $g(x+h)-g(x) = \sqrt{(x+h)^2+1} - \sqrt{x^2+1}$
+
+   $= \sqrt{(x+h)^2+1} - \sqrt{x^2+1} * \dfrac{\sqrt{(x+h)^2+1} + \sqrt{x^2+1}}{\sqrt{(x+h)^2+1} + \sqrt{x^2+1}}$
+
+   $= \dfrac{(x+h)^2+1-(x^2+1)}{\sqrt{(x+h)^2+1} + \sqrt{x^2+1}}$
+
+   $= \dfrac{x^2+h^2+2xh+1-x^2-1}{\sqrt{(x+h)^2+1} + \sqrt{x^2+1}}$
+
+   $= \dfrac{h^2+2xh}{\sqrt{(x+h)^2+1} + \sqrt{x^2+1}}$
+
+   $\lim_{h \to 0} \dfrac{h+2x}{\sqrt{(x+h)^2+1} + \sqrt{x^2+1}}$
+
+   $= \dfrac{2x}{\sqrt{x^2+1}+\sqrt{x^2+1}}$
+
+   $= \dfrac{x}{\sqrt{x^2+1}}$
+
+** Solution 5
+
+   $f(x) = 2x-\sqrt{x}$
+
+   $f'(x) = \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}$
+
+   $f(x+h) = 2(x+h)-\sqrt{x+h} = 2x+2h - \sqrt{x+h}$
+
+   $f(x) = 2x - \sqrt{x}$
+
+   $f(x+h)-f(x) = 2h - \sqrt{x+h} + \sqrt{x}$
+
+   $= 2h + \sqrt{x} - \sqrt{x+h}$
+
+   $= 2h + (\sqrt{x} - \sqrt{x+h} * \dfrac{\sqrt{x}+\sqrt{x+h}}{\sqrt{x}+\sqrt{x+h}})$
+
+   $= 2h + \dfrac{x-(x+h)}{\sqrt{x}+\sqrt{x+h}}$
+
+   $= 2h - \dfrac{h}{\sqrt{x}+\sqrt{x+h}}$
+
+   $\lim_{h \to 0} 2 - \dfrac{1}{\sqrt{x} + \sqrt{x+h}}$
+
+   $= 2 - \dfrac{1}{\sqrt{x} + \sqrt{x}}$
+
+   $= 2 - \dfrac{1}{2\sqrt{x}}$
+
+** Solution 6
+
+   $g(x) = x^3 - 5x$
+
+   $g'(x) = \lim_{h \to 0} \dfrac{g(x+h)-g(x)}{h}$
+
+   $g(x+h) = (x+h)^3-5(x+h)$
+
+   $= (x+h)(x^2+h^2+2xh)-5(x+h)$
+
+   $= (x+h)(x^2+h^2+2xh-5)$
+
+   $g(x+h)-g(x) = xh^2+2x^2h+x^2h + h^3+2xh^2-5h$
+
+   $= xh^2 + 3x^2h + h^3 + 2xh^2 - 5h$
+
+   $\lim_{h \to 0} \dfrac{g(x+h)-g(x)}{h}$
+
+   $= \lim{h \to 0} xh + 3x^2 + h^2 + 2xh - 5$
+
+   $= 0 + 3x^2 + 0 + 0 - 5$
+
+   $= 3x^2 - 5$
