@@ -547,3 +547,54 @@ $= \lim_{h \to 0} \dfrac{-2}{1+0} = -2$
     $\lim_{h \to 0} \dfrac{-f(a-h) + f(a+h)}{h} = 2L$
 
     $\lim_{h \to 0} \dfrac{f(a+h) - f(a-h)}{2h} = L$
+
+*** Solution c
+
+    $y = |x|$
+
+    We know that the interval is centered at $a$.
+
+    So, the instantaneous rate of change is
+
+    $\lim_{h \to 0} \dfrac{f(a+h)-f(a)}{a+h-a}$
+
+    $= \lim_{h \to 0} \dfrac{f(a+h)-f(a)}{h}$
+
+    At $a=0$,
+
+    $\lim_{h \to 0} \dfrac{f(a+h)-f(0)}{h}$
+
+    $f(0) = |x| = |0| = 0$
+
+    $f(a+h) = f(0+h) = |0+h| = |h|$
+
+    $\lim_{h \to 0} \dfrac{|h|}{h}$
+
+    But the above limit doesn't exist since the limit from the left
+    and the right does not match.
+
+    Now let's calculate,
+
+    $\lim_{h \to 0} \dfrac{f(0+h)-f(0-h)}{2h}$
+
+    $f(0+h) = |0+h| = |h|$
+
+    $f(0-h) = |0-h| = |-h|$
+
+    $\lim_{h \to 0} \dfrac{|h| - |-h|}{2h}$
+
+    As $h \to 0^-, |h|=-h$
+
+    As $h \to 0^-, |-h|= |h| = -h$
+
+    So, $\lim_{h \to 0^-} \dfrac{-h-(-h)}{h}$
+
+    $\lim_{h \to 0^-} \dfrac{-h + h}{h} = \lim_{h \to 0^-} \dfrac{h(1-1)}{h} = \lim_{h \to 0^-} 0 = 0$
+
+    As $h \to 0^+, |h| = h$
+
+    As $h \to 0^+, |-h| = |h| = h$
+
+    $\lim_{h \to 0^+} \dfrac{h - h}{2h} = \lim_{h \to 0^+} \dfrac{h(1-1)}{2h} = \lim_{h \to 0^+} 0 = 0$
+
+    So, $\lim_{h \to 0} \dfrac{f(0+h)-f(0-h)}{2h} = 0$
