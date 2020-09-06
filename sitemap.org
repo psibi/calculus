@@ -26,3 +26,5 @@
   - [[file:chapter3/section5.org][section5]]
   - [[file:chapter3/solution1.org][solution1]]
   - [[file:chapter3/solution2.org][solution2]]
+  - [[file:chapter3/solution3.org][solution3]]
+  - [[file:chapter3/solution4.org][solution4]]
