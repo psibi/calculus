@@ -258,3 +258,637 @@ $= \dfrac{32x-14x^2-22}{(3x^2-5x+1)^2}$
    to $x$ at $x=a$ which is also the slope of the line tangent to the
    graph of $f$ at the point $(a,f(a))$
 
+   Let point $P = (x_1, y_1)$ and $Q = (x_2, y_2)$
+
+   So, $P = (x_1, x_1^2)$
+
+   $Q = (x_2, x_2^2)$
+
+   We know that the line tangent to the curve at $P$ and $Q$ passes
+   through $(3,5)$.
+
+   Slope at $P = \dfrac{5-x_1^2}{3-x_1}$
+
+   We also know that $f'(x) = 2x$
+
+   $f'(x_1) = 2x_1$
+
+   $2x_1 = \dfrac{5-x_1^2}{3-x_1}$
+
+   $6x_1 - 2x_1^2 = 5 - x_1^2$
+
+   $6x_1 = 5 + x_1^2$
+
+   $5 + x_1^2 = 6x_1$
+
+   $x_1^2 - 6x_1 + 5 = 0$
+
+   $x_1^2 - 5x_1 - x_1 + 5 = 0$
+
+   $x_1(x_1 - 5) - 1(x_1 - 5) = 0$
+
+   $(x_1 - 5)(x_1 - 1) = 0$
+
+   $x_1 = 5$ or $x_1 = 1$
+
+   So, $P = (5, 25)$
+
+   $Q = (1,1)$
+
+** Solution 19
+
+   $y = \dfrac{1}{x}$
+
+   The tangent to the above curve at point $P$ passes through $(4,0)$.
+
+   $f(x) = \dfrac{1}{x}$
+
+   $f'(x) = -1x^{-1-1} = \dfrac{-1}{x^2}$
+
+   Let point $P = (x_1, y_1)$
+
+   $P = (x_1, \dfrac{1}{x_1})$
+
+   $m = \dfrac{0 - \dfrac{1}{x_1}}{4 - x_1}$
+
+   $= \dfrac{0-1}{x_1(4-x_1)} = \dfrac{-1}{x_1(4-x_1)}$
+
+   $\dfrac{-1}{x_1^2} = \dfrac{-1}{x_1(4-x_1)}$
+
+   $\dfrac{1}{x_1} = \dfrac{1}{4-x_1}$
+
+   $x_1 = 4 - x_1$
+
+   $2x_1 = 4$
+
+   $x_1 = 2$
+
+   $y_1 = \dfrac{1}{2}$
+
+   So the point $P$ is $(2,\dfrac{1}{2})$
+
+** Solution 20
+
+   Observer $= (0,0)$
+
+   Initial rocket position $= (10, 0)$
+
+   Equation of the hill $y = -x^2 + 10x - 16$
+
+   Domain of the above equation $[2,8]$
+
+   Let's assume that the rocket is at point $P$ when the observer
+   first sees it.
+
+   Let $P = (10, y_1)$
+
+   The tangent of the equation of hill passes through $(0,0)$ and
+   $(10,y_1)$.
+
+   Let $Q$ be the point in the curve such that it's tangent passes
+   through $(0,0)$ and $(10, y_1)$.
+
+   $Q = (x_2, y_2)$
+
+   $f(x) = -x^2 + 10x -16$
+
+   $f'(x) = -2x + 10$
+
+   At $Q$, $f'(x_2) = -2x_2 + 10$
+
+   Also from the equation of the hill,
+
+   $-y_2 = -x_2^2 + 10x_2 - 16$
+
+   Also, $m = \dfrac{y_2 - 0}{x_2 - 0} = \dfrac{y_2}{x_2}$
+
+   So, $\dfrac{y_2}{x_2} = -2x_2 + 10$
+
+   $y_2 = -2x_2^2 + 10x_2$
+
+   From the previous equation,
+
+   $-2x_2^2 + 10x_2 = -x_2^2 + 10x_2 - 16$
+
+   $16 = x_2^2$
+
+   $x_2 = 4$
+
+   $f(x) = -x^2 + 10x - 16$
+
+   $f(4) = -(4)^2 + 40 - 16$
+
+   $= -16 + 40 - 16 = 40 - 32 = 8$
+
+   So, $Q = (4,8)$
+
+   $m = \dfrac{y_2}{x_2} = \dfrac{8}{4} = 2$
+
+   Now let's find $P$
+
+   $m = \dfrac{y_1 - 0}{10 - 0}$
+
+   $2 = \dfrac{y_1}{10}$
+
+   $y_1 = 20$
+
+   So, $P = (10, 20)$
+
+** Solution 22
+
+   Hill one: $y = 16-x^2$
+
+   Domain: $[-4,4]$
+
+   Hill two: $y = -x^2 + 12x - 32$
+
+   Domain: $[4,8]$
+
+   Let the two points touch the hills are $P$ and $Q$.
+
+   $P = (x_1,y_1)$and $Q=(x_2,y_2)$
+
+   Point $P$ is a tangent to hill one and point $Q$ is a tangent to
+   hill two.
+
+   $m = \dfrac{y_2 - y_1}{x_2 - x_1}$
+
+   $f(x) = 16 - x^2$
+
+   $f'(x) = -2x$
+
+   $g(x) = -x^2 + 12x - 32$
+
+   $g'(x) = -2x + 12$
+
+   $m = f'(x_1) = -2x_1$
+
+   $-2x_1 = \dfrac{y_2-y_1}{x_2-x_1}$
+
+   $-2x_1x_2 + 2x_1^2 = y_2 - y_1$ (Equation 1)
+
+   $m = g'(x_2) = -2x_2 + 12$
+
+   $-2x_2 + 12 = \dfrac{y_2 - y_1}{x_2 - x_1}$ (Equation 2)
+
+   $m = -2x_1$
+
+   $m = -2x_2 + 12$
+
+   $x_2 - x_1 = 6$
+
+   From 1, $y_2 - y_1 = -12x_1$
+
+   From 2, $-2x_2 + 12 = \dfrac{-12x_1}{6} = -2x_1$
+
+   $y_1 = 16 - x_1^2$
+
+   $y_2 = -x_2^2 + 12x_2 - 32$
+
+   $y_2 - y_1 = -x_2^2 + 12x_2 - 32 - 16 + x_1^2$
+
+   $= x_1^2 - x_2^2 + 12x_2 - 48$
+
+   $= (x_1 - x_2)(x_1 + x_2) + 12x_2 - 48$
+
+   $= -6(x_1 + x_2) + 12x_2 - 48$
+
+   $= 6x_2 - 6x_1 - 48$
+
+   $y_2 - y_1 = 6x_2 - 6x_1 - 48$
+
+   $= 6y(6) - 48 = 36 - 48 = -12$
+
+   $m = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{-12}{6}$
+
+   $= -2$
+
+   $m = -2x_1 = -2$
+
+   $x_2 - x_1 = 6$
+
+   $x_2 - 1 = 6$
+
+   $x_2 = 7$
+
+   $y = 16-x_1^2 - 16 - 1 = 15$
+
+   $y_2 = -x_2^2 + 12x_2 - 32$
+
+   $-(7)^2 + 12.7 - 32$
+
+   $-49 + 8 - 32 = 3$
+
+   $y_2 = 3$
+
+   $y_1 = 15$
+
+   $y = mx + c$
+
+   $15 = -2.1 + c$
+
+   $c = 17$
+
+   $y = mx + c$
+
+   $y = -2x + 17$
+
+** Solution 22
+
+   Hill one: $y = 17 - x^2$
+
+   Domain: $[-\sqrt{17}, \sqrt{17}]$
+
+   Hill two: $y = -2x^2 + 26x - 80$
+
+   Domain: $[5,8]$
+
+   Let the two points of the borads touch the hills are $P$ and $Q$.
+
+   $P = (x_1, y_1)$
+
+   $Q = (x_2, y_2)$
+
+   Point $P$ is a tangent on hill one and point $Q$ is a point on the
+   tangent of hill two.
+
+   $m = \dfrac{y_2 - y_1}{x_2 - x_1}$
+
+   $f(x) = 17 - x^2$
+
+   $f'(x) = -2x$
+
+   $g(x) = -2x^2 + 26x - 80$
+
+   $g'(x) = -4x + 26$
+
+   $m = f'(x_1) = -2x_1$
+
+   $m = g'(x_2) = -4x_2 + 26$
+
+   $-2x_1 = -4x_2 + 26$
+
+   $4x_2 - 2x_1 = 26$
+
+   $2x_2 - x_1 = 13$
+
+   Also, $y_1 = 17 - x_1^2$
+
+   $y_2 = -2x_1^2 + 26x_2 - 80$
+
+   $-2x_1 = \dfrac{y_2 - y_1}{x_2 - x_1}$
+
+   $-2x_1x_2 + 2x_1^2 = y_2 - y_1$
+
+   $2x_1(x_1 - x_2) = y_2 - y_1$
+
+   $y_2 - y_1 = 2x_1(2x_1 - x_2 -x_1)$
+
+   $m = \dfrac{y_2 - y_1}{x_2 - x_1}$
+
+   $m = \dfrac{-2x_1(13-x_2)}{x_2-x_1}$
+
+   $y_2 - y_1 = -2x_2^2 + 26x_2 - 80 - 17 + x_1^2$
+
+   $y_2 - y_1 = x_1^2 - 2x_2^2 + 26x_2 - 97$
+
+   $2x_1(x_1 - x_2) = x_1^2 - 2x_2^2 + 26x_2 - 97$
+
+   $2x_1^2 - 2x_1x_2 = x_1^2 - 2x_2^2 + 26x_2 - 97$
+
+   $x_1^2 - 2x_1x_2 = -2x_2^2 + 26x_2 - 97$
+
+   $x_1^2 + 2x_2^2 - 2x_1x_2 + 26x_2 + 97 = 0$
+
+   Let's try the other equation:
+
+   $m = \dfrac{y_2 - y_1}{x_2 - x_1}$
+
+   $-4x_2 + 26 = \dfrac{y_2 - y_1}{x_2 - x_1}$
+
+   $-4x_2 + 26(x_2 - x_1) = y_2 - y_1$
+
+   $-4x_2^2 + 4x_1x_2 + 26x_2 - 26x_1 = y_2 - y_1$
+
+   $-4x_2^2 + 4x_1x_2 + 26x_2 - 26x_1 = x_1^2 - 2x_2^2 + 26x_2 - 97$
+
+   $-2x_2^2 + 4x_1x_2 - 26x_1 = x_1^2 - 97$
+
+   $2x_1(2x_1 - x_2) -x_1^2 - 26x_1 = -97$
+
+   $2x_1(2x_1 - x_2) - x_1(x_1 + 26) = -97$
+
+   $2x_2 - x_1 = 13$
+
+   $x_2 - x_1 = 13 - x_1$
+
+   $m = \dfrac{y_2 - y_1}{x_2 - x_1}$
+
+   $-2x_1 = \dfrac{y_2 - y_1}{13 - x_1}$
+
+   $-26x_1 + 2x_1^2 = y_2 - y_1$
+
+   $y_2 - y_1 = 2x_1^2 - 26x_1$
+
+   $m = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{2x_1^2 - 26x_1}{13 - x_1}$
+
+   $-2x_1 = \dfrac{2x_1^2 - 26x_1}{13 - x_1}$
+
+   $2x_1^2 - 26x_1 = x_1^2 - 2x_2^2 + 26x_2 - 97$
+
+   $x_1^2 - 26x_1 = -2x_2^2 + 26x_2 - 97$
+
+   $x_1^2 + 2x_2^2 = 26x_1 + 26x_2 - 97$
+
+   $x_1^2 + x_2^2 + x_2^2 = 26(x_1 + x_2) - 97$
+
+   $x_1 = 2x_2 - 13$
+
+   $(2x_2 - 13)^2 + 2x_2^2 = 26(2x_2 + x_2 - 13) - 97$
+
+   $4x_2^2 + 13^2 + 2x_2^2 - 52x_2 = 26(3x_2 - 13) - 97$
+
+   $6x_2^2 + 13^2 - 52x_2 = 78x_2 - 97 - 338$
+
+   $6x_2^2 + 169 - 52x_2 = 78x_2 - 435$
+
+   $6x_2^2 - 130x_2 + 604 = 0$
+
+   $3x_2^2 - 65x_2 + 302 = 0$
+
+   Solving it we get $x_2 = \dfrac{64 \pm \sqrt{601}}{6}$
+
+   Since $x_2$ is on hill two where domain is $[5,8]$
+
+   So, $x_2 = \dfrac{65 - \sqrt{601}}{6}$
+
+   From $2x_2 - x_1 = 13$
+
+   $x_1 = 2x_2 - 13$
+
+   $x_1 = \dfrac{65 - \sqrt{601}}{3} - 13$
+
+   $x_1 = \dfrac{65 - \sqrt{601}}{3} - \dfrac{39}{3}$
+
+   $= \dfrac{26 - \sqrt{601}}{3}$
+
+   From $y_1 = 17-x_1^2$
+
+   $y_1 = 17 - \dfrac{(26 - \sqrt{601})^2}{9}$
+
+   $= \dfrac{153}{9} - \dfrac{676 + 601 - 52\sqrt{601}}{9}$
+
+   $= \dfrac{52\sqrt{601} - 1124}{9}$
+
+   $m = -2x_1 = \dfrac{2\sqrt{601}-52}{3}$
+
+   $y_1 = mx_1 + c$
+
+   $\dfrac{52\sqrt{601} - 1124}{9} - \dfrac{(2\sqrt{601} - 52)(26 - \sqrt{601})}{9} + c$
+
+   $c = \dfrac{52\sqrt{601} - 1124 - (52\sqrt{601} - 1202 - 1352 + 52\sqrt{601})}{9}$
+
+   $= \dfrac{-1124 + 1202 + 1352 - 52\sqrt{601}}{9}$
+
+   $= \dfrac{1130 - 52\sqrt{601}}{9}$
+
+   $y = mx + c$
+
+   $y = \dfrac{x(2\sqrt{601}-52)}{3} + \dfrac{1130 - 52\sqrt{601}}{9}$
+
+   $y = \dfrac{x(6\sqrt{601}-156)}{3} + \dfrac{1130 - 52\sqrt{601}}{9}$
+
+   $9y = (6\sqrt{601}-156)x + 1130 - 52\sqrt{601}$
+
+** Solution 23
+
+   $f(x) = (x^2 + 3)(2x-5)$
+
+   Method 1:
+
+   By using product rule,
+
+   $f'(x) = (x^2 + 3)(2) + (2x-5)(2x)$
+
+   $2x^2 + 6 + 4x^2 - 10x$
+
+   $= 6x^2 - 10x + 6$
+
+   Method 2:
+
+   $f(x) = (x^2 + 3)(2x -5)$
+
+   $= 2x^2 - 5x^2 + 6x - 15$
+
+   $f'(x) = 6x - 10x + 6$
+
+** Solution 24
+
+   $a^4 - b^4$
+
+*** Solution a
+
+    $(a-b)? = a^4 - b^4$
+
+    $a^4 - b^4 = (a^2 + b^2)(a^2 - b^2)$
+
+    $= (a^2 + b^2)(a+b)(a-b)$
+
+    $= (a^3 + a^2b + ab^2 + b^3)(a-b)$
+
+*** Solution b
+
+    $f(x) = \sqrt[4]{x}$
+
+    $f'(x) = \lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$
+
+    $= \lim_{h \to 0} \dfrac{\sqrt[4]{x+h} - \sqrt[4]{x}}{h}$
+
+    From $(a)$, let $a = \sqrt[4]{x+h}$ and $b = \sqrt[4]{x}$
+
+    $(x+h)-h = ((\sqrt[4]{x+h})^3 + (\sqrt[4]{x+h})^2\sqrt[4]{x} + \sqrt[4]{x+h}\sqrt{x} + x^{3/4})(\sqrt[4]{x+h} - \sqrt[4]{x})$
+
+    $f'(x) = \lim_{h \to 0} \dfrac{\sqrt[4]{x+h} - \sqrt[4]{x}}{h} * \dfrac{((x+h)^{3/4} + (x+h)^{1/2}\sqrt[4]{x} + \sqrt[4]{x+h} + \sqrt{x} + x^{3/4})}{((x+h)^{3/4} + (x+h)^{1/2}\sqrt[4]{x} + \sqrt[4]{x+h} + \sqrt{x} + x^{3/4})}$
+
+    $\lim_{h \to 0} \dfrac{h}{h(((x+h)^{3/4} + (x+h)^{1/2}\sqrt[4]{x} + \sqrt[4]{x+h} + \sqrt{x} + x^{3/4}))}$
+
+    $\lim_{h \to 0} \dfrac{1}{((x+h)^{3/4} + (x+h)^{1/2}\sqrt[4]{x} + \sqrt[4]{x+h} + \sqrt{x} + x^{3/4})}$
+
+    Let's take the limit of the denomiator in the last fraction, we get:
+
+    $\lim_{h \to 0} ((x+h)^{3/4} + (x+h)^{1/2}\sqrt[4]{x} + \sqrt[4]{x+h} + \sqrt{x} + x^{3/4})$
+
+    $= x^{3/4} + x^{1/2}x^{1/4} + x^{1/4}x^{1/2} + x^{3/4}$
+
+    $= 2x^{3/4} + 2x^{1/2}x^{1/4}$
+
+    $= 2x^{3/4} + 2x^{3/4}$
+
+    $= 4x^{3/4}$
+
+    Thus as long as $x \neq 0$, we have
+
+    $f'(x) = \dfrac{1}{4(\sqrt[4]{x})^2}$
+
+*** Solution c
+
+    $n \geq 2$
+
+    $(a^n - b^n) = (a-b)(a^{n-1} + a^{n-2}b + a^{n-3}b^2 + .... + ab^{n-2} + b^{n-2})$
+
+    $a = \sqrt[n]{x+h}$
+
+    $b = \sqrt[n]{x}$
+
+    $f'(x) = \lim_{h \to 0} \dfrac{\sqrt[n]{x+h} - \sqrt[n]{x}}{h} * \dfrac{((\sqrt[n]{x+h})^{n-1} + (\sqrt[n]{x+h})^{n-2}\sqrt[n]{x} + .... \sqrt[n]{x+h}(\sqrt[n]{x})^{n-2}) + (\sqrt[n]{x})^{n-1}}{((\sqrt[n]{x+h})^{n-1} + (\sqrt[n]{x+h})^{n-2}\sqrt[n]{x} + .... \sqrt[n]{x+h}(\sqrt[n]{x})^{n-2}) + (\sqrt[n]{x})^{n-1}}$
+
+    $f'(x) = \lim_{h \to 0} \dfrac{h}{h(((\sqrt[n]{x+h})^{n-1} + (\sqrt[n]{x+h})^{n-2}\sqrt[n]{x} + .... \sqrt[n]{x+h}(\sqrt[n]{x})^{n-2}) + (\sqrt[n]{x})^{n-1})}$
+
+    $f'(x) = \lim_{h \to 0} \dfrac{1}{((\sqrt[n]{x+h})^{n-1} + (\sqrt[n]{x+h})^{n-2}\sqrt[n]{x} + .... \sqrt[n]{x+h}(\sqrt[n]{x})^{n-2}) + (\sqrt[n]{x})^{n-1}}$
+
+    Let's take the limit of the denominator in the last fraction, we get:
+
+    $\lim_{h \to 0} ((\sqrt[n]{x+h})^{n-1} + (\sqrt[n]{x+h})^{n-2}\sqrt[n]{x} + .... \sqrt[n]{x+h}(\sqrt[n]{x})^{n-2}) + (\sqrt[n]{x})^{n-1}$
+
+    Let $\sqrt[n]{x} = c$
+
+    $= c^{n-1} + c^{n-2}.c + c^{n-3}.c^2 + ... + c.c^{n-2} + c^{n-1}$
+
+    $= c^{n-1} + c^{n-1} + c^{n-1} + ... c^{n-1} + c^{n-1}$
+
+    $= nc^{n-1}$
+
+    $= n(\sqrt[n]{x})^{n-1}$
+
+    $f'(x) = \dfrac{1}{n(\sqrt[n]{x})^{n-1}} = \dfrac{(\sqrt[n]{x})^{1-n}}{n}$
+
+    $= \dfrac{1}{n}x^{1/n - 1}$
+
+** Solution 25
+
+*** Solution a
+
+    $\dfrac{d}{dx} \sec x = \sec x \tan x$
+
+    $\dfrac{d}{dx} \sec x = \dfrac{d}{dx} (\dfrac{1}{\cos x})$
+
+    Using the quotient rule,
+
+    $\dfrac{d}{dx}(\dfrac{1}{\cos x}) = \dfrac{\cos x 0 - 1(-\sin x)}{(\cos x)^2}$
+
+    $= 0 + \dfrac{\sin x}{(\cos x)^2} = \dfrac{\tan x}{\cos x} = \sec x \tan x$
+
+*** Solution b
+
+    $\dfrac{d}{dx} \cot x = -\csc^2 x$
+
+    $\dfrac{d}{dx} \cot x = \dfrac{d}{dx} \dfrac{\cos x}{\sin x}$
+
+    Using the quotient rule,
+
+    $\dfrac{d}{dt} \dfrac{\cos x}{\sin x} = \dfrac{\sin x (-\sin x) - \cos x(\cos x)}{(\sin x)^2}$
+
+    $= \dfrac{-\sin^2x - \cos^2 x}{\sin^2 x}$
+
+    $= \dfrac{-1(\sin^2 x + \cos^2 x)}{\sin^2 x}$
+
+    $= \dfrac{-1}{\sin^2 x} = -\csc^2 x$
+
+*** Solution c
+
+    $\dfrac{d}{dx}(\csc x) = -\csc x \cot x$
+
+    $\dfrac{d}{dx} (\csc x) = \dfrac{d}{dx} (\dfrac{1}{\sin x})$
+
+    Using the quotient rule,
+
+    $\dfrac{d}{dx} (dfrac{1}{\sin x}) = \dfrac{\sin x.0 - 1\cos x}{(\sin x)^2}$
+
+    $= \dfrac{-\cos x}{\sin^2 x}$
+
+    $= \dfrac{-\cot x}{\sin x}$
+
+    $= -\csc x \cot x$
+
+** Solution 26
+
+   $f$ is differentiable on $(-\infty, \infty)$
+
+*** Solution a
+
+    $\dfrac{d}{dx} ((f(x))^2) = 2f(x)f'(x)$
+
+    Let $g(x) = (f(x))^2$
+
+    We need to prove $g'(x) = 2f(x)f'(x)$
+
+    $g'(x) = \lim_{h \to 0} \dfrac{g(x+h) - g(x)}{h}$
+
+    $= \lim_{h \to 0} \dfrac{f(x+h)^2 - f(x)^2}{h}$
+
+    $= \lim_{h \to 0} \dfrac{(f(x+h)-f(x))(f(x+h)+f(x))}{h}$
+
+    $= \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h} * \lim_{h \to 0} \dfrac{f(x+h)+f(x)}{1}$
+
+    $= f'(x)(f(x) + f(x))$
+
+    $= 2f(x)f'(x)$
+
+*** Solution b
+
+    $\dfrac{d}{dx} ((f(x))^3)$
+
+    Let $g(x) = (f(x))^3$
+
+    $g'(x) = \lim_{h \to 0} \dfrac{g(x+h)-g(x)}{h}$
+
+    $= \lim_{h \to 0} \dfrac{f(x+h)^3 - f(x)^3}{h}$
+
+    We know that $a^3 - b^3 = (a-b)(a^2 + ab + b^2)$
+
+    $= \lim_{h \to 0} \dfrac{(f(x+h) - f(x))(f(x+h)^2 + f(x+h)f(x) + f(x)^2)}{h}$
+
+    $= \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h} * \lim_{h \to 0} f(x+h)^2 + f(x+h)f(x) + f(x)^2$
+
+    $= f'(x)(f(x)^2 + f(x)f(x) + f(x)^2)$
+
+    $= 3f(x)^2f'(x)$
+
+*** Solution c
+
+    Conjecture: $\dfrac{d}{dx} ((f(x))^n) = nf(x)^{n-1}f'(x)$
+
+    We will prove using mathematical induction.
+
+    Base case: $n = 1$
+
+    $\dfrac{d}{dx} f(x) = 1(f(x))^0f'(x) = f'(x)$
+
+    Induction step: Suppose $n$ is a positive integer and
+    $\dfrac{d}{dx} ((f(x))^n) = nf(x)^{n-1}f'(x)$
+
+    $\dfrac{d}{dx} (f(x))^{n+1} = \dfrac{d}{dx} f(x)f(x)^n$
+
+    Using the product rule,
+
+    $= f(x)\dfrac{d}{dx}(f(x))^n + f(x)^n \dfrac{d}{dx} f(x)$
+
+    $= f(x)nf(x)^{n-1}f'(x) + f(x)^nf'(x)$
+
+    $= f(x)^n . n . f'(x) + f(x)^nf'(x)$
+
+    $= f(x)^nf'(x)(n+1)$
+
+    This completes the mathematical induction proof.
+
+** Solution 27
+
+   $\dfrac{d}{dx} f(x)g(x)h(x)$
+
+   Using the product rule,
+
+   $= f(x)\dfrac{d}{dx}g(x)h(x) + g(x)h(x)f'(x)$
+
+   $= f(x)(g(x)h'(x) + h(x)g'(x)) + g(x)h(x)f'(x)$
+
+   $= f(x)g(x)h'(x) + f(x)h(x)g'(x) + g(x)h(x)f'(x)$
