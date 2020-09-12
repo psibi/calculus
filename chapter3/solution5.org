@@ -81,3 +81,471 @@
    $\dfrac{dy}{dx} = \dfrac{-y^2 - \dfrac{1}{2\sqrt{x+y}}}{2xy + \dfrac{1}{2\sqrt{x+y}}}$
 
    $= \dfrac{-2y^2\sqrt{x+y} - 1}{2xy\sqrt{x+y} + 1}$
+
+** Solution 6
+
+   $x = \sin xy$
+
+   Using implicit differentiation,
+
+   $1 = \cos (xy) \dfrac{d}{dx} (xy)$
+
+   $1 = \cos(xy)(x\dfrac{dy}{dx} + y)$
+
+   $1 = x\cos(xy)\dfrac{dy}{dx} + y\cos(xy)$
+
+   $x \cos(xy) \dfrac{dy}{dx} = 1 - y\cos(xy)$
+
+   $\dfrac{dy}{dx} = \dfrac{1-y\cos(xy)}{x\cos(xy)}$
+
+** Solution 7
+
+   $y = \sin(xy)$
+
+   Using implicit differentiation,
+
+   $\dfrac{dy}{dx} = x\cos (xy)\dfrac{dy}{dx} + y\cos (xy)$
+
+   $\dfrac{dy}{dx}(1-x\cos(xy)) = y \cos (xy)$
+
+   $\dfrac{dy}{dx} = \dfrac{y\cos (xy)}{1 - x\cos(xy)}$
+
+** Solution 8
+
+   $y = cos (x/y)$
+
+   Using implicit differentiation,
+
+   $\dfrac{dy}{dx} = -\sin(x/y)\dfrac{d}{dx}(x/y)$
+
+   $\dfrac{dy}{dx} = -\sin(x/y)\dfrac{y.1-x\dfrac{dy}{dx}}{y^2}$
+
+   $\dfrac{dy}{dx} = -\sin(x/y)(\dfrac{1}{y} - \dfrac{x}{y^2}\dfrac{dy}{dx})$
+
+   $\dfrac{dy}{dx} = \dfrac{-1}{y}\sin(x/y) + \dfrac{x}{y^2}\dfrac{dy}{dx}$
+
+   $\dfrac{dy}{dx}(1 - \dfrac{x}{y^2}) = \dfrac{-1}{y}\sin(x/y)$
+
+   $\dfrac{dy}{dx}(\dfrac{y^2-x}{y^2}) = \dfrac{-1}{y}\sin(\dfrac{x}{y})$
+
+   $\dfrac{dy}{dx}(y^2 - x) = -y\sin(x/y)$
+
+   $\dfrac{dy}{dx} = \dfrac{-y\sin (x/y)}{y^2 - x} = \dfrac{y\sin(x/y)}{x-y^2}$
+
+** Solution 9
+
+   $xy^2 = \sin(3x-y)$
+
+   Using implicit differentiation,
+
+   $\dfrac{d}{dx} (xy^2) = \cos(3x-y)(3 - \dfrac{dy}{dx})$
+
+   $x.2y\dfrac{dy}{dx} + y^2 = \cos(3x-y)(3-\dfrac{dy}{dx})$
+
+   $2xy\dfrac{dy}{dx} + y^2 = 3\cos(3x-y)-\cos(3x-y)\dfrac{dy}{dx}$
+
+   $\dfrac{dy}{dx}(2xy+\cos(3x-y)) = 3\cos(3x-y)-y^2$
+
+   $\dfrac{dy}{dx} = \dfrac{3\cos(3x-y)-y^2}{\cos(3x-y)+2xy}$
+
+** Solution 10
+
+   $y\tan(x-y) = x$
+
+   Using implicit differentiation,
+
+   $\dfrac{d}{dx}(y\tan(x-y)) = 1$
+
+   $y\dfrac{d}{dx}(\tan(x-y)) + \tan(x-y)\dfrac{dy}{dx} = 1$
+
+   $y\sec^2(x-y)(1-\dfrac{dy}{dx}) + \tan(x-y)\dfrac{dy}{dx} = 1$
+
+   $y\sec^2(x-y)-y\sec^2(x-y)\dfrac{dy}{dx}+\tan(x-y)\dfrac{dy}{dx} = 1$
+
+   $y\sec^2(x-y)+\dfrac{dy}{dx}(\tan(x-y)-y\sec^2(x-y)) = 1$
+
+   $\dfrac{dy}{dx}(\tan(x-y)-y\sec^2(x-y)) = 1-\sec^2(x-y)$
+
+   $\dfrac{dy}{dx}=\dfrac{1-\sec^2(x-y)}{\tan(x-y)-y\sec^2(x-y)}$
+
+** Solution 11
+
+   $y\sqrt{xy+3} = 2x$
+
+   Using implicit differentiation,
+
+   $\dfrac{d}{dx}(y\sqrt{xy+3}) = 2$
+
+   $y\dfrac{d}{dx}(xy+3)^{1/2} + \sqrt{xy+3}\dfrac{dy}{dx} = 2$
+
+   $\dfrac{y}{2(xy+3)^{1/2}} \dfrac{d}{dx}(xy+3) + \sqrt{xy+3}\dfrac{dy}{dx} = 2$
+
+   $\dfrac{y}{2\sqrt{xy+3}}(x\dfrac{dy}{dx} + y) + \sqrt{xy+3}\dfrac{dy}{dx} = 2$
+
+   $\dfrac{xy}{2\sqrt{xy+3}}\dfrac{dy}{dx} + \dfrac{y^2}{2\sqrt{xy+3}} + \sqrt{xy+3}\dfrac{dy}{dx} = 2$
+
+   $\dfrac{dy}{dx}(\dfrac{xy}{2\sqrt{xy+3} + \sqrt{xy+3}}) = 2 - \dfrac{y^2}{2\sqrt{xy+3}}$
+
+   $\dfrac{dy}{dx}(\dfrac{xy+2(xy+3)}{2\sqrt{xy+3}}) = \dfrac{4\sqrt{xy+3}-y^2}{2\sqrt{xy+3}}$
+
+   $\dfrac{dy}{dx}(xy+2(xy+3)) = 4\sqrt{xy+3}-y^2$
+
+   $\dfrac{dy}{dx} = \dfrac{4\sqrt{xy+3}-y^2}{3xy + y}$
+
+   $= \dfrac{4.(2x/y) - y^2}{3xy+6}$
+
+   $= \dfrac{8x-y^3}{3xy^2 + 6y}$
+
+** Solution 12
+
+   $y = x^2 + \sin y$
+
+   Using implicit differentiation,
+
+   $\dfrac{dy}{dx} = 2x + \cos y (\dfrac{dy}{dx})$
+
+   $\dfrac{dy}{dx}(1-\cos y) = 2x$
+
+   $\dfrac{dy}{dx} = \dfrac{2x}{1-\cos y}$
+
+   $\dfrac{d^2y}{dx^2} = \dfrac{(1-\cosy)2 - 2x(0+\siny \dfrac{dy}{dx})}{(1-\cos y)^2}$
+
+   $= \dfrac{2(1-\cos y)-2x(\sin y.\dfrac{dy}{dx})}{(1-\cos y)^2}$
+
+   $= \dfrac{2(1-\cos y)-2x(\dfrac{\sin y 2x}{1-\cos y})}{(1-\cos y)^2}$
+
+   $= \dfrac{2(1-\cos y)^2-2x(\sin y (2x))}{(1-\cos y)^3}$
+
+   $= \dfrac{2(1-\cos y)^2 - 4x^2 \sin y}{(1-\cos y)^3}$
+
+** Solution 13
+
+   $y^2 = x - y$
+
+   Using implicit differentiation,
+
+   $2y \dfrac{dy}{dx} = 1 - \dfrac{dy}{dx}$
+
+   $\dfrac{dy}{dx}(2y + 1) = 1$
+
+   $\dfrac{dy}{dx} = \dfrac{1}{2y + 1}$
+
+   $\dfrac{d^2y}{dx^2} = \dfrac{(2y+1).0 - 1(2\dfrac{dy}{dx})}{(2y+1)^2}$
+
+   $= \dfrac{0 - 2\dfrac{dy}{dx}}{(2y+1)^2}$
+
+   $= \dfrac{-2/(2y+1)}{(2y+1)^2}$
+
+   $= \dfrac{-2}{(2y+1)^3}$
+
+** Solution 14
+
+   $y = \sqrt{xy + 1}$
+
+   $\dfrac{dy}{dx} = \dfrac{1}{2}(xy + 1)^{-1/2}\dfrac{d}{dx}(xy + 1)$
+
+   $\dfrac{dy}{dx} = \dfrac{1}{2\sqrt{xy + 1}}(x\dfrac{dy}{dx} + y)$
+
+   $\dfrac{dy}{dx} = \dfrac{x}{2\sqrt{xy + 1}}\dfrac{dy}{dx} + \dfrac{y}{2\sqrt{xy + 1}}$
+
+   $\dfrac{dy}{dx}(1 - \dfrac{x}{2\sqrt{xy + 1}}) = \dfrac{y}{2\sqrt{xy + 1}}$
+
+   $\dfrac{dy}{dx}(\dfrac{2\sqrt{xy + 1}-x}{2\sqrt{xy + 1}}) = \dfrac{y}{2\sqrt{xy + 1}}$
+
+   $\dfrac{dy}{dx} = \dfrac{y}{2\sqrt{xy + 1} - x}$
+
+   $\dfrac{d^2y}{dx^2} = \dfrac{(2\sqrt{xy + 1}-x)\dfrac{dy}{dx} - y\dfrac{d}{dx}(2\sqrt{(xy + 1) - x})}{(2\sqrt{xy + 1} - x)^2}$
+
+   $2\sqrt{xy + 1}-x)\dfrac{dy}{dx} = (2\sqrt{xy + 1} - x)\dfrac{y}{2\sqrt{xy + 1}-x} = y$
+
+   $y\dfrac{d}{dx}(2\sqrt{(xy + 1) - x})$
+
+   $= \dfrac{2y}{2\sqrt{xy+1}} \dfrac{d}{dx} (xy + 1) - y$
+
+   $= \dfrac{y}{\sqrt{xy + 1}} \dfrac{d}{dx} (xy + 1) - y$
+
+   $= \dfrac{y}{\sqrt{xy + 1}}(x \dfrac{dy}{dx} + y) - y$
+
+   $= \dfrac{xy}{\sqrt{xy + 1}} \dfrac{dy}{dx} + \dfrac{y^2}{\sqrt{xy + 1}} - y$
+
+   $= \dfrac{xy}{\sqrt{xy + 1}}\dfrac{y}{(2\sqrt{xy + 1}) - x} + \dfrac{y^2}{\sqrt{xy + 1}} - y$
+
+   $= \dfrac{xy^2}{\sqrt{xy + 1}(2\sqrt{xy + 1} - x)} + \dfrac{y^2}{\sqrt{xy + 1}} - y$
+
+   Removing the $y$, we get
+
+   $= \dfrac{xy^2}{\sqrt{xy + 1}(2\sqrt{xy + 1} - x)} + \dfrac{y^2}{\sqrt{xy + 1}}$
+
+   $= \dfrac{xy^2 + y^2(2\sqrt{xy + 1}-x)}{\sqrt{xy + 1}(2\sqrt{xy + 1} - x)}$
+
+   $\dfrac{d^2y}{dx^2} = \dfrac{xy^2 + y^2(2\sqrt{xy + 1}-x)}{\sqrt{xy + 1}(2\sqrt{xy + 1} - x)}$
+
+** Solution 15
+
+   $x^{2/3} + y^{2/3} = 1$
+
+   $\dfrac{2}{3}x^{-1/3} + \dfrac{2}{3}y^{-1/3}\dfrac{dy}{dx} = 0$
+
+   $\dfrac{2}{3}y^{-1/3}\dfrac{dy}{dx} = \dfrac{-2}{3}x^{-1/3}$
+
+   $y^{-1/3}\dfrac{dy}{dx} = -x^{-1/3}$
+
+   $\dfrac{dy}{dx} = \dfrac{-x^{-1/3}}{y^{-1/3}} = \dfrac{-y^{1/3}}{x^{1/3}}$
+
+   $\dfrac{d^2y}{dx^2} = \dfrac{-x^{1/3}\dfrac{d}{dx}(y^{1/3}) + y^{1/3}\dfrac{1}{3}x^{-2/3}}{x^{2/3}}$
+
+   $= \dfrac{\dfrac{-x^{1/3}}{3y^{2/3}}\dfrac{dy}{dx} + \dfrac{y^{1/3}}{x^{2/3}}\dfrac{1}{3}}{x^{2/3}}$
+
+   $= \dfrac{\dfrac{y^{1/3}}{3y^{2/3}} + \dfrac{1y^{1/3}}{3x^{2/3}}}{x^{2/3}}$
+
+   $= \dfrac{y^{1/3}}{3y^{2/3}x^{2/3}} + \dfrac{y^{1/3}}{3x^{4/3}}$
+
+   $= \dfrac{y^{1/3}}{3x^{4/3}} + \dfrac{1}{3x^{2/3}y^{1/3}}$
+
+   $= \dfrac{y^{2/3}}{3x^{4/3}y^{1/3}} + \dfrac{x^{2/3}}{3x^{4/3}y^{1/3}}$
+
+   $= \dfrac{y^{2/3} + x^{2/3}}{3x^{4/3}y^{1/3}}$
+
+   $= \dfrac{1}{3x^{4/3}y^{1/3}}$
+
+** Solution 16
+
+   $xy^2 = x + y$
+
+   Using implicit differentiation,
+
+   $x2y \dfrac{dy}{dx} + y^2 = 1 + \dfrac{dy}{dx}$
+
+   $\dfrac{dy}{dx} (2xy - 1) = 1 - y^2$
+
+   $\dfrac{dy}{dx} = \dfrac{1-y^2}{2xy - 1}$
+
+   $\dfrac{d^2y}{dx^2} = \dfrac{(2xy - 1)\dfrac{d}{dx}(1-y^2)-(1-y^2)\dfrac{d}{dx}(2xy - 1)}{(2xy-1)^2}$
+
+   $= \dfrac{(2xy-1)(-2y\dfrac{dy}{dx}) - (1-y^2)(2x\dfrac{dy}{dx} + 2y)}{(2xy-1)^2}$
+
+   $(2xy - 1)(-2y\dfrac{dy}{dx}) = (2xy-1)(-2y)\dfrac{(1-y^2)}{(2xy-1)}$
+
+   $= 2y(y^2 - 1)$
+
+   $(1-y^2)(2x\dfrac{dy}{dx} + 2y) = 2x\dfrac{dy}{dx} + 2y - 2xy^2\dfrac{dy}{dx} - 2y^3$
+
+   $= 2y - 2y^3 + \dfrac{dy}{dx}(2x - 2xy^2)$
+
+   $= 2y- 2y^3 + \dfrac{dy}{dx}2x(1-y^2)$
+
+   $= 2y - 2y^3 + \dfrac{2x(1-y^2)^2}{2xy - 1}$
+
+   $= 2y(y^2 -1)-(2y - 2y^3 + \dfrac{2x(1-y^2)^2}{(2xy-1)})$
+
+   $= 2y^3 - 2y - 2y + 2y^3 + \dfrac{2x(1-y^2)^2}{2xy - 1}$
+
+   $= 4y^3 - 4y + \dfrac{2x(1-y^2)^2}{2xy - 1}$
+
+   $= 4y(y^2 - 1) + \dfrac{2x(1-y^2)^2}{2xy - 1}$
+
+   $\dfrac{d^2y}{dx^2} = \dfrac{4y(y^2-1)}{(2xy-1)^2} + \dfrac{2x(1-y)^2}{(2xy-1)^3}$
+
+** Solution 17
+
+   $y = f(x)$
+
+   $\dfrac{dy}{dx} = \dfrac{y^2+3}{2x}$
+
+   $\dfrac{d^2y}{dx^2} = \dfrac{2x\dfrac{d}{dx}(y^2 + 3) - (y^2 + 3).2}{(2x)^2}$
+
+   $= \dfrac{2x(2y\dfrac{dy}{dx}) - 2(y^2 + 3)}{4x^2}$
+
+   $= \dfrac{y}{x}\dfrac{dy}{dx} - \dfrac{2(y^2+3)}{4x^2}$
+
+   $= \dfrac{y(y^2+3)}{x(2x)} - \dfrac{2(y^2+3)}{4x^2}$
+
+   $= \dfrac{y(y^2+3)}{x(2x)} - \dfrac{2(y^2 + 3)}{4x^2}$
+
+   $= \dfrac{y(y^2 + 3)}{2x^2} - \dfrac{2(y^2 + 3)}{4x^2}$
+
+   $= \dfrac{2y(y^2 + 3)}{4x^2} - \dfrac{2(y^2 + 3)}{4x^2}$
+
+   $= \dfrac{2y(y^2 + 3) - 2(y^2 + 3)}{4x^2}$
+
+   $= \dfrac{2(y^2 + 3)(y-1)}{4x^2}$
+
+   $= \dfrac{(y^2 + 3)(y-1)}{2x^2}$
+
+** Solution 18
+
+   $\sin (xy) = \cos (x + y)$
+
+   Find equation of line tangent at $(\pi/2, 0)$
+
+   Using implicit differentiation,
+
+   $\cos (xy) \dfrac{d}{dx}(xy) = -\sin(x+y)\dfrac{d}{dx}(x + y)$
+
+   $\cos (xy)(x \dfrac{dy}{dx} + y) = -\sin(x+y)(1 + \dfrac{dy}{dx})$
+
+   $x\dfrac{dy}{dx}\cos (xy) + y\cos (xy) = -\sin(x+y) - \dfrac{dy}{dx}\sin(x+y)$
+
+   $x\dfrac{dy}{dx}\cos (xy) + \dfrac{dy}{dx}\sin (x+y) = -\sin(x+y) -y\cos (xy)$
+
+   $\dfrac{dy}{dx}(x\cos (xy) + \sin(x+y)) = -\sin(x+y)-y\cos(xy)$
+
+   $\dfrac{dy}{dx} = \dfrac{-\sin(x+y)-y\cos(xy)}{\sin(x+y)+x\cos (xy)}$
+
+
+   $\dfrac{dy}{dx}\Bigr|_(x,y)=(\pi/2,0) = \dfrac{-\sin(\pi/2)-0}{\sin(\pi/2)+(\pi/2)\cos 0}$
+
+   $= \dfrac{-1}{1 + \pi/2}$
+
+   $= \dfrac{-2}{\pi + 2}$
+
+   Equation of line
+
+   $m = \dfrac{y-y_1}{x-x_1}$
+
+   $\dfrac{-2}{\pi + 2} = \dfrac{y - 0}{x - \pi/2}$
+
+   $\dfrac{-2}{\pi + 2} = \dfrac{2y}{2x - \pi}$
+
+   $\dfrac{-1}{\pi + 2} = \dfrac{y}{2x - \pi}$
+
+   $\pi - 2x = y(\pi + 2)$
+
+   $y(\pi + 2) + 2x = \pi$
+
+** Solution 19
+
+   Equation of curve: $\cos (x^2y) + 3y = c$
+
+   Curve passes through $(2, \pi/8)$
+
+*** Solution a
+
+    $P = (2, \pi/8)$
+
+    $x^2y= 2^2 \dfrac{\pi}{8} = \dfrac{\pi}{2}$
+
+    $c = \cos (\pi / 2) + 3\pi/8 = 3\pi/8$
+
+*** Solution b
+
+    $P = (2, \pi/8)$
+
+    $\cos (x^2y) + 3y = \dfrac{3\pi}{8}$
+
+    Using implicit differentiation,
+
+    $-\sin(x^2y)\dfrac{d}{dx}(x^2y) + 3\dfrac{dy}{dx} = 0$
+
+    $-\sin(x^2y)(x^2\dfrac{dy}{dx} + y2x) + 3\dfrac{dy}{dx} = 0$
+
+    $-x^2\sin(x^2y)\dfrac{dy}{dx} - 2xy \sin(x^2y) + 3\dfrac{dy}{dx} = 0$
+
+    $\dfrac{dy}{dx}(3-x^2(\sin (x^2y))) = 2xy\sin(x^2y)$
+
+    $\dfrac{dy}{dx} = \dfrac{2xy\sin(x^2y)}{3-x^2\sin(x^2y)}$
+
+    $\dfrac{dy}{dx}\Bigr|_(x,y)=(2,\pi/8) = \dfrac{\pi/2 \sin(\pi/2)}{3-4\sin(\pi/2)}$
+
+    $= \dfrac{\pi/2}{3-4}$
+
+    $= \dfrac{\pi/2}{-1}$
+
+    $= \dfrac{-\pi}{2}$
+
+    $m = \dfrac{y-\pi/8}{x-2}$
+
+    $\dfrac{-\pi}{2} = \dfrac{8y-\pi}{8(x-2)}$
+
+    $-4\pi = \dfrac{8y-\pi}{x-2}$
+
+    $-4\pi x + 8\pi = 8y - \pi$
+
+    $9\pi - 4\pi x = 8y$
+
+    $y = \dfrac{-\pi x}{2} + \dfrac{9\pi}{8}$
+
+** Solution 20
+
+   $y = \dfrac{2\sin x + \cos y}{3}$
+
+   $a_{n+1} = \dfrac{2\sin(\pi/6) + \cos a_n}{3}$
+
+   $= \dfrac{1 + \cos a_n}{3}$
+
+*** Solution a
+
+    $|a_n - f(\pi/6)| \leq 1/3^n$
+
+    We will prove using mathematical inducation.
+
+    Base case: $n = 1$
+
+    $a_1 = \dfrac{1}{3}$
+
+    $f(\pi/6) = \dfrac{2\sin(\pi/6) + \cos y}{3} = \dfrac{1 + \cos y}{3}$
+
+    Range of $f(\pi/6) = [0, 2/3]$
+
+    So, $|a_1 - f(\pi/6)| \leq 1/3$
+
+    Induction step: Let $n$ be a positive integer and $|a_n -
+    f(\pi/6)| \leq 1/3^n$.
+
+    Suppose $|a_{n+1} - f(\pi/6)|$.
+
+    $= |\dfrac{1 + \cos a_n}{3} - \dfrac{1 + \cos (f(\pi/6))}{3}|$
+
+    $= |\dfrac{\cos a_n - \cos (f(\pi/6))}{3}|$
+
+    $= \dfrac{|\cos a_n - \cos (f(\pi/6))|}{3}$
+
+    $= \dfrac{|a_n - f(\pi/6)|}{3}$ (From Lemma 9)
+
+    $ \leq \dfrac{1/3^n}{3} \leq \dfrac{1}{3^{n+1}}$
+
+    That concludes the mathematical induction proof.
+
+*** Solution b
+
+    $\lim_{n \to \infty} a_n = f(\pi/6)$
+
+    From (a), we know that $\forall n $|a_n - f(\pi/6)| \leq 1/3^n$$
+
+    We know that $n$ is a positive integer.
+
+    Suppose $\epsilon = \dfrac{1}{3^n - 1}$
+
+    Suppose $\exists N$ such that $n > N$
+
+    Since $$|a_n - f(\pi/6)| \leq 1/3^n$ < \dfrac{1}{3^{n-1}}$
+
+    So, $\lim_{n \to \infty} a_n = f(\pi/6)$
+
+*** Solution c
+
+    $\dfrac{1}{3^n} = 0.005$
+
+    $3^n = \dfrac{1}{0.005}$
+
+    $3^n = \dfrac{1000}{5}$
+
+    $3^n = 200$
+
+    $n \approx 4.8$
+
+    So at $n=5$, we know that $a_n$ differes from $f(\pi/6)$ by at
+    most $0.005$
+
+    $a_1 = 1/3$
+
+    $a_2 = \dfrac{1 + \cos (1/3)}{3} = 0.6483$
+
+    $a_3 = \dfrac{1 + \cos(0.6483)}{3} = 0.59903$
+
+    $a_4 = \dfrac{1 + \cos (0.59903)}{3} = 0.60862$
+
+    $a_5 = \dfrac{1 + \cos (0.60962)}{3} = 0.60681$
+
+    $a_5 = 0.60681$
+
