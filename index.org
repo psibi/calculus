@@ -32,3 +32,4 @@
 - [[file:chapter3/section4.org][The Chain Rule]]
   - [[file:chapter3/solution4.org][Solutions]]
 - [[file:chapter3/section5.org][Implicit Differentiation]]
+  - [[file:chapter3/solution5.org][Solutions]]

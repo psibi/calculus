@@ -1,0 +1,83 @@
+* Implicit Differentiation
+
+** Solution 1
+
+   $f_b(x) = -\sqrt{1-x^2}$
+
+   $f'_b(x) = \dfrac{-1}{x}(1-x^2)^{-1/2}(-2x)$
+
+   $= \dfrac{-1}{2\sqrt{1-x^2}} * (-2x)$
+
+   $= \dfrac{x}{\sqrt{1-x^2}}$
+
+   $f'_b(3/5) = \dfrac{3/5}{\sqrt{1-(3/5)^2}}$
+
+   $= \dfrac{3/5}{\sqrt{16/25}}$
+
+   $= \dfrac{3/5}{4/5}$
+
+   $= \dfrac{3}{4}$
+
+** Solution 2
+
+   $x^3 + y^3 = 1$
+
+   Using implicit differentiation,
+
+   $2x^2 + 3y^2\dfrac{dy}{dx} = 0$
+
+   $3y^2\dfrac{dy}{dx} = -2x^2$
+
+   $\dfrac{dy}{dx} = \dfrac{-2x^2}{3y^2}$
+
+** Solution 3
+
+   $x^{1/3} + y^{1/3} = 1$
+
+   Using implicit differentiation,
+
+   $\dfrac{1}{3}x^{1/3 - 1} + \dfrac{1}{3}y^{1/3-1}\dfrac{dy}{dx} = 0$
+
+   $dfrac{1}{3}x^{-2/3} + \dfrac{1}{3}y^{-2/3}\dfrac{dy}{dx} = 0$
+
+   $x^{-2/3} + y^{-2/3}\dfrac{dy}{dx} = 0$
+
+   $y^{-2/3}\dfrac{dy}{dx} = -x^{-2/3}$
+
+   $\dfrac{dy}{dx} = \dfrac{-x^{-2/3}}{y^{-2/3}}$
+
+   $= \dfrac{-y^{2/3}}{x^{2/3}}$
+
+** Solution 4
+
+   $x^3y-y^3x = 3$
+
+   Using implicit differentiation,
+
+   $x^3\dfrac{dy}{dx} + y3x^2 - (y^3 + x3y^2\dfrac{dy}{dx}) = 0$
+
+   $x^3\dfrac{dy}{dx} + 3x^2y - y^3 - 3xy^2\dfrac{dy}{dx} = 0$
+
+   $x^3 \dfrac{dy}{dx} - 3xy^2\dfrac{dy}{dx} = y^3 - 3x^2y$
+
+   $\dfrac{dy}{dx}(x^3 - 3xy^2) = y^3 - 3x^2y$
+
+   $\dfrac{dy}{dx} = \dfrac{y^3-3x^2y}{x^3-3xy^2}$
+
+** Solution 5
+
+   $xy^2 + \sqrt{x+y} = 5$
+
+   Using implicit differentiation,
+
+   $y^2 + x.2y\dfrac{dy}{dx} + (x+y)^{-1/2}\dfrac{1}{2}(1 + \dfrac{dy}{dx}) = 0$
+
+   $y^2 + 2xy\dfrac{dy}{dx} + \dfrac{1}{2\sqrt{x+y}}(1 + \dfrac{dy}{dx}) = 0$
+
+   $y^2 + 2xy\dfrac{dy}{dx} + \dfrac{1}{2\sqrt{x+y}} + \dfrac{1}{2\sqrt{x+y}}\dfrac{dy}{dx} = 0$
+
+   $y^2 + \dfrac{1}{2\sqrt{x+y}} + \dfrac{dy}{dx}(2xy + \dfrac{1}{2\sqrt{x+y}}) = 0$
+
+   $\dfrac{dy}{dx} = \dfrac{-y^2 - \dfrac{1}{2\sqrt{x+y}}}{2xy + \dfrac{1}{2\sqrt{x+y}}}$
+
+   $= \dfrac{-2y^2\sqrt{x+y} - 1}{2xy\sqrt{x+y} + 1}$
