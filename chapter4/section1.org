@@ -1,0 +1,6 @@
+* Related Rates
+
+- Related rates problems involve finding a rate at which a quantity
+  changes by relating that quantity to other quantities whose rates of
+  changes are known.
+- [[https://en.wikipedia.org/wiki/Related_rates][Wikipedia link]]

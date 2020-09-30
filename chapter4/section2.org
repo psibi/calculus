@@ -1,0 +1,24 @@
+* The Mean Value Theorem
+
+** Theorem 4.2.1 (Mean Value Theorem)
+
+Suppose $f$ is continous on the closed interval $[a,b]$ and
+differentiable on $(a,b)$. Then there is a number $c$ such that $a < c
+< b$ and
+
+$\dfrac{f(b)-f(a)}{b-a} = f'(c)$
+
+** Lemma 4.2.2
+
+Suppose that $f$ is continous on $[u,v]$. Then there are numbers $u'$
+and $v'$ such that $u < u' < v' < v, v'-u' = (u-v)/3$, and
+
+$\dfrac{f(v')-f(u')}{v'-u'} = \dfrac{f(v)-f(u)}{v-u}$
+
+** Lemma 4.2.3
+
+Suppose that $f$ is differentiable at $c$, and
+$\{u_n\}_{n=1}^{\infty}$ and $\{v_n\}_{n=1}^{\infty}$ are sequences
+such that as $n \to \infty$, $u_n \to c^{-}$ and $v_n \to c^{+}$. Then
+
+$\lim_{n \to \infty} \dfrac{f(v_n) - f(u_n)}{v_n - u_n} - f'(c)$
