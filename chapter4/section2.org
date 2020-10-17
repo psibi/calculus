@@ -21,4 +21,4 @@ Suppose that $f$ is differentiable at $c$, and
 $\{u_n\}_{n=1}^{\infty}$ and $\{v_n\}_{n=1}^{\infty}$ are sequences
 such that as $n \to \infty$, $u_n \to c^{-}$ and $v_n \to c^{+}$. Then
 
-$\lim_{n \to \infty} \dfrac{f(v_n) - f(u_n)}{v_n - u_n} - f'(c)$
+$\lim_{n \to \infty} \dfrac{f(v_n) - f(u_n)}{v_n - u_n} = f'(c)$
