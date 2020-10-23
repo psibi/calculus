@@ -31,4 +31,3 @@ interior of $I$.
   weakly decreasing on $I$.
 - If $f'(x) = 0$ for all $x$ in the interior of $I$, then $f$ is
   constant on $I$.
-
