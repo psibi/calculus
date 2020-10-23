@@ -1,0 +1,34 @@
+* Increasing and Decreasing functions
+
+** Definition 4.3.1
+
+Let $f$ be a function and $I$ an interval contained in the domain of
+$f$.
+
+- We say that $f$ is strictly increasing on $I$ if for all numbers
+  $x_1, x_2 \in I$, if $x_1 < x_2$ then $f(x_1) < f(x_2)$
+- We say that $f$ is weakly increasing on $I$ if for all numbers
+  $x_1, x_2 \in I$, if $x_1 < x_2$ then $f(x_1) \leq f(x_2)$
+- We say that $f$ is strictly decreasing on $I$ if for all numbers
+  $x_1, x_2 \in I$, if $x_1 < x_2$ then $f(x_1) > f(x_2)$
+- We say that $f$ is weakly decreasing on $I$ if for all numbers
+  $x_1, x_2 \in I$, if $x_1 < x_2$ then $f(x_1) \geq f(x_2)$
+- We say that $f$ is constant on $I$ if for all numbers $x_1, x_2 \in
+  I$, $f(x_1) = f(x_2)$
+
+** Theorem 4.3.3
+
+Suppose $f$ is containous on an interval $I$ and differentiable on the
+interior of $I$.
+
+- If $f'(x) > 0$ for all $x$ in the interior of $I$, then $f$ is
+  strictly increasing on $I$.
+- If $f'(x) \geq 0$ for all $x$ in the interior of $I$, then $f$ is
+  weakly increasing on $I$.
+- If $f'(x) < 0$ for all $x$ in the interior of $I$, then $f$ is
+  strictly decreasing on $I$.
+- If $f'(x) \leq 0$ for all $x$ in the interior of $I$, then $f$ is
+  weakly decreasing on $I$.
+- If $f'(x) = 0$ for all $x$ in the interior of $I$, then $f$ is
+  constant on $I$.
+

@@ -42,3 +42,4 @@ contributions are welcome!
 
 - [[file:chapter4/section1.org][Related Rates]]
 - [[file:chapter4/section2.org][The Mean Value Theorem]]
+- [[file:chapter4/section3.org][Increasing and Decreasing functions]]
