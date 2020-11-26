@@ -12,6 +12,13 @@ a^{\neq}, f(x) \to L$" to mean that for every number $\epsilon > 0$,
 there is some corresponding number $\delta > 0$ such that if $0 < |x -
 a| < \delta$ then $|f(x) - L| < \epsilon$
 
+Notes:
+
+- $|x-a| < \delta$ is equivalent to $-\delta < x - a < \delta$ or $a -
+  \delta < x < \delta + a$
+- $0 < |x-a| < \delta$ means that $x$ is between $a-\delta$ and $a +
+  \delta$, but $x \neq a$
+
 ** Theorem 2.2.4
 
 There cannot be more than one number $L$ such that as "x \to a^{\neq},
