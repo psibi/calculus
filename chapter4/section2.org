@@ -8,6 +8,8 @@ differentiable on $(a,b)$. Then there is a number $c$ such that $a < c
 
 $\dfrac{f(b)-f(a)}{b-a} = f'(c)$
 
+- [[https://tutorial.math.lamar.edu/classes/calci/MeanValueTheorem.aspx][Lamar's notes]]
+
 ** Lemma 4.2.2
 
 Suppose that $f$ is continous on $[u,v]$. Then there are numbers $u'$
