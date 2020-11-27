@@ -18,7 +18,7 @@ $f$.
 
 ** Theorem 4.3.2
 
-Suppose $f$ is containous on an interval $I$ and differentiable on the
+Suppose $f$ is continous on an interval $I$ and differentiable on the
 interior of $I$.
 
 - If $f'(x) > 0$ for all $x$ in the interior of $I$, then $f$ is
@@ -68,9 +68,9 @@ Suppose $f$ is a function and $a$ is a number in the domain of $f$.
   $d > 0$ such that the interval $(a-d, a+d)$ is contained in the
   domain of $f$, and $f$ attains its minimum value on $(a-d,a+d)$ at
   $a$.
-- We say that $f$ has a *local maximum* at $a$ if there is some $d>0$
-  such that the interval $(a-d,a+d)$ is contained in the domain of
-  $f$, and $f$ attains its maximum value on $(a-d,a+d)$ at $a$.
+- We say that $f$ has a *local maximum* at $a$ if there is some number
+  $d>0$ such that the interval $(a-d,a+d)$ is contained in the domain
+  of $f$, and $f$ attains its maximum value on $(a-d,a+d)$ at $a$.
 
 ** Theorem 4.3.6
 
@@ -102,3 +102,5 @@ Notes:
 ** References
 
 - [[https://tutorial.math.lamar.edu/classes/calcI/minmaxvalues.aspx][Lamar's reference on Minimum and Maximum values]]
+- [[https://www.mathsisfun.com/algebra/functions-maxima-minima.html][mathisfun: Local maximum and minimum]]
+- [[https://www.mathsisfun.com/calculus/maxima-minima.html][mathisfun: Finding local minimum and maximum using derivatives]]

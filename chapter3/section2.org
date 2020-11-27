@@ -50,3 +50,7 @@ $\dfrac{dy}{dx}\Bigr|_{x=a}$
 
 - The above notation is used to denote the derivative of $y$ with
   respect to $x$, with the number $a$ substituted for $x$.
+
+* References
+
+- [[https://math.stackexchange.com/a/45987/124772][Intuitive definition]]
