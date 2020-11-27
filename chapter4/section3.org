@@ -16,7 +16,7 @@ $f$.
 - We say that $f$ is constant on $I$ if for all numbers $x_1, x_2 \in
   I$, $f(x_1) = f(x_2)$
 
-** Theorem 4.3.3
+** Theorem 4.3.2
 
 Suppose $f$ is containous on an interval $I$ and differentiable on the
 interior of $I$.
@@ -31,3 +31,74 @@ interior of $I$.
   weakly decreasing on $I$.
 - If $f'(x) = 0$ for all $x$ in the interior of $I$, then $f$ is
   constant on $I$.
+
+** Definition 4.3.3
+
+Suppose that $f$ is a function and $a$ is a number in the domain of
+$f$.
+
+- Suppose that for every $x$ in the domain of $f$, $f(a) \leq
+  f(x)$. Then we say that $f(a)$ is the *minimum value* of $f$. We
+  also say that $f$ attains its minimum value at $a$.
+- Suppose that for every $x$ in the domain of $f$, $f(a) \geq
+  f(x)$. Then we say that $f(a)$ is the *maximum value* of $f$. We
+  also say that $f$ attains its maximum value at $a$.
+
+Additional points:
+
+- Not every function has maximum and miniumum values.
+
+** Definition 4.3.4
+
+Suppose $f$ is a function, $S$ is a subset of the domain of $f$, and
+$a \in S$.
+
+- Suppose that for every $x \in S$, $f(a) \leq f(x)$. Then we say that
+  $f(a)$ is the *minimum* value of $f$ on $S$. We also say that $f$
+  attains its minimum value on the set $S$ at $a$.
+- Suppose that for every $x \in S$, $f(a) \geq f(x)$. Then we say that
+  $f(a)$ is the *maximum* value of $f$ on $S$. We also say that $f$
+  attains its maximum value on the set $S$ at $a$.
+
+** Definition 4.3.5
+
+Suppose $f$ is a function and $a$ is a number in the domain of $f$.
+
+- We say that $f$ has a *local minimum* at $a$ if there is some number
+  $d > 0$ such that the interval $(a-d, a+d)$ is contained in the
+  domain of $f$, and $f$ attains its minimum value on $(a-d,a+d)$ at
+  $a$.
+- We say that $f$ has a *local maximum* at $a$ if there is some $d>0$
+  such that the interval $(a-d,a+d)$ is contained in the domain of
+  $f$, and $f$ attains its maximum value on $(a-d,a+d)$ at $a$.
+
+** Theorem 4.3.6
+
+Suppose $f$ has a local maximum or minimum at $a$. Then either $f$ is
+not differentiable at $a$ or $f'(a) = 0$.
+
+** Definition 4.3.7
+
+A number $a$ in the domain of $f$ such that either $f'(a)$ is
+undefined or $f'(a)=0$ is called a *critical number* of $f$.
+
+** Theorem 4.3.8 (First Derivative Test)
+
+Suppose that $f$ is continous at $a$, and for some number $d>0$, $f$
+is differentiable on the intervals $(a-d,a)$ and $(a,a+d)$.
+
+- Suppose that for every number $x$, if $a-d < x < a$ then $f'(x) <
+  0$, and if $a < x < a + d$ then $f'(x) > 0$. Then $f$ has a local
+  minimum at $a$.
+- Suppose that for every number $x$, if $a-d < x < a$ then $f'(x) >
+  0$, and if $a < x < a + d$ then $f'(x) < 0$. Then $f$ has a local
+  maximum at $a$.
+
+Notes:
+
+- A function need not have a local maximum or minimu at a critical
+  number.
+
+** References
+
+- [[https://tutorial.math.lamar.edu/classes/calcI/minmaxvalues.aspx][Lamar's reference on Minimum and Maximum values]]
