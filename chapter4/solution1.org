@@ -401,4 +401,211 @@ $2\sqrt{13} \dfrac{dz}{dt} = 2*2*80 + 2*3*60$
 
 $\dfrac{dz}{dt} = \dfrac{680}{2\sqrt{13}} = 94.29$ mph
 
+** Solution 13
+
+todo: insert pic
+
+Note: Best to learn a little about baseball before solving this!
+
+x = Distance between the first base and the runner.
+
+y = Distance between the home plate and the point of a runner.
+
+*** Solution a
+
+At $x=30$ feet
+
+$\dfrac{dy}{dt} = ?$
+
+$\dfrac{dx}{dt} = 20 ft/s$
+
+By pythagoras theorem,
+
+$y^2 = x^2 + 90^2$
+
+$2y \dfrac{dy}{dt} = 2x\dfrac{dx}{dt}$
+
+$\dfrac{dy}{dt} = \dfrac{2.30}{2.y} 20 = \dfrac{600}{y}$
+
+$y^2 = x^2 + 90^2$
+
+$y^2 = 30^2 + 90^2 = 9000$
+
+$y = \sqrt{9000}$
+
+$\dfrac{dy}{dt} = \dfrac{600}{y} = \dfrac{600}{\sqrt{9000}} = \dfrac{600}{3*10\sqrt{10}}$
+
+$= \dfrac{20}{\sqrt{10}} = \dfrac{2.10}{\sqrt{10}} = 2\sqrt{10}$ ft/sec
+
+*** Solution b
+
+z = Distance between the runner and the pitcher's mound.
+
+Let distance between pitcher mound and first base be $a$
+
+$a^2 + a^2 = 90^2$
+
+$2a^2 = 90^2$
+
+$a^2 = \dfrac{90^2}{2} = \dfrac{90.90}{2}$
+
+$a = \dfrac{9.10}{\sqrt{2}} = \dfrac{90}{\sqrt{2}}$
+
+Angle between the pitcher mound and the second base = $\angle{45}$
+
+Since it's not a right triange, we will use the law of cosines.
+
+$z^2 = a^2 + (90-x)^2 - 2a(90-x) \cos 45$
+
+Differentitating,
+
+$2z\dfrac{dz}{dt} = 2(90-x)(-\dfrac{dx}{dt}) + 2a\cos(45) \dfrac{dx}{dt}$
+
+Putting $x=30$,
+
+$2z\dfrac{dz}{dt} = 2.60.-20 + \dfrac{2.90.1}{\sqrt{2}\sqrt{2}}.20$
+
+$2z\dfrac{dz}{dt} = -2400 + 1800$
+
+$2z\dfrac{dz}{dt} = -600$
+
+$\dfrac{dz}{dt} = -\dfrac{300}{2}$
+
+Using the law of cosines, let's fine $z$
+
+$z^2 = a^2 + (90-x)^2 - 2a(90-x) \cos 45$
+
+$= \dfrac{90^2}{2} + 60^2 - \dfrac{2.90.60.1}{\sqrt{2}\sqrt{2}}$
+
+$= 4050 + 3600 - 5400$
+
+$= 2250$
+
+$z = \sqrt{2250}$
+
+$\dfrac{dz}{dt} = \dfrac{-300}{\sqrt{2250}} = \dfrac{-300}{5.3.\sqrt{10}}$
+
+$= \dfrac{-100}{5.\sqrt{10}} = \dfrac{-20}{\sqrt{10}} = -2\sqrt{10}$ ft/s
+
+** Solution 14
+
+Reference: [[https://www.youtube.com/watch?v=z0lxZJYqBAE]]
+
+todo: insert pic
+
+a = Distance between the person and the base of the ferris wheel.
+
+$a = \theta(t)$
+
+Using law of cosines,
+
+$a^2 = 60^2 + 60^2 - 2.60.60 \cos \theta$
+
+$a^2 = 2.60^2 - 2.60^2 \cos \theta$
+
+$a^2 = 60^2(2-2\cos \theta)$
+
+$a = 60\sqrt{2-2\cos \theta}$
+
+Differentitating it,
+
+$\dfrac{da}{dt} = 60(2-2\cos \theta)^{-1/2} (-2 * -\sin \theta \dfrac{d\theta}{dt})$
+
+$= \dfrac{60}{\sqrt{2-2\cos \theta}} * 2\sin \theta \dfrac{d\theta}{dt}$
+
+$\dfrac{da}{dt} = \dfrac{120\sin \theta}{\sqrt{2-2\cos \theta}} \dfrac{d\theta}{dt}$
+
+It takes 30 minutes to complete one revolution. So to cover $2\pi$
+radians, it took 30 minutes.
+
+$\dfrac{d\theta}{dt} = \dfrac{2\pi}{30} = \dfrac{\pi}{15}$ radians/minutes
+
+When the passenger is 90 meteres above the base of the wheel, we need
+to find $\theta$.
+
+$\sin \alpha = \dfrac{30}{60} = \dfrac{1}{2}$
+
+$\alpha = \dfrac{\pi}{6}$ radians
+
+$\theta = \dfrac{\pi}{6} + \dfrac{\pi}{2} = \dfrac{2\pi}{3}$
+
+$\sin (\dfrac{2\pi}{3}) = \dfrac{\sqrt{3}}{2}$
+
+$\cos (\dfrac{2\pi}{3}) = \dfrac{-1}{2}$
+
+$\dfrac{da}{dt} = \dfrac{120. \sqrt{3}/2}{\sqrt{2+ \dfrac{1}{2}}} . \dfrac{\pi}{15}$
+
+$= \dfrac{60\sqrt{3}\pi \sqrt{2}\sqrt{2}}{\sqrt{5}.15} = \dfrac{60.2.\sqrt{3}\pi}{15 \sqrt{5}}$
+
+$= \dfrac{8\sqrt{3}\pi}{\sqrt{5}}$ m/min
+
+** Solution 15
+
+todo: insert pic
+
+$\theta$ = Angle between the camera and the statue measured in
+radians.
+
+x = Distance between the bus and the instersection.
+
+$\dfrac{dx}{dt} = 40 ft/s$
+
+y = Distance between the camera and the status
+
+$y^2 = x^2 + 100^2$
+
+Differentitating it,
+
+$2y \dfrac{dy}{dt} = 2x \dfrac{dx}{dt}$
+
+$2y \dfrac{dy}{dt} = 2x . 40 = 80x$
+
+$\dfrac{dy}{dt} = 40\dfrac{x}{y}$
+
+At $x=50$,
+
+$y^2 = 50^2 + 100^2 = 12500$
+
+$y = \sqrt{12500}$
+
+We need to find $\dfrac{d\theta}{dt}$ at $x=50$
+
+$\cos \theta = \dfrac{x}{x}$
+
+$y \cos \theta = x$
+
+Differentitating it,
+
+$y * -\sin \theta \dfrac{d\theta}{dt} + cos \theta \dfrac{dy}{dt} = \dfrac{dx}{dt}$
+
+$-y\sin \theta \dfrac{d\theta}{dt} + \cos \theta \dfrac{dy}{dt} = \dfrac{dx}{dt}$
+
+At $x = 50$,
+
+$\dfrac{dx}{dt} = 40$ ft/s
+
+$\dfrac{dy}{dt} = \dfrac{40x}{y} = \dfrac{40.50}{\sqrt{12500}} = \dfrac{40.50}{10.\sqrt{125}}$
+
+$= \dfrac{40.50}{10.5\sqrt{5}} = \dfrac{40}{\sqrt{5}}$
+
+$\cos \theta = \dfrac{50}{\sqrt{12500}} = \dfrac{50}{10.5\sqrt{5}} = \dfrac{1}{\sqrt{5}}$
+
+$\sin \theta = \dfrac{2}{\sqrt{5}}$
+
+$50 \sqrt{5} \dfrac{2}{\sqrt{5}} \dfrac{d\theta}{dt} + \dfrac{1}{\sqrt{5}}\dfrac{40}{\sqrt{5}} = 40$
+
+$100\dfrac{d\theta}{dt} \theta + \dfrac{40}{5} = 40$
+
+$100 \dfrac{d\theta}{dt} = 32$
+
+$\dfrac{d\theta}{dt} = 0.32$ radians/s
+
+** Solution 16
+
+todo: insert pic
+
+I found this [[https://www.youtube.com/watch?v=Pb9cNwmpnts&t=285s][youtube video]] helpful to come with the above diagram.
+
+
+
 
