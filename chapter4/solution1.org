@@ -1,0 +1,251 @@
+* Related Rates
+
+** Solution 1
+
+$P$ = Power measured in watts
+
+$I$ = Current in amperes.
+
+$P = 25 I^2$
+
+At $t = t_1$,
+
+$I = 4$ amperes
+
+$\dfrac{dI}{dt} = 2$  amps/ min
+
+$\dfrac{dP}{dt} = ?$
+
+$P = 25I^2$
+
+$\dfrac{dP}{dt} = 50 * \dfrac{dI}{dt}$
+
+$= 50 I \dfrac{dI}{dt}$
+
+At $t_1$,
+
+$\dfrac{dP}{dt} = 50 * 4 *  2 = 400$  W/min
+
+The power is increasing 400 W/min.
+
+** Solution 2
+
+$V =$ Volume of gas in cyclinder in cubic inches
+
+$P =$ Pressure of gas in kilopascals
+
+$P = \dfrac{3000}{V}$
+
+At $t = t_1$,
+
+$V = 20$ cubic inches.
+
+$\dfrac{dV}{dt} = 3$  $in^3/sec$
+
+$\dfrac{dP}{dt} = ?$
+
+$P = \dfrac{3000}{V}$
+
+$P = 3000 V^{-1}$
+
+$\dfrac{dP}{dt} = 3000 * (-1)V^{-2} \dfrac{dV}{dt}$
+
+$\dfrac{dP}{dt} = 3000 * -1 * (20)^-2 * 3$
+
+$= \dfrac{-3000}{20^2} * 3 = -22.5$ kp/sec.
+
+The pressure is decreasing 22.5 kp/sec.
+
+** Solution 3
+
+V = Volume of spherical bulb in inches.
+
+r = radius of the baloon in inches.
+
+$\forall t. \dfrac{dv}{dt} = 5$ in^3/s
+
+At $t = t_1$,
+
+$r = 3$
+
+$\dfrac{dr}{dt} = ?$
+
+$V = \dfrac{4}{3}\pi r^3$
+
+$\dfrac{dV}{dt} = \dfrac{4}{3} \pi 3r^2 \dfrac{dr}{dt} = 4\pi r^2 \dfrac{dr}{dt}$
+
+At $t_1$,
+
+$\dfrac{dV}{dt} = 4\pi r^2 \dfrac{dr}{dt}$
+
+$5 = 4\pi (3^2) \dfrac{dr}{dt}$
+
+$\dfrac{dr}{dt} = \dfrac{5}{4\pi 3^2} = \dfrac{5}{36 \pi}$ in/s
+
+** Solution 4
+
+todo: insert pic
+
+x = Length of Alice's shardow in feet
+
+y = Distance between Alice and street light
+
+We need to prove $\dfrac{dx}{dt}$ is constant.
+
+$\dfrac{dy}{dt} = 2 ft/s$
+
+Using the property of similar triangle,
+
+$\dfrac{9}{y + x} = \dfrac{5}{x}$
+
+$9x = 5y + 5x$
+
+$4x = 5y$
+
+$4 \dfrac{dx}{dt} = 5 \dfrac{dy}{dt}$
+
+$\dfrac{dx}{dt} = \dfrac{5dy}{4dt} = \dfrac{5}{4} * 2 = 2.5$ ft/s
+
+So, $\dfrac{dx}{dt}$ is constant and it is getting longer as $2.5 >
+2$.
+
+** Solution 5
+
+todo: insert pic
+
+x = Alice's height in feets
+
+$\dfrac{dx}{dt} = -2f/min$
+
+y = Alice's shadow in feets
+
+$\dfrac{dy}{dt} = ?$
+
+Using the property of similar triangle,
+
+$\dfrac{9}{8 + y} = \dfrac{x}{y}$
+
+$9y = 8x + xy$
+
+$9\dfrac{dy}{dt} = 8\dfrac{dx}{dt} + x\dfrac{dy}{dt} + y \dfrac{dx}{dt}$
+
+$\dfrac{dy}{dt}(9-x) = \dfrac{dx}{dx}(8+y)$
+
+At $x=3$ feet,
+
+$\dfrac{dy}{dt}(9-x) = \dfrac{dx}{dt}(8+y)$
+
+$\dfrac{dy}{dt} * 6 = -2 (8+y)$
+
+$\dfrac{dx}{dt} = -\dfrac{8+y}{3}$
+
+We already know that
+
+$\dfrac{9}{8+y} = \dfrac{x}{y} = \dfrac{3}{y}$
+
+$9y = 24 + 3y$
+
+$6y = 24$
+
+$y = 4$
+
+$\dfrac{dx}{dt} = \dfrac{-(8+y)}{3} = \dfrac{-12}{3} = -4$ ft/min
+
+The shadow is decreasing 4 feet per min.
+
+** Solution 6
+
+todo: insert pic
+
+x = distance between building and car in feets
+
+y = distance between the road and the car in feets
+
+We need to find $\dfrac{dx}{dt}$ when $y = 100$
+
+$x^2 = 50^2 + y^2$
+
+$2x\dfrac{dx}{dt} = 2y \dfrac{dy}{dt}$
+
+$\dfrac{dx}{dt} = \dfrac{y}{x} * \dfrac{dy}{dt}$
+
+$\dfrac{dy}{dt} = 30 ft/sec$
+
+$\dfrac{dx}{dt} = \dfrac{y}{x} \dfrac{dy}{dt}$
+
+We know that
+
+$x^2 = 50^2 + y^2$
+
+$x^2 = 50^2 + 100^2 = 2500 + 10000$
+
+$x^2 = 12500$
+
+$\dfrac{dx}{dt} = \dfrac{100}{12500} \dfrac{dy}{dt} = \dfrac{1}{125} * 30 = 30/125$
+
+$\dfrac{dx}{dt} \approx 0.24$ ft/s
+
+** Solution 7
+
+todo: insert pic
+
+x = Distance between the bottom of the ladder and the wall in feets.
+
+y = Distance between the top of the ladder and the wall in feets.
+
+Length of ladder = 15 feet
+
+$\dfrac{dx}{dt} = 2 $ ft/s
+
+At $y = 12$ feet, $\dfrac{dy}{dt} = ?$
+
+$15^2 = x^2 + y^2$
+
+$0 = 2x \dfrac{dx}{dt} + 2y \dfrac{dy}{dt}$
+
+$15^2 = x^2 + 12^2$
+
+$x^2 = 15^2 - 12^2 = 81$
+
+$x = 9$
+
+$2x \dfrac{dx}{dt} + 2y \dfrac{dy}{dt} = 0$
+
+$2*9*2 + 2*12*\dfrac{dy}{dt} = 0$
+
+$\dfrac{dy}{dt} = \dfrac{-2*9*2}{2*12} = \dfrac{-2*9}{12} = \dfrac{-3}{2} = -1.5$ ft/s
+
+The top of the ladder is sliding down at $1.5$ feet per second.
+
+** Solution 8
+
+todo: insert pic
+
+Bottom of the ladder is fixed.
+
+y = Distance between the top of the ladder and the wall in feets.
+
+x = Distance between the ladder.
+
+$\dfrac{dx}{dt} = 2$ ft/s
+
+At $x = 5$ feet, $\dfrac{dy}{dt} = ?$
+
+$x^2 = 3^2 + y^2$
+
+$5^2 = 3^2 + y^2$
+
+$y^2 = 5^2 - 3^2 = 16$
+
+$y = 4$
+
+$x^2 = 3^2 + y^2$
+
+$2x \dfrac{dx}{dt} = 2y\dfrac{dy}{dt}$
+
+$2*5*2 = 2*4* \dfrac{dy}{dt}$
+
+$\dfrac{dy}{dt} = \dfrac{2*5*2}{2*4} = \dfrac{5}{2} = 2.5$ ft/s
+
+The ladder is sliding up the wall at $2.5$ ft/s when the ladder is 5
+feet long.
