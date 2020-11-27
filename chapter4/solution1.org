@@ -249,3 +249,156 @@ $\dfrac{dy}{dt} = \dfrac{2*5*2}{2*4} = \dfrac{5}{2} = 2.5$ ft/s
 
 The ladder is sliding up the wall at $2.5$ ft/s when the ladder is 5
 feet long.
+
+** Solution 9
+
+todo: insert pic
+
+x = Distance between the rocket and ground in km.
+
+$\theta$ = Anble between the camera and rocket when focused.
+
+When $x=1$ km, $\dfrac{d\theta}{dt} = 0.1$ rad/sec
+
+$\dfrac{dx}{dt} = ?$
+
+$\tan \theta = \dfrac{x}{x}$
+
+$\sec^2 \theta \dfrac{d\theta}{dt} = \dfrac{dx}{dt} * \dfrac{1}{2}$
+
+y = Distance between the camera and the top of the rocket.
+
+$y^2 = 2^2 + 1^2 = 5$
+
+$y = \sqrt{5}$
+
+$\cos \theta = \dfrac{2}{\sqrt{5}}$
+
+$\cos^2 \theta = \dfrac{4}{5}$
+
+$\sec^2 \theta = \dfrac{5}{4}$
+
+$\sec^2 \theta \dfrac{d\theta}{dt} = \dfrac{dx}{dt} * \dfrac{1}{2}$
+
+$\dfrac{5}{4} * 0.1 = \dfrac{1}{2} \dfrac{dx}{dt}$
+
+$\dfrac{5}{4} * 0.1 = \dfrac{1}{2} \dfrac{dx}{dt}$
+
+$\dfrac{5}{4} * 0.1 = \dfrac{1}{2} \dfrac{dx}{dt}$
+
+$\dfrac{dx}{dt} = \dfrac{0.5}{4} * 2 = \dfrac{0.5}{2} = \dfrac{5}{20} = \dfrac{1}{4}$
+
+$= 0.25$ km/s
+
+** Solution 10
+
+todo: insert pic
+
+$\theta =$ Angle between the police and car in radians.
+
+x = Distance between car and the shortedst distance between road and
+police.
+
+At $\theta = \dfrac{\pi}{3}$, $\dfrac{d\theta}{dt} = \dfrac{1}{20}$ rad/s
+
+Speed limit of road = 65mph
+
+Since sum of angle inside the triangle is 180,
+
+$\dfrac{\pi}{3} + \dfrac{\pi}{2} + a = 180$
+
+$\dfrac{2\pi + 3\pi}{6} + a = 2\pi$
+
+$a = 2\pi - \dfrac{5\pi}{6} = \dfrac{12\pi}{6} - \dfrac{5\pi}{6}$
+
+$a = \dfrac{7\pi}{6}$
+
+$\tan \dfrac{7\pi}{6} = \dfrac{1/10}{x} = \dfrac{1}{10x}$
+
+$x = \dfrac{1}{10 \tan (7\pi/6)} = \dfrac{\sqrt{3}}{10}$
+
+We know that,
+
+$\tan(\pi - \dfrac{\pi}{2} - \theta) = \dfrac{1/10}{x}$
+
+$\tan (\dfrac{\pi}{2} - \theta) = \dfrac{1}{10x}$
+
+$\cot \theta = \dfrac{1}{10x}$
+
+$\cot \theta = \dfrac{1}{10}x^{-1}$
+
+$-\csc^2 \theta \dfrac{d\theta}{dt} = -\dfrac{1}{10}x^{-2}\dfrac{dx}{dt}$
+
+$-\csc^2 \theta \dfrac{d\theta}{dt} = -\dfrac{1}{10} (\dfrac{\sqrt{3}}{10})^{-2}\dfrac{dx}{dt}$
+
+$-(\dfrac{2}{\sqrt{3}})^2 \dfrac{1}{20} = -\dfrac{1}{10} (\dfrac{10}{\sqrt{3}})^{2}\dfrac{dx}{dt}$
+
+$-\dfrac{4}{3} \dfrac{1}{20} = -\dfrac{1}{10} * \dfrac{10^2}{3} \dfrac{dx}{dt}$
+
+$-\dfrac{1}{15} = \dfrac{-10}{3} \dfrac{dx}{dt}$
+
+$\dfrac{dx}{dt} = \dfrac{1}{5*10} = \dfrac{1}{50}$ m/s
+
+$= \dfrac{1}{50} * 3600$ m/h
+
+$= 72$ m/h
+
+So, yes the driver should be given a speeding ticket!
+
+** Solution 11
+
+V = Volume of sand in the cone measured in $ft^3$
+
+h = height of the sand pile
+
+r = Radius of the base
+
+$\dfrac{dr}{dt} = 2$ ft^3/sec
+
+$h = r$
+
+At $h = 5$, $\dfrac{dh}{dt} = ?$
+
+$V = \dfrac{1}{3}\pi r^2 h = \dfrac{1}{3} \pi h^3$
+
+$\dfrac{dV}{dt} = \dfrac{3h^2}{3} \pi \dfrac{dh}{dt} = h^2 \pi \dfrac{dh}{dt}$
+
+$2 = 5^2 \pi \dfrac{dh}{dt}$
+
+$\dfrac{dh}{dt} = \dfrac{2}{5^2 \pi} = 0.025$ feet/sec
+
+** Solution 12
+
+todo: insert pic
+
+y = Distance between traffic intersection and the van.
+
+x = Distance between traffic intersection and the police car.
+
+At $t = t_1$,
+
+At $x = 2$ miles,
+
+$\dfrac{dx}{dt} = 80$ mph
+
+$y = 3$ miles
+
+$\dfrac{dy}{dt} = 60$ mph
+
+z = Distance between the van and the police vehicle.
+
+$z^2 = x^2 + y^2$
+
+We need to find $\dfrac{dz}{dt}$ at $t = t_1$
+
+$2z \dfrac{dz}{dt} = 2x\dfrac{dx}{dt} + 2y\dfrac{dy}{dt}$
+
+$z^2 = 2^2 + 3^2 = 13$
+
+$z = \sqrt{13}$
+
+$2\sqrt{13} \dfrac{dz}{dt} = 2*2*80 + 2*3*60$
+
+$\dfrac{dz}{dt} = \dfrac{680}{2\sqrt{13}} = 94.29$ mph
+
+
