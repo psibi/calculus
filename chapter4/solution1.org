@@ -606,6 +606,244 @@ todo: insert pic
 
 I found this [[https://www.youtube.com/watch?v=Pb9cNwmpnts&t=285s][youtube video]] helpful to come with the above diagram.
 
+x = Distance between the boat and the dock
 
+y = Distance between the bow of the boat and the man's hand.
 
+$\dfrac{dy}{dt} = -4 ft/s$
 
+At $x=12$, $\dfrac{dx}{dt} = ?$
+
+$y^2 = x^2 + 25$
+
+$2y \dfrac{dy}{dt} = 2x\dfrac{dx}{dt}$
+
+$2y * - 4 = 2x\dfrac{dx}{dt}$
+
+$\dfrac{dx}{dt} = -\dfrac{8y}{2x} = \dfrac{-4y}{x}$
+
+$y^2 = x^2 + 25$
+
+$y^2 = 12^2 + 25 = 169$
+
+$y = \sqrt{169} = 13$
+
+$\dfrac{dy}{dt} = -4 * \dfrac{13}{12} = \dfrac{-13}{3} \approx -4.33$ ft/s
+
+** Solution 17
+
+Components involved:
+
+- Light bulb
+- Table top
+- Horizontal board
+
+Board has a circular hole with 3 inch radius.
+
+Distance between the table top and the light bulb is 20 inches.
+
+x = Distance between light bulb and the board.
+
+$\dfrac{dx}{dt} = -5 $ inches/sec
+
+$A =$ Area of the lighted region
+
+At $x = 10$, $\dfrac{dA}{dt} = ?$
+
+The area depends on two parameters: x and r where r is the radius of
+the lighted region.
+
+Note that $r$ also changes with time and depends on $x$.
+
+By similar triangle law,
+
+$\dfrac{3}{x} = \dfrac{r}{20}$
+
+$A = \pi {r^2}$
+
+$= \pi * \dfrac{60^2}{x^2} = 60^2 \pi x^{-2}$
+
+$A = 60^2 \pi x^{-2}$
+
+$\dfrac{dA}{dt} = 60^2 \pi * -2x^{-3} \dfrac{dx}{dt}$
+
+$= -7200 \pi x^{-3} \dfrac{dx}{dt}$
+
+$= -7200 \pi 10^{-3} * -5$
+
+$= -\dfrac{72}{10} \pi * -5$
+
+$= \dfrac{-72}{2}\pi = 36 \pi \approx 113.097$ in^2/sec
+
+** Solution 18
+
+Trough dimensions:
+
+- (w) Width: 2 feet
+- (h) Height: 3 feet
+- (l) Length: 5 feet
+
+At noon, the water in trough was
+
+1.5 deep
+
+h = Height of the trough
+
+$\dfrac{dh}{dt} = 0.1$ ft/hr
+
+*** Solution a
+
+At noon,
+
+$\dfrac{dV}{dt} = ?$
+
+Volume = Area of triange * length of triangle
+
+$= \dfrac{1}{2} w*h*$ length of trough
+
+$= \dfrac{1}{2}whl$
+
+As $t$ changes, $l$ is constant but both $h$ and $w$ changes.
+
+$= \dfrac{1}{2}whl = 2.5 wh$
+
+Now let's try to elimiate $w$ from the equation. Using law of similar
+triangle,
+
+$\dfrac{2}{3} = \dfrac{w}{h}$
+
+$V = 2.5 wh = 2.5 * \dfrac{2}{3} * h^2 = \dfrac{5}{3} h^2$
+
+$\dfrac{dV}{dt} = \dfrac{5}{3}.2h \dfrac{dh}{dt}$
+
+$= \dfrac{5}{3}.2.h * 0.1 = h*5*\dfrac{2}{3}*\dfrac{1}{10}$
+
+$= \dfrac{h}{3} = \dfrac{1.5}{3} = \dfrac{15}{3.10} = \dfrac{5}{10}$
+
+$= 0.5$ feet^3/hr
+
+*** Solution b
+
+At noon, $h = 1.5$ feet
+
+Noon = 12 PM
+
+We know that the water was filling at a constant rate of $0.1$ ft/hr
+
+So far it to fill $1.5$ feet, it would have taken $\dfrac{1.5}{0.1} = 15$ hours.
+
+So it started raining 15 hours before noon.
+
+** Solution 19
+
+Height of pyramid = 455 feet
+
+Base is square that is 756 feet
+
+V = Volume of the pyramid
+
+$\dfrac{dV}{dt} = 10$ ft^3/min
+
+h = Depth of the pyramid
+
+At $h=400$ feet, $\dfrac{dh}{dt} = ?$
+
+Reference: [[https://www.mathsisfun.com/geometry/pyramids.html][mathisfun: Pyramids]]
+
+Volume = $\dfrac{1}{3} *$ base area * height
+
+$V = \dfrac{1}{3}S^2h$
+
+$S =$ length of square.
+
+We need to elimiate $S$ from the above equation.
+
+Using similar triangle property,
+
+$\dfrac{S}{h} = \dfrac{756}{455}$
+
+$V = \dfrac{1}{3}(\dfrac{756}{455})^2 * h^3$
+
+$\dfrac{dV}{dt} = (\dfrac{756}{455})^2h^2\dfrac{dh}{dt}$
+
+$\dfrac{dV}{dt} = (\dfrac{756}{455})^2(406)^2*\dfrac{dh}{dt}$
+
+$\dfrac{dh}{dt} = 10*(\dfrac{455}{756})^2*\dfrac{1}{400^2}$
+
+$= \dfrac{2070250}{91445760000}$
+
+$= 2.26 * 10^{-5}$
+
+** Solution 20
+
+$\beta = \theta + \alpha$
+
+$\tan \theta = \tan (\beta - \alpha) = \dfrac{\tan \beta - \tan \alpha}{1 - \tan \alpha \tan \beta}$
+
+x = Distance between the person and the wall
+
+$\tan \beta = \dfrac{4}{x}$
+
+$\tan \alpha = \dfrac{1}{x}$
+
+$\tan \theta = \dfrac{4/x - 1/x}{1 - 4/x.1/x} = \dfrac{(4-1)/x}{(x^2-4)/x^2}$
+
+$\tan \theta = \dfrac{(4-1)x}{x^2-4} = \dfrac{-3x}{x^2-4}$
+
+$\dfrac{dx}{dt} = 3$ ft/s
+
+*** Solution a
+
+$\tan \theta = \dfrac{-3x}{x^2-4}$
+
+$\tan \theta = -3x(x^2-4)^{-1}$
+
+$\sec^2 \theta \dfrac{d\theta}{dt} = -3x * -1(x^2-4)^-2(2x)\dfrac{dx}{dt} + (x^2-4)^{-1} * -3 * \dfrac{dx}{dt}$
+
+$\sec^2 \theta \dfrac{d\theta}{dt} = 3x(x^2-4)^{-2}(2x)\dfrac{dx}{dt} - \dfrac{3}{x^2-4}\dfrac{dx}{dt}$
+
+At $x=3$,
+
+$\tan \theta = \dfrac{-3.3}{3^2-4} = \dfrac{-9}{9-4} = \dfrac{-9}{5}$
+
+$\tan \theta = \dfrac{-9}{5}$
+
+$\theta = \arctan (-9/5) = -1.06$ radians
+
+$\sec \theta = \dfrac{\sqrt{106}}{5}$
+
+$\sec^2 \theta = \dfrac{106}{25}$
+
+$\dfrac{106}{25}\dfrac{d\theta}{dt} = 3.3(3^2-4)^{-2}(2.3).3 - \dfrac{3}{3^2-4}*3$
+
+$\dfrac{106}{25}\dfrac{d\theta}{dt} = \dfrac{9}{25}*2.3.3 - \dfrac{3}{5}*3$
+
+$\dfrac{106}{25}\dfrac{d\theta}{dt} = \dfrac{162}{25} - \dfrac{9}{5} = \dfrac{162}{25} - \dfrac{45}{25}$
+
+$\dfrac{106}{25}\dfrac{d\theta}{dt} = \dfrac{117}{25}$
+
+$\dfrac{d\theta}{dt} = \dfrac{117}{106} \approx 1.103$ radians/s
+
+So $\theta$ is increasing.
+
+*** Solution b
+
+$\sec^2 \theta \dfrac{d\theta}{dt} = 3x(x^2-4)^{-2}(2x)\dfrac{dx}{dt} - \dfrac{3}{x^2-4}\dfrac{dx}{dt}$
+
+At $x=1$,
+
+$\tan \theta = \dfrac{-3.1}{1-4} = \dfrac{-3}{-3} = 1$
+
+$\sec \theta = \sec(\arctan(1)) = \sqrt{2}$
+
+$\sec^2 \theta = 2$
+
+$2\dfrac{d\theta}{dt} = 3.1(1-4)^{-2}(2.1)\dfrac{dx}{dt} - \dfrac{3}{1-4}\dfrac{dx}{dt}$
+
+$2\dfrac{d\theta}{dt} = \dfrac{3}{(-3)^2} * 2 * 3 - \dfrac{3}{-3}*3$
+
+$2\dfrac{d\theta}{dt} = 2+3 = 5$
+
+$\dfrac{d\theta}{dt} = 2.5$ radians/s
+
+$\theta$ is still increasing.
