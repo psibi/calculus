@@ -84,7 +84,7 @@ $\dfrac{dr}{dt} = \dfrac{5}{4\pi 3^2} = \dfrac{5}{36 \pi}$ in/s
 
 ** Solution 4
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s4.png]]
 
 x = Length of Alice's shardow in feet
 
@@ -111,7 +111,7 @@ So, $\dfrac{dx}{dt}$ is constant and it is getting longer as $2.5 >
 
 ** Solution 5
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s5.png]]
 
 x = Alice's height in feets
 
@@ -155,7 +155,7 @@ The shadow is decreasing 4 feet per min.
 
 ** Solution 6
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s6.png]]
 
 x = distance between building and car in feets
 
@@ -187,7 +187,7 @@ $\dfrac{dx}{dt} \approx 0.24$ ft/s
 
 ** Solution 7
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s7.png]]
 
 x = Distance between the bottom of the ladder and the wall in feets.
 
@@ -219,7 +219,7 @@ The top of the ladder is sliding down at $1.5$ feet per second.
 
 ** Solution 8
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s8.png]]
 
 Bottom of the ladder is fixed.
 
@@ -252,7 +252,7 @@ feet long.
 
 ** Solution 9
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s9.png]]
 
 x = Distance between the rocket and ground in km.
 
@@ -292,7 +292,7 @@ $= 0.25$ km/s
 
 ** Solution 10
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s10.png]]
 
 $\theta =$ Angle between the police and car in radians.
 
@@ -369,7 +369,7 @@ $\dfrac{dh}{dt} = \dfrac{2}{5^2 \pi} = 0.025$ feet/sec
 
 ** Solution 12
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s12.png]]
 
 y = Distance between traffic intersection and the van.
 
@@ -403,7 +403,7 @@ $\dfrac{dz}{dt} = \dfrac{680}{2\sqrt{13}} = 94.29$ mph
 
 ** Solution 13
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s13.png]]
 
 Note: Best to learn a little about baseball before solving this!
 
@@ -491,7 +491,7 @@ $= \dfrac{-100}{5.\sqrt{10}} = \dfrac{-20}{\sqrt{10}} = -2\sqrt{10}$ ft/s
 
 Reference: [[https://www.youtube.com/watch?v=z0lxZJYqBAE]]
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s14.png]]
 
 a = Distance between the person and the base of the ferris wheel.
 
@@ -541,7 +541,7 @@ $= \dfrac{8\sqrt{3}\pi}{\sqrt{5}}$ m/min
 
 ** Solution 15
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s15.png]]
 
 $\theta$ = Angle between the camera and the statue measured in
 radians.
@@ -602,7 +602,7 @@ $\dfrac{d\theta}{dt} = 0.32$ radians/s
 
 ** Solution 16
 
-todo: insert pic
+[[file:~/github/velleman-calculus/assets/cp1s1s16.png]]
 
 I found this [[https://www.youtube.com/watch?v=Pb9cNwmpnts&t=285s][youtube video]] helpful to come with the above diagram.
 

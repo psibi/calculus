@@ -33,3 +33,4 @@
   - [[file:chapter4/section1.org][section1]]
   - [[file:chapter4/section2.org][section2]]
   - [[file:chapter4/section3.org][section3]]
+  - [[file:chapter4/solution1.org][solution1]]
