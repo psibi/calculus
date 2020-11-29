@@ -457,7 +457,7 @@ So, $\sin x < x$
 
 If $0 < x \leq 2\pi$
 
-Applying mean value theorem,
+Applying mean value theorem on $[0,x]$,
 
 $\dfrac{\sin x - \sin 0}{x-0} = \cos c$
 
@@ -467,7 +467,7 @@ $\cos c = \dfrac{\sin x}{x}$
 
 We know that $0 < c < x$
 
-So, $0 < c \leq 2\pi>$
+So, $0 < c \leq 2\pi$
 
 So, $\cos c < 1$
 
@@ -477,6 +477,30 @@ $\sin x < 1$
 
 Hence proved.
 
+*** Solution b
+
+From (a), we know that $x > 0 \implies \sin x < x$
+
+From (a) we also know that $0 < c < x$ and $\cos c = \dfrac{\sin x}{x}$
+
+Suppose $0 < x \leq \pi/2$
+
+So, $0 < c < x \leq \pi/2$
+
+For the above range, $\cos c > \cos x$
+
+$\dfrac{\sin x}{x} > \sqrt{1 - \sin^2 x}$
+
+$\dfrac{\sin^2 x}{x^2} > 1 - \sin^2 x$
+
+$\sin^2 x > x^2 - x^2\sin^2 x$
+
+$\sin^2 x(1 + x^2) > x^2$
+
+$\sin^2 x > \dfrac{x^2}{1+x^2}$
+
+$\sin x > \dfrac{x}{\sqrt{x^2 + 1}}$
+
 *** Solution c
 
 From (a),
@@ -485,13 +509,13 @@ $\sin (1/2) < \dfrac{1}{2}$
 
 From (b),
 
-$sin(1/2) > \dfrac{1/2}{\sqrt{1/4+1}}$
+$\sin(1/2) > \dfrac{1/2}{\sqrt{1/4+1}}$
 
-$sin(1/2) > \dfrac{1/2}{\sqrt{5/4}}$
+$\sin(1/2) > \dfrac{1/2}{\sqrt{5/4}}$
 
-$sin(1/2) > \dfrac{1/2 * 2}{\sqrt{5}}$
+$\sin(1/2) > \dfrac{1/2 * 2}{\sqrt{5}}$
 
-$sin(1/2) > \dfrac{1}{\sqrt{5}}$
+$\sin(1/2) > \dfrac{1}{\sqrt{5}}$
 
 Combinining both,
 
