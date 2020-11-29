@@ -1,0 +1,605 @@
+* The Mean Value Theorem
+
+** Solution 1
+
+$f(x) = x^2 - 3x$, $a=1$, $b=4$
+
+$f'(x) = 2x-3$
+
+By mean value thoerem,
+
+$f'(c) = \dfrac{f(b)-f(a)}{b-a}$
+
+$2c-3 = \dfrac{4^2 - 3.4 - (1^2 - 3)}{4-1}$
+
+$2c-3 = \dfrac{16-12-(-2)}{3} = \dfrac{4+2}{3} = \dfrac{6}{3}$
+
+$2c-3 = 2$
+
+$2c = 5$
+
+$c = \dfrac{5}{2}$
+
+** Solution 2
+
+$f(x) = x^3, a=-2, b=4$
+
+$f'(x) = 3x^2$
+
+By mean value thoerem,
+
+$f'(c) = \dfrac{f(b)-f(a)}{b-a}$
+
+$3c^2 = \dfrac{4^3 - (-2)^2}{4-(-2)} = \dfrac{4^3+2^3}{4+2}$
+
+$3c^2 = \dfrac{72}{6} = 12$
+
+$c^2 = 4$
+
+$c = 2$
+
+** Solution 3
+
+$f(x) = \sqrt{x}, a = 1, b=9$
+
+$f'(x) = \dfrac{1}{2}x^{-1/2} = \dfrac{1}{2\sqrt{x}}$
+
+By mean value thoerem,
+
+$f'(c) = \dfrac{f(b)-f(a)}{b-a}$
+
+$\dfrac{1}{2\sqrt{c}} = \dfrac{f(9)-f(1)}{9-1} = \dfrac{\sqrt{9}-\sqrt{1}}{9-1}$
+
+$\dfrac{1}{2\sqrt{c}} = \dfrac{3-1}{9-1} = \dfrac{2}{8} = \dfrac{1}{4}$
+
+$\dfrac{1}{\sqrt{c}} = \dfrac{1}{2}$
+
+$\sqrt{c} = 2$
+
+$c = 4$
+
+** Solution 4
+
+$f(x) = \sin x, a=0,b=\pi$
+
+$f'(x) = \cos x$
+
+By mean value thoerem,
+
+$f'(c) = \dfrac{f(b)-f(a)}{b-a}$
+
+$\cos c = \dfrac{\sin \pi - \sin 0}{\pi - 0} = \dfrac{0-0}{\pi}$
+
+$\cos c = 0$
+
+$c = \arccos 0 = \dfrac{\pi}{2}$
+
+** Solution 5
+
+$f(x) = \dfrac{1}{x^2}, a=-4, b=-1$
+
+$f(x) = x^{-2}$
+
+$f'(x) = -2x^{-3}$
+
+By mean value thoerem,
+
+$f'(c) = \dfrac{f(b)-f(a)}{b-a}$
+
+$-2c^{-3} = \dfrac{f(-1)-f(-4)}{-1-(-4)}$
+
+$\dfrac{-2}{c^3} = \dfrac{1-(1/16)}{3} = \dfrac{15/16}{3} = \dfrac{5}{16}$
+
+$\dfrac{-2}{c^3} = \dfrac{5}{16}$
+
+$c^3 = \dfrac{-2.16}{5} = \dfrac{-32}{5}$
+
+$c = - \sqrt[3]{\dfrac{32}{5}}$
+
+** Solution 6
+
+$f(x) = x^{2/3}$
+
+$-1 < c < 8$
+
+By mean value thoerem,
+
+$f'(c) = \dfrac{f(8)-f(-1)}{8 - (-1)}$
+
+Let's assume that such a number exits,
+
+$f'(c) = \dfrac{8^{2/3} - (-1)^{2/3}}{9} = \dfrac{2^2 - (-1)^2}{9}$
+
+$= \dfrac{4-1}{9} = \dfrac{3}{9} = \dfrac{1}{3}$
+
+$f'(c) = \dfrac{1}{3}$
+
+$f(x) = x^{2/3}$
+
+$f'(x) = \dfrac{2}{3}x^{2/3 - 1} = \dfrac{2}{3}x^{-1/3} = \dfrac{2}{3x^{1/3}}$
+
+$f'(c) = \dfrac{2}{3c^{1/3}}$
+
+$\dfrac{2}{3c^{1/3}} = \dfrac{1}{3}$
+
+$c^{1/3} = 2$
+
+$c = 8$
+
+But we know that $-1 < c < 8$, so no such number exists.
+
+It doesnt' contradict the mean value theorem because the function
+isn't differentiable at $0$.
+
+** Solution 7
+
+*** Solution a
+
+$\sqrt{10} < \dfrac{19}{6} \approx 3.167$
+
+Let $f(x) = \sqrt{x}$
+
+$f$ is continous and differentiable at all positive integer.
+
+So, it is continous on $[9,10]$ and differentiable on $(9,10)$
+
+Mean value theorem tells us that,
+
+$\dfrac{\sqrt{10} - \sqrt{9}}{10 - 9} = f'(c)$
+
+$f'(x) = \dfrac{1}{2} x^{-1/2} = \dfrac{1}{2\sqrt{x}}$
+
+$\dfrac{1}{2\sqrt{c}} = \dfrac{\sqrt{10} - 3}{1} = \sqrt{10} - 3$
+
+$\sqrt{10} = \dfrac{1}{2\sqrt{c}} + 3$
+
+We know that $9 < c < 10$
+
+Since $c>9$, we have $\sqrt{c} > 3$.
+
+$1 > \dfrac{3}{\sqrt{c}}$
+
+$\dfrac{1}{3} > \dfrac{1}{\sqrt{c}}$
+
+$\dfrac{1}{6} > \dfrac{1}{2\sqrt{c}}$
+
+$\dfrac{1}{2\sqrt{c}} < \dfrac{1}{6}$
+
+So, $\dfrac{1}{2\sqrt{c}} + 3 < \dfrac{1}{6} + 3 = \dfrac{10}{6}$
+
+$\dfrac{1}{2\sqrt{c}} + 3 < \dfrac{10}{6}$
+
+$\sqrt{10} < \dfrac{10}{6}$
+
+*** Solution b
+
+$\sqrt{10} > \dfrac{60}{19} \approx 3.158$
+
+We know that $c < 10$
+
+So, $\sqrt{c} < \sqrt{10} < \dfrac{19}{6}$ (from a)
+
+$\sqrt{10} = \dfrac{1}{2\sqrt{c}} + 3 > 3 + \dfrac{1}{2.19/6} = 3 + \dfrac{3}{19}$
+
+$\dfrac{1}{2\sqrt{c}} + 3 > \dfrac{60}{19}$
+
+$\sqrt{10} > \dfrac{60}{19}$
+
+** Solution 8
+
+*** Solution a
+
+$\sqrt[3]{10} < \dfrac{13}{6} \approx 2.167$
+
+$f(x) = \sqrt[3]{x}$
+
+$f$ is continous on all real numbers and differentiable too.
+
+Interval = $[8,10]$
+
+$f'(x) = \dfrac{1}{3}x^{1/3 - 1} = \dfrac{1}{3}x^{-2/3} = \dfrac{1}{3x^{2/3}}$ 
+
+$f'(c) = \dfrac{f(10)-f(8)}{10-8}$
+
+$\dfrac{1}{3c^{2/3}} = \dfrac{10^{1/3} - 8^{1/3}}{2} = \dfrac{10^{1/3}-2}{2}$
+
+$\dfrac{1}{3c^{2/3}} = \dfrac{10^{1/3}-2}{2}$
+
+$3c^{2/3} = \dfrac{2}{10^{1/3}-2}$
+
+$10^{1/3} - 2 = \dfrac{2}{3c^{2/3}}$
+
+$\sqrt[3]{10} = \dfrac{2}{3c^{2/3}} + 2$
+
+We know that $8 < c < 10$
+
+Since $c > 8$, we have $\sqrt[3]{c} > 2$
+
+$c^{2/3} > 4$
+
+$3c^{2/3} > 12$
+
+$\dfrac{1}{12} > \dfrac{1}{3c^{2/3}}$
+
+$\dfrac{1}{6} > \dfrac{2}{3c^{2/3}}$
+
+$\dfrac{1}{6} +2 > \dfrac{2}{3c^{2/3}} + 2$
+
+$\dfrac{13}{6} > \dfrac{2}{3c^{2/3}} + 2$
+
+$\dfrac{13}{6} > \sqrt[3]{10}$
+
+$3\sqrt{10} < \dfrac{13}{6}$
+
+*** Solution b
+
+$\sqrt[3]{10} > \dfrac{362}{169} \approx 2.142$
+
+We know that $c < 10$
+
+So, $\sqrt[3]{c} < \sqrt[3]{10} < \dfrac{13}{6}$ (from (a))
+
+$c^{1/3} < \dfrac{13}{6}$
+
+$c^{2/3} < \dfrac{169}{36}>$
+
+$3c^{2/3} < \dfrac{169}{12}$
+
+$\sqrt[3]{10} = \dfrac{2}{3c^{2/3}} + 2 > \dfrac{2.12}{169} + 2 = \dfrac{362}{169}$
+
+$\sqrt[3]{10} > \dfrac{362}{169}$
+
+** Solution 9
+
+$\forall x x > 0 f'(x) = \dfrac{1}{x}$
+
+$f(1) = 0$
+
+*** Solution a
+
+$\dfrac{1}{2} < f(2) < 1$
+
+Applying mean value theorem on the interval $[1,2]$.
+
+Since $f(x)$ is differentiable on all positive number, it's also
+continous. So $f(x)$ is differentiable and continous on $[1,2]$
+
+$f'(c) = \dfrac{f(2) - f(1)}{2-1}$
+
+$\dfrac{1}{c} = \dfrac{f(2)-0}{1} = \dfrac{f(2)}{1}$
+
+$\dfrac{1}{c} = f(2)$
+
+We know that $1 < c < 2$
+
+So, $\dfrac{1}{c} < 1$
+
+$f(2) < 1$
+
+We know that $c < 2$
+
+$\dfrac{1}{2} < \dfrac{1}{c}$
+
+$\dfrac{1}{2} < f(2)$
+
+Combinining them,
+
+$\dfrac{1}{2} < f(2) < 1$
+
+*** Solution b
+
+$\dfrac{1}{3} < f(3/2) < \dfrac{1}{2}$
+
+Applying mean value theorem on the interval $[1,3/2]$.
+
+$f'(c) = \dfrac{f(3/2)-f(1)}{3/2 - 1}$
+
+$f'(c) = \dfrac{f(1.5)-0}{0.5} = \dfrac{f(1.5)}{0.5}$
+
+$\dfrac{1}{c} = \dfrac{f(1.5)}{0.5}$
+
+$f(1.5) = \dfrac{0.5}{c} = \dfrac{1}{2c}$
+
+We know that $1 < c < 3/2$
+
+So, $\dfrac{1}{2c} < \dfrac{1}{2}$
+
+$f(3/2) < \dfrac{1}{2}$
+
+We know that $c < 3/2$
+
+$\dfrac{c}{2} < \dfrac{3}{4}$
+
+$2 < \dfrac{3}{c}$
+
+$1 < \dfrac{3}{2c}$
+
+$\dfrac{1}{3} < \dfrac{1}{2c}$
+
+$\dfrac{1}{3} < f(3/2)$
+
+Combinining both, $\dfrac{1}{3} < f(3/2) < \dfrac{1}{2}$
+
+*** Solution c
+
+$\dfrac{7}{12} < f(2) < \dfrac{5}{6}$
+
+Applying mean value theorem on the interval $[3/2,2]$.
+
+$f'(c) = \dfrac{f(2) - f(1.5)}{2-1.5}$
+
+$f'(c) = \dfrac{f(2)-f(1.5)}{0.5}$
+
+$f'(c) = 2(f(2)-f(1.5))$
+
+$\dfrac{1}{c} = 2(f(2) - f(1.5))$
+
+$\dfrac{1}{2c} = f(2) - f(1.5)$
+
+$f(2) = \dfrac{1}{2c} + f(1.5)$
+
+We know that $\dfrac{3}{2} < c < 2$
+
+$\dfrac{1}{2c} < \dfrac{1}{3}$
+
+We also know that $\dfrac{1}{3} < f(1.5) < \dfrac{1}{2}$
+
+$\dfrac{1}{2c} + f(1.5) < \dfrac{1}{3} + f(1.5)$
+
+$f(2) < \dfrac{1}{3} + f(1.5) < \dfrac{1}{3} + \dfrac{1}{2} = \dfrac{5}{6}$
+
+$f(2) < \dfrac{5}{6}$
+
+We also know that, $c < 2$
+
+So, $\dfrac{1}{2} < \dfrac{1}{c}$
+
+$\dfrac{1}{4} < \dfrac{1}{2c}$
+
+$\dfrac{1}{4} + f(1.5) < \dfrac{1}{2c} + f(1.5)$
+
+$\dfrac{1}{4} + f(1.5) < f(2)$
+
+Since $\dfrac{1}{3} < f(1.5)$
+
+$\dfrac{1}{4} + \dfrac{1}{3} < \dfrac{1}{4} + f(1.5) < f(2)$
+
+$\dfrac{7}{12} < f(2)$
+
+Combinining both, 
+
+$\dfrac{7}{12} < f(2) < \dfrac{5}{6}$
+
+** Solution 10
+
+Trick to this question is solving the inequality and seeing where it
+leads. Solving it leads to $0 < b^2 + 9b$
+
+The easier way to solve it seems to be without using mean value
+theorem! (If anybody figures out to solve it via that, patches
+welcome!)
+
+Suppose $b > 0$
+
+$b^2 > 0$
+
+$b^2 + 9b > 0$
+
+$b^2 + 9b + 27 > 27$
+
+$b^3 + 9b^2 + 27b > 27b$
+
+$b^3 + 3^3 + 3b3^2 + 3b^23^2 > 27b + 27$
+
+$(b+3)^3 > 27(b+1)$
+
+$27(b+1) < (b+3)^3$
+
+$(b+1) < \dfrac{(b+3)^3}{3^3}$
+
+$\sqrt[3]{b+1} < \dfrac{b+3}{3}$
+
+$\sqrt[3]{b+1} < \dfrac{b}{3} + 1$
+
+** Solution 11
+
+$\forall x > 0 f'(x) = \sqrt{x^2 + 4}$
+
+$f(0) = 5$
+
+We need to prove $\forall x > 0 f(x) > 2x+5$
+
+$f'(x)$ is differentiable for all $x > 0$. So it is also continous.
+
+Let $a$ b e an arbitrary element $> 0$. Applying mean value theorem on
+$[0,a]$.
+
+$\dfrac{f(a)-f(0)}{a} = f'(c)$
+
+$f(a) - 5 = a(f'(c))$
+
+$f(a) = af'(c) + 5$
+
+$f(a) = a\sqrt{c^2 + 4} + 5$
+
+We know that $0 < c < a$
+
+$0 < c^2 < a^2$
+
+$4 < c^2 + 4 < a^2 + 4$
+
+$2 < \sqrt{c^2 + 4} < \sqrt{a^2 + 4}$
+
+$2a < a\sqrt{c^2 + 4} < a\sqrt{a^2 + 4}$
+
+$2a + 5 < a\sqrt{c^2 + 4} + 5 < a\sqrt{a^2 + 4} + 5$
+
+So, $2a + 5 < f(a)$
+
+Since $a$ is arbitrary,
+
+$\forall x > 0, f(x) > 2x + 5$
+
+** Solution 12
+
+*** Solution a
+
+Let $f(x) = \sin x$
+
+From theorem 2.7.11, all trignometric functions are continous. Also,
+$\sin x$ is differentiable for $x > 0$.
+
+If $x > 2\pi$,
+
+$\sin x \leq 1 < 2\pi < x$
+
+So, $\sin x < x$
+
+If $0 < x \leq 2\pi$
+
+Applying mean value theorem,
+
+$\dfrac{\sin x - \sin 0}{x-0} = \cos c$
+
+$\sin x = x\cos c$
+
+$\cos c = \dfrac{\sin x}{x}$
+
+We know that $0 < c < x$
+
+So, $0 < c \leq 2\pi>$
+
+So, $\cos c < 1$
+
+So, $\dfrac{\sin x}{x} < 1$
+
+$\sin x < 1$
+
+Hence proved.
+
+*** Solution c
+
+From (a),
+
+$\sin (1/2) < \dfrac{1}{2}$
+
+From (b),
+
+$sin(1/2) > \dfrac{1/2}{\sqrt{1/4+1}}$
+
+$sin(1/2) > \dfrac{1/2}{\sqrt{5/4}}$
+
+$sin(1/2) > \dfrac{1/2 * 2}{\sqrt{5}}$
+
+$sin(1/2) > \dfrac{1}{\sqrt{5}}$
+
+Combinining both,
+
+$\dfrac{1}{\sqrt{5}} < \sin (1/2) < 1/2$
+
+** Solution 13
+
+$0 < x < \dfrac{\pi}{2} \implies \tan x > x$
+
+Let $f(x) = \tan x$
+
+$f(x)$ is continous on $[0,x]$ and differentiable on $(0,x/2)$
+
+Applying mean value theorem on $[0,x]$
+
+$f'(c) = \dfrac{\tan x - \tan 0}{x}$
+
+$\sec^2 x = \dfrac{\tan x}{x}$
+
+$0 < c < x$
+
+For $0 < c < x < \pi/2$
+
+$\sec^2 0 < \sec^2 c < \sec^2 x$
+
+$1 < \dfrac{\tan x}{x} < \sec^2 x$
+
+$x < \tan x$
+
+$\tan x > x$
+
+** Solution 14
+
+$0 < \alpha < \pi/2$
+
+$\sin \alpha = \dfrac{3}{5}$
+
+We need to prove $\dfrac{3}{5} < \alpha < \dfrac{3}{4}$
+
+$f(x) = \sin x$
+
+$f(x)$ is continous for all the values and is differentiable.
+
+Apply mean value theorem on $[0, \alpha]$
+
+$\dfrac{f(\alpha) - f(0)}{\alpha} = f'(c)$
+
+$\dfrac{\sin \alpha}{\alpha} = \cos c$
+
+We know that $0 < c < \alpha < \dfrac{\pi}{2}$
+
+So, $\cos \alpha < \cos c < 1$
+
+$\sin \alpha = \dfrac{3}{5}$
+
+$\dfrac{3/5}{\alpha} = \cos c$
+
+$\dfrac{3}{5\alpha} = \cos c$
+
+$\cos \alpha < \dfrac{3}{5\alpha} < 1$
+
+$\cos \alpha = \sqrt{1-\sin^2 \alpha} = \sqrt{1 - 9/25} = \sqrt{16/25} = \dfrac{4}{5}$
+
+$\dfrac{4}{5} < \dfrac{3}{5\alpha} < 1$
+
+$\dfrac{4}{5}\alpha < \dfrac{3}{5} < \alpha$
+
+So, $\dfrac{3}{5} < \alpha$
+
+$\dfrac{4}{5}\alpha < \dfrac{3}{5}$
+
+$4\alpha < 3$
+
+$\alpha < \dfrac{3}{4}$
+
+Combinining both,
+
+$\dfrac{3}{5} < \alpha < \dfrac{3}{4}$
+
+** Solution 15
+
+$f$ is continous on $[u,v]$
+
+We need to prove $g$ is continous on $[p,q]$
+
+$d = \dfrac{v-u}{3}$
+
+$p = u + d$
+
+$q = u + 2d$
+
+$g(x) = \dfrac{f(x+d) - f(x)}{d}$
+
+where $x$ is an arbitrary element in $[p,q]$. The maximum value of
+$x+d$ is $q+d$and that is equal to $v$.
+
+So, $f(x+d)$ is continous.
+
+$f(x)$ is continous since $[p,q]$ is a subset within $[u,v]$
+
+From theorem 2.7.3,
+
+$f(x+d)-f(x)$ is continous.
+
+$d = \dfrac{v-u}{3}$. So $d$ is a number between $[v,u]$. And since $u
+< v$, we know that $d \neq 0$. So, $\dfrac{f(x+d)-f(x)}{d}$ is
+continous from theorem 2.7.3 since $d \neq 0$
+
+
+
+
