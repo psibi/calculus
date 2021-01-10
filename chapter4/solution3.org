@@ -1,0 +1,207 @@
+** Solution 2
+
+#+begin_src gnuplot :exports both :file ../assets/c4two.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot [0:5] x**2 - (6*x) + 5 title "x^2 - 6x + 5" ls 1
+#+end_src
+
+** Solution 3
+
+#+begin_src gnuplot :exports both :file ../assets/c4three.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot [0:5] 3*x - x**2 title "3x - x^2" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4three.png]]
+
+** Solution 4
+
+#+begin_src gnuplot :exports both :file ../assets/c4four.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot 12*x - x**3 title "12x - x^3" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4four.png]]
+
+Viewing local minimum:
+
+#+begin_src gnuplot :exports both :file ../assets/c4fourlm.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot [-4:0] 12*x - x**3 title "12x - x^3" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4fourlm.png]]
+
+Viewing local maximum:
+
+#+begin_src gnuplot :exports both :file ../assets/c4fourlmax.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot [-2:3] 12*x - x**3 title "12x - x^3" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4fourlmax.png]]
+
+** Solution 5
+
+Graph of the function:
+
+#+begin_src gnuplot :exports both :file ../assets/c4s5.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "g(x)"
+set grid
+set key right top
+plot (x**2 - 1)**2 title "(x^2 - 1)^2" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4s5.png]]
+
+Graph for understanding their local minimum/maximum better:
+
+#+begin_src gnuplot :exports both :file ../assets/c4s5minmax.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "g(x)"
+set grid
+set key right top
+plot [-2:2] (x**2 - 1)**2 title "(x^2 - 1)^2" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4s5minmax.png]]
+
+** Solution 6
+
+Graph of the function:
+
+#+begin_src gnuplot :exports both :file ../assets/c4s6.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot ((x**4 / 2) - 4*x**3 + 9*x**2 - 5) title "x^4/2 - 4x^3 + 9x^2 - 5" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4s6.png]]
+
+** Solution 7
+
+#+begin_src gnuplot :exports both :file ../assets/c4s7.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "g(x)"
+set grid
+set key right top
+plot ((x**4 / 2) - 4*x**3 + 5*x**2 - 5) title "x^4/2 - 4x^3 + 5x^2 - 5" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4s7.png]]
+
+** Solution 8
+
+#+begin_src gnuplot :exports both :file ../assets/c4s8.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot x - 4* sqrt(x) title "x - 4*sqrt(x)" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4s8.png]]
+
+** Solution 9
+
+#+begin_src gnuplot :exports both :file ../assets/c4s9.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot x**2 - 4* sqrt(x) title "x^2 - 4*sqrt(x)" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4s9.png]]
+
+** Solution 10
+
+#+begin_src gnuplot :exports both :file ../assets/c4s10.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot 1 / (x**2 + 1) title "1 / (x^2 + 1)" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4s10.png]]
+
+** Solution 11
+
+#+begin_src gnuplot :exports both :file ../assets/c4s11.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "g(x)"
+set grid
+set key right top
+plot x / (x**2 + 1) title "x / (x^2 + 1)" ls 1
+#+end_src
+
+** Experimentation
+
+#+begin_src gnuplot :exports both :file ../assets/expr.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot [0:3] x**2 - 4* sqrt(x) title "x^2 - 4*sqrt(x)" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/expr.png]]
