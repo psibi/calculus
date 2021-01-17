@@ -237,6 +237,28 @@ plot ((x**4 / 2) - 4*x**3 + 9*x**2 - 5) title "x^4/2 - 4x^3 + 9x^2 - 5" ls 1
 #+RESULTS:
 [[file:../assets/c4s6.png]]
 
+$f(x) = \dfrac{x^4}{2} - 4x^3 + 9x^2 - 5$
+
+$f'(x) = 2x^3 - 12x^2 + 18x$
+
+There are no points where $f$ is not differentiable but there are
+points where the derivate is zero.
+
+$f'(x) = x(2x^2 - 12x + 18)$
+
+$f'(x) = 2x(x^2 - 6x + 9)$
+
+$x = 0,3$
+
+| Property            | Value          |
+|---------------------+----------------|
+| Critical number     | 0,3            |
+| Strictly decreasing | $(-\infty, 0]$ |
+| Strictly increasing | $[0,\infty)$   |
+
+By the first derivative test, the local minimum is attained at $0$ and
+there is no local maximum.
+
 ** Solution 7
 
 #+begin_src gnuplot :exports both :file ../assets/c4s7.png :eval never-export
@@ -251,6 +273,26 @@ plot ((x**4 / 2) - 4*x**3 + 5*x**2 - 5) title "x^4/2 - 4x^3 + 5x^2 - 5" ls 1
 
 #+RESULTS:
 [[file:../assets/c4s7.png]]
+
+$g(x) = \dfrac{x^4}{2} - 4x^3 + 5x^2 - 5$
+
+$g'(x) = 2x^3 - 12x^2 + 10x$
+
+$= 2x(x^2 - 6x + 5)$
+
+There are no points where $f$ is not differentiable but there are
+three points where derivative is zero.
+
+$x = 0,1,5$
+
+| Property            | Value                 |
+|---------------------+-----------------------|
+| Critical number     | 0,1,5                 |
+| Strictly decreasing | $(-\infty, 0], [1,5]$ |
+| Strictly increasing | $[0,1], [5,\infty)$      |
+
+By the first derivative test, the local minimum is attained at $5,0$
+and local maximum is attained at $1$.
 
 ** Solution 8
 
@@ -267,6 +309,26 @@ plot x - 4* sqrt(x) title "x - 4*sqrt(x)" ls 1
 #+RESULTS:
 [[file:../assets/c4s8.png]]
 
+$f(x) = x - 4\sqrt{x}$
+
+Domain: $[0, \infty)$
+
+$f'(x) = 1 - \dfrac{2}{\sqrt{x}}$
+
+There is one point where $f$ is not differentiable.
+
+$x = 0$
+
+There is on point where the deriviate is zero. $x = 4$.
+
+| Property            | Value        |
+|---------------------+--------------|
+| Critical number     | 0,4          |
+| Strictly decreasing | $[0,4]$      |
+| Strictly increasing | $[4,\infty)$ |
+
+By the first derivative test we have local maximum at $4$.
+
 ** Solution 9
 
 #+begin_src gnuplot :exports both :file ../assets/c4s9.png :eval never-export
@@ -281,6 +343,26 @@ plot x**2 - 4* sqrt(x) title "x^2 - 4*sqrt(x)" ls 1
 
 #+RESULTS:
 [[file:../assets/c4s9.png]]
+
+$g(x) = x^2 - 4\sqrt{x}$
+
+Domain: $[0, \infty)$
+
+$g'(x) = 2x - \dfrac{2}{\sqrt{x}}$
+
+$= 2(x - \dfrac{1}{\sqrt{x}})$
+
+There is one point where $g$ is not differentiable. $x = 0$
+
+There is one point where the derivative is zero. $x = 1$
+
+| Property            | Value         |
+|---------------------+---------------|
+| Critical number     | 0, 1          |
+| Strictly decreasing | $[0,1]$       |
+| Strictly increasing | $[1, \infty)$ |
+
+By the first derivative test, the local minimum is attained at $1$.
 
 ** Solution 10
 
@@ -297,6 +379,27 @@ plot 1 / (x**2 + 1) title "1 / (x^2 + 1)" ls 1
 #+RESULTS:
 [[file:../assets/c4s10.png]]
 
+$f(x) = \dfrac{1}{x^2 + 1}$
+
+Domain: $(-\infty, \infty)$
+
+$f(x) = (x^2 + 1)^{-1}$
+
+$f'(x) = -1(x^2 + 1)^{-2}.2x$
+
+$= \dfrac{-2x}{(1+x^2)^2}$
+
+There is no point where $f$ is not differentiable. There is one point
+where the derivative is zero. $x = 0$
+
+| Property            | Value          |
+|---------------------+----------------|
+| Critical number     | 0              |
+| Strictly decreasing | $[0, \infty)$  |
+| Strictly increasing | $(-\infty, 0)$ |
+
+By first derivative test, the local maximum is attained at zero.
+
 ** Solution 11
 
 #+begin_src gnuplot :exports both :file ../assets/c4s11.png :eval never-export
@@ -311,6 +414,12 @@ plot x / (x**2 + 1) title "x / (x^2 + 1)" ls 1
 
 #+RESULTS:
 [[file:../assets/c4s11.png]]
+
+$g(x) = \dfrac{x}{x^2 + 1}$
+
+$g'(x) = \dfrac{x.-1.2x}{(x^2 + 1)^2} + (x^2 + 1)^{-1}$
+
+$= \dfrac{-2x^2}{(x^2 + 1)^2} + \dfrac{1}{(1+x^2)}$
 
 ** Solution 12
 
