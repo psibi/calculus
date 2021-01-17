@@ -43,7 +43,7 @@ $I$, $f''(x)$ is defined.
 ** Definition 4.4.4
 
 A point $(a,f(a))$ on the graph of a function $f$ is called an
-*infection point* if there is a number $d> 0$ such that either $f$ is
+*inflection point* if there is a number $d> 0$ such that either $f$ is
 concave up on $(a-d, a]$ and concave down on $[a, a + d)$, or $f$ is
 concave down on $(a-d, a]$ and concave up on $[a, a +d)$
 
