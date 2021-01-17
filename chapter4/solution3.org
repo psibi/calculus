@@ -4,13 +4,15 @@
 
 *** Solution a
 
-$(p, q]$ : Strictly increasing
-$[q,r]$ : Strictly decreasing
-$[r,s]$: Constant
-$[s,t]$: Strictly decreasing
-$[t,u)$: Strictly increasing
-$(u, v]$: Strictly increasing
-$[q,t]$: Weakly decreasing
+| Interval | Property            |
+|----------+---------------------|
+| $(p, q]$ | Strictly increasing |
+| $[q,r]$  | Strictly decreasing |
+| $[r,s]$  | Constant            |
+| $[s,t]$  | Strictly decreasing |
+| $[t,u)$  | Strictly increasing |
+| $(u, v]$ | Strictly increasing |
+| $[q,t]$  | Weakly decreasing   |
 
 Attains maximum value at $v$.No minimum value.
 
@@ -20,13 +22,15 @@ Both local minimum and maximum occur at every point in the interval $(r,s)$
 
 *** Solution b
 
-$[p,q)$ : Strictly increasing
-$[q,r]$ : Strictly increasing
-$[r,s]$ : Strictly decreasing
-$(s,t]$ : Strictly decreasing
-$[t,u]$ : Strictly increasing
-$[u,v]$ : Strictly increasing
-$[t,v]$ : Strictly increasing
+| Interval | Property            |
+|----------+---------------------|
+| $[p,q)$  | Strictly increasing |
+| $[q,r]$  | Strictly increasing |
+| $[r,s]$  | Strictly decreasing |
+| $(s,t]$  | Strictly decreasing |
+| $[t,u]$  | Strictly increasing |
+| $[u,v]$  | Strictly increasing |
+| $[t,v]$  | Strictly increasing |
 
 Attains maximum value at $r$.
 
@@ -57,11 +61,11 @@ point where derivative is 0.
 
 $x = 3$
 
-Critical number is 3.
-
-Strictly decreasing : $(-\infty, 3]$
-
-Strictly increasing : $[3,\infty)$
+| Property            | Value          |
+|---------------------+----------------|
+| Critical number     | 3              |
+| Strictly decreasing | $(-\infty, 3]$ |
+| Strictly increasing | $[3,\infty)$   |
 
 By the first derivative test, $f$ has a local minimum at $3$. Function
 $f$ has no local maximum.
