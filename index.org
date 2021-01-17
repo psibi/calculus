@@ -5,7 +5,7 @@ book.]] [[https://github.com/psibi/velleman-calculus][This repository]] contains
 contributions are welcome!
 
 * Limits (Chapter 2)
-  
+
 - What is Calculus About
   - [[file:chapter2/solution1.org][Solutions]]
 - [[file:chapter2/section2.org][What does "Limit" mean ?]]
@@ -16,7 +16,7 @@ contributions are welcome!
   - [[file:chapter2/solution4.org][Solutions]]
 - [[file:chapter2/section5.org][Variation of Limits]]
   - [[file:chapter2/solution5.org][Solutions]]
-- [[file:chapter2/section6.org][Limits of Compositions]]    
+- [[file:chapter2/section6.org][Limits of Compositions]]
   - [[file:chapter2/solution6.org][Solutions]]
 - [[file:chapter2/section7.org][Continuity]]
   - [[file:chapter2/solution7.org][Solutions]]
@@ -45,3 +45,4 @@ contributions are welcome!
 - [[file:chapter4/section2.org][The Mean Value Theorem]]
   - [[file:chapter4/solution2.org][Solutions]]
 - [[file:chapter4/section3.org][Increasing and Decreasing functions]]
+- [[file:chapter4/section4.org][Concavity]]

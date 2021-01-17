@@ -1,0 +1,55 @@
+* Concavity
+
+** Definition 4.4.1
+
+Let $f$ be a function and $I$ an interval contained in the domain of
+$f$.
+
+- We say that $f$ is *concave up* on $I$ if for all numbers $x_1, x_2,
+  x_3 \in I$, if $x_1 < x_2 < x_3$ then the point $(x_2, f(x_2))$ is
+  below the secant line through the points $(x_1, f(x_1))$ and $(x_3,
+  f(x_3))$.
+- We say that $f$ is *concave down* on $I$ if for all numbers $x_1, x_2,
+  x_3 \in I$, if $x_1 < x_2 < x_3$ then the point $(x_2, f(x_2))$ is
+  above the secant line through the points $(x_1, f(x_1))$ and $(x_3,
+  f(x_3))$.
+
+** Theorem 4.4.2
+
+Suppose that $f$ is a function and $I$ is an interval contained in the
+domain of $f$.
+
+- The function $f$ is concave up on $I$ if and only if for all numbers
+  $x_1, x_2, x_3 \in I$, if $x_1 < x_2 < x_3$ then
+
+  $\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} < \dfrac{f(x_3)-f(x_2)}{x_3 - x_2}$
+
+- The function $f$ is concave down on $I$ if and only if for all
+  numbers $x_1, x_2, x_3 \in I$, if $x_1 < x_2 < x_3$ then
+
+  $\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} > \dfrac{f(x_3)-f(x_2)}{x_3 - x_2}$
+
+** Theorem 4.4.3
+
+Suppose $f$ is continous on an interval $I$ and twice differentiable
+on the interior of $I$; in other words, for all $x$ in the interior of
+$I$, $f''(x)$ is defined.
+
+- If $f''(x) > 0$ for all $x$ in the interior of $I$, then $f$ is
+  concave up on $I$.
+- If $f''(x) < 0$ for all $x$ in the interior of $I$, then $f$ is
+  concave down on $I$.
+
+** Definition 4.4.4
+
+A point $(a,f(a))$ on the graph of a function $f$ is called an
+*infection point* if there is a number $d> 0$ such that either $f$ is
+concave up on $(a-d, a]$ and concave down on $[a, a + d)$, or $f$ is
+concave down on $(a-d, a]$ and concave up on $[a, a +d)$
+
+** Theorem 4.4.6 (Second derivative Test)
+
+Suppose that $f'(a) = 0$
+
+1. If $f''(a) > 0$, then $f$ has a local minimum at $a$.
+2. If $f''(a) < 0$, then $f$ has a local maximum at $a$.

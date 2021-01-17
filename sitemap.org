@@ -33,5 +33,7 @@
   - [[file:chapter4/section1.org][section1]]
   - [[file:chapter4/section2.org][section2]]
   - [[file:chapter4/section3.org][section3]]
+  - [[file:chapter4/section4.org][section4]]
   - [[file:chapter4/solution1.org][solution1]]
   - [[file:chapter4/solution2.org][solution2]]
+  - [[file:chapter4/solution3.org][solution3]]
