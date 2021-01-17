@@ -85,6 +85,24 @@ plot [0:5] 3*x - x**2 title "3x - x^2" ls 1
 #+RESULTS:
 [[file:../assets/c4three.png]]
 
+$g(x) = 3x- x^2$
+
+$g'(x) = 3 - 2x$
+
+There are no points where $g$ is not differentiable but there is one
+point where the derivative is $0$.
+
+$x = 1.5$
+
+| Property            | Value            |
+|---------------------+------------------|
+| Critical number     | 1.5              |
+| Strictly decreasing | $(-\infty, 1.5]$ |
+| Strictly increasing | $[1.5,\infty)$   |
+
+By the first derivative test, $f$ has a local maximum at
+$1.5$. Function $g$ has no local minimum.
+
 ** Solution 4
 
 #+begin_src gnuplot :exports both :file ../assets/c4four.png :eval never-export
@@ -130,6 +148,24 @@ plot [-2:3] 12*x - x**3 title "12x - x^3" ls 1
 #+RESULTS:
 [[file:../assets/c4fourlmax.png]]
 
+$f(x) = 12x - x^3$
+
+$f'(x) = 12 - 3x^2$
+
+There are no points where $f$ is not differentiable but there is two
+point where the derivative is zero.
+
+$x = 2, -2$
+
+| Property            | Value                         |
+|---------------------+-------------------------------|
+| Critical number     | 2,-2                          |
+| Strictly decreasing | $(-\infty, -2]$, $[2,\infty]$ |
+| Strictly increasing | $[-2,2]$                      |
+
+By the first derivative test, $f$ has a local maximum at $2$ and local
+minimum at $-2$.
+
 ** Solution 5
 
 Graph of the function:
@@ -161,6 +197,28 @@ plot [-2:2] (x**2 - 1)**2 title "(x^2 - 1)^2" ls 1
 
 #+RESULTS:
 [[file:../assets/c4s5minmax.png]]
+
+$g(x) = (x^2 - 1)^2$
+
+$g(x) = x^4 + 1 - 2x^2$
+
+$g'(x) = 4x^3 - 4x$
+
+$= 4x(x^2 - 1)$
+
+There are no points where $g$ is not differentiable but there are
+three points where the derivate is zero.
+
+$x = 0, 1, -1$
+
+| Property            | Value                   |
+|---------------------+-------------------------|
+| Critical number     | 0,1,-1                  |
+| Strictly decreasing | $(-\infty, -1]$,$[0,1]$ |
+| Strictly increasing | $[-1,0]$,$[1,\infty)$   |
+
+By the first derivative test, the local maximum is attained at $0$ and
+local minimum is attained at $-1$ and $1$.
 
 ** Solution 6
 
