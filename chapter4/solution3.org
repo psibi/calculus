@@ -886,7 +886,7 @@ We know that $g(x_5) > g(x_6)$
 Since $g(x_5) \in I$ and $g(x_6) \in I$ and $f$ is strictly
 increasing.
 
-$g(g(x_5)) > f(g(x_5))$
+$f(g(x_5)) > f(g(x_5))$
 
 Since $x_5$ and $x_6$ is an arbitrary element $f \circ g$ is strictly
 decreasing.
@@ -911,3 +911,32 @@ But we have assumed that $f'(x) \leq 0$ for all $x$ in the interior of
 $I$. So $f'(c) \leq 0$. Since $x_1 < x_2$, it follows that $f(x_2) - f(x_1) = f'(c)(x_2-x_1) \leq 0$
 
 and therefore $f(x_2) \leq f(x_1)$
+
+** Solution 24
+
+Suppose that $f'(x) = 0$ for all $x$ in the interior of $I$. We must
+prove $f$ is constant on $I$.
+
+We assume that $x_1$ and $x_2$ are elements of $I$. Let's try applying
+the mean value theorem to $f$ on the interval $[x_1,x_2]$. Notice that
+$[x_1, x_2] \subseteq I$, so since $f$ is continous on $I$ and
+differentiable on the interior of $I$, it is continous on $[x_1,x_2]$
+and differentiable on $(x_1, x_2)$. Therefore according to mean value
+theorem, there is some number $c$ such that $x_1 < c < x_2$
+
+$\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = f'(c)$
+
+$f(x_2) - f(x_1) = f'(c)(x_2 - x_1)$
+
+We have assumed that $f'(c) = 0$ for all in the interior of $I$, so
+
+$f(x_2) - f(x_1) = 0$
+
+$f(x_2) = f(x_1)$
+
+So $f$ is constant on $I$.
+
+Notice that in the proof we assumed that $x_1 < x_2$. In case if it is
+$x_1 > x_2$, it's the same proof with intervals reversed. In case it's
+$x_1 = x_2$, then from the definition of the function it follows that
+$f(x_1) = f(x_2)$.
