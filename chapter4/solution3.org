@@ -421,6 +421,22 @@ $g'(x) = \dfrac{x.-1.2x}{(x^2 + 1)^2} + (x^2 + 1)^{-1}$
 
 $= \dfrac{-2x^2}{(x^2 + 1)^2} + \dfrac{1}{(1+x^2)}$
 
+$= \dfrac{-2x^2}{(1+x^2)^2} + \dfrac{1+x^2}{(1+x^2)^2}$
+
+$= \dfrac{1+x^2 -2x^2}{(1+x^2)^2} = \dfrac{1-x^2}{(1+x^2)^2}$
+
+There is no point where $g$ is not differentiable. There is two points
+where the derivative is zero. $x = 1, -1$
+
+| Property            | Value                       |
+|---------------------+-----------------------------|
+| Critical number     | 1,-1                        |
+| Strictly decreasing | $(-\infty, -1], [1,\infty)$ |
+| Strictly increasing | $[-1,1]$                    |
+
+By first derivative test, the local minimum is attained at $-1$ and
+the local maximum is attained at $1$.
+
 ** Solution 12
 
 #+begin_src gnuplot :exports both :file ../assets/c4s12.png :eval never-export
@@ -435,3 +451,31 @@ plot x**2 / (x**2 + 1) title "x^2 / (x^2 + 1)" ls 1
 
 #+RESULTS:
 [[file:../assets/c4s12.png]]
+
+$h(x) = \dfrac{x^2}{x^2+1}$
+
+Domain: $(-\infty, \infty)$
+
+$h(x) = x^2(x^2 + 1)^{-1}$
+
+$h'(x) = x^2.-1.(x^2 + 1)^{-2}.2x + (x^2 + 1)^{-1}.2x$
+
+$= \dfrac{-2x^3}{(x^2 + 1)^2} + \dfrac{2x}{(1+x^2)}$
+
+$= \dfrac{-2x^3 + 2x(1+x^2)}{(1+x^2)^2}$
+
+$= \dfrac{2x + 2x^3 - 2x^3}{(1+x^2)^2}$
+
+$= \dfrac{2x}{(1+x^2)^2}$
+
+There is no point where $h$ is not differentiable. There is one point
+where the derivative is zero. $x=0$
+
+| Property            | Value          |
+|---------------------+----------------|
+| Critical number     | 0              |
+| Strictly decreasing | $(-\infty, 0]$ |
+| Strictly increasing | $[0, \infty)$  |
+
+By first derivative test, the local minimum is attained at $0$. It has
+no local maximum.
