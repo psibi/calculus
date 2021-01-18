@@ -841,3 +841,73 @@ So, $f(g(x_5)) < f(g(x_6))$
 Since $x_5$ and $x_6$ are arbitrary element,
 
 $\forall x_1 \in J \forall x_2 \in J f \circ g (x_1) < f \circ g (x_2)$
+
+*** Solution b
+
+Supose $f$ is strictly decreasing on $I$.
+
+Suppose $g$ is strictly decreasing on $J$.
+
+We need to prove that $f \circ g$ is strictly increasing on $J$.
+
+$\forall x_1 \in I \forall x_2 \in I x_1 < x_2 \implies f(x_1) > f(x_2)$
+
+$\forall x_3 \in J \forall x_4 \in J x_3 < x_4 \implies g(x_3) > g(x_4)$
+
+Let's assume an arbitrary element $x_5$ and $x_6$ in $J$.
+
+Suppose $x_5 < x_6$
+
+We know that $g(x_5) > g(x_6)$
+
+Since $g(x_5) \in I$ and $g(x_6) \in I$. Since $f$ is strictly decreasing,
+
+$f(g(x_5)) < f(g(x_6))$
+
+Since $x_5$ and $x_6$ is an arbitrary element. $f \circ g$ is strictly
+increasing on $J$.
+
+*** Solution c
+
+Suppose $f$ is strictly increasing on $I$.
+
+Suppose $g$ is strictly decreasing on $J$.
+
+$\forall x_1 \in I \forall x_2 \in I x_1 < x_2 \implies f(x_1) < f(x_2)$
+
+$\forall x_3 \in J \forall x_4 \in J x_3 < x_4 \implies g(x_3) > g(x_4)$
+
+Let's assume an arbitrary element $x_5$ and $x_6$ in $J$.
+
+Suppose $x_5 < x_6$
+
+We know that $g(x_5) > g(x_6)$
+
+Since $g(x_5) \in I$ and $g(x_6) \in I$ and $f$ is strictly
+increasing.
+
+$g(g(x_5)) > f(g(x_5))$
+
+Since $x_5$ and $x_6$ is an arbitrary element $f \circ g$ is strictly
+decreasing.
+
+** Solution 23
+
+Suppose that $f'(x) \leq 0$ for all $x$ in the interior of $I$. To
+prove that $f$ is weakly decreasing on $I$, we assume that $x_1$ and
+$x_2$ are elements of $I$ and $x_1 < x_2$. According to definition
+4.3.1, we must prove that $f(x_1) \geq f(x_2)$
+
+We need to compare $f(x_1)$ and $f(x_2)$, so let's try applying the
+mean value theorem on the interval $[x_1, x_2]$. Notice that $[x_1,
+x_2] \subseteq I$. So since $f$ is continous on $I$ and differentiable
+on the interior of $I$, it is continous on $[x_1, x_2]$ and
+differentiable on $(x_1, x_2)$. Therefore according to mean value
+thorem, there is some number $c$ such that $x_1 < c < x_2$ and
+
+$\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = f'(c)$
+
+But we have assumed that $f'(x) \leq 0$ for all $x$ in the interior of
+$I$. So $f'(c) \leq 0$. Since $x_1 < x_2$, it follows that $f(x_2) - f(x_1) = f'(c)(x_2-x_1) \leq 0$
+
+and therefore $f(x_2) \leq f(x_1)$
