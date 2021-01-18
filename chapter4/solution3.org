@@ -479,3 +479,38 @@ where the derivative is zero. $x=0$
 
 By first derivative test, the local minimum is attained at $0$. It has
 no local maximum.
+
+** Solution 13
+
+$a_n = (\dfrac{n+1}{n^2+3})_{n=1}^{\infty}$
+
+Let's study the function
+
+$f(x) = \dfrac{x+1}{x^2 + 3}$
+
+Domain: $[1, \infty)$
+
+$f(x) = (x+1)(x^2 + 3)^{-1}$
+
+$f'(x) = (x+1).-1.(x^2+3)^{-2}.2x + (x^2 + 3)^{-1}.1$
+
+$= \dfrac{-1(x+1)2x}{(x^2+3)^2} + \dfrac{1}{x^2 + 3}$
+
+$= \dfrac{-2x(x+1)}{(x^2+3)^2} + \dfrac{x^2 + 3}{(x^2 + 3)^2}$
+
+$= \dfrac{x^2 + 3 - 2x^2 - 2x}{(x^2 + 3)^2}$
+
+$= \dfrac{3-x^2-2x}{(x^2+3)^2}$
+
+$\forall x \geq 1 (x^2 + 3)^2 > 0$
+
+$3 - x^2 - 2x \leq 0$
+
+$\dfrac{3-x^2-2x}{(x^2+3)^2} \leq 0$
+
+Thus $f$ is weakly decreasing in the interval $[1, \infty)$. This
+means that for any real number $x_1$ and $x_2$ with $1 \leq x_1 <
+x_2$, $f(x_1) > f(x_2)$. In particular, for every positive integer
+$f(n) > f(n+1)$. But $f(n) = a_n$, so this means for every positive
+integer $a_n > a_{n+1}$. In other words, $(a)_{n=1}^{\infty}$ is
+strictly decreasing.
