@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-01-18 Mon 09:56 -->
+<!-- 2021-01-18 Mon 20:19 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -239,6 +239,18 @@ MathJax.Hub.Config({
 <li><a href="#sec-1-10">1.10. Solution 10</a></li>
 <li><a href="#sec-1-11">1.11. Solution 11</a></li>
 <li><a href="#sec-1-12">1.12. Solution 12</a></li>
+<li><a href="#sec-1-13">1.13. Solution 13</a></li>
+<li><a href="#sec-1-14">1.14. Solution 14</a></li>
+<li><a href="#sec-1-15">1.15. Solution 15</a></li>
+<li><a href="#sec-1-16">1.16. Solution 16</a></li>
+<li><a href="#sec-1-17">1.17. Solution 17</a></li>
+<li><a href="#sec-1-18">1.18. Solution 18</a></li>
+<li><a href="#sec-1-19">1.19. Solution 19</a></li>
+<li><a href="#sec-1-20">1.20. Solution 20</a></li>
+<li><a href="#sec-1-21">1.21. Solution 21</a></li>
+<li><a href="#sec-1-22">1.22. Solution 22</a></li>
+<li><a href="#sec-1-23">1.23. Solution 23</a></li>
+<li><a href="#sec-1-24">1.24. Solution 24</a></li>
 </ul>
 </li>
 </ul>
@@ -1333,11 +1345,901 @@ no local maximum.
 </p>
 </div>
 </div>
+
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> Solution 13</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+\(a_n = (\dfrac{n+1}{n^2+3})_{n=1}^{\infty}\)
+</p>
+
+<p>
+Let's study the function
+</p>
+
+<p>
+\(f(x) = \dfrac{x+1}{x^2 + 3}\)
+</p>
+
+<p>
+Domain: \([1, \infty)\)
+</p>
+
+<p>
+\(f(x) = (x+1)(x^2 + 3)^{-1}\)
+</p>
+
+<p>
+\(f'(x) = (x+1).-1.(x^2+3)^{-2}.2x + (x^2 + 3)^{-1}.1\)
+</p>
+
+<p>
+\(= \dfrac{-1(x+1)2x}{(x^2+3)^2} + \dfrac{1}{x^2 + 3}\)
+</p>
+
+<p>
+\(= \dfrac{-2x(x+1)}{(x^2+3)^2} + \dfrac{x^2 + 3}{(x^2 + 3)^2}\)
+</p>
+
+<p>
+\(= \dfrac{x^2 + 3 - 2x^2 - 2x}{(x^2 + 3)^2}\)
+</p>
+
+<p>
+\(= \dfrac{3-x^2-2x}{(x^2+3)^2}\)
+</p>
+
+<p>
+\(\forall x \geq 1; (x^2 + 3)^2 > 0\)
+</p>
+
+<p>
+\(3 - x^2 - 2x \leq 0\)
+</p>
+
+<p>
+\(\dfrac{3-x^2-2x}{(x^2+3)^2} \leq 0\)
+</p>
+
+<p>
+Thus \(f\) is weakly decreasing in the interval \([1, \infty)\). This
+means that for any real number \(x_1\) and \(x_2\) with \(1 \leq x_1 <
+x_2\), \(f(x_1) > f(x_2)\). In particular, for every positive integer
+\(f(n) > f(n+1)\). But \(f(n) = a_n\), so this means for every positive
+integer \(a_n > a_{n+1}\). In other words, \((a)_{n=1}^{\infty}\) is
+strictly decreasing.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 14</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+\(\left( \dfrac{n-1}{n^2+8} \right)^{\infty}_{n=1}\)
+</p>
+
+<p>
+Let's study the function
+</p>
+
+<p>
+\(f(x) = \dfrac{n-1}{n^2+8}\)
+</p>
+
+<p>
+Domain: \([1, \infty)\)
+</p>
+
+<p>
+\(f(x) = (x-1)(x^2+8)^{-1}\)
+</p>
+
+<p>
+\(f'(x) = (x-1).-1.(x^2+8)^{-2}.2x + (x^2+8)^{-1}(1)\)
+</p>
+
+<p>
+\(= \dfrac{-(x-1).2x}{(x^2+8)^2} + \dfrac{1}{x^2 + 8}\)
+</p>
+
+<p>
+\(= \dfrac{-2x(x-1)}{(x^2+8)^2} + \dfrac{x^2+8}{(x^2+8)^2}\)
+</p>
+
+<p>
+\(= \dfrac{x^2+8-2x^2+2x}{(x^2+8)^2}\)
+</p>
+
+<p>
+\(= \dfrac{-x^2+2x+8}{(x^2+8)^2}\)
+</p>
+
+<p>
+\(= \dfrac{2x-x^2+8}{(x^2+8)^2}\)
+</p>
+
+<p>
+\(\forall x \geq 1\)
+</p>
+
+<p>
+\((x^2 + 8)^2 > 0\)
+</p>
+
+<p>
+\((2x - x^2 + 8) < 10\)
+</p>
+
+<p>
+So, \(a > 0 \implies \dfrac{1}{1} > 0\)
+</p>
+
+<p>
+\(a > 0 \land b > 0 \implies ab > 0\)
+</p>
+
+<p>
+\(a > 0 \land b < 0 \implies ab < 0\)
+</p>
+
+<p>
+So for \([1,4)\)
+</p>
+
+<p>
+\(2x-x^2 + 8 > 0\)
+</p>
+
+<p>
+And \([4, \infty)\)
+</p>
+
+<p>
+\(2x-x^2 + 8 < 0\)
+</p>
+
+<p>
+So the function is both increasing and decreasing with the domain \([1,
+\infty)\). So the sequence is not monotone.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Solution 15</h3>
+<div class="outline-text-3" id="text-1-15">
+<p>
+\(\left( \dfrac{1}{n^2} - \dfrac{1}{n} \right)^{\infty}_{n=1}\)
+</p>
+
+<p>
+Let's study the function
+</p>
+
+<p>
+\(f(x) = \left( \dfrac{1}{n^2} - \dfrac{1}{n} \right)\)
+</p>
+
+<p>
+\(f(x) = \left( \dfrac{1-x}{x^2} \right) = (1-x)x^{-2}\)
+</p>
+
+<p>
+\(f'(x) = (1-x).-2.x^{-3} + x^{-2}.-1\)
+</p>
+
+<p>
+\(= (x-1)2x^{-3} - \dfrac{1}{x^2}\)
+</p>
+
+<p>
+\(= \dfrac{2(x-1)}{x^3} - \dfrac{1}{x^2}\)
+</p>
+
+<p>
+\(= \dfrac{2x-2-x}{x^3} = \dfrac{x-2}{x^3}\)
+</p>
+
+<p>
+Domain: \([1, \infty)\)
+</p>
+
+<p>
+\(\forall x \geq 1; x^3 > 0\)
+</p>
+
+<p>
+For \(x \in [1,2); x-2 < 0\)
+</p>
+
+<p>
+\(x \in (2,\infty); x-2 > 0\)
+</p>
+
+<p>
+\(x = 2, 0\)
+</p>
+
+<p>
+So the function is both increasing and decreasing with the domain
+\([1,\infty)\). So the sequence is not monotone.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-16" class="outline-3">
+<h3 id="sec-1-16"><span class="section-number-3">1.16</span> Solution 16</h3>
+<div class="outline-text-3" id="text-1-16">
+<p>
+\(\left( \dfrac{1}{n^2} - \dfrac{4}{n} \right)^{\infty}_{n=1}\)
+</p>
+
+<p>
+Let's study the function
+</p>
+
+<p>
+\(f(x) = \dfrac{1}{x^2} - \dfrac{4}{x}\)
+</p>
+
+<p>
+Domain: \([1, \infty)\)
+</p>
+
+<p>
+\(f(x) = \dfrac{1}{x^2} - \dfrac{4x}{x^2} = \dfrac{1-4x}{x^2} = (1-4x)x^{-2}\)
+</p>
+
+<p>
+\(f'(x) = (1-4x).-2x^{-3}+x^{-2}.-4\)
+</p>
+
+<p>
+\(= \dfrac{8x-2}{x^3} - \dfrac{4}{x^2}\)
+</p>
+
+<p>
+\(= \dfrac{8x-2-4x}{x^3}\)
+</p>
+
+<p>
+\(= \dfrac{4x-2}{x^3}\)
+</p>
+
+<p>
+\(\forall x \geq 1; x^3 > 0\)
+</p>
+
+<p>
+\(\forall x \geq 1; 4x-2 > 0\)
+</p>
+
+<p>
+So, \(\dfrac{4x-2}{x^3} > 0\)
+</p>
+
+<p>
+Therefore \(f\) is strictly increasing on the interval \([1,
+\infty)\). This means that for any real number \(x_1\) and \(x_2\) with \(1
+\leq x_1 \leq x_2\), \(f(x_1) < f(x_2)\). In particular, for every
+positive integer \(n\), \(f(n) < f(n+1)\). But \(f(n) = a_n\), so that means
+that for every positive integer \(n\), \(a_n < a_{n+1}\). In other words,
+\((a_n)^{\infty}_{n=1}\) is strictly increasing.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-17" class="outline-3">
+<h3 id="sec-1-17"><span class="section-number-3">1.17</span> Solution 17</h3>
+<div class="outline-text-3" id="text-1-17">
+<p>
+\(\left( \dfrac{2n^3}{3} - 5n^2 + 12n   \right)_{n=1}^{\infty}\)
+</p>
+
+<p>
+Let's study the function
+</p>
+
+<p>
+\(f(x) = \dfrac{2x^3}{3} - 5x^2 + 12x\)
+</p>
+
+<p>
+Domain: \([1, \infty)\)
+</p>
+
+<p>
+\(f'(x) = 2x^2 - 10x + 12\)
+</p>
+
+<p>
+\(\forall x \geq 1 2x^2 > 0\)
+</p>
+
+<p>
+\(\forall x \geq 1 12 > 0\)
+</p>
+
+<p>
+\(\forall x \geq 1 -10x < 0\)
+</p>
+
+<p>
+For \(x \in [1,5)\), \(x-5 < 0\)
+</p>
+
+<p>
+\(x=5\); \(x-5 = 0\)
+</p>
+
+<p>
+\(x \in (5, \infty); x-5 > 0\)
+</p>
+
+<p>
+So the function is both increasing and decreasing within the domain
+\([1, \infty)\). So the sequence is not monotone.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-18" class="outline-3">
+<h3 id="sec-1-18"><span class="section-number-3">1.18</span> Solution 18</h3>
+<div class="outline-text-3" id="text-1-18">
+<p>
+\(\left( \dfrac{4n^3}{3} - 9n^2 + 20n \right)_{n=1}^{\infty}\)
+</p>
+
+<p>
+Let's study the function
+</p>
+
+<p>
+\(f(x) = \dfrac{4x^3}{3} - 9x^2 + 20x\)
+</p>
+
+<p>
+\(f'(x) = 4x^2 - 18x + 20\)
+</p>
+
+<p>
+Domain: \([1, \infty)\)
+</p>
+
+<p>
+\(f'(x) = 2x(2x-9) + 20\)
+</p>
+
+<p>
+\(x \in [1,4.5); 2x-9 < 0\)
+</p>
+
+<p>
+\(x=4.5; 2x-9=0\)
+</p>
+
+<p>
+\(x \in (4.5, \infty); 2x-9 > 0\)
+</p>
+
+<p>
+So the function is both increasing and decreasing within the domain
+\([1, \infty)\). So the sequence is not monotone.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-19" class="outline-3">
+<h3 id="sec-1-19"><span class="section-number-3">1.19</span> Solution 19</h3>
+<div class="outline-text-3" id="text-1-19">
+<p>
+\(\left( \sqrt{n^2 + 2} -n \right)_{n=1}^{\infty}\)
+</p>
+
+<p>
+Let's study the function
+</p>
+
+<p>
+\(f(x) = \sqrt{x^2 + 2} -n\)
+</p>
+
+<p>
+\(f(x) = (x^2 + 2)^{1/2} - x\)
+</p>
+
+<p>
+\(f'(x) = \dfrac{1}{2}(x^2+2)^{-1/2}.2x - 1\)
+</p>
+
+<p>
+\(f'(x) = \dfrac{2x}{2\sqrt{x^2 + 2}} - 1\)
+</p>
+
+<p>
+\(= \dfrac{x}{\sqrt{x^2 + 2}} - 1\)
+</p>
+
+<p>
+Domain: \([1, \infty)\)
+</p>
+
+<p>
+\(\forall x \geq 1; x > 0\)
+</p>
+
+<p>
+\(\forall x \geq 1; \sqrt{x^2 + 2} > 0\)
+</p>
+
+<p>
+So, \(\forall x \geq 1\)
+</p>
+
+<p>
+\(\dfrac{x}{\sqrt{x^2 + 2}} > 0\)
+</p>
+
+<p>
+When \(x=1\), \(\dfrac{x}{\sqrt{x^2 + 2}} = \dfrac{1}{\sqrt{3}} \approx 0.57\)
+</p>
+
+<p>
+\(0.57 - 1 < 0\)
+</p>
+
+<p>
+When \(x=2\), \(\dfrac{x}{\sqrt{x^2 + 2}} = \dfrac{2}{\sqrt{6}} \approx 0.81\)
+</p>
+
+<p>
+\(0.81 - 1 < 0\)
+</p>
+
+<p>
+We know that
+</p>
+
+<p>
+\(x^2 + 2 > x^2\)
+</p>
+
+<p>
+\(\sqrt{x^2 + 2} > x\)
+</p>
+
+<p>
+\(1 > \dfrac{x}{x^2 + 2}\)
+</p>
+
+<p>
+\(0 > \dfrac{x}{x^2 + 2} - 1\)
+</p>
+
+<p>
+So, \(\dfrac{x}{\sqrt{x^2 + 2}} - 1 < 0\)
+</p>
+
+<p>
+Thus \(f\) is strictly decreasing on the interval \([1, \infty)\). This
+measns that for any real numbers \(x_1\) and \(x_2\) with \(1 \leq x_1 \leq
+x_2\), \(f(x_1) > f(x_2)\). In particular, for every positive integer
+\(n\), \(f(n) > f(n+1)\). But \(f(n) = a_n\), so this means for every
+positive integer \(n\), \(a_n > a_{n+1}\). In other words,
+\((a_n)^{\infty}_{n=1}\) is strictly decreasing.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-20" class="outline-3">
+<h3 id="sec-1-20"><span class="section-number-3">1.20</span> Solution 20</h3>
+<div class="outline-text-3" id="text-1-20">
+<p>
+\(\left( \sqrt{n^2 + 2n} - n \right)^{\infty}_{n=1}\)
+</p>
+
+<p>
+Let's study the function
+</p>
+
+<p>
+\(f(x) = \sqrt{x^2 + 2x} - x\)
+</p>
+
+<p>
+\(f'(x) = \dfrac{1}{2}(x^2 + 2x)^{-1/2}(2x+2)-1\)
+</p>
+
+<p>
+\(= \dfrac{x+1}{\sqrt{x^2 + 2x}} - 1\)
+</p>
+
+<p>
+\(x^2 + 1^2 + 2x > x^2 + 2x\)
+</p>
+
+<p>
+\(x + 1 > \sqrt{x^2 + 2x}\)
+</p>
+
+<p>
+\(\dfrac{x+1}{\sqrt{x^2 + 2x}} > 1\)
+</p>
+
+<p>
+\(\dfrac{x+1}{\sqrt{x^2 + 2x}} - 1 > 0\)
+</p>
+
+<p>
+Thus \(f\) is strictly increasing on the interval \([1,
+\infty)\). This means that for any real number \(x_1\) and \(x_2\) with \(1
+\leq x_1 \leq x_2\), \(f(x_1) < f(x_2)\). In particular, for every
+positive integer \(n\), \(f(n) < f(n+1)\). But \(f(n) = a_n\), so that means
+that for every positive integer \(n\), \(a_n < a_{n+1}\). In other words,
+\((a_n)^{\infty}_{n=1}\) is strictly increasing.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-21" class="outline-3">
+<h3 id="sec-1-21"><span class="section-number-3">1.21</span> Solution 21</h3>
+<div class="outline-text-3" id="text-1-21">
+<p>
+\(a\) and \(b\) are real numbers.
+</p>
+
+<p>
+\(f(x) = ax^4 + bx^3\)
+</p>
+
+<p>
+Maximum value of \(f\) is 1.
+</p>
+
+<p>
+\(f\) attains this maximum value at \(-1\).
+</p>
+
+<p>
+\(f(-1) = a(-1)^4 + b(-1)^3\)
+</p>
+
+<p>
+\(1 = a - b\)
+</p>
+
+<p>
+\(f'(x) = 4ax^3 + 3bx^2\)
+</p>
+
+<p>
+From theorem 4.3.6, we know that either \(f\) is not differentiable at
+\(-1\) or \(f'(-1) = 0\). We know that \(f'(x)\) is differentiable in it's
+domain.
+</p>
+
+<p>
+\(f'(-1) = 4a(-1^3) + 3b(-1)^2\)
+</p>
+
+<p>
+\(0 = -4a + 3b\)
+</p>
+
+<p>
+\(0 = -a + 3b - 3a\)
+</p>
+
+<p>
+\(0 = -a + 3(b-a)\)
+</p>
+
+<p>
+\(0 = -a + 3.-1\)
+</p>
+
+<p>
+\(a = -3\)
+</p>
+
+<p>
+\(a-b=1\)
+</p>
+
+<p>
+\(-3-b=1\)
+</p>
+
+<p>
+\(b = -3-1 = -4\)
+</p>
+
+<p>
+So, \(a=-3\) and \(b=-4\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-22" class="outline-3">
+<h3 id="sec-1-22"><span class="section-number-3">1.22</span> Solution 22</h3>
+<div class="outline-text-3" id="text-1-22">
+<p>
+Domain of \(f\) is interval \(I\).
+</p>
+
+<p>
+Domain of \(g\) is interval \(J\).
+</p>
+
+<p>
+\(\forall x \in J g(x) \in I\)
+</p>
+</div>
+
+<div id="outline-container-sec-1-22-1" class="outline-4">
+<h4 id="sec-1-22-1"><span class="section-number-4">1.22.1</span> Solution a</h4>
+<div class="outline-text-4" id="text-1-22-1">
+<p>
+Suppose \(f\) is strictly increasing on \(I\).
+</p>
+
+<p>
+Suppose \(g\) is strictly increasing on \(J\).
+</p>
+
+<p>
+We need to prove that \(f \circ g\) is strictly increasing on \(J\).
+</p>
+
+<p>
+\(\forall x_1 \in I \forall x_2 \in I x_1 < x_2 \implies f(x_1) < f(x_2)\)
+</p>
+
+<p>
+\(\forall x_3 \in J \forall x_4 \in J x_3 < x_4 \implies g(x_3) < g(x_4)\)
+</p>
+
+<p>
+Suppose \(\forall x_5 \in J \forall x_6 \in J\)
+</p>
+
+<p>
+Suppose \(x_5 < x_6\)
+</p>
+
+<p>
+Since \(g\) is strictly increasing,
+</p>
+
+<p>
+\(g(x_5) < g(x_6)\)
+</p>
+
+<p>
+We know that both \(g(x_5)\) and \(g(x_6) \in I\)
+</p>
+
+<p>
+Let \(x_7 = g(x_5)\)
+</p>
+
+<p>
+\(x_8 = g(x_6)\)
+</p>
+
+<p>
+So, \(x_7 < x_8\)
+</p>
+
+<p>
+Since \(x_7 \in I \land x_8 \in I\) and \(f\) is strictly increasing,
+</p>
+
+<p>
+\(f(x_7) < f(x_8)\)
+</p>
+
+<p>
+So, \(f(g(x_5)) < f(g(x_6))\)
+</p>
+
+<p>
+Since \(x_5\) and \(x_6\) are arbitrary element,
+</p>
+
+<p>
+\(\forall x_1 \in J \forall x_2 \in J f \circ g (x_1) < f \circ g (x_2)\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-22-2" class="outline-4">
+<h4 id="sec-1-22-2"><span class="section-number-4">1.22.2</span> Solution b</h4>
+<div class="outline-text-4" id="text-1-22-2">
+<p>
+Supose \(f\) is strictly decreasing on \(I\).
+</p>
+
+<p>
+Suppose \(g\) is strictly decreasing on \(J\).
+</p>
+
+<p>
+We need to prove that \(f \circ g\) is strictly increasing on \(J\).
+</p>
+
+<p>
+\(\forall x_1 \in I \forall x_2 \in I x_1 < x_2 \implies f(x_1) > f(x_2)\)
+</p>
+
+<p>
+\(\forall x_3 \in J \forall x_4 \in J x_3 < x_4 \implies g(x_3) > g(x_4)\)
+</p>
+
+<p>
+Let's assume an arbitrary element \(x_5\) and \(x_6\) in \(J\).
+</p>
+
+<p>
+Suppose \(x_5 < x_6\)
+</p>
+
+<p>
+We know that \(g(x_5) > g(x_6)\)
+</p>
+
+<p>
+Since \(g(x_5) \in I\) and \(g(x_6) \in I\). Since \(f\) is strictly decreasing,
+</p>
+
+<p>
+\(f(g(x_5)) < f(g(x_6))\)
+</p>
+
+<p>
+Since \(x_5\) and \(x_6\) is an arbitrary element. \(f \circ g\) is strictly
+increasing on \(J\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-22-3" class="outline-4">
+<h4 id="sec-1-22-3"><span class="section-number-4">1.22.3</span> Solution c</h4>
+<div class="outline-text-4" id="text-1-22-3">
+<p>
+Suppose \(f\) is strictly increasing on \(I\).
+</p>
+
+<p>
+Suppose \(g\) is strictly decreasing on \(J\).
+</p>
+
+<p>
+\(\forall x_1 \in I \forall x_2 \in I x_1 < x_2 \implies f(x_1) < f(x_2)\)
+</p>
+
+<p>
+\(\forall x_3 \in J \forall x_4 \in J x_3 < x_4 \implies g(x_3) > g(x_4)\)
+</p>
+
+<p>
+Let's assume an arbitrary element \(x_5\) and \(x_6\) in \(J\).
+</p>
+
+<p>
+Suppose \(x_5 < x_6\)
+</p>
+
+<p>
+We know that \(g(x_5) > g(x_6)\)
+</p>
+
+<p>
+Since \(g(x_5) \in I\) and \(g(x_6) \in I\) and \(f\) is strictly
+increasing.
+</p>
+
+<p>
+\(f(g(x_5)) > f(g(x_5))\)
+</p>
+
+<p>
+Since \(x_5\) and \(x_6\) is an arbitrary element \(f \circ g\) is strictly
+decreasing.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-23" class="outline-3">
+<h3 id="sec-1-23"><span class="section-number-3">1.23</span> Solution 23</h3>
+<div class="outline-text-3" id="text-1-23">
+<p>
+Suppose that \(f'(x) \leq 0\) for all \(x\) in the interior of \(I\). To
+prove that \(f\) is weakly decreasing on \(I\), we assume that \(x_1\) and
+\(x_2\) are elements of \(I\) and \(x_1 < x_2\). According to definition
+4.3.1, we must prove that \(f(x_1) \geq f(x_2)\)
+</p>
+
+<p>
+We need to compare \(f(x_1)\) and \(f(x_2)\), so let's try applying the
+mean value theorem on the interval \([x_1, x_2]\). Notice that \([x_1,
+x_2] \subseteq I\). So since \(f\) is continous on \(I\) and differentiable
+on the interior of \(I\), it is continous on \([x_1, x_2]\) and
+differentiable on \((x_1, x_2)\). Therefore according to mean value
+thorem, there is some number \(c\) such that \(x_1 < c < x_2\) and
+</p>
+
+<p>
+\(\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = f'(c)\)
+</p>
+
+<p>
+But we have assumed that \(f'(x) \leq 0\) for all \(x\) in the interior of
+\(I\). So \(f'(c) \leq 0\). Since \(x_1 < x_2\), it follows that \(f(x_2) - f(x_1) = f'(c)(x_2-x_1) \leq 0\)
+</p>
+
+<p>
+and therefore \(f(x_2) \leq f(x_1)\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-24" class="outline-3">
+<h3 id="sec-1-24"><span class="section-number-3">1.24</span> Solution 24</h3>
+<div class="outline-text-3" id="text-1-24">
+<p>
+Suppose that \(f'(x) = 0\) for all \(x\) in the interior of \(I\). We must
+prove \(f\) is constant on \(I\).
+</p>
+
+<p>
+We assume that \(x_1\) and \(x_2\) are elements of \(I\). Let's try applying
+the mean value theorem to \(f\) on the interval \([x_1,x_2]\). Notice that
+\([x_1, x_2] \subseteq I\), so since \(f\) is continous on \(I\) and
+differentiable on the interior of \(I\), it is continous on \([x_1,x_2]\)
+and differentiable on \((x_1, x_2)\). Therefore according to mean value
+theorem, there is some number \(c\) such that \(x_1 < c < x_2\)
+</p>
+
+<p>
+\(\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = f'(c)\)
+</p>
+
+<p>
+\(f(x_2) - f(x_1) = f'(c)(x_2 - x_1)\)
+</p>
+
+<p>
+We have assumed that \(f'(c) = 0\) for all in the interior of \(I\), so
+</p>
+
+<p>
+\(f(x_2) - f(x_1) = 0\)
+</p>
+
+<p>
+\(f(x_2) = f(x_1)\)
+</p>
+
+<p>
+So \(f\) is constant on \(I\).
+</p>
+
+<p>
+Notice that in the proof we assumed that \(x_1 < x_2\). In case if it is
+\(x_1 > x_2\), it's the same proof with intervals reversed. In case it's
+\(x_1 = x_2\), then from the definition of the function it follows that
+\(f(x_1) = f(x_2)\).
+</p>
+</div>
+</div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-01-18 Mon 09:56</p>
+<p class="date">Created: 2021-01-18 Mon 20:19</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>
