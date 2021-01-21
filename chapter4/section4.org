@@ -14,6 +14,10 @@ $f$.
   above the secant line through the points $(x_1, f(x_1))$ and $(x_3,
   f(x_3))$.
 
+Notes:
+
+- [[https://tutorial.math.lamar.edu/classes/calci/shapeofgraphptii.aspx][Paul's notes has different definition on concavity]]
+
 ** Theorem 4.4.2
 
 Suppose that $f$ is a function and $I$ is an interval contained in the

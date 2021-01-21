@@ -1,0 +1,14 @@
+* Sophisticated Graphing
+
+** General procedure for graphing
+
+These are the the general steps while you try to compute the graph of
+a function $f$:
+
+1. Determine domain of the $f$
+2. Find $f'(x)$ and use it to determine intervals on which $f$ is
+  increasing or decreasing, and local maximum or minimum points.
+3. Find $f''(x)$ and use it to determine intervals on which $f$ is
+  [[file:section4.org][concave up or down, and inflection points.]]
+4. Use limits to find all vertical and horizontal asymptotes.
+5. Plot important points and sketch the curve!
