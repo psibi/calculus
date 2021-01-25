@@ -12,3 +12,13 @@ a function $f$:
   [[file:section4.org][concave up or down, and inflection points.]]
 4. Use limits to find all vertical and horizontal asymptotes.
 5. Plot important points and sketch the curve!
+
+Notes:
+
+- If $f(x)$ is undefined at some point, investigate what happens when
+  $x$ approaches the point from it's left and right side.
+- If the limit of the above computation is infinity (with different
+  signs) on different directions, they you have a vertical asymptotes.
+- To check for horizontal asymptote, you can compute the limit of the
+  function with $x \to \infty$ and $x \to -\infty$ and see if they
+  give the same value.
