@@ -52,6 +52,9 @@ set key right top
 plot [0:5] x**2 - (6*x) + 5 title "x^2 - 6x + 5" ls 1
 #+end_src
 
+#+RESULTS:
+[[file:../assets/c4two.png]]
+
 $f(x) = x^2 - 6x + 5$
 
 $f'(x) = 2x-6$

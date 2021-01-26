@@ -47,6 +47,7 @@ contributions are welcome!
 - [[file:chapter4/section3.org][Increasing and Decreasing functions]]
   - [[file:chapter4/solution3.org][Solutions]]
 - [[file:chapter4/section4.org][Concavity]]
+  - [[file:chapter4/solution4.org][Solutions]]
 - [[file:chapter4/section5.org][Sophisticated Graphing]]
 
 * References
