@@ -387,6 +387,125 @@ todo
 | $[-1, 1]$       | Strictly decreasing |
 | $[1,\infty)$    | Strictly increasing |
 
+** Solution 10
+
+#+begin_src gnuplot :exports both :file ../assets/c4_4s10.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot 1/(x**2 + 3) title "1/(x^2 + 3)" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4_4s10.png]]
+
+$f(x) = \dfrac{1}{x^2+3} = (x^2 + 3)^{-1}$
+
+$f'(x) = -(x^2+3)^{-2}(2x)$
+
+$= \dfrac{2x}{(x^2+3)^2}$
+
+$f''(x) = -(2x)(x^2+3)^{-3}.-2.2x + (x^2+3)^{-2}.-2$
+
+$= 8x^2(x^2+3)^{-3}-2(x^2 + 3)^{-2}$
+
+$= \dfrac{8x^2}{(x^2+3)^3} - \dfrac{2}{(x^2+3)^2}$
+
+$= \dfrac{8x^2}{(x^2+3)^3} - \dfrac{2(x^2+3)}{(x^2+3)^3}$
+
+$= \dfrac{8x^2-2x^2-6}{(x^2+3)^3}$
+
+$= \dfrac{6x^2-6}{(x^2+3)^3}$
+
+$f'(x) = 0$ when $x =0$
+
+$f''(x) = 0$ when $x=1,-1$
+
+| Function | Value      |
+|----------+------------|
+| f'(-1)   | 0.125 > 0  |
+| f'(1)    | -0.125 < 0 |
+| f''(0)   | -0.22 < 0  |
+| f''(2)   | 0.05 > 0   |
+| f''(-2)  | 0.05 > 0   |
+
+
+todo
+
+| Property       | Value               |
+|----------------+---------------------|
+| $(-\infty, 0]$ | Strictly increasing |
+| $[0,\infty)$   | Strictly decreasing |
+| $(-\infty,1]$  | Concave down        |
+| $[1, \infty)$  | Concave up          |
+
+** Solution 11
+
+#+begin_src gnuplot :exports both :file ../assets/c4_4s11.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot x/(x**2 + 3) title "x/(x^2 + 3)" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4_4s11.png]]
+
+$f(x) = \dfrac{x}{x^2+3}$
+
+$f(x) = x(x^2+3)^{-1}$
+
+$f'(x) = x.-1.(x^2+3)^{-2}.2x + (x^2+3)^{-1}$
+
+$= \dfrac{-2x^2}{(x^2+3)^2} + \dfrac{1}{x^2+3}$
+
+$= \dfrac{3-x^2}{(x^2+3)^2}$
+
+$f''(x) = (3-x^2).-2(x^2+3)^{-3}.2x + (x^2+3)^{-2}(-2x)$
+
+$= \dfrac{-4x(3-x^2)}{(x^2+3)^3} - \dfrac{2x}{(x^2+3)^2}$
+
+$= \dfrac{-12x+4x^3-2x^3-6x}{(x^2+3)^3}$
+
+$= \dfrac{2x^3-18x}{(x^2+3)^3}$
+
+$= \dfrac{2x(x^2-9)}{(x^2+3)^3}$
+
+$f'(x) = 0$ when $x= \sqrt[3]{3}, -\sqrt[3]{3}$. $f''(x) = 0$ when
+$x=0,3,-3$.
+
+| Function | Value      |
+|----------+------------|
+| f'(1)    | 0.125 > 0  |
+| f'(2)    | -0.02 < 0  |
+| f'(-1)   | 0.125 > 0  |
+| f'(-2)   | -0.02 < 0  |
+| f''(-1)  | 0.25 > 0   |
+| f''(1)   | -0.25 < 0  |
+| f''(2)   | -0.05 < 0  |
+| f''(-2)  | 0.05 > 0   |
+| f''(4)   | 0.008 > 0  |
+| f''(-4)  | -0.008 < 0 |
+
+todo
+
+| Property                     | Value               |
+|------------------------------+---------------------|
+| $[-\sqrt[3]{3},\sqrt[3]{3}]$ | Strictly increasing |
+| $(-\infty, -\sqrt[3]{3}]$    | Strictly decreasing |
+| $[\sqrt[3]{3}, \infty)$      | Strictly decreasing |
+| $[-3,0], [3, \infty)$        | Concave up          |
+| $(-\infty, -3], [0,3]$       | Concave down        |
+| $-\sqrt[3]{3}$               | Local minima        |
+| $-\sqrt[3]{3}$               | Local maxima        |
+| -3,0,3                       | Inflection point    |
+
 ** Solution 12
 
 #+begin_src emacs-lisp :eval never-export :exports both
