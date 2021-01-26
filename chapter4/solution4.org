@@ -549,125 +549,6 @@ $f''(x) = 0$ when $x=1,-1$
 
 #+begin_src emacs-lisp :eval never-export :exports both
     (defun singleDerivative (x)
-    (let* ((num (- 3 (expt x 2)))
-          (den (expt (+ (expt x 2) 3) 2))
-          (res (/ num den)))
-      res)
-      )
-#+end_src
-
-#+RESULTS:
-: singleDerivative
-
-Now let's find the values for the single derivative:
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(singleDerivative 1.0)
-#+end_src
-
-#+RESULTS:
-: 0.125
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(singleDerivative 2.0)
-#+end_src
-
-#+RESULTS:
-: -0.02040816326530612
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(singleDerivative -1.0)
-#+end_src
-
-#+RESULTS:
-: 0.125
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(singleDerivative -2.0)
-#+end_src
-
-#+RESULTS:
-: -0.02040816326530612
-
-#+begin_src emacs-lisp :eval never-export :exports both
-  (defun doubleDerivative (x)
-    (let* ((num (* 2 (* x (- (expt x 2) 9))))
-            (den (expt (+ 3 (expt x 2)) 3))
-            (res (/ num den)))
-    res
-      ))
-#+end_src
-
-#+RESULTS:
-: doubleDerivative
-
-Now let's find the value for the double derivatives:
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(doubleDerivative -1.0)
-#+end_src
-
-#+RESULTS:
-: 0.25
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(doubleDerivative 1.0)
-#+end_src
-
-#+RESULTS:
-: -0.25
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(doubleDerivative 2.0)
-#+end_src
-
-#+RESULTS:
-: -0.05830903790087463
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(doubleDerivative -2.0)
-#+end_src
-
-#+RESULTS:
-: 0.05830903790087463
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(doubleDerivative -4.0)
-#+end_src
-
-#+RESULTS:
-: -0.008164455459979588
-
-#+begin_src emacs-lisp :eval never-export :exports both
-(doubleDerivative 4.0)
-#+end_src
-
-#+RESULTS:
-: 0.008164455459979588
-
-| Function | Value       |
-|----------+-------------|
-| f'(-1)   | -0.0375 < 0 |
-| f'(1)    | 0.375 > 0   |
-| f''(0)   | 0.666 > 0   |
-| f''(2)   | -0.15 < 0   |
-| f''(-2)  | -0.15 < 0   |
-
-todo
-
-| Property                     | Value               |
-|------------------------------+---------------------|
-| $[0,\infty)$                 | Strictly increasing |
-| $(-\infty, 0]$               | Strictly decreasing |
-| 0                            | Local minima        |
-| $[-1,1]$                     | Concave up          |
-| $(-\infty, -1], [1, \infty)$ | Concave down        |
-| $-1,1$                       | Inflection points   |
-
-** Solution 13
-
-#+begin_src emacs-lisp :eval never-export :exports both
-    (defun singleDerivative (x)
     (let* ((num (* 6 x))
           (den (expt (+ (expt x 2) 3) 2))
           (res (/ num den)))
@@ -724,6 +605,25 @@ todo
 
 #+RESULTS:
 : -0.15743440233236153
+
+| Function | Value       |
+|----------+-------------|
+| f'(-1)   | -0.0375 < 0 |
+| f'(1)    | 0.375 > 0   |
+| f''(0)   | 0.666 > 0   |
+| f''(2)   | -0.15 < 0   |
+| f''(-2)  | -0.15 < 0   |
+
+todo
+
+| Property                     | Value               |
+|------------------------------+---------------------|
+| $[0,\infty)$                 | Strictly increasing |
+| $(-\infty, 0]$               | Strictly decreasing |
+| 0                            | Local minima        |
+| $[-1,1]$                     | Concave up          |
+| $(-\infty, -1], [1, \infty)$ | Concave down        |
+| $-1,1$                       | Inflection points   |
 
 ** Solution 13
 
