@@ -914,6 +914,31 @@ todo
 
 ** Solution 15
 
+#+begin_src gnuplot :exports both :file ../assets/c4_4s15.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot (x + 2*sin(x)) title "x + 2sin(x)" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4_4s15.png]]
+
+$f(x) = x + 2\sin x$
+
+Domain: $[0, 2\pi]$
+
+$f'(x) = 1 + 2\cos x$
+
+$f''(x) = -2\sin x$
+
+$f'(x) = 0$ when $x = \dfrac{4\pi}{3}, \dfrac{2\pi}{3}$
+
+$f''(x) = 0$ when $x = 0, \pi, 2\pi$
+
 #+begin_src emacs-lisp :eval never-export :exports both
   (defun singleDerivative (x)
     (let* ((num (+ 1 (* 2 (cos x)))))
@@ -996,6 +1021,29 @@ todo
 
 #+RESULTS:
 : 3.4641016151377535
+
+| Function               | Value    |
+|------------------------+----------|
+| $f'(\pi)$              | -1 < 0   |
+| $f'(1.5\pi)$           | 1 > 0    |
+| $f'(2\pi)$             | 3 > 0    |
+| f'(0)                  | 3 > 0    |
+| $f''(\pi)$             | 0        |
+| $f''(1.5\pi)$          | 4 > 0    |
+| $f''(\dfrac{2\pi}{3})$ | -3.4 < 0 |
+| $f''(\dfrac{4\pi}{3})$ | 3.4 > 0  |
+
+todo
+
+| Property            | Value                                           |
+|---------------------+-------------------------------------------------|
+| Strictly increasing | $[0, \dfrac{2\pi}{3}], [\dfrac{4\pi}{3}, 2\pi]$ |
+| Strictly decreasing | $[\dfrac{2\pi}{3}, \dfrac{4\pi}{3}]$            |
+| Concave up          | $[0, \pi]$                                      |
+| Concave down        | $[\pi, 2\pi]$                                   |
+| Inflection point    | $\pi$                                           |
+| Local minima        | $\dfrac{4\pi}{3}$                               |
+| Local maxima        | $\dfrac{2\pi}{3}$                               |
 
 ** Solution 16
 
