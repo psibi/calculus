@@ -1168,3 +1168,81 @@ todo
 | Local maximum       | $-\dfrac{\pi}{6}$                                                        |
 
 ** Solution 18
+
+Suppose $f$ is concave up on interval $I$.
+
+$x_1, x_2, x_3, x_4 \in I$
+
+$x_1 < x_2 < x_3 < x_4$
+
+*** Solution a
+
+Slope of secant line at $x = x_1$ and $x = x_2$
+
+$m_1 = \dfrac{f(x_2) - f(x_1)}{x_2 - x_1}$
+
+Slope of secant line at $x = x_3$ and $x = x_4$
+
+$m_2 = \dfrac{f(x_3) - f(x_4)}{x_3 - x_4}$
+
+We need to prove that $m_1 < m_2$
+
+From theorem 4.4.2,
+
+$\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} < \dfrac{f(x_3) - f(x_2)}{x_3 - x_2}$
+
+Also since $x_2 < x_3 < x_4,
+
+$\dfrac{f(x_3) - f(x_2)}{x_3 - x_2} < \dfrac{f(x_4) - f(x_3)}{x_4 - x_3}$
+
+Combining both,
+
+$\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} < \dfrac{f(x_4) - f(x_3)}{x_4 - x_3}$
+
+$\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} < \dfrac{f(x_3) - f(x_4)}{x_3 - x_4}$
+
+$m_1 < m_2$
+
+*** Solution b
+
+Slope of secant line at $x = x_1$ and $x = x_3$
+
+$m_1 = \dfrac{f(x_3) - f(x_1)}{x_3 - x_1}$
+
+Slope of secant line at $x = x_2$ and $x = x_4$
+
+$m_2 = \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}$
+
+We need to prove that $m_1 < m_2$
+
+We know that
+
+$c,d > 0 \land \dfrac{a}{c} < \dfrac{b}{d} \implies \dfrac{a}{c} < \dfrac{a + b}{c+d} < \dfrac{b}{d}$
+
+We know that $x_1 < x_3 < x_4$
+
+From theorem 4.4.2,
+
+$\dfrac{f(x_3) - f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_3)}{x_4 - x_3}$
+
+Applying the inequality law,
+
+$\dfrac{f(x_3)-f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_1)}{x_4 - x_1} < \dfrac{f(x_4) - f(x_3)}{x_4 - x_3}$
+
+We know that $x_1 < x_2 < x_4$
+
+From theorem 4.4.2,
+
+$\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} < \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}$
+
+Applying the inequality law,
+
+$\dfrac{f(x_2)-f(x_1)}{x_2 - x_1} < \dfrac{f(x_4) - f(x_1)}{x_4 - x_1} < \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}$
+
+Combining both,
+
+$\dfrac{f(x_3)-f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_1)}{x_4 - x_1} < \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}$
+
+$\dfrac{f(x_3)-f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}$
+
+$m_1 < m_2$
