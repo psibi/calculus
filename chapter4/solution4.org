@@ -1246,3 +1246,65 @@ $\dfrac{f(x_3)-f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_1)}{x_4 - x_1} < \dfrac{
 $\dfrac{f(x_3)-f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}$
 
 $m_1 < m_2$
+
+** Solution 19
+
+Domain of $f$ is interval $I$.
+
+Domain of $g$ is interval $J$
+
+$\forall x \in J g(x) \in I$
+
+*** Solution a
+
+Suppose $f$ is increasing on $I$.
+
+Suppose $f$ is concave up on $I$.
+
+Suppose $g$ is increasing on $J$.
+
+Suppose $g$ is concave up on $J$.
+
+We need to prove that $f \circ g$ is concave up on $J$.
+
+Since $f$ is increasing. Let's assume $x_1 < x_2 < x_3 \in I$
+
+$\dfrac{f(x_2)-f(x_1)}{x_2 - x_1} < \dfrac{f(x_3) - f(x_2)}{x_3 - x_2}$
+
+We know that $x_1, x_2, x_3 \in I$ and $\forall x \in J g(x) \in I$
+
+So, $x_1 = g(a)$ where a is some arbitrary element in J.
+
+So, $\dfrac{f(g(y_2))-f(g(y_1))}{g(y_2) - g(y_1)} < \dfrac{f(g(x_3)) - f(g(x_2))}{g(y_3) - g(y_2)}$
+
+where $g(y_2) = x_2, g(y_3) = x_3, g(y_1) = x_1$ .
+
+We know from question 22 that $f \circ g$ is also increasing on $J$.
+
+So, $g(y_1) < g(y_2) < g(y_3)$
+
+So, $\dfrac{f(g(y_2))-f(g(y_1))}{g(y_2) - g(y_1)} < \dfrac{f(g(x_3)) - f(g(x_2))}{g(y_3) - g(y_2)}$
+
+Hence $f \circ g$ is concave up on $J$.
+
+*** Solution b
+
+Counterexample with following property:
+
+$f(x): $ Decreasing, Concave up
+
+$g(x): $ Increasing, Concave up
+
+$g(x) = x^4$
+
+$f(x) = -2\sqrt{x}$
+
+Domain: $[1, \infty)$
+
+$f \circ g = f(g(x)) = f(x^4) = -2\sqrt{x^4} = -2x^2$
+
+$h = f \circ g = -2x^2$
+
+$h'(x) = -4x$
+
+$h''(x) = 04 < 0$ and therefore $f \circ g$ is concave down.
