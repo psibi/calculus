@@ -22,3 +22,4 @@ Notes:
 - To check for horizontal asymptote, you can compute the limit of the
   function with $x \to \infty$ and $x \to -\infty$ and see if they
   give the same value.
+- [[https://en.wikipedia.org/wiki/Asymptote#Asymptotes_of_functions][Wikipedia link for computing horizontal/vertical asymptotes]]

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-01-26 Tue 22:43 -->
+<!-- 2021-01-27 Wed 21:52 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -240,11 +240,12 @@ MathJax.Hub.Config({
 <li><a href="#sec-1-11">1.11. Solution 11</a></li>
 <li><a href="#sec-1-12">1.12. Solution 12</a></li>
 <li><a href="#sec-1-13">1.13. Solution 13</a></li>
-<li><a href="#sec-1-14">1.14. Solution 13</a></li>
-<li><a href="#sec-1-15">1.15. Solution 14</a></li>
-<li><a href="#sec-1-16">1.16. Solution 15</a></li>
-<li><a href="#sec-1-17">1.17. Solution 16</a></li>
-<li><a href="#sec-1-18">1.18. Solution 17</a></li>
+<li><a href="#sec-1-14">1.14. Solution 14</a></li>
+<li><a href="#sec-1-15">1.15. Solution 15</a></li>
+<li><a href="#sec-1-16">1.16. Solution 16</a></li>
+<li><a href="#sec-1-17">1.17. Solution 17</a></li>
+<li><a href="#sec-1-18">1.18. Solution 18</a></li>
+<li><a href="#sec-1-19">1.19. Solution 19</a></li>
 </ul>
 </li>
 </ul>
@@ -1818,7 +1819,7 @@ todo
 </p>
 
 <div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">singleDerivative</span> <span class="p">(</span><span class="nv">x</span><span class="p">)</span>
-<span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">-</span> <span class="mi">3</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">6</span> <span class="nv">x</span><span class="p">))</span>
       <span class="p">(</span><span class="nv">den</span> <span class="p">(</span><span class="nf">expt</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">2</span><span class="p">))</span>
       <span class="p">(</span><span class="nv">res</span> <span class="p">(</span><span class="nf">/</span> <span class="nv">num</span> <span class="nv">den</span><span class="p">)))</span>
   <span class="nv">res</span><span class="p">)</span>
@@ -1830,45 +1831,25 @@ singleDerivative
 </pre>
 
 
-<p>
-Now let's find the values for the single derivative:
-</p>
+<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">singleDerivative</span> <span class="mf">-1.0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+-0.375
+</pre>
+
 
 <div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">singleDerivative</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 
 <pre class="example">
-0.125
-</pre>
-
-
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">singleDerivative</span> <span class="mf">2.0</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
--0.02040816326530612
-</pre>
-
-
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">singleDerivative</span> <span class="mf">-1.0</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
-0.125
-</pre>
-
-
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">singleDerivative</span> <span class="mf">-2.0</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
--0.02040816326530612
+0.375
 </pre>
 
 
 <div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">doubleDerivative</span> <span class="p">(</span><span class="nv">x</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">*</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">-</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">9</span><span class="p">))))</span>
-          <span class="p">(</span><span class="nv">den</span> <span class="p">(</span><span class="nf">expt</span> <span class="p">(</span><span class="nf">+</span> <span class="mi">3</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">))</span> <span class="mi">3</span><span class="p">))</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">-</span> <span class="mi">18</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">18</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">))))</span>
+          <span class="p">(</span><span class="nv">den</span> <span class="p">(</span><span class="nf">expt</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">3</span><span class="p">))</span>
           <span class="p">(</span><span class="nv">res</span> <span class="p">(</span><span class="nf">/</span> <span class="nv">num</span> <span class="nv">den</span><span class="p">)))</span>
   <span class="nv">res</span>
     <span class="p">))</span>
@@ -1879,23 +1860,11 @@ doubleDerivative
 </pre>
 
 
-<p>
-Now let's find the value for the double derivatives:
-</p>
-
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">doubleDerivative</span> <span class="mf">-1.0</span><span class="p">)</span>
+<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">doubleDerivative</span> <span class="mf">0.0</span><span class="p">)</span>
 </pre></div>
 
 <pre class="example">
-0.25
-</pre>
-
-
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">doubleDerivative</span> <span class="mf">1.0</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
--0.25
+0.6666666666666666
 </pre>
 
 
@@ -1903,7 +1872,7 @@ Now let's find the value for the double derivatives:
 </pre></div>
 
 <pre class="example">
--0.05830903790087463
+-0.15743440233236153
 </pre>
 
 
@@ -1911,23 +1880,7 @@ Now let's find the value for the double derivatives:
 </pre></div>
 
 <pre class="example">
-0.05830903790087463
-</pre>
-
-
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">doubleDerivative</span> <span class="mf">-4.0</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
--0.008164455459979588
-</pre>
-
-
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">doubleDerivative</span> <span class="mf">4.0</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
-0.008164455459979588
+-0.15743440233236153
 </pre>
 
 
@@ -2029,76 +1982,77 @@ todo
 <div id="outline-container-sec-1-13" class="outline-3">
 <h3 id="sec-1-13"><span class="section-number-3">1.13</span> Solution 13</h3>
 <div class="outline-text-3" id="text-1-13">
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">singleDerivative</span> <span class="p">(</span><span class="nv">x</span><span class="p">)</span>
-<span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">6</span> <span class="nv">x</span><span class="p">))</span>
-      <span class="p">(</span><span class="nv">den</span> <span class="p">(</span><span class="nf">expt</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">2</span><span class="p">))</span>
-      <span class="p">(</span><span class="nv">res</span> <span class="p">(</span><span class="nf">/</span> <span class="nv">num</span> <span class="nv">den</span><span class="p">)))</span>
-  <span class="nv">res</span><span class="p">)</span>
-  <span class="p">)</span>
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="nb">title</span> <span class="s">&quot;x^3/(x^2 + 3)&quot;</span> <span class="n">ls</span> <span class="mi">1</span>
 </pre></div>
 
-<pre class="example">
-singleDerivative
-</pre>
 
+<figure>
+<p><img src="../assets/c4_4s13.png" class="img-responsive" alt="c4_4s13.png">
+</p>
+</figure>
 
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">singleDerivative</span> <span class="mf">-1.0</span><span class="p">)</span>
-</pre></div>
+<p>
+\(g(x) = \dfrac{x^3}{x^2+3}\)
+</p>
 
-<pre class="example">
--0.375
-</pre>
+<p>
+\(g(x) = x^3(x^2+3)^{-1}\)
+</p>
 
+<p>
+Domain: \((-\infty, \infty)\)
+</p>
 
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">singleDerivative</span> <span class="mf">1.0</span><span class="p">)</span>
-</pre></div>
+<p>
+\(g'(x) = 3x^2(x^2+3)^{-1} + x^3.-1(x^2+3)^{-2}.23x\)
+</p>
 
-<pre class="example">
-0.375
-</pre>
+<p>
+\(= \dfrac{3x^2}{x^2+3} - \dfrac{2x^4}{(x^2+3)^2}\)
+</p>
 
+<p>
+\(= \dfrac{3x^4 + 9x^2 - 2x^4}{(x^2+3)^2}\)
+</p>
 
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">doubleDerivative</span> <span class="p">(</span><span class="nv">x</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">-</span> <span class="mi">18</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">18</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">))))</span>
-          <span class="p">(</span><span class="nv">den</span> <span class="p">(</span><span class="nf">expt</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">3</span><span class="p">))</span>
-          <span class="p">(</span><span class="nv">res</span> <span class="p">(</span><span class="nf">/</span> <span class="nv">num</span> <span class="nv">den</span><span class="p">)))</span>
-  <span class="nv">res</span>
-    <span class="p">))</span>
-</pre></div>
+<p>
+\(= \dfrac{x^4 + 9x^2}{(x^2+3)^2}\)
+</p>
 
-<pre class="example">
-doubleDerivative
-</pre>
+<p>
+\(g''(x) = -2(x^2+3)^{-3}.2x(x^4+9x^2) + \dfrac{4x^3+18x}{(x^2+3)^2}\)
+</p>
 
+<p>
+\(= \dfrac{-4x(x^4+9x^2)}{(x^2+3)^3} + \dfrac{4x^3+18x}{(x^2+3)^2}\)
+</p>
 
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">doubleDerivative</span> <span class="mf">0.0</span><span class="p">)</span>
-</pre></div>
+<p>
+\(= \dfrac{-4x^2(x^3+9x)}{(x^2+3)^3} + \dfrac{(4x^3 + 18x)(x^2+3)}{(x^2+3)^3}\)
+</p>
 
-<pre class="example">
-0.6666666666666666
-</pre>
+<p>
+\(= \dfrac{-4x^5-36x^3 + 4x^5 + 30x^3 + 54x}{(x^2+3)^3}\)
+</p>
 
+<p>
+\(= \dfrac{54x-6x^3}{(x^2+3)^3}\)
+</p>
 
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">doubleDerivative</span> <span class="mf">2.0</span><span class="p">)</span>
-</pre></div>
+<p>
+\(= \dfrac{6x(9-x^2)}{(x^2+3)^3}\)
+</p>
 
-<pre class="example">
--0.15743440233236153
-</pre>
+<p>
+\(f'(x) = 0\) when \(x=0\). \(f''(x) = 0\) when \(x=-3,0,3\)
+</p>
 
-
-<div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nv">doubleDerivative</span> <span class="mf">-2.0</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
--0.15743440233236153
-</pre>
-</div>
-</div>
-
-<div id="outline-container-sec-1-14" class="outline-3">
-<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 13</h3>
-<div class="outline-text-3" id="text-1-14">
 <div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">singleDerivative</span> <span class="p">(</span><span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">9</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">))))</span>
          <span class="p">(</span><span class="nv">den</span> <span class="p">(</span><span class="nf">expt</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">2</span><span class="p">))</span>
@@ -2187,12 +2141,162 @@ doubleDerivative
 <pre class="example">
 -0.024493366379938767
 </pre>
+
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Function</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">f'(-1)</td>
+<td class="text-left">0.625 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f'(1)</td>
+<td class="text-left">0.625 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f''(-4)</td>
+<td class="text-left">0.02 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f''(-2)</td>
+<td class="text-left">-0.17 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f''(-1)</td>
+<td class="text-left">-0.75 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f''(1)</td>
+<td class="text-left">0.75 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f''(2)</td>
+<td class="text-left">0.17 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f''(4)</td>
+<td class="text-left">-0.02 &lt; 0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+todo
+</p>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Property</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Strictly increasing</td>
+<td class="text-left">\((-\infty, \infty)\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave up</td>
+<td class="text-left">\((-\infty, -3], [0,3]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave down</td>
+<td class="text-left">\([-3,0], [3,\infty)\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Inflection point</td>
+<td class="text-left">-3,0,3</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
-<div id="outline-container-sec-1-15" class="outline-3">
-<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Solution 14</h3>
-<div class="outline-text-3" id="text-1-15">
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 14</h3>
+<div class="outline-text-3" id="text-1-14">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">plot</span> <span class="p">(</span><span class="mi">16</span><span class="o">*</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="nb">title</span> <span class="s">&quot;16(x^2+1)^{0.5} - x^2&quot;</span> <span class="n">ls</span> <span class="mi">1</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c4_4s14.png" class="img-responsive" alt="c4_4s14.png">
+</p>
+</figure>
+
+<p>
+\(f(x) = 16\sqrt{x^2+1} - x^2\)
+</p>
+
+<p>
+\(f(x) = 16(x^2+1)^{1/2} - x^2\)
+</p>
+
+<p>
+\(f'(x) = 8(x^2+1)^{-1/2}.2x - 2x\)
+</p>
+
+<p>
+\(= \dfrac{16x}{\sqrt{x^2+1}} - 2x\)
+</p>
+
+<p>
+\(f''(x) = \dfrac{16}{\sqrt{x^2+1}} + 16x.-\dfrac{1}{2}(x^2+1)^{-3/2}.2x - 2\)
+</p>
+
+<p>
+\(= \dfrac{16}{\sqrt{x^2+1}} - \dfrac{8x.2x}{(x^2+1)^{3/2}} - 2\)
+</p>
+
+<p>
+\(= \dfrac{16x^2+16-16x}{(x^2+1)^{3/2}} - 2\)
+</p>
+
+<p>
+\(- \dfrac{16}{(x^2+1)^{3/2}} - 2\)
+</p>
+
+<p>
+\(f'(x) = 0\) when \(x=0, 3\sqrt{7}, -3\sqrt{7}\). \(f''(x) = 0\) when \(x=-\sqrt{2}, \sqrt{2}\)
+</p>
+
 <div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">singleDerivative</span> <span class="p">(</span><span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">16</span> <span class="nv">x</span><span class="p">))</span>
          <span class="p">(</span><span class="nv">den</span> <span class="p">(</span><span class="nf">sqrt</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">expt</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">1</span><span class="p">)))</span>
@@ -2291,12 +2395,160 @@ doubleDerivative
 <pre class="example">
 -0.5689164944001346
 </pre>
+
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Function</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">f'(-1)</td>
+<td class="text-left">-9.31 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f'(1)</td>
+<td class="text-left">9.31 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f'(6)</td>
+<td class="text-left">3.78 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f'(8)</td>
+<td class="text-left">-0.12&lt;0</td>
+</tr>
+
+<tr>
+<td class="text-left">f'(-6)</td>
+<td class="text-left">-3.7 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f'(-8)</td>
+<td class="text-left">0.12 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f''(0)</td>
+<td class="text-left">14 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f''(2)</td>
+<td class="text-left">-0.56 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f''(-2)</td>
+<td class="text-left">-0.56 &lt; 0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+todo
+</p>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Property</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Strictly increasing</td>
+<td class="text-left">\([0, 3\sqrt{7}], (-\infty, -3\sqrt{7}]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Strictly decreasing</td>
+<td class="text-left">\([-3\sqrt{7}, 0], [3\sqrt{7}, \infty)\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave up</td>
+<td class="text-left">\([-\sqrt{3}, \sqrt{3}]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave down</td>
+<td class="text-left">\((-\infty, -\sqrt{3}], [\sqrt{3}, \infty)\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Inflection point</td>
+<td class="text-left">\(\sqrt{3}, -\sqrt{3}\)</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
-<div id="outline-container-sec-1-16" class="outline-3">
-<h3 id="sec-1-16"><span class="section-number-3">1.16</span> Solution 15</h3>
-<div class="outline-text-3" id="text-1-16">
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Solution 15</h3>
+<div class="outline-text-3" id="text-1-15">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="nb">title</span> <span class="s">&quot;x + 2sin(x)&quot;</span> <span class="n">ls</span> <span class="mi">1</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c4_4s15.png" class="img-responsive" alt="c4_4s15.png">
+</p>
+</figure>
+
+<p>
+\(f(x) = x + 2\sin x\)
+</p>
+
+<p>
+Domain: \([0, 2\pi]\)
+</p>
+
+<p>
+\(f'(x) = 1 + 2\cos x\)
+</p>
+
+<p>
+\(f''(x) = -2\sin x\)
+</p>
+
+<p>
+\(f'(x) = 0\) when \(x = \dfrac{4\pi}{3}, \dfrac{2\pi}{3}\)
+</p>
+
+<p>
+\(f''(x) = 0\) when \(x = 0, \pi, 2\pi\)
+</p>
+
 <div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">singleDerivative</span> <span class="p">(</span><span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">+</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">cos</span> <span class="nv">x</span><span class="p">)))))</span>
   <span class="nv">num</span>
@@ -2389,12 +2641,165 @@ doubleDerivative
 <pre class="example">
 3.4641016151377535
 </pre>
+
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Function</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">\(f'(\pi)\)</td>
+<td class="text-left">-1 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f'(1.5\pi)\)</td>
+<td class="text-left">1 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f'(2\pi)\)</td>
+<td class="text-left">3 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">f'(0)</td>
+<td class="text-left">3 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f''(\pi)\)</td>
+<td class="text-left">0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f''(1.5\pi)\)</td>
+<td class="text-left">4 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f''(\dfrac{2\pi}{3})\)</td>
+<td class="text-left">-3.4 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f''(\dfrac{4\pi}{3})\)</td>
+<td class="text-left">3.4 &gt; 0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+todo
+</p>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Property</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Strictly increasing</td>
+<td class="text-left">\([0, \dfrac{2\pi}{3}], [\dfrac{4\pi}{3}, 2\pi]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Strictly decreasing</td>
+<td class="text-left">\([\dfrac{2\pi}{3}, \dfrac{4\pi}{3}]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave up</td>
+<td class="text-left">\([0, \pi]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave down</td>
+<td class="text-left">\([\pi, 2\pi]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Inflection point</td>
+<td class="text-left">\(\pi\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Local minima</td>
+<td class="text-left">\(\dfrac{4\pi}{3}\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Local maxima</td>
+<td class="text-left">\(\dfrac{2\pi}{3}\)</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
-<div id="outline-container-sec-1-17" class="outline-3">
-<h3 id="sec-1-17"><span class="section-number-3">1.17</span> Solution 16</h3>
-<div class="outline-text-3" id="text-1-17">
+<div id="outline-container-sec-1-16" class="outline-3">
+<h3 id="sec-1-16"><span class="section-number-3">1.16</span> Solution 16</h3>
+<div class="outline-text-3" id="text-1-16">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">plot</span> <span class="p">[</span><span class="mi">0</span> <span class="o">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">]</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="nb">title</span> <span class="s">&quot;x^2 + 4sin(x)&quot;</span> <span class="n">ls</span> <span class="mi">1</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c4_4s16.png" class="img-responsive" alt="c4_4s16.png">
+</p>
+</figure>
+
+<p>
+\(g(x) = x^2 + 4\sin x\)
+</p>
+
+<p>
+Domain: \([0, 2\pi]\)
+</p>
+
+<p>
+\(g'(x) = 2x + 4\cos x\)
+</p>
+
+<p>
+\(g''(x) = 2 - 4\sin x\)
+</p>
+
+<p>
+\(g'(x) \neq 0\) on \([0, 2\pi]\)
+</p>
+
+<p>
+\(g''(x) = 0\) when \(x = \dfrac{\pi}{6}, \dfrac{5\pi}{6}\)
+</p>
+
 <div class="emacs-lisp"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">doubleDerivative</span> <span class="p">(</span><span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">num</span> <span class="p">(</span><span class="nf">-</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">4</span> <span class="p">(</span><span class="nf">sin</span> <span class="nv">x</span><span class="p">)))))</span>
   <span class="nv">num</span>
@@ -2428,17 +2833,525 @@ doubleDerivative
 <pre class="example">
 1.9999999999999996
 </pre>
+
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Function</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">g''(0)</td>
+<td class="text-left">2 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(g''(\dfrac{\pi}{2})\)</td>
+<td class="text-left">-2 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(g''(\pi)\)</td>
+<td class="text-left">2 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(g'(\pi)\)</td>
+<td class="text-left">2.28 &gt; 0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+todo
+</p>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Property</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Strictly increasing</td>
+<td class="text-left">\((-\infty, \infty)\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave up</td>
+<td class="text-left">\((-\infty, \dfrac{\pi}{6}], [\dfrac{5\pi}{6}, \pi]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave down</td>
+<td class="text-left">\([\dfrac{\pi}{6}, \dfrac{5\pi}{6}]\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-17" class="outline-3">
+<h3 id="sec-1-17"><span class="section-number-3">1.17</span> Solution 17</h3>
+<div class="outline-text-3" id="text-1-17">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">plot</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nf">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="nb">title</span> <span class="s">&quot;3tan x - 4x&quot;</span> <span class="n">ls</span> <span class="mi">1</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c4_4s17.png" class="img-responsive" alt="c4_4s17.png">
+</p>
+</figure>
+
+
+<p>
+\(f(x) = 3\tan x - 4x\)
+</p>
+
+<p>
+Domain: \((-\dfrac{\pi}{2}, \dfrac{\pi}{2})\)
+</p>
+
+<p>
+\(f'(x) = 3\sec^2 x - 4\)
+</p>
+
+<p>
+\(f''(x) = 6\sec x \sec x \tan x = 6 \sec^2 x \tan x\)
+</p>
+
+<p>
+\(f'(x) = 0\) when \(x = \dfrac{-\pi}{6}, \dfrac{\pi}{6}\)
+</p>
+
+<p>
+\(f''(x) = 0\) when \(x = 0\)
+</p>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Function</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">\(f'(\dfrac{\pi}{7})\)</td>
+<td class="text-left">-0.3 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f'(\dfrac{\pi}{4})\)</td>
+<td class="text-left">2 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f'(\dfrac{-\pi}{7})\)</td>
+<td class="text-left">-0.3 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f'(\dfrac{-\pi}{4})\)</td>
+<td class="text-left">2 &lt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f''(\dfrac{\pi}{4})\)</td>
+<td class="text-left">12 &gt; 0</td>
+</tr>
+
+<tr>
+<td class="text-left">\(f''(\dfrac{-\pi}{4})\)</td>
+<td class="text-left">-12 &lt; 0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+todo
+</p>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Property</th>
+<th scope="col" class="text-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Strictly increasing</td>
+<td class="text-left">$(-\dfrac{\pi}{2}, \dfrac{\pi}{6}], [\dfrac{\pi}{6}, \dfrac{\pi}{2}) $</td>
+</tr>
+
+<tr>
+<td class="text-left">Strictly decreasing</td>
+<td class="text-left">\([\dfrac{-\pi}{6}, \dfrac{\pi}{6}]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave up</td>
+<td class="text-left">\([0, \dfrac{\pi}{2})\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Concave down</td>
+<td class="text-left">\((\dfrac{-\pi}{2}, 0]\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Inflection point</td>
+<td class="text-left">0</td>
+</tr>
+
+<tr>
+<td class="text-left">Local minimum</td>
+<td class="text-left">\(\dfrac{\pi}{6}\)</td>
+</tr>
+
+<tr>
+<td class="text-left">Local maximum</td>
+<td class="text-left">\(-\dfrac{\pi}{6}\)</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
 <div id="outline-container-sec-1-18" class="outline-3">
-<h3 id="sec-1-18"><span class="section-number-3">1.18</span> Solution 17</h3>
+<h3 id="sec-1-18"><span class="section-number-3">1.18</span> Solution 18</h3>
+<div class="outline-text-3" id="text-1-18">
+<p>
+Suppose \(f\) is concave up on interval \(I\).
+</p>
+
+<p>
+\(x_1, x_2, x_3, x_4 \in I\)
+</p>
+
+<p>
+\(x_1 < x_2 < x_3 < x_4\)
+</p>
+</div>
+
+<div id="outline-container-sec-1-18-1" class="outline-4">
+<h4 id="sec-1-18-1"><span class="section-number-4">1.18.1</span> Solution a</h4>
+<div class="outline-text-4" id="text-1-18-1">
+<p>
+Slope of secant line at \(x = x_1\) and \(x = x_2\)
+</p>
+
+<p>
+\(m_1 = \dfrac{f(x_2) - f(x_1)}{x_2 - x_1}\)
+</p>
+
+<p>
+Slope of secant line at \(x = x_3\) and \(x = x_4\)
+</p>
+
+<p>
+\(m_2 = \dfrac{f(x_3) - f(x_4)}{x_3 - x_4}\)
+</p>
+
+<p>
+We need to prove that \(m_1 < m_2\)
+</p>
+
+<p>
+From theorem 4.4.2,
+</p>
+
+<p>
+\(\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} < \dfrac{f(x_3) - f(x_2)}{x_3 - x_2}\)
+</p>
+
+<p>
+Also since $x<sub>2</sub> &lt; x<sub>3</sub> &lt; x<sub>4</sub>,
+</p>
+
+<p>
+\(\dfrac{f(x_3) - f(x_2)}{x_3 - x_2} < \dfrac{f(x_4) - f(x_3)}{x_4 - x_3}\)
+</p>
+
+<p>
+Combining both,
+</p>
+
+<p>
+\(\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} < \dfrac{f(x_4) - f(x_3)}{x_4 - x_3}\)
+</p>
+
+<p>
+\(\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} < \dfrac{f(x_3) - f(x_4)}{x_3 - x_4}\)
+</p>
+
+<p>
+\(m_1 < m_2\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-18-2" class="outline-4">
+<h4 id="sec-1-18-2"><span class="section-number-4">1.18.2</span> Solution b</h4>
+<div class="outline-text-4" id="text-1-18-2">
+<p>
+Slope of secant line at \(x = x_1\) and \(x = x_3\)
+</p>
+
+<p>
+\(m_1 = \dfrac{f(x_3) - f(x_1)}{x_3 - x_1}\)
+</p>
+
+<p>
+Slope of secant line at \(x = x_2\) and \(x = x_4\)
+</p>
+
+<p>
+\(m_2 = \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}\)
+</p>
+
+<p>
+We need to prove that \(m_1 < m_2\)
+</p>
+
+<p>
+We know that
+</p>
+
+<p>
+\(c,d > 0 \land \dfrac{a}{c} < \dfrac{b}{d} \implies \dfrac{a}{c} < \dfrac{a + b}{c+d} < \dfrac{b}{d}\)
+</p>
+
+<p>
+We know that \(x_1 < x_3 < x_4\)
+</p>
+
+<p>
+From theorem 4.4.2,
+</p>
+
+<p>
+\(\dfrac{f(x_3) - f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_3)}{x_4 - x_3}\)
+</p>
+
+<p>
+Applying the inequality law,
+</p>
+
+<p>
+\(\dfrac{f(x_3)-f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_1)}{x_4 - x_1} < \dfrac{f(x_4) - f(x_3)}{x_4 - x_3}\)
+</p>
+
+<p>
+We know that \(x_1 < x_2 < x_4\)
+</p>
+
+<p>
+From theorem 4.4.2,
+</p>
+
+<p>
+\(\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} < \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}\)
+</p>
+
+<p>
+Applying the inequality law,
+</p>
+
+<p>
+\(\dfrac{f(x_2)-f(x_1)}{x_2 - x_1} < \dfrac{f(x_4) - f(x_1)}{x_4 - x_1} < \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}\)
+</p>
+
+<p>
+Combining both,
+</p>
+
+<p>
+\(\dfrac{f(x_3)-f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_1)}{x_4 - x_1} < \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}\)
+</p>
+
+<p>
+\(\dfrac{f(x_3)-f(x_1)}{x_3 - x_1} < \dfrac{f(x_4) - f(x_2)}{x_4 - x_2}\)
+</p>
+
+<p>
+\(m_1 < m_2\)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-19" class="outline-3">
+<h3 id="sec-1-19"><span class="section-number-3">1.19</span> Solution 19</h3>
+<div class="outline-text-3" id="text-1-19">
+<p>
+Domain of \(f\) is interval \(I\).
+</p>
+
+<p>
+Domain of \(g\) is interval \(J\)
+</p>
+
+<p>
+\(\forall x \in J g(x) \in I\)
+</p>
+</div>
+
+<div id="outline-container-sec-1-19-1" class="outline-4">
+<h4 id="sec-1-19-1"><span class="section-number-4">1.19.1</span> Solution a</h4>
+<div class="outline-text-4" id="text-1-19-1">
+<p>
+Suppose \(f\) is increasing on \(I\).
+</p>
+
+<p>
+Suppose \(f\) is concave up on \(I\).
+</p>
+
+<p>
+Suppose \(g\) is increasing on \(J\).
+</p>
+
+<p>
+Suppose \(g\) is concave up on \(J\).
+</p>
+
+<p>
+We need to prove that \(f \circ g\) is concave up on \(J\).
+</p>
+
+<p>
+Since \(f\) is increasing. Let's assume \(x_1 < x_2 < x_3 \in I\)
+</p>
+
+<p>
+\(\dfrac{f(x_2)-f(x_1)}{x_2 - x_1} < \dfrac{f(x_3) - f(x_2)}{x_3 - x_2}\)
+</p>
+
+<p>
+We know that \(x_1, x_2, x_3 \in I\) and \(\forall x \in J g(x) \in I\)
+</p>
+
+<p>
+So, \(x_1 = g(a)\) where a is some arbitrary element in J.
+</p>
+
+<p>
+So, \(\dfrac{f(g(y_2))-f(g(y_1))}{g(y_2) - g(y_1)} < \dfrac{f(g(x_3)) - f(g(x_2))}{g(y_3) - g(y_2)}\)
+</p>
+
+<p>
+where \(g(y_2) = x_2, g(y_3) = x_3, g(y_1) = x_1\) .
+</p>
+
+<p>
+We know from question 22 that \(f \circ g\) is also increasing on \(J\).
+</p>
+
+<p>
+So, \(g(y_1) < g(y_2) < g(y_3)\)
+</p>
+
+<p>
+So, \(\dfrac{f(g(y_2))-f(g(y_1))}{g(y_2) - g(y_1)} < \dfrac{f(g(x_3)) - f(g(x_2))}{g(y_3) - g(y_2)}\)
+</p>
+
+<p>
+Hence \(f \circ g\) is concave up on \(J\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-19-2" class="outline-4">
+<h4 id="sec-1-19-2"><span class="section-number-4">1.19.2</span> Solution b</h4>
+<div class="outline-text-4" id="text-1-19-2">
+<p>
+Counterexample with following property:
+</p>
+
+<p>
+$f(x): $ Decreasing, Concave up
+</p>
+
+<p>
+$g(x): $ Increasing, Concave up
+</p>
+
+<p>
+\(g(x) = x^4\)
+</p>
+
+<p>
+\(f(x) = -2\sqrt{x}\)
+</p>
+
+<p>
+Domain: \([1, \infty)\)
+</p>
+
+<p>
+\(f \circ g = f(g(x)) = f(x^4) = -2\sqrt{x^4} = -2x^2\)
+</p>
+
+<p>
+\(h = f \circ g = -2x^2\)
+</p>
+
+<p>
+\(h'(x) = -4x\)
+</p>
+
+<p>
+\(h''(x) = 04 < 0\) and therefore \(f \circ g\) is concave down.
+</p>
+</div>
+</div>
 </div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-01-26 Tue 22:43</p>
+<p class="date">Created: 2021-01-27 Wed 21:52</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>
