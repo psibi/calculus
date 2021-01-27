@@ -1047,6 +1047,31 @@ todo
 
 ** Solution 16
 
+#+begin_src gnuplot :exports both :file ../assets/c4_4s16.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "g(x)"
+set grid
+set key right top
+plot [0 : 2*pi] (x**2 + 4*sin(x)) title "x^2 + 4sin(x)" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4_4s16.png]]
+
+$g(x) = x^2 + 4\sin x$
+
+Domain: $[0, 2\pi]$
+
+$g'(x) = 2x + 4\cos x$
+
+$g''(x) = 2 - 4\sin x$
+
+$g'(x) \neq 0$ on $[0, 2\pi]$
+
+$g''(x) = 0$ when $x = \dfrac{\pi}{6}, \dfrac{5\pi}{6}$
+
 #+begin_src emacs-lisp :eval never-export :exports both
   (defun doubleDerivative (x)
     (let* ((num (- 2 (* 4 (sin x)))))
@@ -1078,4 +1103,68 @@ todo
 #+RESULTS:
 : 1.9999999999999996
 
+| Function              | Value    |
+|-----------------------+----------|
+| g''(0)                | 2 > 0    |
+| $g''(\dfrac{\pi}{2})$ | -2 < 0   |
+| $g''(\pi)$            | 2 > 0    |
+| $g'(\pi)$             | 2.28 > 0 |
+
+todo
+
+| Property            | Value                                               |
+|---------------------+-----------------------------------------------------|
+| Strictly increasing | $(-\infty, \infty)$                                 |
+| Concave up          | $(-\infty, \dfrac{\pi}{6}], [\dfrac{5\pi}{6}, \pi]$ |
+| Concave down        | $[\dfrac{\pi}{6}, \dfrac{5\pi}{6}]$                 |
+
 ** Solution 17
+
+#+begin_src gnuplot :exports both :file ../assets/c4_4s17.png :eval never-export
+set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+
+set xlabel "x"
+set ylabel "f(x)"
+set grid
+set key right top
+plot (3*tan(x) - 4*x) title "3tan x - 4x" ls 1
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c4_4s17.png]]
+
+
+$f(x) = 3\tan x - 4x$
+
+Domain: $(-\dfrac{\pi}{2}, \dfrac{\pi}{2})$
+
+$f'(x) = 3\sec^2 x - 4$
+
+$f''(x) = 6\sec x \sec x \tan x = 6 \sec^2 x \tan x$
+
+$f'(x) = 0$ when $x = \dfrac{-\pi}{6}, \dfrac{\pi}{6}$
+
+$f''(x) = 0$ when $x = 0$
+
+| Function               | Value    |
+|------------------------+----------|
+| $f'(\dfrac{\pi}{7})$   | -0.3 < 0 |
+| $f'(\dfrac{\pi}{4})$   | 2 > 0    |
+| $f'(\dfrac{-\pi}{7})$  | -0.3 < 0 |
+| $f'(\dfrac{-\pi}{4})$  | 2 < 0    |
+| $f''(\dfrac{\pi}{4})$  | 12 > 0   |
+| $f''(\dfrac{-\pi}{4})$ | -12 < 0  |
+
+todo
+
+| Property            | Value                                                                  |
+|---------------------+------------------------------------------------------------------------|
+| Strictly increasing | $(-\dfrac{\pi}{2}, \dfrac{\pi}{6}], [\dfrac{\pi}{6}, \dfrac{\pi}{2}) $ |
+| Strictly decreasing | $[\dfrac{-\pi}{6}, \dfrac{\pi}{6}]$                                    |
+| Concave up          | $[0, \dfrac{\pi}{2})$                                                  |
+| Concave down        | $(\dfrac{-\pi}{2}, 0]$                                                 |
+| Inflection point    | 0                                                                      |
+| Local minimum       | $\dfrac{\pi}{6}$                                                       |
+| Local maximum       | $-\dfrac{\pi}{6}$                                                        |
+
+** Solution 18
