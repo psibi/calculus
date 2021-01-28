@@ -1,0 +1,25 @@
+* Sophisticated Graphing
+
+** Solution 1
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s1.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "f(x)"
+  set grid
+  set key right top
+  f(x) = (2*x - 1) / (x**2)
+  set yrange [-5:5]
+  set xrange [-5:5]
+  set label "I" at 1.5, f(1.5) center point pointtype 7 pointsize 2 offset 1
+  set label "C" at 1, f(1) center point pointtype 6 pointsize 2 offset -2
+  plot (x > 0 ? f(x) : 1/0) ls 1 t "2x-1/x^2", (x < 0 ? f(x) : 1/0) ls 1 t "", 0 with lines ls 2 t "asymptote"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s1.png]]
+
+C = Critical number
+
+I = Inflection point

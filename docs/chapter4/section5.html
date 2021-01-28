@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-01-27 Wed 21:52 -->
+<!-- 2021-01-28 Thu 14:05 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -228,6 +228,7 @@ MathJax.Hub.Config({
 <li><a href="#sec-1">1. Sophisticated Graphing</a>
 <ul class="nav">
 <li><a href="#sec-1-1">1.1. General procedure for graphing</a></li>
+<li><a href="#sec-1-2">1.2. Theorem 4.5.5</a></li>
 </ul>
 </li>
 </ul>
@@ -280,11 +281,40 @@ give the same value.
 </ul>
 </div>
 </div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Theorem 4.5.5</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Suppose \(f\) is a function whose domains contains an interval \((a,
+\infty)\), and let \(A\) be the set of all the values of \(f\) at numbers
+in this interval; that is, \(A = { f(x): x > a} = {y: \text{for some } x > a, y
+= f(x)}\).
+</p>
+
+<ol class="org-ol">
+<li>If \(f\) is weakly increasing on \((a, \infty)\) and \(A\) has an upper
+bound, then \(\lim_{x \to \infty} f(x)\) is defined and is equal to
+the least upper bound of \(A\).
+</li>
+<li>If \(f\) is weakly increasing on \((a, \infty)\) and \(A\) does not have
+an upper bound, then \(\lim_{x \to \infty} f(x) = \infty\)
+</li>
+<li>If \(f\) is weakly decreasing on \((a, \infty)\) and \(A\) has a lower
+bound, then \(\lim_{x \to \infty} f(x)\) is defined and is equal to
+the greatest lower bound of \(A\).
+</li>
+<li>If \(f\) is weakly decreasing on \((a, \infty)\) and \(A\) does not have
+a lower bound, then \(\lim_{x \to \infty} f(x) = -\infty\)
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-01-27 Wed 21:52</p>
+<p class="date">Created: 2021-01-28 Thu 14:05</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>
