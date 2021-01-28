@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-01-28 Thu 22:27 -->
+<!-- 2021-01-28 Thu 23:07 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -206,6 +206,7 @@ $(function() {
 <li><a href="#sec-1-3">1.3. Solution 3</a></li>
 <li><a href="#sec-1-4">1.4. Solution 4</a></li>
 <li><a href="#sec-1-5">1.5. Solution 5</a></li>
+<li><a href="#sec-1-6">1.6. Solution 6</a></li>
 </ul>
 </li>
 </ul>
@@ -329,6 +330,28 @@ I = Inflection point
 <span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 </pre></div>
 
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">-0.8888888888888888</td>
+<td class="text-right">-0.96</td>
+<td class="text-right">0.8888888888888888</td>
+<td class="text-right">0.96</td>
+</tr>
+</tbody>
+</table>
+
 <div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">secondDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="n">num</span> <span class="p">=</span> <span class="mi">24</span><span class="o">*</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span>
   <span class="n">den</span> <span class="p">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span>^<span class="mi">2</span><span class="p">)</span>^<span class="mi">3</span>
@@ -337,6 +360,31 @@ I = Inflection point
 
 <span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 </pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">-1.984</td>
+<td class="text-right">2.074074074074074</td>
+<td class="text-right">0.5</td>
+<td class="text-right">2.074074074074074</td>
+<td class="text-right">-1.984</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -372,6 +420,31 @@ I = Inflection point
 <span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mf">1.25</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
 </pre></div>
 
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">-4.5</td>
+<td class="text-right">-3.78</td>
+<td class="text-right">-4</td>
+<td class="text-right">0</td>
+<td class="text-right">3.5</td>
+</tr>
+</tbody>
+</table>
+
 <div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">secondDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="n">num</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>^<span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
   <span class="n">den</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">3</span>
@@ -380,13 +453,130 @@ I = Inflection point
 
 <span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
 </pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">1.5</td>
+<td class="text-right">-2</td>
+<td class="text-right">6</td>
+<td class="text-right">2.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Solution 6</h3>
+<div class="outline-text-3" id="text-1-6">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="nf">g</span>(x) <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-20</span><span class="o">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-5</span><span class="o">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">-2</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">-2</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">2</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x + 4/x&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s6.png" class="img-responsive" alt="c5_5s6.png">
+</p>
+</figure>
+
+<div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">firstDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">num</span> <span class="p">=</span> <span class="mi">4</span>
+  <span class="n">den</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">2</span>
+  <span class="n">y</span> <span class="p">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">);</span>
+<span class="k">end</span>
+
+<span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">0.5555555555555556</td>
+<td class="text-right">0</td>
+<td class="text-right">-3</td>
+<td class="text-right">-3</td>
+<td class="text-right">0.5555555555555556</td>
+</tr>
+</tbody>
+</table>
+
+<div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">secondDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">den</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">3</span>
+  <span class="n">y</span> <span class="p">=</span> <span class="mi">8</span> <span class="o">/</span> <span class="n">den</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">]</span>
+</pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">-0.2962962962962963</td>
+<td class="text-right">-1</td>
+<td class="text-right">-8</td>
+<td class="text-right">8</td>
+<td class="text-right">1</td>
+<td class="text-right">0.2962962962962963</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-01-28 Thu 22:27</p>
+<p class="date">Created: 2021-01-28 Thu 23:07</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>

@@ -51,7 +51,6 @@ contributions are welcome!
 - [[file:chapter4/section5.org][Sophisticated Graphing]]
   - [[file:chapter4/solution5.org][Solutions]]
 
-* References
+* Extras
 
-- [[file:Apendix.org][Apendix]]
-- [[http://www.mesacc.edu/~scotz47781/mat120/notes/exponents/rational/rational_exponents.html][Rational exponents]]
+- [[file:Apendix.org][Appendix]]

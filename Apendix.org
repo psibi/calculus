@@ -4,3 +4,6 @@ This section covers various references I found useful while going
 through the book.
 
 - [[https://www.mathsisfun.com/geometry/slope.html][mathisfun: Slopes]]
+- [[http://www.mesacc.edu/~scotz47781/mat120/notes/exponents/rational/rational_exponents.html][Rational exponents]]
+- [[https://www.cs.princeton.edu/courses/archive/fall02/cs323/precepts/plotting/gnuplot.pdf][Gnuplot mini manual]]
+- [[https://tex.stackexchange.com/questions/119518/how-can-add-some-latex-eq-or-symbol-in-gnuplot][Gnuplot + Latex based titles]]
