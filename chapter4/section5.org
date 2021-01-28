@@ -23,3 +23,21 @@ Notes:
   function with $x \to \infty$ and $x \to -\infty$ and see if they
   give the same value.
 - [[https://en.wikipedia.org/wiki/Asymptote#Asymptotes_of_functions][Wikipedia link for computing horizontal/vertical asymptotes]]
+
+** Theorem 4.5.5
+
+Suppose $f$ is a function whose domains contains an interval $(a,
+\infty)$, and let $A$ be the set of all the values of $f$ at numbers
+in this interval; that is, $A = { f(x): x > a} = {y: \text{for some } x > a, y
+= f(x)}$.
+
+1. If $f$ is weakly increasing on $(a, \infty)$ and $A$ has an upper
+   bound, then $\lim_{x \to \infty} f(x)$ is defined and is equal to
+   the least upper bound of $A$.
+2. If $f$ is weakly increasing on $(a, \infty)$ and $A$ does not have
+   an upper bound, then $\lim_{x \to \infty} f(x) = \infty$
+3. If $f$ is weakly decreasing on $(a, \infty)$ and $A$ has a lower
+   bound, then $\lim_{x \to \infty} f(x)$ is defined and is equal to
+   the greatest lower bound of $A$.
+4. If $f$ is weakly decreasing on $(a, \infty)$ and $A$ does not have
+   a lower bound, then $\lim_{x \to \infty} f(x) = -\infty$
