@@ -1,0 +1,6 @@
+* References
+
+This section covers various references I found useful while going
+through the book.
+
+- [[https://www.mathsisfun.com/geometry/slope.html][mathisfun: Slopes]]

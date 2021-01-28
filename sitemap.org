@@ -1,5 +1,6 @@
 #+TITLE: Sitemap for project velleman-calculus
 
+- [[file:Apendix.org][Apendix]]
 - [[file:index.org][index]]
 - chapter2
   - [[file:chapter2/section2.org][section2]]

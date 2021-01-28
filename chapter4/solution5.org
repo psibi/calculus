@@ -62,3 +62,95 @@ I = Inflection point
 
 #+RESULTS:
 [[file:../assets/c5_5s3.png]]
+
+** Solution 4
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s4.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "f(x)"
+  set grid
+  set key right top
+  f(x) = (x**2/(4 - x**2))
+  set yrange [-3:3]
+  set xrange [-5:5]
+  set label "C" at 0, f(0) center point pointtype 7 pointsize 2 offset -2
+  plot (x < -2 ? f(x) : 1/0) ls 1 t "x^2/(4-x^2)", (x < 2 ? f(x) : 1/0) ls 1 t "" , (x > 2 ? f(x) : 1/0) ls 1 t "", -1 with lines ls 2 t "asymptote"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s4.png]]
+
+
+#+begin_src octave :session both :eval never-export
+  function y = firstDerivative(x)
+    num = 8 * x;
+    den = (4-x^2)^2;
+    y = num / den;
+  end
+
+  ans = [firstDerivative(-1), firstDerivative(-3), firstDerivative(1), firstDerivative(3)]
+#+end_src
+
+#+RESULTS:
+| -0.8888888888888888 | -0.96 | 0.8888888888888888 | 0.96 |
+
+#+begin_src octave :session both :eval never-export
+  function y = secondDerivative(x)
+    num = 24*(x^2) + 32
+    den = (4-x^2)^3
+    y = num / den;
+  end
+
+  ans = [secondDerivative(-3), secondDerivative(-1), secondDerivative(0), secondDerivative(1), secondDerivative(3)]
+#+end_src
+
+#+RESULTS:
+| -1.984 | 2.074074074074074 | 0.5 | 2.074074074074074 | -1.984 |
+
+** Solution 5
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s5.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "f(x)"
+  set grid
+  set key right top
+  f(x) = (x**3 + 2)/x
+  set yrange [-10:10]
+  set xrange [-5:5]
+  set label "C" at 1, f(1) center point pointtype 7 pointsize 2 offset -2
+  set label "I" at -1.25, f(-1.25) center point pointtype 7 pointsize 2 offset -2
+  plot (x < 0 ? f(x) : 1/0) ls 1 t "x^3 + 2/x", (x > 0 ? f(x) : 1/0) ls 1 t ""
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s5.png]]
+
+#+begin_src octave :session both :eval never-export
+  function y = firstDerivative(x)
+    num = 2*x^3 - 2
+    den = x^2
+    y = num / den;
+  end
+
+  ans = [firstDerivative(-2), firstDerivative(-1.25), firstDerivative(-1), firstDerivative(1), firstDerivative(2)]
+#+end_src
+
+#+RESULTS:
+| -4.5 | -3.78 | -4 | 0 | 3.5 |
+
+#+begin_src octave :session both :eval never-export
+  function y = secondDerivative(x)
+    num = 2*x^3 + 4
+    den = x^3
+    y = num / den;
+  end
+
+  ans = [secondDerivative(-2), secondDerivative(-1), secondDerivative(1), secondDerivative(2)]
+#+end_src
+
+#+RESULTS:
+| 1.5 | -2 | 6 | 2.5 |
