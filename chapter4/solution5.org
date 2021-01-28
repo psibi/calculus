@@ -23,3 +23,42 @@
 C = Critical number
 
 I = Inflection point
+
+** Solution 2
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s2.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "g(x)"
+  set grid
+  set key right top
+  g(x) = (2/(x**2)) - (1/x)
+  set yrange [-1:8]
+  set xrange [-5:10]
+  set label "I" at 6, g(6) left point pointtype 7 pointsize 2 offset 1
+  set label "C" at 4, g(4) center point pointtype 6 pointsize 2 offset -1
+  plot (x > 0 ? g(x) : 1/0) ls 1 t "2/x^2 - 1/x", (x < 0 ? g(x) : 1/0) ls 1 t "" , 0 with lines ls 2 t "asymptote"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s2.png]]
+
+** Solution 3
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s3.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "f(x)"
+  set grid
+  set key right top
+  f(x) = (x/(4 - x**2))
+  set yrange [-3:3]
+  set xrange [-5:5]
+  set label "I" at 0, f(0) center point pointtype 7 pointsize 2 offset -2
+  plot (x < -2 ? f(x) : 1/0) ls 1 t "x/(4-x^2)", (x < 2 ? f(x) : 1/0) ls 1 t "" , (x > 2 ? f(x) : 1/0) ls 1 t "", 0 with lines ls 2 t "asymptote"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s3.png]]
