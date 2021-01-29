@@ -199,3 +199,48 @@ I = Inflection point
 
 #+RESULTS:
 | -0.2962962962962963 | -1 | -8 | 8 | 1 | 0.2962962962962963 |
+
+** Solution 7
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s7.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "f(x)"
+  set grid
+  set key right top
+  f(x) = (x**2 + x + 2)/(x-1)
+  set yrange [-20:20]
+  set xrange [-2:4]
+  set label "C" at -1, f(-1) left point pointtype 7 pointsize 2 offset -2
+  set label "C" at 3, f(3) left point pointtype 7 pointsize 2 offset -2
+  plot (x < 1 ? f(x) : 1/0) ls 1 t "x + 4/x", (x > 1 ? f(x) : 1/0) ls 1 t ""
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s7.png]]
+
+#+begin_src octave :session both :eval never-export :exports both
+  function y = firstDerivative(x)
+    num = x^2 - (2*x) - 3
+    den = (x-1)^2
+    y = num / den;
+  end
+
+  ans = [firstDerivative(-2), firstDerivative(-1), firstDerivative(0), firstDerivative(2), firstDerivative(4)]
+#+end_src
+
+#+RESULTS:
+| 0.5555555555555556 | 0 | -3 | -3 | 0.5555555555555556 |
+
+#+begin_src octave :session both :eval never-export :exports both
+  function y = secondDerivative(x)
+    den = (x-1)^3;
+    y = 8 / den;
+  end
+
+  ans = [secondDerivative(-2), secondDerivative(-1), secondDerivative(0), secondDerivative(2), secondDerivative(3), secondDerivative(4) ]
+#+end_src
+
+#+RESULTS:
+| -0.2962962962962963 | -1 | -8 | 8 | 1 | 0.2962962962962963 |
