@@ -244,3 +244,118 @@ I = Inflection point
 
 #+RESULTS:
 | -0.2962962962962963 | -1 | -8 | 8 | 1 | 0.2962962962962963 |
+
+** Solution 8
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s8.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "h(x)"
+  set grid
+  set key right top
+  h(x) = sqrt(x)/(x+3)
+  set xrange [-1:7]
+  set yrange [0:0.35]
+  set label "I" at 6.464101, h(6.464101) left point pointtype 7 pointsize 2 offset -2
+  set label "C" at 3, h(3) left point pointtype 7 pointsize 2 offset -2
+  plot (x > 0 ? h(x) : 1/0) ls 1 t "x^(1/2)/x+3", 0 ls 2 t "asymptote"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s8.png]]
+
+#+begin_src octave :session both :eval never-export :exports both
+  function y = firstDerivative(x)
+    num = 3 - x
+    den = 2 * sqrt(x) * (x+3)^2
+    y = num / den;
+  end
+
+  ans = [firstDerivative(2), firstDerivative(3), firstDerivative(3 + (2*sqrt(3))), firstDerivative(7)]
+#+end_src
+
+#+RESULTS:
+| 0.01414213562373095 | 0 | -0.007605849903976696 | -0.007559289460184544 |
+
+#+begin_src octave :session both :eval never-export :exports both
+  function y = secondDerivative(x)
+    num = 3*(x * (x-6) - 3)
+    den = 4*((x+3)^3)*(x^(1.5))
+    y = num / den;
+  end
+
+  ans = [secondDerivative(2), secondDerivative(3), secondDerivative(7)]
+#+end_src
+
+#+RESULTS:
+| -0.02333452377915607 | -0.008018753738744801 | 0.0001619847741468117 |
+
+** Solution 9
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s9.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "f(x)"
+  set grid
+  set key right top
+  f(x) = (x+1)/sqrt(1-(x**2))
+  set xrange [-1:1]
+  set yrange [-1:6]
+  set label "I" at -0.5, f(-0.5) left point pointtype 7 pointsize 2 offset -2
+  plot f(x) ls 1 t "(x+1)/sqrt(1-x^2)"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s9.png]]
+
+#+begin_src octave :session both :eval never-export :exports both
+  function y = firstDerivative(x)
+    num = 1
+    den = (1-x)*sqrt(1-(x^2))
+    y = num / den;
+  end
+
+  ans = [firstDerivative(0), firstDerivative(0.5), firstDerivative(-0.5), firstDerivative(-0.6)]
+#+end_src
+
+#+RESULTS:
+| 1 | 2.309401076758503 | 0.769800358919501 | 0.7812499999999999 |
+
+#+begin_src octave :session both :eval never-export :exports both
+  function y = secondDerivative(x)
+    num = (2*x + 1)*(1+x)
+    den = (1 - (x^2))^(5/2)
+    y = num / den;
+  end
+
+  ans = [secondDerivative(0), secondDerivative(-0.3), secondDerivative(-0.6), secondDerivative(0.5)]
+#+end_src
+
+#+RESULTS:
+| 1 | 0.3544496489338692 | -0.2441406249999999 | 6.158402871356008 |
+
+** Solution 10
+
+Single differentiation:
+
+#+begin_src octave :session :eval never-export :results verbatim
+pkg load symbolic
+syms x
+g = (x+1)/sqrt(x^2 - 1)
+ans = simplify(diff(g,x))
+#+end_src
+
+#+RESULTS:
+
+Double differentiation:
+
+#+begin_src octave :session :eval never-export
+pkg load symbolic
+syms x
+g = (x+1)/sqrt(x^2 - 1)
+simplify(diff(g,x,x))
+#+end_src
+
+#+RESULTS:
