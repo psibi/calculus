@@ -585,24 +585,41 @@ ans =
 
 ** Solution 12
 
-  ## dfh = function_handle(df)
-  ## [dfh(1), dfh(5/3), dfh(2)]
+#+begin_src gnuplot :exports both :file ../assets/c5_5s12.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "g(x)"
+  set grid
+  set key right top
+  g(x) = ((x-5)**2)*sqrt(x)/4
+  set xrange [0:9]
+  set label "C" at 1, g(1) left point pointtype 7 pointsize 2 offset -2
+  set label "C" at 5, g(5) left point pointtype 7 pointsize 2 offset -2
+  set label "I" at 2.63, g(2.63) left point pointtype 7 pointsize 2 offset -2
+  plot g(x) ls 1 t "(x-5)^2*sqrt(x)/4"
+#+end_src
 
-  ## ddfh = function_handle(ddf)
-  ## [ddfh(1), ddfh(5/3), ddfh(2)]
-
-
+#+RESULTS:
+[[file:../assets/c5_5s12.png]]
 
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
   pkg load symbolic
   syms x
   g = (((x-5)^2) *sqrt(x))/4
-  df = simplify(diff(g,x))
-  ddf = simplify(diff(g,x,x))
+  dg = simplify(diff(g,x))
+  ddg = simplify(diff(g,x,x))
 
   solve(diff(g,x) == 0, x)
   solve(diff(g,x,x) ==0, x)
+
+  dgh = function_handle(dg)
+  [dgh(1), dgh(2), dgh(1+ ((2*sqrt(6))/3)), dgh(3), dgh(5), dgh(6)]
+
+  ddgh = function_handle(ddg)
+  [ddgh(1), ddgh(2), ddgh(3), ddgh(5), ddgh(6)]
+
 #+end_src
 
 #+RESULTS:
@@ -614,12 +631,12 @@ octave> g = (sym)
   √x⋅(x - 5)
   ───────────
        4
-df = (sym)
+dg = (sym)
 
   5⋅(x - 5)⋅(x - 1)
   ─────────────────
          8⋅√x
-ddf = (sym)
+ddg = (sym)
 
     ⎛   2          ⎞
   5⋅⎝3⋅x  - 6⋅x - 5⎠
@@ -640,4 +657,16 @@ ans = (sym 2×1 matrix)
   ⎢    2⋅√6⎥
   ⎢1 + ────⎥
   ⎣     3  ⎦
+octave> dgh =
+
+@(x) 5 * (x - 5) .* (x - 1) ./ (8 * sqrt (x))
+ans =
+
+  -0.00000  -1.32583  -1.48881  -1.44338   0.00000   1.27578
+octave> ddgh =
+
+@(x) 5 * (3 * x .^ 2 - 6 * x - 5) ./ (16 * x .^ (3 / 2))
+ans =
+
+  -2.50000  -0.55243   0.24056   1.11803   1.42462
 #+end_example
