@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-01-28 Thu 23:07 -->
+<!-- 2021-01-30 Sat 19:51 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -189,6 +189,32 @@ $(function() {
     $('.bs-docs-sidebar').affix();
 });
 </script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -207,6 +233,12 @@ $(function() {
 <li><a href="#sec-1-4">1.4. Solution 4</a></li>
 <li><a href="#sec-1-5">1.5. Solution 5</a></li>
 <li><a href="#sec-1-6">1.6. Solution 6</a></li>
+<li><a href="#sec-1-7">1.7. Solution 7</a></li>
+<li><a href="#sec-1-8">1.8. Solution 8</a></li>
+<li><a href="#sec-1-9">1.9. Solution 9</a></li>
+<li><a href="#sec-1-10">1.10. Solution 10</a></li>
+<li><a href="#sec-1-11">1.11. Solution 11</a></li>
+<li><a href="#sec-1-12">1.12. Solution 12</a></li>
 </ul>
 </li>
 </ul>
@@ -572,11 +604,585 @@ I = Inflection point
 </table>
 </div>
 </div>
+
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Solution 7</h3>
+<div class="outline-text-3" id="text-1-7">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="mi">-1</span><span class="p">)</span>
+<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-20</span><span class="o">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-2</span><span class="o">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">-1</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">3</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x + 4/x&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s7.png" class="img-responsive" alt="c5_5s7.png">
+</p>
+</figure>
+
+<div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">firstDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">num</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span>
+  <span class="n">den</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>^<span class="mi">2</span>
+  <span class="n">y</span> <span class="p">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+</pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">0.5555555555555556</td>
+<td class="text-right">0</td>
+<td class="text-right">-3</td>
+<td class="text-right">-3</td>
+<td class="text-right">0.5555555555555556</td>
+</tr>
+</tbody>
+</table>
+
+<div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">secondDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">den</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>^<span class="mi">3</span><span class="p">;</span>
+  <span class="n">y</span> <span class="p">=</span> <span class="mi">8</span> <span class="o">/</span> <span class="n">den</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">]</span>
+</pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">-0.2962962962962963</td>
+<td class="text-right">-1</td>
+<td class="text-right">-8</td>
+<td class="text-right">8</td>
+<td class="text-right">1</td>
+<td class="text-right">0.2962962962962963</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Solution 8</h3>
+<div class="outline-text-3" id="text-1-8">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;h(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-1</span><span class="o">:</span><span class="mi">7</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mf">0.35</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mf">6.464101</span><span class="o">,</span> <span class="nf">h</span><span class="p">(</span><span class="mf">6.464101</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">3</span><span class="o">,</span> <span class="nf">h</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x^(1/2)/x+3&quot;</span><span class="o">,</span> <span class="mi">0</span> <span class="n">ls</span> <span class="mi">2</span> <span class="nb">t</span> <span class="s">&quot;asymptote&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s8.png" class="img-responsive" alt="c5_5s8.png">
+</p>
+</figure>
+
+<div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">firstDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">num</span> <span class="p">=</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">x</span>
+  <span class="n">den</span> <span class="p">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>^<span class="mi">2</span>
+  <span class="n">y</span> <span class="p">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">firstDerivative</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+</pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">0.01414213562373095</td>
+<td class="text-right">0</td>
+<td class="text-right">-0.007605849903976696</td>
+<td class="text-right">-0.007559289460184544</td>
+</tr>
+</tbody>
+</table>
+
+<div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">secondDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">num</span> <span class="p">=</span> <span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>
+  <span class="n">den</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>^<span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span>^<span class="p">(</span><span class="mf">1.5</span><span class="p">))</span>
+  <span class="n">y</span> <span class="p">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">secondDerivative</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+</pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">-0.02333452377915607</td>
+<td class="text-right">-0.008018753738744801</td>
+<td class="text-right">0.0001619847741468117</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3">
+<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Solution 9</h3>
+<div class="outline-text-3" id="text-1-9">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-1</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-1</span><span class="o">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mi">-0</span><span class="mf">.5</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">-0</span><span class="mf">.5</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x+1)/sqrt(1-x^2)&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s9.png" class="img-responsive" alt="c5_5s9.png">
+</p>
+</figure>
+
+<div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">firstDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">num</span> <span class="p">=</span> <span class="mi">1</span>
+  <span class="n">den</span> <span class="p">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span><span class="p">))</span>
+  <span class="n">y</span> <span class="p">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">firstDerivative</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">firstDerivative</span><span class="p">(</span><span class="o">-</span><span class="mf">0.6</span><span class="p">)]</span>
+</pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">1</td>
+<td class="text-right">2.309401076758503</td>
+<td class="text-right">0.769800358919501</td>
+<td class="text-right">0.7812499999999999</td>
+</tr>
+</tbody>
+</table>
+
+<div class="octave"><pre><span></span><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">secondDerivative</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">num</span> <span class="p">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">den</span> <span class="p">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span>^<span class="mi">2</span><span class="p">))</span>^<span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+  <span class="n">y</span> <span class="p">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="n">ans</span> <span class="p">=</span> <span class="p">[</span><span class="n">secondDerivative</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="o">-</span><span class="mf">0.6</span><span class="p">),</span> <span class="n">secondDerivative</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)]</span>
+</pre></div>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-right">1</td>
+<td class="text-right">0.3544496489338692</td>
+<td class="text-right">-0.2441406249999999</td>
+<td class="text-right">6.158402871356008</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Solution 10</h3>
+<div class="outline-text-3" id="text-1-10">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="nf">g</span>(x) <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-5</span><span class="o">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="c"># set yrange [-1:6]</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">-1</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x+1)/sqrt(x^2 - 1)&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span><span class="o">,</span> <span class="mi">1</span> <span class="n">ls</span> <span class="mi">2</span> <span class="nb">t</span> <span class="s">&quot;asymptote&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s10.png" class="img-responsive" alt="c5_5s10.png">
+</p>
+</figure>
+
+<p>
+Single differentiation:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ans</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; g = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱  2
+  ╲╱  x  - 1
+ans = (sym)
+
+          -1
+  ───────────────────
+             ________
+            ╱  2
+  (x - 1)⋅╲╱  x  - 1
+</pre></div>
+
+<p>
+Double differentiation:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; g = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱  2
+  ╲╱  x  - 1
+ans = (sym)
+
+             2⋅x + 1
+  ─────────────────────────────
+     ________
+    ╱  2      ⎛ 3    2        ⎞
+  ╲╱  x  - 1 ⋅⎝x  - x  - x + 1⎠
+</pre></div>
+
+<p>
+Now let's find where \(g'(x)\) and \(g''(x)\) are \(0\).
+</p>
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+octave&gt; g = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱  2
+  ╲╱  x  - 1
+ans = {}(0x0)
+</pre>
+
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+octave&gt; g = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱  2
+  ╲╱  x  - 1
+ans = (sym) -1/2
+</pre>
+
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dgh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">dg</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dgh</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">dgh</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">dgh</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">dgh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+
+<span class="n">ddg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ddgh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">ddg</span><span class="p">)</span>
+<span class="p">[</span><span class="n">ddgh</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">ddgh</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">ddgh</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">ddgh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">ddgh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; g = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱  2
+  ╲╱  x  - 1
+dg = (sym)
+
+          -1
+  ───────────────────
+             ________
+            ╱  2
+  (x - 1)⋅╲╱  x  - 1
+dgh =
+
+@(x) -1 ./ ((x - 1) .* sqrt (x .^ 2 - 1))
+ans =
+
+ Columns 1 through 3:
+
+   0.19245 + 0.00000i  -0.00000 - 0.76980i  -0.00000 - 1.00000i
+
+ Column 4:
+
+  -0.57735 + 0.00000i
+octave&gt; ddg = (sym)
+
+             2⋅x + 1
+  ─────────────────────────────
+     ________
+    ╱  2      ⎛ 3    2        ⎞
+  ╲╱  x  - 1 ⋅⎝x  - x  - x + 1⎠
+ddgh =
+
+@(x) (2 * x + 1) ./ (sqrt (x .^ 2 - 1) .* (x .^ 3 - x .^ 2 - x + 1))
+warning: division by zero
+warning: called from
+    eval&gt;@&lt;anonymous&gt; at line 1 column 15
+ans =
+
+ Columns 1 through 3:
+
+   0.19245 + 0.00000i   0.00000 + 0.00000i   0.00000 - 1.00000i
+
+ Columns 4 and 5:
+
+       Inf + 0.00000i   0.96225 + 0.00000i
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Solution 11</h3>
+<div class="outline-text-3" id="text-1-11">
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="mi">-5</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-0</span><span class="mf">.5</span><span class="o">:</span><span class="mi">9</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="nf">at</span> <span class="p">(</span><span class="mf">1.667</span><span class="p">)</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mf">1.667</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x-5)*sqrt(x)/4&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s11.png" class="img-responsive" alt="c5_5s11.png">
+</p>
+</figure>
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ddf</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">solve</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+
+<span class="n">ddfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">ddf</span><span class="p">)</span>
+<span class="p">[</span><span class="n">ddfh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">ddfh</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">ddfh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; f = (sym)
+
+  √x⋅(x - 5)
+  ──────────
+      4
+df = (sym)
+
+  3⋅x - 5
+  ───────
+    8⋅√x
+ddf = (sym)
+
+  3⋅x + 5
+  ───────
+      3/2
+  16⋅x
+ans = (sym) 5/3
+ans = (sym) -5/3
+octave&gt; dfh =
+
+@(x) (3 * x - 5) ./ (8 * sqrt (x))
+ans =
+
+  -0.25000   0.00000   0.08839
+octave&gt; ddfh =
+
+@(x) (3 * x + 5) ./ (16 * x .^ (3 / 2))
+ans =
+
+   0.50000   0.29047   0.24307
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> Solution 12</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+## dfh = function<sub>handle</sub>(df)
+## [dfh(1), dfh(5/3), dfh(2)]
+</p>
+
+<p>
+## ddfh = function<sub>handle</sub>(ddf)
+## [ddfh(1), ddfh(5/3), ddfh(2)]
+</p>
+
+
+
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="p">(((</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>^<span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ddf</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; g = (sym)
+
+            2
+  √x⋅(x - 5)
+  ───────────
+       4
+df = (sym)
+
+  5⋅(x - 5)⋅(x - 1)
+  ─────────────────
+         8⋅√x
+ddf = (sym)
+
+    ⎛   2          ⎞
+  5⋅⎝3⋅x  - 6⋅x - 5⎠
+  ──────────────────
+           3/2
+       16⋅x
+octave&gt; ans = (sym 2×1 matrix)
+
+  ⎡1⎤
+  ⎢ ⎥
+  ⎣5⎦
+ans = (sym 2×1 matrix)
+
+  ⎡    2⋅√6⎤
+  ⎢1 - ────⎥
+  ⎢     3  ⎥
+  ⎢        ⎥
+  ⎢    2⋅√6⎥
+  ⎢1 + ────⎥
+  ⎣     3  ⎦
+</pre></div>
+</div>
+</div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-01-28 Thu 23:07</p>
+<p class="date">Created: 2021-01-30 Sat 19:51</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>

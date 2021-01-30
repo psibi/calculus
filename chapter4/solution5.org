@@ -338,9 +338,25 @@ I = Inflection point
 
 ** Solution 10
 
+#+begin_src gnuplot :exports both :file ../assets/c5_5s10.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "g(x)"
+  set grid
+  set key right top
+  g(x) = (x+1)/sqrt((x**2) - 1)
+  set xrange [-5:5]
+  # set yrange [-1:6]
+  plot (x < -1 ? g(x): 1/0) ls 1 t "(x+1)/sqrt(x^2 - 1)", (x > 1 ? g(x): 1/0) ls 1 t "", 1 ls 2 t "asymptote"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s10.png]]
+
 Single differentiation:
 
-#+begin_src octave :session :eval never-export :results verbatim
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
 pkg load symbolic
 syms x
 g = (x+1)/sqrt(x^2 - 1)
@@ -348,10 +364,27 @@ ans = simplify(diff(g,x))
 #+end_src
 
 #+RESULTS:
+#+begin_example
+
+octave> g = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱  2
+  ╲╱  x  - 1
+ans = (sym)
+
+          -1
+  ───────────────────
+             ________
+            ╱  2
+  (x - 1)⋅╲╱  x  - 1
+#+end_example
 
 Double differentiation:
 
-#+begin_src octave :session :eval never-export
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
 pkg load symbolic
 syms x
 g = (x+1)/sqrt(x^2 - 1)
@@ -359,3 +392,252 @@ simplify(diff(g,x,x))
 #+end_src
 
 #+RESULTS:
+#+begin_example
+
+octave> g = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱  2
+  ╲╱  x  - 1
+ans = (sym)
+
+             2⋅x + 1
+  ─────────────────────────────
+     ________
+    ╱  2      ⎛ 3    2        ⎞
+  ╲╱  x  - 1 ⋅⎝x  - x  - x + 1⎠
+#+end_example
+
+Now let's find where $g'(x)$ and $g''(x)$ are $0$.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+pkg load symbolic
+syms x
+g = (x+1)/sqrt(x^2 - 1)
+solve(diff(g,x) == 0, x)
+#+end_src
+
+#+RESULTS:
+:
+: octave> g = (sym)
+:
+:      x + 1
+:   ───────────
+:      ________
+:     ╱  2
+:   ╲╱  x  - 1
+: ans = {}(0x0)
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+pkg load symbolic
+syms x
+g = (x+1)/sqrt(x^2 - 1)
+solve(diff(g,x, x) == 0, x)
+#+end_src
+
+#+RESULTS:
+:
+: octave> g = (sym)
+:
+:      x + 1
+:   ───────────
+:      ________
+:     ╱  2
+:   ╲╱  x  - 1
+: ans = (sym) -1/2
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+pkg load symbolic
+syms x
+g = (x+1)/sqrt(x^2 - 1)
+dg = simplify(diff(g,x))
+dgh = function_handle(dg)
+[dgh(-2), dgh(-0.5), dgh(0), dgh(2)]
+
+ddg = simplify(diff(g,x,x))
+ddgh = function_handle(ddg)
+[ddgh(-2), ddgh(-0.5), ddgh(0), ddgh(1), ddgh(2)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> g = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱  2
+  ╲╱  x  - 1
+dg = (sym)
+
+          -1
+  ───────────────────
+             ________
+            ╱  2
+  (x - 1)⋅╲╱  x  - 1
+dgh =
+
+@(x) -1 ./ ((x - 1) .* sqrt (x .^ 2 - 1))
+ans =
+
+ Columns 1 through 3:
+
+   0.19245 + 0.00000i  -0.00000 - 0.76980i  -0.00000 - 1.00000i
+
+ Column 4:
+
+  -0.57735 + 0.00000i
+octave> ddg = (sym)
+
+             2⋅x + 1
+  ─────────────────────────────
+     ________
+    ╱  2      ⎛ 3    2        ⎞
+  ╲╱  x  - 1 ⋅⎝x  - x  - x + 1⎠
+ddgh =
+
+@(x) (2 * x + 1) ./ (sqrt (x .^ 2 - 1) .* (x .^ 3 - x .^ 2 - x + 1))
+warning: division by zero
+warning: called from
+    eval>@<anonymous> at line 1 column 15
+ans =
+
+ Columns 1 through 3:
+
+   0.19245 + 0.00000i   0.00000 + 0.00000i   0.00000 - 1.00000i
+
+ Columns 4 and 5:
+
+       Inf + 0.00000i   0.96225 + 0.00000i
+#+end_example
+
+** Solution 11
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s11.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "f(x)"
+  set grid
+  set key right top
+  f(x) = (x-5)*sqrt(x)/4
+  set xrange [-0.5:9]
+  set label "C" at (1.667), f(1.667) left point pointtype 7 pointsize 2 offset -2
+  plot (x >= 0 ? f(x): 1/0) ls 1 t "(x-5)*sqrt(x)/4"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s11.png]]
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+pkg load symbolic
+syms x
+f = ((x-5)*sqrt(x))/4
+df = simplify(diff(f,x))
+ddf = simplify(diff(f,x,x))
+solve(diff(f,x) == 0, x)
+solve(diff(f,x,x) == 0, x)
+
+dfh = function_handle(df)
+[dfh(1), dfh(5/3), dfh(2)]
+
+ddfh = function_handle(ddf)
+[ddfh(1), ddfh(5/3), ddfh(2)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> f = (sym)
+
+  √x⋅(x - 5)
+  ──────────
+      4
+df = (sym)
+
+  3⋅x - 5
+  ───────
+    8⋅√x
+ddf = (sym)
+
+  3⋅x + 5
+  ───────
+      3/2
+  16⋅x
+ans = (sym) 5/3
+ans = (sym) -5/3
+octave> dfh =
+
+@(x) (3 * x - 5) ./ (8 * sqrt (x))
+ans =
+
+  -0.25000   0.00000   0.08839
+octave> ddfh =
+
+@(x) (3 * x + 5) ./ (16 * x .^ (3 / 2))
+ans =
+
+   0.50000   0.29047   0.24307
+#+end_example
+
+** Solution 12
+
+  ## dfh = function_handle(df)
+  ## [dfh(1), dfh(5/3), dfh(2)]
+
+  ## ddfh = function_handle(ddf)
+  ## [ddfh(1), ddfh(5/3), ddfh(2)]
+
+
+
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+  pkg load symbolic
+  syms x
+  g = (((x-5)^2) *sqrt(x))/4
+  df = simplify(diff(g,x))
+  ddf = simplify(diff(g,x,x))
+
+  solve(diff(g,x) == 0, x)
+  solve(diff(g,x,x) ==0, x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> g = (sym)
+
+            2
+  √x⋅(x - 5)
+  ───────────
+       4
+df = (sym)
+
+  5⋅(x - 5)⋅(x - 1)
+  ─────────────────
+         8⋅√x
+ddf = (sym)
+
+    ⎛   2          ⎞
+  5⋅⎝3⋅x  - 6⋅x - 5⎠
+  ──────────────────
+           3/2
+       16⋅x
+octave> ans = (sym 2×1 matrix)
+
+  ⎡1⎤
+  ⎢ ⎥
+  ⎣5⎦
+ans = (sym 2×1 matrix)
+
+  ⎡    2⋅√6⎤
+  ⎢1 - ────⎥
+  ⎢     3  ⎥
+  ⎢        ⎥
+  ⎢    2⋅√6⎥
+  ⎢1 + ────⎥
+  ⎣     3  ⎦
+#+end_example
