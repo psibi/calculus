@@ -670,3 +670,203 @@ ans =
 
   -2.50000  -0.55243   0.24056   1.11803   1.42462
 #+end_example
+
+** Solution 13
+
+Drawing [[https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J][graph for cubic root]] isn't straightforward.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+  pkg load symbolic
+  syms x
+  f = x - (3*nthroot(x,3))
+  df = simplify(diff(f,x))
+  ddf = simplify(diff(f,x,x))
+
+  solve(df == 0,x)
+  solve(ddf == 0, x)
+
+  dfh = function_handle(df)
+  [dfh(2)]
+
+  ddfh = function_handle(ddf)
+  [ddfh(1), ddfh(2)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> f = (sym)
+
+      3 ___
+  - 3⋅╲╱ x  + x
+df = (sym)
+
+       1
+  1 - ────
+       2/3
+      x
+ddf = (sym)
+
+    2
+  ──────
+     5/3
+  3⋅x
+octave> ans = (sym) 1
+ans = {}(0x0)
+octave> dfh =
+
+@(x) 1 - 1 ./ x .^ (2 / 3)
+ans =  0.37004
+octave> ddfh =
+
+@(x) 2 ./ (3 * x .^ (5 / 3))
+ans =
+
+   0.66667   0.20999
+#+end_example
+
+** Solution 14
+
+Drawing [[https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J][graph for cubic root]] isn't straightforward via gnuplot.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+  pkg load symbolic
+  syms x
+  f = nthroot(x,3)*(nthroot(x,3)-2)
+  df = simplify(diff(f,x))
+  ddf = simplify(diff(f,x,x))
+
+  solve(df == 0,x)
+  solve(ddf == 0, x)
+
+  dfh = function_handle(df)
+  [dfh(1),dfh(7),dfh(8),dfh(9)]
+
+  ddfh = function_handle(ddf)
+  [ddfh(1), ddfh(7), ddfh(8), ddfh(9)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> f = (sym)
+
+  3 ___ ⎛3 ___    ⎞
+  ╲╱ x ⋅⎝╲╱ x  - 2⎠
+df = (sym)
+
+    ⎛3 ___    ⎞
+  2⋅⎝╲╱ x  - 1⎠
+  ─────────────
+         2/3
+      3⋅x
+ddf = (sym)
+
+    ⎛    3 ___⎞
+  2⋅⎝2 - ╲╱ x ⎠
+  ─────────────
+         5/3
+      9⋅x
+octave> ans = (sym) 1
+ans = (sym) 8
+octave> dfh =
+
+@(x) 2 * (x .^ (1 / 3) - 1) ./ (3 * x .^ (2 / 3))
+ans =
+
+   0.00000   0.16632   0.16667   0.16642
+octave> ddfh =
+
+@(x) 2 * (2 - x .^ (1 / 3)) ./ (9 * x .^ (5 / 3))
+ans =
+
+   0.22222   0.00076   0.00000  -0.00046
+#+end_example
+
+** Solution 15
+
+Drawing [[https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J][graph for cubic root]] isn't straightforward via gnuplot.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+  pkg load symbolic
+  syms x
+  f = 3*cbrt(x^2) - (2*x)
+  df = simplify(diff(f,x))
+  ddf = simplify(diff(f,x,x))
+
+  solve(df == 0,x)
+  solve(ddf == 0, x)
+
+  dfh = function_handle(df)
+  [dfh(-1), dfh(0), dfh(2)]
+
+  ddfh = function_handle(ddf)
+  [ddfh(-1), ddfh(0), ddfh(1), ddfh(2)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> f = (sym)
+
+              ____
+           3 ╱  2
+  -2⋅x + 3⋅╲╱  x
+df = (sym)
+
+            ____
+         3 ╱  2
+       2⋅╲╱  x
+  -2 + ─────────
+           x
+ddf = (sym)
+
+        ____
+     3 ╱  2
+  -2⋅╲╱  x
+  ───────────
+         2
+      3⋅x
+octave> ans = (sym) 1
+ans = {}(0x0)
+octave> dfh =
+
+@(x) -2 + 2 * (x .^ 2) .^ (1 / 3) ./ x
+warning: division by zero
+warning: called from
+    eval>@<anonymous> at line 1 column 9
+ans =
+
+  -4.00000       NaN  -0.41260
+octave> ddfh =
+
+@(x) -2 * (x .^ 2) .^ (1 / 3) ./ (3 * x .^ 2)
+warning: division by zero
+warning: called from
+    eval>@<anonymous> at line 1 column 22
+ans =
+
+  -0.66667       NaN  -0.66667  -0.26457
+#+end_example
+
+** Solution 16
+
+Suppose that $f$ is a function whose domain contains the interval
+$(-\infty, b)$ and let $A= { f(x): x < b}$.
+
+Theorem: If $f$ is weakly decreasing on $(-\infty, b)$ and $A$ has an
+upper bound, then $\lim_{x -> -\infty}$ is defined and is equal to the
+least upper bound of $A$.
+
+Proof: Suppose $f$ is weakly decreasing and $A$ has an upper bound. By
+the completeness of the real number, we can let $L$ be the least upper
+bound of $A$. We now verify that $\lim_{x \to -\infty} f(x) = L$ by
+using the definition of limits.
+
+Suppose $\epsilon > 0$. Since $L$ is the least upper bound of $A$,
+$L - \epsilon$ is not an upper bound and therefore there must be some
+number $N < b$ such that $f(N) > L-\epsilon$. Now consider any $x <
+N$. Since $f$ is weakly decresing on $(-\infty, b)$, $f(x) \geq f(N) >
+L - \epsilon$, and since $L$ is an upper bound for $A$, $f(x) \leq
+L$. Thus, $L - \epsilon < f(n) \leq f(x) \leq L < L + \epsilon$, so
+$|f(x)-L| < \epsilon$.

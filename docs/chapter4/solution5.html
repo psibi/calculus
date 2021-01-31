@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-01-30 Sat 19:51 -->
+<!-- 2021-01-31 Sun 21:31 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -239,6 +239,10 @@ MathJax.Hub.Config({
 <li><a href="#sec-1-10">1.10. Solution 10</a></li>
 <li><a href="#sec-1-11">1.11. Solution 11</a></li>
 <li><a href="#sec-1-12">1.12. Solution 12</a></li>
+<li><a href="#sec-1-13">1.13. Solution 13</a></li>
+<li><a href="#sec-1-14">1.14. Solution 14</a></li>
+<li><a href="#sec-1-15">1.15. Solution 15</a></li>
+<li><a href="#sec-1-16">1.16. Solution 16</a></li>
 </ul>
 </li>
 </ul>
@@ -1120,27 +1124,41 @@ ans =
 <div id="outline-container-sec-1-12" class="outline-3">
 <h3 id="sec-1-12"><span class="section-number-3">1.12</span> Solution 12</h3>
 <div class="outline-text-3" id="text-1-12">
-<p>
-## dfh = function<sub>handle</sub>(df)
-## [dfh(1), dfh(5/3), dfh(2)]
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="nf">g</span>(x) <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="mi">-5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mi">9</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">1</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">5</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mf">2.63</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mf">2.63</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x-5)^2*sqrt(x)/4&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s12.png" class="img-responsive" alt="c5_5s12.png">
 </p>
-
-<p>
-## ddfh = function<sub>handle</sub>(ddf)
-## [ddfh(1), ddfh(5/3), ddfh(2)]
-</p>
-
-
+</figure>
 
 
 <div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">x</span>
 <span class="n">g</span> <span class="p">=</span> <span class="p">(((</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>^<span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="mi">4</span>
-<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
-<span class="n">ddf</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ddg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
 
 <span class="n">solve</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">solve</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">dgh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">dg</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dgh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">dgh</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">dgh</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span> <span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span><span class="p">)),</span> <span class="n">dgh</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">dgh</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">dgh</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span>
+
+<span class="n">ddgh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">ddg</span><span class="p">)</span>
+<span class="p">[</span><span class="n">ddgh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">ddgh</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">ddgh</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">ddgh</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">ddgh</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span>
 </pre></div>
 
 <div class="highlight"><pre><span></span>octave&gt; g = (sym)
@@ -1149,12 +1167,12 @@ ans =
   √x⋅(x - 5)
   ───────────
        4
-df = (sym)
+dg = (sym)
 
   5⋅(x - 5)⋅(x - 1)
   ─────────────────
          8⋅√x
-ddf = (sym)
+ddg = (sym)
 
     ⎛   2          ⎞
   5⋅⎝3⋅x  - 6⋅x - 5⎠
@@ -1175,14 +1193,240 @@ ans = (sym 2×1 matrix)
   ⎢    2⋅√6⎥
   ⎢1 + ────⎥
   ⎣     3  ⎦
+octave&gt; dgh =
+
+@(x) 5 * (x - 5) .* (x - 1) ./ (8 * sqrt (x))
+ans =
+
+  -0.00000  -1.32583  -1.48881  -1.44338   0.00000   1.27578
+octave&gt; ddgh =
+
+@(x) 5 * (3 * x .^ 2 - 6 * x - 5) ./ (16 * x .^ (3 / 2))
+ans =
+
+  -2.50000  -0.55243   0.24056   1.11803   1.42462
 </pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> Solution 13</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+Drawing <a href="https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J">graph for cubic root</a> isn't straightforward.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nb">nthroot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ddf</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">ddf</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+
+<span class="n">ddfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">ddf</span><span class="p">)</span>
+<span class="p">[</span><span class="n">ddfh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">ddfh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; f = (sym)
+
+      3 ___
+  - 3⋅╲╱ x  + x
+df = (sym)
+
+       1
+  1 - ────
+       2/3
+      x
+ddf = (sym)
+
+    2
+  ──────
+     5/3
+  3⋅x
+octave&gt; ans = (sym) 1
+ans = {}(0x0)
+octave&gt; dfh =
+
+@(x) 1 - 1 ./ x .^ (2 / 3)
+ans =  0.37004
+octave&gt; ddfh =
+
+@(x) 2 ./ (3 * x .^ (5 / 3))
+ans =
+
+   0.66667   0.20999
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 14</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+Drawing <a href="https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J">graph for cubic root</a> isn't straightforward via gnuplot.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="nb">nthroot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">nthroot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ddf</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">ddf</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">dfh</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span><span class="n">dfh</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="n">dfh</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+
+<span class="n">ddfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">ddf</span><span class="p">)</span>
+<span class="p">[</span><span class="n">ddfh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">ddfh</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span> <span class="n">ddfh</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="n">ddfh</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; f = (sym)
+
+  3 ___ ⎛3 ___    ⎞
+  ╲╱ x ⋅⎝╲╱ x  - 2⎠
+df = (sym)
+
+    ⎛3 ___    ⎞
+  2⋅⎝╲╱ x  - 1⎠
+  ─────────────
+         2/3
+      3⋅x
+ddf = (sym)
+
+    ⎛    3 ___⎞
+  2⋅⎝2 - ╲╱ x ⎠
+  ─────────────
+         5/3
+      9⋅x
+octave&gt; ans = (sym) 1
+ans = (sym) 8
+octave&gt; dfh =
+
+@(x) 2 * (x .^ (1 / 3) - 1) ./ (3 * x .^ (2 / 3))
+ans =
+
+   0.00000   0.16632   0.16667   0.16642
+octave&gt; ddfh =
+
+@(x) 2 * (2 - x .^ (1 / 3)) ./ (9 * x .^ (5 / 3))
+ans =
+
+   0.22222   0.00076   0.00000  -0.00046
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Solution 15</h3>
+<div class="outline-text-3" id="text-1-15">
+<p>
+Drawing <a href="https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J">graph for cubic root</a> isn't straightforward via gnuplot.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="mi">3</span><span class="o">*</span><span class="nb">cbrt</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ddf</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">ddf</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+
+<span class="n">ddfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">ddf</span><span class="p">)</span>
+<span class="p">[</span><span class="n">ddfh</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ddfh</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">ddfh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">ddfh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; f = (sym)
+
+              ____
+           3 ╱  2
+  -2⋅x + 3⋅╲╱  x
+df = (sym)
+
+            ____
+         3 ╱  2
+       2⋅╲╱  x
+  -2 + ─────────
+           x
+ddf = (sym)
+
+        ____
+     3 ╱  2
+  -2⋅╲╱  x
+  ───────────
+         2
+      3⋅x
+octave&gt; ans = (sym) 1
+ans = {}(0x0)
+octave&gt; dfh =
+
+@(x) -2 + 2 * (x .^ 2) .^ (1 / 3) ./ x
+warning: division by zero
+warning: called from
+    eval&gt;@&lt;anonymous&gt; at line 1 column 9
+ans =
+
+  -4.00000       NaN  -0.41260
+octave&gt; ddfh =
+
+@(x) -2 * (x .^ 2) .^ (1 / 3) ./ (3 * x .^ 2)
+warning: division by zero
+warning: called from
+    eval&gt;@&lt;anonymous&gt; at line 1 column 22
+ans =
+
+  -0.66667       NaN  -0.66667  -0.26457
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-16" class="outline-3">
+<h3 id="sec-1-16"><span class="section-number-3">1.16</span> Solution 16</h3>
+<div class="outline-text-3" id="text-1-16">
+<p>
+Suppose that \(f\) is a function whose domain contains the interval
+\((-\infty, b)\) and let \(A= { f(x): x < b}\).
+</p>
+
+<p>
+Theorem: If \(f\) is weakly decreasing on \((-\infty, b)\) and \(A\) has an
+upper bound, then \(\lim_{x -> -\infty}\) is defined and is equal to the
+least upper bound of \(A\).
+</p>
+
+<p>
+Proof: Suppose \(f\) is weakly decreasing and \(A\) has an upper bound. By
+the completeness of the real number, we can let \(L\) be the least upper
+bound of \(A\). We now verify that \(\lim_{x \to -\infty} f(x) = L\) by
+using the definition of limits.
+</p>
+
+<p>
+Suppose \(\epsilon > 0\). Since \(L\) is the least upper bound of \(A\),
+\(L - \epsilon\) is not an upper bound and therefore there must be some
+number \(N < b\) such that \(f(N) > L-\epsilon\). Now consider any \(x <
+N\). Since \(f\) is weakly decresing on \((-\infty, b)\), \(f(x) \geq f(N) >
+L - \epsilon\), and since \(L\) is an upper bound for \(A\), \(f(x) \leq
+L\). Thus, \(L - \epsilon < f(n) \leq f(x) \leq L < L + \epsilon\), so
+\(|f(x)-L| < \epsilon\).
+</p>
 </div>
 </div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-01-30 Sat 19:51</p>
+<p class="date">Created: 2021-01-31 Sun 21:31</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>

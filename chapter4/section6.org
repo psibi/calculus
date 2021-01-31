@@ -1,0 +1,4 @@
+* Optimization Problems
+
+Problems that ask that some quantity be made as large or as small as
+possible are called optimization problems.
