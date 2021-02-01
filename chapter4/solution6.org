@@ -1,0 +1,571 @@
+* Optimization Problems
+
+** Solution 1
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+  pkg load symbolic
+  syms x
+  f = 2*x*(75 - (x^2))
+  df = simplify(diff(f,x))
+
+  solve(df == 0,x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> f = (sym)
+
+      ⎛      2⎞
+  2⋅x⋅⎝75 - x ⎠
+df = (sym)
+
+           2
+  150 - 6⋅x
+octave> ans = (sym 2×1 matrix)
+
+  ⎡-5⎤
+  ⎢  ⎥
+  ⎣5 ⎦
+#+end_example
+
+So the critical number is $-5$ and $5$. Since the domain is $(0,
+\infty)$, we should use the critical number $5$.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+  dfh = function_handle(df)
+  [dfh(4), dfh(6)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(x) 150 - 6 * x .^ 2
+: ans =
+:
+:    54  -66
+
+So the function has local maximum at $5$. Let's compute the largest
+possible area for the rectangle:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(5)]
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(x) 2 * x .* (75 - x .^ 2)
+: ans =  500
+
+** Solution 2
+
+References:
+
+- [[https://www.youtube.com/watch?v=0yjsJnxgk7k][Youtube video]]
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms y
+f = (2000/y) + y^2
+df = simplify(diff(f,y))
+
+solve(df == 0, y)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+   2   2000
+  y  + ────
+        y
+df = (sym)
+
+        2000
+  2⋅y - ────
+          2
+         y
+octave> ans = (sym 3×1 matrix)
+
+  ⎡    10     ⎤
+  ⎢           ⎥
+  ⎢-5 - 5⋅√3⋅ⅈ⎥
+  ⎢           ⎥
+  ⎣-5 + 5⋅√3⋅ⅈ⎦
+#+end_example
+
+So $10$ is critical number for the function. Now let's find if we have
+a local minima or a maxima:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+[dfh(9), dfh(11)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(y) 2 * y - 2000 ./ y .^ 2
+: ans =
+:
+:   -6.6914   5.4711
+
+So at $10$ we have a local minima. So the square base has the
+dimension of $10$ inches. The box's height will be:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+height = 500/(y^2)
+height_handle = function_handle(height)
+[height_handle(10)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+height = (sym)
+
+  500
+  ───
+    2
+   y
+height_handle =
+
+@(y) 500 ./ y .^ 2
+ans =  5
+#+end_example
+
+So the height should be $5$ inches. We can indeed verify if the volume
+is coming to $500$ cubic inches:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+10*10*5
+#+end_src
+
+#+RESULTS:
+: ans =  500
+
+So the dimensions to minimize the amount of material needed is $10$
+inches as the square base on each of it's side. And $5$ inches as the
+height of the rectangular box.
+
+** Solution 3
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+syms y
+f = y^2*((75/(4*y)) - (y/4))
+
+df = simplify(diff(f,y))
+solve(df==0, y)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> f = (sym)
+
+   2 ⎛  y    75⎞
+  y ⋅⎜- ─ + ───⎟
+     ⎝  4   4⋅y⎠
+octave> df = (sym)
+
+          2
+  75   3⋅y
+  ── - ────
+  4     4
+ans = (sym 2×1 matrix)
+
+  ⎡-5⎤
+  ⎢  ⎥
+  ⎣5 ⎦
+#+end_example
+
+$y$ cannot be $-5$ as the dimension cannot be in negative. Let's check
+if the critical number $5$ is a local minima or a maxima.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+[dfh(4), dfh(6)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(y) 75 / 4 - 3 * y .^ 2 / 4
+: ans =
+:
+:    6.7500  -8.2500
+
+So we confirm that the function attains it's local maximum at $5$. So
+now let's find the largets possible volume:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(5)]
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(y) y .^ 2 .* (-y / 4 + 75 ./ (4 * y))
+: ans =  62.500
+
+So the largest possibe volume is $62.5$ cubic inches.
+
+** Solution 4
+
+Let's find the critical numbers first.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = x*(24 - 2*x)*(15 - 2*x)
+df = simplify(diff(f,x))
+
+solve(df==0, x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym) x⋅(15 - 2⋅x)⋅(24 - 2⋅x)
+df = (sym)
+
+      2
+  12⋅x  - 156⋅x + 360
+octave> ans = (sym 2×1 matrix)
+
+  ⎡3 ⎤
+  ⎢  ⎥
+  ⎣10⎦
+#+end_example
+
+So we have two critical numbers: $3, 10$.
+
+Now let's try to find which one is the local maxima:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+[dfh(2), dfh(4), dfh(9), dfh(11)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(x) 12 * x .^ 2 - 156 * x + 360
+: ans =
+:
+:    96  -72  -72   96
+
+So the local maxima is at $3$. Let's find the maximum possibe volume
+of the box:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(3)]
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(x) x .* (15 - 2 * x) .* (24 - 2 * x)
+: ans =  486
+
+So the largest possible volume of the box is $486$ cubic inches.
+
+** Solution 5
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms s
+
+f = (s*(3000-(40*s)))/(60+s)
+
+df = simplify(diff(f,s))
+
+solve(df == 0, s)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+  s⋅(3000 - 40⋅s)
+  ───────────────
+       s + 60
+octave> df = (sym)
+
+        2
+  - 40⋅s  - 4800⋅s + 180000
+  ─────────────────────────
+       2
+      s  + 120⋅s + 3600
+octave> ans = (sym 2×1 matrix)
+
+  ⎡-150⎤
+  ⎢    ⎥
+  ⎣ 30 ⎦
+#+end_example
+
+We are interested in the number $30$ as that's in the domain. Let's
+check if it's local maximum:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+
+[dfh(29), dfh(31)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(s) (-40 * s .^ 2 - 4800 * s + 180000) ./ (s .^ 2 + 120 * s + 3600)
+: octave> ans =
+:
+:    0.90393  -0.87429
+
+So, we can confirm that is the local maxima. So width of side wall is
+$30$ Let's find the width of the front wall:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+front = (3000 - 40*s)/(60 + s)
+front_handle = function_handle(front)
+[front_handle(30)]
+#+end_src
+
+#+RESULTS:
+: front = (sym)
+:
+:   3000 - 40⋅s
+:   ───────────
+:      s + 60
+: front_handle =
+:
+: @(s) (3000 - 40 * s) ./ (s + 60)
+: ans =  20
+
+So these are the dimensions for the house to maximize floor space:
+
+Side wall width: $30$
+Front wall width: $20$
+
+** Solution 6
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms b
+
+f = (150/b + 3)*(b+2)
+
+fb = simplify(diff(f,b))
+
+solve(fb == 0, b)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+  ⎛    150⎞
+  ⎜3 + ───⎟⋅(b + 2)
+  ⎝     b ⎠
+octave> fb = (sym)
+
+      300
+  3 - ───
+        2
+       b
+octave> ans = (sym 2×1 matrix)
+
+  ⎡-10⎤
+  ⎢   ⎥
+  ⎣10 ⎦
+#+end_example
+
+We will take $10$ as the critical number since it's part of the
+domain.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fbh = function_handle(fb)
+
+[fbh(9), fbh(11)]
+#+end_src
+
+#+RESULTS:
+: fbh =
+:
+: @(b) 3 - 300 ./ b .^ 2
+: octave> ans =
+:
+:   -0.70370   0.52066
+
+So the local minima is attained at critical number $10$. Let's find
+the other dimension:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+a = 150/b
+ah = function_handle(a)
+
+[ah(10)]
+#+end_src
+
+#+RESULTS:
+: a = (sym)
+:
+:   150
+:   ───
+:    b
+: ah =
+:
+: @(b) 150 ./ b
+: octave> ans =  15
+
+So the dimensions of the poster is $10$ and $15$ inches.
+
+** Solution 7
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms b
+
+f = (48/b + 2)*(2 + (b+2)*3)
+fb = simplify(diff(f,b))
+
+solve(fb == 0, b)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+  ⎛    48⎞
+  ⎜2 + ──⎟⋅(3⋅b + 8)
+  ⎝    b ⎠
+fb = (sym)
+
+      384
+  6 - ───
+        2
+       b
+octave> ans = (sym 2×1 matrix)
+
+  ⎡-8⎤
+  ⎢  ⎥
+  ⎣8 ⎦
+#+end_example
+
+We will take $8$ as the critical number since it's part of the
+domain.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fbh = function_handle(fb)
+
+[fbh(7), fbh(9)]
+#+end_src
+
+#+RESULTS:
+: fbh =
+:
+: @(b) 6 - 384 ./ b .^ 2
+: octave> ans =
+:
+:   -1.8367   1.2593
+
+So the function attains it local minimum at $8$. The other dimension
+is
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+48/8
+#+end_src
+
+#+RESULTS:
+: ans =  6
+
+Actual dimensions are $a+2$ and $b+2$. So the dimensions are $8$ and
+$10$ feets.
+
+** Solution 8
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms a
+
+f = (60-(5*a^2))*a/8
+df = simplify(diff(f,a))
+solve(df == 0, a)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+    ⎛        2⎞
+  a⋅⎝60 - 5⋅a ⎠
+  ─────────────
+        8
+df = (sym)
+
+           2
+  15   15⋅a
+  ── - ─────
+  2      8
+ans = (sym 2×1 matrix)
+
+  ⎡-2⎤
+  ⎢  ⎥
+  ⎣2 ⎦
+#+end_example
+
+We will take $2$ as the critical number since it's part of the
+domain.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+
+[dfh(1), dfh(3)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(a) 3 / 4 - 3 * a .^ 2 / 16
+: octave> ans =
+:
+:    0.56250  -0.93750
+
+So the function has local maxima at $2$. So the other dimension is:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+b = (60 - (5*a^2))/(8*a)
+bh = function_handle(b)
+[bh(2)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+b = (sym)
+
+          2
+  60 - 5⋅a
+  ─────────
+     8⋅a
+bh =
+
+@(a) (60 - 5 * a .^ 2) ./ (8 * a)
+ans =  2.5000
+#+end_example
+
+So $a=1$ and $b=2.5$
