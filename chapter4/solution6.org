@@ -569,3 +569,578 @@ ans =  2.5000
 #+end_example
 
 So $a=1$ and $b=2.5$
+
+** Solution 9
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms r p
+
+f = p*(r^2)*4 + (((p * r^2) + ((6*p/r)))*2)
+df = simplify(diff(f,r))
+
+solve(df==0, r)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+       2   12⋅p
+  6⋅p⋅r  + ────
+            r
+df = (sym)
+
+       ⎛ 3    ⎞
+  12⋅p⋅⎝r  - 1⎠
+  ─────────────
+         2
+        r
+octave> ans = (sym 3×1 matrix)
+
+  ⎡    1     ⎤
+  ⎢          ⎥
+  ⎢  1   √3⋅ⅈ⎥
+  ⎢- ─ - ────⎥
+  ⎢  2    2  ⎥
+  ⎢          ⎥
+  ⎢  1   √3⋅ⅈ⎥
+  ⎢- ─ + ────⎥
+  ⎣  2    2  ⎦
+#+end_example
+
+There only one number which is part of the domain. Let's find if it's
+a local minima for the function:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+[dfh(pi, 0.5), dfh(pi, 2)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(p, r) 12 * p .* (r .^ 3 - 1) ./ r .^ 2
+: ans =
+:
+:   -131.947    65.973
+
+So we can confirm that it's a local minima. So the radius is $1$ inch
+and the height of the cylinder is:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+h = 3/(r^2)
+
+hh = function_handle(h)
+[hh(1)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+h = (sym)
+
+  3
+  ──
+   2
+  r
+octave> hh =
+
+@(r) 3 ./ r .^ 2
+ans =  3
+#+end_example
+
+So the dimensions of the mug which will keep the coffee as hot as
+possible are height of $3$ inches along with radius of $1$ inch.
+
+** Solution 10
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms r
+f = 3*pi*r^2*(18-3*r)
+
+df = simplify(diff(f,r))
+solve(df == 0, r)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mtimes at line 63 column 5
+f = (sym)
+
+       2
+  3⋅π⋅r ⋅(18 - 3⋅r)
+octave> df = (sym) 27⋅π⋅r⋅(4 - r)
+ans = (sym 2×1 matrix)
+
+  ⎡0⎤
+  ⎢ ⎥
+  ⎣4⎦
+#+end_example
+
+Taking the value of 4 since it's in domain, let's see if it's the
+local maxima for the function.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+[dfh(3), dfh(5)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(r) 27 * pi * r .* (4 - r)
+: ans =
+:
+:    254.47  -424.12
+
+So at $r=4$, the function attains it's maximum value. Let's find the
+cylinder's height now:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+h = (18 - 3*r)
+hh = function_handle(h)
+
+hh(4)
+#+end_src
+
+#+RESULTS:
+: h = (sym) 18 - 3⋅r
+: hh =
+:
+: @(r) 18 - 3 * r
+: octave> ans =  6
+
+So the dimensions of cylinder of greatest volume that can be inscribed
+is cylinder of radius 4 and height of 6 inches.
+
+Reference [[https://www.youtube.com/watch?v=-eNJ8V6Cg_M][video]]
+
+** Solution 11
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms r p
+f = 30*p*r^2 + (1620*p/r)
+
+df = simplify(diff(f,r))
+solve(df == 0, r)
+#+end_src
+
+I'm using the symbol $p$ instead of $\pi$ to make calculuations
+simpler.
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+        2   1620⋅p
+  30⋅p⋅r  + ──────
+              r
+octave> df = (sym)
+
+       ⎛ 3     ⎞
+  60⋅p⋅⎝r  - 27⎠
+  ──────────────
+         2
+        r
+ans = (sym 3×1 matrix)
+
+  ⎡     3      ⎤
+  ⎢            ⎥
+  ⎢  3   3⋅√3⋅ⅈ⎥
+  ⎢- ─ - ──────⎥
+  ⎢  2     2   ⎥
+  ⎢            ⎥
+  ⎢  3   3⋅√3⋅ⅈ⎥
+  ⎢- ─ + ──────⎥
+  ⎣  2     2   ⎦
+#+end_example
+
+We know that the critical number is $3$. Now let's confirm that the
+function attains the local minima at the number:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+[dfh(pi, 2), dfh(pi, 4)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(p, r) 60 * p .* (r .^ 3 - 27) ./ r .^ 2
+: ans =
+:
+:   -895.35   435.90
+
+So we can confirm that $3$ is infact the local minima for the
+function. Now let's compute the height of the cake:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+h = 81/r^2
+hh = function_handle(h)
+
+hh(3)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+h = (sym)
+
+  81
+  ──
+   2
+  r
+hh =
+
+@(r) 81 ./ r .^ 2
+octave> ans =  9
+#+end_example
+
+So the dimensions of the cake to minimize the cost of filling and
+frosting should be cake of height $9$ inches and radius should be $3$
+inches.
+
+** Solution 12
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = sqrt(x^2 + (16/x^2))
+df = simplify(diff(f,x))
+
+solve(df==0, x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+       _________
+      ╱  2   16
+     ╱  x  + ──
+    ╱         2
+  ╲╱         x
+df = (sym)
+
+        4
+       x  - 16
+  ──────────────────
+           _________
+          ╱  4
+   3     ╱  x  + 16
+  x ⋅   ╱   ───────
+       ╱        2
+     ╲╱        x
+octave> ans = (sym 4×1 matrix)
+
+  ⎡ -2 ⎤
+  ⎢    ⎥
+  ⎢ 2  ⎥
+  ⎢    ⎥
+  ⎢-2⋅ⅈ⎥
+  ⎢    ⎥
+  ⎣2⋅ⅈ ⎦
+#+end_example
+
+So we have two numbers within the domain which are critical numbers
+for the function. Let's find out which one is the local minima:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+[dfh(-3), dfh(-1), dfh(1), dfh(3)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(x) (x .^ 4 - 16) ./ (x .^ 3 .* sqrt ((x .^ 4 + 16) ./ x .^ 2))
+: ans =
+:
+:   -0.73331   3.63803  -3.63803   0.73331
+
+So both $-2$ and $2$ are local minima. Let's find the corresponding y
+co-ordinates:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+y = 4/x
+yh = function_handle(y)
+
+[yh(-2), yh(2)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+y = (sym)
+
+  4
+  ─
+  x
+yh =
+
+@(x) 4 ./ x
+octave> ans =
+
+  -2   2
+#+end_example
+
+So the corrdinates are $(-2,2)$ and $(2,2)$ and they are the closest
+to the origin from the curve.
+
+Reference [[https://www.mathsisfun.com/algebra/distance-2-points.html][formula]] used above.
+
+** Solution 13
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = sqrt(x^2 + (x^2/(x-8)^2))
+df = simplify(diff(f,x))
+
+solve(df==0, x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+        _______________
+       ╱          2
+      ╱   2      x
+     ╱   x  + ────────
+    ╱                2
+  ╲╱          (x - 8)
+df = (sym)
+
+             ⎛       3    ⎞
+           x⋅⎝(x - 8)  - 8⎠
+  ──────────────────────────────────
+        ___________________
+       ╱  2 ⎛       2    ⎞
+      ╱  x ⋅⎝(x - 8)  + 1⎠         3
+     ╱   ───────────────── ⋅(x - 8)
+    ╱                2
+  ╲╱          (x - 8)
+octave> ans = (sym 3×1 matrix)
+
+  ⎡   10   ⎤
+  ⎢        ⎥
+  ⎢7 - √3⋅ⅈ⎥
+  ⎢        ⎥
+  ⎣7 + √3⋅ⅈ⎦
+#+end_example
+
+We select the number $10$ since it's part of the domain. Let's confirm
+that it's the local minima for the function:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+[dfh(9), dfh(11)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(x) x .* ((x - 8) .^ 3 - 8) ./ (sqrt (x .^ 2 .* ((x - 8) .^ 2 + 1) ./ (x - 8) .^ 2) .* (x - 8) .^ 3)
+: ans =
+:
+:   -4.94975   0.66759
+
+That confirms that $10$ is local minima for the function. Now let's
+find the dimension of the board:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+fh(10)
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(x) sqrt (x .^ 2 + x .^ 2 ./ (x - 8) .^ 2)
+: ans =  11.180
+: octave> ans =  11.180
+
+** Solution 14
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms r V
+
+f = 2*pi*r^2 + (2*V/r)
+df = simplify(diff(f,r))
+
+solve(df==0,r)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mtimes at line 63 column 5
+f = (sym)
+
+  2⋅V        2
+  ─── + 2⋅π⋅r
+   r
+df = (sym)
+
+    2⋅V
+  - ─── + 4⋅π⋅r
+      2
+     r
+octave> ans = (sym 3×1 matrix)
+
+  ⎡       2/3 3 ___       ⎤
+  ⎢      2   ⋅╲╱ V        ⎥
+  ⎢      ──────────       ⎥
+  ⎢         3 ___         ⎥
+  ⎢       2⋅╲╱ π          ⎥
+  ⎢                       ⎥
+  ⎢ 2/3 3 ___             ⎥
+  ⎢2   ⋅╲╱ V ⋅(-1 + √3⋅ⅈ) ⎥
+  ⎢────────────────────── ⎥
+  ⎢         3 ___         ⎥
+  ⎢       4⋅╲╱ π          ⎥
+  ⎢                       ⎥
+  ⎢  2/3 3 ___            ⎥
+  ⎢-2   ⋅╲╱ V ⋅(1 + √3⋅ⅈ) ⎥
+  ⎢───────────────────────⎥
+  ⎢          3 ___        ⎥
+  ⎣        4⋅╲╱ π         ⎦
+#+end_example
+
+Now the easiest way to confirm if the first value of the above matrix
+is local minima is to use [[http://psibi.in/velleman-calculus/chapter4/section4.html#sec-1-5][the second derivative test.]]
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+ddf = simplify(diff(f,r,r))
+#+end_src
+
+#+RESULTS:
+: ddf = (sym)
+:
+:   4⋅V
+:   ─── + 4⋅π
+:     3
+:    r
+
+Since both $V$ and $r$ is positive, we know that the second derivative
+is positive. And hence we know that the first value of the matrix is a
+local minima.
+
+todo: add last content
+
+[[https://www.youtube.com/watch?v=30yWUCQZOWc][Reference:  Similar problem]]
+
+** Solution 15
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms r
+f = 2*pi*r*(32/r^2 + 2*r)
+
+df = simplify(diff(f,r))
+solve(df==0, r)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mtimes at line 63 column 5
+f = (sym)
+
+        ⎛      32⎞
+  2⋅π⋅r⋅⎜2⋅r + ──⎟
+        ⎜       2⎟
+        ⎝      r ⎠
+octave> df = (sym)
+
+      ⎛ 3    ⎞
+  8⋅π⋅⎝r  - 8⎠
+  ────────────
+        2
+       r
+ans = (sym 3×1 matrix)
+
+  ⎡    2    ⎤
+  ⎢         ⎥
+  ⎢-1 - √3⋅ⅈ⎥
+  ⎢         ⎥
+  ⎣-1 + √3⋅ⅈ⎦
+#+end_example
+
+Now let's check if the first value in the matrix is where the function
+attains it's local minima:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dfh = function_handle(df)
+[dfh(1), dfh(3)]
+#+end_src
+
+#+RESULTS:
+: dfh =
+:
+: @(r) 8 * pi * (r .^ 3 - 8) ./ r .^ 2
+: ans =
+:
+:   -175.929    53.058
+
+That confirms that it attains local minima there. Let's compute the
+height of the cylinder:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+h = 32/(r^2)
+hh = function_handle(h)
+
+[hh(2)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+h = (sym)
+
+  32
+  ──
+   2
+  r
+hh =
+
+@(r) 32 ./ r .^ 2
+octave> ans =  8
+#+end_example
+
+So the dimension of the cylinder is $2$ inches radius and $8$ inches
+height.
+
+** Solution 16
+
+[[https://en.wikipedia.org/wiki/Right_triangle][Right triangle wikipedia page]] to understand what legs mean in the
+question.
+
+https://www.youtube.com/watch?v=2keGgDBJKGU
