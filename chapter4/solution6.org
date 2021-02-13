@@ -2,6 +2,36 @@
 
 ** Solution 1
 
+todo: insert pic
+
+Bottom vertices: $(x_1,0), (x_2,0)$
+
+Top vertices: $(x_1, 75-x_1^2), (x_2, 75-x_2^2)$
+
+Since it is a rectangle, the width should be equal:
+
+Width = $75-x_1^2 = 75-x_2^2$
+
+$x_1^2 = x_2^2$
+
+$x_1 = \pm x_2$
+
+Area of rectangle = $(x_2 - x_1).(75-x_1^2)$
+
+So, $x_1 \neq x_2$ as are will be zero in that case.
+
+$x_1 = -x_2$
+
+Area = $2x_2(75-x_2^2)$
+
+Replacing $x_2$ with $x$,
+
+$f(x) = 2x(75-x^2)$
+
+Domain: $(0, \infty)$
+
+Let's write GNU Octave code to solve this further:
+
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
   pkg load symbolic
   syms x
@@ -64,6 +94,32 @@ fh = function_handle(f)
 References:
 
 - [[https://www.youtube.com/watch?v=0yjsJnxgk7k][Youtube video]]
+
+todo: insert pic
+
+Rectangular box volume = 500 cubic inches.
+
+It has square base.
+
+It has open top.
+
+Volume $= y.y.x = xy^2$
+
+$xy^2 = 500$
+
+Surface area $= 4xy + y^2$
+
+$x = \dfrac{500}{y^2}$
+
+SA $= 4.\dfrac{500}{y^2}.y + y^2$
+
+$= \dfrac{2000}{y} + y^2$
+
+$f(y) = \dfrac{2000}{y} + y^2$
+
+Domain: $(0, \infty)$
+
+Let's write GNU Octave code to solve this further:
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 clear
@@ -152,6 +208,19 @@ inches as the square base on each of it's side. And $5$ inches as the
 height of the rectangular box.
 
 ** Solution 3
+
+todo: insert pic (same as last)
+
+Details:
+- Rectangular box
+- Square base
+- Open box
+
+Material = 75 square inches
+
+We need to find largest volume.
+
+sibi: start from here
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 clear

@@ -1,0 +1,1598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2021-02-13 Sat 20:35 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Sibi Prabakaran">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script>
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="https://psibi.in/velleman-calculus/"> UP </a>
+ |
+ <a accesskey="H" href="https://psibi.in/"> HOME </a>
+</div><div id="content" class="container">
+<div class="row"><div class="col-md-3 col-md-push-9"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Optimization Problems</a>
+<ul class="nav">
+<li><a href="#sec-1-1">1.1. Solution 1</a></li>
+<li><a href="#sec-1-2">1.2. Solution 2</a></li>
+<li><a href="#sec-1-3">1.3. Solution 3</a></li>
+<li><a href="#sec-1-4">1.4. Solution 4</a></li>
+<li><a href="#sec-1-5">1.5. Solution 5</a></li>
+<li><a href="#sec-1-6">1.6. Solution 6</a></li>
+<li><a href="#sec-1-7">1.7. Solution 7</a></li>
+<li><a href="#sec-1-8">1.8. Solution 8</a></li>
+<li><a href="#sec-1-9">1.9. Solution 9</a></li>
+<li><a href="#sec-1-10">1.10. Solution 10</a></li>
+<li><a href="#sec-1-11">1.11. Solution 11</a></li>
+<li><a href="#sec-1-12">1.12. Solution 12</a></li>
+<li><a href="#sec-1-13">1.13. Solution 13</a></li>
+<li><a href="#sec-1-14">1.14. Solution 14</a></li>
+<li><a href="#sec-1-15">1.15. Solution 15</a></li>
+<li><a href="#sec-1-16">1.16. Solution 16</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div><div class="col-md-9 col-md-pull-3"><h1 class="title"></h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Optimization Problems</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Solution 1</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">75</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span>^<span class="mi">2</span><span class="p">))</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; f = (sym)
+
+      ⎛      2⎞
+  2⋅x⋅⎝75 - x ⎠
+df = (sym)
+
+           2
+  150 - 6⋅x
+octave&gt; ans = (sym 2×1 matrix)
+
+  ⎡-5⎤
+  ⎢  ⎥
+  ⎣5 ⎦
+</pre></div>
+
+<p>
+So the critical number is \(-5\) and \(5\). Since the domain is \((0,
+\infty)\), we should use the critical number \(5\).
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(x) 150 - 6 * x .^ 2
+ans =
+
+   54  -66
+</pre>
+
+
+<p>
+So the function has local maximum at \(5\). Let's compute the largest
+possible area for the rectangle:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">fh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="p">[</span><span class="n">fh</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+fh =
+
+@(x) 2 * x .* (75 - x .^ 2)
+ans =  500
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Solution 2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+References:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=0yjsJnxgk7k">Youtube video</a>
+</li>
+</ul>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">y</span>
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="mi">2000</span><span class="o">/</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span>^<span class="mi">2</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym)
+
+   2   2000
+  y  + ────
+        y
+df = (sym)
+
+        2000
+  2⋅y - ────
+          2
+         y
+octave&gt; ans = (sym 3×1 matrix)
+
+  ⎡    10     ⎤
+  ⎢           ⎥
+  ⎢-5 - 5⋅√3⋅ⅈ⎥
+  ⎢           ⎥
+  ⎣-5 + 5⋅√3⋅ⅈ⎦
+</pre></div>
+
+<p>
+So \(10\) is critical number for the function. Now let's find if we have
+a local minima or a maxima:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">11</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(y) 2 * y - 2000 ./ y .^ 2
+ans =
+
+  -6.6914   5.4711
+</pre>
+
+
+<p>
+So at \(10\) we have a local minima. So the square base has the
+dimension of \(10\) inches. The box's height will be:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">height</span> <span class="p">=</span> <span class="mi">500</span><span class="o">/</span><span class="p">(</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span>
+<span class="n">height_handle</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+<span class="p">[</span><span class="n">height_handle</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>height = (sym)
+
+  500
+  ───
+    2
+   y
+height_handle =
+
+@(y) 500 ./ y .^ 2
+ans =  5
+</pre></div>
+
+<p>
+So the height should be \(5\) inches. We can indeed verify if the volume
+is coming to \(500\) cubic inches:
+</p>
+
+<div class="octave"><pre><span></span><span class="mi">10</span><span class="o">*</span><span class="mi">10</span><span class="o">*</span><span class="mi">5</span>
+</pre></div>
+
+<pre class="example">
+ans =  500
+</pre>
+
+
+<p>
+So the dimensions to minimize the amount of material needed is \(10\)
+inches as the square base on each of it's side. And \(5\) inches as the
+height of the rectangular box.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Solution 3</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">syms</span> <span class="n">y</span>
+<span class="n">f</span> <span class="p">=</span> <span class="n">y</span>^<span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="mi">75</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; f = (sym)
+
+   2 ⎛  y    75⎞
+  y ⋅⎜- ─ + ───⎟
+     ⎝  4   4⋅y⎠
+octave&gt; df = (sym)
+
+          2
+  75   3⋅y
+  ── - ────
+  4     4
+ans = (sym 2×1 matrix)
+
+  ⎡-5⎤
+  ⎢  ⎥
+  ⎣5 ⎦
+</pre></div>
+
+<p>
+\(y\) cannot be \(-5\) as the dimension cannot be in negative. Let's check
+if the critical number \(5\) is a local minima or a maxima.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(y) 75 / 4 - 3 * y .^ 2 / 4
+ans =
+
+   6.7500  -8.2500
+</pre>
+
+
+<p>
+So we confirm that the function attains it's local maximum at \(5\). So
+now let's find the largets possible volume:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">fh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="p">[</span><span class="n">fh</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+fh =
+
+@(y) y .^ 2 .* (-y / 4 + 75 ./ (4 * y))
+ans =  62.500
+</pre>
+
+
+<p>
+So the largest possibe volume is \(62.5\) cubic inches.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Solution 4</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Let's find the critical numbers first.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">24</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">15</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym) x⋅(15 - 2⋅x)⋅(24 - 2⋅x)
+df = (sym)
+
+      2
+  12⋅x  - 156⋅x + 360
+octave&gt; ans = (sym 2×1 matrix)
+
+  ⎡3 ⎤
+  ⎢  ⎥
+  ⎣10⎦
+</pre></div>
+
+<p>
+So we have two critical numbers: \(3, 10\).
+</p>
+
+<p>
+Now let's try to find which one is the local maxima:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">11</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(x) 12 * x .^ 2 - 156 * x + 360
+ans =
+
+   96  -72  -72   96
+</pre>
+
+
+<p>
+So the local maxima is at \(3\). Let's find the maximum possibe volume
+of the box:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">fh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="p">[</span><span class="n">fh</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+fh =
+
+@(x) x .* (15 - 2 * x) .* (24 - 2 * x)
+ans =  486
+</pre>
+
+
+<p>
+So the largest possible volume of the box is \(486\) cubic inches.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Solution 5</h3>
+<div class="outline-text-3" id="text-1-5">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">s</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="mi">3000</span><span class="o">-</span><span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">s</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="mi">60</span><span class="o">+</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">s</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+  s⋅(3000 - 40⋅s)
+  ───────────────
+       s + 60
+octave&gt; df = (sym)
+
+        2
+  - 40⋅s  - 4800⋅s + 180000
+  ─────────────────────────
+       2
+      s  + 120⋅s + 3600
+octave&gt; ans = (sym 2×1 matrix)
+
+  ⎡-150⎤
+  ⎢    ⎥
+  ⎣ 30 ⎦
+</pre></div>
+
+<p>
+We are interested in the number \(30\) as that's in the domain. Let's
+check if it's local maximum:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">29</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">31</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(s) (-40 * s .^ 2 - 4800 * s + 180000) ./ (s .^ 2 + 120 * s + 3600)
+octave&gt; ans =
+
+   0.90393  -0.87429
+</pre>
+
+
+<p>
+So, we can confirm that is the local maxima. So width of side wall is
+\(30\) Let's find the width of the front wall:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">front</span> <span class="p">=</span> <span class="p">(</span><span class="mi">3000</span> <span class="o">-</span> <span class="mi">40</span><span class="o">*</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">60</span> <span class="o">+</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">front_handle</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">front</span><span class="p">)</span>
+<span class="p">[</span><span class="n">front_handle</span><span class="p">(</span><span class="mi">30</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+front = (sym)
+
+  3000 - 40⋅s
+  ───────────
+     s + 60
+front_handle =
+
+@(s) (3000 - 40 * s) ./ (s + 60)
+ans =  20
+</pre>
+
+
+<p>
+So these are the dimensions for the house to maximize floor space:
+</p>
+
+<p>
+Side wall width: \(30\)
+Front wall width: \(20\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Solution 6</h3>
+<div class="outline-text-3" id="text-1-6">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">b</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="mi">150</span><span class="o">/</span><span class="n">b</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">fb</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">fb</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+  ⎛    150⎞
+  ⎜3 + ───⎟⋅(b + 2)
+  ⎝     b ⎠
+octave&gt; fb = (sym)
+
+      300
+  3 - ───
+        2
+       b
+octave&gt; ans = (sym 2×1 matrix)
+
+  ⎡-10⎤
+  ⎢   ⎥
+  ⎣10 ⎦
+</pre></div>
+
+<p>
+We will take \(10\) as the critical number since it's part of the
+domain.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">fbh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">fb</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">fbh</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">fbh</span><span class="p">(</span><span class="mi">11</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+fbh =
+
+@(b) 3 - 300 ./ b .^ 2
+octave&gt; ans =
+
+  -0.70370   0.52066
+</pre>
+
+
+<p>
+So the local minima is attained at critical number \(10\). Let's find
+the other dimension:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="mi">150</span><span class="o">/</span><span class="n">b</span>
+<span class="n">ah</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">ah</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+a = (sym)
+
+  150
+  ───
+   b
+ah =
+
+@(b) 150 ./ b
+octave&gt; ans =  15
+</pre>
+
+
+<p>
+So the dimensions of the poster is \(10\) and \(15\) inches.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Solution 7</h3>
+<div class="outline-text-3" id="text-1-7">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">b</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="mi">48</span><span class="o">/</span><span class="n">b</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">fb</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">fb</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+  ⎛    48⎞
+  ⎜2 + ──⎟⋅(3⋅b + 8)
+  ⎝    b ⎠
+fb = (sym)
+
+      384
+  6 - ───
+        2
+       b
+octave&gt; ans = (sym 2×1 matrix)
+
+  ⎡-8⎤
+  ⎢  ⎥
+  ⎣8 ⎦
+</pre></div>
+
+<p>
+We will take \(8\) as the critical number since it's part of the
+domain.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">fbh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">fb</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">fbh</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span> <span class="n">fbh</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+fbh =
+
+@(b) 6 - 384 ./ b .^ 2
+octave&gt; ans =
+
+  -1.8367   1.2593
+</pre>
+
+
+<p>
+So the function attains it local minimum at \(8\). The other dimension
+is
+</p>
+
+<div class="octave"><pre><span></span><span class="mi">48</span><span class="o">/</span><span class="mi">8</span>
+</pre></div>
+
+<pre class="example">
+ans =  6
+</pre>
+
+
+<p>
+Actual dimensions are \(a+2\) and \(b+2\). So the dimensions are \(8\) and
+\(10\) feets.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Solution 8</h3>
+<div class="outline-text-3" id="text-1-8">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">a</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="mi">60</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">a</span>^<span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">a</span><span class="o">/</span><span class="mi">8</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+    ⎛        2⎞
+  a⋅⎝60 - 5⋅a ⎠
+  ─────────────
+        8
+df = (sym)
+
+           2
+  15   15⋅a
+  ── - ─────
+  2      8
+ans = (sym 2×1 matrix)
+
+  ⎡-2⎤
+  ⎢  ⎥
+  ⎣2 ⎦
+</pre></div>
+
+<p>
+We will take \(2\) as the critical number since it's part of the
+domain.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(a) 3 / 4 - 3 * a .^ 2 / 16
+octave&gt; ans =
+
+   0.56250  -0.93750
+</pre>
+
+
+<p>
+So the function has local maxima at \(2\). So the other dimension is:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">b</span> <span class="p">=</span> <span class="p">(</span><span class="mi">60</span> <span class="o">-</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">a</span>^<span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+<span class="n">bh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="p">[</span><span class="n">bh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>b = (sym)
+
+          2
+  60 - 5⋅a
+  ─────────
+     8⋅a
+bh =
+
+@(a) (60 - 5 * a .^ 2) ./ (8 * a)
+ans =  2.5000
+</pre></div>
+
+<p>
+So \(a=1\) and \(b=2.5\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3">
+<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Solution 9</h3>
+<div class="outline-text-3" id="text-1-9">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">r</span> <span class="n">p</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="n">r</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span> <span class="o">+</span> <span class="p">(((</span><span class="n">p</span> <span class="o">*</span> <span class="n">r</span>^<span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="mi">6</span><span class="o">*</span><span class="n">p</span><span class="o">/</span><span class="n">r</span><span class="p">)))</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+       2   12⋅p
+  6⋅p⋅r  + ────
+            r
+df = (sym)
+
+       ⎛ 3    ⎞
+  12⋅p⋅⎝r  - 1⎠
+  ─────────────
+         2
+        r
+octave&gt; ans = (sym 3×1 matrix)
+
+  ⎡    1     ⎤
+  ⎢          ⎥
+  ⎢  1   √3⋅ⅈ⎥
+  ⎢- ─ - ────⎥
+  ⎢  2    2  ⎥
+  ⎢          ⎥
+  ⎢  1   √3⋅ⅈ⎥
+  ⎢- ─ + ────⎥
+  ⎣  2    2  ⎦
+</pre></div>
+
+<p>
+There only one number which is part of the domain. Let's find if it's
+a local minima for the function:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="nb">pi</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(p, r) 12 * p .* (r .^ 3 - 1) ./ r .^ 2
+ans =
+
+  -131.947    65.973
+</pre>
+
+
+<p>
+So we can confirm that it's a local minima. So the radius is \(1\) inch
+and the height of the cylinder is:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="n">r</span>^<span class="mi">2</span><span class="p">)</span>
+
+<span class="n">hh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="p">[</span><span class="n">hh</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>h = (sym)
+
+  3
+  ──
+   2
+  r
+octave&gt; hh =
+
+@(r) 3 ./ r .^ 2
+ans =  3
+</pre></div>
+
+<p>
+So the dimensions of the mug which will keep the coffee as hot as
+possible are height of \(3\) inches along with radius of \(1\) inch.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Solution 10</h3>
+<div class="outline-text-3" id="text-1-10">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">r</span>
+<span class="n">f</span> <span class="p">=</span> <span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">r</span>^<span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">18</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; warning: passing floating-point values to sym is dangerous, see &quot;help sym&quot;
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mtimes at line 63 column 5
+f = (sym)
+
+       2
+  3⋅π⋅r ⋅(18 - 3⋅r)
+octave&gt; df = (sym) 27⋅π⋅r⋅(4 - r)
+ans = (sym 2×1 matrix)
+
+  ⎡0⎤
+  ⎢ ⎥
+  ⎣4⎦
+</pre></div>
+
+<p>
+Taking the value of 4 since it's in domain, let's see if it's the
+local maxima for the function.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(r) 27 * pi * r .* (4 - r)
+ans =
+
+   254.47  -424.12
+</pre>
+
+
+<p>
+So at \(r=4\), the function attains it's maximum value. Let's find the
+cylinder's height now:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="p">(</span><span class="mi">18</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+<span class="n">hh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="n">hh</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+h = (sym) 18 - 3⋅r
+hh =
+
+@(r) 18 - 3 * r
+octave&gt; ans =  6
+</pre>
+
+
+<p>
+So the dimensions of cylinder of greatest volume that can be inscribed
+is cylinder of radius 4 and height of 6 inches.
+</p>
+
+<p>
+Reference <a href="https://www.youtube.com/watch?v=-eNJ8V6Cg_M">video</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Solution 11</h3>
+<div class="outline-text-3" id="text-1-11">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">r</span> <span class="n">p</span>
+<span class="n">f</span> <span class="p">=</span> <span class="mi">30</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">r</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1620</span><span class="o">*</span><span class="n">p</span><span class="o">/</span><span class="n">r</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+<p>
+I'm using the symbol \(p\) instead of \(\pi\) to make calculuations
+simpler.
+</p>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym)
+
+        2   1620⋅p
+  30⋅p⋅r  + ──────
+              r
+octave&gt; df = (sym)
+
+       ⎛ 3     ⎞
+  60⋅p⋅⎝r  - 27⎠
+  ──────────────
+         2
+        r
+ans = (sym 3×1 matrix)
+
+  ⎡     3      ⎤
+  ⎢            ⎥
+  ⎢  3   3⋅√3⋅ⅈ⎥
+  ⎢- ─ - ──────⎥
+  ⎢  2     2   ⎥
+  ⎢            ⎥
+  ⎢  3   3⋅√3⋅ⅈ⎥
+  ⎢- ─ + ──────⎥
+  ⎣  2     2   ⎦
+</pre></div>
+
+<p>
+We know that the critical number is \(3\). Now let's confirm that the
+function attains the local minima at the number:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(p, r) 60 * p .* (r .^ 3 - 27) ./ r .^ 2
+ans =
+
+  -895.35   435.90
+</pre>
+
+
+<p>
+So we can confirm that \(3\) is infact the local minima for the
+function. Now let's compute the height of the cake:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="mi">81</span><span class="o">/</span><span class="n">r</span>^<span class="mi">2</span>
+<span class="n">hh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="n">hh</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>h = (sym)
+
+  81
+  ──
+   2
+  r
+hh =
+
+@(r) 81 ./ r .^ 2
+octave&gt; ans =  9
+</pre></div>
+
+<p>
+So the dimensions of the cake to minimize the cost of filling and
+frosting should be cake of height \(9\) inches and radius should be \(3\)
+inches.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> Solution 12</h3>
+<div class="outline-text-3" id="text-1-12">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">16</span><span class="o">/</span><span class="n">x</span>^<span class="mi">2</span><span class="p">))</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+       _________
+      ╱  2   16
+     ╱  x  + ──
+    ╱         2
+  ╲╱         x
+df = (sym)
+
+        4
+       x  - 16
+  ──────────────────
+           _________
+          ╱  4
+   3     ╱  x  + 16
+  x ⋅   ╱   ───────
+       ╱        2
+     ╲╱        x
+octave&gt; ans = (sym 4×1 matrix)
+
+  ⎡ -2 ⎤
+  ⎢    ⎥
+  ⎢ 2  ⎥
+  ⎢    ⎥
+  ⎢-2⋅ⅈ⎥
+  ⎢    ⎥
+  ⎣2⋅ⅈ ⎦
+</pre></div>
+
+<p>
+So we have two numbers within the domain which are critical numbers
+for the function. Let's find out which one is the local minima:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(x) (x .^ 4 - 16) ./ (x .^ 3 .* sqrt ((x .^ 4 + 16) ./ x .^ 2))
+ans =
+
+  -0.73331   3.63803  -3.63803   0.73331
+</pre>
+
+
+<p>
+So both \(-2\) and \(2\) are local minima. Let's find the corresponding y
+co-ordinates:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">y</span> <span class="p">=</span> <span class="mi">4</span><span class="o">/</span><span class="n">x</span>
+<span class="n">yh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">yh</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">yh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>y = (sym)
+
+  4
+  ─
+  x
+yh =
+
+@(x) 4 ./ x
+octave&gt; ans =
+
+  -2   2
+</pre></div>
+
+<p>
+So the corrdinates are \((-2,2)\) and \((2,2)\) and they are the closest
+to the origin from the curve.
+</p>
+
+<p>
+Reference <a href="https://www.mathsisfun.com/algebra/distance-2-points.html">formula</a> used above.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> Solution 13</h3>
+<div class="outline-text-3" id="text-1-13">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>^<span class="mi">2</span><span class="p">))</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+        _______________
+       ╱          2
+      ╱   2      x
+     ╱   x  + ────────
+    ╱                2
+  ╲╱          (x - 8)
+df = (sym)
+
+             ⎛       3    ⎞
+           x⋅⎝(x - 8)  - 8⎠
+  ──────────────────────────────────
+        ___________________
+       ╱  2 ⎛       2    ⎞
+      ╱  x ⋅⎝(x - 8)  + 1⎠         3
+     ╱   ───────────────── ⋅(x - 8)
+    ╱                2
+  ╲╱          (x - 8)
+octave&gt; ans = (sym 3×1 matrix)
+
+  ⎡   10   ⎤
+  ⎢        ⎥
+  ⎢7 - √3⋅ⅈ⎥
+  ⎢        ⎥
+  ⎣7 + √3⋅ⅈ⎦
+</pre></div>
+
+<p>
+We select the number \(10\) since it's part of the domain. Let's confirm
+that it's the local minima for the function:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">11</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(x) x .* ((x - 8) .^ 3 - 8) ./ (sqrt (x .^ 2 .* ((x - 8) .^ 2 + 1) ./ (x - 8) .^ 2) .* (x - 8) .^ 3)
+ans =
+
+  -4.94975   0.66759
+</pre>
+
+
+<p>
+That confirms that \(10\) is local minima for the function. Now let's
+find the dimension of the board:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">fh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">fh</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+fh =
+
+@(x) sqrt (x .^ 2 + x .^ 2 ./ (x - 8) .^ 2)
+ans =  11.180
+octave&gt; ans =  11.180
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 14</h3>
+<div class="outline-text-3" id="text-1-14">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">r</span> <span class="n">V</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">r</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">V</span><span class="o">/</span><span class="n">r</span><span class="p">)</span>
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; warning: passing floating-point values to sym is dangerous, see &quot;help sym&quot;
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mtimes at line 63 column 5
+f = (sym)
+
+  2⋅V        2
+  ─── + 2⋅π⋅r
+   r
+df = (sym)
+
+    2⋅V
+  - ─── + 4⋅π⋅r
+      2
+     r
+octave&gt; ans = (sym 3×1 matrix)
+
+  ⎡       2/3 3 ___       ⎤
+  ⎢      2   ⋅╲╱ V        ⎥
+  ⎢      ──────────       ⎥
+  ⎢         3 ___         ⎥
+  ⎢       2⋅╲╱ π          ⎥
+  ⎢                       ⎥
+  ⎢ 2/3 3 ___             ⎥
+  ⎢2   ⋅╲╱ V ⋅(-1 + √3⋅ⅈ) ⎥
+  ⎢────────────────────── ⎥
+  ⎢         3 ___         ⎥
+  ⎢       4⋅╲╱ π          ⎥
+  ⎢                       ⎥
+  ⎢  2/3 3 ___            ⎥
+  ⎢-2   ⋅╲╱ V ⋅(1 + √3⋅ⅈ) ⎥
+  ⎢───────────────────────⎥
+  ⎢          3 ___        ⎥
+  ⎣        4⋅╲╱ π         ⎦
+</pre></div>
+
+<p>
+Now the easiest way to confirm if the first value of the above matrix
+is local minima is to use <a href="http://psibi.in/velleman-calculus/chapter4/section4.html#sec-1-5">the second derivative test.</a>
+</p>
+
+<div class="octave"><pre><span></span><span class="n">ddf</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+ddf = (sym)
+
+  4⋅V
+  ─── + 4⋅π
+    3
+   r
+</pre>
+
+
+<p>
+Since both \(V\) and \(r\) is positive, we know that the second derivative
+is positive. And hence we know that the first value of the matrix is a
+local minima.
+</p>
+
+<p>
+todo: add last content
+</p>
+
+<p>
+<a href="https://www.youtube.com/watch?v=30yWUCQZOWc">Reference:  Similar problem</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Solution 15</h3>
+<div class="outline-text-3" id="text-1-15">
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">r</span>
+<span class="n">f</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="p">(</span><span class="mi">32</span><span class="o">/</span><span class="n">r</span>^<span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; warning: passing floating-point values to sym is dangerous, see &quot;help sym&quot;
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mtimes at line 63 column 5
+f = (sym)
+
+        ⎛      32⎞
+  2⋅π⋅r⋅⎜2⋅r + ──⎟
+        ⎜       2⎟
+        ⎝      r ⎠
+octave&gt; df = (sym)
+
+      ⎛ 3    ⎞
+  8⋅π⋅⎝r  - 8⎠
+  ────────────
+        2
+       r
+ans = (sym 3×1 matrix)
+
+  ⎡    2    ⎤
+  ⎢         ⎥
+  ⎢-1 - √3⋅ⅈ⎥
+  ⎢         ⎥
+  ⎣-1 + √3⋅ⅈ⎦
+</pre></div>
+
+<p>
+Now let's check if the first value in the matrix is where the function
+attains it's local minima:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(r) 8 * pi * (r .^ 3 - 8) ./ r .^ 2
+ans =
+
+  -175.929    53.058
+</pre>
+
+
+<p>
+That confirms that it attains local minima there. Let's compute the
+height of the cylinder:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="mi">32</span><span class="o">/</span><span class="p">(</span><span class="n">r</span>^<span class="mi">2</span><span class="p">)</span>
+<span class="n">hh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">hh</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>h = (sym)
+
+  32
+  ──
+   2
+  r
+hh =
+
+@(r) 32 ./ r .^ 2
+octave&gt; ans =  8
+</pre></div>
+
+<p>
+So the dimension of the cylinder is \(2\) inches radius and \(8\) inches
+height.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-16" class="outline-3">
+<h3 id="sec-1-16"><span class="section-number-3">1.16</span> Solution 16</h3>
+<div class="outline-text-3" id="text-1-16">
+<p>
+<a href="https://en.wikipedia.org/wiki/Right_triangle">Right triangle wikipedia page</a> to understand what legs mean in the
+question.
+</p>
+
+<p>
+<a href="https://www.youtube.com/watch?v=2keGgDBJKGU">https://www.youtube.com/watch?v=2keGgDBJKGU</a>
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">b</span>
+<span class="n">f</span> <span class="p">=</span> <span class="n">b</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">b</span>^<span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">df</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym)
+
+          2
+         b
+  ───────────────
+       __________
+      ╱    2
+  2⋅╲╱  2⋅b  - 2
+octave&gt; df = (sym)
+
+       ⎛ 2    ⎞
+  √2⋅b⋅⎝b  - 2⎠
+  ─────────────
+            3/2
+    ⎛ 2    ⎞
+  4⋅⎝b  - 1⎠
+ans = (sym 3×1 matrix)
+
+  ⎡ 0 ⎤
+  ⎢   ⎥
+  ⎢-√2⎥
+  ⎢   ⎥
+  ⎣√2 ⎦
+</pre></div>
+
+<p>
+We can ignore the first value since the dimension cannot be zero. We
+can ignore the second answer since the dimension should be positive.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dfh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">dfh</span><span class="p">(</span><span class="mf">1.3</span><span class="p">),</span> <span class="n">dfh</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+dfh =
+
+@(b) sqrt (2) * b .* (b .^ 2 - 2) ./ (4 * (b .^ 2 - 1) .^ (3 / 2))
+octave&gt; ans =
+
+  -0.248592   0.094868
+</pre>
+
+
+<p>
+So at \(\sqrt{2}\), it achieves local minima. Let's find the other
+dimension:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">fh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">fh</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+fh =
+
+@(b) b .^ 2 ./ (2 * sqrt (2 * b .^ 2 - 2))
+ans =  0.70711
+</pre>
+
+
+<p>
+Now let's compute the smallest possible area:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">fh</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+ans =  0.70711
+</pre>
+
+
+<p>
+<a href="https://math.stackexchange.com/a/4016304/124772">https://math.stackexchange.com/a/4016304/124772</a>
+</p>
+</div>
+</div>
+</div>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Sibi Prabakaran</p>
+<p class="date">Created: 2021-02-13 Sat 20:35</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
+</div>
+</footer>
+</body>
+</html>

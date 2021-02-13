@@ -1,0 +1,39 @@
+* Maxima and Minima on finite closed intervals
+
+** Theorem 4.7.1 (Extreme Value Theorem)
+
+Suppose $f$ is continous on the finite closed interval $[a,b]$. Then
+$f$ has a maximum value and a minimum value on $[a,b]$
+
+Notes:
+
+- The above theorem allows us an easier way to find the maximum and
+  minimum values of a continous function on a finite closed
+  interval. In the previous sections solution, you could see how
+  difficult is find if something is a local minima or a maxima. But
+  using this method, find the values at the endpoints and the critical
+  numbers - whichever one is the largets must be the maximum value of
+  the function on the interval and whichever one is the smallest is
+  the minimum value on that particular interval.
+
+** Nonmaximizing interval
+
+If $a \leq u < v \leq b$, then we will say that the interval $[u,v]$
+is *nonmaximizing* if there is some number $d \in [a,b]$ such that for
+every $x \in [u,v]$, $f(x) < f(d)$.
+
+In other words, the interval $[u,v]$ is nonmaximizing if there is a
+point $(d,f(d))$ on the graph of $f$ that is higher than any point on
+the part of the graph of $f$ with $u \leq x \leq v$.
+
+If $[u,v]$ is not nonmaximizing, then we say that it is *maximizing*.
+
+Notes: If we are looking for a number where $f$ attains its maximum
+value on the interval $[a,b]$, there is no point in looking in a
+nonmaximizing interval.
+
+** Lemma 4.7.3
+
+Suppose that $[u,v]$ is a maximizing interval. Then there are numbers
+$u'$ and $v'$ such that $u \leq u' < v' \leq v, v' - u' = (v-u)/2$,
+and $[u',v']$ is maximizing.
