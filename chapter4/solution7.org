@@ -1,0 +1,181 @@
+* Maxima and Minima on finite closed intervals
+
+** Solution 1
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+  pkg load symbolic
+  syms a
+  f = 2* sqrt(a^2 + 9) + 3 - a
+  df = simplify(diff(f,a))
+
+  solve(df == 0,a)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+f = (sym)
+
+            ________
+           ╱  2
+  -a + 2⋅╲╱  a  + 9  + 3
+df = (sym)
+
+      2⋅a
+  ─────────── - 1
+     ________
+    ╱  2
+  ╲╱  a  + 9
+ans = (sym) √3
+#+end_example
+
+So the critical number is $\sqrt{3}$. Let's find the values of the
+function at the endpoints and the critical point:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(0), fh(sqrt(3)), fh(3)]
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(a) -a + 2 * sqrt (a .^ 2 + 9) + 3
+: ans =
+:
+:    9.0000   8.1962   8.4853
+
+
+So the minimum value for the function occurs at $a = \sqrt{3}$ which
+is at point $(0, \sqrt{3})$
+
+** Solution 2
+
+*** Solution (a)
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+r = x*(1000 - (10*x))
+dr = simplify(diff(r,x))
+
+solve(dr == 0, x)
+#+end_src
+
+#+RESULTS:
+:
+: r = (sym) x⋅(-10⋅x + 1000)
+: dr = (sym) -20⋅x + 1000
+: ans = (sym) 50
+
+Let's fine the value of $x$ at which the function $r(x)$ is maximized:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+rh = function_handle(r)
+[rh(30), rh(50), rh(1000)]
+#+end_src
+
+#+RESULTS:
+: rh =
+:
+: @(x) x .* (-10 * x + 1000)
+: ans =
+:
+:      21000     25000  -9000000
+
+So they should set the price to $50 to maximize their revenue.
+
+*** Solution (b)
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+p = x*(1000 - (10*x)) - 30*(1000-(10*x))
+dp = simplify(diff(p, x))
+
+solve(dp == 0, x)
+#+end_src
+
+#+RESULTS:
+: p = (sym) x⋅(-10⋅x + 1000) + 300⋅x - 30000
+: dp = (sym) -20⋅x + 1300
+: ans = (sym) 65
+
+Now let's see if $x$ is maximum at value $65$:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+ph = function_handle(p)
+[ph(30), ph(65), ph(1000)]
+#+end_src
+
+#+RESULTS:
+: ph =
+:
+: @(x) x .* (-10 * x + 1000) + 300 * x - 30000
+: ans =
+:
+:          0     12250  -8730000
+
+So the price should be set at $64 per barrel for the profit to be
+maximized:
+
+** Solution 3
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms a
+f = (a-2)*(600/a - 3)
+
+df = simplify(diff(f,a))
+solve(df == 0, a)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+f = (sym)
+
+  ⎛     600⎞
+  ⎜-3 + ───⎟⋅(a - 2)
+  ⎝      a ⎠
+df = (sym)
+
+       1200
+  -3 + ────
+         2
+        a
+ans = (sym 2×1 matrix)
+
+  ⎡-20⎤
+  ⎢   ⎥
+  ⎣20 ⎦
+#+end_example
+
+Since we know that the dimension cannot be negative, let's check if
+$20$ makes the function maximum:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(0), fh(20), fh(600)]
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(a) (-3 + 600 ./ a) .* (a - 2)
+: warning: division by zero
+: warning: called from
+:     eval>@<anonymous> at line 1 column 19
+: ans =
+:
+:    -Inf    486  -1196
+
+
+So we know that at $20$ the function achieves it's maximum value. The
+other dimension is $30$.
+
+** Solution 4
+
+[[https://www.youtube.com/watch?v=weGl02j75MI][Solution described here]]
+
+** Solution 5
