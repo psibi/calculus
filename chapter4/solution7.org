@@ -603,3 +603,61 @@ yh = function_handle(y)
 : octave> ans = 0
 
 So the dimensions of the fields are $60$ by $70$ feet.
+
+** Solution 10
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms l
+f = l*(100-l)*3 + (30*l)
+
+df = simplify(diff(f,l))
+solve(df==0,l)
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> f = (sym) 3⋅l⋅(100 - l) + 30⋅l
+: octave> df = (sym) 330 - 6⋅l
+: ans = (sym) 55
+
+Now let's find if the above critical number is where the function
+attains it's local maxima. The domain for the function is $[0,100]$:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(0), fh(55), fh(100)]
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(l) 3 * l .* (100 - l) + 30 * l
+: ans =
+:
+:       0   9075   3000
+
+
+Let's find the other dimension of the field:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms l
+w = 100 - l
+
+wh = function_handle(w)
+[wh(55)]
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> w = (sym) 100 - l
+: octave> wh =
+:
+: @(l) 100 - l
+: ans =  45
+
+So the dimensions of $55$ and $45$ feet of the field are best to
+maximize his monthly income.

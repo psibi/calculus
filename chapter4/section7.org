@@ -12,7 +12,7 @@ Notes:
   interval. In the previous sections solution, you could see how
   difficult is find if something is a local minima or a maxima. But
   using this method, find the values at the endpoints and the critical
-  numbers - whichever one is the largets must be the maximum value of
+  numbers - whichever one is the largest must be the maximum value of
   the function on the interval and whichever one is the smallest is
   the minimum value on that particular interval.
 
