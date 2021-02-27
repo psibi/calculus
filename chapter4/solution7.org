@@ -179,3 +179,427 @@ other dimension is $30$.
 [[https://www.youtube.com/watch?v=weGl02j75MI][Solution described here]]
 
 ** Solution 5
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+  clear
+  pkg load symbolic
+  syms w P PI # using Q for pi, P for permiter, w for width
+  f = (w^2* PI)/8 + w*(P/2 - ((w*(PI + 2))/4))
+
+  df = simplify(diff(f,w))
+  solve(df == 0, w)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+      2
+  PI⋅w      ⎛P   w⋅(PI + 2)⎞
+  ───── + w⋅⎜─ - ──────────⎟
+    8       ⎝2       4     ⎠
+octave> df = (sym)
+
+  P   PI⋅w
+  ─ - ──── - w
+  2    4
+ans = (sym)
+
+   2⋅P
+  ──────
+  PI + 4
+#+end_example
+
+Let's check if at $\dfrac{2.P}{\pi + 4}$, the function assumes it's
+maximum values. Let's take double derivate:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dff = simplify(diff(df, w))
+dffh = function_handle(dff)
+[dffh(pi)]
+#+end_src
+
+#+RESULTS:
+: dff = (sym)
+:
+:     PI
+:   - ── - 1
+:     4
+: dffh =
+:
+: @(PI) -PI / 4 - 1
+: ans = -1.7854
+
+Since the value is less than $0$, we know from [[http://psibi.in/velleman-calculus/chapter4/section4.html#sec-1-5][second derivate test]]
+that the function achieves it's local maximum at that value. Now let's
+calculate what would be the length:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+  clear
+  pkg load symbolic
+  syms P W PI
+  l = P/2 - ((W/2)*(PI/2 + 1))
+
+  lh = function_handle(l)
+  [simplify(lh(P, PI, (2*P)/(PI + 4)))]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> l = (sym)
+
+        ⎛PI    ⎞
+      W⋅⎜── + 1⎟
+  P     ⎝2     ⎠
+  ─ - ──────────
+  2       2
+octave> lh =
+
+@(P, PI, W) P / 2 - W .* (PI / 2 + 1) / 2
+ans = (sym)
+
+    P
+  ──────
+  PI + 4
+#+end_example
+
+So the width of the rectangle is $\dfrac{2P}{\pi + 4}$ and the
+length of the windows is $\dfrac{P}{\pi + 4}$.
+
+The height of the windows will be the sum of the length and radius of
+the circle. Let's compute that:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms P PI
+h = P/(PI + 4) + (P)/(PI + 4) # radius is same as half of the width of the window
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> h = (sym)
+:
+:    2⋅P
+:   ──────
+:   PI + 4
+
+
+And the height is same as the width of the windows.
+
+** Solution 6
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms r
+f = 1/3 * pi * r^2 * sqrt(9 - r^2)
+
+df = simplify(diff(f,r))
+solve(df == 0, r)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mtimes at line 63 column 5
+f = (sym)
+
+          ________
+     2   ╱      2
+  π⋅r ⋅╲╱  9 - r
+  ────────────────
+         3
+octave> df = (sym)
+
+      ⎛     2⎞
+  π⋅r⋅⎝6 - r ⎠
+  ────────────
+     ________
+    ╱      2
+  ╲╱  9 - r
+ans = (sym 3×1 matrix)
+
+  ⎡ 0 ⎤
+  ⎢   ⎥
+  ⎢-√6⎥
+  ⎢   ⎥
+  ⎣√6 ⎦
+#+end_example
+
+We know that the radius cannot be zero or negative. So let's check the
+critical number $\sqrt{6}$ to see if the function achives local
+maximum at that number.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(0), fh(sqrt(6)), fh(3)]
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(r) pi * r .^ 2 .* sqrt (9 - r .^ 2) / 3
+: ans =
+:
+:     0.00000   10.88280    0.00000
+
+From [[http://psibi.in/velleman-calculus/chapter4/section7.html#sec-1-1][exterme value theorem]], we can say that the function achieves it's
+local maximum when the radius is $\sqrt{6}$. Let's find the volume of
+the cup at that radius:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(sqrt(6))]
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(r) pi * r .^ 2 .* sqrt (9 - r .^ 2) / 3
+: ans =  10.883
+
+So volume of ~10.833~ is the largest possible volume of the cup.
+
+Reference: https://www.mathsisfun.com/geometry/cone.html
+
+** Solution 7
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = sqrt(x^2 + 60^2)/3 + (100-x)/5
+
+df = simplify(diff(f,x))
+solve(df == 0, x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+           ___________
+          ╱  2
+    x   ╲╱  x  + 3600
+  - ─ + ────────────── + 20
+    5         3
+octave> df = (sym)
+
+         x           1
+  ──────────────── - ─
+       ___________   5
+      ╱  2
+  3⋅╲╱  x  + 3600
+ans = (sym) 45
+#+end_example
+
+Now let's take double derivative of it:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dff = simplify(diff(df, x))
+dffh = function_handle(dff)
+[dffh(45)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+dff = (sym)
+
+       1200
+  ──────────────
+             3/2
+  ⎛ 2       ⎞
+  ⎝x  + 3600⎠
+dffh =
+
+@(x) 1200 ./ (x .^ 2 + 3600) .^ (3 / 2)
+ans =  0.0028444
+#+end_example
+
+Since the value is $> 0$, from [[http://psibi.in/velleman-calculus/chapter4/section4.html#sec-1-5][second derivative test]] we can conclude
+that the function attains it's local minima at $x = 45$.
+
+So, the little red riding hood should row to the point 45 feet west of
+the point directly across the river.
+
+Reference: [[https://en.wikipedia.org/wiki/Little_Red_Riding_Hood][Little Red Riding hood]]
+
+** Solution 8
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms w
+f = w*(200 - 2*w)
+
+df = simplify(diff(f,w))
+solve(df == 0, w)
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> f = (sym) w⋅(200 - 2⋅w)
+: octave> df = (sym) 200 - 4⋅w
+: ans = (sym) 50
+
+Now let's confirm if at $w = 50$, the function attains it's local
+maximum value. The domain for $w$ is $[0,100]$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(0), fh(50), fh(100)]
+#+end_src
+
+#+RESULTS:
+: fh =
+:
+: @(w) w .* (200 - 2 * w)
+: ans =
+:
+:       0   5000      0
+
+So by [[http://psibi.in/velleman-calculus/chapter4/section7.html#sec-1-1][Extreme value theorem]], we can conclude that at $w = 50$, the
+function attains it's local maxima. Let's compute the length of the
+field:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms w
+l = 200 - (2*w)
+lh = function_handle(l)
+[lh(50)]
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> l = (sym) 200 - 2⋅w
+: lh =
+:
+: @(w) 200 - 2 * w
+: ans =  100
+
+
+So the dimensions of the field should be width of $50$ and length of
+$100$ feet.
+
+** Solution 9
+
+*** Solution (a)
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f(x) = (40+x)*(80 - x)
+
+df = simplify(diff(f,x))
+solve(df == 0, x)
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> f(x) = (symfun) (80 - x)⋅(x + 40)
+: octave> df = (sym) 40 - 2⋅x
+: ans = (sym) 20
+
+Now we need to verify that at the critical number $60$, the function
+achieves it's local maximum. We can assume domain of x to be $[0,
+80$. So let's use exterme value theorem to check if it's achieve
+it's local maximum:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+fh = function_handle(f)
+[fh(0), fh(20), fh(80)]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+warning: FIXME: symfun! does that need special treatment?
+warning: called from
+    codegen>codegen_input_parser at line 187 column 7
+    codegen at line 21 column 35
+    function_handle at line 94 column 12
+fh =
+
+@(x) (80 - x) .* (x + 40)
+ans =
+
+   3200   3600      0
+#+end_example
+
+So with that we know that one of the dimension is $20$ feet. Along
+with barn's dimension added, it becomes $60$ feet. Let's find the
+other dimension too:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+y = 80 - x
+
+yh = function_handle(y)
+[yh(20)]
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> y = (sym) 80 - x
+: octave> yh =
+:
+: @(x) 80 - x
+: ans =  60
+
+So the dimensions of the field to maximize the area should be $60$ by
+$60$ feet.
+
+*** Solution (b)
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = (70+x)*(130/2 - x)
+
+df = simplify(diff(f,x))
+solve(df == 0, x)
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> f = (sym) (65 - x)⋅(x + 70)
+: octave> df = (sym) -2⋅x - 5
+: ans = (sym) -5/2
+
+Hmm.. The critical points are at negative number. So for the above
+function in it's domain we don't have positive critical numbers. And
+that indicates that one of the dimension is a constant $70$ alongside
+the barn. Let's compute the other dimension:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms y
+y = 65 - x
+yh = function_handle(y)
+
+[yh(0)]
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> error: 'x' undefined near line 1 column 10
+: yh =
+:
+: @(y) y
+: octave> ans = 0
+
+So the dimensions of the fields are $60$ by $70$ feet.
