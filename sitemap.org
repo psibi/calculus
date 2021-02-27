@@ -44,3 +44,4 @@
   - [[file:chapter4/solution4.org][solution4]]
   - [[file:chapter4/solution5.org][solution5]]
   - [[file:chapter4/solution6.org][solution6]]
+  - [[file:chapter4/solution7.org][solution7]]
