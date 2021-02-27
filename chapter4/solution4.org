@@ -59,7 +59,7 @@ Now let's test sample points:
 | f''(0)   | -6 < 0 |
 | f''(2)   | 6 > 0  |
 
-todo
+[[file:../assets/c4s2nucompressed.png]]
 
 | Property         | Value                                    |
 |------------------+------------------------------------------|
@@ -108,7 +108,7 @@ Now let's test sample points:
 | g''(-3)  | -6 < 0  |
 | g''(-1)  | 6 > 0   |
 
-todo
+[[file:../assets/c4s3nucompressed.png]]
 
 | Property         | Value               |
 |------------------+---------------------|
@@ -159,7 +159,7 @@ Now let's test sample points:
 | f''(2)   | -11 < 0 |
 | f''(4)   | 17 > 0  |
 
-todo
+[[file:../assets/c4s4nucompressed.png]]
 
 | Property          | Value               |
 |-------------------+---------------------|
@@ -208,7 +208,7 @@ Now let's test sample points:
 | f''(2)   | -16 < 0 |
 | f''(4)   | 64 > 0  |
 
-todo
+[[file:../assets/c4s5nucompressed.png]]
 
 | Property         | Value               |
 |------------------+---------------------|
@@ -261,7 +261,7 @@ Now let's test sample points:
 | g''(-1)  | 36 > 0  |
 | g''(1)   | 36 < 0  |
 
-todo
+[[file:../assets/c4s6nucompressed.png]]
 
 | Property         | Value               |
 |------------------+---------------------|
@@ -379,7 +379,7 @@ positive number it will be $f''(x) < 0$.
 | f'(-2)   | 2.937 > 0 |
 | f'(2)    | 2.937 > 0 |
 
-todo
+[[file:../assets/c4s9nucompressed.png]]
 
 | Property        | Value               |
 |-----------------+---------------------|
@@ -433,7 +433,7 @@ $f''(x) = 0$ when $x=1,-1$
 | f''(-2)  | 0.05 > 0   |
 
 
-todo
+[[file:../assets/c4s10nucompressed.png]]
 
 | Property       | Value               |
 |----------------+---------------------|
@@ -493,7 +493,7 @@ $x=0,3,-3$.
 | f''(4)   | 0.008 > 0  |
 | f''(-4)  | -0.008 < 0 |
 
-todo
+[[file:../assets/c4s11nucompressed.png]]
 
 | Property                     | Value               |
 |------------------------------+---------------------|
@@ -614,7 +614,7 @@ $f''(x) = 0$ when $x=1,-1$
 | f''(2)   | -0.15 < 0   |
 | f''(-2)  | -0.15 < 0   |
 
-todo
+[[file:../assets/c4s12nucompressed.png]]
 
 | Property                     | Value               |
 |------------------------------+---------------------|
@@ -759,7 +759,7 @@ $f'(x) = 0$ when $x=0$. $f''(x) = 0$ when $x=-3,0,3$
 | f''(2)   | 0.17 > 0  |
 | f''(4)   | -0.02 < 0 |
 
-todo
+[[file:../assets/c4s13nucompressed.png]]
 
 | Property                     | Value                  |
 |------------------------------+------------------------|
@@ -902,7 +902,7 @@ $f'(x) = 0$ when $x=0, 3\sqrt{7}, -3\sqrt{7}$. $f''(x) = 0$ when $x=-\sqrt{2}, \
 | f''(2)   | -0.56 < 0 |
 | f''(-2)  | -0.56 < 0 |
 
-todo
+[[file:../assets/c4s14nucompressed.png]]
 
 | Property            | Value                                      |
 |---------------------+--------------------------------------------|
@@ -1033,7 +1033,7 @@ $f''(x) = 0$ when $x = 0, \pi, 2\pi$
 | $f''(\dfrac{2\pi}{3})$ | -3.4 < 0 |
 | $f''(\dfrac{4\pi}{3})$ | 3.4 > 0  |
 
-todo
+[[file:../assets/c4s15nucompressed.png]]
 
 | Property            | Value                                           |
 |---------------------+-------------------------------------------------|
@@ -1110,7 +1110,7 @@ $g''(x) = 0$ when $x = \dfrac{\pi}{6}, \dfrac{5\pi}{6}$
 | $g''(\pi)$            | 2 > 0    |
 | $g'(\pi)$             | 2.28 > 0 |
 
-todo
+[[file:../assets/c4s16nucompressed.png]]
 
 | Property            | Value                                               |
 |---------------------+-----------------------------------------------------|
@@ -1155,7 +1155,7 @@ $f''(x) = 0$ when $x = 0$
 | $f''(\dfrac{\pi}{4})$  | 12 > 0   |
 | $f''(\dfrac{-\pi}{4})$ | -12 < 0  |
 
-todo
+[[file:../assets/c4s17nucompressed.png]]
 
 | Property            | Value                                                                  |
 |---------------------+------------------------------------------------------------------------|
@@ -1291,9 +1291,9 @@ Hence $f \circ g$ is concave up on $J$.
 
 Counterexample with following property:
 
-$f(x): $ Decreasing, Concave up
+$f(x):$ Decreasing, Concave up
 
-$g(x): $ Increasing, Concave up
+$g(x):$ Increasing, Concave up
 
 $g(x) = x^4$
 
