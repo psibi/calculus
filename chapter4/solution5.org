@@ -770,22 +770,61 @@ So $y = 0$ is the horizontal asymptote.
 
 ** Solution 9
 
-#+begin_src gnuplot :exports both :file ../assets/c5_5s9.png :eval never-export
-  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
-  reset session
-  set xlabel "x"
-  set ylabel "f(x)"
-  set grid
-  set key right top
-  f(x) = (x+1)/sqrt(1-(x**2))
-  set xrange [-1:1]
-  set yrange [-1:6]
-  set label "I" at -0.5, f(-0.5) left point pointtype 7 pointsize 2 offset -2
-  plot f(x) ls 1 t "(x+1)/sqrt(1-x^2)"
+$f(x) = \dfrac{x+1}{\sqrt{1-x^2}}$
+
+In order for $f(x)$ to be defined, we must have $1 - x^2 > 0$. To
+solve this inequality we first determine when $1 - x^2 = 0$
+
+$1 - x^2 = (1-x)(1+2) = 0$
+
+$x = 1, -1$
+
+Now let's check the sample points in the intervals $(-\infty, -1), (-1,1), (1,\infty)$
+
+todo
+
+Thus the domain of $f$ is $(-1,1)$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = (x+1)/sqrt(1-x^2)
+
+df = simplify(diff(f,x))
+dff = simplify(diff(df,x))
 #+end_src
 
 #+RESULTS:
-[[file:../assets/c5_5s9.png]]
+#+begin_example
+
+octave> octave> f = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱      2
+  ╲╱  1 - x
+octave> df = (sym)
+
+          -1
+  ───────────────────
+     ________
+    ╱      2
+  ╲╱  1 - x  ⋅(x - 1)
+dff = (sym)
+
+     2
+  - x  - x⋅(x - 1) + 1
+  ────────────────────
+          3/2
+  ⎛     2⎞           2
+  ⎝1 - x ⎠   ⋅(x - 1)
+#+end_example
+
+Both $f'(x)$ and $f''(x)$ are undefined at $x = 1, -1$
+
+todo
 
 #+begin_src octave :session both :eval never-export :exports both
   function y = firstDerivative(x)
@@ -813,23 +852,62 @@ So $y = 0$ is the horizontal asymptote.
 #+RESULTS:
 | 1 | 0.3544496489338692 | -0.2441406249999999 | 6.158402871356008 |
 
-** Solution 10
+$f'(x) = 0$ when $x = \emptyset$
 
-#+begin_src gnuplot :exports both :file ../assets/c5_5s10.png :eval never-export
+$f''(x) = 0$ when $x = -1/2$
+
+Let's check the function for vertical asymptotes
+
+$\lim_{x \to -1^+} f(x) = $\lim_{x \to -1^+} \dfrac{x(1+1/x)}{x\sqrt{1/x^2 - 1}} = \dfrac{1-1}{-1\sqrt{-1 - 1}} = -$
+
+$\lim_{x \to -1^-} f(x) = 0$
+
+$\lim_{x \to 1^+} f(x) = \dfrac{1+1}{1(1-1)} = \infty$
+
+$\lim_{x \to 1^-} f(x) = \infty$
+
+So $x=1$ are vertical asymptotes
+
+$\lim_{x \to \infty} f(x) = \dfrac{1+1}{\sqrt{-2}} = -i$
+
+$\lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} \sqrt{\dfrac{(1+x)^2}{(1-x^2)}} = \lim_{x \to -\infty} \sqrt{\dfrac{1+x}{1-x}}$
+
+$= \lim_{x \to -\infty} \sqrt{\dfrac{0+1}{0-1}} = \sqrt{-1} = i$
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s9.png :eval never-export
   set terminal png notransparent nointerlace rounded font "Alegreya, 14"
   reset session
   set xlabel "x"
-  set ylabel "g(x)"
+  set ylabel "f(x)"
   set grid
   set key right top
-  g(x) = (x+1)/sqrt((x**2) - 1)
-  set xrange [-5:5]
-  # set yrange [-1:6]
-  plot (x < -1 ? g(x): 1/0) ls 1 t "(x+1)/sqrt(x^2 - 1)", (x > 1 ? g(x): 1/0) ls 1 t "", 1 ls 2 t "asymptote"
+  f(x) = (x+1)/sqrt(1-(x**2))
+  set xrange [-1:1]
+  set yrange [-1:6]
+  set label "I" at -0.5, f(-0.5) left point pointtype 7 pointsize 2 offset -2
+  plot f(x) ls 1 t "(x+1)/sqrt(1-x^2)"
 #+end_src
 
 #+RESULTS:
-[[file:../assets/c5_5s10.png]]
+[[file:../assets/c5_5s9.png]]
+
+** Solution 10
+
+$g(x) = \dfrac{x+1}{\sqrt{x^2 - 1}}$
+
+In order for $g(x)$ to be defined, we must have $x^2 - 1 > 0$. To
+solve this inequality we first determine when $x^2 - 1 = 0$
+
+$x^2 - 1 = (x-1)(x+1) = 0$
+
+$x = 1, -1$
+
+now we check sample points in the intervals $(-\infty, -1), (-1,1)$
+and $(1, \infty)$
+
+todo
+
+Thus the domain of $h$ is $(-\infty, -1) \cup (1, \infty)$
 
 Single differentiation:
 
@@ -991,23 +1069,47 @@ ans =
        Inf + 0.00000i   0.96225 + 0.00000i
 #+end_example
 
-** Solution 11
+todo
 
-#+begin_src gnuplot :exports both :file ../assets/c5_5s11.png :eval never-export
+Let's check the function for vertical asymptotes
+
+$\lim_{x \to -1^-} g(x) = \lim_{x \to -1^-}  \dfrac{x+1}{\sqrt{x^2 - 1}} = \lim_{x \to -1^-} \dfrac{\sqrt{x+1}}{\sqrt{x-1}} = 0$
+
+$\lim_{x \to -1^+} g(x) = 0$
+
+$\lim_{x \to 1^-} g(x) = \lim_{x \to 1^-} \dfrac{\sqrt{x+1}}{\sqrt{x-1}} = \lim_{x \to 1^-} \dfrac{x^2 - 1}{x-1} = -\infty$
+
+$\lim_{x \to 1^+} g(x) = \infty$
+
+Since $x = 1$ is a vertical asymptote.
+
+$\lim_{x \to \pm \infty} g(x) = \lim_{x \to \pm \infty} g(x) \sqrt{\dfrac{(x+1)^2}{x^2 -1}} = \lim_{x \to \pm \infty} \sqrt{\dfrac{x+1}{x-1}}$
+
+$= \lim_{x \to \pm \infty} \sqrt{\dfrac{1 + 1/x}{1-1/x}} = \pm 1$
+
+So $y = \pm 1$ are vertical asymptootes.
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s10.png :eval never-export
   set terminal png notransparent nointerlace rounded font "Alegreya, 14"
   reset session
   set xlabel "x"
-  set ylabel "f(x)"
+  set ylabel "g(x)"
   set grid
   set key right top
-  f(x) = (x-5)*sqrt(x)/4
-  set xrange [-0.5:9]
-  set label "C" at (1.667), f(1.667) left point pointtype 7 pointsize 2 offset -2
-  plot (x >= 0 ? f(x): 1/0) ls 1 t "(x-5)*sqrt(x)/4"
+  g(x) = (x+1)/sqrt((x**2) - 1)
+  set xrange [-5:5]
+  # set yrange [-1:6]
+  plot (x < -1 ? g(x): 1/0) ls 1 t "(x+1)/sqrt(x^2 - 1)", (x > 1 ? g(x): 1/0) ls 1 t "", 1 ls 2 t "asymptote"
 #+end_src
 
 #+RESULTS:
-[[file:../assets/c5_5s11.png]]
+[[file:../assets/c5_5s10.png]]
+
+** Solution 11
+
+$f(x) = \dfrac{(x-5)\sqrt{x}}{4}$
+
+Domain of $f(x)$: $[0, \infty)$
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 pkg load symbolic
@@ -1060,26 +1162,39 @@ ans =
    0.50000   0.29047   0.24307
 #+end_example
 
-** Solution 12
+todo
 
-#+begin_src gnuplot :exports both :file ../assets/c5_5s12.png :eval never-export
+Let's check the function for vertical asymptotes
+
+$\lim_{x \to 0^+} f(x) = 0$
+
+$\lim_{x \to \infty} f(x) = 0$
+
+$\lim_{x \to -\infty} f(x) = -i\infty$
+
+So there are no horizontal or vertical asymptote.
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s11.png :eval never-export
   set terminal png notransparent nointerlace rounded font "Alegreya, 14"
   reset session
   set xlabel "x"
-  set ylabel "g(x)"
+  set ylabel "f(x)"
   set grid
   set key right top
-  g(x) = ((x-5)**2)*sqrt(x)/4
-  set xrange [0:9]
-  set label "C" at 1, g(1) left point pointtype 7 pointsize 2 offset -2
-  set label "C" at 5, g(5) left point pointtype 7 pointsize 2 offset -2
-  set label "I" at 2.63, g(2.63) left point pointtype 7 pointsize 2 offset -2
-  plot g(x) ls 1 t "(x-5)^2*sqrt(x)/4"
+  f(x) = (x-5)*sqrt(x)/4
+  set xrange [-0.5:9]
+  set label "C" at (1.667), f(1.667) left point pointtype 7 pointsize 2 offset -2
+  plot (x >= 0 ? f(x): 1/0) ls 1 t "(x-5)*sqrt(x)/4"
 #+end_src
 
 #+RESULTS:
-[[file:../assets/c5_5s12.png]]
+[[file:../assets/c5_5s11.png]]
 
+** Solution 12
+
+$g(x) = \dfrac{(x-5)^2\sqrt{x}}{4}$
+
+Domain of $g(x)$: $[0, \infty)$
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
   pkg load symbolic
@@ -1148,9 +1263,49 @@ ans =
   -2.50000  -0.55243   0.24056   1.11803   1.42462
 #+end_example
 
+$g'(x) = -$ when $x = 1,5$
+
+$g''(x) = 0$ when $x = 1- 2\sqrt{6}/3, 1+ 2\sqrt{6}/3$
+
+todo
+
+Let's check the function for vertical asymptote
+
+$\lim_{x \to 0} g(x) = 0$
+
+There is no vertical asymptote.
+
+$\lim_{x \to \infty} g(x) = \infty$
+
+$\lim_{x \to -\infty} g(x) = i\infty$
+
+There is no horizontal asymptote.
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s12.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "g(x)"
+  set grid
+  set key right top
+  g(x) = ((x-5)**2)*sqrt(x)/4
+  set xrange [0:9]
+  set label "C" at 1, g(1) left point pointtype 7 pointsize 2 offset -2
+  set label "C" at 5, g(5) left point pointtype 7 pointsize 2 offset -2
+  set label "I" at 2.63, g(2.63) left point pointtype 7 pointsize 2 offset -2
+  plot g(x) ls 1 t "(x-5)^2*sqrt(x)/4"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s12.png]]
+
 ** Solution 13
 
 Drawing [[https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J][graph for cubic root]] isn't straightforward.
+
+$f(x) = x - 3\sqrt[3]{x}$
+
+Domain of $f(x)$ is $(-\infty, \infty)$
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
   pkg load symbolic
@@ -1202,9 +1357,25 @@ ans =
    0.66667   0.20999
 #+end_example
 
+$f'(x) = 0$ when $x=1$
+
+$f''(x) = 0$ when $x=\emptyset$
+
+todo
+
+The function $f(x)$ doesn't have vertical asymptotes.
+
+$\lim_{x \to \pm \infty} f(x) = \pm \infty$
+
+There are no  horizontal asymptotes.
+
 ** Solution 14
 
 Drawing [[https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J][graph for cubic root]] isn't straightforward via gnuplot.
+
+$f(x) = \sqrt[3]{x}(\sqrt[3]{x} - 2)$
+
+Domain: $(-\infty, \infty)$
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
   pkg load symbolic
@@ -1260,9 +1431,21 @@ ans =
    0.22222   0.00076   0.00000  -0.00046
 #+end_example
 
+todo
+
+The function doesn't have any vertical asymptotes.
+
+$\lim_{x \to \pm \infty} f(x) = \infty$
+
+The function doesn't have horizontal asymptotes.
+
 ** Solution 15
 
 Drawing [[https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J][graph for cubic root]] isn't straightforward via gnuplot.
+
+$g(x) = 3x^(2/3) - 2x$
+
+Domain: $(-\infty, \infty)$
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
   pkg load symbolic
@@ -1325,6 +1508,8 @@ ans =
 
   -0.66667       NaN  -0.66667  -0.26457
 #+end_example
+
+todo
 
 ** Solution 16
 
