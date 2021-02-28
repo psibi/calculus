@@ -467,23 +467,48 @@ So there is no horizontal asymptotes.
 
 ** Solution 6
 
-#+begin_src gnuplot :exports both :file ../assets/c5_5s6.png :eval never-export
-  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
-  reset session
-  set xlabel "x"
-  set ylabel "g(x)"
-  set grid
-  set key right top
-  g(x) = x + (4/x)
-  set yrange [-20:20]
-  set xrange [-5:5]
-  set label "C" at -2, g(-2) left point pointtype 7 pointsize 2 offset -2
-  set label "C" at 2, g(2) left point pointtype 7 pointsize 2 offset -2
-  plot (x < 0 ? g(x) : 1/0) ls 1 t "x + 4/x", (x > 0 ? g(x) : 1/0) ls 1 t ""
+$g(x) = x + 4/x$
+
+$g(x)$ is undefined at $x = 0$
+
+Domain: $(-\infty, 0) \cup (0, \infty)$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+g = x + (4/x)
+
+dg = simplify(diff(g,x))
+dgg = simplify(diff(dg, x))
 #+end_src
 
 #+RESULTS:
-[[file:../assets/c5_5s6.png]]
+#+begin_example
+
+octave> octave> g = (sym)
+
+      4
+  x + ─
+      x
+octave> dg = (sym)
+
+      4
+  1 - ──
+       2
+      x
+dgg = (sym)
+
+  8
+  ──
+   3
+  x
+#+end_example
+
+Both $g'(x)$ and $g''(x)$ are undefined at $x = 0$. $g'(x) = 0$ when
+$x = -2, 2$. $g''(x) = 0$ when $x = \emptyset$
+
+todo
 
 #+begin_src octave :session both :eval never-export :exports both
   function y = firstDerivative(x)
@@ -510,25 +535,83 @@ So there is no horizontal asymptotes.
 #+RESULTS:
 | -0.2962962962962963 | -1 | -8 | 8 | 1 | 0.2962962962962963 |
 
-** Solution 7
+Let's check the function for vertical asymptotes.
 
-#+begin_src gnuplot :exports both :file ../assets/c5_5s7.png :eval never-export
+$\lim_{x \to 0^-} g(x) = -\infty$
+
+$\lim_{x \to 0^+} g(x) = \infty$
+
+So $x = 0$ is the vertical asymptote.
+
+$\lim_{x \to \pm \infty} g(x) = \pm \infty$
+
+So there is no horizontal asymptote.
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s6.png :eval never-export
   set terminal png notransparent nointerlace rounded font "Alegreya, 14"
   reset session
   set xlabel "x"
-  set ylabel "f(x)"
+  set ylabel "g(x)"
   set grid
   set key right top
-  f(x) = (x**2 + x + 2)/(x-1)
+  g(x) = x + (4/x)
   set yrange [-20:20]
-  set xrange [-2:4]
-  set label "C" at -1, f(-1) left point pointtype 7 pointsize 2 offset -2
-  set label "C" at 3, f(3) left point pointtype 7 pointsize 2 offset -2
-  plot (x < 1 ? f(x) : 1/0) ls 1 t "x + 4/x", (x > 1 ? f(x) : 1/0) ls 1 t ""
+  set xrange [-5:5]
+  set label "C" at -2, g(-2) left point pointtype 7 pointsize 2 offset -2
+  set label "C" at 2, g(2) left point pointtype 7 pointsize 2 offset -2
+  plot (x < 0 ? g(x) : 1/0) ls 1 t "x + 4/x", (x > 0 ? g(x) : 1/0) ls 1 t ""
 #+end_src
 
 #+RESULTS:
-[[file:../assets/c5_5s7.png]]
+[[file:../assets/c5_5s6.png]]
+
+** Solution 7
+
+$f(x) = \dfrac{x^2 + x + 2}{x-1}$
+
+$f(x)$ is undefined at $x = 1$
+
+Domain: $(-\infty, 1) \cup (1, \infty)$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = (x^2 + x + 2)/(x-1)
+
+df = simplify(diff(f,x))
+dff = simplify(diff(df,x))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+   2
+  x  + x + 2
+  ──────────
+    x - 1
+octave> df = (sym)
+
+   2
+  x  - 2⋅x - 3
+  ────────────
+   2
+  x  - 2⋅x + 1
+dff = (sym)
+
+     8⋅(x - 1)
+  ───────────────
+                2
+  ⎛ 2          ⎞
+  ⎝x  - 2⋅x + 1⎠
+#+end_example
+
+Both $f'(x)$ and $f''(x)$ are undefined at $x=1$. $f'(x) = 0$ when $x
+= -1, 3$. $f''(x) = 0$ when $x = \emptyset$
+
+todo
 
 #+begin_src octave :session both :eval never-export :exports both
   function y = firstDerivative(x)
@@ -555,25 +638,83 @@ So there is no horizontal asymptotes.
 #+RESULTS:
 | -0.2962962962962963 | -1 | -8 | 8 | 1 | 0.2962962962962963 |
 
-** Solution 8
+Let's check the function for vertical asymptotes:
 
-#+begin_src gnuplot :exports both :file ../assets/c5_5s8.png :eval never-export
+$\lim_{x \to 1^-} f(x) = -\infty$
+
+$\lim_{x \to 1^+} f(x) = \infty$
+
+So $x = 1$ is the vertical asymptote.
+
+$\lim_{x \to \pm \infty} f(x) = \lim_{x \to \pm \infty} \dfrac{x(1 + 1/x + 2/x^2}{(1/x - 1/x^2} = \pm \infty$
+
+So there is no horizontal asymptote.
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s7.png :eval never-export
   set terminal png notransparent nointerlace rounded font "Alegreya, 14"
   reset session
   set xlabel "x"
-  set ylabel "h(x)"
+  set ylabel "f(x)"
   set grid
   set key right top
-  h(x) = sqrt(x)/(x+3)
-  set xrange [-1:7]
-  set yrange [0:0.35]
-  set label "I" at 6.464101, h(6.464101) left point pointtype 7 pointsize 2 offset -2
-  set label "C" at 3, h(3) left point pointtype 7 pointsize 2 offset -2
-  plot (x > 0 ? h(x) : 1/0) ls 1 t "x^(1/2)/x+3", 0 ls 2 t "asymptote"
+  f(x) = (x**2 + x + 2)/(x-1)
+  set yrange [-20:20]
+  set xrange [-2:4]
+  set label "C" at -1, f(-1) left point pointtype 7 pointsize 2 offset -2
+  set label "C" at 3, f(3) left point pointtype 7 pointsize 2 offset -2
+  plot (x < 1 ? f(x) : 1/0) ls 1 t "x + 4/x", (x > 1 ? f(x) : 1/0) ls 1 t ""
 #+end_src
 
 #+RESULTS:
-[[file:../assets/c5_5s8.png]]
+[[file:../assets/c5_5s7.png]]
+
+** Solution 8
+
+$h(x) = \dfrac{\sqrt{x}}{x+3}$
+
+Domain of $\sqrt{3}$ is $[0, \infty)$
+
+$h(x)$ is not defined when $x = -3$
+
+Domain of $h(x)$ is $[0, \infty)$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+h = sqrt(x)/(x+3)
+
+dh = simplify(diff(h,x))
+dhh = simplify(diff(dh,x))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> h = (sym)
+
+    √x
+  ─────
+  x + 3
+octave> dh = (sym)
+
+      3 - x
+  ─────────────
+              2
+  2⋅√x⋅(x + 3)
+dhh = (sym)
+
+           ⎛ 2          ⎞
+         3⋅⎝x  - 6⋅x - 3⎠
+  ──────────────────────────────
+     3/2 ⎛ 3      2            ⎞
+  4⋅x   ⋅⎝x  + 9⋅x  + 27⋅x + 27⎠
+#+end_example
+
+$h'(x)$ is not defined when $x = 0$. $h''(x)$ is not defined when $x =
+0$. $h'(x) = 0$ when $x = 3$. $h''(x) = 0$ when $x = 3 + 2\sqrt{3}$
+
+todo
 
 #+begin_src octave :session both :eval never-export :exports both
   function y = firstDerivative(x)
@@ -600,6 +741,32 @@ So there is no horizontal asymptotes.
 
 #+RESULTS:
 | -0.02333452377915607 | -0.008018753738744801 | 0.0001619847741468117 |
+
+Let's check the function for vertical asymptotes. There is no element
+$x$ where $h(x)$ is undefined in its domain. So it has no vertical
+asymptote.
+
+$\lim_{x \to \pm \infty} h(x) = \lim_{x \to \pm \infty} \dfrac{1}{\sqrt{x} + 3/\sqrt{x}} = 0$
+
+So $y = 0$ is the horizontal asymptote.
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s8.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "h(x)"
+  set grid
+  set key right top
+  h(x) = sqrt(x)/(x+3)
+  set xrange [-1:7]
+  set yrange [0:0.35]
+  set label "I" at 6.464101, h(6.464101) left point pointtype 7 pointsize 2 offset -2
+  set label "C" at 3, h(3) left point pointtype 7 pointsize 2 offset -2
+  plot (x > 0 ? h(x) : 1/0) ls 1 t "x^(1/2)/x+3", 0 ls 2 t "asymptote"
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s8.png]]
 
 ** Solution 9
 
