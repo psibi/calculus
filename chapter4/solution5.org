@@ -2,6 +2,65 @@
 
 ** Solution 1
 
+$f(x) = \dfrac{2x - 1}{x^2}$
+
+$f(x)$ is undefined at $x=0$
+
+Domain: $(-\infty, 0) \cup (0, \infty)$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = (2*x-1)*x^(-2)
+
+df = simplify(diff(f,x))
+dff = simplify(diff(df,x))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+  2⋅x - 1
+  ───────
+      2
+     x
+octave> df = (sym)
+
+  2⋅(1 - x)
+  ─────────
+       3
+      x
+dff = (sym)
+
+  2⋅(2⋅x - 3)
+  ───────────
+        4
+       x
+#+end_example
+
+Both $f'(x)$ and $f''(x)$ are undefined at $x=0$. $f'(x) = 0$ when
+$x=1$. $f''(x) = 0$ when $x = 3/2$
+
+todo
+
+Let's check the function for vertical asymptotes
+
+$\lim_{x \to 0^-}  f(x) = - \infty$
+
+$\lim_{x \to 0^+}  f(x) = - \infty$
+
+So $x = 0$ is the vertical asymptotes. Let's check the function for
+horizontal asymptotes.
+
+$\lim_{x \to \pm \infty} f(x) = \lim_{x \to \pm \infty} \dfrac{2x-1}{x^2} = \lim_{x \to \pm \infty} \dfrac{x(2 - 1/x}{x^2}$
+
+$= \lim_{x \to \pm \infty} \dfrac{1}{x}(2 - \dfrac{1}{x}) = 0.2 = 0$
+
+So $y = 0$ is the horizontal asymptote.
+
 #+begin_src gnuplot :exports both :file ../assets/c5_5s1.png :eval never-export
   set terminal png notransparent nointerlace rounded font "Alegreya, 14"
   reset session
@@ -26,6 +85,68 @@ I = Inflection point
 
 ** Solution 2
 
+$g(x) = \dfrac{2}{x^2} = \dfrac{1}{x}$
+
+$g(x)$ is undefined at $x = 0$
+
+Domain: $(-\infty, 0) \cup (0 , \infty)$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+g = 2/(x^2) - 1/x
+dg = simplify(diff(g,x))
+dgg = simplify(diff(dg, x))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> g = (sym)
+
+    1   2
+  - ─ + ──
+    x    2
+        x
+dg = (sym)
+
+  x - 4
+  ─────
+     3
+    x
+dgg = (sym)
+
+  2⋅(6 - x)
+  ─────────
+       4
+      x
+#+end_example
+
+Both $g'(x)$ and $g''(x)$ are undefined at $x=0$.
+
+$g'(x) = 0$ when $x = 4$
+
+$g''(x) = 0$ when $x = 6$
+
+todo
+
+Let's check the function for vertical asymptotes
+
+$\lim_{x \to 0^-} g(x) = \lim_{x \to 0^-} \dfrac{1}{x}(2/x - 1) = -\infty$
+
+$\lim_{x \to 0^+} g(x) = \infty$
+
+So $x = 0$ is a vertical asymptote.
+
+$\lim_{x \to \pm \infty} g(x) = \lim_{x \to \pm \infty} g(x) \dfrac{2}{x^2} - \dfrac{1}{x} = 0 - 0 = 0$
+
+So $y = 0$ is the horizontal asymptote.
+
+Inflection point: 6
+
+Critical number: 4
+
 #+begin_src gnuplot :exports both :file ../assets/c5_5s2.png :eval never-export
   set terminal png notransparent nointerlace rounded font "Alegreya, 14"
   reset session
@@ -46,6 +167,74 @@ I = Inflection point
 
 ** Solution 3
 
+$f(x) = \dfrac{x}{4-x^2}$
+
+$f(x)$ is undefined at $x=2, -2$
+
+Domain: $(-\infty, 2) \cup (-2,2) \cup (2, \infty)$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = x/(4-x^2)
+
+df = simplify(diff(f,x))
+dff = simplify(diff(df,x))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+    x
+  ──────
+       2
+  4 - x
+octave> df = (sym)
+
+     2
+    x  + 4
+  ─────────
+          2
+  ⎛ 2    ⎞
+  ⎝x  - 4⎠
+dff = (sym)
+
+       ⎛ 2     ⎞
+  -2⋅x⋅⎝x  + 12⎠
+  ───────────────
+             3
+     ⎛ 2    ⎞
+     ⎝x  - 4⎠
+#+end_example
+
+Both $f'(x)$ and $f''(x)$ are undefined at $x = 2, -2$. $f'(x) = 0$ when $x = \emptyset$
+
+$f''(x) = 0$ when $x=0$
+
+todo
+
+Inflection point: 0
+
+Let's check the function for vertical asymptotes:
+
+$\lim_{x \to -2^-} f(x) = \lim_{x \to -2^-} \dfrac{x}{x^2(4/x^2 - 1)} = \infty$
+
+$\lim_{x \to -2^+} f(x) = -\infty$
+
+$\lim_{x \to 2^-} f(x) = \infty$
+
+$\lim_{x \to 2^+} f(x) = -\infty$
+
+So $x=2$ and $x=-2$ are the vertical asymptotes for the
+function. Let's check the function for horizontal asymptotes:
+
+$\lim_{x \to \pm \infty} f(x) = \lim_{x \tp \pm \infty} \dfrac{1}{4/x - x} = 0$
+
+So $y = 0$ is the horizontal symptote
+
 #+begin_src gnuplot :exports both :file ../assets/c5_5s3.png :eval never-export
   set terminal png notransparent nointerlace rounded font "Alegreya, 14"
   reset session
@@ -64,6 +253,70 @@ I = Inflection point
 [[file:../assets/c5_5s3.png]]
 
 ** Solution 4
+
+$g(x) = \dfrac{x^2}{4-x^2}$
+
+$g(x)$ is undefined at $x=2,-2$
+
+Domain: $(-\infty, -2) \cup (-2,2) \cup (2, \infty)$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+g = x^2/(4-x^2)
+
+dg = simplify(diff(g,x))
+dgg = simplify(diff(dg, x))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> g = (sym)
+
+     2
+    x
+  ──────
+       2
+  4 - x
+octave> dg = (sym)
+
+     8⋅x
+  ─────────
+          2
+  ⎛ 2    ⎞
+  ⎝x  - 4⎠
+dgg = (sym)
+
+   ⎛    2     ⎞
+  -⎝24⋅x  + 32⎠
+  ──────────────
+            3
+    ⎛ 2    ⎞
+    ⎝x  - 4⎠
+#+end_example
+
+Both $g'(x)$ and $g''(x)$ are undefined at $x=2, -2$. $g'(x) = 0$ when
+$x=0$. $g''(x) = 0$ when $x = \emptyset$
+
+todo
+
+Let's check the function for vertical asymptotes:
+
+$\lim_{x \to -2^-} g(x) = -\infty$
+
+$\lim_{x \to -2^+} g(x) = \infty$
+
+$\lim_{x \to 2^-} g(x) = \infty$
+
+$\lim_{x \to 2^+} g(x) = -\infty$
+
+So $x = 2$ and $x = -2$ are the vertical asymptotes.
+
+$\lim_{x \to \pm \infty} g(x) = \lim_{x \to \pm \infty} \dfrac{1}{4/x^2 - 1} = \dfrac{1}{0-1} = -1$
+
+So $y = -1$ is the horizontal asymptote.
 
 #+begin_src gnuplot :exports both :file ../assets/c5_5s4.png :eval never-export
   set terminal png notransparent nointerlace rounded font "Alegreya, 14"
@@ -111,23 +364,49 @@ I = Inflection point
 
 ** Solution 5
 
-#+begin_src gnuplot :exports both :file ../assets/c5_5s5.png :eval never-export
-  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
-  reset session
-  set xlabel "x"
-  set ylabel "f(x)"
-  set grid
-  set key right top
-  f(x) = (x**3 + 2)/x
-  set yrange [-10:10]
-  set xrange [-5:5]
-  set label "C" at 1, f(1) center point pointtype 7 pointsize 2 offset -2
-  set label "I" at -1.25, f(-1.25) center point pointtype 7 pointsize 2 offset -2
-  plot (x < 0 ? f(x) : 1/0) ls 1 t "x^3 + 2/x", (x > 0 ? f(x) : 1/0) ls 1 t ""
+$f(x)= \dfrac{x^3 +2}{x}$
+
+$f(x)$ is undefined at $x=0$
+
+Domain: $(-\infty, 0) \cup (0, \infty)$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = (x^3 + 2)/x
+
+df = simplify(diff(f,x))
+dff = simplify(diff(df,x))
 #+end_src
 
 #+RESULTS:
-[[file:../assets/c5_5s5.png]]
+#+begin_example
+
+octave> octave> f = (sym)
+
+   3
+  x  + 2
+  ──────
+    x
+octave> df = (sym)
+
+        2
+  2⋅x - ──
+         2
+        x
+dff = (sym)
+
+      4
+  2 + ──
+       3
+      x
+#+end_example
+
+Both $f'(x)$ and $f''(x)$ are undefined at $x=0$. $f'(x) = 0$ when $x
+= 1$. $f''(x) = 0$ when $x = -(2)^{1/3}$
+
+todo
 
 #+begin_src octave :session both :eval never-export :exports both
   function y = firstDerivative(x)
@@ -154,6 +433,37 @@ I = Inflection point
 
 #+RESULTS:
 | 1.5 | -2 | 6 | 2.5 |
+
+Let's check the function for vertical asymptotes
+
+$\lim_{x \to 0^-} f(x) = -\infty$
+
+$\lim_{x \to 0^+} f(x) = \infty$
+
+So $x = 0$ is the vertical asymptotes.
+
+$\lim_{x \to \pm \infty} f(x) = \lim_{x \to \pm \infty} \dfrac{1 + 2/x^3}{1/x^2} = \infty$
+
+So there is no horizontal asymptotes.
+
+#+begin_src gnuplot :exports both :file ../assets/c5_5s5.png :eval never-export
+  set terminal png notransparent nointerlace rounded font "Alegreya, 14"
+  reset session
+  set xlabel "x"
+  set ylabel "f(x)"
+  set grid
+  set key right top
+  f(x) = (x**3 + 2)/x
+  set yrange [-10:10]
+  set xrange [-5:5]
+  set label "C" at 1, f(1) center point pointtype 7 pointsize 2 offset -2
+  set label "I" at -1.25, f(-1.25) center point pointtype 7 pointsize 2 offset -2
+  plot (x < 0 ? f(x) : 1/0) ls 1 t "x^3 + 2/x", (x > 0 ? f(x) : 1/0) ls 1 t ""
+#+end_src
+
+#+RESULTS:
+[[file:../assets/c5_5s5.png]]
+
 
 ** Solution 6
 
