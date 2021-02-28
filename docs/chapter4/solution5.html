@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-01-31 Sun 21:31 -->
+<!-- 2021-02-28 Sun 18:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -255,6 +255,87 @@ MathJax.Hub.Config({
 </div><div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> Solution 1</h3>
 <div class="outline-text-3" id="text-1-1">
+<p>
+\(f(x) = \dfrac{2x - 1}{x^2}\)
+</p>
+
+<p>
+\(f(x)\) is undefined at \(x=0\)
+</p>
+
+<p>
+Domain: \((-\infty, 0) \cup (0, \infty)\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span>^<span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dff</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym)
+
+  2⋅x - 1
+  ───────
+      2
+     x
+octave&gt; df = (sym)
+
+  2⋅(1 - x)
+  ─────────
+       3
+      x
+dff = (sym)
+
+  2⋅(2⋅x - 3)
+  ───────────
+        4
+       x
+</pre></div>
+
+<p>
+Both \(f'(x)\) and \(f''(x)\) are undefined at \(x=0\). \(f'(x) = 0\) when
+\(x=1\). \(f''(x) = 0\) when \(x = 3/2\)
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s1g.png" class="img-responsive" alt="c4s1g.png">
+</p>
+</figure>
+
+<p>
+Let's check the function for vertical asymptotes
+</p>
+
+<p>
+\(\lim_{x \to 0^-}  f(x) = - \infty\)
+</p>
+
+<p>
+\(\lim_{x \to 0^+}  f(x) = - \infty\)
+</p>
+
+<p>
+So \(x = 0\) is the vertical asymptotes. Let's check the function for
+horizontal asymptotes.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} f(x) = \lim_{x \to \pm \infty} \dfrac{2x-1}{x^2} = \lim_{x \to \pm \infty} \dfrac{x(2 - 1/x}{x^2}\)
+</p>
+
+<p>
+\(= \lim_{x \to \pm \infty} \dfrac{1}{x}(2 - \dfrac{1}{x}) = 0.2 = 0\)
+</p>
+
+<p>
+So \(y = 0\) is the horizontal asymptote.
+</p>
+
 <div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
 <span class="k">reset</span> <span class="n">session</span>
 <span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
@@ -288,6 +369,96 @@ I = Inflection point
 <div id="outline-container-sec-1-2" class="outline-3">
 <h3 id="sec-1-2"><span class="section-number-3">1.2</span> Solution 2</h3>
 <div class="outline-text-3" id="text-1-2">
+<p>
+\(g(x) = \dfrac{2}{x^2} = \dfrac{1}{x}\)
+</p>
+
+<p>
+\(g(x)\) is undefined at \(x = 0\)
+</p>
+
+<p>
+Domain: \((-\infty, 0) \cup (0 , \infty)\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dgg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">dg</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; g = (sym)
+
+    1   2
+  - ─ + ──
+    x    2
+        x
+dg = (sym)
+
+  x - 4
+  ─────
+     3
+    x
+dgg = (sym)
+
+  2⋅(6 - x)
+  ─────────
+       4
+      x
+</pre></div>
+
+<p>
+Both \(g'(x)\) and \(g''(x)\) are undefined at \(x=0\).
+</p>
+
+<p>
+\(g'(x) = 0\) when \(x = 4\)
+</p>
+
+<p>
+\(g''(x) = 0\) when \(x = 6\)
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s2g.png" class="img-responsive" alt="c4s2g.png">
+</p>
+</figure>
+
+<p>
+Let's check the function for vertical asymptotes
+</p>
+
+<p>
+\(\lim_{x \to 0^-} g(x) = \lim_{x \to 0^-} \dfrac{1}{x}(2/x - 1) = -\infty\)
+</p>
+
+<p>
+\(\lim_{x \to 0^+} g(x) = \infty\)
+</p>
+
+<p>
+So \(x = 0\) is a vertical asymptote.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} g(x) = \lim_{x \to \pm \infty} g(x) \dfrac{2}{x^2} - \dfrac{1}{x} = 0 - 0 = 0\)
+</p>
+
+<p>
+So \(y = 0\) is the horizontal asymptote.
+</p>
+
+<p>
+Inflection point: 6
+</p>
+
+<p>
+Critical number: 4
+</p>
+
 <div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
 <span class="k">reset</span> <span class="n">session</span>
 <span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
@@ -313,6 +484,102 @@ I = Inflection point
 <div id="outline-container-sec-1-3" class="outline-3">
 <h3 id="sec-1-3"><span class="section-number-3">1.3</span> Solution 3</h3>
 <div class="outline-text-3" id="text-1-3">
+<p>
+\(f(x) = \dfrac{x}{4-x^2}\)
+</p>
+
+<p>
+\(f(x)\) is undefined at \(x=2, -2\)
+</p>
+
+<p>
+Domain: \((-\infty, 2) \cup (-2,2) \cup (2, \infty)\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span>^<span class="mi">2</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dff</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym)
+
+    x
+  ──────
+       2
+  4 - x
+octave&gt; df = (sym)
+
+     2
+    x  + 4
+  ─────────
+          2
+  ⎛ 2    ⎞
+  ⎝x  - 4⎠
+dff = (sym)
+
+       ⎛ 2     ⎞
+  -2⋅x⋅⎝x  + 12⎠
+  ───────────────
+             3
+     ⎛ 2    ⎞
+     ⎝x  - 4⎠
+</pre></div>
+
+<p>
+Both \(f'(x)\) and \(f''(x)\) are undefined at \(x = 2, -2\). \(f'(x) = 0\) when \(x = \emptyset\)
+</p>
+
+<p>
+\(f''(x) = 0\) when \(x=0\)
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s3g.png" class="img-responsive" alt="c4s3g.png">
+</p>
+</figure>
+
+<p>
+Inflection point: 0
+</p>
+
+<p>
+Let's check the function for vertical asymptotes:
+</p>
+
+<p>
+\(\lim_{x \to -2^-} f(x) = \lim_{x \to -2^-} \dfrac{x}{x^2(4/x^2 - 1)} = \infty\)
+</p>
+
+<p>
+\(\lim_{x \to -2^+} f(x) = -\infty\)
+</p>
+
+<p>
+\(\lim_{x \to 2^-} f(x) = \infty\)
+</p>
+
+<p>
+\(\lim_{x \to 2^+} f(x) = -\infty\)
+</p>
+
+<p>
+So \(x=2\) and \(x=-2\) are the vertical asymptotes for the
+function. Let's check the function for horizontal asymptotes:
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} f(x) = \lim_{x \tp \pm \infty} \dfrac{1}{4/x - x} = 0\)
+</p>
+
+<p>
+So \(y = 0\) is the horizontal symptote
+</p>
+
 <div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
 <span class="k">reset</span> <span class="n">session</span>
 <span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
@@ -337,6 +604,94 @@ I = Inflection point
 <div id="outline-container-sec-1-4" class="outline-3">
 <h3 id="sec-1-4"><span class="section-number-3">1.4</span> Solution 4</h3>
 <div class="outline-text-3" id="text-1-4">
+<p>
+\(g(x) = \dfrac{x^2}{4-x^2}\)
+</p>
+
+<p>
+\(g(x)\) is undefined at \(x=2,-2\)
+</p>
+
+<p>
+Domain: \((-\infty, -2) \cup (-2,2) \cup (2, \infty)\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span>^<span class="mi">2</span><span class="p">)</span>
+
+<span class="n">dg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dgg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">dg</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; g = (sym)
+
+     2
+    x
+  ──────
+       2
+  4 - x
+octave&gt; dg = (sym)
+
+     8⋅x
+  ─────────
+          2
+  ⎛ 2    ⎞
+  ⎝x  - 4⎠
+dgg = (sym)
+
+   ⎛    2     ⎞
+  -⎝24⋅x  + 32⎠
+  ──────────────
+            3
+    ⎛ 2    ⎞
+    ⎝x  - 4⎠
+</pre></div>
+
+<p>
+Both \(g'(x)\) and \(g''(x)\) are undefined at \(x=2, -2\). \(g'(x) = 0\) when
+\(x=0\). \(g''(x) = 0\) when \(x = \emptyset\)
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s4g.png" class="img-responsive" alt="c4s4g.png">
+</p>
+</figure>
+
+<p>
+Let's check the function for vertical asymptotes:
+</p>
+
+<p>
+\(\lim_{x \to -2^-} g(x) = -\infty\)
+</p>
+
+<p>
+\(\lim_{x \to -2^+} g(x) = \infty\)
+</p>
+
+<p>
+\(\lim_{x \to 2^-} g(x) = \infty\)
+</p>
+
+<p>
+\(\lim_{x \to 2^+} g(x) = -\infty\)
+</p>
+
+<p>
+So \(x = 2\) and \(x = -2\) are the vertical asymptotes.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} g(x) = \lim_{x \to \pm \infty} \dfrac{1}{4/x^2 - 1} = \dfrac{1}{0-1} = -1\)
+</p>
+
+<p>
+So \(y = -1\) is the horizontal asymptote.
+</p>
+
 <div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
 <span class="k">reset</span> <span class="n">session</span>
 <span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
@@ -427,23 +782,55 @@ I = Inflection point
 <div id="outline-container-sec-1-5" class="outline-3">
 <h3 id="sec-1-5"><span class="section-number-3">1.5</span> Solution 5</h3>
 <div class="outline-text-3" id="text-1-5">
-<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
-<span class="k">reset</span> <span class="n">session</span>
-<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
-<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
-<span class="k">set</span> <span class="nb">grid</span>
-<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
-<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
-<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-10</span><span class="o">:</span><span class="mi">10</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-5</span><span class="o">:</span><span class="mi">5</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">1</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">center</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mi">-1</span><span class="mf">.25</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">-1</span><span class="mf">.25</span><span class="p">)</span> <span class="n">center</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x^3 + 2/x&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span>
+<p>
+\(f(x)= \dfrac{x^3 +2}{x}\)
+</p>
+
+<p>
+\(f(x)\) is undefined at \(x=0\)
+</p>
+
+<p>
+Domain: \((-\infty, 0) \cup (0, \infty)\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span>^<span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dff</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym)
+
+   3
+  x  + 2
+  ──────
+    x
+octave&gt; df = (sym)
+
+        2
+  2⋅x - ──
+         2
+        x
+dff = (sym)
+
+      4
+  2 + ──
+       3
+      x
+</pre></div>
+
+<p>
+Both \(f'(x)\) and \(f''(x)\) are undefined at \(x=0\). \(f'(x) = 0\) when \(x
+= 1\). \(f''(x) = 0\) when \(x = -(2)^{1/3}\)
+</p>
 
 
 <figure>
-<p><img src="../assets/c5_5s5.png" class="img-responsive" alt="c5_5s5.png">
+<p><img src="../assets/c4s5g.png" class="img-responsive" alt="c4s5g.png">
 </p>
 </figure>
 
@@ -511,29 +898,105 @@ I = Inflection point
 </tr>
 </tbody>
 </table>
-</div>
-</div>
 
-<div id="outline-container-sec-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Solution 6</h3>
-<div class="outline-text-3" id="text-1-6">
+<p>
+Let's check the function for vertical asymptotes
+</p>
+
+<p>
+\(\lim_{x \to 0^-} f(x) = -\infty\)
+</p>
+
+<p>
+\(\lim_{x \to 0^+} f(x) = \infty\)
+</p>
+
+<p>
+So \(x = 0\) is the vertical asymptotes.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} f(x) = \lim_{x \to \pm \infty} \dfrac{1 + 2/x^3}{1/x^2} = \infty\)
+</p>
+
+<p>
+So there is no horizontal asymptotes.
+</p>
+
 <div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
 <span class="k">reset</span> <span class="n">session</span>
 <span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
-<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
 <span class="k">set</span> <span class="nb">grid</span>
 <span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
-<span class="nf">g</span>(x) <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
-<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-20</span><span class="o">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
+<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-10</span><span class="o">:</span><span class="mi">10</span><span class="p">]</span>
 <span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-5</span><span class="o">:</span><span class="mi">5</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">-2</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">-2</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">2</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x + 4/x&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">1</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">center</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mi">-1</span><span class="mf">.25</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">-1</span><span class="mf">.25</span><span class="p">)</span> <span class="n">center</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x^3 + 2/x&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span>
 </pre></div>
 
 
 <figure>
-<p><img src="../assets/c5_5s6.png" class="img-responsive" alt="c5_5s6.png">
+<p><img src="../assets/c5_5s5.png" class="img-responsive" alt="c5_5s5.png">
+</p>
+</figure>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Solution 6</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+\(g(x) = x + 4/x\)
+</p>
+
+<p>
+\(g(x)\) is undefined at \(x = 0\)
+</p>
+
+<p>
+Domain: \((-\infty, 0) \cup (0, \infty)\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">dg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dgg</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">dg</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; g = (sym)
+
+      4
+  x + ─
+      x
+octave&gt; dg = (sym)
+
+      4
+  1 - ──
+       2
+      x
+dgg = (sym)
+
+  8
+  ──
+   3
+  x
+</pre></div>
+
+<p>
+Both \(g'(x)\) and \(g''(x)\) are undefined at \(x = 0\). \(g'(x) = 0\) when
+\(x = -2, 2\). \(g''(x) = 0\) when \(x = \emptyset\)
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s6g.png" class="img-responsive" alt="c4s6g.png">
 </p>
 </figure>
 
@@ -606,29 +1069,107 @@ I = Inflection point
 </tr>
 </tbody>
 </table>
+
+<p>
+Let's check the function for vertical asymptotes.
+</p>
+
+<p>
+\(\lim_{x \to 0^-} g(x) = -\infty\)
+</p>
+
+<p>
+\(\lim_{x \to 0^+} g(x) = \infty\)
+</p>
+
+<p>
+So \(x = 0\) is the vertical asymptote.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} g(x) = \pm \infty\)
+</p>
+
+<p>
+So there is no horizontal asymptote.
+</p>
+
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="nf">g</span>(x) <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-20</span><span class="o">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-5</span><span class="o">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">-2</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">-2</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">2</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x + 4/x&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s6.png" class="img-responsive" alt="c5_5s6.png">
+</p>
+</figure>
 </div>
 </div>
 
 <div id="outline-container-sec-1-7" class="outline-3">
 <h3 id="sec-1-7"><span class="section-number-3">1.7</span> Solution 7</h3>
 <div class="outline-text-3" id="text-1-7">
-<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
-<span class="k">reset</span> <span class="n">session</span>
-<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
-<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
-<span class="k">set</span> <span class="nb">grid</span>
-<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
-<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="mi">-1</span><span class="p">)</span>
-<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-20</span><span class="o">:</span><span class="mi">20</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-2</span><span class="o">:</span><span class="mi">4</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">-1</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">3</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x + 4/x&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span>
+<p>
+\(f(x) = \dfrac{x^2 + x + 2}{x-1}\)
+</p>
+
+<p>
+\(f(x)\) is undefined at \(x = 1\)
+</p>
+
+<p>
+Domain: \((-\infty, 1) \cup (1, \infty)\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span>^<span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dff</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym)
+
+   2
+  x  + x + 2
+  ──────────
+    x - 1
+octave&gt; df = (sym)
+
+   2
+  x  - 2⋅x - 3
+  ────────────
+   2
+  x  - 2⋅x + 1
+dff = (sym)
+
+     8⋅(x - 1)
+  ───────────────
+                2
+  ⎛ 2          ⎞
+  ⎝x  - 2⋅x + 1⎠
+</pre></div>
+
+<p>
+Both \(f'(x)\) and \(f''(x)\) are undefined at \(x=1\). \(f'(x) = 0\) when \(x
+= -1, 3\). \(f''(x) = 0\) when \(x = \emptyset\)
+</p>
 
 
 <figure>
-<p><img src="../assets/c5_5s7.png" class="img-responsive" alt="c5_5s7.png">
+<p><img src="../assets/c4s7g.png" class="img-responsive" alt="c4s7g.png">
 </p>
 </figure>
 
@@ -701,29 +1242,109 @@ I = Inflection point
 </tr>
 </tbody>
 </table>
+
+<p>
+Let's check the function for vertical asymptotes:
+</p>
+
+<p>
+\(\lim_{x \to 1^-} f(x) = -\infty\)
+</p>
+
+<p>
+\(\lim_{x \to 1^+} f(x) = \infty\)
+</p>
+
+<p>
+So \(x = 1\) is the vertical asymptote.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} f(x) = \lim_{x \to \pm \infty} \dfrac{x(1 + 1/x + 2/x^2}{(1/x - 1/x^2} = \pm \infty\)
+</p>
+
+<p>
+So there is no horizontal asymptote.
+</p>
+
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="mi">-1</span><span class="p">)</span>
+<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-20</span><span class="o">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-2</span><span class="o">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">-1</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">3</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x + 4/x&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s7.png" class="img-responsive" alt="c5_5s7.png">
+</p>
+</figure>
 </div>
 </div>
 
 <div id="outline-container-sec-1-8" class="outline-3">
 <h3 id="sec-1-8"><span class="section-number-3">1.8</span> Solution 8</h3>
 <div class="outline-text-3" id="text-1-8">
-<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
-<span class="k">reset</span> <span class="n">session</span>
-<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
-<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;h(x)&quot;</span>
-<span class="k">set</span> <span class="nb">grid</span>
-<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
-<span class="k">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
-<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-1</span><span class="o">:</span><span class="mi">7</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mf">0.35</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mf">6.464101</span><span class="o">,</span> <span class="nf">h</span><span class="p">(</span><span class="mf">6.464101</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">3</span><span class="o">,</span> <span class="nf">h</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x^(1/2)/x+3&quot;</span><span class="o">,</span> <span class="mi">0</span> <span class="n">ls</span> <span class="mi">2</span> <span class="nb">t</span> <span class="s">&quot;asymptote&quot;</span>
+<p>
+\(h(x) = \dfrac{\sqrt{x}}{x+3}\)
+</p>
+
+<p>
+Domain of \(\sqrt{3}\) is \([0, \infty)\)
+</p>
+
+<p>
+\(h(x)\) is not defined when \(x = -3\)
+</p>
+
+<p>
+Domain of \(h(x)\) is \([0, \infty)\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">h</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">dh</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dhh</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">dh</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; h = (sym)
+
+    √x
+  ─────
+  x + 3
+octave&gt; dh = (sym)
+
+      3 - x
+  ─────────────
+              2
+  2⋅√x⋅(x + 3)
+dhh = (sym)
+
+           ⎛ 2          ⎞
+         3⋅⎝x  - 6⋅x - 3⎠
+  ──────────────────────────────
+     3/2 ⎛ 3      2            ⎞
+  4⋅x   ⋅⎝x  + 9⋅x  + 27⋅x + 27⎠
+</pre></div>
+
+<p>
+\(h'(x)\) is not defined when \(x = 0\). \(h''(x)\) is not defined when \(x =
+0\). \(h'(x) = 0\) when \(x = 3\). \(h''(x) = 0\) when \(x = 3 + 2\sqrt{3}\)
+</p>
 
 
 <figure>
-<p><img src="../assets/c5_5s8.png" class="img-responsive" alt="c5_5s8.png">
+<p><img src="../assets/c4s8g.png" class="img-responsive" alt="c4s8g.png">
 </p>
 </figure>
 
@@ -785,28 +1406,117 @@ I = Inflection point
 </tr>
 </tbody>
 </table>
+
+<p>
+Let's check the function for vertical asymptotes. There is no element
+\(x\) where \(h(x)\) is undefined in its domain. So it has no vertical
+asymptote.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} h(x) = \lim_{x \to \pm \infty} \dfrac{1}{\sqrt{x} + 3/\sqrt{x}} = 0\)
+</p>
+
+<p>
+So \(y = 0\) is the horizontal asymptote.
+</p>
+
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;h(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-1</span><span class="o">:</span><span class="mi">7</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mf">0.35</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mf">6.464101</span><span class="o">,</span> <span class="nf">h</span><span class="p">(</span><span class="mf">6.464101</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">3</span><span class="o">,</span> <span class="nf">h</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;x^(1/2)/x+3&quot;</span><span class="o">,</span> <span class="mi">0</span> <span class="n">ls</span> <span class="mi">2</span> <span class="nb">t</span> <span class="s">&quot;asymptote&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s8.png" class="img-responsive" alt="c5_5s8.png">
+</p>
+</figure>
 </div>
 </div>
 
 <div id="outline-container-sec-1-9" class="outline-3">
 <h3 id="sec-1-9"><span class="section-number-3">1.9</span> Solution 9</h3>
 <div class="outline-text-3" id="text-1-9">
-<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
-<span class="k">reset</span> <span class="n">session</span>
-<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
-<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
-<span class="k">set</span> <span class="nb">grid</span>
-<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
-<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-1</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-1</span><span class="o">:</span><span class="mi">6</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mi">-0</span><span class="mf">.5</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">-0</span><span class="mf">.5</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">plot</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x+1)/sqrt(1-x^2)&quot;</span>
-</pre></div>
+<p>
+\(f(x) = \dfrac{x+1}{\sqrt{1-x^2}}\)
+</p>
+
+<p>
+In order for \(f(x)\) to be defined, we must have \(1 - x^2 > 0\). To
+solve this inequality we first determine when \(1 - x^2 = 0\)
+</p>
+
+<p>
+\(1 - x^2 = (1-x)(1+2) = 0\)
+</p>
+
+<p>
+\(x = 1, -1\)
+</p>
+
+<p>
+Now let's check the sample points in the intervals \((-\infty, -1), (-1,1), (1,\infty)\)
+</p>
 
 
 <figure>
-<p><img src="../assets/c5_5s9.png" class="img-responsive" alt="c5_5s9.png">
+<p><img src="../assets/c4s9g.png" class="img-responsive" alt="c4s9g.png">
+</p>
+</figure>
+
+<p>
+Thus the domain of \(f\) is \((-1,1)\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span>^<span class="mi">2</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">dff</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="nb">diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym)
+
+     x + 1
+  ───────────
+     ________
+    ╱      2
+  ╲╱  1 - x
+octave&gt; df = (sym)
+
+          -1
+  ───────────────────
+     ________
+    ╱      2
+  ╲╱  1 - x  ⋅(x - 1)
+dff = (sym)
+
+     2
+  - x  - x⋅(x - 1) + 1
+  ────────────────────
+          3/2
+  ⎛     2⎞           2
+  ⎝1 - x ⎠   ⋅(x - 1)
+</pre></div>
+
+<p>
+Both \(f'(x)\) and \(f''(x)\) are undefined at \(x = 1, -1\)
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s9g2.png" class="img-responsive" alt="c4s9g2.png">
 </p>
 </figure>
 
@@ -871,29 +1581,106 @@ I = Inflection point
 </tr>
 </tbody>
 </table>
+
+<p>
+\(f'(x) = 0\) when \(x = \emptyset\)
+</p>
+
+<p>
+\(f''(x) = 0\) when \(x = -1/2\)
+</p>
+
+<p>
+Let's check the function for vertical asymptotes
+</p>
+
+<p>
+$lim<sub>x &rarr; -1^+</sub> f(x) = \(\lim_{x \to -1^+} \dfrac{x(1+1/x)}{x\sqrt{1/x^2 - 1}} = \dfrac{1-1}{-1\sqrt{-1 - 1}} = -\)
+</p>
+
+<p>
+\(\lim_{x \to -1^-} f(x) = 0\)
+</p>
+
+<p>
+\(\lim_{x \to 1^+} f(x) = \dfrac{1+1}{1(1-1)} = \infty\)
+</p>
+
+<p>
+\(\lim_{x \to 1^-} f(x) = \infty\)
+</p>
+
+<p>
+So \(x=1\) are vertical asymptotes
+</p>
+
+<p>
+\(\lim_{x \to \infty} f(x) = \dfrac{1+1}{\sqrt{-2}} = -i\)
+</p>
+
+<p>
+\(\lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} \sqrt{\dfrac{(1+x)^2}{(1-x^2)}} = \lim_{x \to -\infty} \sqrt{\dfrac{1+x}{1-x}}\)
+</p>
+
+<p>
+\(= \lim_{x \to -\infty} \sqrt{\dfrac{0+1}{0-1}} = \sqrt{-1} = i\)
+</p>
+
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-1</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">-1</span><span class="o">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mi">-0</span><span class="mf">.5</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mi">-0</span><span class="mf">.5</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x+1)/sqrt(1-x^2)&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s9.png" class="img-responsive" alt="c5_5s9.png">
+</p>
+</figure>
 </div>
 </div>
 
 <div id="outline-container-sec-1-10" class="outline-3">
 <h3 id="sec-1-10"><span class="section-number-3">1.10</span> Solution 10</h3>
 <div class="outline-text-3" id="text-1-10">
-<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
-<span class="k">reset</span> <span class="n">session</span>
-<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
-<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
-<span class="k">set</span> <span class="nb">grid</span>
-<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
-<span class="nf">g</span>(x) <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-5</span><span class="o">:</span><span class="mi">5</span><span class="p">]</span>
-<span class="c"># set yrange [-1:6]</span>
-<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">-1</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x+1)/sqrt(x^2 - 1)&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span><span class="o">,</span> <span class="mi">1</span> <span class="n">ls</span> <span class="mi">2</span> <span class="nb">t</span> <span class="s">&quot;asymptote&quot;</span>
-</pre></div>
+<p>
+\(g(x) = \dfrac{x+1}{\sqrt{x^2 - 1}}\)
+</p>
+
+<p>
+In order for \(g(x)\) to be defined, we must have \(x^2 - 1 > 0\). To
+solve this inequality we first determine when \(x^2 - 1 = 0\)
+</p>
+
+<p>
+\(x^2 - 1 = (x-1)(x+1) = 0\)
+</p>
+
+<p>
+\(x = 1, -1\)
+</p>
+
+<p>
+now we check sample points in the intervals \((-\infty, -1), (-1,1)\)
+and \((1, \infty)\)
+</p>
 
 
 <figure>
-<p><img src="../assets/c5_5s10.png" class="img-responsive" alt="c5_5s10.png">
+<p><img src="../assets/c4s10g.png" class="img-responsive" alt="c4s10g.png">
 </p>
 </figure>
+
+<p>
+Thus the domain of \(h\) is \((-\infty, -1) \cup (1, \infty)\)
+</p>
 
 <p>
 Single differentiation:
@@ -1048,29 +1835,79 @@ ans =
 
        Inf + 0.00000i   0.96225 + 0.00000i
 </pre></div>
+
+
+<figure>
+<p><img src="../assets/c4s10g2.png" class="img-responsive" alt="c4s10g2.png">
+</p>
+</figure>
+
+<p>
+Let's check the function for vertical asymptotes
+</p>
+
+<p>
+\(\lim_{x \to -1^-} g(x) = \lim_{x \to -1^-}  \dfrac{x+1}{\sqrt{x^2 - 1}} = \lim_{x \to -1^-} \dfrac{\sqrt{x+1}}{\sqrt{x-1}} = 0\)
+</p>
+
+<p>
+\(\lim_{x \to -1^+} g(x) = 0\)
+</p>
+
+<p>
+\(\lim_{x \to 1^-} g(x) = \lim_{x \to 1^-} \dfrac{\sqrt{x+1}}{\sqrt{x-1}} = \lim_{x \to 1^-} \dfrac{x^2 - 1}{x-1} = -\infty\)
+</p>
+
+<p>
+\(\lim_{x \to 1^+} g(x) = \infty\)
+</p>
+
+<p>
+Since \(x = 1\) is a vertical asymptote.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} g(x) = \lim_{x \to \pm \infty} g(x) \sqrt{\dfrac{(x+1)^2}{x^2 -1}} = \lim_{x \to \pm \infty} \sqrt{\dfrac{x+1}{x-1}}\)
+</p>
+
+<p>
+\(= \lim_{x \to \pm \infty} \sqrt{\dfrac{1 + 1/x}{1-1/x}} = \pm 1\)
+</p>
+
+<p>
+So \(y = \pm 1\) are vertical asymptootes.
+</p>
+
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="nf">g</span>(x) <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-5</span><span class="o">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="c"># set yrange [-1:6]</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">-1</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x+1)/sqrt(x^2 - 1)&quot;</span><span class="o">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;&quot;</span><span class="o">,</span> <span class="mi">1</span> <span class="n">ls</span> <span class="mi">2</span> <span class="nb">t</span> <span class="s">&quot;asymptote&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s10.png" class="img-responsive" alt="c5_5s10.png">
+</p>
+</figure>
 </div>
 </div>
 
 <div id="outline-container-sec-1-11" class="outline-3">
 <h3 id="sec-1-11"><span class="section-number-3">1.11</span> Solution 11</h3>
 <div class="outline-text-3" id="text-1-11">
-<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
-<span class="k">reset</span> <span class="n">session</span>
-<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
-<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
-<span class="k">set</span> <span class="nb">grid</span>
-<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
-<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="mi">-5</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
-<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-0</span><span class="mf">.5</span><span class="o">:</span><span class="mi">9</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="nf">at</span> <span class="p">(</span><span class="mf">1.667</span><span class="p">)</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mf">1.667</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x-5)*sqrt(x)/4&quot;</span>
-</pre></div>
-
-
-<figure>
-<p><img src="../assets/c5_5s11.png" class="img-responsive" alt="c5_5s11.png">
+<p>
+\(f(x) = \dfrac{(x-5)\sqrt{x}}{4}\)
 </p>
-</figure>
+
+<p>
+Domain of \(f(x)\): \([0, \infty)\)
+</p>
 
 <div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">x</span>
@@ -1118,32 +1955,63 @@ ans =
 
    0.50000   0.29047   0.24307
 </pre></div>
+
+
+<figure>
+<p><img src="../assets/c4s11g.png" class="img-responsive" alt="c4s11g.png">
+</p>
+</figure>
+
+<p>
+Let's check the function for vertical asymptotes
+</p>
+
+<p>
+\(\lim_{x \to 0^+} f(x) = 0\)
+</p>
+
+<p>
+\(\lim_{x \to \infty} f(x) = 0\)
+</p>
+
+<p>
+\(\lim_{x \to -\infty} f(x) = -i\infty\)
+</p>
+
+<p>
+So there are no horizontal or vertical asymptote.
+</p>
+
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;f(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="k">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="mi">-5</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">-0</span><span class="mf">.5</span><span class="o">:</span><span class="mi">9</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="nf">at</span> <span class="p">(</span><span class="mf">1.667</span><span class="p">)</span><span class="o">,</span> <span class="nf">f</span><span class="p">(</span><span class="mf">1.667</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">?</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x-5)*sqrt(x)/4&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s11.png" class="img-responsive" alt="c5_5s11.png">
+</p>
+</figure>
 </div>
 </div>
 
 <div id="outline-container-sec-1-12" class="outline-3">
 <h3 id="sec-1-12"><span class="section-number-3">1.12</span> Solution 12</h3>
 <div class="outline-text-3" id="text-1-12">
-<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
-<span class="k">reset</span> <span class="n">session</span>
-<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
-<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
-<span class="k">set</span> <span class="nb">grid</span>
-<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
-<span class="nf">g</span>(x) <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="mi">-5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
-<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mi">9</span><span class="p">]</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">1</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">5</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mf">2.63</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mf">2.63</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
-<span class="k">plot</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x-5)^2*sqrt(x)/4&quot;</span>
-</pre></div>
-
-
-<figure>
-<p><img src="../assets/c5_5s12.png" class="img-responsive" alt="c5_5s12.png">
+<p>
+\(g(x) = \dfrac{(x-5)^2\sqrt{x}}{4}\)
 </p>
-</figure>
 
+<p>
+Domain of \(g(x)\): \([0, \infty)\)
+</p>
 
 <div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">x</span>
@@ -1206,6 +2074,64 @@ ans =
 
   -2.50000  -0.55243   0.24056   1.11803   1.42462
 </pre></div>
+
+<p>
+\(g'(x) = -\) when \(x = 1,5\)
+</p>
+
+<p>
+\(g''(x) = 0\) when \(x = 1- 2\sqrt{6}/3, 1+ 2\sqrt{6}/3\)
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s12g.png" class="img-responsive" alt="c4s12g.png">
+</p>
+</figure>
+
+<p>
+Let's check the function for vertical asymptote
+</p>
+
+<p>
+\(\lim_{x \to 0} g(x) = 0\)
+</p>
+
+<p>
+There is no vertical asymptote.
+</p>
+
+<p>
+\(\lim_{x \to \infty} g(x) = \infty\)
+</p>
+
+<p>
+\(\lim_{x \to -\infty} g(x) = i\infty\)
+</p>
+
+<p>
+There is no horizontal asymptote.
+</p>
+
+<div class="gnuplot"><pre><span></span><span class="k">set</span> <span class="nb">terminal</span> <span class="n">png</span> <span class="n">notransparent</span> <span class="n">nointerlace</span> <span class="n">rounded</span> <span class="n">font</span> <span class="s">&quot;Alegreya, 14&quot;</span>
+<span class="k">reset</span> <span class="n">session</span>
+<span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;x&quot;</span>
+<span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;g(x)&quot;</span>
+<span class="k">set</span> <span class="nb">grid</span>
+<span class="k">set</span> <span class="nb">key</span> <span class="n">right</span> <span class="n">top</span>
+<span class="nf">g</span>(x) <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="mi">-5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+<span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mi">9</span><span class="p">]</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">1</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;C&quot;</span> <span class="n">at</span> <span class="mi">5</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">set</span> <span class="nb">label</span> <span class="s">&quot;I&quot;</span> <span class="n">at</span> <span class="mf">2.63</span><span class="o">,</span> <span class="nf">g</span><span class="p">(</span><span class="mf">2.63</span><span class="p">)</span> <span class="n">left</span> <span class="n">point</span> <span class="n">pointtype</span> <span class="mi">7</span> <span class="n">pointsize</span> <span class="mi">2</span> <span class="n">offset</span> <span class="mi">-2</span>
+<span class="k">plot</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">ls</span> <span class="mi">1</span> <span class="nb">t</span> <span class="s">&quot;(x-5)^2*sqrt(x)/4&quot;</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c5_5s12.png" class="img-responsive" alt="c5_5s12.png">
+</p>
+</figure>
 </div>
 </div>
 
@@ -1214,6 +2140,14 @@ ans =
 <div class="outline-text-3" id="text-1-13">
 <p>
 Drawing <a href="https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J">graph for cubic root</a> isn't straightforward.
+</p>
+
+<p>
+\(f(x) = x - 3\sqrt[3]{x}\)
+</p>
+
+<p>
+Domain of \(f(x)\) is \((-\infty, \infty)\)
 </p>
 
 <div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
@@ -1261,6 +2195,32 @@ ans =
 
    0.66667   0.20999
 </pre></div>
+
+<p>
+\(f'(x) = 0\) when \(x=1\)
+</p>
+
+<p>
+\(f''(x) = 0\) when \(x=\emptyset\)
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s13g.png" class="img-responsive" alt="c4s13g.png">
+</p>
+</figure>
+
+<p>
+The function \(f(x)\) doesn't have vertical asymptotes.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} f(x) = \pm \infty\)
+</p>
+
+<p>
+There are no  horizontal asymptotes.
+</p>
 </div>
 </div>
 
@@ -1269,6 +2229,14 @@ ans =
 <div class="outline-text-3" id="text-1-14">
 <p>
 Drawing <a href="https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J">graph for cubic root</a> isn't straightforward via gnuplot.
+</p>
+
+<p>
+\(f(x) = \sqrt[3]{x}(\sqrt[3]{x} - 2)\)
+</p>
+
+<p>
+Domain: \((-\infty, \infty)\)
 </p>
 
 <div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
@@ -1320,6 +2288,24 @@ ans =
 
    0.22222   0.00076   0.00000  -0.00046
 </pre></div>
+
+
+<figure>
+<p><img src="../assets/c4s14g.png" class="img-responsive" alt="c4s14g.png">
+</p>
+</figure>
+
+<p>
+The function doesn't have any vertical asymptotes.
+</p>
+
+<p>
+\(\lim_{x \to \pm \infty} f(x) = \infty\)
+</p>
+
+<p>
+The function doesn't have horizontal asymptotes.
+</p>
 </div>
 </div>
 
@@ -1328,6 +2314,14 @@ ans =
 <div class="outline-text-3" id="text-1-15">
 <p>
 Drawing <a href="https://groups.google.com/g/comp.graphics.apps.gnuplot/c/VzB6LDS-gxE/m/IZiK7qoT6w4J">graph for cubic root</a> isn't straightforward via gnuplot.
+</p>
+
+<p>
+\(g(x) = 3x^(2/3) - 2x\)
+</p>
+
+<p>
+Domain: \((-\infty, \infty)\)
 </p>
 
 <div class="octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
@@ -1387,6 +2381,12 @@ ans =
 
   -0.66667       NaN  -0.66667  -0.26457
 </pre></div>
+
+
+<figure>
+<p><img src="../assets/c4s15g.png" class="img-responsive" alt="c4s15g.png">
+</p>
+</figure>
 </div>
 </div>
 
@@ -1426,7 +2426,7 @@ L\). Thus, \(L - \epsilon < f(n) \leq f(x) \leq L < L + \epsilon\), so
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-01-31 Sun 21:31</p>
+<p class="date">Created: 2021-02-28 Sun 18:14</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>
