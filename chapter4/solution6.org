@@ -286,6 +286,26 @@ So the largest possibe volume is $62.5$ cubic inches.
 
 ** Solution 4
 
+Rectangular cardboard: 24 inch * 15 inch
+
+todo: insert pic
+
+We need to find the largets possible volume of it.
+
+$z = 15-2x$
+
+$y - 24-2x$
+
+Volume = $x.y.z = x(24-2x)(15-2x)$
+
+$V = x(24-2x)(15-2x)$
+
+$f(x) = x(24-2x)(15-2x)$
+
+$Domain: (0,15)$
+
+Let's write GNU Octave code to solve this further:
+
 Let's find the critical numbers first.
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
@@ -348,6 +368,54 @@ fh = function_handle(f)
 So the largest possible volume of the box is $486$ cubic inches.
 
 ** Solution 5
+
+Rectangles houses being built.
+
+Height of wall of house: 10 feet
+
+House will have flat roof.
+
+Front wall of house: Bricks
+
+Side wall and Back wall: Sticks
+
+Costs of Brick = $4 per square feet
+
+Costs of Stick = $2 per square feet
+
+Roof wall = Straw
+
+Cost of straw = $1 per square feet
+
+Total money to spend: $3000
+
+We need to maximize floor space.
+
+Width of front wall = f
+
+Width of back wall = f
+
+Width of side walls = S
+
+todo: insert pic
+
+Tota surface area = 10f + 10f + 10s + 10s + fs
+
+$3000 = 10.f.4 + 10.f.2 + 10.s.2 + 10.s.2 + f.s.1$
+
+$3000 = 40f + 20f + 20s + 20s + fs$
+
+$3000 = 60f + 40s + fs$
+
+$3000 = 60f + fs + 40s$
+
+$f(60 + s) = 3000 - 40s$
+
+$f = \dfrac{3000 - 40s}{60+s}$
+
+Let's write GNU Octave code to find the local maxima of the function:
+
+Domain: $(0, \infty)$
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 clear
@@ -427,6 +495,36 @@ Front wall width: $20$
 
 ** Solution 6
 
+Rectangular area = 150 inches square
+
+Margin at sides and top = 1 inch
+
+Margin at bottom = 2 inches
+
+todo: insert pic
+
+$a * b = 150 in^2$
+
+Cardboard length $= b + 2$
+
+Cardboard width $= a + 2$
+
+Total cardboard needed $= (a+3)(b+2)$
+
+$ab = 150$
+
+$a = \dfrac{150}{b}$
+
+Surface Area (SA) $= (a+3)(b+2)$
+
+$= (\dfrac{150}{b} + 3)(b+2)$
+
+$f(b) = (\dfrac{150}{b} + 3)(b+2)$
+
+Domain: $(0, 150)$
+
+Let's write GNU Octave code to solve this further:
+
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 clear
 pkg load symbolic
@@ -502,6 +600,42 @@ So the dimensions of the poster is $10$ and $15$ inches.
 
 ** Solution 7
 
+Wood cost = $3 per square feet
+
+Metal cost = $2 per foot
+
+Rectangle wood
+
+Metral trim goes on top of sign
+
+Printed area = 48 square feet
+
+Printed area surrounded by 1 foot margin at top, bottom and sides.
+
+todo: insert pic
+
+$a*b = 48$
+
+Total surface area = $(a+2)(b+2)$
+
+Cost depends on = Total surface area + Metal strip
+
+$= (a+2)(b+2) + a$
+
+$ab = 48$
+
+$a = \dfrac{48}{b}$
+
+Cost = $(a+2)(b+2).3 + (a+2).2$
+
+$= (a+2)(2+(b+2).3)$
+
+$= (\dfrac{48}{b} + 2)(2 + (b+2).3)$
+
+Domain: $(0, \infty)$
+
+Let's write GNU Octave code to solve this further:
+
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 clear
 pkg load symbolic
@@ -565,6 +699,42 @@ Actual dimensions are $a+2$ and $b+2$. So the dimensions are $8$ and
 $10$ feets.
 
 ** Solution 8
+
+Cost of Material for partition = $1 per square feet
+
+Cost of Other material = $2 per square feet
+
+We need to find greatest volume that can be constructed for $60$ dollars.
+
+Length of square = a
+
+Width of rectangle = b
+
+Volume $= b*a*a = ba^2$
+
+SA $= a^2 + a^2 + a^2 + ab + ab + ab + ab$
+
+$= 3a^2 + 4ab$
+
+Cost $= 2a^2.2 + a^2.1 + 4ab.2$
+
+$= 4a^2 + a^2 + 8ab$
+
+C $= 5a^2 + 8ab$
+
+$60 = 5a^2 + 8ab$
+
+$8ab = 60 - 5a^2$
+
+$b = \dfrac{60-5a^2}{8a}$
+
+Volume = $ba^2 = \dfrac{(60-5a^2)a^2}{8a}$
+
+$= \dfrac{(a).60-5a^2}{8a}$
+
+Domain: $(0, \infty)$
+
+Let's write GNU Octave code to solve this further:
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 clear
