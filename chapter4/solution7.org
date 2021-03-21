@@ -2,6 +2,26 @@
 
 ** Solution 1
 
+todo: insert pic
+
+$a + b = 3$
+
+$N^2 = a^2 + 3^2$
+
+$M^2 = a^2 + 3^2$
+
+Total cables $ = N + M + b$
+
+$= \sqrt{a^2 + 3^2} + \sqrt{a^2 + 3^2} + 3-a$
+
+$f(a) = 2\sqrt{a^2 + 9} + 3 - a$
+
+We need to find the local minima of the function.
+
+Domain: $[0,3]$
+
+Let's write GNU Octave code to solve this further:
+
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
   pkg load symbolic
   syms a
@@ -51,7 +71,39 @@ is at point $(0, \sqrt{3})$
 
 ** Solution 2
 
+Cost to produce gallon of maple syrup = $30$ dollars.
+
+If they charge x dollar per gallon, then they could sell $1000 - 10x$
+gallons.
+
+$30 \leq x \leq 1000$
+
+Let's express in terms of function.
+
+x = Rate in dollars. x is the selling price.
+
+$f(x) = 1000 - 10x$
+
+$f(x)$ represents gallons sold.
+
 *** Solution (a)
+
+To maximize the revenue, they should sell lots of gallons.
+
+$f(x) = 1000 - 10x$
+
+Total gallons sold = f(x)
+
+Revenue = Selling price = $x.f(x) = x(1000 - 10x)$
+
+Cost $= 30.f(x)$
+
+Revenue = Cost + Profit
+
+Let's write some GNU Octave code to find which value of $x$ will
+maximize revenue.
+
+$r(x) = x(1000 - 10x)$
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 clear
@@ -119,6 +171,18 @@ So the price should be set at $64 per barrel for the profit to be
 maximized:
 
 ** Solution 3
+
+Total area = 600 square inches
+
+Margin at sides and top = 1 inch
+
+Margin at bottom = 2 inches
+
+Poster is rectangular.
+
+Objective: Find dimension of poster to maximize printed area.
+
+
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 clear
