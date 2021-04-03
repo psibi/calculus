@@ -182,7 +182,16 @@ Poster is rectangular.
 
 Objective: Find dimension of poster to maximize printed area.
 
+todo: insert pic
 
+$a.b = 600$
+
+Printed area $= (a-2)(b-3)$
+
+$f(a) = (a-2)(\dfrac{600}{a} - 3)$
+
+Let's write some GNU Octave code to find which value of $a$ at which
+the function attains it's maximum value.
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 clear
@@ -243,6 +252,42 @@ other dimension is $30$.
 [[https://www.youtube.com/watch?v=weGl02j75MI][Solution described here]]
 
 ** Solution 5
+
+Permiter of window = P
+
+Let's assume $l$ be the length of rectangle and $w$ be the width of
+the rectangle.
+
+Area of rectangle $= l * w$
+
+Radius of circle $= \dfrac{w}{2}$
+
+Area of circle $= \dfrac{\pi * (\dfrac{w}{2})^2}{2} = \dfrac{\pi}{2} * \dfrac{w^2}{4} = \dfrac{w^2 \pi}{8}$
+
+Area of norman window $= l.w + \dfrac{w^2 * \pi}{8}$
+
+Permiter of norman window $= l + l + w + \pi . \dfrac{w}{2}$
+
+$P = 2l + w(\dfrac{\pi}{2} + 1)$
+
+Assuming that the permiter is constant, we need to find dimensions to
+maximize the are.
+
+$P = 2l + w(\dfrac{\pi}{2} + 1)$
+
+$l = \dfrac{P}{2} - \dfrac{2}{2}*(\dfrac{\pi}{2} + 1)$
+
+$A = l.w + \dfrac{w^2 * \pi}{8}$
+
+$f(w) = \dfrac{w^2\pi}{8} + w(\dfrac{P}{2} - \dfrac{w}{2}(\dfrac{\pi}{2} + 1))$
+
+$f(w) = \dfrac{w^2\pi}{8} + w(\dfrac{P}{2} - (\dfrac{w\pi}{4} + \dfrac{w}{2}))$
+
+$f(w) = \dfrac{w^2\pi}{8} + w(\dfrac{P}{2} - (\dfrac{w\pi + 2w}{4}))$
+
+$= \dfrac{w^2\pi}{8} + w(\dfrac{P}{2} - (\dfrac{w(\pi + 2)}{4}))$
+
+Let's write some GNU Octave code to solve it:
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
   clear
