@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-02-27 Sat 22:21 -->
+<!-- 2021-04-03 Sat 20:12 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -255,9 +255,11 @@ MathJax.Hub.Config({
 </div><div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> Solution 1</h3>
 <div class="outline-text-3" id="text-1-1">
-<p>
-todo: insert pic
+
+<figure>
+<p><img src="../assets/c4s6a1.png" class="img-responsive" alt="c4s6a1.png">
 </p>
+</figure>
 
 <p>
 Bottom vertices: \((x_1,0), (x_2,0)\)
@@ -387,9 +389,11 @@ References:
 </li>
 </ul>
 
-<p>
-todo: insert pic
+
+<figure>
+<p><img src="../assets/c4s6a2.png" class="img-responsive" alt="c4s6a2.png">
 </p>
+</figure>
 
 <p>
 Rectangular box volume = 500 cubic inches.
@@ -533,9 +537,11 @@ height of the rectangular box.
 <div id="outline-container-sec-1-3" class="outline-3">
 <h3 id="sec-1-3"><span class="section-number-3">1.3</span> Solution 3</h3>
 <div class="outline-text-3" id="text-1-3">
-<p>
-todo: insert pic (same as last)
+
+<figure>
+<p><img src="../assets/c4s6a2.png" class="img-responsive" alt="c4s6a2.png">
 </p>
+</figure>
 
 <p>
 Details:
@@ -633,6 +639,48 @@ So the largest possibe volume is \(62.5\) cubic inches.
 <h3 id="sec-1-4"><span class="section-number-3">1.4</span> Solution 4</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
+Rectangular cardboard: 24 inch * 15 inch
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s6a4.jpg" class="img-responsive" alt="c4s6a4.jpg">
+</p>
+</figure>
+
+<p>
+We need to find the largets possible volume of it.
+</p>
+
+<p>
+\(z = 15-2x\)
+</p>
+
+<p>
+\(y - 24-2x\)
+</p>
+
+<p>
+Volume = \(x.y.z = x(24-2x)(15-2x)\)
+</p>
+
+<p>
+\(V = x(24-2x)(15-2x)\)
+</p>
+
+<p>
+\(f(x) = x(24-2x)(15-2x)\)
+</p>
+
+<p>
+\(Domain: (0,15)\)
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
+<p>
 Let's find the critical numbers first.
 </p>
 
@@ -706,6 +754,104 @@ So the largest possible volume of the box is \(486\) cubic inches.
 <div id="outline-container-sec-1-5" class="outline-3">
 <h3 id="sec-1-5"><span class="section-number-3">1.5</span> Solution 5</h3>
 <div class="outline-text-3" id="text-1-5">
+<p>
+Rectangles houses being built.
+</p>
+
+<p>
+Height of wall of house: 10 feet
+</p>
+
+<p>
+House will have flat roof.
+</p>
+
+<p>
+Front wall of house: Bricks
+</p>
+
+<p>
+Side wall and Back wall: Sticks
+</p>
+
+<p>
+Costs of Brick = $4 per square feet
+</p>
+
+<p>
+Costs of Stick = $2 per square feet
+</p>
+
+<p>
+Roof wall = Straw
+</p>
+
+<p>
+Cost of straw = $1 per square feet
+</p>
+
+<p>
+Total money to spend: $3000
+</p>
+
+<p>
+We need to maximize floor space.
+</p>
+
+<p>
+Width of front wall = f
+</p>
+
+<p>
+Width of back wall = f
+</p>
+
+<p>
+Width of side walls = S
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s6a5.jpg" class="img-responsive" alt="c4s6a5.jpg">
+</p>
+</figure>
+
+<p>
+Tota surface area = 10f + 10f + 10s + 10s + fs
+</p>
+
+<p>
+\(3000 = 10.f.4 + 10.f.2 + 10.s.2 + 10.s.2 + f.s.1\)
+</p>
+
+<p>
+\(3000 = 40f + 20f + 20s + 20s + fs\)
+</p>
+
+<p>
+\(3000 = 60f + 40s + fs\)
+</p>
+
+<p>
+\(3000 = 60f + fs + 40s\)
+</p>
+
+<p>
+\(f(60 + s) = 3000 - 40s\)
+</p>
+
+<p>
+\(f = \dfrac{3000 - 40s}{60+s}\)
+</p>
+
+<p>
+Let's write GNU Octave code to find the local maxima of the function:
+</p>
+
+<p>
+Domain: \((0, \infty)\)
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">s</span>
@@ -793,6 +939,68 @@ Front wall width: \(20\)
 <div id="outline-container-sec-1-6" class="outline-3">
 <h3 id="sec-1-6"><span class="section-number-3">1.6</span> Solution 6</h3>
 <div class="outline-text-3" id="text-1-6">
+<p>
+Rectangular area = 150 inches square
+</p>
+
+<p>
+Margin at sides and top = 1 inch
+</p>
+
+<p>
+Margin at bottom = 2 inches
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s6a6.jpg" class="img-responsive" alt="c4s6a6.jpg">
+</p>
+</figure>
+
+<p>
+\(a * b = 150 in^2\)
+</p>
+
+<p>
+Cardboard length \(= b + 2\)
+</p>
+
+<p>
+Cardboard width \(= a + 2\)
+</p>
+
+<p>
+Total cardboard needed \(= (a+3)(b+2)\)
+</p>
+
+<p>
+\(ab = 150\)
+</p>
+
+<p>
+\(a = \dfrac{150}{b}\)
+</p>
+
+<p>
+Surface Area (SA) \(= (a+3)(b+2)\)
+</p>
+
+<p>
+\(= (\dfrac{150}{b} + 3)(b+2)\)
+</p>
+
+<p>
+\(f(b) = (\dfrac{150}{b} + 3)(b+2)\)
+</p>
+
+<p>
+Domain: \((0, 150)\)
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">b</span>
@@ -875,6 +1083,80 @@ So the dimensions of the poster is \(10\) and \(15\) inches.
 <div id="outline-container-sec-1-7" class="outline-3">
 <h3 id="sec-1-7"><span class="section-number-3">1.7</span> Solution 7</h3>
 <div class="outline-text-3" id="text-1-7">
+<p>
+Wood cost = $3 per square feet
+</p>
+
+<p>
+Metal cost = $2 per foot
+</p>
+
+<p>
+Rectangle wood
+</p>
+
+<p>
+Metral trim goes on top of sign
+</p>
+
+<p>
+Printed area = 48 square feet
+</p>
+
+<p>
+Printed area surrounded by 1 foot margin at top, bottom and sides.
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s6a7.jpg" class="img-responsive" alt="c4s6a7.jpg">
+</p>
+</figure>
+
+<p>
+\(a*b = 48\)
+</p>
+
+<p>
+Total surface area = \((a+2)(b+2)\)
+</p>
+
+<p>
+Cost depends on = Total surface area + Metal strip
+</p>
+
+<p>
+\(= (a+2)(b+2) + a\)
+</p>
+
+<p>
+\(ab = 48\)
+</p>
+
+<p>
+\(a = \dfrac{48}{b}\)
+</p>
+
+<p>
+Cost = \((a+2)(b+2).3 + (a+2).2\)
+</p>
+
+<p>
+\(= (a+2)(2+(b+2).3)\)
+</p>
+
+<p>
+\(= (\dfrac{48}{b} + 2)(2 + (b+2).3)\)
+</p>
+
+<p>
+Domain: \((0, \infty)\)
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">b</span>
@@ -946,6 +1228,78 @@ Actual dimensions are \(a+2\) and \(b+2\). So the dimensions are \(8\) and
 <div id="outline-container-sec-1-8" class="outline-3">
 <h3 id="sec-1-8"><span class="section-number-3">1.8</span> Solution 8</h3>
 <div class="outline-text-3" id="text-1-8">
+<p>
+Cost of Material for partition = $1 per square feet
+</p>
+
+<p>
+Cost of Other material = $2 per square feet
+</p>
+
+<p>
+We need to find greatest volume that can be constructed for \(60\) dollars.
+</p>
+
+<p>
+Length of square = a
+</p>
+
+<p>
+Width of rectangle = b
+</p>
+
+<p>
+Volume \(= b*a*a = ba^2\)
+</p>
+
+<p>
+SA \(= a^2 + a^2 + a^2 + ab + ab + ab + ab\)
+</p>
+
+<p>
+\(= 3a^2 + 4ab\)
+</p>
+
+<p>
+Cost \(= 2a^2.2 + a^2.1 + 4ab.2\)
+</p>
+
+<p>
+\(= 4a^2 + a^2 + 8ab\)
+</p>
+
+<p>
+C \(= 5a^2 + 8ab\)
+</p>
+
+<p>
+\(60 = 5a^2 + 8ab\)
+</p>
+
+<p>
+\(8ab = 60 - 5a^2\)
+</p>
+
+<p>
+\(b = \dfrac{60-5a^2}{8a}\)
+</p>
+
+<p>
+Volume = \(ba^2 = \dfrac{(60-5a^2)a^2}{8a}\)
+</p>
+
+<p>
+\(= \dfrac{(a).60-5a^2}{8a}\)
+</p>
+
+<p>
+Domain: \((0, \infty)\)
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">a</span>
@@ -1024,6 +1378,85 @@ So \(a=1\) and \(b=2.5\)
 <div id="outline-container-sec-1-9" class="outline-3">
 <h3 id="sec-1-9"><span class="section-number-3">1.9</span> Solution 9</h3>
 <div class="outline-text-3" id="text-1-9">
+<p>
+Temp of coffee decreases \(4^\circ F\) for each square inch that is
+exposed to air.
+</p>
+
+<p>
+Temp of coffee decreases \(2^\circ F\) for each square inch touching
+bottom and sides of mugh.
+</p>
+
+<p>
+Must must hold \(3\pi\) cubic inches of coffee.
+</p>
+
+<p>
+We need to find dimension to keep coffee as hot as possible.
+</p>
+
+<p>
+$r = $ Radius of cylinder
+</p>
+
+<p>
+\(h =\) Height of cylinder
+</p>
+
+<p>
+Volume \(= \pi r^2 h = 3\pi\)
+</p>
+
+<p>
+Area of top of the mug \(= \pi r^2\)
+</p>
+
+<p>
+Area of bottom and side of mug = \(\pi r^2 + 2\pi r h\)
+</p>
+
+<p>
+Temperature drops after \(5 min\) \(= \pi r^2 . 4 + (\pi r^2 + 2\pi r h).2\)
+</p>
+
+<p>
+We need to find minimum value for the above equation so that the temp
+drop is low.
+</p>
+
+<p>
+\(\pi r^2 h = 3\pi\)
+</p>
+
+<p>
+\(r^2 h = 3\)
+</p>
+
+<p>
+\(h = \dfrac{3}{r^2}\)
+</p>
+
+<p>
+Temperature drop = \(\pi r^2 4 + (\pi r^2 + 2\pi r \dfrac{3}{4^2})2\)
+</p>
+
+<p>
+\(= \pi r^2 4 + (\pi r^2 + 6 \dfrac{\pi}{r})2\)
+</p>
+
+<p>
+\(f(r) = \pi r^2 4 + (\pi r^2 + 6 \dfrac{\pi}{r})2\)
+</p>
+
+<p>
+Domain: \((0, \infty)\)
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">r</span> <span class="n">p</span>
@@ -1111,6 +1544,61 @@ possible are height of \(3\) inches along with radius of \(1\) inch.
 <div id="outline-container-sec-1-10" class="outline-3">
 <h3 id="sec-1-10"><span class="section-number-3">1.10</span> Solution 10</h3>
 <div class="outline-text-3" id="text-1-10">
+<p>
+Cone's height = 18inches
+</p>
+
+<p>
+Cone's base radius = 6 inches
+</p>
+
+<p>
+We need to find the greates volume of cylinder that can be inscribed
+in thea bove cone.
+</p>
+
+<p>
+Volume of cylinder \(= \pi r^2 h\)
+</p>
+
+<p>
+$h = $ Height of cylinder
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s6a10.jpg" class="img-responsive" alt="c4s6a10.jpg">
+</p>
+</figure>
+
+<p>
+Using similar triangle property,
+</p>
+
+<p>
+\(\dfrac{h}{6-r} = \dfrac{18}{6} = 3\)
+</p>
+
+<p>
+\(h = 18 - 3r\)
+</p>
+
+<p>
+Volume \(= \pi r^2 h = \pi r^2 (18 - 3r)\)
+</p>
+
+<p>
+\(f(r) = 3\pi r^2 (18 - 3r)\)
+</p>
+
+<p>
+Domain: \((0, 18)\)
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">r</span>
@@ -1190,6 +1678,91 @@ Reference <a href="https://www.youtube.com/watch?v=-eNJ8V6Cg_M">video</a>
 <div id="outline-container-sec-1-11" class="outline-3">
 <h3 id="sec-1-11"><span class="section-number-3">1.11</span> Solution 11</h3>
 <div class="outline-text-3" id="text-1-11">
+<p>
+Baking two layer round cake.
+</p>
+
+<p>
+Volume of two layers of cake \(= 81\pi inches^3\)
+</p>
+
+<p>
+Filling between layers
+</p>
+
+<p>
+Fronstin on top and around sides.
+</p>
+
+<p>
+Frosting cost = 10 cents per square inch
+</p>
+
+<p>
+Filling cost = 20 cents per square inch
+</p>
+
+<p>
+We need to find dimensions of cake to minimize the cost of filling and
+frosting.
+</p>
+
+<p>
+SA of top of cake \(= \pi r^2\)
+</p>
+
+<p>
+SA of side of cake \(= 2\pi r * h\)
+</p>
+
+<p>
+where \(h\) is height of cake.
+</p>
+
+<p>
+Total volume of cake \(= \pi r^2 h\)
+</p>
+
+<p>
+\(81 \pi = \pi r^2 h\)
+</p>
+
+<p>
+\(r^2 h = 81\)
+</p>
+
+<p>
+\(h = \dfrac{81}{r^2}\)
+</p>
+
+<p>
+Cost of cake = Frosting cost + Filling cost
+</p>
+
+<p>
+\(= (\pi r^2 * 10) + (2 \pi r h * 10) + \pi r^2 . 20\)
+</p>
+
+<p>
+$ = 10 &pi; r<sup>2</sup> + 20 &pi; r h + 20 &pi; r<sup>2</sup>$
+</p>
+
+<p>
+\(= 30 \pi r^2  + 20 \pi r \dfrac{81}{r^2}\)
+</p>
+
+<p>
+\(f(r) = 30 \pi r^2 + \dfrac{1620 \pi}{r}\)
+</p>
+
+<p>
+Domain: \((0, \infty)\)
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">r</span> <span class="n">p</span>
@@ -1282,6 +1855,50 @@ inches.
 <div id="outline-container-sec-1-12" class="outline-3">
 <h3 id="sec-1-12"><span class="section-number-3">1.12</span> Solution 12</h3>
 <div class="outline-text-3" id="text-1-12">
+<p>
+Curve equation: \(y = \dfrac{4}{x}\)
+</p>
+
+<p>
+We need to find points on the above curve that are closes to \((0,0)\)
+</p>
+
+<p>
+Let \((x_1, y_1)\) be an arbitrary point in the curve.
+</p>
+
+<p>
+So, \((x_1, \dfrac{4}{x_1})\) is the arbitrary point in the curve.
+</p>
+
+<p>
+Distance between \((0,0)\) and \((x_1, \dfrac{4}{x_1})\)
+</p>
+
+<p>
+\(= \sqrt{(x_1 - 0)^2 + (\dfrac{4}{x_1} - 0)^2}\)
+</p>
+
+<p>
+\(f(x)= \sqrt{(x - 0)^2 + (\dfrac{4}{x} - 0)^2}\)
+</p>
+
+<p>
+\(f(x) = \sqrt{x^2 + \dfrac{16}{x^2}}\)
+</p>
+
+<p>
+We need to find the local minimal for the function:
+</p>
+
+<p>
+Domain: \((-\infty, \infty)\)
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">x</span>
@@ -1378,6 +1995,49 @@ Reference <a href="https://www.mathsisfun.com/algebra/distance-2-points.html">fo
 <div id="outline-container-sec-1-13" class="outline-3">
 <h3 id="sec-1-13"><span class="section-number-3">1.13</span> Solution 13</h3>
 <div class="outline-text-3" id="text-1-13">
+<p>
+We need to find shortest board to go from the ground over the wall of
+the building.
+</p>
+
+
+<figure>
+<p><img src="../assets/c4s6a13.jpg" class="img-responsive" alt="c4s6a13.jpg">
+</p>
+</figure>
+
+<p>
+Using similar triangle property,
+</p>
+
+<p>
+\(\dfrac{h}{x} = \dfrac{1}{x-8}\)
+</p>
+
+<p>
+\(h = \dfrac{x}{x-8}\)
+</p>
+
+<p>
+Board = \(\sqrt{x^2 + h^2} = \sqrt{x^2 + \dfrac{x^2}{(x-8)^2}}\)
+</p>
+
+<p>
+\(f(x) = \sqrt{x^2 + \dfrac{x^2}{(x-8)^2}}\)
+</p>
+
+<p>
+Domain: \((0, \infty)\)
+</p>
+
+<p>
+We need to find the local minima for the function.
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">x</span>
@@ -1457,6 +2117,63 @@ octave&gt; ans =  11.180
 <div id="outline-container-sec-1-14" class="outline-3">
 <h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 14</h3>
 <div class="outline-text-3" id="text-1-14">
+<p>
+Cylindrical metal can's volume = V
+</p>
+
+<p>
+Surface area of cone = SA of top and bottom + SA of the side
+</p>
+
+<p>
+\(= \pi r^2 + \pi r^2 + 2\pi r h\)
+</p>
+
+<p>
+\(= 2\pi r^2 + 2\pi r h\)
+</p>
+
+<p>
+$r = $ Radius of can
+</p>
+
+<p>
+$h = $ Height of can
+</p>
+
+<p>
+We need to find dimension to minimize the amount of metal needed to
+make the can. So the SA should be minimum.
+</p>
+
+<p>
+\(V = \pi r^2 h\)
+</p>
+
+<p>
+\(h = \dfrac{V}{\pi r^2}\)
+</p>
+
+<p>
+\(SA = 2\pi r^2 + 2\pi r h\)
+</p>
+
+<p>
+\(= 2 \pi r^2 + \dfrac{2 \pi r V}{\pi r^2}\)
+</p>
+
+<p>
+\(= 2\pi r^2 + \dfrac{2 V}{r}\)
+</p>
+
+<p>
+Domain: \((0, \infty)\)
+</p>
+
+<p>
+We need to find the local minima for the above function.
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">r</span> <span class="n">V</span>
@@ -1529,7 +2246,47 @@ local minima.
 </p>
 
 <p>
-todo: add last content
+So \(r = \dfrac{2^{-1/3}\sqrt[3]{V}}{\sqrt[3]{\pi}}\)
+</p>
+
+<p>
+Let's find it's height:
+</p>
+
+<p>
+\(h = \dfrac{V}{\pi r^2}\)
+</p>
+
+<p>
+\(= \dfrac{ V * \pi^{2/3}}{\pi * (2^{-1/3})^2 V^{2/3}}\)
+</p>
+
+<p>
+\(= \dfrac{\sqrt[3]{V}}{\sqrt[3]{\pi}} (2^{1/3})^2\)
+</p>
+
+<p>
+\(= \dfrac{\sqrt[3]{4}\sqrt[3]{V}}{\sqrt[3]{\pi}}\)
+</p>
+
+<p>
+\(\dfrac{h}{r} = \dfrac{\sqrt[4]{3} \sqrt[3]{V} \sqrt[3]{\pi}}{\sqrt[3]{\pi} * 2^{-1/3} * \sqrt[3]{V}}\)
+</p>
+
+<p>
+\(= \dfrac{3\sqrt{4}}{2^{-1/3}} = \dfrac{2^{2/3}}{2^{-1/3}} = 2^{2/3}.2^{1/3} = 2\)
+</p>
+
+<p>
+\(\dfrac{h}{r} = 2\)
+</p>
+
+<p>
+\(h = 2r = d\)
+</p>
+
+<p>
+Hence proved.
 </p>
 
 <p>
@@ -1541,6 +2298,52 @@ todo: add last content
 <div id="outline-container-sec-1-15" class="outline-3">
 <h3 id="sec-1-15"><span class="section-number-3">1.15</span> Solution 15</h3>
 <div class="outline-text-3" id="text-1-15">
+<p>
+Volume of can \(= 32 \pi cubic inches\)
+</p>
+
+<p>
+SA of can \(= 2\pi r^2 + 2\pi r h\)
+</p>
+
+<p>
+\(\pi r^2 h = 32 \pi\)
+</p>
+
+<p>
+\(r^2 h = 32\)
+</p>
+
+<p>
+\(h = \dfrac{32}{r^2}\)
+</p>
+
+<p>
+We need to find the point whre the function attains local minima.
+</p>
+
+<p>
+\(SA = 2\pi r (h + 2r)\)
+</p>
+
+<p>
+\(= 2\pi r(\dfrac{32}{r^2} + 2r)\)
+</p>
+
+<p>
+Domain: \((0, 32 \pi)\)
+</p>
+
+<p>
+In the above equation we have \((h+2r)\) because \(h\) is the height of
+the cylinder and the \(2r\) is the approximation of the additional
+wrapping paper required to cover top and bottom.
+</p>
+
+<p>
+Let's write GNU Octave code to solve this further:
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">r</span>
@@ -1638,6 +2441,40 @@ question.
 <a href="https://www.youtube.com/watch?v=2keGgDBJKGU">https://www.youtube.com/watch?v=2keGgDBJKGU</a>
 </p>
 
+
+<figure>
+<p><img src="../assets/c4s6a16.jpg" class="img-responsive" alt="c4s6a16.jpg">
+</p>
+</figure>
+
+<p>
+We need to find smallest possible area for the triangle.
+</p>
+
+<p>
+\(Area = \dfrac{1}{2}ab\)
+</p>
+
+<p>
+\(P = (x_1, y_1)\)
+</p>
+
+<p>
+\(2(x_1)^2 + (y_1)^2 = 1\)
+</p>
+
+<p>
+\(y_1 = \sqrt{1-(2x_1)^2}\)
+</p>
+
+<p>
+\(P = (x_1, \sqrt{1 - 2(x_1)^2})\)
+</p>
+
+<p>
+<a href="https://math.stackexchange.com/questions/4016294/smallest-possible-area-for-triangle">The full answer is in the Match stackexchange question</a>
+</p>
+
 <div class="octave"><pre><span></span><span class="n">clear</span>
 <span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 <span class="n">syms</span> <span class="n">b</span>
@@ -1730,7 +2567,7 @@ ans =  0.70711
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-02-27 Sat 22:21</p>
+<p class="date">Created: 2021-04-03 Sat 20:12</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>

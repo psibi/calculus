@@ -2,7 +2,7 @@
 
 ** Solution 1
 
-todo: insert pic
+[[file:../assets/c4s6a1.png]]
 
 Bottom vertices: $(x_1,0), (x_2,0)$
 
@@ -95,7 +95,7 @@ References:
 
 - [[https://www.youtube.com/watch?v=0yjsJnxgk7k][Youtube video]]
 
-todo: insert pic
+[[file:../assets/c4s6a2.png]]
 
 Rectangular box volume = 500 cubic inches.
 
@@ -209,7 +209,7 @@ height of the rectangular box.
 
 ** Solution 3
 
-todo: insert pic (same as last)
+[[file:../assets/c4s6a2.png]]
 
 Details:
 - Rectangular box
@@ -288,7 +288,7 @@ So the largest possibe volume is $62.5$ cubic inches.
 
 Rectangular cardboard: 24 inch * 15 inch
 
-todo: insert pic
+[[file:../assets/c4s6a4.jpg]]
 
 We need to find the largets possible volume of it.
 
@@ -397,7 +397,7 @@ Width of back wall = f
 
 Width of side walls = S
 
-todo: insert pic
+[[file:../assets/c4s6a5.jpg]]
 
 Tota surface area = 10f + 10f + 10s + 10s + fs
 
@@ -501,7 +501,7 @@ Margin at sides and top = 1 inch
 
 Margin at bottom = 2 inches
 
-todo: insert pic
+[[file:../assets/c4s6a6.jpg]]
 
 $a * b = 150 in^2$
 
@@ -612,7 +612,7 @@ Printed area = 48 square feet
 
 Printed area surrounded by 1 foot margin at top, bottom and sides.
 
-todo: insert pic
+[[file:../assets/c4s6a7.jpg]]
 
 $a*b = 48$
 
@@ -947,7 +947,7 @@ Volume of cylinder $= \pi r^2 h$
 
 $h = $ Height of cylinder
 
-todo: insert pic
+[[file:../assets/c4s6a10.jpg]]
 
 Using similar triangle property,
 
@@ -1279,7 +1279,7 @@ Reference [[https://www.mathsisfun.com/algebra/distance-2-points.html][formula]]
 We need to find shortest board to go from the ground over the wall of
 the building.
 
-todo: insert pic
+[[file:../assets/c4s6a13.jpg]]
 
 Using similar triangle property,
 
@@ -1611,7 +1611,7 @@ question.
 
 https://www.youtube.com/watch?v=2keGgDBJKGU
 
-todo: insert pic
+[[file:../assets/c4s6a16.jpg]]
 
 We need to find smallest possible area for the triangle.
 
