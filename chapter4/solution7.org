@@ -2,7 +2,7 @@
 
 ** Solution 1
 
-todo: insert pic
+[[file:../assets/c4s7a1.jpg]]
 
 $a + b = 3$
 
@@ -182,7 +182,7 @@ Poster is rectangular.
 
 Objective: Find dimension of poster to maximize printed area.
 
-todo: insert pic
+[[file:../assets/c4s7a3.jpg]]
 
 $a.b = 600$
 
@@ -488,7 +488,7 @@ Reference: https://www.mathsisfun.com/geometry/cone.html
 
 ** Solution 7
 
-todo: insert pic
+[[file:../assets/c4s7a7.jpg]]
 
 Way to go = Row boat + Walk to house
 
