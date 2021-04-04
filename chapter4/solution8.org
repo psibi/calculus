@@ -1,0 +1,316 @@
+* Solution 1
+
+$\lim_{x \to 1} \dfrac{x^4 - 1}{x^5 - 1}$
+
+The above limit approaches $0/0$, so we can probably apply L'Hopital's
+rule to compute the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = (x^4 - 1)
+df = diff(f, x)
+g = x^5 - 1
+dg = diff(g,x)
+res = simplify(df / dg)
+
+res_h = function_handle(res)
+rats(res_h(1))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+   4
+  x  - 1
+df = (sym)
+
+     3
+  4⋅x
+g = (sym)
+
+   5
+  x  - 1
+dg = (sym)
+
+     4
+  5⋅x
+res = (sym)
+
+   4
+  ───
+  5⋅x
+octave> res_h =
+
+@(x) 4 ./ (5 * x)
+ans =       4/5
+#+end_example
+
+So from L'Hopital's rule, we can conclude that $\lim_{x \to 1}
+\dfrac{x^4 - 1}{x^5 - 1} = \dfrac{4}{5}$
+
+We can also use GNU Octave to verify our limits:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+syms x
+L = limit((x^4 - 1)/(x^5 - 1), x, 1)
+#+end_src
+
+#+RESULTS:
+:
+: octave> L = (sym) 4/5
+
+* Solution 2
+
+$\lim_{x \to 1} \dfrac{\sqrt[4]{x} - 1}{\sqrt[5]{x} - 1}$
+
+The above limit approaches $0/0$, so we can probably apply L'Hopital's
+rule to compute the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = (x^(1/4) - 1)
+df = diff(f, x)
+
+g = x^(1/5) - 1
+dg = diff(g,x)
+
+res = simplify(df / dg)
+
+res_h = function_handle(res)
+rats(res_h(1))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+f = (sym)
+
+  4 ___
+  ╲╱ x  - 1
+df = (sym)
+
+    1
+  ──────
+     3/4
+  4⋅x
+octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+g = (sym)
+
+  5 ___
+  ╲╱ x  - 1
+dg = (sym)
+
+    1
+  ──────
+     4/5
+  5⋅x
+octave> res = (sym)
+
+    20___
+  5⋅╲╱ x
+  ───────
+     4
+octave> res_h =
+
+@(x) 5 * x .^ (1 / 20) / 4
+ans =       5/4
+#+end_example
+
+So from L'Hopital's rule, we can conclude that $\lim_{x \to 1}
+\dfrac{\sqrt[4]{x} - 1}{\sqrt[5]{x} - 1} = \dfrac{5}{4}$
+
+We can also use GNU Octave to verify our limits:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+syms x
+L = limit((x^(1/4) - 1)/(x^(1/5) - 1), x, 1)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+L = (sym) 5/4
+#+end_example
+
+* Solution 3
+
+$\lim_{u \to 4} \dfrac{u^{3/2}-8}{\sqrt{u}-2}$
+
+The above limit approaches $0/0$, so we can probably apply L'Hopital's
+rule to compute the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms u
+
+f = u^(3/2) - 8
+df = diff(f,u)
+
+g = u^(1/2)-2
+dg = diff(g,u)
+
+res = simplify(df/dg)
+
+res_h = function_handle(res)
+res_h(4)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+f = (sym)
+
+   3/2
+  u    - 8
+df = (sym)
+
+  3⋅√u
+  ────
+   2
+octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+g = (sym) √u - 2
+dg = (sym)
+
+   1
+  ────
+  2⋅√u
+octave> res = (sym) 3⋅u
+octave> res_h =
+
+@(u) 3 * u
+ans =  12
+#+end_example
+
+So from L'Hopital's rule, we can conclude that $\lim_{u \to 4}
+\dfrac{u^{3/2}-8}{\sqrt{u}-2} = 12$.
+
+* Solution 4
+
+$\lim_{x \to 1} \dfrac{x^8 + 3x^6 - 5x^2 + 1}{x^7 + 4x^5 - 3x^3 - 2}$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = x^8 + (3*x^6) - (5*x^2) + 1
+fh = function_handle(f)
+fh(1)
+
+g = x^7 + (4*x^5) - (3*x^3) - 2
+gh = function_handle(g)
+gh(1)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+   8      6      2
+  x  + 3⋅x  - 5⋅x  + 1
+fh =
+
+@(x) x .^ 8 + 3 * x .^ 6 - 5 * x .^ 2 + 1
+ans = 0
+octave> g = (sym)
+
+   7      5      3
+  x  + 4⋅x  - 3⋅x  - 2
+gh =
+
+@(x) x .^ 7 + 4 * x .^ 5 - 3 * x .^ 3 - 2
+ans = 0
+#+end_example
+
+The above limit approaches $0/0$, so we can probably apply L'Hopital's
+rule to compute the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+df = diff(f, x)
+dg = diff(g, x)
+
+res = simplify(df/dg)
+res_h = function_handle(res)
+rats(res_h(1))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+df = (sym)
+
+     7       5
+  8⋅x  + 18⋅x  - 10⋅x
+dg = (sym)
+
+     6       4      2
+  7⋅x  + 20⋅x  - 9⋅x
+octave> res = (sym)
+
+    ⎛   6      4    ⎞
+  2⋅⎝4⋅x  + 9⋅x  - 5⎠
+  ────────────────────
+    ⎛   4       2    ⎞
+  x⋅⎝7⋅x  + 20⋅x  - 9⎠
+res_h =
+
+@(x) 2 * (4 * x .^ 6 + 9 * x .^ 4 - 5) ./ (x .* (7 * x .^ 4 + 20 * x .^ 2 - 9))
+ans =       8/9
+#+end_example
+
+So from L'Hopital's rule, we can conclude that $\lim_{x \to 1}
+\dfrac{x^8 + 3x^6 - 5x^2 + 1}{x^7 + 4x^5 - 3x^3 - 2} = \dfrac{8}{9}$
+
+We can also use GNU Octave to verify our limits:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+L = limit(f/g, x, 1)
+#+end_src
+
+#+RESULTS:
+: L = (sym) 8/9

@@ -1,0 +1,45 @@
+* L'Hopital's Rule
+
+** L'Hopital's Rule (Theorem 4.8.1)
+
+Suppose that $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$. If
+
+$\lim_{x \to a} \dfrac{f'(x)}{g'(x)} = L$,
+
+then
+
+$\lim_{x \to a} \dfrac{f(x)}{g(x)} = L$,
+
+L'Hopital's rule can also be used for one-side limits and limits as
+$x$ approaches $\infty$ or $-\infty$. And it can be also used if we
+find that the limit of $f'(x)/g'(x)$ is $\infty$ or $-\infty$; in this
+case, once again, the same conclusion applies to the limit of
+$f(x)/g(x)$. (You can see example 4.8.4 for a sample)
+
+** L'Hopital's Rule, Part 2 (Theorem 4.8.6)
+
+Suppose that $\lim_{x \to a} f(x) = \infty$ or $\lim_{x \to a} f(x) =
+-\infty$, and also either $\lim_{x \to a} g(x) = \infty$ or $\lim_{x \to a} g(x) =
+-\infty$. If
+
+$\lim_{x \to a} \dfrac{f'(x)}{g'(x)} = L$,
+
+then
+
+$\lim_{x \to a} \dfrac{f(x)}{g(x)} = L$,
+
+As before, the same rule applies to one sided limits and limits as $x$
+approaches $\infty$ or $-\infty$, and it also applies if $L$ is
+replaced by either $\infty$ or $-\infty$.
+
+** Cauchy's Mean Value Theorem (Theorem 4.8.8)
+
+Suppose that $f$ and $g$ are continous on $[a,b]$ and differentiable
+on $(a,b)$ and for all $x \in (a,b), g'(x) \neq 0$. There there is a
+number $c$ such that $a < c < b$ and
+
+$\dfrac{f(b)-f(a)}{g(b)-g(a)} = \dfrac{f'(c)}{g'(c)}$
+
+Notice that if $g(x) = x$ then $g'(x) = 1$ and the above equation
+becomes the original mean value theorem you saw previously in
+[[file:section2.org][section 2]].

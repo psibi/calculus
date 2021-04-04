@@ -54,6 +54,8 @@ contributions are welcome!
   - [[file:chapter4/solution6.org][Solutions]]
 - [[file:chapter4/section7.org][Maxima and Minima on Finite Closed Intervals]]
   - [[file:chapter4/solution7.org][Solutions]]
+- [[file:chapter4/section8.org][L'Hopital's Rule]]
+  - [[file:chapter4/solution8.org][Solutions]]
 
 * Extras
 

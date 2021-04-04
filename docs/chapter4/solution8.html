@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2021-04-04 Sun 15:15 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Sibi Prabakaran">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script>
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="https://psibi.in/velleman-calculus/"> UP </a>
+ |
+ <a accesskey="H" href="https://psibi.in/"> HOME </a>
+</div><div id="content" class="container">
+<div class="row"><div class="col-md-3 col-md-push-9"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Solution 1</a></li>
+<li><a href="#sec-2">2. Solution 2</a></li>
+<li><a href="#sec-3">3. Solution 3</a></li>
+<li><a href="#sec-4">4. Solution 4</a></li>
+</ul>
+</div>
+</nav>
+</div><div class="col-md-9 col-md-pull-3"><h1 class="title"></h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Solution 1</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+\(\lim_{x \to 1} \dfrac{x^4 - 1}{x^5 - 1}\)
+</p>
+
+<p>
+The above limit approaches \(0/0\), so we can probably apply L'Hopital's
+rule to compute the limits.
+</p>
+
+<p>
+Let's write some GNU Octave code to solve this further:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span>^<span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">res</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">df</span> <span class="o">/</span> <span class="n">dg</span><span class="p">)</span>
+
+<span class="n">res_h</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="nb">rats</span><span class="p">(</span><span class="n">res_h</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym)
+
+   4
+  x  - 1
+df = (sym)
+
+     3
+  4⋅x
+g = (sym)
+
+   5
+  x  - 1
+dg = (sym)
+
+     4
+  5⋅x
+res = (sym)
+
+   4
+  ───
+  5⋅x
+octave&gt; res_h =
+
+@(x) 4 ./ (5 * x)
+ans =       4/5
+</pre></div>
+
+<p>
+So from L'Hopital's rule, we can conclude that \(\lim_{x \to 1}
+\dfrac{x^4 - 1}{x^5 - 1} = \dfrac{4}{5}\)
+</p>
+
+<p>
+We can also use GNU Octave to verify our limits:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">L</span> <span class="p">=</span> <span class="n">limit</span><span class="p">((</span><span class="n">x</span>^<span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span>^<span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+octave&gt; L = (sym) 4/5
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution 2</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+\(\lim_{x \to 1} \dfrac{\sqrt[4]{x} - 1}{\sqrt[5]{x} - 1}\)
+</p>
+
+<p>
+The above limit approaches \(0/0\), so we can probably apply L'Hopital's
+rule to compute the limits.
+</p>
+
+<p>
+Let's write some GNU Octave code to solve this further:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span>^<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="p">=</span> <span class="n">x</span>^<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">df</span> <span class="o">/</span> <span class="n">dg</span><span class="p">)</span>
+
+<span class="n">res_h</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="nb">rats</span><span class="p">(</span><span class="n">res_h</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; warning: passing floating-point values to sym is dangerous, see &quot;help sym&quot;
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+f = (sym)
+
+  4 ___
+  ╲╱ x  - 1
+df = (sym)
+
+    1
+  ──────
+     3/4
+  4⋅x
+octave&gt; warning: passing floating-point values to sym is dangerous, see &quot;help sym&quot;
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+g = (sym)
+
+  5 ___
+  ╲╱ x  - 1
+dg = (sym)
+
+    1
+  ──────
+     4/5
+  5⋅x
+octave&gt; res = (sym)
+
+    20___
+  5⋅╲╱ x
+  ───────
+     4
+octave&gt; res_h =
+
+@(x) 5 * x .^ (1 / 20) / 4
+ans =       5/4
+</pre></div>
+
+<p>
+So from L'Hopital's rule, we can conclude that \(\lim_{x \to 1}
+\dfrac{\sqrt[4]{x} - 1}{\sqrt[5]{x} - 1} = \dfrac{5}{4}\)
+</p>
+
+<p>
+We can also use GNU Octave to verify our limits:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">L</span> <span class="p">=</span> <span class="n">limit</span><span class="p">((</span><span class="n">x</span>^<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span>^<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; warning: passing floating-point values to sym is dangerous, see &quot;help sym&quot;
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+warning: passing floating-point values to sym is dangerous, see &quot;help sym&quot;
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+L = (sym) 5/4
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Solution 3</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+\(\lim_{u \to 4} \dfrac{u^{3/2}-8}{\sqrt{u}-2}\)
+</p>
+
+<p>
+The above limit approaches \(0/0\), so we can probably apply L'Hopital's
+rule to compute the limits.
+</p>
+
+<p>
+Let's write some GNU Octave code to solve this further:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">u</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="n">u</span>^<span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">8</span>
+<span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">u</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="p">=</span> <span class="n">u</span>^<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">u</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">df</span><span class="o">/</span><span class="n">dg</span><span class="p">)</span>
+
+<span class="n">res_h</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="n">res_h</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; warning: passing floating-point values to sym is dangerous, see &quot;help sym&quot;
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+f = (sym)
+
+   3/2
+  u    - 8
+df = (sym)
+
+  3⋅√u
+  ────
+   2
+octave&gt; warning: passing floating-point values to sym is dangerous, see &quot;help sym&quot;
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+g = (sym) √u - 2
+dg = (sym)
+
+   1
+  ────
+  2⋅√u
+octave&gt; res = (sym) 3⋅u
+octave&gt; res_h =
+
+@(u) 3 * u
+ans =  12
+</pre></div>
+
+<p>
+So from L'Hopital's rule, we can conclude that \(\lim_{u \to 4}
+\dfrac{u^{3/2}-8}{\sqrt{u}-2} = 12\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Solution 4</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+\(\lim_{x \to 1} \dfrac{x^8 + 3x^6 - 5x^2 + 1}{x^7 + 4x^5 - 3x^3 - 2}\)
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">8</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span>^<span class="mi">6</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span>^<span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">fh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">fh</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">7</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span>^<span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span>^<span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="n">gh</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">gh</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+   8      6      2
+  x  + 3⋅x  - 5⋅x  + 1
+fh =
+
+@(x) x .^ 8 + 3 * x .^ 6 - 5 * x .^ 2 + 1
+ans = 0
+octave&gt; g = (sym)
+
+   7      5      3
+  x  + 4⋅x  - 3⋅x  - 2
+gh =
+
+@(x) x .^ 7 + 4 * x .^ 5 - 3 * x .^ 3 - 2
+ans = 0
+</pre></div>
+
+<p>
+The above limit approaches \(0/0\), so we can probably apply L'Hopital's
+rule to compute the limits.
+</p>
+
+<p>
+Let's write some GNU Octave code to solve this further:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">df</span><span class="o">/</span><span class="n">dg</span><span class="p">)</span>
+<span class="n">res_h</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="nb">rats</span><span class="p">(</span><span class="n">res_h</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>df = (sym)
+
+     7       5
+  8⋅x  + 18⋅x  - 10⋅x
+dg = (sym)
+
+     6       4      2
+  7⋅x  + 20⋅x  - 9⋅x
+octave&gt; res = (sym)
+
+    ⎛   6      4    ⎞
+  2⋅⎝4⋅x  + 9⋅x  - 5⎠
+  ────────────────────
+    ⎛   4       2    ⎞
+  x⋅⎝7⋅x  + 20⋅x  - 9⎠
+res_h =
+
+@(x) 2 * (4 * x .^ 6 + 9 * x .^ 4 - 5) ./ (x .* (7 * x .^ 4 + 20 * x .^ 2 - 9))
+ans =       8/9
+</pre></div>
+
+<p>
+So from L'Hopital's rule, we can conclude that \(\lim_{x \to 1}
+\dfrac{x^8 + 3x^6 - 5x^2 + 1}{x^7 + 4x^5 - 3x^3 - 2} = \dfrac{8}{9}\)
+</p>
+
+<p>
+We can also use GNU Octave to verify our limits:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">L</span> <span class="p">=</span> <span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+L = (sym) 8/9
+</pre>
+</div>
+</div>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Sibi Prabakaran</p>
+<p class="date">Created: 2021-04-04 Sun 15:15</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
+</div>
+</footer>
+</body>
+</html>

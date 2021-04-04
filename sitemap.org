@@ -38,6 +38,7 @@
   - [[file:chapter4/section5.org][section5]]
   - [[file:chapter4/section6.org][section6]]
   - [[file:chapter4/section7.org][section7]]
+  - [[file:chapter4/section8.org][section8]]
   - [[file:chapter4/solution1.org][solution1]]
   - [[file:chapter4/solution2.org][solution2]]
   - [[file:chapter4/solution3.org][solution3]]
@@ -45,3 +46,4 @@
   - [[file:chapter4/solution5.org][solution5]]
   - [[file:chapter4/solution6.org][solution6]]
   - [[file:chapter4/solution7.org][solution7]]
+  - [[file:chapter4/solution8.org][solution8]]

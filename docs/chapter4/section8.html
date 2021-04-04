@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-04-04 Sun 15:08 -->
+<!-- 2021-04-04 Sun 13:48 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -189,6 +189,32 @@ $(function() {
     $('.bs-docs-sidebar').affix();
 });
 </script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -199,195 +225,103 @@ $(function() {
 <div class="row"><div class="col-md-3 col-md-push-9"><nav id="table-of-contents">
 <div id="text-table-of-contents" class="bs-docs-sidebar">
 <ul class="nav">
-<li><a href="#sec-1">1. Calculus: A Rigorous First Course</a></li>
-<li><a href="#sec-2">2. Limits (Chapter 2)</a></li>
-<li><a href="#sec-3">3. Derivatives (Chapter 3)</a></li>
-<li><a href="#sec-4">4. Applications of Differentiation (Chapter 4)</a></li>
-<li><a href="#sec-5">5. Extras</a></li>
+<li><a href="#sec-1">1. L'Hopital's Rule</a>
+<ul class="nav">
+<li><a href="#sec-1-1">1.1. L'Hopital's Rule (Theorem 4.8.1)</a></li>
+<li><a href="#sec-1-2">1.2. L'Hopital's Rule, Part 2 (Theorem 4.8.6)</a></li>
+<li><a href="#sec-1-3">1.3. Cauchy's Mean Value Theorem (Theorem 4.8.8)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
 </div><div class="col-md-9 col-md-pull-3"><h1 class="title"></h1>
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Calculus: A Rigorous First Course</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> L'Hopital's Rule</h2>
 <div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> L'Hopital's Rule (Theorem 4.8.1)</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
-This contains my notes and solutions for Daniel Velleman's <a href="https://store.doverpublications.com/0486809366.html">Calculus
-book.</a> <a href="https://github.com/psibi/velleman-calculus">This repository</a> contains the code behind this website. Any
-contributions are welcome!
+Suppose that \(\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0\). If
+</p>
+
+<p>
+\(\lim_{x \to a} \dfrac{f'(x)}{g'(x)} = L\),
+</p>
+
+<p>
+then
+</p>
+
+<p>
+\(\lim_{x \to a} \dfrac{f(x)}{g(x)} = L\),
+</p>
+
+<p>
+L'Hopital's rule can also be used for one-side limits and limits as
+\(x\) approaches \(\infty\) or \(-\infty\). And it can be also used if we
+find that the limit of \(f'(x)/g'(x)\) is \(\infty\) or \(-\infty\); in this
+case, once again, the same conclusion applies to the limit of
+\(f(x)/g(x)\). (You can see example 4.8.4 for a sample)
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Limits (Chapter 2)</h2>
-<div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>What is Calculus About
-<ul class="org-ul">
-<li><a href="chapter2/solution1.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section2.html">What does "Limit" mean ?</a>
-<ul class="org-ul">
-<li><a href="chapter2/section2.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li>Limits by the Definition
-<ul class="org-ul">
-<li><a href="chapter2/solution3.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section4.html">Limit theorems</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution4.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section5.html">Variation of Limits</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution5.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section6.html">Limits of Compositions</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution6.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section7.html">Continuity</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution7.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section8.html">Sequences and the Nested Interval Theorem</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution8.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter2/section9.html">Monotone Sequences and the Completeness of the Real Numbers</a>
-<ul class="org-ul">
-<li><a href="chapter2/solution9.html">Solutions</a>
-</li>
-</ul>
-</li>
-</ul>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> L'Hopital's Rule, Part 2 (Theorem 4.8.6)</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Suppose that \(\lim_{x \to a} f(x) = \infty\) or \(\lim_{x \to a} f(x) =
+-\infty\), and also either \(\lim_{x \to a} g(x) = \infty\) or \(\lim_{x \to a} g(x) =
+-\infty\). If
+</p>
+
+<p>
+\(\lim_{x \to a} \dfrac{f'(x)}{g'(x)} = L\),
+</p>
+
+<p>
+then
+</p>
+
+<p>
+\(\lim_{x \to a} \dfrac{f(x)}{g(x)} = L\),
+</p>
+
+<p>
+As before, the same rule applies to one sided limits and limits as \(x\)
+approaches \(\infty\) or \(-\infty\), and it also applies if \(L\) is
+replaced by either \(\infty\) or \(-\infty\).
+</p>
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Derivatives (Chapter 3)</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li><a href="chapter3/section1.html">Rates of Change and Slopes</a>
-<ul class="org-ul">
-<li><a href="chapter3/solution1.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter3/section2.html">Derivatives</a>
-<ul class="org-ul">
-<li><a href="chapter3/solution2.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter3/section3.html">Derivative Rules</a>
-<ul class="org-ul">
-<li><a href="chapter3/solution3.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter3/section4.html">The Chain Rule</a>
-<ul class="org-ul">
-<li><a href="chapter3/solution4.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter3/section5.html">Implicit Differentiation</a>
-<ul class="org-ul">
-<li><a href="chapter3/solution5.html">Solutions</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Cauchy's Mean Value Theorem (Theorem 4.8.8)</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Suppose that \(f\) and \(g\) are continous on \([a,b]\) and differentiable
+on \((a,b)\) and for all \(x \in (a,b), g'(x) \neq 0\). There there is a
+number \(c\) such that \(a < c < b\) and
+</p>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> Applications of Differentiation (Chapter 4)</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li><a href="chapter4/section1.html">Related Rates</a>
-<ul class="org-ul">
-<li><a href="chapter4/solution1.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter4/section2.html">The Mean Value Theorem</a>
-<ul class="org-ul">
-<li><a href="chapter4/solution2.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter4/section3.html">Increasing and Decreasing functions</a>
-<ul class="org-ul">
-<li><a href="chapter4/solution3.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter4/section4.html">Concavity</a>
-<ul class="org-ul">
-<li><a href="chapter4/solution4.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter4/section5.html">Sophisticated Graphing</a>
-<ul class="org-ul">
-<li><a href="chapter4/solution5.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter4/section6.html">Optimization Problems</a>
-<ul class="org-ul">
-<li><a href="chapter4/solution6.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter4/section7.html">Maxima and Minima on Finite Closed Intervals</a>
-<ul class="org-ul">
-<li><a href="chapter4/solution7.html">Solutions</a>
-</li>
-</ul>
-</li>
-<li><a href="chapter4/section8.html">L'Hopital's Rule</a>
-<ul class="org-ul">
-<li><a href="chapter4/solution8.html">Solutions</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+<p>
+\(\dfrac{f(b)-f(a)}{g(b)-g(a)} = \dfrac{f'(c)}{g'(c)}\)
+</p>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> Extras</h2>
-<div class="outline-text-2" id="text-5">
-<ul class="org-ul">
-<li><a href="Apendix.html">Appendix</a>
-</li>
-</ul>
+<p>
+Notice that if \(g(x) = x\) then \(g'(x) = 1\) and the above equation
+becomes the original mean value theorem you saw previously in
+<a href="section2.html">section 2</a>.
+</p>
+</div>
 </div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-04-04 Sun 15:08</p>
+<p class="date">Created: 2021-04-04 Sun 13:48</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>
