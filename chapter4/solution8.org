@@ -452,3 +452,67 @@ ans =     12/13
 
 So from L'Hopital's rule, we can conclude that $\lim_{x \to 1}
 \dfrac{x^8 + x^6 - 7x^2 + 5}{x^8 + 2x^5 - 9x^2 + 6} = \dfrac{12}{13}$
+
+* Solution 6
+
+$\lim_{x \to \pi/2} \dfrac{cos (x + \pi)}{2x - \pi}$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = cos(x + pi)
+g = 2*x - pi
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> octave> f = (sym) -cos(x)
+: g = (sym) 2⋅x - π
+
+The above limit approaches $0/0$, so we can probably apply L'Hopital's
+rule to compute the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+df = diff(f,x)
+dg = diff(g,x)
+
+res = simplify(df/dg)
+res_h = function_handle(res)
+rats(res_h(pi / 2))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+df = (sym) sin(x)
+dg = (sym) 2
+octave> res = (sym)
+
+  sin(x)
+  ──────
+    2
+res_h =
+
+@(x) sin (x) / 2
+ans =       1/2
+#+end_example
+
+So from L'Hopital's rule, we can conclude that $\lim_{x \to \pi/2}
+\dfrac{cos (x + \pi)}{2x - \pi} = \dfrac{1}{2}$
+
+We can also use GNU Octave to verify our limits:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+L = limit(f/g, x, pi/2)
+#+end_src
+
+#+RESULTS:
+: warning: passing floating-point values to sym is dangerous, see "help sym"
+: warning: called from
+:     double_to_sym_heuristic at line 50 column 7
+:     sym at line 379 column 13
+:     limit at line 92 column 5
+: L = (sym) 1/2
