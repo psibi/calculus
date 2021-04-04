@@ -314,3 +314,141 @@ L = limit(f/g, x, 1)
 
 #+RESULTS:
 : L = (sym) 8/9
+
+* Solution 5
+
+$\lim_{x \to 1} \dfrac{x^8 + x^6 - 7x^2 + 5}{x^8 + 2x^5 - 9x^2 + 6}$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = x^8 + x^6 - (7*x^2) + 5
+fh = function_handle(f)
+fh(1)
+
+g = x^8 + (2*x^5) - (9*x^2) + 6
+gh = function_handle(g)
+gh(1)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+   8    6      2
+  x  + x  - 7⋅x  + 5
+fh =
+
+@(x) x .^ 8 + x .^ 6 - 7 * x .^ 2 + 5
+ans = 0
+octave> g = (sym)
+
+   8      5      2
+  x  + 2⋅x  - 9⋅x  + 6
+gh =
+
+@(x) x .^ 8 + 2 * x .^ 5 - 9 * x .^ 2 + 6
+ans = 0
+#+end_example
+
+The above limit approaches $0/0$, so we can probably apply L'Hopital's
+rule to compute the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+df = diff(f, x)
+dg = diff(g, x)
+
+res = simplify(df/dg)
+res_h = function_handle(res)
+
+res_h(1)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+df = (sym)
+
+     7      5
+  8⋅x  + 6⋅x  - 14⋅x
+dg = (sym)
+
+     7       4
+  8⋅x  + 10⋅x  - 18⋅x
+octave> res = (sym)
+
+     6      4
+  4⋅x  + 3⋅x  - 7
+  ───────────────
+     6      3
+  4⋅x  + 5⋅x  - 9
+res_h =
+
+@(x) (4 * x .^ 6 + 3 * x .^ 4 - 7) ./ (4 * x .^ 6 + 5 * x .^ 3 - 9)
+octave> warning: division by zero
+warning: called from
+    eval>@<anonymous> at line 1 column 27
+ans = NaN
+#+end_example
+
+Okay, that gives a division by error. Let's check $df$ and $dg$
+individually
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+df_h = function_handle(df)
+df_h(1)
+
+dg_h = function_handle(dg)
+dg_h(1)
+#+end_src
+
+#+RESULTS:
+: df_h =
+:
+: @(x) 8 * x .^ 7 + 6 * x .^ 5 - 14 * x
+: ans = 0
+: octave> dg_h =
+:
+: @(x) 8 * x .^ 7 + 10 * x .^ 4 - 18 * x
+: ans = 0
+
+Let's try applying L'Hopital's rule on it.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dff = diff(df, x)
+dgg = diff(dg, x)
+
+res = simplify(dff/dgg)
+res_h = function_handle(res)
+rats(res_h(1))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+dff = (sym)
+
+      6       4
+  56⋅x  + 30⋅x  - 14
+dgg = (sym)
+
+      6       3
+  56⋅x  + 40⋅x  - 18
+octave> res = (sym)
+
+      6       4
+  28⋅x  + 15⋅x  - 7
+  ─────────────────
+      6       3
+  28⋅x  + 20⋅x  - 9
+res_h =
+
+@(x) (28 * x .^ 6 + 15 * x .^ 4 - 7) ./ (28 * x .^ 6 + 20 * x .^ 3 - 9)
+ans =     12/13
+#+end_example
+
+So from L'Hopital's rule, we can conclude that $\lim_{x \to 1}
+\dfrac{x^8 + x^6 - 7x^2 + 5}{x^8 + 2x^5 - 9x^2 + 6} = \dfrac{12}{13}$
