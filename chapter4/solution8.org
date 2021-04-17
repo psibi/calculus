@@ -516,3 +516,192 @@ L = limit(f/g, x, pi/2)
 :     sym at line 379 column 13
 :     limit at line 92 column 5
 : L = (sym) 1/2
+
+* Solution 7
+
+$\lim_{x \to 2} \dfrac{\cos (\pi / x)}{x-2}$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = cos(pi / x)
+g = x - 2
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> octave> f = (sym)
+:
+:      ⎛π⎞
+:   cos⎜─⎟
+:      ⎝x⎠
+: g = (sym) x - 2
+
+
+The above limit approaches $0/0$, so we can probably apply L'Hopital's
+rule to compute the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+df = diff(f,x)
+dg = diff(g,x)
+
+res = simplify(df/dg)
+res_h = function_handle(res)
+res_h(2)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+df = (sym)
+
+       ⎛π⎞
+  π⋅sin⎜─⎟
+       ⎝x⎠
+  ────────
+      2
+     x
+dg = (sym) 1
+octave> res = (sym)
+
+       ⎛π⎞
+  π⋅sin⎜─⎟
+       ⎝x⎠
+  ────────
+      2
+     x
+res_h =
+
+@(x) pi * sin (pi ./ x) ./ x .^ 2
+ans =  0.78540
+#+end_example
+
+So from L'Hopital's rule, we can conclude that $\lim_{x \to 2}
+\dfrac{\cos (\pi / x)}{x-2} = 0.78540$
+
+* Solution 8
+
+$\lim_{t \to 1} \dfrac{\sqrt{t+3}-2}{\sqrt{t+8}-3}$
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms t
+
+f = sqrt(t + 3) - 2
+g = sqrt(t+8) - 3
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> octave> f = (sym)
+:
+:     _______
+:   ╲╱ t + 3  - 2
+: g = (sym)
+:
+:     _______
+:   ╲╱ t + 8  - 3
+
+The above limit approaches $0/0$, so we can probably apply L'Hopital's
+rule to compute the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+df = diff(f,t)
+dg = diff(g,t)
+
+res = simplify(df/dg)
+res_h = function_handle(res)
+rats(res_h(1))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+df = (sym)
+
+       1
+  ───────────
+      _______
+  2⋅╲╱ t + 3
+dg = (sym)
+
+       1
+  ───────────
+      _______
+  2⋅╲╱ t + 8
+octave> res = (sym)
+
+    _______
+  ╲╱ t + 8
+  ─────────
+    _______
+  ╲╱ t + 3
+res_h =
+
+@(t) sqrt (t + 8) ./ sqrt (t + 3)
+ans =       3/2
+#+end_example
+
+So from L'Hopital's rule, we can conclude that $\lim_{t \to 1}
+\dfrac{\sqrt{t+3}-2}{\sqrt{t+8}-3} = \dfrac{3}{2}$
+
+* Solution 9
+
+$\lim_{\theta \to 0} (\tan(3\theta)\cot(4\theta))$
+
+We know that $\cot (4\theta) = \dfrac{1}{\tan(4\theta)}$. So the above
+limit approaches $0/0$, so we can probably apply L'Hopital's rule to
+compute the limits.
+
+$\tan(3\theta)\cot(4\theta) = \dfrac{\tan (3\theta)}{\tan(4\theta)} = \dfrac{\sin (3\theta)}{\sin (4\theta)} \dfrac{\cos (4\theta)}{\cos (3\theta)}$
+
+$\lim_{\theta \to 0} \dfrac{\sin (3\theta)}{\sin (4\theta)} \dfrac{\cos (4\theta)}{\cos (3\theta)}$
+
+$= \lim_{\theta \to 0} \dfrac{\sin (3\theta)}{\sin (4\theta)} \lim_{\theta \to 0} \dfrac{\cos (4\theta)}{\cos (3\theta)}$
+
+$= \lim_{\theta \to 0} \dfrac{\sin (3\theta)}{\sin (4\theta)}$
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = sin(3*x)
+g = sin(4*x)
+
+df = diff(f, x)
+dg = diff(g,x)
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> octave> f = (sym) sin(3⋅x)
+: g = (sym) sin(4⋅x)
+: octave> df = (sym) 3⋅cos(3⋅x)
+: dg = (sym) 4⋅cos(4⋅x)
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+res = simplify(df/dg)
+res_h = function_handle(res)
+rats(res_h(0))
+#+end_src
+
+#+RESULTS:
+: res = (sym)
+:
+:   3⋅cos(3⋅x)
+:   ──────────
+:   4⋅cos(4⋅x)
+: res_h =
+:
+: @(x) 3 * cos (3 * x) ./ (4 * cos (4 * x))
+: ans =       3/4
+
+So from L'Hopital's rule, we can conclude that $\lim_{\theta \to 0} (\tan(3\theta)\cot(4\theta)) = \dfrac{3}{4}$
