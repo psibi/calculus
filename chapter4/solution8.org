@@ -705,3 +705,71 @@ rats(res_h(0))
 : ans =       3/4
 
 So from L'Hopital's rule, we can conclude that $\lim_{\theta \to 0} (\tan(3\theta)\cot(4\theta)) = \dfrac{3}{4}$
+
+* Solution 10
+
+$\lim_{t \to 0} \dfrac{\sec t - 1}{t^2}$
+
+We know that $\sec (0) = 1$. So the above limit approaches $0/0$, so
+we can probably apply L'Hopital's rule to compute the limits.
+
+Let's write some GNU Octave code to solve this further:
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms t
+f = sec(t) - 1
+g = t^2
+
+df = diff(f, t)
+dg = diff(g, t)
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> f = (sym) sec(t) - 1
+: g = (sym)
+:
+:    2
+:   t
+: octave> df = (sym) tan(t)⋅sec(t)
+: dg = (sym) 2⋅t
+
+Even the above $\dfrac{df}{dg}$ limit approaches to $0/0$. Let's apply
+L'Hospital's rule again:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+ddf = diff(df, t)
+ddg = diff(dg, t)
+#+end_src
+
+#+RESULTS:
+: ddf = (sym)
+:
+:   ⎛   2       ⎞             2
+:   ⎝tan (t) + 1⎠⋅sec(t) + tan (t)⋅sec(t)
+: ddg = (sym) 2
+
+With the above result, the denominator is constant. Let's find out the
+limit of the numerator:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+ddf_h = function_handle(ddf)
+ddf_h(0)
+#+end_src
+
+#+RESULTS:
+: ddf_h =
+:
+: @(t) (tan (t) .^ 2 + 1) .* sec (t) + tan (t) .^ 2 .* sec (t)
+: ans =  1
+
+Combining it with the denomintor the limit is $\dfrac{1}{2}$. Let's
+verify using GNU ocatave if our solution is right:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+L = limit(f/g, t, 0)
+#+end_src
+
+#+RESULTS:
+: L = (sym) 1/2
