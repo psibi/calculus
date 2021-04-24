@@ -11,3 +11,4 @@ through the book.
 - [[https://wiki.octave.org/Symbolic_package][GNU Octave Symbolic package wiki]]
 - [[https://octave.sourceforge.io/symbolic/overview.html][GNU Octave Symbolic package: function reference]]
 - [[https://octave.sourceforge.io/symbolic/function/vpasolve.html][GNU Octave Symbolic package: vpasolve]]
+- [[http://www.alcyone.com/max/reference/maths/trigonometry.html][Trignometry identity reference]]
