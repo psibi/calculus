@@ -765,7 +765,7 @@ ddf_h(0)
 : ans =  1
 
 Combining it with the denomintor the limit is $\dfrac{1}{2}$. Let's
-verify using GNU ocatave if our solution is right:
+verify using GNU octave if our solution is right:
 
 #+begin_src octave :session :eval never-export :results value verbatim output :exports both
 L = limit(f/g, t, 0)
@@ -773,3 +773,291 @@ L = limit(f/g, t, 0)
 
 #+RESULTS:
 : L = (sym) 1/2
+
+* Solution 11
+
+$\lim_{x \to 0} \dfrac{x - \sin x}{x^3}$
+
+We know that $\sin x = 0$. So the above limit approaches $0/0$, so we
+can probably apply L'Hopital's rule to compute the limits.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = x - sin(x)
+g = x^3
+
+df = diff(f, x)
+dg = diff(g, x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym) x - sin(x)
+g = (sym)
+
+   3
+  x
+octave> df = (sym) 1 - cos(x)
+dg = (sym)
+
+     2
+  3⋅x
+#+end_example
+
+Even the above $\dfrac{df}{dg}$ limit approaches to $0/0$. Let's apply
+L'Hospital's rule again:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+ddf = diff(df, x)
+ddg = diff(dg, x)
+#+end_src
+
+#+RESULTS:
+: ddf = (sym) sin(x)
+: ddg = (sym) 6⋅x
+
+Even the above $\dfrac{ddf}{ddg}$ limit approaches to $0/0$. Let's apply
+L'Hospital's rule again:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dddf = diff(ddf, x)
+dddg = diff(ddg, x)
+#+end_src
+
+#+RESULTS:
+: dddf = (sym) cos(x)
+: dddg = (sym) 6
+
+Combining it, the limit is $\dfrac{1}{6}$
+
+* Solution 12
+
+$\lim_{x \to 0} \dfrac{\tan x - x}{x^3}$
+
+We know that $\tan 0 = 0$. So the above limit approaches $0/0$, so we
+can probably apply L'Hopital's rule to compute the limits.
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = tan(x) - x
+g = x^3
+
+df = diff(f, x)
+dg = diff(g, x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym) -x + tan(x)
+g = (sym)
+
+   3
+  x
+octave> df = (sym)
+
+     2
+  tan (x)
+dg = (sym)
+
+     2
+  3⋅x
+#+end_example
+
+Even the above $\dfrac{df}{dg}$ limit approaches to $0/0$. Let's apply
+L'Hospital's rule again:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+ddf = diff(df, x)
+ddg = diff(dg, x)
+#+end_src
+
+#+RESULTS:
+: ddf = (sym)
+:
+:   ⎛     2       ⎞
+:   ⎝2⋅tan (x) + 2⎠⋅tan(x)
+: ddg = (sym) 6⋅x
+
+Even the above $\dfrac{ddf}{ddg}$ limit approaches to $0/0$. Let's apply
+L'Hospital's rule again:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+dddf = diff(ddf, x)
+dddg = diff(ddg, x)
+
+dddf_h = function_handle(dddf)
+dddf_h(0)
+#+end_src
+
+#+RESULTS:
+: dddf = (sym)
+:
+:   ⎛   2       ⎞ ⎛     2       ⎞     ⎛     2       ⎞    2
+:   ⎝tan (x) + 1⎠⋅⎝2⋅tan (x) + 2⎠ + 2⋅⎝2⋅tan (x) + 2⎠⋅tan (x)
+: dddg = (sym) 6
+: octave> dddf_h =
+:
+: @(x) (tan (x) .^ 2 + 1) .* (2 * tan (x) .^ 2 + 2) + 2 * (2 * tan (x) .^ 2 + 2) .* tan (x) .^ 2
+: ans =  2
+
+Combining it with the denominator, the limit is $\dfrac{2}{6} =
+\dfrac{1}{3}$. Let's verify using GNU octave if our solution is
+right:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+L = limit(f/g, x, 0)
+#+end_src
+
+#+RESULTS:
+: L = (sym) 1/3
+
+* Solution 13
+
+$\lim_{x \to \dfrac{\pi^-}{2}} \dfrac{\tan x}{\cot (2x)}$
+
+We know that $\tan \dfrac{\pi}{2} = \infty$
+
+We know that $\tan \dfrac{2 * \pi}{2} = \tan \pi = 0$
+
+So, $\lim_{x \to \dfrac{\pi^-}{2}} \dfrac{\tan (2*x)}{\cot (x)}$
+approaches $0/0$, so we can probably apply L'Hopital's rule to compute
+the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = tan (2*x)
+g = cot (x)
+
+df = diff(f,x)
+dg = diff(g,x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym) tan(2⋅x)
+g = (sym) cot(x)
+octave> df = (sym)
+
+       2
+  2⋅tan (2⋅x) + 2
+dg = (sym)
+
+       2
+  - cot (x) - 1
+#+end_example
+
+That seems promising because of the constants, Let's apply the limits:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+df_h = function_handle(df)
+dg_h = function_handle(dg)
+
+df_h((pi/2))
+dg_h((pi/2))
+#+end_src
+
+#+RESULTS:
+: df_h =
+:
+: @(x) 2 * tan (2 * x) .^ 2 + 2
+: dg_h =
+:
+: @(x) -cot (x) .^ 2 - 1
+: octave> ans =  2
+: ans = -1
+
+Combining both, the limit is $-2$.
+
+* Solution 14
+
+$\lim_{x \to -\infty} \dfrac{\csc (1/x)}{x^2}$
+
+We know that $\csc (1/x) = \dfrac{1}{\sin (1/x)}$
+
+We know that $\lim_{x \to -\infty} \dfrac{1}{\sin (1/x)} = \infty$
+
+So, $\lim_{x \to -\infty} \dfrac{\csc (1/x)}{x^2}$ approaches
+\dfrac{\infty}{\infty}$, so we can apply L'Hopital's rule to compute
+the limits.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = 1/x^2
+g = sin(1/x)
+
+df = diff(f,x)
+dg = diff(g,x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+  1
+  ──
+   2
+  x
+g = (sym)
+
+     ⎛1⎞
+  sin⎜─⎟
+     ⎝x⎠
+octave> df = (sym)
+
+  -2
+  ───
+    3
+   x
+dg = (sym)
+
+      ⎛1⎞
+  -cos⎜─⎟
+      ⎝x⎠
+  ────────
+      2
+     x
+#+end_example
+
+Solving further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+res = simplify(df / dg, x)
+res_h = function_handle(res)
+
+res_h(Inf)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+res = (sym)
+
+     2
+  ────────
+       ⎛1⎞
+  x⋅cos⎜─⎟
+       ⎝x⎠
+res_h =
+
+@(x) 2 ./ (x .* cos (1 ./ x))
+octave> ans = 0
+#+end_example
+
+So the limit is $0$.
