@@ -1061,3 +1061,134 @@ octave> ans = 0
 #+end_example
 
 So the limit is $0$.
+
+* Solution 15
+
+$\lim_{x \to 0} x \tan(x+ \pi / 2)$
+
+We know that $\tan (x + \pi/2) = -cot(x)$. So, $\lim_{x \to 0}
+\dfrac{x * \cos(x)}{\sin(x)}$ approaches $\dfrac{0}{0}$. So
+we can apply L'Hopital's rule on it.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = (-x)*cos(x)
+g = sin(x)
+
+df = diff(f,x)
+dg = diff(g,x)
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> octave> f = (sym) -x⋅cos(x)
+: g = (sym) sin(x)
+: octave> df = (sym) x⋅sin(x) - cos(x)
+: dg = (sym) cos(x)
+
+Let's compute further,
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+res = df/dg
+res_h = function_handle(res)
+
+res_h(0)
+#+end_src
+
+#+RESULTS:
+: res = (sym)
+:
+:   x⋅sin(x) - cos(x)
+:   ─────────────────
+:         cos(x)
+: res_h =
+:
+: @(x) (x .* sin (x) - cos (x)) ./ cos (x)
+: octave> ans = -1
+
+So $\lim_{x \to 0} x \tan(x+ \pi / 2) = -1$
+
+* Solution 16
+
+$\lim_{x \to \infty} x * \cos(\dfrac{x\pi + 2}{2x + \pi})$
+
+$\dfrac{\pi * x + 2}{2x + \pi} = \dfrac{x(\pi + 2/x)}{x(2 + \pi/x)}$
+
+$= \dfrac{\pi + 2/x}{2 + \pi/x}$
+
+$\lim_{x \to \infty} \cos \dfrac{\pi + 2/x}{2 + \pi/x} = 0$
+
+So, $\lim_{x \to \infty} x * \cos(\dfrac{x\pi + 2}{2x + \pi})$
+approaches $\dfrac{0}{0}$. We can apply L'Hopital's rule.
+
+Let's write some GNU Octave code to solve this further:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+
+f = cos((pi *x + 2)/(2*x + pi))
+g = 1/x
+
+df = diff(f,x)
+dg = diff(g,x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> octave> f = (sym)
+
+     ⎛π⋅x + 2⎞
+  cos⎜───────⎟
+     ⎝2⋅x + π⎠
+g = (sym)
+
+  1
+  ─
+  x
+octave> df = (sym)
+
+   ⎛   π      2⋅(π⋅x + 2)⎞    ⎛π⋅x + 2⎞
+  -⎜─────── - ───────────⎟⋅sin⎜───────⎟
+   ⎜2⋅x + π             2⎟    ⎝2⋅x + π⎠
+   ⎝           (2⋅x + π) ⎠
+dg = (sym)
+
+  -1
+  ───
+    2
+   x
+#+end_example
+
+Let's compute further,
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+res = simplify(df / dg)
+#+end_src
+
+#+RESULTS:
+: res = (sym)
+:
+:    2 ⎛      2⎞    ⎛π⋅x + 2⎞
+:   x ⋅⎝-4 + π ⎠⋅sin⎜───────⎟
+:                   ⎝2⋅x + π⎠
+:   ─────────────────────────
+:          2            2
+:       4⋅x  + 4⋅π⋅x + π
+
+We know from our earlier result that,
+
+$\lim_{x \to \infty} \sin \dfrac{\pi + 2/x}{2 + \pi/x} = \sin (\dfrac{\pi}{2}) = 1$
+
+Computing other parts,
+
+$\dfrac{(-4 + \pi^2)}{4 + \dfrac{4\pi}{x} + \dfrac{\pi^2}{x^2}}$
+
+$= \dfrac{-4 + \pi^2}{4}$
