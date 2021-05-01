@@ -1192,3 +1192,128 @@ Computing other parts,
 $\dfrac{(-4 + \pi^2)}{4 + \dfrac{4\pi}{x} + \dfrac{\pi^2}{x^2}}$
 
 $= \dfrac{-4 + \pi^2}{4}$
+
+* Solution 17
+
+Suppose $\lim_{x \to \infty} f(x) = \lim_{x \to \infty} g(x) = 0$
+
+Suppose $\lim_{x \to \infty} \dfrac{f'(x)}{g'(x)} = L$
+
+$\lim_{t \to 0^+} \dfrac{f(1/t)}{g(1/t)}$
+
+We know that as $t \to 0^+$, $\dfrac{1}{t} \to \infty$
+
+So, $\dfrac{f'(1/t)}{g'(1/t)} \to \dfrac{0}{0}$
+
+Applying L'Hopital's rule:
+
+$\lim_{t \to 0^+} \dfrac{f'(1/t)}{g'(1/t)}$
+
+We know that, $\lim_{t \to \infty} \dfrac{f'(x)}{g'(x)} = L$
+
+Since $\dfrac{1}{t} \to \infty$, So, $\lim_{t \to 0^+} \dfrac{f'(1/t)}{g'(1/t)} = L$
+
+Let $t = \dfrac{1}{x}$
+
+As $t \to 0^+, x \to \infty$
+
+As $t \to 0^+, 1/t \to \infty$
+
+So, $\lim_{x \to \infty} \dfrac{f(x)}{g(x)} = L$
+
+* Solution 18
+
+[[https://math.stackexchange.com/questions/147356/proof-of-the-lh%C3%B4pital-rule-for-frac-infty-infty][Solution here]]
+
+* Solution 19
+
+$\lim_{x \to -\infty} \dfrac{\sqrt{x^2 + 1}}{x}$
+
+$\lim_{x \to -\infty} \dfrac{\sqrt{x^2(1 + 1/x^2)}}{x}$
+
+$\lim_{x \to -\infty} \dfrac{-x\sqrt{(1 + 1/x^2)}}{x}$
+
+$\lim_{x \to -\infty} -\sqrt(1 + \dfrac{1}{x^2})$
+
+$= -\sqrt{1} = -1$
+
+* Solution 20
+
+$\lim_{x \to 0} \dfrac{\sin(1/x) + 2x\cos(1/x)}{\cos x}$
+
+Suppose $\lim_{x \to 0} \sin(1/x)$ is equal to L.
+
+Let $v = \dfrac{1}{x}$
+
+So, $\lim_{v \to \infty} \sin 0$ is not defined since it alternates
+between 1 and -1.
+
+* Solution 21
+
+$\lim_{x \to \infty} \dfrac{x - \sin x \cos x}{2x - x\cos x + \sin x - 2\sin x \cos x}$
+
+$\lim_{x \to \infty} \sin x \cos x$ oscillates between -1 and 1 and
+hence it's not defined.
+
+$\lim_{x \to \infty} \sin x \cos x$ oscillates between -1 and 1 and
+hence it's not defined.
+
+$\lim_{x \to \infty} x - \sin x \cos x = \infty$
+
+So, the numerator is $\infty$
+
+Similary,
+
+$\lim_{x \to \infty} -2 \sin x \cos x $ is undefined.
+
+$\lim_{x \to \infty} \sin x $ is undefined.
+
+$\lim_{x \to \infty} x(2 - \cos x) = \infty$
+
+Combining them,
+
+$\lim_{x \to \infty} \dfrac{x - \sin x \cos x}{2x - x\cos x + \sin x -
+2\sin x \cos x}$ is an indeterminate form of type
+$\dfrac{\infty}{\infty}$
+
+* Solution 22
+
+ f(x) =
+\begin{cases}
+\dfrac{\sin x}{x},  & \text{ $x \neq$ 0} \\
+1, & \text{$x = 0$}
+\end{cases}
+
+** Solution a
+
+$f'(x) = \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}$
+
+$f'(0) = \lim_{h \to 0} \dfrac{f(h)-f(0)}{h}$
+
+$= \lim_{h \to 0} f(h) - f(0) /  \lim_{h \to 0} h$
+
+$= \lim_{h \to 0} f(h) - 1 /  \lim_{h \to 0} h$
+
+$= \lim_{h \to 0} \dfrac{\sin h - h}{h^2}$
+
+Applying L'Hopital's rule:
+
+$= \lim_{h \to 0} \dfrac{\cos h - 1}{2h}$
+
+$= \lim_{h \to 0} \dfrac{\sin h}{2} = 0$
+
+So, $f'(0) = 0$
+
+** Solution b
+
+For $f'(0)$ to be continous at 0, it should be
+
+$f'(0) = \lim_{x \to 0} f'(x)$ and the limit should exist.
+
+We know that $f'(0) = 0$
+
+Let's compute the one sided limit:
+
+$\lim_{x \to 0^-} f'(x) = \lim_{x \to 0^-} \dfrac{\sin x}{x} = 1$
+
+Since it's not equal to 0. So it is not continous.
