@@ -1,0 +1,45 @@
+* Antiderivatives
+
+** Solution 1
+
+$f(x) = 2x^3 - 9x^2 + 3x - 1$
+
+Domain: $(-\infty, \infty)$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = 2*x^3 - 9*x^2 + (3*x) - 1
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> f = (sym)
+:
+:      3      2
+:   2⋅x  - 9⋅x  + 3⋅x - 1
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+int(f, x)
+#+end_src
+
+#+RESULTS:
+: ans = (sym)
+:
+:    4             2
+:   x       3   3⋅x
+:   ── - 3⋅x  + ──── - x
+:   2            2
+
+
+So the antiderivative is $\dfrac{x^4}{2} - 3*x^3 + \dfrac{3x^2}{2} -
+2$ on the interval $(-\infty, \infty)$.
+
+** Solution 2
+
+$g(x) = \sqrt{x} + \sqrt[3]{x}$
+
+Domain: $(0, \infty)$
