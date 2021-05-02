@@ -12,3 +12,5 @@ through the book.
 - [[https://octave.sourceforge.io/symbolic/overview.html][GNU Octave Symbolic package: function reference]]
 - [[https://octave.sourceforge.io/symbolic/function/vpasolve.html][GNU Octave Symbolic package: vpasolve]]
 - [[http://www.alcyone.com/max/reference/maths/trigonometry.html][Trignometry identity reference]]
+- [[https://www.sagemath.org/calctut/index.html][Sagemath: Calculus Tutorial]]
+- [[http://users.rowan.edu/~nguyen/sage/SageMathAdviceforCalculus.pdf][SageMath for Calculus]]

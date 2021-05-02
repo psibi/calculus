@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2021-05-02 Sun 20:12 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Sibi Prabakaran">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script>
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="https://psibi.in/velleman-calculus/"> UP </a>
+ |
+ <a accesskey="H" href="https://psibi.in/"> HOME </a>
+</div><div id="content" class="container">
+<div class="row"><div class="col-md-3 col-md-push-9"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Antiderivatives</a>
+<ul class="nav">
+<li><a href="#sec-1-1">1.1. Definition 4.9.1</a></li>
+<li><a href="#sec-1-2">1.2. Definition 4.9.2</a></li>
+<li><a href="#sec-1-3">1.3. Definition 4.9.3</a></li>
+<li><a href="#sec-1-4">1.4. Definition 4.9.4</a></li>
+<li><a href="#sec-1-5">1.5. Theorem 4.9.5 (Chain Rule on Intervals)</a></li>
+<li><a href="#sec-1-6">1.6. Theorem 4.9.6</a></li>
+<li><a href="#sec-1-7">1.7. Theorem 4.9.7</a></li>
+<li><a href="#sec-1-8">1.8. Theorem 4.9.8</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div><div class="col-md-9 col-md-pull-3"><h1 class="title"></h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Antiderivatives</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Definition 4.9.1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Suppose \(f\) is a function and I is an open interval contained in the
+domain of \(f\). We say that a function \(F\) is an <b>antiderivative</b> of
+\(f\) on \(I\) if \(F\) is differentiable on \(I\), and for all \(x \in I\),
+\(F'(x) = f(x)\)
+</p>
+
+<p>
+Ref: <a href="https://math.stackexchange.com/questions/586107/what-is-the-difference-between-an-indefinite-integral-and-an-antiderivative">Any difference between indefinite integral and antiderivative</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Definition 4.9.2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+The right hand derivative of a function \(f\) at a number \(a\) is the
+number \(f'_{+}(a)\) defined by the formula
+</p>
+
+<p>
+\(f'_{+}(a) = \lim_{h \to 0^+} \dfrac{f(a+h)-f(a)}{h}\)
+</p>
+
+<p>
+Similary, the left-hand derivative of \(f\) at \(a\) is
+</p>
+
+<p>
+\(f'_{-}(a) = \lim_{h \to 0^-} \dfrac{f(a+h)-f(a)}{h}\)
+</p>
+
+<p>
+Also other theorems, hold too:
+</p>
+
+<p>
+\(f'_{+}(a) = \lim_{x \to a^+} \dfrac{f(x)-f(a)}{x-a}\)
+</p>
+
+<p>
+\(f'_{-}(a) = \lim_{x \to a^-} \dfrac{f(x)-f(a)}{x-a}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Definition 4.9.3</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+We say that a function \(f\) is differentiable on a closed interval
+\([a,b]\) if \(f\) is differentiable on \((a,b)\), and the one-sided
+derivatives \(f'_{+}(a)\) and \(f'_{-}(b)\) are defined.
+</p>
+
+<p>
+<a href="https://math.stackexchange.com/questions/126176/differentiablility-over-closed-intervals">Good explanation of the need of one sided limits is given here</a> (Apart
+from the similar explanation in Velleman's text)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Definition 4.9.4</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Suppose \(f\) is a function and the closed interval \([a,b]\) is contained
+in the domain of \(f\). We say that a function \(F\) is an antiderivative
+of \(f\) on \([a,b]\) if \(F\) is differentiable on \([a,b], F'_{+}(a)=f(a),
+F'_{-}(b) = f(b)\), and for all \(x \in (a,b), F'(x) = f(x)\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Theorem 4.9.5 (Chain Rule on Intervals)</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Suppose that \(f\) is differentiable on an interval \(I\), \(g\) is
+differentiable on an interval \(J\), and for every \(x \in J, g(x) \in
+I\). Then \(f \circ g\) is differentiable on \(J\), and for every \(x \in J\),
+</p>
+
+<p>
+\((f \circ g)'(x) = f'(g(x)).g'(x)\)
+</p>
+
+<p>
+where each of the derviatives in this equation is interpreted as a
+one-sided derivative whenever it is evaulated at an endpoint.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Theorem 4.9.6</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Suppose that \(F\) is an antiderivative of \(f\) on an interval \(I\). Then
+for every number \(C\), the function \(G(x) = F(x) + C\) is also an
+antiderivative of \(f\) on \(I\). Furthermore, these are the only
+antiderivatives. In other words, if \(G\) is any antiderivative of \(f\)
+on \(I\), then there is some number \(C\) such that for all \(x \in I\),
+\(G(x) = F(x) + C\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Theorem 4.9.7</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Suppose \(r\) is a rational number and \(r \neq -1\), and let \(f(x) =
+x^r\). Then the function
+</p>
+
+<p>
+\(F(x) = \dfrac{x^{r+1}}{r+1}\) is an antiderivative of \(f\) on every
+interval contained in the domain of \(f\).
+</p>
+
+<p>
+To list these intervals explicitly, we first write the rational number
+\(r\) in lowest terms as \(r = \dfrac{m}{n}\).
+</p>
+
+<p>
+If \(n\) is odd and \(r \geq 0\), then \(f(x) = x^r\) is defined for all
+\(x\), and \(F\) is an antiderivative of \(f\) on the interval \((-\infty,
+\infty)\).
+</p>
+
+<p>
+If \(n\) is odd and \(r < 0\), then \(f(x)\) is defined for all values of
+\(x\) except \(x = 0\), and \(F\) is an antiderivative of \(f\) on each of the
+intervals \((-\infty, 0)\) and \((0, \infty)\).
+</p>
+
+<p>
+If \(n\) is even, then the domain of \(f\) is \([0, \infty)\) if \(r > 0\),
+and \((0, \infty)\) if \(r < 0\). In both of these cases, \(F\) is an
+antiderivative of \(f\) on the entire domain of \(f\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Theorem 4.9.8</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Suppose that \(F\) and \(G\) are antiderivatives of \(f\) and \(g\),
+respectively, on an interval \(I\). Then:
+</p>
+
+<ul class="org-ul">
+<li>\(F + G\) is an antiderivative of \(f + g\) on \(I\).
+</li>
+<li>For any number \(c\), \(cF\) is an antiderivative of \(cf\) on \(I\).
+</li>
+<li>\(F - G\) is an antiderivative of \(f-g\) on \(I\).
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Sibi Prabakaran</p>
+<p class="date">Created: 2021-05-02 Sun 20:12</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
+</div>
+</footer>
+</body>
+</html>

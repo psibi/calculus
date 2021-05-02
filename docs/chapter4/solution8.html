@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-04-17 Sat 22:35 -->
+<!-- 2021-05-02 Sun 20:12 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -235,6 +235,23 @@ MathJax.Hub.Config({
 <li><a href="#sec-8">8. Solution 8</a></li>
 <li><a href="#sec-9">9. Solution 9</a></li>
 <li><a href="#sec-10">10. Solution 10</a></li>
+<li><a href="#sec-11">11. Solution 11</a></li>
+<li><a href="#sec-12">12. Solution 12</a></li>
+<li><a href="#sec-13">13. Solution 13</a></li>
+<li><a href="#sec-14">14. Solution 14</a></li>
+<li><a href="#sec-15">15. Solution 15</a></li>
+<li><a href="#sec-16">16. Solution 16</a></li>
+<li><a href="#sec-17">17. Solution 17</a></li>
+<li><a href="#sec-18">18. Solution 18</a></li>
+<li><a href="#sec-19">19. Solution 19</a></li>
+<li><a href="#sec-20">20. Solution 20</a></li>
+<li><a href="#sec-21">21. Solution 21</a></li>
+<li><a href="#sec-22">22. Solution 22</a>
+<ul class="nav">
+<li><a href="#sec-22-1">22.1. Solution a</a></li>
+<li><a href="#sec-22-2">22.2. Solution b</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -1098,7 +1115,7 @@ ans =  1
 
 <p>
 Combining it with the denomintor the limit is \(\dfrac{1}{2}\). Let's
-verify using GNU ocatave if our solution is right:
+verify using GNU octave if our solution is right:
 </p>
 
 <div class="octave"><pre><span></span><span class="n">L</span> <span class="p">=</span> <span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="n">g</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1109,10 +1126,762 @@ L = (sym) 1/2
 </pre>
 </div>
 </div>
+
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Solution 11</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+\(\lim_{x \to 0} \dfrac{x - \sin x}{x^3}\)
+</p>
+
+<p>
+We know that \(\sin x = 0\). So the above limit approaches \(0/0\), so we
+can probably apply L'Hopital's rule to compute the limits.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="n">x</span> <span class="o">-</span> <span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">3</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym) x - sin(x)
+g = (sym)
+
+   3
+  x
+octave&gt; df = (sym) 1 - cos(x)
+dg = (sym)
+
+     2
+  3⋅x
+</pre></div>
+
+<p>
+Even the above \(\dfrac{df}{dg}\) limit approaches to \(0/0\). Let's apply
+L'Hospital's rule again:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">ddf</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">ddg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">dg</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+ddf = (sym) sin(x)
+ddg = (sym) 6⋅x
+</pre>
+
+
+<p>
+Even the above \(\dfrac{ddf}{ddg}\) limit approaches to \(0/0\). Let's apply
+L'Hospital's rule again:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dddf</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">ddf</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">dddg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">ddg</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+dddf = (sym) cos(x)
+dddg = (sym) 6
+</pre>
+
+
+<p>
+Combining it, the limit is \(\dfrac{1}{6}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Solution 12</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+\(\lim_{x \to 0} \dfrac{\tan x - x}{x^3}\)
+</p>
+
+<p>
+We know that \(\tan 0 = 0\). So the above limit approaches \(0/0\), so we
+can probably apply L'Hopital's rule to compute the limits.
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+<span class="n">f</span> <span class="p">=</span> <span class="nb">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span>
+<span class="n">g</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">3</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; f = (sym) -x + tan(x)
+g = (sym)
+
+   3
+  x
+octave&gt; df = (sym)
+
+     2
+  tan (x)
+dg = (sym)
+
+     2
+  3⋅x
+</pre></div>
+
+<p>
+Even the above \(\dfrac{df}{dg}\) limit approaches to \(0/0\). Let's apply
+L'Hospital's rule again:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">ddf</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">ddg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">dg</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+ddf = (sym)
+
+  ⎛     2       ⎞
+  ⎝2⋅tan (x) + 2⎠⋅tan(x)
+ddg = (sym) 6⋅x
+</pre>
+
+
+<p>
+Even the above \(\dfrac{ddf}{ddg}\) limit approaches to \(0/0\). Let's apply
+L'Hospital's rule again:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">dddf</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">ddf</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">dddg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">ddg</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">dddf_h</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">dddf</span><span class="p">)</span>
+<span class="n">dddf_h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+dddf = (sym)
+
+  ⎛   2       ⎞ ⎛     2       ⎞     ⎛     2       ⎞    2
+  ⎝tan (x) + 1⎠⋅⎝2⋅tan (x) + 2⎠ + 2⋅⎝2⋅tan (x) + 2⎠⋅tan (x)
+dddg = (sym) 6
+octave&gt; dddf_h =
+
+@(x) (tan (x) .^ 2 + 1) .* (2 * tan (x) .^ 2 + 2) + 2 * (2 * tan (x) .^ 2 + 2) .* tan (x) .^ 2
+ans =  2
+</pre>
+
+
+<p>
+Combining it with the denominator, the limit is \(\dfrac{2}{6} =
+\dfrac{1}{3}\). Let's verify using GNU octave if our solution is
+right:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">L</span> <span class="p">=</span> <span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+L = (sym) 1/3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Solution 13</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+\(\lim_{x \to \dfrac{\pi^-}{2}} \dfrac{\tan x}{\cot (2x)}\)
+</p>
+
+<p>
+We know that \(\tan \dfrac{\pi}{2} = \infty\)
+</p>
+
+<p>
+We know that \(\tan \dfrac{2 * \pi}{2} = \tan \pi = 0\)
+</p>
+
+<p>
+So, \(\lim_{x \to \dfrac{\pi^-}{2}} \dfrac{\tan (2*x)}{\cot (x)}\)
+approaches \(0/0\), so we can probably apply L'Hopital's rule to compute
+the limits.
+</p>
+
+<p>
+Let's write some GNU Octave code to solve this further:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="nb">tan</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="p">=</span> <span class="nb">cot</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym) tan(2⋅x)
+g = (sym) cot(x)
+octave&gt; df = (sym)
+
+       2
+  2⋅tan (2⋅x) + 2
+dg = (sym)
+
+       2
+  - cot (x) - 1
+</pre></div>
+
+<p>
+That seems promising because of the constants, Let's apply the limits:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">df_h</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">dg_h</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">dg</span><span class="p">)</span>
+
+<span class="n">df_h</span><span class="p">((</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">dg_h</span><span class="p">((</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+df_h =
+
+@(x) 2 * tan (2 * x) .^ 2 + 2
+dg_h =
+
+@(x) -cot (x) .^ 2 - 1
+octave&gt; ans =  2
+ans = -1
+</pre>
+
+
+<p>
+Combining both, the limit is \(-2\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Solution 14</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+\(\lim_{x \to -\infty} \dfrac{\csc (1/x)}{x^2}\)
+</p>
+
+<p>
+We know that \(\csc (1/x) = \dfrac{1}{\sin (1/x)}\)
+</p>
+
+<p>
+We know that \(\lim_{x \to -\infty} \dfrac{1}{\sin (1/x)} = \infty\)
+</p>
+
+<p>
+So, \(\lim_{x \to -\infty} \dfrac{\csc (1/x)}{x^2}\) approaches
+\dfrac{\infty}{\infty}$, so we can apply L'Hopital's rule to compute
+the limits.
+</p>
+
+<p>
+Let's write some GNU Octave code to solve this further:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>^<span class="mi">2</span>
+<span class="n">g</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+  1
+  ──
+   2
+  x
+g = (sym)
+
+     ⎛1⎞
+  sin⎜─⎟
+     ⎝x⎠
+octave&gt; df = (sym)
+
+  -2
+  ───
+    3
+   x
+dg = (sym)
+
+      ⎛1⎞
+  -cos⎜─⎟
+      ⎝x⎠
+  ────────
+      2
+     x
+</pre></div>
+
+<p>
+Solving further:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">res</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">df</span> <span class="o">/</span> <span class="n">dg</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">res_h</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">res_h</span><span class="p">(</span><span class="nb">Inf</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>res = (sym)
+
+     2
+  ────────
+       ⎛1⎞
+  x⋅cos⎜─⎟
+       ⎝x⎠
+res_h =
+
+@(x) 2 ./ (x .* cos (1 ./ x))
+octave&gt; ans = 0
+</pre></div>
+
+<p>
+So the limit is \(0\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Solution 15</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+\(\lim_{x \to 0} x \tan(x+ \pi / 2)\)
+</p>
+
+<p>
+We know that \(\tan (x + \pi/2) = -cot(x)\). So, \(\lim_{x \to 0}
+\dfrac{x * \cos(x)}{\sin(x)}\) approaches \(\dfrac{0}{0}\). So
+we can apply L'Hopital's rule on it.
+</p>
+
+<p>
+Let's write some GNU Octave code to solve this further:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+octave&gt; octave&gt; octave&gt; f = (sym) -x⋅cos(x)
+g = (sym) sin(x)
+octave&gt; df = (sym) x⋅sin(x) - cos(x)
+dg = (sym) cos(x)
+</pre>
+
+
+<p>
+Let's compute further,
+</p>
+
+<div class="octave"><pre><span></span><span class="n">res</span> <span class="p">=</span> <span class="n">df</span><span class="o">/</span><span class="n">dg</span>
+<span class="n">res_h</span> <span class="p">=</span> <span class="n">function_handle</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">res_h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+res = (sym)
+
+  x⋅sin(x) - cos(x)
+  ─────────────────
+        cos(x)
+res_h =
+
+@(x) (x .* sin (x) - cos (x)) ./ cos (x)
+octave&gt; ans = -1
+</pre>
+
+
+<p>
+So \(\lim_{x \to 0} x \tan(x+ \pi / 2) = -1\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Solution 16</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+\(\lim_{x \to \infty} x * \cos(\dfrac{x\pi + 2}{2x + \pi})\)
+</p>
+
+<p>
+\(\dfrac{\pi * x + 2}{2x + \pi} = \dfrac{x(\pi + 2/x)}{x(2 + \pi/x)}\)
+</p>
+
+<p>
+\(= \dfrac{\pi + 2/x}{2 + \pi/x}\)
+</p>
+
+<p>
+\(\lim_{x \to \infty} \cos \dfrac{\pi + 2/x}{2 + \pi/x} = 0\)
+</p>
+
+<p>
+So, \(\lim_{x \to \infty} x * \cos(\dfrac{x\pi + 2}{2x + \pi})\)
+approaches \(\dfrac{0}{0}\). We can apply L'Hopital's rule.
+</p>
+
+<p>
+Let's write some GNU Octave code to solve this further:
+</p>
+
+<div class="octave"><pre><span></span><span class="n">clear</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
+<span class="n">syms</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="nb">cos</span><span class="p">((</span><span class="nb">pi</span> <span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="nb">pi</span><span class="p">))</span>
+<span class="n">g</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+
+<span class="n">df</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">dg</span> <span class="p">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>octave&gt; octave&gt; octave&gt; f = (sym)
+
+     ⎛π⋅x + 2⎞
+  cos⎜───────⎟
+     ⎝2⋅x + π⎠
+g = (sym)
+
+  1
+  ─
+  x
+octave&gt; df = (sym)
+
+   ⎛   π      2⋅(π⋅x + 2)⎞    ⎛π⋅x + 2⎞
+  -⎜─────── - ───────────⎟⋅sin⎜───────⎟
+   ⎜2⋅x + π             2⎟    ⎝2⋅x + π⎠
+   ⎝           (2⋅x + π) ⎠
+dg = (sym)
+
+  -1
+  ───
+    2
+   x
+</pre></div>
+
+<p>
+Let's compute further,
+</p>
+
+<div class="octave"><pre><span></span><span class="n">res</span> <span class="p">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">df</span> <span class="o">/</span> <span class="n">dg</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+res = (sym)
+
+   2 ⎛      2⎞    ⎛π⋅x + 2⎞
+  x ⋅⎝-4 + π ⎠⋅sin⎜───────⎟
+                  ⎝2⋅x + π⎠
+  ─────────────────────────
+         2            2
+      4⋅x  + 4⋅π⋅x + π
+</pre>
+
+
+<p>
+We know from our earlier result that,
+</p>
+
+<p>
+\(\lim_{x \to \infty} \sin \dfrac{\pi + 2/x}{2 + \pi/x} = \sin (\dfrac{\pi}{2}) = 1\)
+</p>
+
+<p>
+Computing other parts,
+</p>
+
+<p>
+\(\dfrac{(-4 + \pi^2)}{4 + \dfrac{4\pi}{x} + \dfrac{\pi^2}{x^2}}\)
+</p>
+
+<p>
+\(= \dfrac{-4 + \pi^2}{4}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Solution 17</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+Suppose \(\lim_{x \to \infty} f(x) = \lim_{x \to \infty} g(x) = 0\)
+</p>
+
+<p>
+Suppose \(\lim_{x \to \infty} \dfrac{f'(x)}{g'(x)} = L\)
+</p>
+
+<p>
+\(\lim_{t \to 0^+} \dfrac{f(1/t)}{g(1/t)}\)
+</p>
+
+<p>
+We know that as \(t \to 0^+\), \(\dfrac{1}{t} \to \infty\)
+</p>
+
+<p>
+So, \(\dfrac{f'(1/t)}{g'(1/t)} \to \dfrac{0}{0}\)
+</p>
+
+<p>
+Applying L'Hopital's rule:
+</p>
+
+<p>
+\(\lim_{t \to 0^+} \dfrac{f'(1/t)}{g'(1/t)}\)
+</p>
+
+<p>
+We know that, \(\lim_{t \to \infty} \dfrac{f'(x)}{g'(x)} = L\)
+</p>
+
+<p>
+Since \(\dfrac{1}{t} \to \infty\), So, \(\lim_{t \to 0^+} \dfrac{f'(1/t)}{g'(1/t)} = L\)
+</p>
+
+<p>
+Let \(t = \dfrac{1}{x}\)
+</p>
+
+<p>
+As \(t \to 0^+, x \to \infty\)
+</p>
+
+<p>
+As \(t \to 0^+, 1/t \to \infty\)
+</p>
+
+<p>
+So, \(\lim_{x \to \infty} \dfrac{f(x)}{g(x)} = L\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Solution 18</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+<a href="https://math.stackexchange.com/questions/147356/proof-of-the-lhôpital-rule-for-frac-infty-infty">Solution here</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Solution 19</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+\(\lim_{x \to -\infty} \dfrac{\sqrt{x^2 + 1}}{x}\)
+</p>
+
+<p>
+\(\lim_{x \to -\infty} \dfrac{\sqrt{x^2(1 + 1/x^2)}}{x}\)
+</p>
+
+<p>
+\(\lim_{x \to -\infty} \dfrac{-x\sqrt{(1 + 1/x^2)}}{x}\)
+</p>
+
+<p>
+\(\lim_{x \to -\infty} -\sqrt(1 + \dfrac{1}{x^2})\)
+</p>
+
+<p>
+\(= -\sqrt{1} = -1\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> Solution 20</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+\(\lim_{x \to 0} \dfrac{\sin(1/x) + 2x\cos(1/x)}{\cos x}\)
+</p>
+
+<p>
+Suppose \(\lim_{x \to 0} \sin(1/x)\) is equal to L.
+</p>
+
+<p>
+Let \(v = \dfrac{1}{x}\)
+</p>
+
+<p>
+So, \(\lim_{v \to \infty} \sin 0\) is not defined since it alternates
+between 1 and -1.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Solution 21</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+\(\lim_{x \to \infty} \dfrac{x - \sin x \cos x}{2x - x\cos x + \sin x - 2\sin x \cos x}\)
+</p>
+
+<p>
+\(\lim_{x \to \infty} \sin x \cos x\) oscillates between -1 and 1 and
+hence it's not defined.
+</p>
+
+<p>
+\(\lim_{x \to \infty} \sin x \cos x\) oscillates between -1 and 1 and
+hence it's not defined.
+</p>
+
+<p>
+\(\lim_{x \to \infty} x - \sin x \cos x = \infty\)
+</p>
+
+<p>
+So, the numerator is \(\infty\)
+</p>
+
+<p>
+Similary,
+</p>
+
+<p>
+$lim<sub>x &rarr; &infin;</sub> -2 sin x cos x $ is undefined.
+</p>
+
+<p>
+$lim<sub>x &rarr; &infin;</sub> sin x $ is undefined.
+</p>
+
+<p>
+\(\lim_{x \to \infty} x(2 - \cos x) = \infty\)
+</p>
+
+<p>
+Combining them,
+</p>
+
+<p>
+\(\lim_{x \to \infty} \dfrac{x - \sin x \cos x}{2x - x\cos x + \sin x -
+2\sin x \cos x}\) is an indeterminate form of type
+\(\dfrac{\infty}{\infty}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-22" class="outline-2">
+<h2 id="sec-22"><span class="section-number-2">22</span> Solution 22</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+f(x) =
+</p>
+\begin{cases}
+\dfrac{\sin x}{x},  & \text{ $x \neq$ 0} \\
+1, & \text{$x = 0$}
+\end{cases}
+</div>
+
+<div id="outline-container-sec-22-1" class="outline-3">
+<h3 id="sec-22-1"><span class="section-number-3">22.1</span> Solution a</h3>
+<div class="outline-text-3" id="text-22-1">
+<p>
+\(f'(x) = \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}\)
+</p>
+
+<p>
+\(f'(0) = \lim_{h \to 0} \dfrac{f(h)-f(0)}{h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} f(h) - f(0) /  \lim_{h \to 0} h\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} f(h) - 1 /  \lim_{h \to 0} h\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{\sin h - h}{h^2}\)
+</p>
+
+<p>
+Applying L'Hopital's rule:
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{\cos h - 1}{2h}\)
+</p>
+
+<p>
+\(= \lim_{h \to 0} \dfrac{\sin h}{2} = 0\)
+</p>
+
+<p>
+So, \(f'(0) = 0\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-22-2" class="outline-3">
+<h3 id="sec-22-2"><span class="section-number-3">22.2</span> Solution b</h3>
+<div class="outline-text-3" id="text-22-2">
+<p>
+For \(f'(0)\) to be continous at 0, it should be
+</p>
+
+<p>
+\(f'(0) = \lim_{x \to 0} f'(x)\) and the limit should exist.
+</p>
+
+<p>
+We know that \(f'(0) = 0\)
+</p>
+
+<p>
+Let's compute the one sided limit:
+</p>
+
+<p>
+\(\lim_{x \to 0^-} f'(x) = \lim_{x \to 0^-} \dfrac{\sin x}{x} = 1\)
+</p>
+
+<p>
+Since it's not equal to 0. So it is not continous.
+</p>
+</div>
+</div>
+</div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-04-17 Sat 22:35</p>
+<p class="date">Created: 2021-05-02 Sun 20:12</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>

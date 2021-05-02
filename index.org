@@ -56,6 +56,7 @@ contributions are welcome!
   - [[file:chapter4/solution7.org][Solutions]]
 - [[file:chapter4/section8.org][L'Hopital's Rule]]
   - [[file:chapter4/solution8.org][Solutions]]
+- [[file:chapter4/section9.org][AntiDerivatives]]
 
 * Extras
 
