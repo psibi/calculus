@@ -84,3 +84,12 @@ intervals $(-\infty, 0)$ and $(0, \infty)$.
 If $n$ is even, then the domain of $f$ is $[0, \infty)$ if $r > 0$,
 and $(0, \infty)$ if $r < 0$. In both of these cases, $F$ is an
 antiderivative of $f$ on the entire domain of $f$.
+
+** Theorem 4.9.8
+
+Suppose that $F$ and $G$ are antiderivatives of $f$ and $g$,
+respectively, on an interval $I$. Then:
+
+- $F + G$ is an antiderivative of $f + g$ on $I$.
+- For any number $c$, $cF$ is an antiderivative of $cf$ on $I$.
+- $F - G$ is an antiderivative of $f-g$ on $I$.
