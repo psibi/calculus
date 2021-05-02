@@ -1,0 +1,86 @@
+* Antiderivatives
+
+** Definition 4.9.1
+
+Suppose $f$ is a function and I is an open interval contained in the
+domain of $f$. We say that a function $F$ is an *antiderivative* of
+$f$ on $I$ if $F$ is differentiable on $I$, and for all $x \in I$,
+$F'(x) = f(x)$
+
+Ref: [[https://math.stackexchange.com/questions/586107/what-is-the-difference-between-an-indefinite-integral-and-an-antiderivative][Any difference between indefinite integral and antiderivative]]
+
+** Definition 4.9.2
+
+The right hand derivative of a function $f$ at a number $a$ is the
+number $f'_{+}(a)$ defined by the formula
+
+$f'_{+}(a) = \lim_{h \to 0^+} \dfrac{f(a+h)-f(a)}{h}$
+
+Similary, the left-hand derivative of $f$ at $a$ is
+
+$f'_{-}(a) = \lim_{h \to 0^-} \dfrac{f(a+h)-f(a)}{h}$
+
+Also other theorems, hold too:
+
+$f'_{+}(a) = \lim_{x \to a^+} \dfrac{f(x)-f(a)}{x-a}$
+
+$f'_{-}(a) = \lim_{x \to a^-} \dfrac{f(x)-f(a)}{x-a}$
+
+** Definition 4.9.3
+
+We say that a function $f$ is differentiable on a closed interval
+$[a,b]$ if $f$ is differentiable on $(a,b)$, and the one-sided
+derivatives $f'_{+}(a)$ and $f'_{-}(b)$ are defined.
+
+[[https://math.stackexchange.com/questions/126176/differentiablility-over-closed-intervals][Good explanation of the need of one sided limits is given here]] (Apart
+from the similar explanation in Velleman's text)
+
+** Definition 4.9.4
+
+Suppose $f$ is a function and the closed interval $[a,b]$ is contained
+in the domain of $f$. We say that a function $F$ is an antiderivative
+of $f$ on $[a,b]$ if $F$ is differentiable on $[a,b], F'_{+}(a)=f(a),
+F'_{-}(b) = f(b)$, and for all $x \in (a,b), F'(x) = f(x)$.
+
+** Theorem 4.9.5 (Chain Rule on Intervals)
+
+Suppose that $f$ is differentiable on an interval $I$, $g$ is
+differentiable on an interval $J$, and for every $x \in J, g(x) \in
+I$. Then $f \circ g$ is differentiable on $J$, and for every $x \in J$,
+
+$(f \circ g)'(x) = f'(g(x)).g'(x)$
+
+where each of the derviatives in this equation is interpreted as a
+one-sided derivative whenever it is evaulated at an endpoint.
+
+** Theorem 4.9.6
+
+Suppose that $F$ is an antiderivative of $f$ on an interval $I$. Then
+for every number $C$, the function $G(x) = F(x) + C$ is also an
+antiderivative of $f$ on $I$. Furthermore, these are the only
+antiderivatives. In other words, if $G$ is any antiderivative of $f$
+on $I$, then there is some number $C$ such that for all $x \in I$,
+$G(x) = F(x) + C$.
+
+** Theorem 4.9.7
+
+Suppose $r$ is a rational number and $r \neq -1$, and let $f(x) =
+x^r$. Then the function
+
+$F(x) = \dfrac{x^{r+1}}{r+1}$ is an antiderivative of $f$ on every
+interval contained in the domain of $f$.
+
+To list these intervals explicitly, we first write the rational number
+$r$ in lowest terms as $r = \dfrac{m}{n}$.
+
+If $n$ is odd and $r \geq 0$, then $f(x) = x^r$ is defined for all
+$x$, and $F$ is an antiderivative of $f$ on the interval $(-\infty,
+\infty)$.
+
+If $n$ is odd and $r < 0$, then $f(x)$ is defined for all values of
+$x$ except $x = 0$, and $F$ is an antiderivative of $f$ on each of the
+intervals $(-\infty, 0)$ and $(0, \infty)$.
+
+If $n$ is even, then the domain of $f$ is $[0, \infty)$ if $r > 0$,
+and $(0, \infty)$ if $r < 0$. In both of these cases, $F$ is an
+antiderivative of $f$ on the entire domain of $f$.
