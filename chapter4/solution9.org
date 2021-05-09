@@ -138,3 +138,436 @@ int(g,x)
 
 Intervals where the antiderivaties apply is same as the original
 function's domain.
+
+** Solution 5
+
+$f(x) = x^2 + \dfrac{1}{x^2}$
+
+Domain: $(-\infty, 0) \cup (0,\infty)$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = x^2 + (1/x^2)
+int(f,x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+   2   1
+  x  + ──
+        2
+       x
+ans = (sym)
+
+   3
+  x    1
+  ── - ─
+  3    x
+#+end_example
+
+Intervals where the antiderivaties apply is same as the original
+function's domain.
+
+** Solution 6
+
+$g(x) = \dfrac{x^3 + 3}{x^2}$
+
+Domain: $(-\infty, 0) \cup (0,\infty)$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+g = (x^3 + 3)/(x^2)
+int(g,x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> g = (sym)
+
+   3
+  x  + 3
+  ──────
+     2
+    x
+ans = (sym)
+
+   2
+  x    3
+  ── - ─
+  2    x
+#+end_example
+
+Intervals where the antiderivaties apply is same as the original
+function's domain.
+
+** Solution 7
+
+$f(x) = (x^3 + 3)^2$
+
+Domain: $(-\infty, \infty)$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = (x^3 + 3)^2
+int(f,x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+          2
+  ⎛ 3    ⎞
+  ⎝x  + 3⎠
+ans = (sym)
+
+   7      4
+  x    3⋅x
+  ── + ──── + 9⋅x
+  7     2
+#+end_example
+
+Intervals where the antiderivaties apply is same as the original
+function's domain.
+
+** Solution 8
+
+$g(x) = (\dfrac{x^3 + 3}{x})^2$
+
+Domain: $(-\infty, 0) \cup (0, \infty)$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+g = ((x^3 +3)/x)^2
+int(g,x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> g = (sym)
+
+          2
+  ⎛ 3    ⎞
+  ⎝x  + 3⎠
+  ─────────
+       2
+      x
+ans = (sym)
+
+   5
+  x       2   9
+  ── + 3⋅x  - ─
+  5           x
+#+end_example
+
+Intervals where the antiderivaties apply is same as the original
+function's domain.
+
+** Solution 9
+
+$f(x) = sqrt(2x+3)$
+
+Let's find it's domain:
+
+$2x + 3 \geq 0$
+
+$x \geq \dfrac{-3}{2}$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+f = sqrt(2*x + 3)
+int(f,x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> f = (sym)
+
+    _________
+  ╲╱ 2⋅x + 3
+ans = (sym)
+
+           3/2
+  (2⋅x + 3)
+  ────────────
+       3
+#+end_example
+
+Intervals where the antiderivaties apply is same as the original
+function's domain.
+
+** Solution 10
+
+$f'(x) = 4x - 3$
+
+$f(1) = 4$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+fd(x) = 4*x - 3
+int(fd, x)
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> fd(x) = (symfun) 4⋅x - 3
+: ans(x) = (symfun)
+:
+:      2
+:   2⋅x  - 3⋅x
+
+So the antiderivate is $2x^2 - 3x + C = F(x)$
+
+Now let's find the function,
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+syms c
+f = 2*x^2 - 3*x + c
+f_h = function_handle(f)
+solve(f_h(c, 1) == 4, c)
+#+end_src
+
+#+RESULTS:
+:
+: f = (sym)
+:
+:          2
+:   c + 2⋅x  - 3⋅x
+: f_h =
+:
+: @(c, x) c + 2 * x .^ 2 - 3 * x
+: ans = (sym) 5
+
+So the function is $2x^2 - 3x + 5$
+
+** Solution 11
+
+$g'(x) = \sqrt(x) + \sin x$
+
+$g(0) = 1$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+gd(x) = sqrt(x) + sin(x)
+int(gd, x)
+#+end_src
+
+#+RESULTS:
+:
+: octave> octave> gd(x) = (symfun) √x + sin(x)
+: ans(x) = (symfun)
+:
+:      3/2
+:   2⋅x
+:   ────── - cos(x)
+:     3
+
+So the antiderivative is $\dfrac{2*x^{3/2}}{3} - \cos x + c = F(x)$
+
+Now let's find this function,
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+syms c
+f = 2*(x)^(3/2)/3 - cos(x) + c
+f_h = function_handle(f)
+solve(f_h(c, 0) == 1, c)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+f = (sym)
+
+         3/2
+      2⋅x
+  c + ────── - cos(x)
+        3
+f_h =
+
+@(c, x) c + 2 * x .^ (3 / 2) / 3 - cos (x)
+ans = (sym) 2
+#+end_example
+
+So the function is $\dfrac{2*x^{3/2}}{3} - \cos x + 2 = f(x)$
+
+** Solution 12
+
+$f'(x) = \dfrac{1}{\sqrt{x}} + \sec x \tan x$
+
+$\lim_{x \to 0^+} f(x) = 2$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+fd(x) = (1/sqrt(x) + sec(x)*tan(x))
+int(fd, x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> fd(x) = (symfun)
+
+                  1
+  tan(x)⋅sec(x) + ──
+                  √x
+ans(x) = (symfun)
+
+           1
+  2⋅√x + ──────
+         cos(x)
+#+end_example
+
+So the antiderivative is $2\sqrt{x} + \dfrac{1}{\cos x} + c = F(x)$
+
+Now let's find this function,
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+syms c
+f = 2*(x)^(1/2) + (1/cos(x)) + c
+f_h = function_handle(f)
+solve(f_h(c,0) == 2)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+f = (sym)
+
+               1
+  c + 2⋅√x + ──────
+             cos(x)
+f_h =
+
+@(c, x) c + 2 * sqrt (x) + 1 ./ cos (x)
+ans = (sym) 1
+#+end_example
+
+So the function is $2\sqrt{x} + \dfrac{1}{\cos x} + 1 = f(x)$
+
+** Solution 13
+
+$g'(x) = x^2 \sqrt[3]{x}$
+
+$g(1) = 2$
+
+Let's solve this using GNU Octave:
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+clear
+pkg load symbolic
+syms x
+gd(x) = x^2 * x^(1/3)
+int(gd, x)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+octave> octave> warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+gd(x) = (symfun)
+
+   7/3
+  x
+ans(x) = (symfun)
+
+     10/3
+  3⋅x
+  ───────
+     10
+#+end_example
+
+So the antiderivative is $\dfrac{3*x^(10/3)}{10} + c = G(x)$
+
+Now let's find this function,
+
+#+begin_src octave :session :eval never-export :results value verbatim output :exports both
+syms c
+g = 3*(x^(10/3))/10 + c
+g_h = function_handle(g)
+solve(g_h(c, 1) == 2)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    mpower at line 76 column 5
+g = (sym)
+
+         10/3
+      3⋅x
+  c + ───────
+         10
+g_h =
+
+@(c, x) c + 3 * x .^ (10 / 3) / 10
+warning: passing floating-point values to sym is dangerous, see "help sym"
+warning: called from
+    double_to_sym_heuristic at line 50 column 7
+    sym at line 379 column 13
+    plus at line 61 column 5
+    eval>@<anonymous> at line 1 column 10
+ans = (sym)
+
+  17
+  ──
+  10
+#+end_example
+
+So the function is $\dfrac{3*x^(10/3)}{10} + \dfrac{17}{10} = G(x)$
