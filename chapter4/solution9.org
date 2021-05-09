@@ -571,3 +571,150 @@ ans = (sym)
 #+end_example
 
 So the function is $\dfrac{3*x^(10/3)}{10} + \dfrac{17}{10} = G(x)$
+
+** Solution 15
+
+At $t=0$, we are starting to apply brake. It's also $h - 0$ and $a = -10ft/s^2$
+
+$h$ is the distance car travelled.
+
+At $t=t_1$, the car comes to stop.
+
+$h = 125$ feet
+
+$f''(t) = a = -10$
+
+$f'(t) = -10t + c$
+
+We need to find $f'(t)$ at $t = 0$
+
+$h = f(t) = -5*t^2 + c*t + d$
+
+At $t=0, h=0$
+
+$h = f(0) = d$
+
+So, $d = 0$
+
+At $t=t_1$, $h = 125$
+
+$h = f(t_1) = -5t_1^2 + ct_1$
+
+$125 = -5t_1^2 + ct_1$
+
+Velocity at $t_1 = 0$
+
+$f'(t_1) = -10t_1 + c = 0$
+
+$c = 10*t_1$
+
+So, $125 = -5*t_1^2 + 10*t_1^2$
+
+$5*t_1^2 = 125$
+
+$t_1^2 = 25$
+
+$t_1 = 5$
+
+So velocity at $t=0$:
+
+$f'(0) = c = 10t_1 = 10.5 = 50$ feet/s
+
+** Solution 16
+
+At $t=0$, he applies brakes.
+
+At $t=2$, he travels 100 feets.
+
+At t=0,
+
+$f''(t) = a = -10$ feet/s^2
+
+$f'(t) = -10t + c$
+
+$f(t) = -5t^2 + ct + d$
+
+We know that $f(2) = 100$
+
+We need to find $f'(t)$ at $t = 0$
+
+We also know that $f(0) = 0$
+
+So, $f(0) = d = 0$
+
+So, $d = 0$
+
+$f(2) = 100$
+
+$-5.2^2 + c.2 + 0 = 100$
+
+$-20 + 2c = 100$
+
+$2c - 120$
+
+$c - 60$
+
+$f'(t) = -10t + c$
+
+$f'(0) = c = 60$
+
+So he was going at 60 feet/s when he applied the brakes.
+
+** Solution 17
+
+Initial velocity = 10m/s
+
+Broom acceleration = $4 m/sec^2$
+
+Snitch distance = 100 m
+
+Wwe need to find the time to reach snitch
+
+$a = f''(t) = 4$
+
+$f'(t) = 4t + c$
+
+We know that $f'(0) = 10$
+
+$c = 10$
+
+$f'(t) = 4t + 10$
+
+$f(t) = 2t^2 + 10t + d$
+
+We need to find some $t$ such that $f(t) = 100$
+
+We know that at $t = 0$, $f(0) = 0$ and $t = t$, $f(t) = 100$
+
+From $f(0) = 0$, we can conclude that $d = 0$
+
+$f(t) = 100$
+
+$2t^2 + 10t = 100$
+
+$t^2 + 5t = 50$
+
+$t^2 + 5t - 50 - 0$
+
+So at $t = 5$ seconds, harry will reach the snitch.
+
+** Solution 18
+
+Tank capacity $= 500$ Gallon
+
+Water started leaking at noon
+
+At $t$ minutes after noon, water started leaking at $5 + 2t$ gallons
+per miniutes.
+
+$f(t) = 5 + 2t$
+
+We need to find at what $t$, $f(t)$ becomes $500$.
+
+$5 + 2t = 500$
+
+$2t = 495$
+
+$t = 247.5$
+
+At $247.5$ minutes after noon, the tank becomes empty.
