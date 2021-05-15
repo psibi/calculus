@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-05-15 Sat 16:46 -->
+<!-- 2021-05-15 Sat 19:24 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -229,6 +229,9 @@ MathJax.Hub.Config({
 <ul class="nav">
 <li><a href="#sec-1-1">1.1. Summation</a></li>
 <li><a href="#sec-1-2">1.2. Theorem 5.1.1</a></li>
+<li><a href="#sec-1-3">1.3. Telescoping Sums</a></li>
+<li><a href="#sec-1-4">1.4. Other results</a></li>
+<li><a href="#sec-1-5">1.5. Bound variables</a></li>
 </ul>
 </li>
 </ul>
@@ -280,11 +283,54 @@ following equations are true:
 </p>
 </div>
 </div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Telescoping Sums</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+\(\sum_{i=1}^n [(i+1)^3 -1^3] = [2^3 - 1^3] + [3^3 - 2^3] + [4^3 - 3^3] + ... + [n^3 - (n-1)^3] + [(n+1)^3-n^3]\)
+</p>
+
+<p>
+Notice how the terms cancel each others. The only thing that is left
+finally is \(-1^3\) from the first term and the \((n+1)^3\) from the last
+term.
+</p>
+
+<p>
+Sums like above where most of the terms cancel out are called
+telescoping sums.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Other results</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+\(\sum_{i=1}^n i^2 = \dfrac{n(n+1)(2n+1)}{6}\)
+</p>
+
+<p>
+\(\sum_{i=1}^n i^3 = \dfrac{n^2(n+1)^2}{4}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Bound variables</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Dummy or Bound variables in an experession can be changed to a
+different variable without affecting the value of the expression.
+</p>
+</div>
+</div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-05-15 Sat 16:46</p>
+<p class="date">Created: 2021-05-15 Sat 19:24</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>
