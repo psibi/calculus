@@ -20,3 +20,25 @@ $\sum_{i=1}^n (ca_i) = c\sum_{i=1}^na_i$
 $\sum_{i=1}^n (a_i + b_i) = \sum_{i=1}^n a_i + \sum_{i=1}^n b_i$
 
 $\sum_{i=1}^n (a_i - b_i) = \sum_{i=1}^n a_i - \sum_{i=1}^n b_i$
+
+** Telescoping Sums
+
+$\sum_{i=1}^n [(i+1)^3 -1^3] = [2^3 - 1^3] + [3^3 - 2^3] + [4^3 - 3^3] + ... + [n^3 - (n-1)^3] + [(n+1)^3-n^3]$
+
+Notice how the terms cancel each others. The only thing that is left
+finally is $-1^3$ from the first term and the $(n+1)^3$ from the last
+term.
+
+Sums like above where most of the terms cancel out are called
+telescoping sums.
+
+** Other results
+
+$\sum_{i=1}^n i^2 = \dfrac{n(n+1)(2n+1)}{6}$
+
+$\sum_{i=1}^n i^3 = \dfrac{n^2(n+1)^2}{4}$
+
+** Bound variables
+
+Dummy or Bound variables in an experession can be changed to a
+different variable without affecting the value of the expression.
