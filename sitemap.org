@@ -48,3 +48,6 @@
   - [[file:chapter4/solution6.org][solution6]]
   - [[file:chapter4/solution7.org][solution7]]
   - [[file:chapter4/solution8.org][solution8]]
+  - [[file:chapter4/solution9.org][solution9]]
+- chapter5
+  - [[file:chapter5/section1.org][section1]]
