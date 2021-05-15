@@ -1,0 +1,22 @@
+* Integrals
+
+** Summation
+
+$\sum_{i=1}^n a_i = a_1 + a_2 + ... + a_n$
+
+The symbol is called sigma.
+
+$\sum_{i=1}^n c = nc$
+
+$\sum_{i=1}^n i = \dfrac{n(n+1)}{2}$
+
+** Theorem 5.1.1
+
+For any numbers $c, a_1, a_2$ ... $a_n, b_1, b_2$ ... $b_n$, the
+following equations are true:
+
+$\sum_{i=1}^n (ca_i) = c\sum_{i=1}^na_i$
+
+$\sum_{i=1}^n (a_i + b_i) = \sum_{i=1}^n a_i + \sum_{i=1}^n b_i$
+
+$\sum_{i=1}^n (a_i - b_i) = \sum_{i=1}^n a_i - \sum_{i=1}^n b_i$
