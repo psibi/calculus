@@ -441,3 +441,41 @@ $\sum_{i=1}^n i = \dfrac{(n+1)^2 - n}{2}$
 : n^2 + n
 
 So, $\sum_{i=1}^n i = \dfrac{n^2 + n}{2}$
+
+** Solution 11
+
+We need to prove $\sum_{i=1}^n i = \dfrac{n^2 + n}{2}$
+
+We will prove using mathematical induction.
+
+Base case: $n = 1$
+
+$\sum_{i=1}^n i = \dfrac{1 + 1}{2} = \dfrac{1}{1} = 1$
+
+$\sum_{i=1}^1 = 1$
+
+The base case holds.
+
+Induction step: Suppose $\sum_{i=1}^n i = \dfrac{n^2 + n}{2}$.
+
+$\sum_{i=1}^{n+1} i = \sum_{i=1}^n i + (n+1)$
+
+$\sum_{i=1}^{n+1} i = \dfrac{n^2 + n}{2} + (n+1)$ (Induction step)
+
+#+begin_src sage :exports both
+(((n^2 + n)/2) + (n+1)).factor()
+#+end_src
+
+#+RESULTS:
+: 1/2*(n + 2)*(n + 1)
+
+#+begin_src sage :exports both
+((n+1)*(n+2)).simplify_full()
+#+end_src
+
+#+RESULTS:
+: n^2 + 3*n + 2
+
+So, $\sum_{i=1}^{n+1} i = \dfrac{(n+1)^2 + (1+n)}{2}$
+
+This completes the mathematical induction proof.
