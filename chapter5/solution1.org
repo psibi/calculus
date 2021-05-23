@@ -338,10 +338,58 @@ We need to derive equation 5.9 using the above equation.
 Let's first expand the above equation:
 
 #+begin_src sage :exports both
-i = var('i')
-f) = (i+1)^4 - i^4
-f(1, hold=True)
+  i = var('i')
+  f1 = (i+1)^4
+  f2 = -i^4
+  [f1(1), f2(1), f1(2), f2(2), f1(3), f2(3), f1(4), f2(4), f1(i-1), f2(i-1), f1(i), f2(i)]
 #+end_src
 
 #+RESULTS:
-: 15
+: [16, -1, 81, -16, 256, -81, 625, -256, i^4, -(i - 1)^4, (i + 1)^4, -i^4]
+
+You can see that the first term is cancelled by the fourth term. The
+third term is cancelled by two terms following it. So apart from $-1$
+and $(i+1)^4$ everything else is cancelled.
+
+So, $\sum_{i=1}^n [(i+1)^4 - i^4] = (i+1)^4 - 1$
+
+We also know that:
+
+#+begin_src sage :exports both
+x = (i+1)^4 - i^4
+x.simplify_full()
+#+end_src
+
+#+RESULTS:
+: 4*i^3 + 6*i^2 + 4*i + 1
+
+So, $\sum_{i=1}^n [(i+1)^4 - i^4] = \sum_{i=1}^n(4*i^3 + 6*i^2 + 4i + 1)$
+
+Combining both the equations:
+
+$(i+1)^4 - 1 = 4. \sum_{i=1}^n i^3 + \sum{i=1}^n(6*i^2 + 4*i + 1)$
+
+#+begin_src sage :exports both
+sum(((6*i^2) + (4*i) + 1), i, 1, n)
+#+end_src
+
+#+RESULTS:
+: 2*n^3 + 5*n^2 + 4*n
+
+Reducing it further:
+
+$(n+1)^4 - 1 = 4. \sum_{i=1}^n i^3 + 2*n^3 + 5*n^2 + 4n$
+
+$4\sum_{i=1}^n i^3 = (n+1)^4 - 1 - 2*n^3 - 5*n^2 - 4n$
+
+Reducing the equations:
+
+#+begin_src sage :exports both
+n = var('n')
+((n+1)^4 - 1 - (2*n^3) - (5*n^2) - (4*n)).factor()
+#+end_src
+
+#+RESULTS:
+: (n + 1)^2*n^2
+
+So, $\sum_{i=1}^n i^3 = \dfrac{n^2(n+1)^2}{4}$
