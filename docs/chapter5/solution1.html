@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-05-23 Sun 20:15 -->
+<!-- 2021-05-23 Sun 23:11 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -236,6 +236,8 @@ MathJax.Hub.Config({
 <li><a href="#sec-1-7">1.7. Solution 7</a></li>
 <li><a href="#sec-1-8">1.8. Solution 8</a></li>
 <li><a href="#sec-1-9">1.9. Solution 9</a></li>
+<li><a href="#sec-1-10">1.10. Solution 10</a></li>
+<li><a href="#sec-1-11">1.11. Solution 11</a></li>
 </ul>
 </li>
 </ul>
@@ -723,21 +725,234 @@ We need to derive equation 5.9 using the above equation.
 Let's first expand the above equation:
 </p>
 
-<div class="sage"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">4</span> <span class="o">-</span> <span class="n">i</span><span class="o">^</span><span class="mi">4</span>
-<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">hold</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="sage"><pre><span></span>  <span class="n">i</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
+  <span class="n">f1</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">4</span>
+  <span class="n">f2</span> <span class="o">=</span> <span class="o">-</span><span class="n">i</span><span class="o">^</span><span class="mi">4</span>
+  <span class="p">[</span><span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span>
 </pre></div>
 
 <pre class="example">
-15
+[16, -1, 81, -16, 256, -81, 625, -256, i^4, -(i - 1)^4, (i + 1)^4, -i^4]
 </pre>
+
+
+<p>
+You can see that the first term is cancelled by the fourth term. The
+third term is cancelled by two terms following it. So apart from \(-1\)
+and \((i+1)^4\) everything else is cancelled.
+</p>
+
+<p>
+So, \(\sum_{i=1}^n [(i+1)^4 - i^4] = (i+1)^4 - 1\)
+</p>
+
+<p>
+We also know that:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">4</span> <span class="o">-</span> <span class="n">i</span><span class="o">^</span><span class="mi">4</span>
+<span class="n">x</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+4*i^3 + 6*i^2 + 4*i + 1
+</pre>
+
+
+<p>
+So, \(\sum_{i=1}^n [(i+1)^4 - i^4] = \sum_{i=1}^n(4*i^3 + 6*i^2 + 4i + 1)\)
+</p>
+
+<p>
+Combining both the equations:
+</p>
+
+<p>
+\((i+1)^4 - 1 = 4. \sum_{i=1}^n i^3 + \sum{i=1}^n(6*i^2 + 4*i + 1)\)
+</p>
+
+<div class="sage"><pre><span></span><span class="nb">sum</span><span class="p">(((</span><span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+2*n^3 + 5*n^2 + 4*n
+</pre>
+
+
+<p>
+Reducing it further:
+</p>
+
+<p>
+\((n+1)^4 - 1 = 4. \sum_{i=1}^n i^3 + 2*n^3 + 5*n^2 + 4n\)
+</p>
+
+<p>
+\(4\sum_{i=1}^n i^3 = (n+1)^4 - 1 - 2*n^3 - 5*n^2 - 4n\)
+</p>
+
+<p>
+Reducing the equations:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+(n + 1)^2*n^2
+</pre>
+
+
+<p>
+So, \(\sum_{i=1}^n i^3 = \dfrac{n^2(n+1)^2}{4}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Solution 10</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+We need to find alternative derivation of equation 5.4 by evaulating
+\(\sum_{i=1}^n [(i+1)^2-i^2]\)
+</p>
+
+<p>
+Let's first expand the equation:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="o">-</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span>
+
+<span class="p">[</span><span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+[4, -1, 9, -4, 16, -9, i^2, -(i - 1)^2, (i + 1)^2, -i^2]
+</pre>
+
+
+<p>
+Apart from \(-1\) and \((i+1)^2\) everything else gets cancelled out.
+</p>
+
+<p>
+So, \(\sum_{i=1}^n [(i+1)^2-i^2] = (n+1)^2 - 1\)
+</p>
+
+<p>
+We also know that:
+</p>
+
+<div class="sage"><pre><span></span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+2*i + 1
+</pre>
+
+
+<p>
+So, \(\sum_{i=1}^n [(i+1)^2-i^2] = \sum_{i=1}^n 2i + 1\)
+</p>
+
+<p>
+Combining both the equations:
+</p>
+
+<p>
+\((n+1)^2 - 1 = \sum_{i=1}^n 2i + 1\)
+</p>
+
+<p>
+\(\sum_{i=1}^n i = \dfrac{(n+1)^2 - n}{2}\)
+</p>
+
+<div class="sage"><pre><span></span><span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+n^2 + n
+</pre>
+
+
+<p>
+So, \(\sum_{i=1}^n i = \dfrac{n^2 + n}{2}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Solution 11</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+We need to prove \(\sum_{i=1}^n i = \dfrac{n^2 + n}{2}\)
+</p>
+
+<p>
+We will prove using mathematical induction.
+</p>
+
+<p>
+Base case: \(n = 1\)
+</p>
+
+<p>
+\(\sum_{i=1}^n i = \dfrac{1 + 1}{2} = \dfrac{1}{1} = 1\)
+</p>
+
+<p>
+\(\sum_{i=1}^1 = 1\)
+</p>
+
+<p>
+The base case holds.
+</p>
+
+<p>
+Induction step: Suppose \(\sum_{i=1}^n i = \dfrac{n^2 + n}{2}\).
+</p>
+
+<p>
+\(\sum_{i=1}^{n+1} i = \sum_{i=1}^n i + (n+1)\)
+</p>
+
+<p>
+\(\sum_{i=1}^{n+1} i = \dfrac{n^2 + n}{2} + (n+1)\) (Induction step)
+</p>
+
+<div class="sage"><pre><span></span><span class="p">(((</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+1/2*(n + 2)*(n + 1)
+</pre>
+
+
+<div class="sage"><pre><span></span><span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+n^2 + 3*n + 2
+</pre>
+
+
+<p>
+So, \(\sum_{i=1}^{n+1} i = \dfrac{(n+1)^2 + (1+n)}{2}\)
+</p>
+
+<p>
+This completes the mathematical induction proof.
+</p>
 </div>
 </div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-05-23 Sun 20:15</p>
+<p class="date">Created: 2021-05-23 Sun 23:11</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>
