@@ -393,3 +393,51 @@ n = var('n')
 : (n + 1)^2*n^2
 
 So, $\sum_{i=1}^n i^3 = \dfrac{n^2(n+1)^2}{4}$
+
+** Solution 10
+
+We need to find alternative derivation of equation 5.4 by evaulating
+$\sum_{i=1}^n [(i+1)^2-i^2]$
+
+Let's first expand the equation:
+
+#+begin_src sage :exports both
+i = var(i)
+f1 = (i+1)^2
+f2 = -i^2
+
+[f1(1), f2(1), f1(2), f2(2), f1(3), f2(3), f1(i-1), f2(i-1), f1(i), f2(i)]
+#+end_src
+
+#+RESULTS:
+: [4, -1, 9, -4, 16, -9, i^2, -(i - 1)^2, (i + 1)^2, -i^2]
+
+Apart from $-1$ and $(i+1)^2$ everything else gets cancelled out.
+
+So, $\sum_{i=1}^n [(i+1)^2-i^2] = (n+1)^2 - 1$
+
+We also know that:
+
+#+begin_src sage :exports both
+((i+1)^2 - i^2).simplify_full()
+#+end_src
+
+#+RESULTS:
+: 2*i + 1
+
+So, $\sum_{i=1}^n [(i+1)^2-i^2] = \sum_{i=1}^n 2i + 1$
+
+Combining both the equations:
+
+$(n+1)^2 - 1 = \sum_{i=1}^n 2i + 1$
+
+$\sum_{i=1}^n i = \dfrac{(n+1)^2 - n}{2}$
+
+#+begin_src sage :exports both
+((n+1)^2 - n - 1).simplify_full()
+#+end_src
+
+#+RESULTS:
+: n^2 + n
+
+So, $\sum_{i=1}^n i = \dfrac{n^2 + n}{2}$
