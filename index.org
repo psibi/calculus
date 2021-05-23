@@ -61,6 +61,7 @@ contributions are welcome!
 * Integrals (Chapter 5)
 
 - [[file:chapter5/section1.org][Summations]]
+  - [[file:chapter5/solution1.org][Solutions]]
 
 * Extras
 

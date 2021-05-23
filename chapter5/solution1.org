@@ -275,3 +275,73 @@ g(n+5).factor()
 #+RESULTS:
 : (n + 5)*n
 : (n + 5)*n
+
+** Solution 8
+
+*** Part one
+
+We need to prove this:
+
+$\sum_{i=1}^n (ca_i) = ca_1 + ca_2 + ... + ca_n = c(a_1 + a_2 + ... + a_n) = c\sum_{i=1}^n a_i$
+
+We will prove using mathematical induction.
+
+Base case: $n= 1$
+
+$\sum_{i=1}^n ca_i = ca_1$
+
+Induction step: Suppose $\sum_{i=1}^n (ca_i) = c\sum_{i=1}^n a_i$
+
+$\sum_{i=1}^{n+1} (ca_i) = \sum_{i=1}^n (ca_i) + ca_{n+1}$
+
+$= c\sum_{i=1}^n a_i + ca_{n+1}$ (Induction case)
+
+$= c(\sum_{i=1}^n a_i + a_{n+1})$
+
+$= c(\sum_{i=1}^{n+1} a_i)$
+
+This completes the mathematical induction proof.
+
+*** Part two
+
+We need to prove this:
+
+$\sum_{i=1}^n (a_i + b_i) = \sum_{i=1}^n a_i + \sum_{i=1}^n b_i$
+
+We will prove using mathematical induction.
+
+Base case: $n = 1$
+
+$\sum_{i=1}^n (a_i + b_i) = a_i + b_i$
+
+Induction step: Suppose $\sum_{i=1}^n (a_i + b_i) = \sum_{i=1}^n a_i +
+\sum_{i=1}^n b_i$
+
+$\sum_{i=1}^{n+1} (a_i + b_i)$
+
+$= \sum_{i=1}^{n} (a_i + b_i) + a_{n+1} + b_{n+1}$
+
+$= \sum_{i=1}^n a_i + \sum_{i=1}^n b_i + a_{n+1} + b_{n+1}$
+
+$= \sum_{i=1}^n a_{i+1} + \sum_{i=1}^n b_{i+1}$
+
+$= \sum_{i=1}^{n+1} a_{i} + \sum_{i=1}^{n+1} b_{i}$
+
+This completes the mathematical induction proof.
+
+** Solution 9
+
+$\sum_{i=1}^n [(i+1)^4 - i^4]$
+
+We need to derive equation 5.9 using the above equation.
+
+Let's first expand the above equation:
+
+#+begin_src sage :exports both
+i = var('i')
+f) = (i+1)^4 - i^4
+f(1, hold=True)
+#+end_src
+
+#+RESULTS:
+: 15

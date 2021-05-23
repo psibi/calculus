@@ -51,3 +51,4 @@
   - [[file:chapter4/solution9.org][solution9]]
 - chapter5
   - [[file:chapter5/section1.org][section1]]
+  - [[file:chapter5/solution1.org][solution1]]
