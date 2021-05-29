@@ -630,3 +630,88 @@ f(r=(1/2)).simplify()
 
 #+RESULTS:
 : -1/2^n + 1
+
+** Solution 14
+
+$\sum_{i=1}^n i2^i = 2 + (n-1)2^{n+1}$
+
+Let's prove it using mathematical induction.
+
+Base case: $n = 1$
+
+$\sum_{i=1}^n i2^i = 1.2^1 = 2$
+
+$2 + (n-1)2^{n+1} = 2 + 0 = 2$
+
+The base case holds.
+
+Induction case:
+
+Suppose $\sum_{i=1}^n i2^i = 2 + (n-1)2^{n+1}$.
+
+$\sum_{i=1}^{n+1} i2^i = \sum_{i=1}^n i2^i + (n+1)2^{n+1}$
+
+$= 2 + (n-1)2^{n+1} + (n+1)2^{n+1}$ (Induction step)
+
+$= 2 + 2^{n+1}(n-1+n+1)$
+
+$= 2 + 2^{n+1}(2n)$
+
+$= 2 + n2^{n+2}$
+
+So, $\sum_{i=1}^{n+1} i2^i = 2 + n2^{n+2}$
+
+This completes the mathematical induction proof.
+
+** Solution 15
+
+Suppose $\sin (\dfrac{\theta}{2}) \neq 0$ We need to prove that
+
+$\sum_{i=1}^n \cos(i\theta) = \dfrac{\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2})}{\sin(\theta / 2)}$
+
+Let's prove it using mathematical induction.
+
+Base case: $n = 1$
+
+$\sum_{i=1}^n \cos(i\theta) = cos (\theta)$
+
+$\dfrac{\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2})}{\sin(\theta / 2)} = \dfrac{\cos(\theta) \sin(\theta / 2)}{\sin(\theta / 2)} = \cos(\theta)$
+
+The base case holds.
+
+Inducation case:
+
+Suppose $\sum_{i=1}^n \cos(i\theta) = \dfrac{\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2})}{\sin(\theta / 2)}$
+
+$\sum_{i=1}^{n+1} \cos(i\theta) = \sum_{i=1}^{n} \cos(i\theta) +  cos((n+1) \theta)$
+
+$= \dfrac{\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2})}{\sin(\theta / 2)} + cos((n+1) \theta)$
+
+We know that $\cos u \sin v = \dfrac{1}{2}[\sin(u+v)-\sin(u-v)]$
+
+$\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2}) = \dfrac{1}{2}[\sin(\dfrac{(n+1)\theta}{2} + \dfrac{n\theta}{2}) - \sin(\dfrac{(n+1)\theta}{2} - \dfrac{n\theta}{2})]$
+
+$= \dfrac{1}{2}[\sin(\dfrac{(2n + 1)\theta}{2}) - \sin(\dfrac{\theta}{2})]$
+
+Dividing the above equation by $\sin (\theta / 2)$
+
+$= \dfrac{1}{2}\dfrac{\sin(\dfrac{(2n + 1)\theta}{2})}{\sin(\dfrac{\theta}{2})} - \dfrac{1}{2}$
+
+Combining it with the orignal equation:
+
+$= \dfrac{1}{2}\dfrac{\sin(\dfrac{(2n + 1)\theta}{2})}{\sin(\dfrac{\theta}{2})} - \dfrac{1}{2} + \cos((n+1) \theta)$
+
+#+begin_src sage :exports both
+n, x = var('n x')
+
+a = sin(((2*n + 1)*x)/2)
+b = sin(x/2)
+c = 1/2 * (a/b)
+assume(b > 0)
+f = c - (1/2) + cos((n + 1)*x)
+
+f.simplify_full()
+#+end_src
+
+#+RESULTS:
+: 1/2*(2*cos((n + 1)*x)*sin(1/2*x) + sin(1/2*(2*n + 1)*x) - sin(1/2*x))/sin(1/2*x)
