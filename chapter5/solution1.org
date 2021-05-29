@@ -566,3 +566,67 @@ We can see how all the terms cancel out except the first one and the last term. 
 $\sum_{i=1}^{n} \dfrac{1}{i(i+1)} = 1 - \dfrac{1}{n+1}$
 
 $= \dfrac{n}{n+1}$
+
+** Solution 13
+
+Suppose $r$ is a real number and $r \neq 1$
+
+*** Solution a
+
+$\sum_{i=1}^n [r^{i+1} - r^i]$
+
+#+begin_src sage :exports both
+i,r = var('i r')
+f1 = r^(i+1)
+f2 = -r^i
+
+[f1(r=r,i=1), f2(r=r,i=1), f1(r=r,i=2), f2(r=r,i=2), f1(r=r,i=3), f2(r=r,i=3), f1(r=r,i=n-1), f2(r=r,i=n-1), f1(r=r,i=n), f2(r=r,i=n)]
+#+end_src
+
+#+RESULTS:
+: [r^2, -r, r^3, -r^2, r^4, -r^3, r^n, -r^(n - 1), r^(n + 1), -r^n]
+
+Some observations:
+
+- First term is cancelled with the fourth term
+- Third term is cancelled with the sixth term
+- Second term is not cancelled
+- Second term from the last is not cancelled
+
+So, $\sum_{i=1}^n [r^{i+1} - r^i] = r^{n+1} - r$
+
+Let's verify the solution using SageMath:
+
+#+begin_src sage :exports both
+sum(r^(i+1) - r^i, i, 1, n)
+#+end_src
+
+#+RESULTS:
+: r^(n + 1) - r
+
+*** Solution b
+
+$\sum_{i=1}^n [(r-1)r^i] = (r-1)\sum_{i=1}^n r^i$
+
+We need to find the formula for $\sum_{i=1}^n r^i$
+
+We know from (a) that $\sum_{i=1}^n [r^{i+1} - r^i] = r^{n+1} - r$.
+
+So, $r^{n+1} - r = (r-1)\sum_{i=1}^n r^i$
+
+$\sum_{i=1}^n r^i = \dfrac{r^{n+1} - r}{r-1}$
+
+*** Solution c
+
+$\sum_{i=1}^n (\dfrac{1}{2})^i$
+
+Using the formula from (b),
+
+#+begin_src sage :exports both
+r, n = var('r n')
+f = (r^(n+1) - r)/(r - 1)
+f(r=(1/2)).simplify()
+#+end_src
+
+#+RESULTS:
+: -1/2^n + 1
