@@ -715,3 +715,5 @@ f.simplify_full()
 
 #+RESULTS:
 : 1/2*(2*cos((n + 1)*x)*sin(1/2*x) + sin(1/2*(2*n + 1)*x) - sin(1/2*x))/sin(1/2*x)
+
+(todo: Fix this proof)

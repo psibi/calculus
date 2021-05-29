@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-05-23 Sun 23:11 -->
+<!-- 2021-05-29 Sat 23:17 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -238,6 +238,10 @@ MathJax.Hub.Config({
 <li><a href="#sec-1-9">1.9. Solution 9</a></li>
 <li><a href="#sec-1-10">1.10. Solution 10</a></li>
 <li><a href="#sec-1-11">1.11. Solution 11</a></li>
+<li><a href="#sec-1-12">1.12. Solution 12</a></li>
+<li><a href="#sec-1-13">1.13. Solution 13</a></li>
+<li><a href="#sec-1-14">1.14. Solution 14</a></li>
+<li><a href="#sec-1-15">1.15. Solution 15</a></li>
 </ul>
 </li>
 </ul>
@@ -948,11 +952,431 @@ This completes the mathematical induction proof.
 </p>
 </div>
 </div>
+
+<div id="outline-container-sec-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> Solution 12</h3>
+<div class="outline-text-3" id="text-1-12">
+</div><div id="outline-container-sec-1-12-1" class="outline-4">
+<h4 id="sec-1-12-1"><span class="section-number-4">1.12.1</span> Solution a</h4>
+<div class="outline-text-4" id="text-1-12-1">
+<p>
+\(\sum_{i=1}^n \dfrac{1}{i(i+1)}\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;i n&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span>
+<span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+[1/2, 2/3, 3/4, 4/5]
+</pre>
+
+
+<p>
+So, I'm guessing the formula for the sum as:
+</p>
+
+<p>
+\(\dfrac{n}{n+1}\)
+</p>
+
+<p>
+Let's try to prove it using mathematical induction.
+</p>
+
+<p>
+Base case: \(n = 1\)
+</p>
+
+<p>
+\(\sum_{i=1}^n \dfrac{1}{i(i+1)} = \dfrac{1}{1(1+1)} = \dfrac{1}{2}\)
+</p>
+
+<p>
+\(\dfrac{n}{n+1} = \dfrac{1}{2}\)
+</p>
+
+<p>
+The base case holds.
+</p>
+
+<p>
+Induction step: Suppose \(\sum_{i=1}^n \dfrac{1}{i(i+1)} = \dfrac{n}{n+1}\)
+</p>
+
+<p>
+\(\sum_{i=1}^{n+1} \dfrac{1}{i(i+1)} = \sum_{i=1}^n \dfrac{1}{i(i+1)} + \dfrac{1}{(n+1)(n+2)}\)
+</p>
+
+<p>
+\(= \dfrac{n}{n+1} + \dfrac{1}{(n+1)(n+2)}\) (Induction step)
+</p>
+
+<p>
+\(= \dfrac{1}{n+1}(n + \dfrac{1}{n+2})\)
+</p>
+
+<p>
+\(= \dfrac{1}{n+1} \dfrac{n^2 + 2n + 1}{n+2}\)
+</p>
+
+<p>
+\(= \dfrac{1}{n+1} \dfrac{(n+1)^2}{n+2}\)
+</p>
+
+<p>
+\(= \dfrac{n+1}{n+2}\)
+</p>
+
+<p>
+So, \(\sum_{i=1}^{n+1} \dfrac{1}{i(i+1)} = \dfrac{n+1}{n+2}\)
+</p>
+
+<p>
+This completes the mathematical induction proof.
+</p>
+
+<p>
+We can also verify this using SageMath that our guessed formula is
+right:
+</p>
+
+<div class="sage"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+n/(n + 1)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-12-2" class="outline-4">
+<h4 id="sec-1-12-2"><span class="section-number-4">1.12.2</span> Solution b</h4>
+<div class="outline-text-4" id="text-1-12-2">
+<p>
+We need to verify that \(\dfrac{1}{i+1} = \dfrac{1}{i} - \dfrac{1}{i+1}\)
+</p>
+
+<p>
+\(\dfrac{1}{i} - \dfrac{1}{i+1}\)
+</p>
+
+<p>
+\(= \dfrac{i+1-1}{i(i+1)}\)
+</p>
+
+<p>
+\(= \dfrac{i}{i(i+1)}\)
+</p>
+
+<p>
+\(= \dfrac{1}{i+1}\)
+</p>
+
+<p>
+Now let's use this fact to write part(a) as telescoping sum.
+</p>
+
+<div class="sage"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">i</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span>  <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">[</span><span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+[1, -1/2, 1/2, -1/3, 1/3, -1/4, 1/(n - 1), -1/n, 1/n, -1/(n + 1)]
+</pre>
+
+
+<p>
+We can see how all the terms cancel out except the first one and the last term. So,
+</p>
+
+<p>
+\(\sum_{i=1}^{n} \dfrac{1}{i(i+1)} = 1 - \dfrac{1}{n+1}\)
+</p>
+
+<p>
+\(= \dfrac{n}{n+1}\)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> Solution 13</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+Suppose \(r\) is a real number and \(r \neq 1\)
+</p>
+</div>
+
+<div id="outline-container-sec-1-13-1" class="outline-4">
+<h4 id="sec-1-13-1"><span class="section-number-4">1.13.1</span> Solution a</h4>
+<div class="outline-text-4" id="text-1-13-1">
+<p>
+\(\sum_{i=1}^n [r^{i+1} - r^i]\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;i r&#39;</span><span class="p">)</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">r</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="o">-</span><span class="n">r</span><span class="o">^</span><span class="n">i</span>
+
+<span class="p">[</span><span class="n">f1</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">f1</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="p">)]</span>
+</pre></div>
+
+<pre class="example">
+[r^2, -r, r^3, -r^2, r^4, -r^3, r^n, -r^(n - 1), r^(n + 1), -r^n]
+</pre>
+
+
+<p>
+Some observations:
+</p>
+
+<ul class="org-ul">
+<li>First term is cancelled with the fourth term
+</li>
+<li>Third term is cancelled with the sixth term
+</li>
+<li>Second term is not cancelled
+</li>
+<li>Second term from the last is not cancelled
+</li>
+</ul>
+
+<p>
+So, \(\sum_{i=1}^n [r^{i+1} - r^i] = r^{n+1} - r\)
+</p>
+
+<p>
+Let's verify the solution using SageMath:
+</p>
+
+<div class="sage"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">r</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">r</span><span class="o">^</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+r^(n + 1) - r
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13-2" class="outline-4">
+<h4 id="sec-1-13-2"><span class="section-number-4">1.13.2</span> Solution b</h4>
+<div class="outline-text-4" id="text-1-13-2">
+<p>
+\(\sum_{i=1}^n [(r-1)r^i] = (r-1)\sum_{i=1}^n r^i\)
+</p>
+
+<p>
+We need to find the formula for \(\sum_{i=1}^n r^i\)
+</p>
+
+<p>
+We know from (a) that \(\sum_{i=1}^n [r^{i+1} - r^i] = r^{n+1} - r\).
+</p>
+
+<p>
+So, \(r^{n+1} - r = (r-1)\sum_{i=1}^n r^i\)
+</p>
+
+<p>
+\(\sum_{i=1}^n r^i = \dfrac{r^{n+1} - r}{r-1}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13-3" class="outline-4">
+<h4 id="sec-1-13-3"><span class="section-number-4">1.13.3</span> Solution c</h4>
+<div class="outline-text-4" id="text-1-13-3">
+<p>
+\(\sum_{i=1}^n (\dfrac{1}{2})^i\)
+</p>
+
+<p>
+Using the formula from (b),
+</p>
+
+<div class="sage"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;r n&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+-1/2^n + 1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 14</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+\(\sum_{i=1}^n i2^i = 2 + (n-1)2^{n+1}\)
+</p>
+
+<p>
+Let's prove it using mathematical induction.
+</p>
+
+<p>
+Base case: \(n = 1\)
+</p>
+
+<p>
+\(\sum_{i=1}^n i2^i = 1.2^1 = 2\)
+</p>
+
+<p>
+\(2 + (n-1)2^{n+1} = 2 + 0 = 2\)
+</p>
+
+<p>
+The base case holds.
+</p>
+
+<p>
+Induction case:
+</p>
+
+<p>
+Suppose \(\sum_{i=1}^n i2^i = 2 + (n-1)2^{n+1}\).
+</p>
+
+<p>
+\(\sum_{i=1}^{n+1} i2^i = \sum_{i=1}^n i2^i + (n+1)2^{n+1}\)
+</p>
+
+<p>
+\(= 2 + (n-1)2^{n+1} + (n+1)2^{n+1}\) (Induction step)
+</p>
+
+<p>
+\(= 2 + 2^{n+1}(n-1+n+1)\)
+</p>
+
+<p>
+\(= 2 + 2^{n+1}(2n)\)
+</p>
+
+<p>
+\(= 2 + n2^{n+2}\)
+</p>
+
+<p>
+So, \(\sum_{i=1}^{n+1} i2^i = 2 + n2^{n+2}\)
+</p>
+
+<p>
+This completes the mathematical induction proof.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Solution 15</h3>
+<div class="outline-text-3" id="text-1-15">
+<p>
+Suppose \(\sin (\dfrac{\theta}{2}) \neq 0\) We need to prove that
+</p>
+
+<p>
+\(\sum_{i=1}^n \cos(i\theta) = \dfrac{\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2})}{\sin(\theta / 2)}\)
+</p>
+
+<p>
+Let's prove it using mathematical induction.
+</p>
+
+<p>
+Base case: \(n = 1\)
+</p>
+
+<p>
+\(\sum_{i=1}^n \cos(i\theta) = cos (\theta)\)
+</p>
+
+<p>
+\(\dfrac{\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2})}{\sin(\theta / 2)} = \dfrac{\cos(\theta) \sin(\theta / 2)}{\sin(\theta / 2)} = \cos(\theta)\)
+</p>
+
+<p>
+The base case holds.
+</p>
+
+<p>
+Inducation case:
+</p>
+
+<p>
+Suppose \(\sum_{i=1}^n \cos(i\theta) = \dfrac{\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2})}{\sin(\theta / 2)}\)
+</p>
+
+<p>
+\(\sum_{i=1}^{n+1} \cos(i\theta) = \sum_{i=1}^{n} \cos(i\theta) +  cos((n+1) \theta)\)
+</p>
+
+<p>
+\(= \dfrac{\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2})}{\sin(\theta / 2)} + cos((n+1) \theta)\)
+</p>
+
+<p>
+We know that \(\cos u \sin v = \dfrac{1}{2}[\sin(u+v)-\sin(u-v)]\)
+</p>
+
+<p>
+\(\cos(\dfrac{(n+1)\theta}{2}) \sin(\dfrac{n\theta}{2}) = \dfrac{1}{2}[\sin(\dfrac{(n+1)\theta}{2} + \dfrac{n\theta}{2}) - \sin(\dfrac{(n+1)\theta}{2} - \dfrac{n\theta}{2})]\)
+</p>
+
+<p>
+\(= \dfrac{1}{2}[\sin(\dfrac{(2n + 1)\theta}{2}) - \sin(\dfrac{\theta}{2})]\)
+</p>
+
+<p>
+Dividing the above equation by \(\sin (\theta / 2)\)
+</p>
+
+<p>
+\(= \dfrac{1}{2}\dfrac{\sin(\dfrac{(2n + 1)\theta}{2})}{\sin(\dfrac{\theta}{2})} - \dfrac{1}{2}\)
+</p>
+
+<p>
+Combining it with the orignal equation:
+</p>
+
+<p>
+\(= \dfrac{1}{2}\dfrac{\sin(\dfrac{(2n + 1)\theta}{2})}{\sin(\dfrac{\theta}{2})} - \dfrac{1}{2} + \cos((n+1) \theta)\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;n x&#39;</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(((</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
+<span class="n">assume</span><span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">((</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+1/2*(2*cos((n + 1)*x)*sin(1/2*x) + sin(1/2*(2*n + 1)*x) - sin(1/2*x))/sin(1/2*x)
+</pre>
+
+
+<p>
+(todo: Fix this proof)
+</p>
+</div>
+</div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-05-23 Sun 23:11</p>
+<p class="date">Created: 2021-05-29 Sat 23:17</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
 </div>
 </footer>
