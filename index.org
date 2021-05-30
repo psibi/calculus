@@ -63,6 +63,7 @@ contributions are welcome!
 
 - [[file:chapter5/section1.org][Summations]]
   - [[file:chapter5/solution1.org][Solutions]]
+- [[file:chapter5/section2.org][Accumulation and Area]]
 
 * Extras
 
