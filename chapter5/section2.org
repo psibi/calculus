@@ -1,0 +1,46 @@
+* Accumulation and Area
+
+- A scientist is studying a stream that flows into a lake. She wants
+  to know how much water flows from the stream.
+- Suppose we divide the intervals $[0,120]$ into /n/ smaller
+  intervals, each of width $\Delta t = 120/n$. These smaller intervals
+  will be $[0, \Delta t], [\Delta t, 2\Delta t], [\Delta t, 2\Delta
+  t], [2\Delta t, 3\Delta t],$ and so on.
+- Let $t_0 = 0, t_1 = \Delta t, t_2 = 2\Delta t$ and in general, $t_i
+  = i\Delta t$ for $0 \leq i \leq n$. Notice that $t_n = n\Delta t = n
+  (120/n) = 120$
+- The first interval is $[t_0, t_1]$, the second is $[t_1, t_2]$, and
+  for $1 \leq i \leq n$, the \i\th interval is $[t_{i-1}, t_i]$.
+- To estimate the volume of water flowing into the lake in each of
+  these time intervals, we will need a measurement of the flow area at
+  some point in each interval. Thus, for $i \leq i \leq n$, we choose
+  a number $t^{*}_i \in [t_{i-1}, t_i]$ and measure the flow rate at
+  time $t^{*}_i$. The flow rate is $f(t^{*}_i)$.
+- To estimate the volume of water flowing into the lake during the
+  time interval $[t_{i-1}, t_i]$, we assume that the flow rate was a
+  constant $f(t^{*}_i) m^3/hr$ throughout the interval.
+- Since the interval is $\Delta t$ hours long, we compute the total
+  volume of water that flowed into the lake over this interval is
+  approximately $f(t^{*}_i) \Delta t$ metre cubes.
+- Adding up the contributions of all the time intervals, we conclude
+  that the total volume of water that flowed into the lake from $t=0$
+  to $t=120$ in cubic meters is about:
+
+$f(t^{*}_1) \Delta t + f(t^{*}_2) \Delta t + ... + f(t^{*}_n) \Delta t = \sum_{i=1}^n f(t^{*}_i)\Delta t$
+
+The above equation is called a *Riemann sum* for the function $f$ on
+the interval $[0,120]$. It's named after the mathematician [[https://en.wikipedia.org/wiki/Bernhard_Riemann][Georg
+Friedrich Bernhard Riemann]].
+
+- If we want to specify that there are $n$ terms in the sum, we may
+  refer to it as *Riemann n-sum*.
+- Suppose that, for each $n$, $R_n$ is a Riemann n-sum for $f$ on the
+  interval $[0,120]$. As $n$ increases, $R_n$ should get closer and
+  closer to both the area under the graph of $f$ for $0 \leq t \leq
+  120$ and also the total volume of water that flowed into the lake
+  over the five days. To get the exact value, we therefore take the
+  limit as $n \to \infty$. In other words,
+
+$\lim_{n \to \infty} R_n =$ area under graph of $f$ for $0 \leq t \leq 120$
+
+= volume of water that flowed into lake over five days, in $m^3$.
