@@ -352,3 +352,95 @@ area
 
 #+RESULTS:
 : 9
+
+** Solution 5
+
+#+begin_src sage :exports both
+x = var('x')
+f = 1/x
+f
+#+end_src
+
+#+RESULTS:
+: 1/x
+
+*** Solution a
+
+#+begin_src sage :exports both :file ../docs/assets/c5s2s5a.png
+plot(f,1,3)
+#+end_src
+
+[[file:~/github/velleman-calculus/assets/c5s2s5a.png]]
+
+*** Solution b
+
+- Compute Riemann 10-sum for $[1,3]$
+- Use the midpoint of each interval as the sample point
+
+Let's compute the intervals:
+
+#+begin_src sage :exports both
+  intervals = [1]
+  for i in range(10):
+    intervals.append(intervals[i] + 0.2)
+  intervals
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[1,
+ 1.20000000000000,
+ 1.40000000000000,
+ 1.60000000000000,
+ 1.80000000000000,
+ 2.00000000000000,
+ 2.20000000000000,
+ 2.40000000000000,
+ 2.60000000000000,
+ 2.80000000000000,
+ 3.00000000000000]
+#+end_example
+
+Now we need to calculate the midpoint of above interval:
+
+#+begin_src sage :exports both
+  midpoints = []
+  for i in range(0, len(intervals)-1):
+    midpoints.append([intervals[i], intervals[i+1]])
+  midpoints
+
+  points = map(lambda x: (x[0] + x[1])/2, midpoints)
+  points
+
+  sum(map(lambda x: f(x)*0.2, points))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[[1, 1.20000000000000],
+ [1.20000000000000, 1.40000000000000],
+ [1.40000000000000, 1.60000000000000],
+ [1.60000000000000, 1.80000000000000],
+ [1.80000000000000, 2.00000000000000],
+ [2.00000000000000, 2.20000000000000],
+ [2.20000000000000, 2.40000000000000],
+ [2.40000000000000, 2.60000000000000],
+ [2.60000000000000, 2.80000000000000],
+ [2.80000000000000, 3.00000000000000]]
+[1.10000000000000,
+ 1.30000000000000,
+ 1.50000000000000,
+ 1.70000000000000,
+ 1.90000000000000,
+ 2.10000000000000,
+ 2.30000000000000,
+ 2.50000000000000,
+ 2.70000000000000,
+ 2.90000000000000]
+/usr/share/sagemath/bin/sage-ipython:10: DeprecationWarning: Substitution using function-call syntax and unnamed arguments is deprecated and will be removed from a future release of Sage; you can use named arguments instead, like EXPR(x=..., y=...)
+See http://trac.sagemath.org/5930 for details.
+  app.initialize()
+1.09714209400861
+#+end_example
+
+So the Riemann 10-sum of the function is $1.09714$
