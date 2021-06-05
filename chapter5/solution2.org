@@ -1,0 +1,183 @@
+* Accumulation and Area
+
+** Solution 1
+
+*** Solution a
+
+Let's solve this using SageMath. Let's save the data in python
+dictionary:
+
+#+begin_src sage :exports both
+monday = {'3am': 531, '9am': 603, '3pm': 625, '9pm': 527}
+tuesday = {'3am': 475, '9am': 527, '3pm': 548, '9pm': 491}
+wednesday = {'3am': 466, '9am': 511, '3pm': 539, '9pm': 510}
+thursday = {'3am': 502, '9am': 556, '3pm': 599, '9pm': 584}
+friday = {'3am': 586, '9am': 661, '3pm': 728, '9pm': 712}
+days = [monday, tuesday, wednesday, thursday, friday]
+#+end_src
+
+We need to compute Riemann 5-sum using the 3 p.m measurement each day.
+
+$\sum_{i=1}^5 f(t^{*}_i) \Delta t$
+
+We know that $\Delta t$ is $24$ The total time interval is $(5*24 =
+120)$. Let's compute the sum via SageMath:
+
+#+begin_src sage :exports both
+total_flows = map(lambda x: x['3pm'] * 24, days)
+total_flows
+sum(total_flows)
+#+end_src
+
+#+RESULTS:
+: [15000, 13152, 12936, 14376, 17472]
+: 72936
+
+So the Riemann 5-sum using the 3 p.m measurement each day is $72936$
+cubic meters.
+
+*** Solution b
+
+We need to compute Riemann 10-sum using the 9 am and 9pm measurements
+each day.
+
+$\sum_{i=1}^5 f(t^{*}_i) \Delta t$
+
+The difference between 9 am and 9 pm is 12 hours. So $\Delta t$ is 12
+hours in this case. Let's compute the result via SageMath:
+
+#+begin_src sage :exports both
+total_flows = map(lambda x: x['9am']*12 + x['9pm']*12, days)
+total_flows
+sum(total_flows)
+#+end_src
+
+#+RESULTS:
+: [13560, 12216, 12252, 13680, 16476]
+: 68184
+
+So the Riemann 10-sum using the 9 am and 9pm measurements each day is
+$68184$ cubic meters.
+
+** Solution 2
+
+- Wire is 10 centimeter.
+- Density in $g/cm$ at point $x$ centimeters from one end of the wire
+  is given by the function $h(x)$
+- Suppose the density is measured at 1 centimeter intervals, these
+  are the readings:
+
+#+begin_src sage :exports both
+h = piecewise([
+([0,0], 2),
+((0,1), 2),
+([1, 1], 4),
+((1,2), 4),
+([2, 2], 3),
+((2,3), 3),
+([3, 3], 4),
+((3,4), 4),
+([4, 4], 4),
+((4,5), 4),
+([5, 5], 5),
+((5,6), 5),
+([6, 6], 4),
+((6,7), 4),
+([7, 7], 3),
+((7,8), 3),
+([8, 8], 3),
+((8,9), 3),
+([9, 9], 2),
+((9,10), 2),
+([10, 10], 1),
+((10, 11), 1)
+])
+#+end_src
+
+#+RESULTS:
+
+*** Solution a
+
+- We need to compute Riemann 5-sum using the midpoint of each
+  interval.
+- We know that there are 10 intervals:
+
+#+begin_src sage :exports both
+intervals = range(0, 10)
+intervals
+#+end_src
+
+#+RESULTS:
+: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+- Let's compute midpoint of each interval:
+
+#+begin_src sage :exports both
+  midpoints = []
+  for i in range(0, len(intervals), 2):
+    midpoints.append([intervals[i], intervals[i+1]])
+  midpoints
+
+  points = map(lambda x: (x[0] + x[1])/2, midpoints)
+  points
+#+end_src
+
+#+RESULTS:
+: [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9]]
+: [1/2, 5/2, 9/2, 13/2, 17/2]
+
+Now let's compute the Riemann 5-sum:
+
+#+begin_src sage :exports both
+  sum(map(lambda x: h(x)*1, points))   # 1 is the delta interval
+#+end_src
+
+#+RESULTS:
+: 16
+
+*** Solution b
+
+- We need to compute Riemann 10-sum
+- We need to use left endpoint of each as interval as the sample
+  point: So this will start from 0 but will not include 10 since it
+  won't be part of the left endpoint.
+
+#+begin_src sage :exports both
+intervals = range(0, 10)
+intervals
+#+end_src
+
+#+RESULTS:
+: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+Let's compute the Riemann 10-sum of the the function:
+
+#+begin_src sage :exports both
+sum(map(lambda x: h(x)*1, intervals))
+#+end_src
+
+#+RESULTS:
+: 34
+
+*** Solution c
+
+- We need to compute Riemann 10-sum
+- We need to use the right endpoint of each interval: So this will
+  start from 1 as the number 0 isn't part of right endpoint.
+
+#+begin_src sage :exports both
+intervals = range(1, 11)
+intervals
+#+end_src
+
+#+RESULTS:
+: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Let's compute the Riemann 10-sum of the the function:
+
+#+begin_src sage :exports both
+sum(map(lambda x: h(x)*1, intervals))
+#+end_src
+
+#+RESULTS:
+: 33
