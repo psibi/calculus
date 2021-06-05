@@ -444,3 +444,129 @@ See http://trac.sagemath.org/5930 for details.
 #+end_example
 
 So the Riemann 10-sum of the function is $1.09714$
+
+** Solution 6
+
+*** Solution a
+
+- We need to find a function $f$ such that it's graph is top half of
+  the circle $x^2 + y^2 = 1$
+- It should be easy to derive it from the equation of circle itself:
+
+Let's assume $y$ as $f$ in the equation of circle. So, the function
+$f$ is:
+
+#+begin_src sage :exports both
+x = var('x')
+f = sqrt(1-(x^2))
+f
+#+end_src
+
+#+RESULTS:
+: sqrt(-x^2 + 1)
+
+Infact, let's graph it and verify to see:
+
+#+begin_src sage :exports both :file ../docs/assets/c5s2s6a.png
+plot(f, -1, 1)
+#+end_src
+
+[[file:~/github/velleman-calculus/assets/c5s2s6a.png]]
+
+*** Solution b
+
+- Compute Riemann 10-sum for $f$ on the interval $[-1,1]$ to estimate
+  the area under the graph of $f$.
+- Use midpoint of each interval as the sample point.
+
+Let's compute the intervals:
+
+#+begin_src sage :exports both
+  intervals = [-1]
+  for i in range(10):
+    intervals.append(intervals[i] + 0.2)
+  intervals
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[-1,
+ -0.800000000000000,
+ -0.600000000000000,
+ -0.400000000000000,
+ -0.200000000000000,
+ -5.55111512312578e-17,
+ 0.200000000000000,
+ 0.400000000000000,
+ 0.600000000000000,
+ 0.800000000000000,
+ 1.00000000000000]
+#+end_example
+
+Now we need to calculate the midpoint of above interval:
+
+#+begin_src sage :exports both
+  midpoints = []
+  for i in range(0, len(intervals)-1):
+    midpoints.append([intervals[i], intervals[i+1]])
+  midpoints
+
+  points = map(lambda x: (x[0] + x[1])/2, midpoints)
+  points
+
+  sum(map(lambda x: f(x)*0.2, points))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[[-1, -0.800000000000000],
+ [-0.800000000000000, -0.600000000000000],
+ [-0.600000000000000, -0.400000000000000],
+ [-0.400000000000000, -0.200000000000000],
+ [-0.200000000000000, -5.55111512312578e-17],
+ [-5.55111512312578e-17, 0.200000000000000],
+ [0.200000000000000, 0.400000000000000],
+ [0.400000000000000, 0.600000000000000],
+ [0.600000000000000, 0.800000000000000],
+ [0.800000000000000, 1.00000000000000]]
+[-0.900000000000000,
+ -0.700000000000000,
+ -0.500000000000000,
+ -0.300000000000000,
+ -0.100000000000000,
+ 0.100000000000000,
+ 0.300000000000000,
+ 0.500000000000000,
+ 0.700000000000000,
+ 0.900000000000000]
+/usr/share/sagemath/bin/sage-ipython:10: DeprecationWarning: Substitution using function-call syntax and unnamed arguments is deprecated and will be removed from a future release of Sage; you can use named arguments instead, like EXPR(x=..., y=...)
+See http://trac.sagemath.org/5930 for details.
+  app.initialize()
+1.58599391180654
+#+end_example
+
+So the estimated area is $1.58599391180654$.
+
+*** Solution c
+
+- We know that the area of circle is $\pi * r^2$
+- In our case the radius is $1$, so the area is $\pi$.
+- But since we have half of the circle, the area is $\dfrac{\pi}{2}$
+
+Let's multiply our answer in (b) to get an estimate of $\pi$:
+
+#+begin_src sage :exports both
+1.58599391180654 * 2
+#+end_src
+
+#+RESULTS:
+: 3.17198782361308
+
+And the above result is close to $\pi$
+
+#+begin_src sage :exports both
+n(pi)
+#+end_src
+
+#+RESULTS:
+: 3.14159265358979
