@@ -5,7 +5,7 @@
 - Suppose we divide the intervals $[0,120]$ into /n/ smaller
   intervals, each of width $\Delta t = 120/n$. These smaller intervals
   will be $[0, \Delta t], [\Delta t, 2\Delta t], [\Delta t, 2\Delta
-  t], [2\Delta t, 3\Delta t],$ and so on.
+  t], [2\Delta t, 3\Delta t]$, and so on.
 - Let $t_0 = 0, t_1 = \Delta t, t_2 = 2\Delta t$ and in general, $t_i
   = i\Delta t$ for $0 \leq i \leq n$. Notice that $t_n = n\Delta t = n
   (120/n) = 120$
