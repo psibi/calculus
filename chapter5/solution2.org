@@ -287,3 +287,68 @@ sum(map(lambda x: g(x)*1, intervals))
 
 So, 84 KwH is the Riemann 12-sum of the function using the right
 endpoint of each interval.
+
+** Solution 4
+
+#+begin_src sage :exports both
+x = var('x')
+f = 6 - 2*x
+#+end_src
+
+#+RESULTS:
+
+*** Solution a
+
+#+begin_src sage :exports both :file ../docs/assets/c5s2a.png
+plot(f, 0, 3)
+#+end_src
+
+[[file:~/github/velleman-calculus/assets/c5s2a.png]]
+
+*** Solution b
+
+- Compute Riemann 6-sum for $[0,3]$
+- Use right endpoint of each interval as the sample point.
+- Since it's right endpoint, we can ignore 0 in the interval.
+
+#+begin_src sage :exports both
+  intervals = [0.5]
+  for i in range(5):
+    intervals.append(intervals[i] + 0.5)
+  intervals
+#+end_src
+
+#+RESULTS:
+: [0.500000000000000,
+:  1.00000000000000,
+:  1.50000000000000,
+:  2.00000000000000,
+:  2.50000000000000,
+:  3.00000000000000]
+
+Let's compute the Riemann 6-sum:
+
+#+begin_src sage :exports both
+sum(map(lambda x: f(x) * 0.5, intervals))
+#+end_src
+
+#+RESULTS:
+: /usr/share/sagemath/bin/sage-ipython:2: DeprecationWarning: Substitution using function-call syntax and unnamed arguments is deprecated and will be removed from a future release of Sage; you can use named arguments instead, like EXPR(x=..., y=...)
+: See http://trac.sagemath.org/5930 for details.
+:   # -*- coding: utf-8 -*-
+: 7.50000000000000
+
+So 7.5 is the Riemann 6-sum of the graph $f$.
+
+*** Solution c
+
+- Looking at the graph we can see that it's a right angled triangle.
+- So [[https://en.wikipedia.org/wiki/Right_triangle#Area][we can compute it's area]] easily using Sagemath:
+
+#+begin_src sage :exports both
+area = 6*3/2
+area
+#+end_src
+
+#+RESULTS:
+: 9
