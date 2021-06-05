@@ -303,7 +303,7 @@ f = 6 - 2*x
 plot(f, 0, 3)
 #+end_src
 
-[[file:~/github/velleman-calculus/assets/c5s2a.png]]
+[[file:../assets/c5s2a.png]]
 
 *** Solution b
 
@@ -370,7 +370,7 @@ f
 plot(f,1,3)
 #+end_src
 
-[[file:~/github/velleman-calculus/assets/c5s2s5a.png]]
+[[file:../assets/c5s2s5a.png]]
 
 *** Solution b
 
@@ -471,7 +471,7 @@ Infact, let's graph it and verify to see:
 plot(f, -1, 1)
 #+end_src
 
-[[file:~/github/velleman-calculus/assets/c5s2s6a.png]]
+[[file:../assets/c5s2s6a.png]]
 
 *** Solution b
 
@@ -570,3 +570,225 @@ n(pi)
 
 #+RESULTS:
 : 3.14159265358979
+
+** Solution 7
+
+- t: t minutes after noon
+- f(t): 5 + 2t
+- f(t): leaking rate of water from a water tank in gallons per minute.
+- We need to use Riemann 10-sum to estimate the amount of water leaked
+  from 20 minutes to noon.
+
+#+begin_src sage :exports both
+t = var('t')
+f = 5 + (2*t)
+f
+#+end_src
+
+#+RESULTS:
+: 2*t + 5
+
+
+Let's calculate Riemann 10-sum for the interval $[0,20]$ for the above
+function $f$
+
+#+begin_src sage :exports both
+intervals = range(0, 22, 2)
+intervals
+#+end_src
+
+#+RESULTS:
+: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+The time delta or the interval is $2$ minutes. Let's compute the
+Riemann 10-sum using the mid-point of each interval as the sample
+point:
+
+#+begin_src sage :exports both
+  midpoints = []
+  for i in range(0, len(intervals)-1):
+    midpoints.append([intervals[i], intervals[i+1]])
+  midpoints
+
+  points = map(lambda x: (x[0] + x[1])/2, midpoints)
+  points
+
+  sum(map(lambda x: f(x)*2, points))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[[0, 2],
+ [2, 4],
+ [4, 6],
+ [6, 8],
+ [8, 10],
+ [10, 12],
+ [12, 14],
+ [14, 16],
+ [16, 18],
+ [18, 20]]
+[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+/usr/share/sagemath/bin/sage-ipython:10: DeprecationWarning: Substitution using function-call syntax and unnamed arguments is deprecated and will be removed from a future release of Sage; you can use named arguments instead, like EXPR(x=..., y=...)
+See http://trac.sagemath.org/5930 for details.
+  app.initialize()
+500
+#+end_example
+
+Let's check if it's the left endpoint instead:
+
+#+begin_src sage :exports both
+intervals[:-1]
+sum(map(lambda x: f(x)*2, intervals[:-1]))
+#+end_src
+
+#+RESULTS:
+: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+: /usr/share/sagemath/bin/sage-ipython:3: DeprecationWarning: Substitution using function-call syntax and unnamed arguments is deprecated and will be removed from a future release of Sage; you can use named arguments instead, like EXPR(x=..., y=...)
+: See http://trac.sagemath.org/5930 for details.
+:   """
+: 460
+
+So using left endpoint we are getting different value.
+
+So 500 gallons of water has leaked out of the tank from nooon until 20
+minutes past noon if we using the mid-point as the sample point.
+
+** Solution 8
+
+- t: t hours past midnight
+- $6 \leq t \leq 18$
+- f(t): Total watts of electricity generated
+- $f(t) = 100\sin((t-6)*\dfrac{\pi}{12})$
+- We need to use Riemann 12-sum to estimate the amount of electrical
+  engergy generatd beteen 6 a.m and 6 p.m.
+- Total time span between 6 a.m and 6 p.m is 12 hours.
+- The time interval for Riemann 12-sum is one hour.
+
+#+begin_src sage :exports both
+x = var('x')
+f = 100 * sin((t-6)* (pi)/12)
+f
+#+end_src
+
+#+RESULTS:
+: 100*sin(-1/2*pi + 1/12*pi*t)
+
+Let's compute the intervals:
+
+#+begin_src sage :exports both
+intervals = range(0, 13)
+intervals
+#+end_src
+
+#+RESULTS:
+: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+Let's compute the Riemann 12-sum using the mid-point of each interval
+as the sample point:
+
+#+begin_src sage :exports both
+  midpoints = []
+  for i in range(0, len(intervals)-1):
+    midpoints.append([intervals[i], intervals[i+1]])
+  midpoints
+
+  points = map(lambda x: (x[0] + x[1])/2, midpoints)
+  points
+
+  power = map(lambda x: f(x)*1, points)
+  sum(power)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[[0, 1],
+ [1, 2],
+ [2, 3],
+ [3, 4],
+ [4, 5],
+ [5, 6],
+ [6, 7],
+ [7, 8],
+ [8, 9],
+ [9, 10],
+ [10, 11],
+ [11, 12]]
+[1/2, 3/2, 5/2, 7/2, 9/2, 11/2, 13/2, 15/2, 17/2, 19/2, 21/2, 23/2]
+/usr/share/sagemath/bin/sage-ipython:10: DeprecationWarning: Substitution using function-call syntax and unnamed arguments is deprecated and will be removed from a future release of Sage; you can use named arguments instead, like EXPR(x=..., y=...)
+See http://trac.sagemath.org/5930 for details.
+  app.initialize()
+0
+#+end_example
+
+So it doesn't seem to generated any electrical energy. I guess it
+seems to take the power from the electrical grid for some time and for
+some time it seem to generate it.
+
+** Solution 9
+
+- Velocity is measured once every 5 seconds for one minute.
+- Velocity unit is ft/sec
+- $v(t)$ is velocity of the car in t seconds after the beginning of
+  the test.
+- We need to use Riemann 12-sum to estimate the total distance
+  traveled by the car.
+
+Let's use piecewise function to formalize the veleocity observed:
+
+#+begin_src sage :exports both
+t = var('t')
+v = piecewise([
+([0,0], 0),
+((0,5), 0),
+([5, 5], 40),
+((5, 10), 40),
+([10, 10], 75),
+((10, 15), 75),
+([15, 15], 90),
+((15, 20), 90),
+([20, 20], 95),
+((20, 25), 95),
+([25, 25], 90),
+((25, 30), 90),
+([30, 30], 80),
+((30, 35), 80),
+([35, 35], 75),
+((35, 40), 75),
+([40, 40], 80),
+((40, 45), 80),
+([45, 45], 85),
+((45, 50), 85),
+([50, 50], 60),
+((50, 55), 60),
+([55, 55], 25),
+((55, 60), 25),
+([60, 60], 0),
+((60, 65), 0)
+])
+#+end_src
+
+- We need to compute distance. We know that velocity multiplied by the
+  seconds will give the distance.
+- The time delta for Riemann 12-sum is 5 seconds (60/12). Let's
+  compute the intervals:
+
+#+begin_src sage :exports both
+intervals = range(0, 65, 5)
+intervals
+#+end_src
+
+#+RESULTS:
+: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
+
+Now let's compute the Riemann 12-sum:
+
+#+begin_src sage :exports both
+sum(map(lambda x: v(x)*5, intervals))
+#+end_src
+
+#+RESULTS:
+: 3975
+
+So the total distance traveled by the car is $3975$ feet as estimated
+by the Riemann 12-sum.
