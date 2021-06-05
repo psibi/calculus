@@ -10,7 +10,7 @@
   = i\Delta t$ for $0 \leq i \leq n$. Notice that $t_n = n\Delta t = n
   (120/n) = 120$
 - The first interval is $[t_0, t_1]$, the second is $[t_1, t_2]$, and
-  for $1 \leq i \leq n$, the \i\th interval is $[t_{i-1}, t_i]$.
+  for $1 \leq i \leq n$, the i th interval is $[t_{i-1}, t_i]$.
 - To estimate the volume of water flowing into the lake in each of
   these time intervals, we will need a measurement of the flow area at
   some point in each interval. Thus, for $i \leq i \leq n$, we choose
