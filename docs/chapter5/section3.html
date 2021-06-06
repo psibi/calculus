@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Sitemap for project velleman-calculus</title>
+<title></title>
 <!-- 2021-06-06 Sun 13:04 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -189,6 +189,32 @@ $(function() {
     $('.bs-docs-sidebar').affix();
 });
 </script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -196,127 +222,127 @@ $(function() {
  |
  <a accesskey="H" href="https://psibi.in/"> HOME </a>
 </div><div id="content" class="container">
-<div class="row"><div class="col-md-3 col-md-push-9"></div><div class="col-md-9 col-md-pull-3"><h1 class="title">Sitemap for project velleman-calculus</h1>
-<ul class="org-ul">
-<li><a href="Apendix.html">Apendix</a>
-</li>
-<li><a href="index.html">index</a>
-</li>
-<li>chapter2
-<ul class="org-ul">
-<li><a href="chapter2/section2.html">section2</a>
-</li>
-<li><a href="chapter2/section4.html">section4</a>
-</li>
-<li><a href="chapter2/section5.html">section5</a>
-</li>
-<li><a href="chapter2/section6.html">section6</a>
-</li>
-<li><a href="chapter2/section7.html">section7</a>
-</li>
-<li><a href="chapter2/section8.html">section8</a>
-</li>
-<li><a href="chapter2/section9.html">section9</a>
-</li>
-<li><a href="chapter2/solution1.html">solution1</a>
-</li>
-<li><a href="chapter2/solution2.html">solution2</a>
-</li>
-<li><a href="chapter2/solution3.html">solution3</a>
-</li>
-<li><a href="chapter2/solution4.html">solution4</a>
-</li>
-<li><a href="chapter2/solution5.html">solution5</a>
-</li>
-<li><a href="chapter2/solution6.html">solution6</a>
-</li>
-<li><a href="chapter2/solution7.html">solution7</a>
-</li>
-<li><a href="chapter2/solution8.html">solution8</a>
-</li>
-<li><a href="chapter2/solution9.html">solution9</a>
-</li>
+<div class="row"><div class="col-md-3 col-md-push-9"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Definite Integrals</a>
+<ul class="nav">
+<li><a href="#sec-1-1">1.1. Definition 5.3.1</a></li>
+<li><a href="#sec-1-2">1.2. Theorem 5.3.2</a></li>
+<li><a href="#sec-1-3">1.3. Definition 5.3.3</a></li>
 </ul>
 </li>
-<li>chapter3
+</ul>
+</div>
+</nav>
+</div><div class="col-md-9 col-md-pull-3"><h1 class="title"></h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Definite Integrals</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Definition 5.3.1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Suppose that \(a < b\), \(f\) is a function that is defined on the closed
+interval \([a,b]\), and \(n\) is a positive integer. Let \(\Delta x =
+\dfrac{b-a}{n}\), and for \(0 \leq i \leq n\) let \(x_i = a + i\Delta
+x\). These numbers divide the interval \([a,b]\) into \(n\) smaller
+intervals \([x_0, x_1], [x_1, x_1], ..., [x_{n-1}, x_n]\), each of width
+\(\Delta x\). Also, suppose that for \(1 \leq i \leq n, x^{*}_i \in
+[x_{i-1}, x_i]\). Then the sum
+</p>
+
+<p>
+\(f(x^{*}_1)\Delta x + f(x^{*}_2)\Delta x + ... + f(x^{*}_n)\Delta x = \sum_{i=1}^nf(x^{*}_i)\Delta x\)
+</p>
+
+<p>
+is called a <b>Riemann sum</b> for \(f\) on the interval \([a,b]\). We may also
+call it a <b>Riemann n-sum</b> if weant to specify the number of terms in
+the sum.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Theorem 5.3.2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Suppose that \(a < b\) and \(f\) is a function that is continous on the
+closed interval \([a,b]\). Then every Riemann sum sequence for \(f\) on
+\([a,b]\) converges, and all such sequece converge to the same
+number. In other words, there is some number \(L\) such that if
+\((R_n)^{\infty}_{n=1}\) is any Riemann sum sequence for \(f\) on \([a,b]\),
+then \(\lim_{n \to \infty} R_n = L\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Definition 5.3.3</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Suppose that \(a < b\) and \(f\) is continous on \([a,b]\). Then the number
+\(L\) that is the limit of all Riemann sum sequences for \(f\) on \([a,b]\)
+is called the <b>definite integral</b> of \(f\) from \(a\) to \(b\), and it is
+denoted \(\int_a^b f(x) \mathrm{d} x\). In other words, for any Riemann
+sum sequence \((R_n)^{\infty}_{n=1}\),
+</p>
+
+<p>
+\(\int_a^b f(x) \mathrm{d} x = \lim_{n \to \infty} R_n\)
+</p>
+
 <ul class="org-ul">
-<li><a href="chapter3/section1.html">section1</a>
+<li>The number \(a\) is called the <b>lower limit of integration</b> (Not to be
+confused with the standard meaning of limit)
 </li>
-<li><a href="chapter3/section2.html">section2</a>
+<li>The number \(b\) is called the <b>upper limit of integration</b>
 </li>
-<li><a href="chapter3/section3.html">section3</a>
-</li>
-<li><a href="chapter3/section4.html">section4</a>
-</li>
-<li><a href="chapter3/section5.html">section5</a>
-</li>
-<li><a href="chapter3/solution1.html">solution1</a>
-</li>
-<li><a href="chapter3/solution2.html">solution2</a>
-</li>
-<li><a href="chapter3/solution3.html">solution3</a>
-</li>
-<li><a href="chapter3/solution4.html">solution4</a>
-</li>
-<li><a href="chapter3/solution5.html">solution5</a>
+<li>\(f(x)\) is called the <b>integrand</b>
 </li>
 </ul>
-</li>
-<li>chapter4
+
+<p>
+More informally, in the notation of Definition 5.3.1 we can say that
+for large \(n\),
+</p>
+
+<p>
+\(\int_a^b f(x) \mathrm{d} x \approx \sum_{i=1}^n f(x_i^{*})\Delta x\)
+</p>
+
 <ul class="org-ul">
-<li><a href="chapter4/section1.html">section1</a>
+<li>The symbol \(\int\) is called an <b>integral sign</b>. It is an elongated
+\(S\) which is intended to remind you that the expression on the right
+is a sum.
 </li>
-<li><a href="chapter4/section2.html">section2</a>
+<li>The expression \(f(x) \mathrm{d}x\) on the left is supposed to remind
+you of the formula \(f(x_i^{*})\Delta x\) that appears in the Riemann
+sum on the right.
 </li>
-<li><a href="chapter4/section3.html">section3</a>
+<li>The <b>\(\mathrm{d}x\)</b> at the end of the integral notation is to
+identify the independent variable. (They also play an imporant role
+in the method of integration by substitution)
 </li>
-<li><a href="chapter4/section4.html">section4</a>
-</li>
-<li><a href="chapter4/section5.html">section5</a>
-</li>
-<li><a href="chapter4/section6.html">section6</a>
-</li>
-<li><a href="chapter4/section7.html">section7</a>
-</li>
-<li><a href="chapter4/section8.html">section8</a>
-</li>
-<li><a href="chapter4/section9.html">section9</a>
-</li>
-<li><a href="chapter4/solution1.html">solution1</a>
-</li>
-<li><a href="chapter4/solution2.html">solution2</a>
-</li>
-<li><a href="chapter4/solution3.html">solution3</a>
-</li>
-<li><a href="chapter4/solution4.html">solution4</a>
-</li>
-<li><a href="chapter4/solution5.html">solution5</a>
-</li>
-<li><a href="chapter4/solution6.html">solution6</a>
-</li>
-<li><a href="chapter4/solution7.html">solution7</a>
-</li>
-<li><a href="chapter4/solution8.html">solution8</a>
-</li>
-<li><a href="chapter4/solution9.html">solution9</a>
-</li>
-</ul>
-</li>
-<li>chapter5
+<li>Geometrical interpretation:
 <ul class="org-ul">
-<li><a href="chapter5/section1.html">section1</a>
+<li>If \(f(x)\) is positive for all values of \(x\), then \(\int_a^b f(x)
+    \mathrm{d}x\) is equal to the area of the region under the graph of
+\(f\) for \(a \leq x \leq b\)
 </li>
-<li><a href="chapter5/section2.html">section2</a>
-</li>
-<li><a href="chapter5/section3.html">section3</a>
-</li>
-<li><a href="chapter5/solution1.html">solution1</a>
-</li>
-<li><a href="chapter5/solution2.html">solution2</a>
+<li>If \(f(x)\) is not always positive, then we divide the region
+between the graph of \(f\) and the \(x\) axis for \(a \leq x \leq b\)
+into two parts, the part above the x-axis and the part below. The
+value of \(\int_a^b f(x) \mathrm{d}x\) is equal to the area of the
+part above the x-axis minus the area of the part below.
 </li>
 </ul>
 </li>
 </ul>
+</div>
+</div>
+</div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
