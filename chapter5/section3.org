@@ -63,3 +63,55 @@ $\int_a^b f(x) \mathrm{d} x \approx \sum_{i=1}^n f(x_i^{*})\Delta x$
     into two parts, the part above the x-axis and the part below. The
     value of $\int_a^b f(x) \mathrm{d}x$ is equal to the area of the
     part above the x-axis minus the area of the part below.
+
+** Theorem 5.3.6
+
+Suppose that $a < b$, $f$ and $g$ are continous on $[a,b]$ and $c$ is
+any real number. Then:
+
+- $\int_a^b cf(x) \mathrm{d}x = c\int_a^b f(x) \mathrm{d}x$
+- $\int_a^b (f(x) + g(x)) \mathrm{d}x = \int_a^b f(x) \mathrm{d}x + \int_a^b g(x) \mathrm{d}x$
+- $\int_a^b (f(x) - g(x)) \mathrm{d}x = \int_a^b f(x) \mathrm{d}x - \int_a^b g(x) \mathrm{d}x$
+
+** Theorem 5.3.7
+
+Suppose that $a < b$ and $f$ is continous on $[a,b]$. Let $m$ be the
+minimum value of $f$ on $[a,b]$, and let $M$ be the maximum
+value. Then
+
+$m(b-a) \leq \int_a^b f(x) \mathrm{d}x \leq M(b-a)$
+
+** Corollary 5.3.8
+
+Suppose that $a < b$, $f$ and $g$ are continous on $[a,b]$, and for
+all $x \in [a,b], f(x) \leq g(x)$. Then $\int_a^b f(x) \mathrm{d}x
+\leq \int_a^b g(x) \mathrm{d}x$
+
+** Theorem 5.3.9
+
+Suppose that $a < b < c$, and $f$ is continous on $[a,c]$. Then
+
+$\int_a^b f(x) \mathrm{d}x + \int_b^c f(x) \mathrm{d}x = \int_a^c f(x) \mathrm{d}x$
+
+** Definition 5.3.10
+
+For $a \geq b$, we defined $\int_a^b f(x) \mathrm{d}x$ as follows:
+
+- If $a = b$ then $\int_a^b f(x) \mathrm{d}x = 0$
+- If $a > b$ then $\int_a^b f(x) \mathrm{d}x = - \int_b^a f(x) \mathrm{d}x$
+
+** Theorem 5.3.9, Extended
+
+Suppose $f$ is continous on an interval $I$, and $a,b,$ and $c$ are
+numbers in I. Then
+
+$\int_a^b f(x) \mathrm{d}x + \int_b^c f(x) \mathrm{d}x = \int_a^c f(x) \mathrm{d}x$
+
+** Theorem 5.3.6, Extended
+
+Suppose that $f$ and $g$ are continous on an interval $I$, $a$ and $b$
+are numbers in $I$, and $c$ is any number. Then:
+
+- $\int_a^b cf(x) \mathrm{d}x = c\int_a^b f(x) \mathrm{d}x$
+- $\int_a^b (f(x) + g(x)) \mathrm{d}x = \int_a^b f(x) \mathrm{d}x + \int_a^b g(x) \mathrm{d}x$
+- $\int_a^b (f(x) - g(x)) \mathrm{d}x = \int_a^b f(x) \mathrm{d}x - \int_a^b g(x) \mathrm{d}x$
