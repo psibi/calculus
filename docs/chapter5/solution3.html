@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-06-25 Fri 20:47 -->
+<!-- 2021-06-25 Fri 22:02 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -228,6 +228,7 @@ MathJax.Hub.Config({
 <li><a href="#sec-1">1. Definite Integrals</a>
 <ul class="nav">
 <li><a href="#sec-1-1">1.1. Solution 1</a></li>
+<li><a href="#sec-1-2">1.2. Solution 2</a></li>
 </ul>
 </li>
 </ul>
@@ -255,7 +256,7 @@ quantities mentioned in Definition 5.3.1. We have \(f(x) = 2x + 1, a =
 </p>
 
 <p>
-Next, the points that divied the interval \([0,3]\) into \(n\) smaller
+Next, the points that divided the interval \([0,3]\) into \(n\) smaller
 intervals are given by the formula
 </p>
 
@@ -318,11 +319,96 @@ Now we know that \(R_n = \dfrac{9}{n} + 12\)
 </p>
 </div>
 </div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Solution 2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+\(\int_1^3 (2x+1) \mathrm{d}x\)
+</p>
+
+<p>
+Suppose \(n\) is a positive integer. We begin by computing all of he
+quantities mentioned in Definition 5.3.1. We have \(f(x) = 2x + 1, a =
+1, b = 3\), so \(\Delta x = \dfrac{(b-a)}{n}\)
+</p>
+
+<p>
+\(= \dfrac{3-1}{n} = \dfrac{2}{n}\)
+</p>
+
+<p>
+Next, the points that divided the interval \([1,3]\) into \(n\) smaller
+intervals are given by the formula
+</p>
+
+<p>
+\(x_i = a + i \Delta x = 1 + i \dfrac{2}{n} = 1 + \dfrac{2i}{n}\)
+</p>
+
+<p>
+Finally, we must choose the sample points \(x^{*}_i \in [x_{i-1},
+x_i]\). According to theorem 5.3.2, it doesn't matter what choice we
+make; all choices will lead to the same value when we take the limit
+of the Riemann \(n-\) sum as \(n \to \infty\).
+</p>
+
+<p>
+Let \(x_i^{*} = x_i = 1 + \dfrac{2i}{n}\)
+</p>
+
+<p>
+We can now work out a formula for the Riemann sum:
+</p>
+
+<p>
+\(R_n = \sum_{i=1}^n f(x_i^{*})\Delta x = \sum_{i=1}^n f(1 + \dfrac{2i}{n}) * \dfrac{2}{n}\)
+</p>
+
+<p>
+\(= \sum_{i=1}^n ( 2 + \dfrac{4i}{n} + 1)* \dfrac{2}{n}\)
+</p>
+
+<p>
+Let's compute the result via SageMath:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;i n&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">i</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="n">soln</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">soln</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+4/n + 10
+</pre>
+
+
+<p>
+Now we know that \(R_n = \dfrac{4}{n} + 10\)
+</p>
+
+<p>
+\(\int_0^3 (2x+1) \mathrm{d}x = \lim_{n \to \infty} R_n = \lim_{n \to \infty} \dfrac{4}{n} + 10 = 10\)
+</p>
+
+<p>
+We can also verify the above result using sagemath:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+10
+</pre>
+</div>
+</div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-06-25 Fri 20:47</p>
+<p class="date">Created: 2021-06-25 Fri 22:02</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="http://orgmode.org">Org-mode</a> 9.4.4)</p>
 </div>
 </footer>
