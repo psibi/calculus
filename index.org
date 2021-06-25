@@ -66,6 +66,7 @@ contributions are welcome!
 - [[file:chapter5/section2.org][Accumulation and Area]]
   - [[file:chapter5/solution2.org][Solutions]]
 - [[file:chapter5/section3.org][Definite Integrals]]
+  - [[file:chapter5/solution3.org][Solutions]]
 
 * Extras
 
