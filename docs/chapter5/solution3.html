@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-06-25 Fri 20:41 -->
+<!-- 2021-06-25 Fri 20:47 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -290,14 +290,19 @@ We can now work out a formula for the Riemann sum:
 Let's compute the result via SageMath:
 </p>
 
-/run/current-system/sw/bin/bash: pygmentize: command not found
+<div class="sage"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;i n&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">/</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="n">soln</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">soln</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">()</span>
+</pre></div>
 
 <pre class="example">
 3*(4*n + 3)/n
 </pre>
 
 
-/run/current-system/sw/bin/bash: pygmentize: command not found
+<div class="sage"><pre><span></span><span class="n">soln</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+</pre></div>
 
 <pre class="example">
 9/n + 12
@@ -317,7 +322,7 @@ Now we know that \(R_n = \dfrac{9}{n} + 12\)
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-06-25 Fri 20:41</p>
+<p class="date">Created: 2021-06-25 Fri 20:47</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="http://orgmode.org">Org-mode</a> 9.4.4)</p>
 </div>
 </footer>
