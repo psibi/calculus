@@ -13,7 +13,7 @@ $\Delta x$. Also, suppose that for $1 \leq i \leq n, x^{*}_i \in
 $f(x^{*}_1)\Delta x + f(x^{*}_2)\Delta x + ... + f(x^{*}_n)\Delta x = \sum_{i=1}^nf(x^{*}_i)\Delta x$
 
 is called a *Riemann sum* for $f$ on the interval $[a,b]$. We may also
-call it a *Riemann n-sum* if weant to specify the number of terms in
+call it a *Riemann n-sum* if we want to specify the number of terms in
 the sum.
 
 ** Theorem 5.3.2
@@ -102,7 +102,7 @@ For $a \geq b$, we defined $\int_a^b f(x) \mathrm{d}x$ as follows:
 
 ** Theorem 5.3.9, Extended
 
-Suppose $f$ is continous on an interval $I$, and $a,b,$ and $c$ are
+Suppose $f$ is continous on an interval $I$, and $a,b$, and $c$ are
 numbers in I. Then
 
 $\int_a^b f(x) \mathrm{d}x + \int_b^c f(x) \mathrm{d}x = \int_a^c f(x) \mathrm{d}x$
