@@ -297,3 +297,50 @@ integrate(x^3, x, 1, 4)
 
 #+RESULTS:
 : 255/4
+
+** Solution 7
+
+$\int_0^6 (2 - \dfrac{x}{2}) \mathrm{d}x$
+
+Suppose $n$ is a positive integer. We begin by computing all of the
+quantities mentioned in Definition 5.3.1. We have $f(x) = 2 - \dfrac{x}{2}, a =
+0, b = 6$, so $\Delta x = \dfrac{(b-a)}{n}$
+
+$= \dfrac{6-0}{n} = \dfrac{6}{n}$
+
+Next, the points that divided the interval $[0,6]$ into $n$ smaller
+intervals are given by the formula
+
+$x_i = a + i \Delta x = 0 + i \dfrac{6}{n} = \dfrac{6i}{n}$
+
+But we are asked to choose a different $x_i$
+
+$x_i = x_{i-1} = \dfrac{6(i-1)}{n}$
+
+According to theorem 5.3.2, it doesn't matter what choice we make for
+$x_i$; all choices will lead to the same value when we take the limit
+of the Riemann $n$ sum as $n \to \infty$.
+
+Let $x_i^{*} = x_i = \dfrac{6(i-1)}{n}$
+
+We can now work out a formula for the Riemann sum:
+
+$R_n = \sum_{i=1}^n f(x_i^{*})\Delta x = \sum_{i=1}^n f(\dfrac{6(i-1)}{n}) * \dfrac{6}{n}$
+
+$= \sum_{i=1}^n ( 2 - \dfrac{3(i-1)}{n} )* \dfrac{6}{n} $
+
+Let's compute the result via SageMath:
+
+#+begin_src sage :session nix
+i,n = var('i n')
+f = (2 - ((3*(i-1))/n)) * (6/n)
+soln = sum(f, i, 1, n)
+soln.expand()
+#+end_src
+
+#+RESULTS:
+: 9/n + 3
+
+Now we know that $R_n = \dfrac{9}{n} + 3$
+
+$\int_0^6 (2 - \dfrac{x}{2}) \mathrm{d}x = \lim_{n \to \infty} R_n = \lim_{n \to \infty} \dfrac{9}{n} + 3 = 3$
