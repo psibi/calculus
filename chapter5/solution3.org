@@ -411,3 +411,35 @@ $\int_a^b f(x) \mathrm{d}x \geq M(b-a)$
 $M(b-a) \leq \int_a^b f(x) \mathrm{d}x$
 
 Similar reasoning establishes the other inequality in the theorem.
+
+** Solution 10
+
+I will just prove the first part of the theorem.
+
+$\int_a^b c f(x) \mathrm{d}x = c \int_a^b f(x) \mathrm{d}x$
+
+We already know from Theorem 5.3.6, that the above is true when $a <
+b$. So, all we have to do is prove for $b > a$.
+
+Suppose $b > a$
+
+For any positive integer $n$, as usual we let $\Delta x =
+\dfrac{b-a}{n}$ and $x_i = a + i\Delta x$ and we choose sample points
+$x_i^{*} \in [x_{i-1}, x_i]$. Using these sample points, we get the
+following Riemann summ for $f$ on $[a,b]$:
+
+$R_n = \sum_{i=1}^n f(x_i^{*}) \Delta x$
+
+We can also use these sample points to compute a Riemann sum for $f$:
+
+$\sum_{i=1}^n f(x_i^{*}) \Delta x = R_n$
+
+From the definition of definite integrals,
+
+$\int_a^b f(x) \mathrm{d}x = \lim_{n \to \infty} R_n$
+
+$c \int_a^b f(x) \mathrm{d}x = c\lim_{n \to \infty} R_n$
+
+$c \int_a^b f(x) \mathrm{d}x = \lim_{n \to \infty} c R_n$
+
+$c \int_a^b f(x) \mathrm{d}x = \int_a^b c f(x) \mathrm{d}x$
