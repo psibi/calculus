@@ -377,3 +377,37 @@ $c \int_a^b f(x) \mathrm{d}x = c(b-a)$
 $\int_a^b cf(x) \mathrm{d}x = c(b-a)$
 
 $\int_a^b c \mathrm{d}x = c(b-a)$
+
+** Solution 9
+
+Suppose $a>b$ and $f$ is continous on $[b,a]$ and let $m$ and $M$ be
+the minimum and maximum values of $f$ on $[b,a]$.
+
+We need to prove that $M(b-a) \leq \int_a^b f(x) \mathrm{d}x \leq m(b-a)$
+
+For any positive integer $n$, let
+
+$R_n = \sum_{i=1}^n f(x_i^{*}) \Delta x$
+
+be a Riemann $n$ sum for $f$ where all notation is as in Definition
+5.3.1. Since $M$ is the maximum value of $f$ on $[b,a]$, for every $i$
+we have $f(x_i^{*}) \leq M$, and therefore
+
+$R_n = \sum_{i=1}^n f(x_i^{*}) \Delta x \leq \sum_{i=1}^n M\delta x = M \delta x .n = M\dfrac{a-b}{n} = M(a-b)$
+
+Taking the limit as $n \to \infty$ (and applying the preservation of
+weak inequalities by limits), we conclude that
+
+$\int_b^a f(x) \mathrm{d}x = \lim_{n \to \infty} R_n \leq M(a-b)$
+
+$\int_b^a f(x) \mathrm{d}x \leq M(a-b)$
+
+From Definition 5.3.10,
+
+$- \int_a^b f(x) \mathrm{d}x \leq M(a-b)$
+
+$\int_a^b f(x) \mathrm{d}x \geq M(b-a)$
+
+$M(b-a) \leq \int_a^b f(x) \mathrm{d}x$
+
+Similar reasoning establishes the other inequality in the theorem.
