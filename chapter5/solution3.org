@@ -344,3 +344,36 @@ soln.expand()
 Now we know that $R_n = \dfrac{9}{n} + 3$
 
 $\int_0^6 (2 - \dfrac{x}{2}) \mathrm{d}x = \lim_{n \to \infty} R_n = \lim_{n \to \infty} \dfrac{9}{n} + 3 = 3$
+
+** Solution 8
+
+$\forall a,b,c \in R$
+
+Suppose $a < b$
+
+We have $\int_a^b c \mathrm{d}x$
+
+Since $c$ is a constant, we know that $f(x) = 1$ which is a constant function. So,
+
+$\int_a^b c f(x) \mathrm{d}x$
+
+From theorem 5.3.6,
+
+$c \int_a^b f(x) \mathrm{d}x$
+
+Since the function is constant, we know that it's minimum and maximum
+value are the same. So, From theorem 5.3.7,
+
+$m(b-a) = \int_a^b f(x) \mathrm{d}x = M(b-a)$
+
+Since $m = M = 1$,
+
+$(b-a) = \int_a^b f(x) \mathrm{d}x = (b-a)$
+
+Multiplying $c$ with it,
+
+$c \int_a^b f(x) \mathrm{d}x = c(b-a)$
+
+$\int_a^b cf(x) \mathrm{d}x = c(b-a)$
+
+$\int_a^b c \mathrm{d}x = c(b-a)$
