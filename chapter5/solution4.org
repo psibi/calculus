@@ -110,3 +110,62 @@ g(4) - g(0)
 #+RESULTS:
 : 2/3*x^(3/2)
 : 16/3
+
+** Solution 6
+
+$\int_{-1}^8 \sqrt[3]{x} \mathrm{d}x$
+
+We need an antiderivative of $\sqrt[3]{x}$.
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+f = x^(1/3)
+g = indefinite_integral(f, x)
+g
+#+end_src
+
+#+RESULTS:
+: 3/4*x^(4/3)
+
+One antiderivative for this is $3/4*x^(4/3)$. This is an
+antiderivative on the interval $(-\infty, \infty)$
+
+From theorem 5.4.3,
+
+$\int_{-1}^8 \sqrt[3]{x} \mathrm{d}x = 3/4*x^(4/3) |_{-1}^8$
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+g
+g(8) - g(-1)
+#+end_src
+
+#+RESULTS:
+: 3/4*x^(4/3)
+: 3/4*(-1)^(1/3) + 12
+
+** Solution 7
+
+$\int_0^{2\pi} (1 + \sin x) \mathrm{d}x$
+
+We need an antiderivative of $\int_0^{2\pi} (1 + \sin x) \mathrm{d}x$
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+f = (1 + sin(x))
+g = indefinite_integral(f, x)
+g
+#+end_src
+
+#+RESULTS:
+: x - cos(x)
+
+From theorem 5.4.3,
+
+$\int_0^{2\pi} (1 + \sin x) \mathrm{d}x = x - cos(x) |_0^{2\pi}$
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+g
+g(2*pi) - g(0)
+#+end_src
+
+#+RESULTS:
+: x - cos(x)
+: 2*pi
