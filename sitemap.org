@@ -53,6 +53,7 @@
   - [[file:chapter5/section1.org][section1]]
   - [[file:chapter5/section2.org][section2]]
   - [[file:chapter5/section3.org][section3]]
+  - [[file:chapter5/section4.org][section4]]
   - [[file:chapter5/solution1.org][solution1]]
   - [[file:chapter5/solution2.org][solution2]]
   - [[file:chapter5/solution3.org][solution3]]
