@@ -1,0 +1,16 @@
+* The fundamental theorems of Calculus
+
+** Solution 1
+
+$\int_1^3 (2x + 1) \mathrm{d}x$
+
+We need an antideriatie of $2x + 1$.
+
+One antiderivative for this is $x^2 + x$. This is an antiderivative on
+the interval $(-\infty, \infty)$.
+
+From theorem 5.4.3,
+
+$\int_1^3 (2x + 1) \mathrm{d}x = x^2 + x |_1^3 = 3^2 + 3 - (1 + 1)$
+
+$= 10$

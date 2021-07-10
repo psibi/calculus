@@ -20,4 +20,4 @@ Suppose $f$ is a function that is continous on an interval $I$ and $f$
 is an antiderivative of $f$ on $I$. Then for any numbers $a$ and $b$
 in $I$,
 
-$\int_a^b f(x) mathrm{d}x = F(b) - F(a)$
+$\int_a^b f(x) \mathrm{d}x = F(b) - F(a)$
