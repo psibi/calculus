@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2021-07-10 Sat 22:58 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Sibi Prabakaran">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script>
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="https://psibi.in/velleman-calculus/"> UP </a>
+ |
+ <a accesskey="H" href="https://psibi.in/"> HOME </a>
+</div><div id="content" class="container">
+<div class="row"><div class="col-md-3 col-md-push-9"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. The fundamental theorems of Calculus</a>
+<ul class="nav">
+<li><a href="#sec-1-1">1.1. Solution 1</a></li>
+<li><a href="#sec-1-2">1.2. Solution 2</a></li>
+<li><a href="#sec-1-3">1.3. Solution 3</a></li>
+<li><a href="#sec-1-4">1.4. Solution 4</a></li>
+<li><a href="#sec-1-5">1.5. Solution 5</a></li>
+<li><a href="#sec-1-6">1.6. Solution 6</a></li>
+<li><a href="#sec-1-7">1.7. Solution 7</a></li>
+<li><a href="#sec-1-8">1.8. Solution 8</a></li>
+<li><a href="#sec-1-9">1.9. Solution 9</a></li>
+<li><a href="#sec-1-10">1.10. Solution 10</a></li>
+<li><a href="#sec-1-11">1.11. Solution 11</a></li>
+<li><a href="#sec-1-12">1.12. Solution 12</a></li>
+<li><a href="#sec-1-13">1.13. Solution 13</a></li>
+<li><a href="#sec-1-14">1.14. Solution 14</a></li>
+<li><a href="#sec-1-15">1.15. Solution 15</a></li>
+<li><a href="#sec-1-16">1.16. Solution 16</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div><div class="col-md-9 col-md-pull-3"><h1 class="title"></h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> The fundamental theorems of Calculus</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Solution 1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+\(\int_1^3 (2x + 1) \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \(2x + 1\).
+</p>
+
+<p>
+One antiderivative for this is \(x^2 + x\). This is an antiderivative on
+the interval \((-\infty, \infty)\).
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_1^3 (2x + 1) \mathrm{d}x = x^2 + x |_1^3 = 3^2 + 3 - (1 + 1)\)
+</p>
+
+<p>
+\(= 10\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Solution 2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+\(\int_1^4 x^3 \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \(x^3\).
+</p>
+
+<p>
+One antiderivative for this is \(\dfrac{x^4}{4}\). This is an antiderivative on
+the interval \((-\infty, \infty)\).
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_1^4 x^3 \mathrm{d}x = \dfrac{x^4}{4} |_1^4 = 4^3 - 1 = 63\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Solution 3</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+\(\int_{-1}^2 2x^3 - 3x^2 + 4x - 5 \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \(2x^3 - 3x^2 + 4x - 5\).
+</p>
+
+<p>
+One antiderivative for this is \(\dfrac{x^4}{2} - x^3 + 2x^2 -
+5x\). This is an antiderivative on the interval \((-\infty, \infty)\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_{-1}^2 2x^3 - 3x^2 + 4x - 5 \mathrm{d}x = \dfrac{x^4}{2} - x^3 +
+2x^2 - 5x |_{-1}^2\)
+</p>
+
+<p>
+Let's compute the remaining solution using sagemath:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+-21/2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Solution 4</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+\(\int_0^1 x^{100} \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \(x^100\)
+</p>
+
+<p>
+One antiderivative for this is \(\dfrac{x^{101}}{101}\). This is an
+antiderivative on the interval \((-\infty, \infty)\).
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_0^1 x^{100} \mathrm{d}x = \dfrac{x^{101}}{101} |_0^1\)
+</p>
+
+<p>
+Let's compute the remaining solution using sagemath:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span><span class="o">/</span><span class="mi">101</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+1/101
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Solution 5</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+\(\int_0^4 \sqrt{x} \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \(\sqrt{x}\).
+</p>
+
+<div class="sage"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f</span>
+<span class="kn">from</span> <span class="nn">sage.symbolic.integration.integral</span> <span class="kn">import</span> <span class="n">indefinite_integral</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">indefinite_integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+<pre class="example">
+sqrt(x)
+2/3*x^(3/2)
+</pre>
+
+
+<p>
+One antiderivative for this is \(\dfrac{2x^{3/2}}{3}\). This is an
+antiderivative on the interval \((-\infty, \infty)\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_0^4 \sqrt{x} \mathrm{d}x = \dfrac{2x^{3/2}}{3} |_0^4\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">g</span>
+<span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+2/3*x^(3/2)
+16/3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Solution 6</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+\(\int_{-1}^8 \sqrt[3]{x} \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \(\sqrt[3]{x}\).
+</p>
+
+<div class="sage"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">indefinite_integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+<pre class="example">
+3/4*x^(4/3)
+</pre>
+
+
+<p>
+One antiderivative for this is \(3/4*x^(4/3)\). This is an
+antiderivative on the interval \((-\infty, \infty)\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_{-1}^8 \sqrt[3]{x} \mathrm{d}x = 3/4*x^(4/3) |_{-1}^8\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">g</span>
+<span class="n">g</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+3/4*x^(4/3)
+3/4*(-1)^(1/3) + 12
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Solution 7</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+\(\int_0^{2\pi} (1 + \sin x) \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \((1 + \sin x)\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">indefinite_integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+<pre class="example">
+x - cos(x)
+</pre>
+
+
+<p>
+One antiderivative for this is \(x - \cos x\). This is an
+antiderivative on the interval \((-\infty, \infty)\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_0^{2\pi} (1 + \sin x) \mathrm{d}x = x - cos(x) |_0^{2\pi}\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">g</span>
+<span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+x - cos(x)
+2*pi
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Solution 8</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+\(\int_1^4 \dfrac{x^3 + 3}{x^2} \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \(\dfrac{x^3 + 3}{x^2}\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">indefinite_integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+<pre class="example">
+1/2*x^2 - 3/x
+</pre>
+
+
+<p>
+One antiderivative for this is \(1/2*x^2 - 3/x\). This is an
+antiderivative on the interval \((-\infty, 0) \cup (0, \infty)\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_1^4 \dfrac{x^3 + 3}{x^2} \mathrm{d}x = 1/2*x^2 - 3/x |_1^4\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">g</span>
+<span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+1/2*x^2 - 3/x
+39/4
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3">
+<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Solution 9</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+\(\int_1^4 (\sqrt(x) + 1)^2 \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \((\sqrt(x) + 1)^2\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">indefinite_integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+<pre class="example">
+1/2*x^2 + 4/3*x^(3/2) + x
+</pre>
+
+
+<p>
+One antiderivative for this is \(1/2*x^2 + 4/3*x^(3/2) + x\). This is an
+antiderivative on the interval \([0, \infty)\).
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_1^4 (\sqrt(x) + 1)^2 \mathrm{d}x = 1/2*x^2 + 4/3*x^(3/2) + x |_1^4\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">g</span>
+<span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+1/2*x^2 + 4/3*x^(3/2) + x
+119/6
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Solution 10</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+\(\int_1^4 \dfrac{(\sqrt{x} + 1)^2}{\sqrt{x}} \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \(\dfrac{(\sqrt{x} + 1)^2}{\sqrt{x}}\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">indefinite_integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+<pre class="example">
+2/3*(sqrt(x) + 1)^3
+</pre>
+
+
+<p>
+One antiderivative for this is \(1/2*x^2 + 4/3*x^(3/2) + x\). This is an
+antiderivative on the interval \((0, \infty)\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_1^4 \dfrac{(\sqrt{x} + 1)^2}{\sqrt{x}} \mathrm{d}x = 2/3*(sqrt(x) + 1)^3 |_1^4\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">g</span>
+<span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+2/3*(sqrt(x) + 1)^3
+38/3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Solution 11</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+\(\int_0^2 x^2(x+1)^3 \mathrm{d}x\)
+</p>
+
+<p>
+We need an antiderivative of \(x^2(x+1)^3\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">indefinite_integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+<pre class="example">
+1/6*x^6 + 3/5*x^5 + 3/4*x^4 + 1/3*x^3
+</pre>
+
+
+<p>
+One antiderivative for this is \(1/6*x^6 + 3/5*x^5 + 3/4*x^4 +
+1/3*x^3\). This is an antiderivative on the interval \((-\infty,
+\infty)\).
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_0^2 x^2(x+1)^3 \mathrm{d}x = 1/6*x^6 + 3/5*x^5 + 3/4*x^4 + 1/3*x^3 |_0^2\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+668/15
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> Solution 12</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+\(\int_{\pi/6}^{\pi/3} \csc x \cot x \mathrm{d}x\)
+</p>
+
+<p>
+We know that \(\csc x = \dfrac{1}{\sin x}\) and \(\cot x = \dfrac{\cos x}{\sin x}\)
+</p>
+
+<p>
+So the function is not defined when \(x = 0\) and \(x = 2\pi\).
+</p>
+
+<div class="sage"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">csc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">cot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">indefinite_integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+<pre class="example">
+-1/sin(x)
+</pre>
+
+
+<p>
+One antiderivative for this is \(-\dfrac{1}{\sin x}\). This is an
+antiderivative on interval \((0, 2*\pi)\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_{\pi/6}^{\pi/3} \csc x \cot x \mathrm{d}x = \dfrac{-1}{\sin x} |_{\pi/6}^{\pi/3}\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">g</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+-2/3*sqrt(3) + 2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> Solution 13</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+\(\int_1^2 t^3 - 4t \mathrm{d}t\)
+</p>
+
+<p>
+Suppose \(n\) is a positive integer. We begin by computing all of the
+quantities mentioned in Definition 5.3.1. We have \(f(x) = x^3 - 4x, a =
+1, b = 2\), so \(\Delta x = \dfrac{(b-a)}{n}\)
+</p>
+
+<p>
+\(= \dfrac{2-1}{n} = \dfrac{1}{n}\)
+</p>
+
+<p>
+Next, the points that divided the interval \([1,3]\) into \(n\) smaller
+intervals are given by the formula
+</p>
+
+<p>
+\(x_i = a + i \Delta x = 1 + i \dfrac{1}{n} = 1 + \dfrac{i}{n}\)
+</p>
+
+<p>
+Finally, we must choose the sample points \(x^{*}_i \in [x_{i-1},
+x_i]\). According to theorem 5.3.2, it doesn't matter what choice we
+make; all choices will lead to the same value when we take the limit
+of the Riemann \(n\) sum as \(n \to \infty\).
+</p>
+
+<p>
+Let \(x_i^{*} = x_i = 1 + \dfrac{i}{n}\)
+</p>
+
+<p>
+We can now work out a formula for the Riemann sum:
+</p>
+
+<p>
+\(R_n = \sum_{i=1}^n f(x_i^{*})\Delta x = \sum_{i=1}^n f(1 + \dfrac{i}{n}) * \dfrac{1}{n}\)
+</p>
+
+<p>
+\(= \sum_{i=1}^n ((1 + \dfrac{i}{n})^3 - 4 - \dfrac{4i}{n})*\dfrac{1}{n}\)
+</p>
+
+<p>
+Let's compute the result using sagemath:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;i n&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">i</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">i</span><span class="o">/</span><span class="n">n</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="n">soln</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">soln</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+3/2/n + 3/4/n^2 - 9/4
+</pre>
+
+
+<p>
+Now we know that \(R_n = 3/2/n + 3/4/n^2 - 9/4\)
+</p>
+
+<p>
+\(\int_1^3 t^3 - 4t \mathrm{d}t = \lim_{n \to \infty} R_n = \dfrac{-9}{4}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 14</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+\(\int_0^{\pi/2} \cos x \mathrm{d}x\)
+</p>
+
+<p>
+Suppose \(n\) is a positive integer. We begin by computing all of the
+quantities mentioned in Definition 5.3.1. We have \(f(x) = \cos x, a =
+0, b = \dfrac{\pi}{2}\), so \(\Delta x = \dfrac{(b-a)}{n}\)
+</p>
+
+<p>
+\(= \dfrac{\pi/2}{n}\)
+</p>
+
+<p>
+Next, the points that divided the interval \([0,\dfrac{\pi}{2}]\) into \(n\) smaller
+intervals are given by the formula
+</p>
+
+<p>
+\(x_i = a + i \Delta x = 0 + i \dfrac{\pi}{2n} = \dfrac{i\pi}{2n}\)
+</p>
+
+<p>
+Finally, we must choose the sample points \(x^{*}_i \in [x_{i-1},
+x_i]\). According to theorem 5.3.2, it doesn't matter what choice we
+make; all choices will lead to the same value when we take the limit
+of the Riemann \(n\) sum as \(n \to \infty\).
+</p>
+
+<p>
+Let \(x_i^{*} = x_i = \dfrac{i\pi}{2n}\)
+</p>
+
+<p>
+We can now work out a formula for the Riemann sum:
+</p>
+
+<p>
+\(R_n = \sum_{i=1}^n f(x_i^{*})\Delta x = \sum_{i=1}^n f(\dfrac{i\pi}{2n}) * \dfrac{\pi}{2n}\)
+</p>
+
+<p>
+\(= \sum_{i=1}^n \cos (\dfrac{i\pi}{2n}) * \dfrac{\pi}{2n}\)
+</p>
+
+<p>
+Let's compute the result using sagemath:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;i n&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">pi</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">))</span>
+<span class="n">soln</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">soln</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+</pre></div>
+
+<pre class="example">
+-1/4*pi*cos(n*arctan2(sin(1/2*pi/n), cos(1/2*pi/n)) + arctan2(sin(1/2*pi/n), cos(1/2*pi/n)))*cos(1/2*pi/n)/(n*(cos(1/2*pi/n) - 1)) - 1/4*pi*sin(n*arctan2(sin(1/2*pi/n), cos(1/2*pi/n)) + arctan2(sin(1/2*pi/n), cos(1/2*pi/n)))*sin(1/2*pi/n)/(n*(cos(1/2*pi/n) - 1)) + 1/4*pi*cos(n*arctan2(sin(1/2*pi/n), cos(1/2*pi/n)) + arctan2(sin(1/2*pi/n), cos(1/2*pi/n)))/(n*(cos(1/2*pi/n) - 1)) - 1/4*pi*cos(1/2*pi/n)/(n*(cos(1/2*pi/n) - 1)) + 1/4*pi/(n*(cos(1/2*pi/n) - 1))
+</pre>
+
+
+<div class="sage"><pre><span></span><span class="n">limit</span><span class="p">(</span><span class="n">soln</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">infinity</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+1
+</pre>
+
+
+<p>
+\(\int_0^{\pi/2} \cos x \mathrm{d}x = 1\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Solution 15</h3>
+<div class="outline-text-3" id="text-1-15">
+<p>
+todo
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-16" class="outline-3">
+<h3 id="sec-1-16"><span class="section-number-3">1.16</span> Solution 16</h3>
+<div class="outline-text-3" id="text-1-16">
+<p>
+\(f(x) = \int_0^x \dfrac{1}{t^3 + 1} \mathrm{d}t\)
+</p>
+</div>
+</div>
+</div>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Sibi Prabakaran</p>
+<p class="date">Created: 2021-07-10 Sat 22:58</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="http://orgmode.org">Org-mode</a> 9.4.4)</p>
+</div>
+</footer>
+</body>
+</html>

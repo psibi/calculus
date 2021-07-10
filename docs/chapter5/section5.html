@@ -225,11 +225,12 @@ MathJax.Hub.Config({
 <div class="row"><div class="col-md-3 col-md-push-9"><nav id="table-of-contents">
 <div id="text-table-of-contents" class="bs-docs-sidebar">
 <ul class="nav">
-<li><a href="#sec-1">1. The fundamental theorems of Calculus</a>
+<li><a href="#sec-1">1. Integration by Substitution</a>
 <ul class="nav">
-<li><a href="#sec-1-1">1.1. Theorem 5.4.1 (First fundamental theorems of Calculus)</a></li>
-<li><a href="#sec-1-2">1.2. Corollary 5.4.2</a></li>
-<li><a href="#sec-1-3">1.3. Theorem 5.4.3 (Second fundamental theorems of Calculus)</a></li>
+<li><a href="#sec-1-1">1.1. Indefinite Integral</a></li>
+<li><a href="#sec-1-2">1.2. Some Indefinite integrals</a></li>
+<li><a href="#sec-1-3">1.3. More generalization of earlier theorems</a></li>
+<li><a href="#sec-1-4">1.4. Integration by Substitution</a></li>
 </ul>
 </li>
 </ul>
@@ -237,48 +238,151 @@ MathJax.Hub.Config({
 </nav>
 </div><div class="col-md-9 col-md-pull-3"><h1 class="title"></h1>
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> The fundamental theorems of Calculus</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Integration by Substitution</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Theorem 5.4.1 (First fundamental theorems of Calculus)</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Indefinite Integral</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-Suppose \(f\) is continous on an interval \(I\) and \(a \in I\). For all \(x
-\in I\) let
+\(\int f(x) \mathrm{d}x = F(x) + C\) on \(I\)
 </p>
 
 <p>
-\(F(x) = \int_a^x f(t) \mathrm{d}t\)
+The above equation is called an indefinite integral.
 </p>
 
 <p>
-Then \(F\) is an antiderivative of \(f\) on \(I\).
+$f(x): $ is a continous function on an interval \(I\)
+$F(x): $ is an antiderivative of \(F\).
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Corollary 5.4.2</h3>
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Some Indefinite integrals</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
-Suppose \(f\) is continous on an interval \(I\). Then \(f\) has an
-antiderivative on \(I\).
+For every rational number \(r \neq -1\), \(\int x^r \mathrm{d}x = \dfrac{x^{r+1}}{r+1} + C\)
+</p>
+
+<p>
+\(\int \sin x \mathrm{d}x = -\cos x + c\)
+</p>
+
+<p>
+\(\int \cos x \mathrm{d}x = \sin x + c\)
+</p>
+
+<p>
+\(\int \sec^2 x \mathrm{d}x = \tan x + c\)
+</p>
+
+<p>
+\(\int \csc^2 x \mathrm{d}x = -\cot x + c\)
+</p>
+
+<p>
+\(\int \sec x \tan x \mathrm{d}x = \sec x + c\)
+</p>
+
+<p>
+\(\int \csc x \cot x \mathrm{d}x = -\csc x + c\)
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Theorem 5.4.3 (Second fundamental theorems of Calculus)</h3>
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> More generalization of earlier theorems</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
-Suppose \(f\) is a function that is continous on an interval \(I\) and \(f\)
-is an antiderivative of \(f\) on \(I\). Then for any numbers \(a\) and \(b\)
-in \(I\),
+\(\int cf(x) \mathrm{d}x = c \int f(x) \mathrm{d}x\)
 </p>
 
 <p>
-\(\int_a^b f(x) \mathrm{d}x = F(b) - F(a)\)
+\(\int (f(x) + g(x)) \mathrm{d}x = \int f(x) \mathrm{d}x + \int g(x) \mathrm{d}x\)
 </p>
+
+<p>
+\(\int (f(x) - g(x)) \mathrm{d}x = \int f(x) \mathrm{d}x - \int g(x) \mathrm{d}x\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Integration by Substitution</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+We have seen Chain rule before:
+</p>
+
+<p>
+If \(\dfrac{d}{du} (F(u)) = f(u)\) for all \(u \in I\) then
+</p>
+
+<p>
+\(\dfrac{d}{dx} (F(g(x))) = f(g(x)).g'(x)\) for all \(x \in J\)
+</p>
+
+<p>
+Reversing the two derivatives in the above statement, we get the
+following statement about indefinite integrals:
+</p>
+
+<p>
+If \(\int f(u) \mathrm{d}u = F(u) + C\) on \(I\) then
+</p>
+
+<p>
+\(\int f(g(x))g'(x) \mathrm{d}x = F(g(x)) + C\) on \(J\)
+</p>
+</div>
+
+<div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Symbolic Procedure</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+You are given integral of the form \(\int f(g(x)). g'(x) \mathrm{d}x\)
+</p>
+
+<ul class="org-ul">
+<li>Step one: Replace \(g(x)\) with \(u\) and \(g'(x) \mathrm{d}x\) with
+\(\mathrm{d}u\). So the original integrand will be coverted to
+</li>
+</ul>
+
+<p>
+\(\int f(u) \mathrm{d}u\)
+</p>
+
+<ul class="org-ul">
+<li>Step two: Evaluated the above integral to get the solution. Replace
+\(u\) in the solution with \(g(x)\) to get \(F(g(x)) + c\).
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Example</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+\(\int 3x^2(x^3 + 2)^4 \mathrm{d}x\)
+</p>
+
+<p>
+Let \(u = x^3 + 2\), so that \(du = 3x^2 dx\). Then we have
+</p>
+
+<p>
+\(\int 3x^2(x^3 + 2)^4 \mathrm{d}x = \int u^4 du = \dfrac{u^5}{5} + C = \dfrac{(x^3+2)^5}{5} + C\)
+</p>
+
+<p>
+Note that although Leibniz derivative notation \(\dfrac{du}{dx}\) is not
+really a fraction, the chain rule says that in some ways it acts like
+one.
+</p>
+</div>
 </div>
 </div>
 </div>

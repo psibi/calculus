@@ -1,0 +1,73 @@
+* Integration by Substitution
+
+** Indefinite Integral
+
+$\int f(x) \mathrm{d}x = F(x) + C$ on $I$
+
+The above equation is called an indefinite integral.
+
+$f(x): $ is a continous function on an interval $I$
+$F(x): $ is an antiderivative of $F$.
+
+** Some Indefinite integrals
+
+For every rational number $r \neq -1$, $\int x^r \mathrm{d}x = \dfrac{x^{r+1}}{r+1} + C$
+
+$\int \sin x \mathrm{d}x = -\cos x + c$
+
+$\int \cos x \mathrm{d}x = \sin x + c$
+
+$\int \sec^2 x \mathrm{d}x = \tan x + c$
+
+$\int \csc^2 x \mathrm{d}x = -\cot x + c$
+
+$\int \sec x \tan x \mathrm{d}x = \sec x + c$
+
+$\int \csc x \cot x \mathrm{d}x = -\csc x + c$
+
+** More generalization of earlier theorems
+
+$\int cf(x) \mathrm{d}x = c \int f(x) \mathrm{d}x$
+
+$\int (f(x) + g(x)) \mathrm{d}x = \int f(x) \mathrm{d}x + \int g(x) \mathrm{d}x$
+
+$\int (f(x) - g(x)) \mathrm{d}x = \int f(x) \mathrm{d}x - \int g(x) \mathrm{d}x$
+
+** Integration by Substitution
+
+We have seen Chain rule before:
+
+If $\dfrac{d}{du} (F(u)) = f(u)$ for all $u \in I$ then
+
+$\dfrac{d}{dx} (F(g(x))) = f(g(x)).g'(x)$ for all $x \in J$
+
+Reversing the two derivatives in the above statement, we get the
+following statement about indefinite integrals:
+
+If $\int f(u) \mathrm{d}u = F(u) + C$ on $I$ then
+
+$\int f(g(x))g'(x) \mathrm{d}x = F(g(x)) + C$ on $J$
+
+*** Symbolic Procedure
+
+You are given integral of the form $\int f(g(x)). g'(x) \mathrm{d}x$
+
+- Step one: Replace $g(x)$ with $u$ and $g'(x) \mathrm{d}x$ with
+  $\mathrm{d}u$. So the original integrand will be coverted to
+
+$\int f(u) \mathrm{d}u$
+
+- Step two: Evaluated the above integral to get the solution. Replace
+  $u$ in the solution with $g(x)$ to get $F(g(x)) + c$.
+
+*** Example
+
+$\int 3x^2(x^3 + 2)^4 \mathrm{d}x$
+
+Let $u = x^3 + 2$, so that $du = 3x^2 dx$. Then we have
+
+$\int 3x^2(x^3 + 2)^4 \mathrm{d}x = \int u^4 du = \dfrac{u^5}{5} + C = \dfrac{(x^3+2)^5}{5} + C$
+
+Note that although Leibniz derivative notation $\dfrac{du}{dx}$ is not
+really a fraction, the chain rule says that in some ways it acts like
+one.

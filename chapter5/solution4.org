@@ -370,3 +370,60 @@ soln.expand()
 Now we know that $R_n = 3/2/n + 3/4/n^2 - 9/4$
 
 $\int_1^3 t^3 - 4t \mathrm{d}t = \lim_{n \to \infty} R_n = \dfrac{-9}{4}$
+
+** Solution 14
+
+$\int_0^{\pi/2} \cos x \mathrm{d}x$
+
+Suppose $n$ is a positive integer. We begin by computing all of the
+quantities mentioned in Definition 5.3.1. We have $f(x) = \cos x, a =
+0, b = \dfrac{\pi}{2}$, so $\Delta x = \dfrac{(b-a)}{n}$
+
+$= \dfrac{\pi/2}{n}$
+
+Next, the points that divided the interval $[0,\dfrac{\pi}{2}]$ into $n$ smaller
+intervals are given by the formula
+
+$x_i = a + i \Delta x = 0 + i \dfrac{\pi}{2n} = \dfrac{i\pi}{2n}$
+
+Finally, we must choose the sample points $x^{*}_i \in [x_{i-1},
+x_i]$. According to theorem 5.3.2, it doesn't matter what choice we
+make; all choices will lead to the same value when we take the limit
+of the Riemann $n$ sum as $n \to \infty$.
+
+Let $x_i^{*} = x_i = \dfrac{i\pi}{2n}$
+
+We can now work out a formula for the Riemann sum:
+
+$R_n = \sum_{i=1}^n f(x_i^{*})\Delta x = \sum_{i=1}^n f(\dfrac{i\pi}{2n}) * \dfrac{\pi}{2n}$
+
+$= \sum_{i=1}^n \cos (\dfrac{i\pi}{2n}) * \dfrac{\pi}{2n}$
+
+Let's compute the result using sagemath:
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+i,n = var('i n')
+f = cos(i*pi/(2*n)) * (pi / (2*n))
+soln = sum(f, i, 1, n)
+soln.expand()
+#+end_src
+
+#+RESULTS:
+: -1/4*pi*cos(n*arctan2(sin(1/2*pi/n), cos(1/2*pi/n)) + arctan2(sin(1/2*pi/n), cos(1/2*pi/n)))*cos(1/2*pi/n)/(n*(cos(1/2*pi/n) - 1)) - 1/4*pi*sin(n*arctan2(sin(1/2*pi/n), cos(1/2*pi/n)) + arctan2(sin(1/2*pi/n), cos(1/2*pi/n)))*sin(1/2*pi/n)/(n*(cos(1/2*pi/n) - 1)) + 1/4*pi*cos(n*arctan2(sin(1/2*pi/n), cos(1/2*pi/n)) + arctan2(sin(1/2*pi/n), cos(1/2*pi/n)))/(n*(cos(1/2*pi/n) - 1)) - 1/4*pi*cos(1/2*pi/n)/(n*(cos(1/2*pi/n) - 1)) + 1/4*pi/(n*(cos(1/2*pi/n) - 1))
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+limit(soln, n = infinity)
+#+end_src
+
+#+RESULTS:
+: 1
+
+$\int_0^{\pi/2} \cos x \mathrm{d}x = 1$
+
+** Solution 15
+
+todo
+
+** Solution 16
+
+$f(x) = \int_0^x \dfrac{1}{t^3 + 1} \mathrm{d}t$
