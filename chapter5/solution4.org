@@ -4,7 +4,7 @@
 
 $\int_1^3 (2x + 1) \mathrm{d}x$
 
-We need an antideriatie of $2x + 1$.
+We need an antiderivative of $2x + 1$.
 
 One antiderivative for this is $x^2 + x$. This is an antiderivative on
 the interval $(-\infty, \infty)$.
@@ -14,3 +14,99 @@ From theorem 5.4.3,
 $\int_1^3 (2x + 1) \mathrm{d}x = x^2 + x |_1^3 = 3^2 + 3 - (1 + 1)$
 
 $= 10$
+
+** Solution 2
+
+$\int_1^4 x^3 \mathrm{d}x$
+
+We need an antiderivative of $x^3$.
+
+One antiderivative for this is $\dfrac{x^4}{4}$. This is an antiderivative on
+the interval $(-\infty, \infty)$.
+
+From theorem 5.4.3,
+
+$\int_1^4 x^3 \mathrm{d}x = \dfrac{x^4}{4} |_1^4 = 4^3 - 1 = 63$
+
+** Solution 3
+
+$\int_{-1}^2 2x^3 - 3x^2 + 4x - 5 \mathrm{d}x$
+
+We need an antiderivative of $2x^3 - 3x^2 + 4x - 5$.
+
+One antiderivative for this is $\dfrac{x^4}{2} - x^3 + 2x^2 -
+5x$. This is an antiderivative on the interval $(-\infty, \infty)$
+
+From theorem 5.4.3,
+
+$\int_{-1}^2 2x^3 - 3x^2 + 4x - 5 \mathrm{d}x = \dfrac{x^4}{2} - x^3 +
+2x^2 - 5x |_{-1}^2$
+
+Let's compute the remaining solution using sagemath:
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+x = var('x')
+f = (x^4)/2 - x^3 + (2*x^2) - 5*x
+f(2) - f(-1)
+#+end_src
+
+#+RESULTS:
+: -21/2
+
+** Solution 4
+
+$\int_0^1 x^{100} \mathrm{d}x$
+
+We need an antiderivative of $x^100$
+
+One antiderivative for this is $\dfrac{x^{101}}{101}$. This is an
+antiderivative on the interval $(-\infty, \infty)$.
+
+From theorem 5.4.3,
+
+$\int_0^1 x^{100} \mathrm{d}x = \dfrac{x^{101}}{101} |_0^1$
+
+Let's compute the remaining solution using sagemath:
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+x = var('x')
+f = x^(101)/101
+f(1) - f(0)
+#+end_src
+
+#+RESULTS:
+: 1/101
+
+** Solution 5
+
+$\int_0^4 \sqrt{x} \mathrm{d}x$
+
+We need an antiderivative of $\sqrt{x}$.
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+f = sqrt(x)
+f
+from sage.symbolic.integration.integral import indefinite_integral
+g = indefinite_integral(f, x)
+g
+#+end_src
+
+#+RESULTS:
+: sqrt(x)
+: 2/3*x^(3/2)
+
+One antiderivative for this is $\dfrac{2x^{3/2}}{3}$. This is an
+antiderivative on the interval $(-\infty, \infty)$
+
+From theorem 5.4.3,
+
+$\int_0^4 \sqrt{x} \mathrm{d}x = \dfrac{2x^{3/2}}{3} |_0^4$
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+g
+g(4) - g(0)
+#+end_src
+
+#+RESULTS:
+: 2/3*x^(3/2)
+: 16/3
