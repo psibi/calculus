@@ -157,6 +157,9 @@ g
 #+RESULTS:
 : x - cos(x)
 
+One antiderivative for this is $x - \cos x$. This is an
+antiderivative on the interval $(-\infty, \infty)$
+
 From theorem 5.4.3,
 
 $\int_0^{2\pi} (1 + \sin x) \mathrm{d}x = x - cos(x) |_0^{2\pi}$
@@ -169,3 +172,34 @@ g(2*pi) - g(0)
 #+RESULTS:
 : x - cos(x)
 : 2*pi
+
+** Solution 8
+
+$\int_1^4 \dfrac{x^3 + 3}{x^2} \mathrm{d}x$
+
+We need an antiderivative of $\int_1^4 \dfrac{x^3 + 3}{x^2} \mathrm{d}x$
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+f = (x^3 + 3)/x^2
+g = indefinite_integral(f, x)
+g
+#+end_src
+
+#+RESULTS:
+: 1/2*x^2 - 3/x
+
+One antiderivative for this is $1/2*x^2 - 3/x$. This is an
+antiderivative on the interval $(-\infty, 0) \cup (0, \infty)$
+
+From theorem 5.4.3,
+
+$\int_1^4 \dfrac{x^3 + 3}{x^2} \mathrm{d}x = 1/2*x^2 - 3/x |_1^4$
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+g
+g(4) - g(1)
+#+end_src
+
+#+RESULTS:
+: 1/2*x^2 - 3/x
+: 39/4
