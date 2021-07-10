@@ -68,6 +68,7 @@ contributions are welcome!
 - [[file:chapter5/section3.org][Definite Integrals]]
   - [[file:chapter5/solution3.org][Solutions]]
 - [[file:chapter5/section4.org][The Fundamental theorems of Calculus]]
+  - [[file:chapter5/section4.org][Solutions]]
 
 * Extras
 
