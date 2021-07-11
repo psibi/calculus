@@ -71,3 +71,11 @@ $\int 3x^2(x^3 + 2)^4 \mathrm{d}x = \int u^4 du = \dfrac{u^5}{5} + C = \dfrac{(x
 Note that although Leibniz derivative notation $\dfrac{du}{dx}$ is not
 really a fraction, the chain rule says that in some ways it acts like
 one.
+
+** Theorem 5.5.3
+
+Suppose $f$ is continous on an interval $I$, $g$ is differentiable on
+an interval $J$, $g'$ is continous on $J$, and for every $x \in J$,
+$g(x) \in I$. Then for any $a$ and $b$ in $J$
+
+$\int_a^b f(g(x)).g'(x) \mathrm{d}x = \int_{g(a)}^{g(b)} f(u) \mathrm{d}u$
