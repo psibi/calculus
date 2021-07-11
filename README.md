@@ -2,8 +2,8 @@
 
 This contains my notes and solutions for Daniel Velleman's Calculus
 book. You can access it on
-[https://psibi.in/velleman-calculus](https://psibi.in/velleman-calculus
-"https://psibi.in/velleman-calculus").
+[https://psibi.in/calculus](https://psibi.in/calculus
+"https://psibi.in/calculus").
 
 ## Publishing
 

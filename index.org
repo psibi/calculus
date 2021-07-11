@@ -1,8 +1,8 @@
 * Calculus: A Rigorous First Course
 
 This contains my notes and solutions for Daniel Velleman's [[https://store.doverpublications.com/0486809366.html][Calculus
-book.]] [[https://github.com/psibi/velleman-calculus][This repository]] contains the code behind this website. Any
-contributions are welcome!
+book]] along with various other related sections.  [[https://github.com/psibi/velleman-calculus][This repository]]
+contains the code behind this website. Any contributions are welcome!
 
 * Limits (Chapter 2)
 
