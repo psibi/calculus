@@ -1,7 +1,7 @@
 * Calculus: A Rigorous First Course
 
 This contains my notes and solutions for Daniel Velleman's [[https://store.doverpublications.com/0486809366.html][Calculus
-book]] along with various other related sections.  [[https://github.com/psibi/velleman-calculus][This repository]]
+book]] along with various other related sections.  [[https://github.com/psibi/calculus][This repository]]
 contains the code behind this website. Any contributions are welcome!
 
 * Limits (Chapter 2)
@@ -68,7 +68,7 @@ contains the code behind this website. Any contributions are welcome!
 - [[file:chapter5/section3.org][Definite Integrals]]
   - [[file:chapter5/solution3.org][Solutions]]
 - [[file:chapter5/section4.org][The Fundamental theorems of Calculus]]
-  - [[file:chapter5/section4.org][Solutions]]
+  - [[file:chapter5/solution4.org][Solutions]]
 - [[file:chapter5/section5.org][Integration by Substitution]]
 
 * Extras

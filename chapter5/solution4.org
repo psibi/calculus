@@ -426,4 +426,4 @@ todo
 
 ** Solution 16
 
-$f(x) = \int_0^x \dfrac{1}{t^3 + 1} \mathrm{d}t$
+[[https://math.stackexchange.com/questions/4201569/computing-derivative-of-int-0x-dfrac1t3-1-dt][Solution]]

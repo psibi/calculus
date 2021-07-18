@@ -16,7 +16,7 @@ antiderivative on $I$.
 
 ** Theorem 5.4.3 (Second fundamental theorems of Calculus)
 
-Suppose $f$ is a function that is continous on an interval $I$ and $f$
+Suppose $f$ is a function that is continous on an interval $I$ and $F$
 is an antiderivative of $f$ on $I$. Then for any numbers $a$ and $b$
 in $I$,
 

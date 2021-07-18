@@ -6,8 +6,9 @@ $\int f(x) \mathrm{d}x = F(x) + C$ on $I$
 
 The above equation is called an indefinite integral.
 
-$f(x): $ is a continous function on an interval $I$
-$F(x): $ is an antiderivative of $F$.
+$f(x):$ is a continous function on an interval $I$
+
+$F(x):$ is an antiderivative of $F$.
 
 ** Some Indefinite integrals
 
