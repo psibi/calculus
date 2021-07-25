@@ -1,0 +1,217 @@
+* Integration by Substitution
+
+** Solution 1
+
+$\int \sin(x^2 + 3) 2x \mathrm{d}x$
+
+We will use substitution
+
+$u = x^2 + 3$
+
+$\mathrm{d}u = 2x \mathrm{d}x$
+
+This leads to the solution:
+
+$\int \sin u \mathrm{d}u$
+
+$= -\cos u + C$
+
+$= -\cos (x^2 + 3) + c$
+
+** Solution 2
+
+$\int x^2 \sqrt[4]{x^3 - 2} \mathrm{d}x$
+
+We will use substitution
+
+$u = x^3 - 2$
+
+$\mathrm{d}u = 3x^2 \mathrm{d}x$, $\dfrac{\mathrm{d}u}{3} = x^2 \mathrm{d}x$
+
+This leads to the solution:
+
+$\int \sqrt[4]{u} \dfrac{1}{2} \mathrm{d}u$
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+(1/4) + 1
+#+end_src
+
+#+RESULTS:
+: 5/4
+
+$= \dfrac{u^{5/4}}{5/2} + C$
+
+$= \dfrac{2*(u)^{5/4}}{5} + C$
+
+$= \dfrac{2*(x^3 - 2)^{5/4}}{5} + C$
+
+** Solution 3
+
+$\int x^2 (\cos x^3) \mathrm{d}x$
+
+We will use substitution
+
+$u = x^3$
+
+$\mathrm{d}u = 3x^2 \mathrm{d}x$
+
+$\dfrac{\mathrm{d}u}{3} = x^2 \mathrm{d}x$
+
+This leads to the solution:
+
+$\int \dfrac{\cos u}{3} \mathrm{d}u$
+
+$= \dfrac{\sin u}{3} + C$
+
+$= \dfrac{\sin (x^3)}{3} + C$
+
+** Solution 4
+
+$\int \sin x \cos^3 x \mathrm{d}x$
+
+We will use substitution
+
+$u = \cos x$
+
+$\mathrm{d}u = -\sin x \mathrm{d}x$
+
+$-\mathrm{d}u = \sin x \mathrm{d}x$
+
+This leads to the solution:
+
+$\int -u^3 \mathrm{d}u$
+
+$= \dfrac{-u^4}{4} + C$
+
+$= \dfrac{-(\cos x)^4}{4}$
+
+** Solution 5
+
+$\int x^2 \sin (x^3) \cos^3 (x^3) \mathrm{d}x$
+
+We will use substitution
+
+$u = x^3$
+
+$\mathrm{d}u = 3x^2 \mathrm{d}x$
+
+$\dfrac{\mathrm{d}u}{3} = x^2 \mathrm{d}x$
+
+This leads to the solution:
+
+$\int \sin u \cos^3 u \dfrac{1}{3} \mathrm{d}u$
+
+We know from solution 4, that the solution is
+
+$= -\dfrac{\cos^4 u}{12} + C$
+
+$= -\dfrac{\cos^4 (x^3)}{12} + C$
+
+** Solution 6
+
+$\int \dfrac{x \mathrm{d}x}{(x+1)^3}$
+
+We will use substitution
+
+Let $u = x + 1$
+
+$\mathrm{d}u = \mathrm{d}x$
+
+This leads to the solution:
+
+$\int \dfrac{u-1}{u^3} \mathrm{d}u$
+
+$= \int 1 - \dfrac{1}{u} \mathrm{d}u$
+
+$= u - \dfrac{u^{-3+1}}{-2} + C$
+
+$= u - \dfrac{1}{-2u^{2}} + C$
+
+$= x + 1 - \dfrac{1}{-2(x+1)^{2}} + C$
+
+$= x + 1 - \dfrac{1}{-2(x+1)^2} + C$
+
+** Solution 7
+
+$\int \dfrac{\mathrm{d}x}{\sqrt{x}(\sqrt{x} + 1)^4}$
+
+We will use substitution
+
+Let $u = \sqrt{x} + 1$
+
+$\mathrm{d}u =  \dfrac{-1}{2*\sqrt{x}} dx$
+
+$\dfrac{-2*du}{1} = \dfrac{1}{\sqrt{x}} dx$
+
+This leads to the solution:
+
+$\int \dfrac{-2*du}{(u)^4}$
+
+$= \dfrac{-2*u^{-3}}{-3} + C$
+
+$= \dfrac{-2}{3(\sqrt{x} + 1)^3} + C$
+
+** Solution 8
+
+$\int \dfrac{\sqrt{x} dx}{(\sqrt{x} + 1)^4}$
+
+We will use substitution
+
+Let $u = \sqrt{x}$
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+diff(sqrt(x), x).expand()
+#+end_src
+
+#+RESULTS:
+: 1/2/sqrt(x)
+
+$du = \dfrac{1}{2*\sqrt{x}} dx$
+
+$du = \dfrac{\sqrt{x}}{2*x} dx$
+
+$\dfrac{du}{2x} = \sqrt{x} dx$
+
+This leads to the solution:
+
+$\int \dfrac{2x du}{(u + 1)^4}$
+
+$= \int \dfrac{2u^2 du}{(u+1)^4}$
+
+$= \int \dfrac{2u^2 du}{u^4(1 + 1/u)^4}$
+
+$= \int \dfrac{2 du}{u^2(1+1/u)^4}$
+
+Let $n = \dfrac{1}{u}$
+
+#+begin_src sage :session nix :eval never-export :results value verbatim output :exports both
+u = var('u')
+diff(1/u, u).expand()
+#+end_src
+
+#+RESULTS:
+: -1/u^2
+
+$dn = -\dfrac{1}{u^2} du$
+
+$-dn = dfrac{1}{u^2} du$
+
+$= \int \dfrac{-dn}{(1 + n)^4}$
+
+$= \int \dfrac{-1}{(1+n)^4} dn$
+
+Let $k = 1 + n$
+
+$dk = dn$
+
+$= \int \dfrac{-1}{k^4} dk$
+
+$= \dfrac{-k^{-3}}{-3}$
+
+$= \dfrac{1}{3k^3}$
+
+$= \dfrac{1}{3(1+n)^3}$
+
+$= \dfrac{1}{3(1+(1/u))^3}$
+
+$= \dfrac{1}{3(1+(1/\sqrt{x}))^3}$
