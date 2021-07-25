@@ -70,6 +70,7 @@ contains the code behind this website. Any contributions are welcome!
 - [[file:chapter5/section4.org][The Fundamental theorems of Calculus]]
   - [[file:chapter5/solution4.org][Solutions]]
 - [[file:chapter5/section5.org][Integration by Substitution]]
+  - [[file:chapter5/solution5.org][Solutions]]
 
 * Extras
 
