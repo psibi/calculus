@@ -4,11 +4,17 @@
 
 $\int f(x) \mathrm{d}x = F(x) + C$ on $I$
 
-The above equation is called an indefinite integral.
+The above equation is called an *indefinite integral*.  It is
+*indefinite* because no limits of integration $a$ and $b$ have been
+specified.
 
 $f(x):$ is a continous function on an interval $I$
 
-$F(x):$ is an antiderivative of $F$.
+$F(x):$ is an antiderivative of $f$ on an interval $I$.
+
+In practice, mathematicians rarely specify the interval on which an
+indefinite interval applies. It's assumed that the interval of $F$ is
+same as the interval of the domain of $f$.
 
 ** Some Indefinite integrals
 
