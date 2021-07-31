@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-07-31 Sat 19:14 -->
+<!-- 2021-07-31 Sat 22:41 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -236,6 +236,12 @@ MathJax.Hub.Config({
 <li><a href="#sec-1-7">1.7. Solution 7</a></li>
 <li><a href="#sec-1-8">1.8. Solution 8</a></li>
 <li><a href="#sec-1-9">1.9. Solution 9</a></li>
+<li><a href="#sec-1-10">1.10. Solution 10</a></li>
+<li><a href="#sec-1-11">1.11. Solution 11</a></li>
+<li><a href="#sec-1-12">1.12. Solution 12</a></li>
+<li><a href="#sec-1-13">1.13. Solution 13</a></li>
+<li><a href="#sec-1-14">1.14. Solution 14</a></li>
+<li><a href="#sec-1-15">1.15. Solution 15</a></li>
 </ul>
 </li>
 </ul>
@@ -672,13 +678,370 @@ Let \(k = 1 + n\)
 <p>
 \(\int \sec^2 x \tan^2 x dx\)
 </p>
+
+<p>
+We will use substitution
+</p>
+
+<p>
+We know that \(\tan^2 x = \sec^2 x - 1\)
+</p>
+
+<p>
+\(\int (\tan^2 x + 1)\tan^2 x dx\)
+</p>
+
+<p>
+We know that
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">diff</span><span class="p">(</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+tan(x)^2 + 1
+</pre>
+
+
+<p>
+Let \(u = \tan x\)
+</p>
+
+<p>
+\(du = \tan^2 x + 1 dx\)
+</p>
+
+<p>
+\(\int u^2 du\)
+</p>
+
+<p>
+\(\dfrac{u^3}{3} + C\)
+</p>
+
+<p>
+\(\dfrac{\tan^3 x}{3} + C\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Solution 10</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+\(\int \sqrt{1 + \sin x} \cos x dx\)
+</p>
+
+<p>
+We will use substitution
+</p>
+
+<p>
+Let \(u = 1 + \sin x\)
+</p>
+
+<p>
+\(du = \cos x dx\)
+</p>
+
+<p>
+\(\int \sqrt{u} du\)
+</p>
+
+<p>
+\(\dfrac{u^{3/2}}{3/2} + C\)
+</p>
+
+<p>
+\(2 \dfrac{(1+\sin x)^(3/2)}{3} + C\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Solution 11</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+\(\int_0^4 \dfrac{x dx}{\sqrt{x^2 + 9}}\)
+</p>
+
+<p>
+Let's evaluate the indefinite integral.
+</p>
+
+<p>
+We will use substitution
+</p>
+
+<p>
+Let \(u = x^2 + 9\)
+</p>
+
+<p>
+\(du = 2x dx\)
+</p>
+
+<p>
+\(\dfrac{du}{2} = x dx\)
+</p>
+
+<p>
+\(\int \dfrac{1}{2*\sqrt{u}} du\)
+</p>
+
+<p>
+\(= \sqrt{u} + C\)
+</p>
+
+<p>
+\(= \sqrt{x^2 + 9} + C\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_0^4 \dfrac{x dx}{\sqrt{x^2 + 9}} = \sqrt{4^2 + 9} - \sqrt{4^2 + 9}\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> Solution 12</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+\(\int_0^1 (x+1)(x^2 + 2x - 1)^4 dx\)
+</p>
+
+<p>
+Let's evaluate the indefinite integral.
+</p>
+
+<p>
+We will use substitution
+</p>
+
+<p>
+Let \(u = x^2 + 2x - 1\)
+</p>
+
+<p>
+\(du = 2x + 2 dx\)
+</p>
+
+<p>
+\(\dfrac{du}{2} = (x+1) dx\)
+</p>
+
+<p>
+\(\int \dfrac{u du}{2}\)
+</p>
+
+<p>
+\(= \dfrac{u^2}{4} + C\)
+</p>
+
+<p>
+\(= \dfrac{(x^2 + 2x - 1)^2}{4} + C\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_0^1 (x+1)(x^2 + 2x - 1)^4 dx = \dfrac{(1^2 + 2 - 1)^2}{4} - \dfrac{(0^2 + 0 - 1)^2}{4}\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+3/4
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> Solution 13</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+\(\int_0^{\pi/3} \sec^3 x \tan x dx\)
+</p>
+
+<p>
+We know that:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">diff</span><span class="p">(</span><span class="n">sec</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+sec(x)*tan(x)
+</pre>
+
+
+<p>
+Let's evaluate the indefinite integral.
+</p>
+
+<p>
+We will use substitution
+</p>
+
+<p>
+Let \(u = \sec x\)
+</p>
+
+<p>
+\(du = \sec x \tan x dx\)
+</p>
+
+<p>
+\(\int u^2 du\)
+</p>
+
+<p>
+\(= \dfrac{u^3}{3} + C\)
+</p>
+
+<p>
+\(= \dfrac{(\sec x)^3}{3} + C\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_0^{\pi/3} \sec^3 x \tan x dx = \dfrac{(\sec (\pi/3))^3}{3} - \dfrac{(\sec 0)^3}{3}\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">((</span><span class="n">sec</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
+<span class="n">f</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+7/3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 14</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+\(\int_{\pi^2}{4\pi^2} \dfrac{\cos (\sqrt{x}/4)}{\sqrt{x}} dx\)
+</p>
+
+<p>
+We know that:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">diff</span><span class="p">((</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+1/2/sqrt(x)
+</pre>
+
+
+<p>
+Let's evaluate the indefinite integral.
+</p>
+
+<p>
+We will use substitution
+</p>
+
+<p>
+Let \(u = \dfrac{\sqrt{x}}{4}\)
+</p>
+
+<p>
+\(8 du = \dfrac{1}{\sqrt{x}} dx\)
+</p>
+
+<p>
+\(\int 8 \cos (u) du\)
+</p>
+
+<p>
+\(= -8\sin u + C\)
+</p>
+
+<p>
+\(= -8\sin (\dfrac{\sqrt{x}}{4}) + C\)
+</p>
+
+<p>
+From theorem 5.4.3,
+</p>
+
+<p>
+\(\int_{\pi^2}{4\pi^2} \dfrac{\cos (\sqrt{x}/4)}{\sqrt{x}} dx = -8\sin (\dfrac{\sqrt{4\pi^2}}{4}) + -8\sin (\dfrac{\sqrt{\pi^2}}{4})\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="o">-</span><span class="mi">8</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">pi</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">pi</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+4*sqrt(2) - 8
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Solution 15</h3>
+<div class="outline-text-3" id="text-1-15">
+<p>
+\(\int \dfrac{\sin^2 x}{\cos^2 x} dx\)
+</p>
+
+<p>
+We know that \(\sin^2 x = 1 - \cos^2 x\)
+</p>
+
+<p>
+\(= \int \dfrac{1 - \cos^2 x}{\cos^2 x} dx\)
+</p>
+
+<p>
+\(= \int \dfrac{1}{\cos^2 x} dx - \int 1 dx\)
+</p>
+
+<p>
+\(= \int \sec^2 x dx - \int 1 dx\)
+</p>
+
+<p>
+\(= \tan x - x + C\)
+</p>
 </div>
 </div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-07-31 Sat 19:14</p>
+<p class="date">Created: 2021-07-31 Sat 22:41</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="http://orgmode.org">Org-mode</a> 9.4.4)</p>
 </div>
 </footer>
