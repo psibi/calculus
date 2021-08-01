@@ -1,0 +1,36 @@
+* Area Between Curves
+
+** Area under curve
+
+Equation of curve: $y = f(x)$ for $a \leq x \leq b$
+
+We assuem that $f$ is continous on $[a,b]$ and $f(x) \geq 0$ for all
+$x \in [a,b]$
+
+Let $A$ denote its area. To approximate $A$, we choose a positive
+integer $n$ and cut the interval $[a,b]$ into $n$ pieces, each of
+width $\Delta x = \dfrac{b-a}{n}$. The dividing points between these
+pieces are the numbers $x_i = a + i\Delta x$ for $i=0,1,2,...,n$ and
+for $1 \leq i \leq n$ the ith piece is the interval $[x_{i-1}, x_i]$.
+
+If we let $A_i$ denote the area of the ith strip, which is the region
+defined by the inequalities $x_i-1 \leq x \leq x_i$ and $0 \leq y \leq
+f(x)$, then $A = A_1 + A_2 + ... A_n = \sum_{i=1}^n A_i$
+
+$R_n = \sum_{i=1}^n f(x_i^{*})\Delta x$
+
+Area = $\lim_{n \to \infty} R_n = \int_a^b f(x) \mathrm{d}x$
+
+** Area between curve
+
+Suppose that $f$ and $g$ are both continous on the interval $[a,b]$
+and for all $x \in [a,b]$, $g(x) \leq f(x)$.
+
+We want to compute the area $A$ of the region $R$ between the graphs
+of $f$ and $g$ for $x \in [a,b]$, that is the area of the region
+defined by the inequalities $a \leq x \leq b$ and $g(x) \leq y \leq
+f(x)$
+
+$R_n = \sum_{i=1}^n (f(x_i^{*}) - g(x_i^{*}))\Delta x$
+
+$A = \lim_{n \to \infty} R_n = \int_a^b (f(x) - g(x))\mathrm{d}x$

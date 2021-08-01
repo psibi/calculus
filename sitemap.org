@@ -60,3 +60,5 @@
   - [[file:chapter5/solution3.org][solution3]]
   - [[file:chapter5/solution4.org][solution4]]
   - [[file:chapter5/solution5.org][solution5]]
+- chapter6
+  - [[file:chapter6/section1.org][section1]]

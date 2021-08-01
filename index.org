@@ -72,6 +72,10 @@ contains the code behind this website. Any contributions are welcome!
 - [[file:chapter5/section5.org][Integration by Substitution]]
   - [[file:chapter5/solution5.org][Solutions]]
 
+* Applications of Integration
+
+- [[file:chapter6/section1.org][Area Between Curves]]
+
 * Extras
 
 - [[file:Apendix.org][Appendix]]
