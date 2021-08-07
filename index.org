@@ -75,7 +75,7 @@ contains the code behind this website. Any contributions are welcome!
 * Applications of Integration
 
 - [[file:chapter6/section1.org][Area Between Curves]]
-  - [[file:chapter6/section1.org][Solutions]]
+  - [[file:chapter6/solution1.org][Solutions]]
 
 * Extras
 
