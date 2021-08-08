@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2021-08-07 Sat 20:05 -->
+<!-- 2021-08-08 Sun 15:17 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
@@ -234,6 +234,13 @@ MathJax.Hub.Config({
 <li><a href="#sec-1-5">1.5. Solution 5</a></li>
 <li><a href="#sec-1-6">1.6. Solution 6</a></li>
 <li><a href="#sec-1-7">1.7. Solution 7</a></li>
+<li><a href="#sec-1-8">1.8. Solution 8</a></li>
+<li><a href="#sec-1-9">1.9. Solution 9</a></li>
+<li><a href="#sec-1-10">1.10. Solution 10</a></li>
+<li><a href="#sec-1-11">1.11. Solution 11</a></li>
+<li><a href="#sec-1-12">1.12. Solution 12</a></li>
+<li><a href="#sec-1-13">1.13. Solution 13</a></li>
+<li><a href="#sec-1-14">1.14. Solution 14</a></li>
 </ul>
 </li>
 </ul>
@@ -589,11 +596,467 @@ Let's find the area between the curves:
 </pre>
 </div>
 </div>
+
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Solution 8</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Since no interval is given, let's compute the intersection point of
+the curves.
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+[x == -2, x == 2, x == 0]
+</pre>
+
+
+<p>
+Let's plot the graph:
+</p>
+
+<div class="sage"><pre><span></span>  <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">()</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$x^3 - x$&quot;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$3x$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+  <span class="n">g</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c6s8.png" class="img-responsive" alt="c6s8.png">
+</p>
+</figure>
+
+<p>
+Let's find the area between the curves:
+</p>
+
+<p>
+\(A = \int_{-2}^0 x^3 - x - 3x dx + \int_0^2 3x - (x^3 - x) dx\)
+</p>
+
+<p>
+\(= \int_{-2}^0 x^3 - 4x dx + \int_0^2 4x - x^3 dx\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">definite_integral</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">definite_integral</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+8
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3">
+<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Solution 9</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+I'm switching the \(x\) and \(y\) in the curves to simpify the problem.
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+[x == -3, x == 1]
+</pre>
+
+
+<p>
+Let's plot the graph:
+</p>
+
+<div class="sage"><pre><span></span>  <span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">()</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$x^2 + x$&quot;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$3-x$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+  <span class="n">g</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c6s9.png" class="img-responsive" alt="c6s9.png">
+</p>
+</figure>
+
+<p>
+Let's find the area between the curves:
+</p>
+
+<p>
+\(A = \int_{-3}^1 3 - x - (x^2 + x) dx\)
+</p>
+
+<p>
+\(= \int_{-3}^1 3 - 2x - x^2 dx\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">definite_integral</span><span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+32/3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Solution 10</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Since no interval is given, let's compute the intersection point of
+the curves.
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+[x == 0]
+</pre>
+
+
+<p>
+Intersection between \(y=x\) and \(y = 2x\) is at \(x = 0\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">6</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+[x == 3]
+</pre>
+
+
+<p>
+Intersection between \(y=x\) and \(y = 6-x\) is at \(x = 3\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">==</span> <span class="mi">6</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+[x == 2]
+</pre>
+
+
+<p>
+Intersection between \(y=2x\) and \(y = 6-x\) is at \(x = 2\)
+</p>
+
+<p>
+Let's plot the graph:
+</p>
+
+<div class="sage"><pre><span></span>  <span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">()</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$2x$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$6-x$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+  <span class="n">g</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c6s10.png" class="img-responsive" alt="c6s10.png">
+</p>
+</figure>
+
+<p>
+Let's find the area between the curves:
+</p>
+
+<p>
+\(\int_0^2 2x - x dx + \int_2^3 6 - x - x dx\)
+</p>
+
+<p>
+\(= \int_0^2 x dx + \int_2^3 6 - 2xdx\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">definite_integral</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">definite_integral</span><span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Solution 11</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+Since no interval is given, let's compute the intersection point of
+the curves.
+</p>
+
+<div class="sage"><pre><span></span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">==</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;sympy&#39;</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+[[x == 0, x == 1],
+ ConditionSet(x, Eq(-sqrt(x) + x**2, 0), FiniteSet(-1/2 - sqrt(3)*I/2, -1/2 + sqrt(3)*I/2))]
+</pre>
+
+
+<p>
+Let's plot the graph:
+</p>
+
+<div class="sage"><pre><span></span>  <span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">()</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$x^2$&quot;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$\sqrt</span><span class="si">{x}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+  <span class="n">g</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c6s11.png" class="img-responsive" alt="c6s11.png">
+</p>
+</figure>
+
+<p>
+Let's find the area between the curves:
+</p>
+
+<p>
+\(A = \int_0^1 \sqrt{x} - x^2 dx\)
+</p>
+
+<div class="sage"><pre><span></span><span class="kn">from</span> <span class="nn">sage.symbolic.integration.integral</span> <span class="kn">import</span> <span class="n">definite_integral</span>
+<span class="n">definite_integral</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+1/3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> Solution 12</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+Since no interval is given, let's compute the intersection point of
+the curves.
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+[x == (-1/2*I + 1), x == (1/2*I + 1), x == 1, x == 0]
+</pre>
+
+
+<p>
+Before plotting the graph, we need to understand the curve \(x = 2y - y^2\).
+</p>
+
+<div class="sage"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+[y == -sqrt(-x + 1) + 1, y == sqrt(-x + 1) + 1]
+</pre>
+
+
+<p>
+Let's plot the graph:
+</p>
+
+<div class="sage"><pre><span></span>  <span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">()</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$3x - 2x^2$&quot;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$\sqrt{-x + 1} + 1$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+  <span class="n">g</span> <span class="o">+=</span> <span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">legend_label</span> <span class="o">=</span> <span class="s2">&quot;$-\sqrt{-x + 1} + 1$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+  <span class="n">g</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+<figure>
+<p><img src="../assets/c6s12.png" class="img-responsive" alt="c6s12.png">
+</p>
+</figure>
+
+<p>
+Let's find the area between the curves:
+</p>
+
+<p>
+\(A = \int_0^1 3x-2x^2 - (-\sqrt{-x + 1} + 1) dx\)
+</p>
+
+<p>
+\(= \int_0^1 3x-2x^2 + \sqrt{-x + 1} - 1 dx\)
+</p>
+
+<div class="sage"><pre><span></span><span class="n">definite_integral</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+1/2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> Solution 13</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+We have to find three pieces of area.
+</p>
+
+<p>
+For the first piece of area:
+</p>
+
+<p>
+\(= \int_0^1 \sqrt{x} - (-\sqrt{x}) dx\)
+</p>
+
+<p>
+Computing it:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">definite_integral</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+
+<pre class="example">
+4/3
+</pre>
+
+
+<p>
+For the second piece of area:
+</p>
+
+<p>
+\(= \int_1^2 \sqrt{x} - (x-2) dx\)
+</p>
+
+<p>
+Computing it:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">definite_integral</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span>
+</pre></div>
+
+<pre class="example">
+4/3*sqrt(2) - 1/6
+</pre>
+
+
+<p>
+For the third piece of area:
+</p>
+
+<p>
+\(= \int_2^4 \sqrt{x} - (x-2) dx\)
+</p>
+
+<p>
+Computing it:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">definite_integral</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">c</span>
+</pre></div>
+
+<pre class="example">
+-4/3*sqrt(2) + 10/3
+</pre>
+
+
+<p>
+Summing all of them will give us the result:
+</p>
+
+<div class="sage"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+</pre></div>
+
+<pre class="example">
+9/2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Solution 14</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+Suppose \(f\) is continous on \([a,b]\) and \(f(x) \geq 0, \forall x \in [a,b]\)
+</p>
+
+<p>
+Let \(R\) denote the region under the graph of \(f\)
+</p>
+
+<p>
+Let \(A\) be the area of \(R\).
+</p>
+
+<p>
+We divide the interval \([a,b]\) into \(n\) pieces of width
+\(\dfrac{b-a}{n}\) with division points \(x_i = a + i\Delta x\)
+</p>
+</div>
+
+<div id="outline-container-sec-1-14-1" class="outline-4">
+<h4 id="sec-1-14-1"><span class="section-number-4">1.14.1</span> Solution a</h4>
+<div class="outline-text-4" id="text-1-14-1">
+<p>
+Each interval is composed of smaller intervals \([x_0,
+x_1],[x_1,x_2]...[x_{n-1}, x_n]\) each of width \(\Delta x\)
+</p>
+
+<p>
+And for each of the sample point \(x_i^{*}\), it dimensions are
+\(f(x_i^{*})\) and \(\Delta x\).
+</p>
+
+<p>
+Now we know from Riemann Sum that
+</p>
+
+<p>
+\(f(x^{*}_1)\Delta x + f(x^{*}_2)\Delta x + ... + f(x^{*}_n)\Delta x = \sum_{i=1}^nf(x^{*}_i)\Delta x\)
+</p>
+
+<p>
+So, \(f(x_i^{*})\Delta x \leq \sum_{i=1}^nf(x^{*}_i)\Delta x\)
+</p>
+
+<p>
+\(f(x_i^{*})\Delta x \leq \sum_{i=1}^nf(x^{*}_i)\Delta x \leq A\)
+</p>
+
+<p>
+\(m_n \leq A\)
+</p>
+</div>
+</div>
+</div>
 </div>
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: Sibi Prabakaran</p>
-<p class="date">Created: 2021-08-07 Sat 20:05</p>
+<p class="date">Created: 2021-08-08 Sun 15:17</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="http://orgmode.org">Org-mode</a> 9.4.4)</p>
 </div>
 </footer>
